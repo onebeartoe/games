@@ -6,9 +6,14 @@ import java.util.List;
 import java.util.stream.IntStream;
 import org.onebeartoe.games.memory.cards.MemoryCard;
 import org.onebeartoe.games.memory.cards.MemoryCardsGame;
-import static org.onebeartoe.games.memory.cards.game.initialization.MenuCardsGameResponse.CardsInitialized;
+import org.onebeartoe.games.memory.cards.game.CardsCannedDate;
+import static org.testng.Assert.assertEquals;
+
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import static org.onebeartoe.games.memory.cards.game.initialization.MenuCardsGameResponse.CARDS_INITIALIZED;
+import static org.onebeartoe.games.memory.cards.game.initialization.MenuCardsGameResponse.IN_PROGRESS;
+import static org.testng.Assert.assertTrue;
 
 /**
  * This class has unit tests for the MemoryCardsGame class
@@ -17,12 +22,16 @@ import org.testng.annotations.Test;
  */
 public class MemoryCardsGameInitializationSpecification
 {
-    MemoryCardsGame implementation;
+//    private MemoryCardsGame implementation;
+    
+    private CardsCannedDate cannedData;
     
     @BeforeTest
     public void setup()
     {
-        implementation = new MemoryCardsGame();
+//        MemoryCardsGame implementation = new MemoryCardsGame();
+        
+        cannedData = new CardsCannedDate();
     }
     
     /**
@@ -31,126 +40,143 @@ public class MemoryCardsGameInitializationSpecification
      * All cards are the same
      */
     @Test
-    public void initialization_allTheSameCard()
+    public void initialization_allTheSameCard() throws TooFewCardsException, TooManyCardsException, InvalidPairsException, CardsAlreadyInitializedException
     {
         //TODO: implement
         
-        // set all game cards to the same card
+        MemoryCardsGame implementation = new MemoryCardsGame();
         
+        List<MemoryCard> cards = cannedData.validCardSetAllTheSame();
         
+        MenuCardsGameResponse actual = implementation.setCards(cards);
         
-        List<MemoryCard> cards = new ArrayList();
-        int sameValue = 5;
-        IntStream.rangeClosed(1, 12)
-                 .forEach(i -> 
-        {
-            MemoryCard card = new MemoryCard();
-            
-            card.setValue(sameValue);
-
-            cards.add(card);
-        });
+        MenuCardsGameResponse expected = CARDS_INITIALIZED;
         
-        MenuCardsGameResponse response = implementation.setCards(cards);
-        
-        assert response == CardsInitialized;
+        assertEquals(actual, expected);
     }
   
-
     /**
      * This class verifies criteria 1
      * 
      * There are pairs in the card set.
      */
     @Test
-    public void initialization_withDifferentPairs()
+    public void initialization_withDifferentPairs() throws TooFewCardsException, TooManyCardsException, InvalidPairsException, CardsAlreadyInitializedException
     {
         //TODO: implement
         
+        MemoryCardsGame implementation = new MemoryCardsGame();
+
+        List<MemoryCard> cards = cannedData.validCardSetCountOf2();
+
+        MenuCardsGameResponse response = implementation.setCards(cards);
+        
+        assert response == CARDS_INITIALIZED;        
+    }
+    
+    /**
+     * This class verifies criteria 1
+     */
+    @Test(expectedExceptions = {TooFewCardsException.class})
+    public void initialization_fails_tooFewCards() throws TooFewCardsException, TooManyCardsException, InvalidPairsException, CardsAlreadyInitializedException
+    {
+        //TODO: implement      
+        
+        MemoryCardsGame implementation = new MemoryCardsGame();
+        
         List<MemoryCard> cards = new ArrayList();
         
-        int sameValue1 = 5;
-        IntStream.rangeClosed(1, 6)
+        IntStream.rangeClosed(1, 8)
                  .forEach(i -> 
         {
             MemoryCard card = new MemoryCard();
             
-            card.setValue(sameValue1);
-
-            cards.add(card);
-        });
-        
-        int sameValue2 = 10;
-        IntStream.rangeClosed(7, 12)
-                 .forEach(i -> 
-        {
-            MemoryCard card = new MemoryCard();
-            
-            card.setValue(sameValue2);
+            card.setValue(2);
 
             cards.add(card);
         });        
         
         MenuCardsGameResponse response = implementation.setCards(cards);
+    }
+    
+    /**
+     * This class verifies criteria 1
+     */
+    @Test(expectedExceptions = {TooManyCardsException.class})
+    public void initialization_fails_tooManyCards() throws TooFewCardsException, TooManyCardsException, InvalidPairsException, CardsAlreadyInitializedException
+    {
+        //TODO: implement 
+        MemoryCardsGame implementation = new MemoryCardsGame();
         
-        assert response == CardsInitialized;
         
-    }
-    
-    /**
-     * This class verifies criteria 1
-     */
-    @Test
-    public void initialization_fails_missingCards()
-    {
-        //TODO: implement        
-    }
-    
-    /**
-     * This class verifies criteria 1
-     */
-    @Test
-    public void initialization_fails_tooManyCards()
-    {
-        //TODO: implement        
+        List<MemoryCard> cards = new ArrayList();
+        
+        IntStream.rangeClosed(1, 25)  // way too many
+                 .forEach(i -> 
+        {
+            MemoryCard card = new MemoryCard();
+            
+            card.setValue(2);
+
+            cards.add(card);
+        });        
+        
+        MenuCardsGameResponse response = implementation.setCards(cards);        
     }
     
     
     /**
      * This class verifies criteria 1
      */
-    @Test
-    public void initialization_fails_missingPairs()
+    @Test(expectedExceptions = {InvalidPairsException.class})
+    public void initialization_fails_missingPairs() throws TooFewCardsException, TooManyCardsException, InvalidPairsException, CardsAlreadyInitializedException
     {
-        //TODO: implement        
+        //TODO: implement      
+        MemoryCardsGame implementation = new MemoryCardsGame();
+        
+        
+        List<MemoryCard> cards = new ArrayList();
+        
+        int sameValue = 5;
+        IntStream.rangeClosed(1, 11)
+                 .forEach(i -> 
+        {
+            MemoryCard card = new MemoryCard();            
+            card.setValue(sameValue);
+            cards.add(card);
+        });
+        
+        int uniqueValue = 10;
+        MemoryCard card = new MemoryCard();
+        card.setValue(uniqueValue);
+        cards.add(card);        
+        
+        MenuCardsGameResponse response = implementation.setCards(cards);        
     }
 
 
     /**
      * This class verifies criteria 2
      */
-    @Test
-    public void initialization_fails_resetingOfCardsAfterGameStart()
+    @Test(expectedExceptions = {CardsAlreadyInitializedException.class})
+    public void initialization_fails_resetingOfCardsAfterGameStart() throws TooFewCardsException, TooManyCardsException, InvalidPairsException, CardsAlreadyInitializedException
     {
         //TODO: implement
-
-        /*
-            initialize game 
         
-            set game cards
+        MemoryCardsGame implementation = new MemoryCardsGame();
         
-            assert game status is pregame
+        List<MemoryCard> cards = cannedData.validCardSetCountOf2();
         
-            start game
+        MenuCardsGameResponse setCardsResponse = implementation.setCards(cards);
         
-            assert game statte is in-progress
+        assertEquals(setCardsResponse, CARDS_INITIALIZED);
         
-            set game cards (again)
+        MenuCardsGameResponse startGameResponse = implementation.startGame();
         
-            expect CardsAlreadyInitializedException
-        */
+        assertTrue(startGameResponse == IN_PROGRESS);
+        
+        // set game cards (again)
+        List<MemoryCard> secondCards = cannedData.validCardSetAllTheSame();
+        implementation.setCards(secondCards);
     }
-    
-    
-    
 }

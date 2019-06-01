@@ -6,8 +6,7 @@ package org.onebeartoe.games.memory.cards.game.initialization;
  *
  * @author Roberto Marquez
  */
-public enum MenuCardsGameResponse
+public class TooFewCardsException extends Exception
 {
-    CARDS_INITIALIZED,
-    IN_PROGRESS
+    
 }
