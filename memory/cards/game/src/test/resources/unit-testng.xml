@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="memory-game-test-suite" parallel="none">
+    <test name="memory-game-unit-tests">
+        
+        
+        
+        <packages>
+            <package name="org.onebeartoe.games.memory.cards.game.initialization"/>
+            <package name="org.onebeartoe.games.memory.cards.game.play.end.of.game"/>
+            <package name="org.onebeartoe.games.memory.cards.game.play.end.of.round"/>
+            <package name="org.onebeartoe.games.memory.cards.game.play.selection"/>
+        </packages>
+    </test>    
+</suite>

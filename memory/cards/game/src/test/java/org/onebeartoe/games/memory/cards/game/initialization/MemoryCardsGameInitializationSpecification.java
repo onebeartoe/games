@@ -12,8 +12,8 @@ import static org.testng.Assert.assertEquals;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import static org.onebeartoe.games.memory.cards.game.initialization.MenuCardsGameResponse.CARDS_INITIALIZED;
-import static org.onebeartoe.games.memory.cards.game.initialization.MenuCardsGameResponse.IN_PROGRESS;
 import static org.testng.Assert.assertTrue;
+import static org.onebeartoe.games.memory.cards.game.initialization.MenuCardsGameResponse.GAME_IN_PROGRESS;
 
 /**
  * This class has unit tests for the MemoryCardsGame class
@@ -41,9 +41,7 @@ public class MemoryCardsGameInitializationSpecification
      */
     @Test
     public void initialization_allTheSameCard() throws TooFewCardsException, TooManyCardsException, InvalidPairsException, CardsAlreadyInitializedException
-    {
-        //TODO: implement
-        
+    { 
         MemoryCardsGame implementation = new MemoryCardsGame();
         
         List<MemoryCard> cards = cannedData.validCardSetAllTheSame();
@@ -54,7 +52,7 @@ public class MemoryCardsGameInitializationSpecification
         
         assertEquals(actual, expected);
     }
-  
+
     /**
      * This class verifies criteria 1
      * 
@@ -62,9 +60,7 @@ public class MemoryCardsGameInitializationSpecification
      */
     @Test
     public void initialization_withDifferentPairs() throws TooFewCardsException, TooManyCardsException, InvalidPairsException, CardsAlreadyInitializedException
-    {
-        //TODO: implement
-        
+    {        
         MemoryCardsGame implementation = new MemoryCardsGame();
 
         List<MemoryCard> cards = cannedData.validCardSetCountOf2();
@@ -79,9 +75,7 @@ public class MemoryCardsGameInitializationSpecification
      */
     @Test(expectedExceptions = {TooFewCardsException.class})
     public void initialization_fails_tooFewCards() throws TooFewCardsException, TooManyCardsException, InvalidPairsException, CardsAlreadyInitializedException
-    {
-        //TODO: implement      
-        
+    {        
         MemoryCardsGame implementation = new MemoryCardsGame();
         
         List<MemoryCard> cards = new ArrayList();
@@ -105,7 +99,6 @@ public class MemoryCardsGameInitializationSpecification
     @Test(expectedExceptions = {TooManyCardsException.class})
     public void initialization_fails_tooManyCards() throws TooFewCardsException, TooManyCardsException, InvalidPairsException, CardsAlreadyInitializedException
     {
-        //TODO: implement 
         MemoryCardsGame implementation = new MemoryCardsGame();
         
         
@@ -131,7 +124,6 @@ public class MemoryCardsGameInitializationSpecification
     @Test(expectedExceptions = {InvalidPairsException.class})
     public void initialization_fails_missingPairs() throws TooFewCardsException, TooManyCardsException, InvalidPairsException, CardsAlreadyInitializedException
     {
-        //TODO: implement      
         MemoryCardsGame implementation = new MemoryCardsGame();
         
         
@@ -160,9 +152,7 @@ public class MemoryCardsGameInitializationSpecification
      */
     @Test(expectedExceptions = {CardsAlreadyInitializedException.class})
     public void initialization_fails_resetingOfCardsAfterGameStart() throws TooFewCardsException, TooManyCardsException, InvalidPairsException, CardsAlreadyInitializedException
-    {
-        //TODO: implement
-        
+    {        
         MemoryCardsGame implementation = new MemoryCardsGame();
         
         List<MemoryCard> cards = cannedData.validCardSetCountOf2();
@@ -173,7 +163,7 @@ public class MemoryCardsGameInitializationSpecification
         
         MenuCardsGameResponse startGameResponse = implementation.startGame();
         
-        assertTrue(startGameResponse == IN_PROGRESS);
+        assertTrue(startGameResponse == GAME_IN_PROGRESS);
         
         // set game cards (again)
         List<MemoryCard> secondCards = cannedData.validCardSetAllTheSame();

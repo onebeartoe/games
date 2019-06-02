@@ -1,44 +1,117 @@
-
 package org.onebeartoe.games.memory.cards.game.play.selection;
 
+import java.util.List;
+import org.onebeartoe.games.memory.cards.MemoryCard;
 import org.onebeartoe.games.memory.cards.MemoryCardsGame;
+import org.onebeartoe.games.memory.cards.game.CardsCannedDate;
+import org.onebeartoe.games.memory.cards.game.initialization.CardsAlreadyInitializedException;
+import org.onebeartoe.games.memory.cards.game.initialization.InvalidPairsException;
+import org.onebeartoe.games.memory.cards.game.initialization.MenuCardsGameResponse;
+import static org.onebeartoe.games.memory.cards.game.initialization.MenuCardsGameResponse.GUESS_ONE_ACCEPTED;
+import org.onebeartoe.games.memory.cards.game.initialization.TooFewCardsException;
+import org.onebeartoe.games.memory.cards.game.initialization.TooManyCardsException;
+import static org.testng.Assert.assertEquals;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import static org.onebeartoe.games.memory.cards.game.initialization.MenuCardsGameResponse.GUESS_TWO_ACCEPTED_MATCH;
 
 /**
  *
  * @author Roberto Marquez
  */
-public class MemoryCardsGameCardSelectionSpecification
+public class MemoryCardsGameCardSelectionSpecification 
 {
-    MemoryCardsGame implementation;
-    
+    private CardsCannedDate cannedData;
+
     @BeforeTest
-    public void setup()
+    public void setup() 
     {
-        implementation = new MemoryCardsGame();
-    }    
-  
+        cannedData = new CardsCannedDate();
+    }
 
     /**
      * This class verifies criteria 7
+     * 
+     * Go through 3 rounds verifying guess1 and guess2 are accepted
      */
     @Test
-    public void selection()
+    public void selection() throws TooFewCardsException, TooManyCardsException, InvalidPairsException, CardsAlreadyInitializedException 
     {
-        //TODO: 
+        MemoryCardsGame implementation = new MemoryCardsGame();
+
+        List<MemoryCard> cards = cannedData.validCardSetAllTheSame();
+
+        implementation.setCards(cards);
+
+        implementation.startGame();
+
+        // pair 1
+        MenuCardsGameResponse response1 = implementation.selectCard1();
+        assertEquals(response1, GUESS_ONE_ACCEPTED);
+        MenuCardsGameResponse response2 = implementation.selectCard2();
+        assertEquals(response2, GUESS_TWO_ACCEPTED_MATCH);
+
+        // pair 2
+        MenuCardsGameResponse response3 = implementation.selectCard3();
+        assertEquals(response3, GUESS_ONE_ACCEPTED);
+        MenuCardsGameResponse response4 = implementation.selectCard4();
+        assertEquals(response4, GUESS_TWO_ACCEPTED_MATCH);
+
+        // pair 3
+        MenuCardsGameResponse response5 = implementation.selectCard5();
+        assertEquals(response5, GUESS_ONE_ACCEPTED);
+        MenuCardsGameResponse response6 = implementation.selectCard6();
+        assertEquals(response6, GUESS_TWO_ACCEPTED_MATCH);
     }
 
-    
     /**
      * This class verifies criteria 8
      */
-    @Test
-    public void selection_fails()
+    @Test(expectedExceptions = {IllegalStateException.class})
+    public void selection_failsGuess1() throws TooFewCardsException, InvalidPairsException, TooManyCardsException, CardsAlreadyInitializedException 
     {
-        //TODO: implement
-        //TODO: guess 1 select a revealed card expect rejected request
-        //TODO: guess 1 select covered card expect guess 2 state
-        //TODO: guess 2 select a revealed card expect rejected request        
+        // get past round 1.  in round 2 for guess 1 select a revealed card and expect rejected request
+        MemoryCardsGame implementation = new MemoryCardsGame();
+
+        List<MemoryCard> cards = cannedData.validCardSetAllTheSame();
+
+        implementation.setCards(cards);
+
+        implementation.startGame();
+
+        // get pass round 1
+        MenuCardsGameResponse response1 = implementation.selectCard1();
+        assertEquals(response1, GUESS_ONE_ACCEPTED);
+        MenuCardsGameResponse response2 = implementation.selectCard2();
+        assertEquals(response2, GUESS_TWO_ACCEPTED_MATCH);
+
+        MenuCardsGameResponse response3 = implementation.selectCard1();  // again
+    }
+
+    /**
+     * This class verifies criteria 8
+     */
+    @Test(expectedExceptions = {IllegalStateException.class})
+    public void selection_failsGuess2() throws TooFewCardsException, InvalidPairsException, TooManyCardsException, CardsAlreadyInitializedException {
+
+        // get past round 1 and on guess 2 of round 2 select a revealed card and expect rejected request 
+        MemoryCardsGame implementation = new MemoryCardsGame();
+
+        List<MemoryCard> cards = cannedData.validCardSetAllTheSame();
+
+        implementation.setCards(cards);
+
+        implementation.startGame();
+
+        // pair 1
+        MenuCardsGameResponse response1 = implementation.selectCard1();
+        assertEquals(response1, GUESS_ONE_ACCEPTED);
+        MenuCardsGameResponse response2 = implementation.selectCard2();
+        assertEquals(response2, GUESS_TWO_ACCEPTED_MATCH);
+
+        // pair 2
+        MenuCardsGameResponse response3 = implementation.selectCard3();
+        assertEquals(response3, GUESS_ONE_ACCEPTED);
+        MenuCardsGameResponse response4 = implementation.selectCard2();   // again
     }
 }

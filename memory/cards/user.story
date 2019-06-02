@@ -11,7 +11,7 @@ tc 5 - REMOVED - cards have two states; revealed or covered and
 tc 6 - a round ends when the user makes two valid guesses and,
 tc 7 - the user can select any covered card as guess 1 or guess 2 and
 tc 8 - an already revealed card is not allowed to be marked as guess 1 or 2 and
-tc 9 - a round does not end if the user make has a guess one but make an invalid guess 2 and
+tc 9 - a round does not end if the user make a valid guess one but makes an invalid guess 2 and
 tc10 - at the end of a round, the guess 1 and guess 2 cards are marked as revealed if the cards match and
 tc11 - at the end of a round, a mis-match is recorded if the guess 1 and guess 2 cards do not match.
 
