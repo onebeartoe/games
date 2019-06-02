@@ -116,28 +116,30 @@ public class MemoryCardsGame
         return validPairs;
     }    
 
-    private MenuCardsGameResponse selectCard(MemoryCard card1) 
+    private MenuCardsGameResponse selectCard(MemoryCard card) 
     {
         if(!inProgress)
         {
             throw new IllegalStateException("selecting cards while the game is not in progress is not allowed");
         }
         
-        if(card1.getState() == MemoryCardStates.REVEALED)
+        if(card.getState() == MemoryCardStates.REVEALED)
         {
             throw new IllegalStateException("the card is revealed already");
         }
         
         MenuCardsGameResponse response;
         
+        card.setState(REVEALED);
+        
         if(guess1 == null)
         {
-            guess1 = card1;
+            guess1 = card;
             response = GUESS_ONE_ACCEPTED;
         }
         else
         {
-            guess2 = card1;
+            guess2 = card;
             
             if(guess1.getValue() == guess2.getValue())
             {
@@ -169,8 +171,6 @@ public class MemoryCardsGame
             
             resetGuesses();
         }
-        
-        card1.setState(REVEALED);
 
         return response;        
     }
