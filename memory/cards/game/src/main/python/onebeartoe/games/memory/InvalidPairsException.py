@@ -1,0 +1,3 @@
+
+class InvalidPairsException(Exception):
+    pass

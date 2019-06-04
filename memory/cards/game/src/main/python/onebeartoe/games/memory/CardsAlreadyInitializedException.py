@@ -1,0 +1,3 @@
+
+class CardsAlreadyInitializedException(Exception):
+    pass

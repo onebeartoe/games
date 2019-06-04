@@ -1,0 +1,3 @@
+
+class TooFewCardsException(Exception):
+    pass
