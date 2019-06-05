@@ -6,6 +6,10 @@
 #echo $PYTHONPATH
 
 #python -m unittest -v
-python3 -m unittest -v TestMemoryCardsGameInitialization
+python3 -m unittest -v -f MemoryCardsGameInitializationSpecification
 #python -m unittest -v onebeartoe.games.memory
 #python3 -m unittest -v onebeartoe.games.memory.TestMemoryCardsGame
+
+
+
+python3 -m unittest -v -f MemoryCardsGameCardSelectionSpecification

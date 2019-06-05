@@ -1,17 +1,20 @@
 
 from CardsAlreadyInitializedException import CardsAlreadyInitializedException
 from InvalidPairsException import InvalidPairsException
+from MemoryCardsGameButtons import MemoryCardsGameButtons
 from MemoryCardsGameResponse import MemoryCardsGameResponse
 from TooFewCardsException import TooFewCardsException
 from TooManyCardsException import TooManyCardsException
 
-class MemoryCardsGame(object):
+class MemoryCardsGame(MemoryCardsGameButtons):
+#class MemoryCardsGame(object):
     """ documentation """
 
     MAX_SIZE = 12
 
     def __init__(self):
-        self.cards = None
+        super().__init__()
+
         self.inProgress = False
         self.round = 1
 

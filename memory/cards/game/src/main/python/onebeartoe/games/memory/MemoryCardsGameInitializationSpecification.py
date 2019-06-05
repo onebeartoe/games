@@ -11,7 +11,7 @@ from MemoryCardStates import MemoryCardStates
 from TooFewCardsException import TooFewCardsException
 from TooManyCardsException import TooManyCardsException
 
-class TestMemoryCardsGameInitialization(unittest.TestCase):
+class MemoryCardsGameInitializationSpecification(unittest.TestCase):
 
     def setUp(self):
         self.cannedData = MemoryCardsGameCannedData()
