@@ -25,6 +25,70 @@ class MemoryCardsGameButtons(object):
         return allFound;
 
 
+
+
+    def getCardStatus1(self) :
+        card = self.cards[0];
+
+        return card.state
+
+
+    def getCardStatus2(self) :
+        card = self.cards[1];
+
+        return card.state
+
+    def getCardStatus3(self) :
+        card = self.cards[2];
+
+        return card.state
+
+    def getCardStatus4(self) :
+        card = self.cards[3];
+
+        return card.state
+
+    def getCardStatus5(self) :
+        card = self.cards[4];
+
+        return card.state
+
+    def getCardStatus6(self) :
+        card = self.cards[5];
+
+        return card.state
+
+    def getCardStatus7(self) :
+        card = self.cards[6];
+
+        return card.state
+
+    def getCardStatus8(self) :
+        card = self.cards[7];
+
+        return card.state
+
+    def getCardStatus9(self) :
+        card = self.cards[8];
+
+        return card.state
+
+    def getCardStatus10(self) :
+        card = self.cards[9];
+
+        return card.state
+
+    def getCardStatus11(self) :
+        card = self.cards[10];
+
+        return card.state
+
+    def getCardStatus12(self) :
+        card = self.cards[11];
+
+        return card.state
+
+
     def resetGuesses(self):
         self.guess1 = None
         self.guess2 = None
@@ -64,12 +128,9 @@ class MemoryCardsGameButtons(object):
                 else:
                     response = MemoryCardsGameResponse.GUESS_TWO_ACCEPTED_MISMATCH;
 
-
-
             self.round += 1;
 
             self.resetGuesses();
-
 
         return response;
 

@@ -33,3 +33,45 @@ class MemoryCardsGameCardSelectionSpecification(unittest.TestCase):
         self.assertEqual(response5, MemoryCardsGameResponse.GUESS_ONE_ACCEPTED);
         response6 = implementation.selectCard6();
         self.assertEqual(response6, MemoryCardsGameResponse.GUESS_TWO_ACCEPTED_MATCH);
+
+
+
+
+    def test_selection_failsGuess1(self):
+        # get past round 1.  in round 2 for guess 1 select a revealed card and expect rejected request
+        implementation = MemoryCardsGame();
+        cards = self.cannedData.validCardSetAllTheSame();
+        implementation.setCards(cards);
+        implementation.startGame();
+
+        # get pass round 1
+        response1 = implementation.selectCard1();
+        self.assertEqual(response1, MemoryCardsGameResponse.GUESS_ONE_ACCEPTED);
+        response2 = implementation.selectCard2();
+        self.assertEqual(response2, MemoryCardsGameResponse.GUESS_TWO_ACCEPTED_MATCH);
+
+        with self.assertRaises(Exception):
+            response3 = implementation.selectCard1();  # again
+
+
+
+
+    def test_selection_failsGuess2(self):
+        # get past round 1 and on guess 2 of round 2 select a revealed card and expect rejected request
+        implementation = MemoryCardsGame();
+        cards = self.cannedData.validCardSetAllTheSame();
+        implementation.setCards(cards);
+        implementation.startGame();
+
+        # pair 1
+        response1 = implementation.selectCard1();
+        self.assertEqual(response1, MemoryCardsGameResponse.GUESS_ONE_ACCEPTED);
+        response2 = implementation.selectCard2();
+        self.assertEqual(response2, MemoryCardsGameResponse.GUESS_TWO_ACCEPTED_MATCH);
+
+        # pair 2
+        response3 = implementation.selectCard3();
+        self.assertEqual(response3, MemoryCardsGameResponse.GUESS_ONE_ACCEPTED);
+
+        with self.assertRaises(Exception):
+            response4 = implementation.selectCard2();   # again
