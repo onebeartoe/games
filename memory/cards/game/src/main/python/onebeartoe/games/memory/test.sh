@@ -10,3 +10,5 @@ python3 -m unittest -v -f MemoryCardsGameInitializationSpecification
 python3 -m unittest -v -f MemoryCardsGameCardSelectionSpecification
 
 python3 -m unittest -v -f MemoryCardsGameEndOfRoundSpecification
+
+python3 -m unittest -v -f MemoryCardsGameEndOfGameSpecification
