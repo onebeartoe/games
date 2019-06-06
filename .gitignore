@@ -1,5 +1,8 @@
 
+
 **/__pycache__/*.pyc
+
+**/target/*
 
 /memory/cards/games/target/
 /memory/cards/game/target/
