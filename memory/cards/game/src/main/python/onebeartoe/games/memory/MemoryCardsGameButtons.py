@@ -97,6 +97,8 @@ class MemoryCardsGameButtons(object):
 
         response = None
 
+        print("ploop")
+
         if(not self.inProgress):
             response = MemoryCardsGameResponse.GUESS_REJECTED_GAME_NOT_IN_PROGRESS
 
@@ -107,6 +109,8 @@ class MemoryCardsGameButtons(object):
 
         else:
             card.state = MemoryCardStates.REVEALED
+
+
 
             if(self.guess1 == None):
                 self.guess1 = card;
@@ -124,6 +128,12 @@ class MemoryCardsGameButtons(object):
 
                 else:
                     self.mismatchCount += 1
+
+                    # reset the card states
+                    guessIndex1 = self.guess1.value - 1
+                    print("reset guess 1 index: ", guessIndex1)
+                    self.cards[guessIndex1].state = MemoryCardStates.COVERED # guess 1 card
+                    card.state = MemoryCardStates.COVERED   # guess 2 card
 
                     if(self.mismatchCount == 2):
                         response = MemoryCardsGameResponse.GUESS_TWO_ACCEPTED_MISMATCH_END_OF_GAME_LOSE;

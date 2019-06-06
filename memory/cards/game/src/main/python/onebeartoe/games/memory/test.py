@@ -21,6 +21,6 @@ endOfGameTests = TestLoader().loadTestsFromTestCase(MemoryCardsGameEndOfGameSpec
 suite = TestSuite([initializationTests, selectionTests, endOfRoundTests, endOfGameTests])
 
 # configure HTML report
-runner = HTMLTestRunner(add_timestamp=False, combine_reports=True, output='target', report_name="unit-test-report")
+runner = HTMLTestRunner(add_timestamp=False, combine_reports=True, output='target', report_name="unit-test-report", verbosity=5)
 
 runner.run(suite)

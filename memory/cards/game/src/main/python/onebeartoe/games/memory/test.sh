@@ -12,3 +12,6 @@ python3 -m unittest -v -f MemoryCardsGameCardSelectionSpecification
 python3 -m unittest -v -f MemoryCardsGameEndOfRoundSpecification
 
 python3 -m unittest -v -f MemoryCardsGameEndOfGameSpecification
+
+# execute only one test method
+#python3 -m unittest -v -f MemoryCardsGameCardSelectionSpecification.MemoryCardsGameCardSelectionSpecification.test_selection_failsMismatch
