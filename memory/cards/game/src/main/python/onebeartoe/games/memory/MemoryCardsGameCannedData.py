@@ -12,7 +12,7 @@ class MemoryCardsGameCannedData(object):
 
     def validCardSetAllTheSame(self):
         cards = []
-        sameValue = 5
+        sameValue = 1
 
         for x in range(0, self.game.MAX_SIZE):
             card = MemoryCard()
@@ -25,7 +25,7 @@ class MemoryCardsGameCannedData(object):
     def validCardSetCountOf2(self):
        cards = []
 
-       sameValue1 = 5
+       sameValue1 = 1
 
        half = MemoryCardsGame.MAX_SIZE / 2
        half = int(half)
@@ -35,7 +35,7 @@ class MemoryCardsGameCannedData(object):
            card.value = sameValue1
            cards.insert(x, card)
 
-       sameValue2 = 10
+       sameValue2 = 2
 
        for x in range(half, MemoryCardsGame.MAX_SIZE):
            card = MemoryCard()
