@@ -94,43 +94,45 @@ class MemoryCardsGameButtons(object):
         self.guess2 = None
 
     def selectCard(self, card):
-        if(not self.inProgress):
-            raise Exception("selecting cards while the game is not in progress is not allowed");
-
-
-        if(card.state == MemoryCardStates.REVEALED):
-            raise Exception("the card is revealed already");
-
 
         response = None
 
-        card.state = MemoryCardStates.REVEALED
+        if(not self.inProgress):
+            response = MemoryCardsGameResponse.GUESS_REJECTED_GAME_NOT_IN_PROGRESS
 
-        if(self.guess1 == None):
-            self.guess1 = card;
-            response = MemoryCardsGameResponse.GUESS_ONE_ACCEPTED;
+
+        elif(card.state == MemoryCardStates.REVEALED):
+            response = MemoryCardsGameResponse.GUESS_REJECTED_CARD_ALREADY_REVEALED
+
+
         else:
-            self.guess2 = card;
+            card.state = MemoryCardStates.REVEALED
 
-            if(self.guess1.value == self.guess2.value):
-                allPairsFound = self.allPairsFound();
-                if(allPairsFound):
-                    response = MemoryCardsGameResponse.GUESS_TWO_ACCEPTED_MATCH_END_OF_GAME_WIN;
-
-                else:
-                    response = MemoryCardsGameResponse.GUESS_TWO_ACCEPTED_MATCH;
-
+            if(self.guess1 == None):
+                self.guess1 = card;
+                response = MemoryCardsGameResponse.GUESS_ONE_ACCEPTED;
             else:
-                self.mismatchCount += 1
+                self.guess2 = card;
 
-                if(self.mismatchCount == 2):
-                    response = MemoryCardsGameResponse.GUESS_TWO_ACCEPTED_MISMATCH_END_OF_GAME_LOSE;
+                if(self.guess1.value == self.guess2.value):
+                    allPairsFound = self.allPairsFound();
+                    if(allPairsFound):
+                        response = MemoryCardsGameResponse.GUESS_TWO_ACCEPTED_MATCH_END_OF_GAME_WIN;
+
+                    else:
+                        response = MemoryCardsGameResponse.GUESS_TWO_ACCEPTED_MATCH;
+
                 else:
-                    response = MemoryCardsGameResponse.GUESS_TWO_ACCEPTED_MISMATCH;
+                    self.mismatchCount += 1
 
-            self.round += 1;
+                    if(self.mismatchCount == 2):
+                        response = MemoryCardsGameResponse.GUESS_TWO_ACCEPTED_MISMATCH_END_OF_GAME_LOSE;
+                    else:
+                        response = MemoryCardsGameResponse.GUESS_TWO_ACCEPTED_MISMATCH;
 
-            self.resetGuesses();
+                self.round += 1;
+
+                self.resetGuesses();
 
         return response;
 

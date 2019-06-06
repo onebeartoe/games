@@ -50,9 +50,8 @@ class MemoryCardsGameCardSelectionSpecification(unittest.TestCase):
         response2 = implementation.selectCard2();
         self.assertEqual(response2, MemoryCardsGameResponse.GUESS_TWO_ACCEPTED_MATCH);
 
-        with self.assertRaises(Exception):
-            response3 = implementation.selectCard1();  # again
-
+        response3 = implementation.selectCard1();  # again
+        self.assertEqual(response3, MemoryCardsGameResponse.GUESS_REJECTED_CARD_ALREADY_REVEALED)
 
 
 
@@ -73,5 +72,6 @@ class MemoryCardsGameCardSelectionSpecification(unittest.TestCase):
         response3 = implementation.selectCard3();
         self.assertEqual(response3, MemoryCardsGameResponse.GUESS_ONE_ACCEPTED);
 
-        with self.assertRaises(Exception):
-            response4 = implementation.selectCard2();   # again
+
+        response4 = implementation.selectCard2();   # again
+        self.assertEqual(response4, MemoryCardsGameResponse.GUESS_REJECTED_CARD_ALREADY_REVEALED)
