@@ -110,8 +110,6 @@ class MemoryCardsGameButtons(object):
         else:
             card.state = MemoryCardStates.REVEALED
 
-
-
             if(self.guess1 == None):
                 self.guess1 = card;
                 response = MemoryCardsGameResponse.GUESS_ONE_ACCEPTED;

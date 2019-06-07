@@ -3,6 +3,7 @@ from CardsAlreadyInitializedException import CardsAlreadyInitializedException
 from InvalidPairsException import InvalidPairsException
 from MemoryCardsGameButtons import MemoryCardsGameButtons
 from MemoryCardsGameResponse import MemoryCardsGameResponse
+from MemoryCardStates import MemoryCardStates
 from TooFewCardsException import TooFewCardsException
 from TooManyCardsException import TooManyCardsException
 
@@ -39,6 +40,18 @@ class MemoryCardsGame(MemoryCardsGameButtons):
                 break
 
         return validPairs
+
+
+    def resetGame(self):
+
+        self.resetGuesses()
+
+        for card in self.cards:
+            card.state = MemoryCardStates.COVERED
+
+        self.inProgress = False
+        self.round = 1
+
 
     def sorter(self, card):
         return card.value
