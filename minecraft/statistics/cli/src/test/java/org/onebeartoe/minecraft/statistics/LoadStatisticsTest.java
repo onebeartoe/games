@@ -13,6 +13,7 @@ import org.testng.annotations.Test;
 
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import static org.testng.AssertJUnit.assertTrue;
 
 /**
  *
@@ -202,8 +203,9 @@ public class LoadStatisticsTest
 //        });
         
         Comparator<Statistic> comparingInt = Comparator.comparingInt(t -> t.getValue() );
+        Comparator<Statistic> statsComparator = comparingInt.reversed();
         List<Statistic> topTen = allItems.stream()
-                .sorted( comparingInt.reversed() )                
+                .sorted( statsComparator )                
                 .limit(10)
                 .collect( Collectors.toList() );
         
@@ -213,6 +215,12 @@ public class LoadStatisticsTest
         {
             System.out.println(stat.name + " - " + stat.value);
         });
+        
+        Statistic ironPickaxe = topTen.get(0);
+        assertTrue( ironPickaxe.name.equals("iron_pickaxe") );
+        
+        int count = ironPickaxe.value;
+        assertTrue( count > 20850);
         
 // remove this print out        
 //        System.out.println("used:");        
