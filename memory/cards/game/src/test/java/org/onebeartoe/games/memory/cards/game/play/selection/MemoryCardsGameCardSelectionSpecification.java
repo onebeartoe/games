@@ -90,29 +90,29 @@ public class MemoryCardsGameCardSelectionSpecification
 
 
 //TODO: implement this test
-def test_selection_failsMismatch(self):
-    print("hellowwowowoow")
-    implementation = MemoryCardsGame();
-    cards = self.cannedData.validCardSetCountOf2();
-    implementation.setCards(cards);
-    implementation.startGame();
-
-    # setup a mismatch
-    response1 = implementation.selectCard1();
-    self.assertEqual(response1, MemoryCardsGameResponse.GUESS_ONE_ACCEPTED);
-    response2 = implementation.selectCard7();
-    self.assertEqual(response2, MemoryCardsGameResponse.GUESS_TWO_ACCEPTED_MISMATCH)
-
-    # verify guess one from the frist round is still selectable
-    response3 = implementation.selectCard1();
-    self.assertEqual(response3, MemoryCardsGameResponse.GUESS_ONE_ACCEPTED);
-
-    response4 = implementation.selectCard6(); # a match for response3
-    self.assertEqual(response4, MemoryCardsGameResponse.GUESS_TWO_ACCEPTED_MATCH);
-
-    # verify guess two from the frist round is still selectable
-    response5 = implementation.selectCard7()
-    self.assertEqual(response5, MemoryCardsGameResponse.GUESS_ONE_ACCEPTED);
+//def test_selection_failsMismatch(self):
+//    print("hellowwowowoow")
+//    implementation = MemoryCardsGame();
+//    cards = self.cannedData.validCardSetCountOf2();
+//    implementation.setCards(cards);
+//    implementation.startGame();
+//
+//    # setup a mismatch
+//    response1 = implementation.selectCard1();
+//    self.assertEqual(response1, MemoryCardsGameResponse.GUESS_ONE_ACCEPTED);
+//    response2 = implementation.selectCard7();
+//    self.assertEqual(response2, MemoryCardsGameResponse.GUESS_TWO_ACCEPTED_MISMATCH)
+//
+//    # verify guess one from the frist round is still selectable
+//    response3 = implementation.selectCard1();
+//    self.assertEqual(response3, MemoryCardsGameResponse.GUESS_ONE_ACCEPTED);
+//
+//    response4 = implementation.selectCard6(); # a match for response3
+//    self.assertEqual(response4, MemoryCardsGameResponse.GUESS_TWO_ACCEPTED_MATCH);
+//
+//    # verify guess two from the frist round is still selectable
+//    response5 = implementation.selectCard7()
+//    self.assertEqual(response5, MemoryCardsGameResponse.GUESS_ONE_ACCEPTED);
 
 
     /**
