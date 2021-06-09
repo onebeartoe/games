@@ -13,6 +13,7 @@ import org.testng.annotations.Test;
 
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
 
 /**
@@ -150,7 +151,11 @@ public class LoadStatisticsTest
     private void reportMined(JSONObject minecraft_mined) 
     {
         long minecraft_lily_of_the_valley = (long) minecraft_mined.get("minecraft:lily_of_the_valley");
+
         long minecraft_soul_fire = (long) minecraft_mined.get("minecraft:soul_fire");
+
+        assertEquals(34, minecraft_soul_fire);
+        
 //        System.out.println(base);
 //        System.out.println(stats);
 //        System.out.println(minecraft_mined);
@@ -185,23 +190,9 @@ public class LoadStatisticsTest
             }
         });
         
-        
         // get top 10 items used
         final List<Statistic> allItems = jsonToStatistics(used);
-                
-//                = new ArrayList();
-//        
-//        used.forEach((t, u) ->
-//        {
-//            String name = t.toString();
-//            
-//            Integer value = Integer.valueOf( u.toString() );
-//            
-//            Statistic stat = new Statistic(name, value);
-//            
-//            allItems.add(stat);
-//        });
-        
+
         Comparator<Statistic> comparingInt = Comparator.comparingInt(t -> t.getValue() );
         Comparator<Statistic> statsComparator = comparingInt.reversed();
         List<Statistic> topTen = allItems.stream()
