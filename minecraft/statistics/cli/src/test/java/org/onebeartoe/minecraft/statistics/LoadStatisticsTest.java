@@ -154,7 +154,7 @@ public class LoadStatisticsTest
 
         long minecraft_soul_fire = (long) minecraft_mined.get("minecraft:soul_fire");
 
-        assertEquals(34, minecraft_soul_fire);
+        assertEquals(38, minecraft_soul_fire);
         
 //        System.out.println(base);
 //        System.out.println(stats);
@@ -167,10 +167,10 @@ public class LoadStatisticsTest
 
     private void reportCustom(JSONObject custom) 
     {
-//        System.out.println("custom:");
+        System.out.println("custom:");
         custom.forEach( (t, u) -> 
         {
-//            System.out.println(t + " - " + u);
+            System.out.println(t + " - " + u);
         });        
     }
 
@@ -208,17 +208,14 @@ public class LoadStatisticsTest
         });
         
         Statistic ironPickaxe = topTen.get(0);
-        assertTrue( ironPickaxe.name.equals("iron_pickaxe") );
-        
+        assertTrue( ironPickaxe.name.equals("iron_pickaxe") );        
         int count = ironPickaxe.value;
         assertTrue( count > 20850);
         
-// remove this print out        
-//        System.out.println("used:");        
-        used.forEach( (t, u) -> 
-        {
-//            System.out.println(t + " - " + u);
-        });        
+        Statistic beetroot = topTen.get(9);
+        assertTrue( beetroot.name.equals("beetroot_seeds") );
+        int beetrootCount = beetroot.value;
+        assertTrue( beetrootCount > 9910);
     }
 
     private List<String> loadEdibleItems() throws IOException 
