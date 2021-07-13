@@ -1,16 +1,16 @@
 
 package org.onebeartoe.minecraft.advancements;
 
-import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.util.List;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import static org.testng.AssertJUnit.assertTrue;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 /**
+ * * This verifies the specification for AdvancementsService class.
+ * 
  *  These tests explore the advancements in a Minecraft world for a single player.
  * 
  * The tests assume the world data is stored in the default location:
@@ -18,57 +18,71 @@ import org.testng.annotations.Test;
  *     ~/.minecraft/saves/Dragon Fart 2020 - 1_15_2/
  * 
  */
-public class AdvancementsTests 
-{    
-    @Test
-    public void advancementsTest() throws IOException, ParseException
+public class AdvancementsTests
+{
+    private AdvancementsService implementation;
+    
+    @BeforeTest
+    private void initializeImplementation()
     {
-        List<Advancement> allAdvancements = loadAllAdvancements();
+        implementation = new AdvancementsService();
+    }
+    
+    @Test
+    public void unfulfilledAdvancements() throws IOException, ParseException
+    {
+        List<Advancement> unfulfilledAdvancements = implementation.incompleteUserAdvancements();
+
+//TODO: these need to be corrected        
+        assertTrue(unfulfilledAdvancements.contains("two by two") );
+        assertTrue(unfulfilledAdvancements.contains("a complete catalog") );
+        assertTrue(unfulfilledAdvancements.contains("a balanced diet") );
+        assertTrue(unfulfilledAdvancements.contains("a throw away joke") );
+        assertTrue(unfulfilledAdvancements.contains("very very frightening") );
+        assertTrue(unfulfilledAdvancements.contains("sniper dual") );
+        assertTrue(unfulfilledAdvancements.contains("bullseye") );
+        assertTrue(unfulfilledAdvancements.contains("monsters hunted") );
+        assertTrue(unfulfilledAdvancements.contains("postmortal") );
+        assertTrue(unfulfilledAdvancements.contains("two birds one arrow") );
+        assertTrue(unfulfilledAdvancements.contains("adventuring time") );
+        assertTrue(unfulfilledAdvancements.contains("the end again") );
+        assertTrue(unfulfilledAdvancements.contains("uneasy alliance") );
+        assertTrue(unfulfilledAdvancements.contains("country load take me home") );
+        assertTrue(unfulfilledAdvancements.contains("spooky scary skeleton") );
+        assertTrue(unfulfilledAdvancements.contains("withering heights") );
+        assertTrue(unfulfilledAdvancements.contains("a furious cocktail") );        
+    }
+    
+    /**
+     * This class verifies the production code returns the correct values for the 
+     * missing mobiles associated with the 'Breed All the Animals' advancement.
+     */
+    @Test
+    public void breedAllAnimals()
+    {
+        List<String> missingMobs = implementation.getNonBreedMobs();
+                
+        // These values are the expected missing values 
+        // in the advancements JSON file for this given user.
+        assertTrue( missingMobs.contains("minecraft:axolotl") );
+        assertTrue( missingMobs.contains("minecraft:donkey") );
+        assertTrue( missingMobs.contains("minecraft:fox") );
+        assertTrue( missingMobs.contains("minecraft:goat") );
+        assertTrue( missingMobs.contains("minecraft:hoglin") );
+        assertTrue( missingMobs.contains("minecraft:llama") );
+        assertTrue( missingMobs.contains("minecraft:mooshroom") );
+        assertTrue( missingMobs.contains("minecraft:mule") );
+        assertTrue( missingMobs.contains("minecraft:ocelot") );
+        assertTrue( missingMobs.contains("minecraft:panda") );
+        assertTrue( missingMobs.contains("minecraft:strider") );
+        assertTrue( missingMobs.contains("minecraft:turtle") );
+        assertTrue( missingMobs.contains("minecraft:wolf") );               
     }
 
     private List<Advancement> loadAllAdvancements() throws IOException, ParseException 
     {
-        JSONParser parser = new JSONParser();
-        
-        String statsPath = "/home/roberto/.minecraft/saves/Dragon Fart 2020 - 1_15_2/advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";
-        
-        File inile = new File(statsPath);
-
-        String s = Files.readString( inile.toPath() );
-        
-        Object obj = parser.parse(s);
-
-        JSONObject base = (JSONObject) obj;
-        
-        System.out.println("Advancements Not Done");
-        base.forEach((t, u) -> 
-        {
-//            System.out.println(t + " - " + u.getClass());
-            
-            String name = t.toString();
-            
-            if( !name.equals("DataVersion") )   // skip the DataVersion entry
-            {
-                JSONObject payload = (JSONObject) u;
-
-                boolean done = (boolean) payload.get("done");
-
-                if( !done )
-                {
-                    System.out.println(t.toString() + "");
-                }
-            }
-        });
+        implementation.loadUserAdvancements();
         
         return null;
-    }
-    
-    private class Advancement
-    {
-        String name;
-        
-        List<String> criteria;
-        
-        boolean done;
     }
 }

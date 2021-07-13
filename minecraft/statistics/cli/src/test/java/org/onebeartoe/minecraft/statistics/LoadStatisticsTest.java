@@ -17,8 +17,7 @@ import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
 
 /**
- *
- * @author roberto
+ * This verifies the specification for StatisticsService class.
  */
 public class LoadStatisticsTest 
 {    
@@ -122,6 +121,7 @@ public class LoadStatisticsTest
         
         List<Statistic> killedMobs = jsonToStatistics(killed);        
         
+//TODO: move this to the implementation class
         System.out.println();
         System.out.println("Missing Hostile Mob Kills");
         hostileMobs.forEach(m ->
@@ -168,6 +168,7 @@ public class LoadStatisticsTest
 
     private void reportCustom(JSONObject custom) 
     {
+//TODO move to implementation        
         System.out.println("custom:");
         custom.forEach( (t, u) -> 
         {
@@ -181,12 +182,16 @@ public class LoadStatisticsTest
         
         List<String> itemsEaten = loadItemsEaten(used);
         
+        List<String> missingItems = new ArrayList();
+        
         System.out.println();
         System.out.println("Missing Edible Items:");
         edibleItems.forEach(i ->
         {
             if( !itemsEaten.contains(i) )
             {
+                missingItems.add(i);
+                
                 System.out.println(i);
             }
         });
