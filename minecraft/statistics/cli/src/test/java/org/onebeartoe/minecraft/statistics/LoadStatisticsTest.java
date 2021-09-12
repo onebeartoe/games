@@ -1,4 +1,4 @@
-
+    
 package org.onebeartoe.minecraft.statistics;
 
 import java.io.File;
@@ -219,7 +219,7 @@ public class LoadStatisticsTest
         assertTrue( count > 20850);
         
         Statistic beetroot = topTen.get(9);
-        assertTrue( beetroot.name.equals("beetroot_seeds") );
+        assertTrue( beetroot.name.equals("potato") );
         int beetrootCount = beetroot.value;
         assertTrue( beetrootCount > 9910);
     }

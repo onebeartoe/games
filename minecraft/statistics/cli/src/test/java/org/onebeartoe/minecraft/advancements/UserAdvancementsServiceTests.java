@@ -18,14 +18,14 @@ import org.testng.annotations.Test;
  *     ~/.minecraft/saves/Dragon Fart 2020 - 1_15_2/
  * 
  */
-public class AdvancementsTests
+public class UserAdvancementsServiceTests
 {
-    private AdvancementsService implementation;
+    private UserAdvancementsService implementation;
     
     @BeforeTest
-    private void initializeImplementation()
+    private void initializeImplementation() throws IOException, ParseException
     {
-        implementation = new AdvancementsService();
+        implementation = new UserAdvancementsService();
     }
     
     @Test
@@ -79,10 +79,9 @@ public class AdvancementsTests
         assertTrue( missingMobs.contains("minecraft:wolf") );               
     }
 
+//TODO: is this used?    
     private List<Advancement> loadAllAdvancements() throws IOException, ParseException 
     {
-        implementation.loadUserAdvancements();
-        
-        return null;
+        return implementation.loadUserAdvancements();
     }
 }

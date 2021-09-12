@@ -1,0 +1,22 @@
+
+package org.onebeartoe.minecraft.advancements;
+
+import java.util.List;
+import static org.testng.AssertJUnit.assertTrue;
+import org.testng.annotations.Test;
+
+/**
+ *
+ */
+public class AdvancementsServiceTests
+{
+    AdvancementsService implementation = new AdvancementsService();
+
+    @Test
+    public void completeCatagorySanityCheck()
+    {
+        List<String> allCategrories = implementation.allCatCategories();
+        
+        assertTrue(allCategrories.size() == 11);
+    }
+}
