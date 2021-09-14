@@ -16,21 +16,11 @@ import org.json.simple.parser.ParseException;
  * files.
  */
 public class AdvancementsService
-{
-//    private JSONObject base;
-    
+{    
     private List<String> catCategories;
     
     public AdvancementsService() throws IOException, ParseException
     {
-        
-// TODO: put this in the 17.json file.        
-// TODO:    I think I did, already...        
-//    get it from here:
-//
-//      https://github.com/NinjaSnail1080/maac/blob/main/Resources/adv_files/17.json
-    
-
         String statsPath = "src/main/resources/advancements/minecraft/17.json";
 
         File inile = new File(statsPath);

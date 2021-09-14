@@ -78,10 +78,4 @@ public class UserAdvancementsServiceTests
         assertTrue( missingMobs.contains("minecraft:turtle") );
         assertTrue( missingMobs.contains("minecraft:wolf") );               
     }
-
-//TODO: is this used?    
-    private List<Advancement> loadAllAdvancements() throws IOException, ParseException 
-    {
-        return implementation.loadUserAdvancements();
-    }
 }
