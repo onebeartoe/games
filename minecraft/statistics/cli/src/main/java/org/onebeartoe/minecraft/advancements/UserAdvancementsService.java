@@ -33,9 +33,11 @@ public class UserAdvancementsService
         base = (JSONObject) obj;        
     }
     
-    public List<String> getNonBreedMobs()
+    public List<String> unbredMobs()
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List unbreadMobs = null;
+        
+        return unbreadMobs;
     }
 
     public List<Advancement> incompleteUserAdvancements() throws IOException, ParseException 

@@ -1,7 +1,9 @@
 
 package org.onebeartoe.minecraft.advancements;
 
+import java.io.IOException;
 import java.util.List;
+import org.json.simple.parser.ParseException;
 import static org.testng.AssertJUnit.assertTrue;
 import org.testng.annotations.Test;
 
@@ -10,7 +12,12 @@ import org.testng.annotations.Test;
  */
 public class AdvancementsServiceTests
 {
-    AdvancementsService implementation = new AdvancementsService();
+    AdvancementsService implementation;
+
+    public AdvancementsServiceTests() throws IOException, ParseException 
+    {
+        this.implementation = new AdvancementsService();
+    }
 
     @Test
     public void completeCatagorySanityCheck()

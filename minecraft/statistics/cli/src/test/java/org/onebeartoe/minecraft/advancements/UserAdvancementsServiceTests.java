@@ -60,7 +60,7 @@ public class UserAdvancementsServiceTests
     @Test
     public void breedAllAnimals()
     {
-        List<String> missingMobs = implementation.getNonBreedMobs();
+        List<String> missingMobs = implementation.unbredMobs();
                 
         // These values are the expected missing values 
         // in the advancements JSON file for this given user.
