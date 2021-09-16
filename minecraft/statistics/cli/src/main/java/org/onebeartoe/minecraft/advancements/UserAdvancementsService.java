@@ -32,6 +32,13 @@ public class UserAdvancementsService
 
         base = (JSONObject) obj;        
     }
+
+    public List<String> balancedDietItems()
+    {
+        l
+                
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     public List<String> unbredMobs()
     {

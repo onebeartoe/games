@@ -28,6 +28,16 @@ public class UserAdvancementsServiceTests
         implementation = new UserAdvancementsService();
     }
     
+    @Test
+    public void balancedDiet()
+    {
+        List<String> dietItems = implementation.balancedDietItems();
+        
+        int missingItemCount = dietItems.size();
+        
+        assertTrue(missingItemCount == 36);
+    }
+    
     /**
      * This class verifies the production code returns the correct values for the 
      * missing mobiles associated with the 'Breed All the Animals' advancement.
