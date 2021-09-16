@@ -77,5 +77,5 @@ public class UserAdvancementsServiceTests
         assertTrue( missingMobs.contains("minecraft:strider") );
         assertTrue( missingMobs.contains("minecraft:turtle") );
         assertTrue( missingMobs.contains("minecraft:wolf") );               
-    }
+    } 
 }

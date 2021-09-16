@@ -19,6 +19,8 @@ public class AdvancementsService
 {    
     private List<String> catCategories;
     
+    private List<String> balancedDietItems;
+    
     public AdvancementsService() throws IOException, ParseException
     {
         String statsPath = "src/main/resources/advancements/minecraft/17.json";
@@ -47,6 +49,20 @@ public class AdvancementsService
     {
         return List.copyOf(catCategories);
     }
+
+    public List<String> balancedDietItems() 
+    {
+        List<String> items = List.copyOf(balancedDietItems);
+        
+        return items;
+    }
+
+    private void parseBalancedDiet(JSONObject diet) 
+    {
+         balancedDietItems = new ArrayList<String>();
+         
+//         (JSONArray) catelog.get("criteria");
+    }
   
     private void parseCatCategories(JSONObject catelog) 
     {
@@ -70,6 +86,7 @@ public class AdvancementsService
         JSONObject catalog = (JSONObject)husbandry.get("minecraft:husbandry/complete_catalogue");        
         parseCatCategories(catalog);
         
-        
+        JSONObject diet = (JSONObject)husbandry.get("minecraft:husbandry/balanced_diet");
+        parseBalancedDiet(diet);
     }
 }

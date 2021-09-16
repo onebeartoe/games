@@ -20,10 +20,18 @@ public class AdvancementsServiceTests
     }
 
     @Test
-    public void completeCatagorySanityCheck()
+    public void balancedDietCountSanityCheck()
+    {
+        List<String> dietItems = implementation.balancedDietItems();
+        
+        assertTrue(dietItems.size() == 40);
+    }
+    
+    @Test
+    public void completeCatagoryCountSanityCheck()
     {
         List<String> allCategrories = implementation.allCatCategories();
         
         assertTrue(allCategrories.size() == 11);
-    }
+    }    
 }
