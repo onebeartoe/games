@@ -28,31 +28,6 @@ public class UserAdvancementsServiceTests
         implementation = new UserAdvancementsService();
     }
     
-    @Test
-    public void unfulfilledAdvancements() throws IOException, ParseException
-    {
-        List<Advancement> unfulfilledAdvancements = implementation.incompleteUserAdvancements();
-
-//TODO: these need to be corrected        
-        assertTrue(unfulfilledAdvancements.contains("two by two") );
-        assertTrue(unfulfilledAdvancements.contains("a complete catalog") );
-        assertTrue(unfulfilledAdvancements.contains("a balanced diet") );
-        assertTrue(unfulfilledAdvancements.contains("a throw away joke") );
-        assertTrue(unfulfilledAdvancements.contains("very very frightening") );
-        assertTrue(unfulfilledAdvancements.contains("sniper dual") );
-        assertTrue(unfulfilledAdvancements.contains("bullseye") );
-        assertTrue(unfulfilledAdvancements.contains("monsters hunted") );
-        assertTrue(unfulfilledAdvancements.contains("postmortal") );
-        assertTrue(unfulfilledAdvancements.contains("two birds one arrow") );
-        assertTrue(unfulfilledAdvancements.contains("adventuring time") );
-        assertTrue(unfulfilledAdvancements.contains("the end again") );
-        assertTrue(unfulfilledAdvancements.contains("uneasy alliance") );
-        assertTrue(unfulfilledAdvancements.contains("country load take me home") );
-        assertTrue(unfulfilledAdvancements.contains("spooky scary skeleton") );
-        assertTrue(unfulfilledAdvancements.contains("withering heights") );
-        assertTrue(unfulfilledAdvancements.contains("a furious cocktail") );        
-    }
-    
     /**
      * This class verifies the production code returns the correct values for the 
      * missing mobiles associated with the 'Breed All the Animals' advancement.
@@ -77,5 +52,30 @@ public class UserAdvancementsServiceTests
         assertTrue( missingMobs.contains("minecraft:strider") );
         assertTrue( missingMobs.contains("minecraft:turtle") );
         assertTrue( missingMobs.contains("minecraft:wolf") );               
-    } 
+    }
+    
+    @Test
+    public void unfulfilledAdvancements() throws IOException, ParseException
+    {
+        List<Advancement> unfulfilledAdvancements = implementation.incompleteUserAdvancements();
+
+//TODO: these need to be corrected        
+        assertTrue(unfulfilledAdvancements.contains("two by two") );
+        assertTrue(unfulfilledAdvancements.contains("a complete catalog") );
+        assertTrue(unfulfilledAdvancements.contains("a balanced diet") );
+        assertTrue(unfulfilledAdvancements.contains("a throw away joke") );
+        assertTrue(unfulfilledAdvancements.contains("very very frightening") );
+        assertTrue(unfulfilledAdvancements.contains("sniper dual") );
+        assertTrue(unfulfilledAdvancements.contains("bullseye") );
+        assertTrue(unfulfilledAdvancements.contains("monsters hunted") );
+        assertTrue(unfulfilledAdvancements.contains("postmortal") );
+        assertTrue(unfulfilledAdvancements.contains("two birds one arrow") );
+        assertTrue(unfulfilledAdvancements.contains("adventuring time") );
+        assertTrue(unfulfilledAdvancements.contains("the end again") );
+        assertTrue(unfulfilledAdvancements.contains("uneasy alliance") );
+        assertTrue(unfulfilledAdvancements.contains("country load take me home") );
+        assertTrue(unfulfilledAdvancements.contains("spooky scary skeleton") );
+        assertTrue(unfulfilledAdvancements.contains("withering heights") );
+        assertTrue(unfulfilledAdvancements.contains("a furious cocktail") );        
+    }
 }
