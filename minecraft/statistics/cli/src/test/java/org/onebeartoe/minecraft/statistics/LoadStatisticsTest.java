@@ -78,8 +78,7 @@ public class LoadStatisticsTest
     private List<Statistic> jsonToStatistics(JSONObject killed) 
     {
         List<Statistic> stats = new ArrayList();
-        
-//        System.out.println("killed:");
+
         killed.forEach((t, u) -> 
         {
             String name = t.toString().replace("minecraft:", "");
@@ -88,10 +87,7 @@ public class LoadStatisticsTest
             Statistic stat = new Statistic(name, value);
             
             stats.add(stat);
-            
-//            System.out.println(t + " - " + u);
         });
-//        System.out.println();
 
         return stats;
     }
@@ -159,11 +155,7 @@ public class LoadStatisticsTest
 //TODO: do something with these next three        
 //        System.out.println(base);
 //        System.out.println(stats);
-//        System.out.println(minecraft_mined);
-        
-//        System.out.println("lily: " + minecraft_lily_of_the_valley);        
-
-//        System.out.println("soul-fire: " + minecraft_soul_fire);                
+//        System.out.println(minecraft_mined);                
     }
 
     private void reportCustom(JSONObject custom) 
@@ -206,6 +198,7 @@ public class LoadStatisticsTest
                 .limit(10)
                 .collect( Collectors.toList() );
         
+//TODO: move this !@!@!@!@!@!2        
         System.out.println();
         System.out.println("Top Ten Items Used");
         topTen.forEach(stat ->

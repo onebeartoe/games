@@ -12,13 +12,13 @@ import org.testng.annotations.Test;
  * * This verifies the specification for AdvancementsService class.
  * 
  *  These tests explore the advancements in a Minecraft world for a single player.
- * 
+ *
  * The tests assume the world data is stored in the default location:
  * 
  *     ~/.minecraft/saves/Dragon Fart 2020 - 1_15_2/
  * 
  */
-public class UserAdvancementsServiceTests
+public class UserAdvancementsServiceTest
 {
     private UserAdvancementsService implementation;
     

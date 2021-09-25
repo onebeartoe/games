@@ -10,11 +10,11 @@ import org.testng.annotations.Test;
 /**
  *
  */
-public class AdvancementsServiceTests
+public class AdvancementsServiceTest
 {
     AdvancementsService implementation;
 
-    public AdvancementsServiceTests() throws IOException, ParseException 
+    public AdvancementsServiceTest() throws IOException, ParseException 
     {
         this.implementation = new AdvancementsService();
     }
