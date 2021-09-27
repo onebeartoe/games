@@ -4,6 +4,7 @@ package org.onebeartoe.minecraft.advancements;
 import java.io.IOException;
 import java.util.List;
 import org.json.simple.parser.ParseException;
+import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
 import org.testng.annotations.Test;
 
@@ -16,15 +17,15 @@ public class AdvancementsServiceTest
 
     public AdvancementsServiceTest() throws IOException, ParseException 
     {
-        this.implementation = new AdvancementsService();
+        implementation = new AdvancementsService();
     }
 
     @Test
     public void balancedDietCountSanityCheck()
     {
         List<String> dietItems = implementation.balancedDietItems();
-        
-        assertTrue(dietItems.size() == 40);
+
+        assertEquals(40, dietItems.size());
     }
     
     @Test
