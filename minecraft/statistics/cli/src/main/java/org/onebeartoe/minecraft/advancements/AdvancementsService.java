@@ -16,14 +16,15 @@ import org.json.simple.parser.ParseException;
  * files.
  */
 public class AdvancementsService
-{    
-    private List<String> catCategories;
-    
-    private List<String> balancedDietItems;
+{   
+//TODO: move all these to a map of <File, AdvancementsDto>    
+private List<String> catCategories;
+private List<String> balancedDietItems;
     
     public AdvancementsService() throws IOException, ParseException
     {
-        String statsPath = "src/main/resources/advancements/minecraft/17.json";
+        String statsPath = "src/main/resources/advancements/minecraft/16.json";
+//        String statsPath = "src/main/resources/advancements/minecraft/17.json";
 
         File inile = new File(statsPath);
                 
@@ -60,8 +61,15 @@ public class AdvancementsService
     private void parseBalancedDiet(JSONObject diet) 
     {
          balancedDietItems = new ArrayList<String>();
-         
-//         (JSONArray) catelog.get("criteria");
+
+        JSONArray criteria = (JSONArray) diet.get("criteria");
+        
+        criteria.forEach(c -> 
+        {
+            String s = c.toString();
+            
+            balancedDietItems.add(s);
+        });
     }
   
     private void parseCatCategories(JSONObject catelog) 
@@ -72,8 +80,8 @@ public class AdvancementsService
         
         criteria.forEach(c ->
         {
-            System.out.println("c = " + c);
-            System.out.println("class = " + c.getClass() );
+//            System.out.println("c = " + c);
+//            System.out.println("class = " + c.getClass() );
             
             String category = c.toString();
             

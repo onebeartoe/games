@@ -115,8 +115,8 @@ public class UserAdvancementsService
         
         criteria.forEach((advanementName, u) -> 
         {
-            System.out.println("a: " + advanementName);
-            System.out.println("u: " + u + "\n");   
+//            System.out.println("a: " + advanementName);
+//            System.out.println("u: " + u + "\n");   
             
             String itemName = advanementName.toString();
             
