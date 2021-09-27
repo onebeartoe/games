@@ -22,21 +22,39 @@ public class UserAdvancementsServiceTest
 {
     private UserAdvancementsService implementation;
     
+    private AdvancementsService advancementsService;
+    
     @BeforeTest
     private void initializeImplementation() throws IOException, ParseException
     {
         implementation = new UserAdvancementsService();
+        
+        advancementsService = new AdvancementsService();
     }
     
     @Test
     public void balancedDiet()
     {
-        List<String> dietItems = implementation.balancedDietItems();
+        List<String> userDietItems = implementation.balancedDietItems();
+        
+        System.out.println("user diet items:");
+        userDietItems.forEach(System.out::println);
         
 //??????
-        int missingItemCount = dietItems.size();
+        int missingItemCount = userDietItems.size();
         
         assertTrue(missingItemCount == 36);
+        
+        List<String> minecraftDietItems = advancementsService.balancedDietItems();
+        System.out.println("all diet items:");
+        minecraftDietItems.forEach(System.out::println);
+        
+        System.out.println("u: " + userDietItems.size() );
+        System.out.println("m: " + minecraftDietItems.size() );
+        
+        
+// where is the lambda!?!??!?!?!?!?!?!?!?!
+throw new UnsupportedOperationException();
     }
     
     /**
