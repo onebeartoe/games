@@ -4,6 +4,7 @@ package org.onebeartoe.minecraft.advancements;
 import java.io.IOException;
 import java.util.List;
 import org.json.simple.parser.ParseException;
+import static org.testng.AssertJUnit.assertFalse;
 import static org.testng.AssertJUnit.assertTrue;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -39,22 +40,69 @@ public class UserAdvancementsServiceTest
         
         System.out.println("user diet items:");
         userDietItems.forEach(System.out::println);
+
+        int userItemCount = userDietItems.size();
         
-//??????
-        int missingItemCount = userDietItems.size();
-        
-        assertTrue(missingItemCount == 36);
+        assertTrue(userItemCount == 36);
         
         List<String> minecraftDietItems = advancementsService.balancedDietItems();
-        System.out.println("all diet items:");
-        minecraftDietItems.forEach(System.out::println);
         
-        System.out.println("u: " + userDietItems.size() );
-        System.out.println("m: " + minecraftDietItems.size() );
+//        System.out.println("all diet items:");
+//        minecraftDietItems.forEach(System.out::println);
+//        
+//        System.out.println("u: " + userDietItems.size() );
+//        System.out.println("m: " + minecraftDietItems.size() );
+                                
+        
+        assertFalse( userDietItems.contains("dried_kelp") );
+        assertFalse( userDietItems.contains("mushroom_stew") );
+        assertFalse( userDietItems.contains("rabbit") );
         
         
-// where is the lambda!?!??!?!?!?!?!?!?!?!
-throw new UnsupportedOperationException();
+        // these are the itesm the player has already obtained:
+        assertTrue( userDietItems.contains("apple") );
+        assertTrue( userDietItems.contains("baked_potato") );
+        assertTrue( userDietItems.contains("beef") );
+        assertTrue( userDietItems.contains("beetroot") );
+        assertTrue( userDietItems.contains("beetroot_soup") );
+        assertTrue( userDietItems.contains("bread") );
+        assertTrue( userDietItems.contains("carrot") );
+        assertTrue( userDietItems.contains("chicken") );
+        assertTrue( userDietItems.contains("chorus_fruit") );
+        assertTrue( userDietItems.contains("cod") );
+        assertTrue( userDietItems.contains("cooked_beef") );
+        assertTrue( userDietItems.contains("cooked_chicken") );
+        assertTrue( userDietItems.contains("cooked_cod") );
+        assertTrue( userDietItems.contains("cooked_mutton") );
+        assertTrue( userDietItems.contains("cooked_porkchop") );
+        assertTrue( userDietItems.contains("cooked_rabbit") );
+        assertTrue( userDietItems.contains("cooked_salmon") );
+        assertTrue( userDietItems.contains("cookie") );
+        assertTrue( userDietItems.contains("enchanted_golden_apple") );
+        assertTrue( userDietItems.contains("golden_apple") );
+        assertTrue( userDietItems.contains("golden_carrot") );
+        assertTrue( userDietItems.contains("honey_bottle") );
+        assertTrue( userDietItems.contains("melon_slice") );
+        assertTrue( userDietItems.contains("mutton") );
+        assertTrue( userDietItems.contains("poisonous_potato") );
+        assertTrue( userDietItems.contains("porkchop") );
+        assertTrue( userDietItems.contains("potato") );
+        assertTrue( userDietItems.contains("pufferfish") );
+        assertTrue( userDietItems.contains("pumpkin_pie") );
+        assertTrue( userDietItems.contains("rabbit_stew") );
+        assertTrue( userDietItems.contains("rotten_flesh") );
+        assertTrue( userDietItems.contains("salmon") );
+        assertTrue( userDietItems.contains("spider_eye") );
+        assertTrue( userDietItems.contains("suspicious_stew") );
+        assertTrue( userDietItems.contains("sweet_berries") );
+        assertTrue( userDietItems.contains("tropical_fish") );        
+    }
+    
+    @Test
+    public void balancedDietSanityCheckAllUserItemsAreInTheMinecraftItemList()
+    {
+// testo!?!??!?!?!?!?!?!?!?!
+throw new UnsupportedOperationException();        
     }
     
     /**

@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -15,10 +16,7 @@ import org.json.simple.parser.ParseException;
  * This class provides service methods for user specific advancements.
  */
 public class UserAdvancementsService
-{
-//TODO: remove this and add individual member lists    
-//    private JSONObject base;
-    
+{    
     private List<String> balancedDietItems;
             
     private List<Advancement> incompleteUserAdvancements;
@@ -61,12 +59,9 @@ public class UserAdvancementsService
     }
     
     public void parseIncompleteUserAdvancements(JSONObject base) throws IOException, ParseException 
-    {        
-//        List<Advancement> notDoneAdvancements = new ArrayList();
-        
+    {                
         incompleteUserAdvancements = new ArrayList();
-        
-//        System.out.println("Advancements Not Done");
+
         base.forEach((advanementName, u) -> 
         {
             Class<? extends Object> uClass = u.getClass();
@@ -82,14 +77,9 @@ public class UserAdvancementsService
                 if( !done )
                 {
                     Class<? extends Object> tClass = advanementName.getClass();
-                    
-//                    System.out.println(advanementName.toString() + "");
-//                    
-//                    System.out.println("\tFor " + advanementName + ", you have the following criteria");
+
                     criteria.forEach((name, date) ->
-                    {
-//                        System.out.println("\t\t" + name);
-                        
+                    {                        
                         Advancement adv = new Advancement();
                         adv.name = name.toString();
                         
@@ -98,8 +88,6 @@ public class UserAdvancementsService
                 }
             }
         });
-        
-//        return notDoneAdvancements;
     }
 
     public List<Advancement> loadUserAdvancements() throws IOException, ParseException 
@@ -109,18 +97,23 @@ public class UserAdvancementsService
 
     private void parseBalancedDiet(JSONObject dietItems) 
     {
-        balancedDietItems = new ArrayList<String>();
+        List<String> allItems = new ArrayList<String>();
         
         JSONObject criteria = (JSONObject) dietItems.get("criteria");
         
         criteria.forEach((advanementName, u) -> 
         {
-//            System.out.println("a: " + advanementName);
-//            System.out.println("u: " + u + "\n");   
-            
             String itemName = advanementName.toString();
             
-            balancedDietItems.add(itemName);            
+            allItems.add(itemName);            
         });
+        
+//        Stream sorted 
+balancedDietItems                
+                = allItems.stream()
+                .sorted()
+                .collect( Collectors.toList() );
+        
+//        balancedDietItems = allItems;
     }
 }
