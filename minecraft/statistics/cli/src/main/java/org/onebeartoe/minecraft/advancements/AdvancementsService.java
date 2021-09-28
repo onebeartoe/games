@@ -20,6 +20,7 @@ public class AdvancementsService
 //TODO: move all these to a map of <File, AdvancementsDto>    
 private List<String> catCategories;
 private List<String> balancedDietItems;
+private List<String> monstersHunted;
     
     public AdvancementsService() throws IOException, ParseException
     {
@@ -37,6 +38,7 @@ private List<String> balancedDietItems;
         JSONObject base = (JSONObject) obj;
         
         JSONObject adventure = (JSONObject) base.get("adventure");
+        parseAdventure(adventure);
         
         JSONObject end = (JSONObject) base.get("end");
         
@@ -56,6 +58,27 @@ private List<String> balancedDietItems;
         List<String> items = List.copyOf(balancedDietItems);
         
         return items;
+    }
+
+    public List<String> monstersHunted() 
+    {
+        return List.copyOf(monstersHunted);
+    }
+
+    private void parseAdventure(JSONObject adventureJson) 
+    {
+        JSONObject monstersHuntedJson = (JSONObject) adventureJson.get("minecraft:adventure/kill_all_mobs");
+        
+        JSONArray criteria = (JSONArray) monstersHuntedJson.get("criteria");
+        
+        monstersHunted = new ArrayList<String>();
+        
+        criteria.forEach(m -> 
+        {
+            String monster = m.toString();
+            
+            monstersHunted.add(monster);
+        });
     }
 
     private void parseBalancedDiet(JSONObject diet) 

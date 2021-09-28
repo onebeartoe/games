@@ -21,6 +21,8 @@ public class UserAdvancementsService
             
     private List<Advancement> incompleteUserAdvancements;
 
+    private List<String> monstersHunted;
+    
     public UserAdvancementsService() throws IOException, ParseException
     {        
         String statsPath = "/home/roberto/.minecraft/saves/Dragon Fart 2020 - 1_15_2/advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";
@@ -39,6 +41,9 @@ public class UserAdvancementsService
         
         JSONObject dietItems = (JSONObject) base.get("minecraft:husbandry/balanced_diet");
         parseBalancedDiet(dietItems);
+        
+        JSONObject mobsKilled = (JSONObject) base.get("minecraft:adventure/kill_all_mobs");
+        parseMobsKilled(mobsKilled);
     }
 
     public List<String> balancedDietItems()
@@ -56,6 +61,38 @@ public class UserAdvancementsService
     public List<Advancement> incompleteUserAdvancements() throws IOException, ParseException 
     {
         return incompleteUserAdvancements;
+    }
+
+    public List<Advancement> loadUserAdvancements() throws IOException, ParseException 
+    {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public List<String> monstersHunted() 
+    {
+        return List.copyOf(monstersHunted);
+    }
+
+    private void parseBalancedDiet(JSONObject dietItems) 
+    {
+        List<String> allItems = new ArrayList<String>();
+        
+        JSONObject criteria = (JSONObject) dietItems.get("criteria");
+        
+        criteria.forEach((advanementName, u) -> 
+        {
+            String itemName = advanementName.toString();
+            
+            allItems.add(itemName);            
+        });
+        
+//        Stream sorted 
+balancedDietItems                
+                = allItems.stream()
+                .sorted()
+                .collect( Collectors.toList() );
+        
+//        balancedDietItems = allItems;
     }
     
     public void parseIncompleteUserAdvancements(JSONObject base) throws IOException, ParseException 
@@ -90,30 +127,27 @@ public class UserAdvancementsService
         });
     }
 
-    public List<Advancement> loadUserAdvancements() throws IOException, ParseException 
+    private void parseMobsKilled(JSONObject mobsKilledJson) 
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void parseBalancedDiet(JSONObject dietItems) 
-    {
-        List<String> allItems = new ArrayList<String>();
+        List<String> list = new ArrayList<String>();
         
-        JSONObject criteria = (JSONObject) dietItems.get("criteria");
+        JSONObject criteriaJson = (JSONObject) mobsKilledJson.get("criteria");
         
-        criteria.forEach((advanementName, u) -> 
+        criteriaJson.forEach( (n, w) -> 
         {
-            String itemName = advanementName.toString();
+            String name = n.toString();
             
-            allItems.add(itemName);            
+            list.add(name);
+            
+//            System.out.println("n, w -> " + 
+//                name + " :-: " + w.toString()
+//                    );
         });
         
-//        Stream sorted 
-balancedDietItems                
-                = allItems.stream()
-                .sorted()
-                .collect( Collectors.toList() );
+        monstersHunted = list.stream()
+                            .sorted()
+                            .collect( Collectors.toList() );
         
-//        balancedDietItems = allItems;
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

@@ -4,6 +4,7 @@ package org.onebeartoe.minecraft.advancements;
 import java.io.IOException;
 import java.util.List;
 import org.json.simple.parser.ParseException;
+import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertFalse;
 import static org.testng.AssertJUnit.assertTrue;
 import org.testng.annotations.BeforeTest;
@@ -129,6 +130,75 @@ throw new UnsupportedOperationException();
         assertTrue( missingMobs.contains("minecraft:strider") );
         assertTrue( missingMobs.contains("minecraft:turtle") );
         assertTrue( missingMobs.contains("minecraft:wolf") );               
+    }
+
+    @Test
+    public void monstersHunted()
+    {
+        List<String> userMonstersHunted = implementation.monstersHunted();
+
+        System.out.println("user monsters hunted:");        
+        userMonstersHunted.forEach(System.out::println);
+
+        int userItemCount = userMonstersHunted.size();        
+        assertEquals(31, userItemCount);
+        
+        List<String> minecraftMonstersHunted = advancementsService.monstersHunted();
+        
+        assertEquals(33, minecraftMonstersHunted.size());
+        
+        System.out.println("monsters hunted:");
+        minecraftMonstersHunted.forEach(System.out::println);
+        
+        System.out.println("u: " + userMonstersHunted.size() );
+        System.out.println("m: " + minecraftMonstersHunted.size() );
+                                
+        
+        assertFalse(userMonstersHunted.contains("minecraft:endermite") );
+        assertFalse(userMonstersHunted.contains("minecraft:stray") );
+        assertFalse(userMonstersHunted.contains("minecraft:wither") );
+        
+        
+        // these are the itesm the player has already obtained:
+        assertTrue(userMonstersHunted.contains("") );
+        assertTrue(userMonstersHunted.contains("") );
+        assertTrue(userMonstersHunted.contains("") );
+        assertTrue(userMonstersHunted.contains("") );    
+        
+minecraft:blaze
+minecraft:cave_spider
+minecraft:creeper
+minecraft:drowned
+minecraft:elder_guardian
+minecraft:ender_dragon
+minecraft:enderman
+
+minecraft:evoker
+minecraft:ghast
+minecraft:guardian
+minecraft:hoglin
+minecraft:husk
+minecraft:magma_cube
+minecraft:phantom
+minecraft:piglin
+minecraft:piglin_brute
+minecraft:pillager
+minecraft:ravager
+minecraft:shulker
+minecraft:silverfish
+minecraft:skeleton
+minecraft:slime
+minecraft:spider
+
+minecraft:vex
+minecraft:vindicator
+minecraft:witch
+
+minecraft:wither_skeleton
+minecraft:zoglin
+minecraft:zombie
+minecraft:zombie_villager
+minecraft:zombified_piglin        
     }
     
     @Test
