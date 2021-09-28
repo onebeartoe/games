@@ -160,45 +160,37 @@ throw new UnsupportedOperationException();
         
         
         // these are the itesm the player has already obtained:
-        assertTrue(userMonstersHunted.contains("") );
-        assertTrue(userMonstersHunted.contains("") );
-        assertTrue(userMonstersHunted.contains("") );
-        assertTrue(userMonstersHunted.contains("") );    
-        
-minecraft:blaze
-minecraft:cave_spider
-minecraft:creeper
-minecraft:drowned
-minecraft:elder_guardian
-minecraft:ender_dragon
-minecraft:enderman
-
-minecraft:evoker
-minecraft:ghast
-minecraft:guardian
-minecraft:hoglin
-minecraft:husk
-minecraft:magma_cube
-minecraft:phantom
-minecraft:piglin
-minecraft:piglin_brute
-minecraft:pillager
-minecraft:ravager
-minecraft:shulker
-minecraft:silverfish
-minecraft:skeleton
-minecraft:slime
-minecraft:spider
-
-minecraft:vex
-minecraft:vindicator
-minecraft:witch
-
-minecraft:wither_skeleton
-minecraft:zoglin
-minecraft:zombie
-minecraft:zombie_villager
-minecraft:zombified_piglin        
+        assertTrue(userMonstersHunted.contains("minecraft:blaze") );
+        assertTrue(userMonstersHunted.contains("minecraft:cave_spider") );
+        assertTrue(userMonstersHunted.contains("minecraft:creeper") );
+        assertTrue(userMonstersHunted.contains("minecraft:drowned") );
+        assertTrue(userMonstersHunted.contains("minecraft:elder_guardian") );
+        assertTrue(userMonstersHunted.contains("minecraft:ender_dragon") );
+        assertTrue(userMonstersHunted.contains("minecraft:enderman") );
+        assertTrue(userMonstersHunted.contains("minecraft:evoker") );
+        assertTrue(userMonstersHunted.contains("minecraft:ghast") );
+        assertTrue(userMonstersHunted.contains("minecraft:guardian") );
+        assertTrue(userMonstersHunted.contains("minecraft:hoglin") );
+        assertTrue(userMonstersHunted.contains("minecraft:husk") );
+        assertTrue(userMonstersHunted.contains("minecraft:magma_cube") );
+        assertTrue(userMonstersHunted.contains("minecraft:phantom") );
+        assertTrue(userMonstersHunted.contains("minecraft:piglin") );
+        assertTrue(userMonstersHunted.contains("minecraft:piglin_brute") );
+        assertTrue(userMonstersHunted.contains("minecraft:pillager") );
+        assertTrue(userMonstersHunted.contains("minecraft:ravager") );
+        assertTrue(userMonstersHunted.contains("minecraft:shulker") );
+        assertTrue(userMonstersHunted.contains("minecraft:silverfish") );
+        assertTrue(userMonstersHunted.contains("minecraft:skeleton") );
+        assertTrue(userMonstersHunted.contains("minecraft:slime") );
+        assertTrue(userMonstersHunted.contains("minecraft:spider") );
+        assertTrue(userMonstersHunted.contains("minecraft:vex") );
+        assertTrue(userMonstersHunted.contains("minecraft:vindicator") );
+        assertTrue(userMonstersHunted.contains("minecraft:witch") );
+        assertTrue(userMonstersHunted.contains("minecraft:wither_skeleton") );
+        assertTrue(userMonstersHunted.contains("minecraft:zoglin") );
+        assertTrue(userMonstersHunted.contains("minecraft:zombie") );
+        assertTrue(userMonstersHunted.contains("minecraft:zombie_villager") );
+        assertTrue(userMonstersHunted.contains("minecraft:zombified_piglin") );            
     }
     
     @Test
