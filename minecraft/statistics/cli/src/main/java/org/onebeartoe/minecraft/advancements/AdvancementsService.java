@@ -21,6 +21,7 @@ public class AdvancementsService
 private List<String> catCategories;
 private List<String> balancedDietItems;
 private List<String> monstersHunted;
+private List<String> breedableAnimals;
     
     public AdvancementsService() throws IOException, ParseException
     {
@@ -65,6 +66,11 @@ private List<String> monstersHunted;
         return List.copyOf(monstersHunted);
     }
 
+    public List<String> breedableAnimals() 
+    {                
+        return List.copyOf(breedableAnimals);
+    }
+
     private void parseAdventure(JSONObject adventureJson) 
     {
         JSONObject monstersHuntedJson = (JSONObject) adventureJson.get("minecraft:adventure/kill_all_mobs");
@@ -94,6 +100,22 @@ private List<String> monstersHunted;
             balancedDietItems.add(s);
         });
     }
+
+    private void parseBredAllAnimals(JSONObject bredAllAnimalsJson)
+    {
+        breedableAnimals = new ArrayList<String>();
+        
+        JSONArray criteria = (JSONArray) bredAllAnimalsJson.get("criteria");
+        
+System.out.println(criteria);        
+       
+        criteria.forEach(c -> 
+        {
+            String animal = c.toString();
+            
+            breedableAnimals.add(animal);
+        });
+    }
   
     private void parseCatCategories(JSONObject catelog) 
     {
@@ -119,5 +141,8 @@ private List<String> monstersHunted;
         
         JSONObject diet = (JSONObject)husbandry.get("minecraft:husbandry/balanced_diet");
         parseBalancedDiet(diet);
+        
+        JSONObject bredAllAnimals = (JSONObject) husbandry.get("minecraft:husbandry/bred_all_animals");
+        parseBredAllAnimals(bredAllAnimals);
     }
 }

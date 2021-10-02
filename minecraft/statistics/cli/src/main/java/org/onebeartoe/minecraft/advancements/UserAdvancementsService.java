@@ -18,13 +18,21 @@ import org.json.simple.parser.ParseException;
 public class UserAdvancementsService
 {    
     private List<String> balancedDietItems;
+    
+    private List<String> bredAnimals;
             
     private List<Advancement> incompleteUserAdvancements;
 
     private List<String> monstersHunted;
     
+    private List<String> unbredAnimals;
+    
+    private AdvancementsService advancementsService;
+
     public UserAdvancementsService() throws IOException, ParseException
-    {        
+    {
+        advancementsService = new AdvancementsService();
+
         String statsPath = "/home/roberto/.minecraft/saves/Dragon Fart 2020 - 1_15_2/advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";
 
         File inile = new File(statsPath);
@@ -39,9 +47,15 @@ public class UserAdvancementsService
         
         parseIncompleteUserAdvancements(base);
         
+        // husbandry
         JSONObject dietItems = (JSONObject) base.get("minecraft:husbandry/balanced_diet");
         parseBalancedDiet(dietItems);
         
+        JSONObject bredAnimals = (JSONObject) base.get("minecraft:husbandry/bred_all_animals");
+        parseBredAnimals(bredAnimals);
+        
+        
+        // adventure
         JSONObject mobsKilled = (JSONObject) base.get("minecraft:adventure/kill_all_mobs");
         parseMobsKilled(mobsKilled);
     }
@@ -49,13 +63,6 @@ public class UserAdvancementsService
     public List<String> balancedDietItems()
     {
         return List.copyOf(balancedDietItems);                
-    }
-    
-    public List<String> unbredMobs()
-    {
-        List unbreadMobs = null;
-        
-        return unbreadMobs;
     }
 
     public List<Advancement> incompleteUserAdvancements() throws IOException, ParseException 
@@ -71,6 +78,11 @@ public class UserAdvancementsService
     public List<String> monstersHunted() 
     {
         return List.copyOf(monstersHunted);
+    }
+    
+    public List<String> unbredAnimals()
+    {
+        return List.copyOf(unbredAnimals);
     }
 
     private void parseBalancedDiet(JSONObject dietItems) 
@@ -95,7 +107,7 @@ balancedDietItems
 //        balancedDietItems = allItems;
     }
     
-    public void parseIncompleteUserAdvancements(JSONObject base) throws IOException, ParseException 
+    private void parseIncompleteUserAdvancements(JSONObject base) throws IOException, ParseException 
     {                
         incompleteUserAdvancements = new ArrayList();
 
@@ -149,5 +161,42 @@ balancedDietItems
                             .collect( Collectors.toList() );
         
 //        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void parseBredAnimals(JSONObject bredAnimalsJson)
+    {
+        JSONObject criteriaJson = (JSONObject) bredAnimalsJson.get("criteria");
+
+        List<String> list = new ArrayList<String>();
+
+        criteriaJson.forEach( (n, w) -> 
+        {
+            String name = n.toString();
+            
+            list.add(name);
+            
+            System.out.println("n, w -> " + 
+                name + " :-: " + w.toString()
+                    );
+        });        
+        
+        bredAnimals = list;
+        
+        List<String> missingItems = new ArrayList();
+        
+        System.out.println();
+        System.out.println("Missing Edible Items:");
+        List<String> breedableAnimals = advancementsService.breedableAnimals();
+        breedableAnimals.forEach(i ->
+        {
+            if( !bredAnimals.contains(i) )
+            {
+                missingItems.add(i);
+                
+                System.out.println(i);
+            }
+        });
+        
+        unbredAnimals = missingItems;
     }
 }

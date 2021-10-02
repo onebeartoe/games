@@ -94,8 +94,21 @@ public class UserAdvancementsServiceTest
     @Test
     public void balancedDietSanityCheckAllUserItemsAreInTheMinecraftItemList()
     {
-// testo!?!??!?!?!?!?!?!?!?!
-throw new UnsupportedOperationException();        
+        List<String> userBalancedDietItems = implementation.balancedDietItems();
+        
+        List<String> allBalancedDietItems1 = advancementsService.balancedDietItems();
+
+        userBalancedDietItems.forEach(ubdi ->
+        {
+            boolean missingItem = !allBalancedDietItems1.contains(ubdi);
+                                   
+            if(missingItem)
+            {
+                System.out.println("missingItem = " + ubdi);
+            }
+            
+            assertFalse(missingItem);
+        });
     }
     
     /**
@@ -105,7 +118,7 @@ throw new UnsupportedOperationException();
     @Test
     public void breedAllAnimals()
     {
-        List<String> missingMobs = implementation.unbredMobs();
+        List<String> missingMobs = implementation.unbredAnimals();
                 
         // These values are the expected missing values 
         // in the advancements JSON file for this given user.
@@ -119,6 +132,8 @@ throw new UnsupportedOperationException();
         assertTrue( missingMobs.contains("minecraft:mule") );
         assertTrue( missingMobs.contains("minecraft:ocelot") );
         assertTrue( missingMobs.contains("minecraft:panda") );
+//!?!?!?!??!?!?!?!?!?!?S        
+assertTrue( missingMobs.contains("jgoajg;lkj;lkjfdsf;lkminecraft:strider") );
         assertTrue( missingMobs.contains("minecraft:strider") );
         assertTrue( missingMobs.contains("minecraft:turtle") );
         assertTrue( missingMobs.contains("minecraft:wolf") );               
