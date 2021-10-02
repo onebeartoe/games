@@ -24,8 +24,8 @@ private List<String> monstersHunted;
     
     public AdvancementsService() throws IOException, ParseException
     {
-        String statsPath = "src/main/resources/advancements/minecraft/16.json";
-//        String statsPath = "src/main/resources/advancements/minecraft/17.json";
+//        String statsPath = "src/main/resources/advancements/minecraft/16.json";
+        String statsPath = "src/main/resources/advancements/minecraft/17.json";
 
         File inile = new File(statsPath);
                 
