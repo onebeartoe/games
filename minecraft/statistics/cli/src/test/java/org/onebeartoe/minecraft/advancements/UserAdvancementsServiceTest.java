@@ -48,17 +48,9 @@ public class UserAdvancementsServiceTest
         
         List<String> minecraftDietItems = advancementsService.balancedDietItems();
         
-//        System.out.println("all diet items:");
-//        minecraftDietItems.forEach(System.out::println);
-//        
-//        System.out.println("u: " + userDietItems.size() );
-//        System.out.println("m: " + minecraftDietItems.size() );
-                                
-        
         assertFalse( userDietItems.contains("dried_kelp") );
         assertFalse( userDietItems.contains("mushroom_stew") );
         assertFalse( userDietItems.contains("rabbit") );
-        
         
         // these are the itesm the player has already obtained:
         assertTrue( userDietItems.contains("apple") );
