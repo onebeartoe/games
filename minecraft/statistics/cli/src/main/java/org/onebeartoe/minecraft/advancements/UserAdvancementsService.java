@@ -12,8 +12,6 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-//import static org.onebeartoe.minecraft.statistics.LoadStatisticsTest.statsPath;
-
 /**
  * This class provides service methods for user specific advancements.
  */
@@ -55,7 +53,6 @@ public class UserAdvancementsService
         
         JSONObject bredAnimals = (JSONObject) base.get("minecraft:husbandry/bred_all_animals");
         parseBredAnimals(bredAnimals);
-        
         
         // adventure
         JSONObject mobsKilled = (JSONObject) base.get("minecraft:adventure/kill_all_mobs");
@@ -100,13 +97,10 @@ public class UserAdvancementsService
             allItems.add(itemName);            
         });
         
-//        Stream sorted 
-balancedDietItems                
+        balancedDietItems                
                 = allItems.stream()
                 .sorted()
                 .collect( Collectors.toList() );
-        
-//        balancedDietItems = allItems;
     }
     
     private void parseIncompleteUserAdvancements(JSONObject base) throws IOException, ParseException 
@@ -152,17 +146,11 @@ balancedDietItems
             String name = n.toString();
             
             list.add(name);
-            
-//            System.out.println("n, w -> " + 
-//                name + " :-: " + w.toString()
-//                    );
         });
         
         monstersHunted = list.stream()
                             .sorted()
                             .collect( Collectors.toList() );
-        
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     private void parseBredAnimals(JSONObject bredAnimalsJson)
