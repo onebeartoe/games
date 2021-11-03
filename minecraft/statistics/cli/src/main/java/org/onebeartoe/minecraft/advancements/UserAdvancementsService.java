@@ -12,6 +12,8 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+//import static org.onebeartoe.minecraft.statistics.LoadStatisticsTest.statsPath;
+
 /**
  * This class provides service methods for user specific advancements.
  */
@@ -29,11 +31,11 @@ public class UserAdvancementsService
     
     private AdvancementsService advancementsService;
 
+    public static final String statsPath = "/home/roberto/.minecraft/saves/Dragon Fart 2020 - 1_15_2/stats/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";
+        
     public UserAdvancementsService() throws IOException, ParseException
     {
         advancementsService = new AdvancementsService();
-
-        String statsPath = "/home/roberto/.minecraft/saves/Dragon Fart 2020 - 1_15_2/advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";
 
         File inile = new File(statsPath);
                 

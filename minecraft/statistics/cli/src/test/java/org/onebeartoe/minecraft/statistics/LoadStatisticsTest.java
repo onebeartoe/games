@@ -13,6 +13,7 @@ import org.testng.annotations.Test;
 
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import static org.onebeartoe.minecraft.advancements.UserAdvancementsService.statsPath;
 import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
 
@@ -25,12 +26,11 @@ public class LoadStatisticsTest
     public void loadStatisticsTest() throws IOException, ParseException
     {
         JSONParser parser = new JSONParser();
-        
-        String statsPath = "/home/roberto/.minecraft/saves/Dragon Fart 2020 - 1_15_2/stats/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";
-        
+
         File inile = new File(statsPath);
 
-        String s = Files.readString(inile.toPath() );
+        String s = Files.readAllBytes(inile.toPath() ).toString();
+//        String s = Files.readString(inile.toPath() );
         
         Object obj = parser.parse(s);
 
