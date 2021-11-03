@@ -17,6 +17,5 @@
 
     <modules>
         <module>cli</module>
-      <module>maven-fx</module>
   </modules>
 </project>
