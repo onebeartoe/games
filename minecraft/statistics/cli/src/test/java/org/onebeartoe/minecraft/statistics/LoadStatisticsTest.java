@@ -31,8 +31,7 @@ public class LoadStatisticsTest
         
         File inile = new File(statsPath);
 
-        String s = Files.readAllBytes(inile.toPath() ).toString();
-//        String s = Files.readString(inile.toPath() );
+        String s = Files.readString(inile.toPath() );
         
         Object obj = parser.parse(s);
 
