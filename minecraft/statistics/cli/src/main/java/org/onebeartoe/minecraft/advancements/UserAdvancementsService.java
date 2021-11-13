@@ -29,7 +29,7 @@ public class UserAdvancementsService
     
     private AdvancementsService advancementsService;
 
-    public static final String statsPath = "/home/roberto/.minecraft/saves/Dragon Fart 2020 - 1_15_2/stats/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";
+    public final String statsPath = "/home/roberto/.minecraft/saves/Dragon Fart 2020 - 1_15_2/advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";
         
     public UserAdvancementsService() throws IOException, ParseException
     {
@@ -114,8 +114,14 @@ public class UserAdvancementsService
             if( !advanementName.equals("DataVersion") )   // skip the DataVersion entry
             {
                 JSONObject payload = (JSONObject) u;
-                
+
+// can this next line be moved to inside the if() statement?                
                 JSONObject criteria = (JSONObject) payload.get("criteria");
+
+if(criteria == null)
+{
+    System.out.println("a, u = " + advanementName + " - "+  u);
+}
                 
                 boolean done = (boolean) payload.get("done");
                 
@@ -127,10 +133,16 @@ public class UserAdvancementsService
                     {                        
                         Advancement adv = new Advancement();
                         adv.name = name.toString();
+  
+System.out.println("not done: " + adv.name);                        
                         
                         incompleteUserAdvancements.add(adv);
                     });                    
                 }
+else
+{
+//    System.out.println("done: " + advanementName);
+}                    
             }
         });
     }
