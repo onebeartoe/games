@@ -30,9 +30,8 @@ public class UserAdvancementsService
     private List<String> unbredAnimals;
     
     private AdvancementsService advancementsService;
-
     
-    public static final String resourcesPath = "src/test/resources/";
+    private static final String resourcesPath = "src/test/resources/";
     
     public static final String savesPath = resourcesPath + "minecraft/saves/1.17/";
 
