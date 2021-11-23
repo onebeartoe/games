@@ -31,7 +31,13 @@ public class UserAdvancementsService
     
     private AdvancementsService advancementsService;
 
-    public final String statsPath = "/home/roberto/.minecraft/saves/Dragon Fart 2020 - 1_15_2/advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";
+    
+    public static final String resourcesPath = "src/test/resources/";
+    
+    public static final String savesPath = resourcesPath + "minecraft/saves/1.17/";
+
+    public static final String statsPath = savesPath +  "advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";    
+//    public final String statsPath = "/home/roberto/.minecraft/saves/Dragon Fart 2020 - 1_15_2/advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";
         
     public UserAdvancementsService() throws IOException, ParseException
     {
