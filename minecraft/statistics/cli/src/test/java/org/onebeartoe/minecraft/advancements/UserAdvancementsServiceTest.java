@@ -226,4 +226,47 @@ assertTrue( missingMobs.contains("minecraft:strider") );
         assertTrue(unfulfilledAdvancements.contains("withering heights") );
         assertTrue(unfulfilledAdvancements.contains("a furious cocktail") );        
     }
+    
+    @Test
+    public void missingCats()
+    {
+        List<String> missingCats = implementation.missingCats();
+        
+        System.out.println("missingCats = " + missingCats);
+                     
+        int expected = 1;
+        
+        int actual = missingCats.size();
+        
+        // verify the size of the list
+        assertEquals(expected, actual);
+        
+        // check for all expected missing cats
+        assertTrue( missingCats.contains("textures/entity/cat/ragdoll.png") );
+    }
+    
+    @Test
+    public void tamedCats()
+    {
+        List<String> cats = implementation.tamedCats();
+        
+        int expected = 10;
+        
+        int actual = cats.size();
+        
+        // verify the size of the list
+        assertEquals(expected, actual);
+        
+        // check for all expected missing cats
+        assertTrue( cats.contains("textures/entity/cat/all_black.png") );
+        assertTrue( cats.contains("textures/entity/cat/black.png") );
+        assertTrue( cats.contains("textures/entity/cat/british_shorthair.png") );
+        assertTrue( cats.contains("textures/entity/cat/calico.png" ));
+        assertTrue( cats.contains("textures/entity/cat/jellie.png" ));
+        assertTrue( cats.contains("textures/entity/cat/persian.png" ));
+        assertTrue( cats.contains("textures/entity/cat/red.png" ));
+        assertTrue( cats.contains("textures/entity/cat/siamese.png" ));
+        assertTrue( cats.contains("textures/entity/cat/tabby.png" ));
+        assertTrue( cats.contains("textures/entity/cat/white.png") );
+    }
 }

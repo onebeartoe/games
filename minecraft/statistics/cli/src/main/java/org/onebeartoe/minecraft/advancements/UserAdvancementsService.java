@@ -20,6 +20,8 @@ public class UserAdvancementsService
     private List<String> balancedDietItems;
     
     private List<String> bredAnimals;
+    
+    private List<String> userCats;
             
     private List<Advancement> incompleteUserAdvancements;
 
@@ -106,6 +108,8 @@ public class UserAdvancementsService
     private void parseIncompleteUserAdvancements(JSONObject base) throws IOException, ParseException 
     {                
         incompleteUserAdvancements = new ArrayList();
+        
+        userCats = new ArrayList();
 
         base.forEach((advanementName, u) -> 
         {
@@ -137,6 +141,11 @@ if(criteria == null)
 System.out.println("not done: " + adv.name);                        
                         
                         incompleteUserAdvancements.add(adv);
+                        
+                        if( adv.name.startsWith("textures/entity/cat/") )
+                        {
+                            userCats.add(adv.name);
+                        }
                     });                    
                 }
 else
@@ -189,6 +198,7 @@ else
         System.out.println();
         System.out.println("Missing Edible Items:");
         List<String> breedableAnimals = advancementsService.breedableAnimals();
+//TODO: reuse a BiPredicate        
         breedableAnimals.forEach(i ->
         {
             if( !bredAnimals.contains(i) )
@@ -200,5 +210,42 @@ else
         });
         
         unbredAnimals = missingItems;
+    }
+
+    public List<String> missingCats() 
+    {
+        List<String> minecraftCats = advancementsService.allCatCategories();
+        
+        System.out.println("minecraftCats yo = " + minecraftCats);
+        
+        System.out.println("userCats = " + userCats);
+        
+        return missingFromB(minecraftCats, userCats);
+    }
+    
+    private List<String> missingFromB(List<String> a, List<String> b)
+    {
+        List<String> missingItems = new ArrayList();
+        
+        System.out.println();
+        System.out.println("Missing Items yo:");
+        
+//TODO: reuse a BiPredicate        
+        a.forEach(i ->
+        {
+            if( !b.contains(i) )
+            {
+                missingItems.add(i);
+                
+                System.out.println(i);
+            }
+        });
+        
+        return missingItems;
+    }
+
+    public List<String> tamedCats() 
+    {
+        return List.copyOf(userCats);
     }
 }
