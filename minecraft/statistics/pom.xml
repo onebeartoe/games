@@ -1,21 +1,42 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
-    <modelVersion>4.0.0</modelVersion>
-
-    <parent>
-        <groupId>org.onebeartoe</groupId>
-        <artifactId>minecraft</artifactId>
-        <version>1.0</version>
-    </parent>
-
-    <artifactId>statistics</artifactId>
-
-    <name>onebeartoe-games-minecraft-statistics</name>
-
-    <packaging>pom</packaging>
-
-    <modules>
-        <module>cli</module>
+        
+  
+  <modelVersion>4.0.0</modelVersion>
+        
+  
+  <parent>
+                
+    
+    <groupId>org.onebeartoe</groupId>
+                
+    
+    <artifactId>minecraft</artifactId>
+                
+    
+    <version>1.0</version>
+            
+  
+  </parent>
+        
+  
+  <artifactId>statistics</artifactId>
+        
+  
+  <name>onebeartoe-games-minecraft-statistics</name>
+        
+  
+  <packaging>pom</packaging>
+        
+  
+  <modules>
+                
+    
+    <module>cli</module>
+    
+    <module>desktop</module>
+      
   </modules>
+    
+
 </project>
