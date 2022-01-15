@@ -23,14 +23,15 @@ import static org.testng.AssertJUnit.assertTrue;
  */
 public class LoadStatisticsTest 
 {    
+
+    static final String statsPath = savesPath + "stats/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";
+//        final String statsPath = "/home/roberto/.minecraft/saves/Dragon Fart 2020 - 1_15_2/stats/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";    
+    
     @Test
     public void loadStatisticsTest() throws IOException, ParseException
     {
         JSONParser parser = new JSONParser();
 
-        final String statsPath = savesPath + "stats/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";
-//        final String statsPath = "/home/roberto/.minecraft/saves/Dragon Fart 2020 - 1_15_2/stats/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";
-        
         File inile = new File(statsPath);
 
         String s = Files.readString(inile.toPath() );
