@@ -14,7 +14,6 @@ import org.testng.annotations.Test;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import static org.onebeartoe.minecraft.advancements.UserAdvancementsService.savesPath;
-//import static org.onebeartoe.minecraft.advancements.UserAdvancementsService.statsPath;
 import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
 

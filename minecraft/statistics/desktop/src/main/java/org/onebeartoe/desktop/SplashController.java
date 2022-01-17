@@ -1,6 +1,5 @@
 package org.onebeartoe.desktop;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -31,10 +30,11 @@ public class SplashController
 
 //        String path = resource.toURI().toString();
         
+        String path = "file:///home/roberto/Versioning/owner/github/games/minecraft/statistics/desktop/target/classes/org/onebeartoe/desktop/y2meta.com-Rick-Rolled-Short-Version.ogg";
 //        String path = "file:///home/roberto/Versioning/owner/github/games/minecraft/statistics/desktop/target/classes/org/onebeartoe/desktop/y2meta.com-Rick-Rolled-Short-Version.mp4";
 //        String path = "file:///home/roberto/Versioning/owner/github/games/minecraft/statistics/desktop/target/classes/org/onebeartoe/desktop/y2meta.com-Rick-Rolled-Short-Version-codecs.mp4";
 //        String path = "file:///home/roberto/Versioning/owner/github/games/minecraft/statistics/desktop/target/classes/org/onebeartoe/desktop/y2meta.com-Rick-Rolled-Short-Version.avi";
-        String path = "file:////home/roberto/Workspace/owner/first-song/recording.2021.11.25.14.41.35.mp3";
+//        String path = "file:////home/roberto/Workspace/owner/first-song/recording.2021.11.25.14.41.35.mp3";
         System.out.println("path = " + path);
 
         //Instantiating Media class
