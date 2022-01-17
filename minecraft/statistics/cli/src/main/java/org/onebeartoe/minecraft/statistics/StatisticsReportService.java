@@ -10,6 +10,7 @@ import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 
 /**
  * 
@@ -30,7 +31,7 @@ public class StatisticsReportService
         generate(inpath, outpath);
     }
     
-    public void generate(Path inpath, String outpath) throws FileNotFoundException, IOException, URISyntaxException
+    public void generate(Path inpath, String outFile) throws FileNotFoundException, IOException, URISyntaxException
     {
         File infile = inpath.toFile();
 
@@ -41,22 +42,19 @@ public class StatisticsReportService
         }
         else
         {
-            
-            
             StatisticsReport report = statisticsService.prepare(infile.toPath());
             
-            generateHtml(report, outpath);
+            generateHtml(report, outFile);
             
-
+            File outputDirectory = new File(outFile)
+                                    .getParentFile();
+            
+            copyResources(outputDirectory);
         }
-        
-//        return outfile;
     }
 
-    private void generateHtml(StatisticsReport report, String outpath) throws IOException, URISyntaxException 
+    private void generateHtml(StatisticsReport report, String outFile) throws IOException, URISyntaxException 
     {
-        
-        
         String inpath = "/reports/template.html";
         
         URL resource = getClass().getResource(inpath);
@@ -71,7 +69,7 @@ public class StatisticsReportService
         
         File outfile = null;
         
-        outfile = new File(outpath);
+        outfile = new File(outFile);
 
         outfile.getParentFile().mkdirs();
 
@@ -85,5 +83,22 @@ public class StatisticsReportService
     private String interpolate(String html) 
     {
         return html.replace("#$%CONTENT%$#", "Hello Minecraft World!");
+    }
+
+    private void copyResources(File outputDirectory) throws URISyntaxException, IOException 
+    {        
+        URL resource = getClass().getResource("/reports/layout.css");
+        
+        URI uri = resource.toURI();
+        
+        Path layoutPath = Paths.get(uri);
+     
+        File layoutOutfile = new File(outputDirectory, "layout.css");
+        
+        Path outputPath = layoutOutfile.toPath();
+
+        Path copy = Files.copy(layoutPath, outputPath, REPLACE_EXISTING);
+        
+        System.out.println("" + copy);
     }
 }
