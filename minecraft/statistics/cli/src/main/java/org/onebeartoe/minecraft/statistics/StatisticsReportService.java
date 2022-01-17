@@ -23,18 +23,17 @@ public class StatisticsReportService
         statisticsService = new StatisticsService();
     }
     
-    public File generate(Path inpath) throws FileNotFoundException, IOException, URISyntaxException
+    public void generate(Path inpath) throws FileNotFoundException, IOException, URISyntaxException
     {
         String outpath = "target/reports/minecraft-statistics.html";
         
-        return generate(inpath, outpath);
+        generate(inpath, outpath);
     }
     
-    public File generate(Path inpath, String outpath) throws FileNotFoundException, IOException, URISyntaxException
+    public void generate(Path inpath, String outpath) throws FileNotFoundException, IOException, URISyntaxException
     {
         File infile = inpath.toFile();
 
-        File outfile = null;
         
         if( !infile.exists() )
         {
@@ -42,38 +41,45 @@ public class StatisticsReportService
         }
         else
         {
-            outfile = new File(outpath);
             
-            outfile.getParentFile().mkdirs();
             
-            Path path = outfile.toPath();
+            StatisticsReport report = statisticsService.prepare(infile.toPath());
             
-            StatisticsReport report = statisticsService.prepare(path);
+            generateHtml(report, outpath);
             
-            byte [] html = generateHtml(report);
-            
-            Files.write(path, html);
+
         }
         
-        return outfile;
+//        return outfile;
     }
 
-    private byte [] generateHtml(StatisticsReport report) throws IOException, URISyntaxException 
+    private void generateHtml(StatisticsReport report, String outpath) throws IOException, URISyntaxException 
     {
+        
+        
         String inpath = "/reports/template.html";
         
         URL resource = getClass().getResource(inpath);
         
         URI uri = resource.toURI();
         
-        Path path = Paths.get(uri);
+        Path templatePath = Paths.get(uri);
         
-        String html = Files.readString(path);
+        String html = Files.readString(templatePath);
         
         String interpolatedHtml = interpolate(html);
         
+        File outfile = null;
         
-        return interpolatedHtml.getBytes();
+        outfile = new File(outpath);
+
+        outfile.getParentFile().mkdirs();
+
+        Path path = outfile.toPath();        
+        
+        byte [] bytes = interpolatedHtml.getBytes();
+        
+        Files.write(path, bytes);
     }
 
     private String interpolate(String html) 

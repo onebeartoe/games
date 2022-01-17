@@ -51,7 +51,9 @@ public class StatisticsReportServiceTest
         
         Path inPath = Paths.get(inpath);
         
-        File outfile = implementation.generate(inPath);
+        implementation.generate(inPath);
+        
+        File outfile = new File("target/reports/minecraft-statistics.html");
         
         assertTrue( outfile.exists() );
         
@@ -71,7 +73,9 @@ public class StatisticsReportServiceTest
         
         String outpath = "target/reports/another-minecraft-statistics.html";
         
-        File outfile = implementation.generate(inPath, outpath);
+        implementation.generate(inPath, outpath);
+        
+        File outfile = new File(outpath);
         
         assertTrue( outfile.exists() );
         
