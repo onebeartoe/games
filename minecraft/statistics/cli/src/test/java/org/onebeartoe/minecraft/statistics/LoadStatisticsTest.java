@@ -222,6 +222,7 @@ public class LoadStatisticsTest
 
     private List<String> loadEdibleItems() throws IOException 
     {
+//TODO: DELETE THIS FILE and USE THE JSON FILE FROM THAT NINJA GUY        
         String ediblesPath = "src/test/resources/edibles.text";
         
         File ediblesFile = new File(ediblesPath);
