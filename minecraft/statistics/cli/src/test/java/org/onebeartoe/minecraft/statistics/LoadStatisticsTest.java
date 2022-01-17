@@ -244,6 +244,7 @@ public class LoadStatisticsTest
 //        System.out.println("used:");
         used.forEach((t, u) -> 
         {
+//TODO: fix this replace()            
             String name = t.toString().replace("minecraft:", "");
             
             usedNames.add(name);

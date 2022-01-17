@@ -8,13 +8,13 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 /**
- *
+ * 
  */
 public class StatisticsReportService
 {
     public File generate(Path inpath) throws FileNotFoundException, IOException
     {
-        String outpath = "target/minecraft-statistics.html";
+        String outpath = "target/reports/minecraft-statistics.html";
         
         return generate(inpath, outpath);
     }
@@ -33,7 +33,7 @@ public class StatisticsReportService
         {
             outfile = new File(outpath);
             
-            outfile.mkdirs();
+            outfile.getParentFile().mkdirs();
             
             Path path = outfile.toPath();
             
