@@ -84,7 +84,8 @@ public class LoadStatisticsTest
 
         killed.forEach((t, u) -> 
         {
-            String name = t.toString().replace("minecraft:", "");
+            String name = t.toString();
+//            String name = t.toString().replace("minecraft:", "");
             Integer value = Integer.valueOf( u.toString() );
             
             Statistic stat = new Statistic(name, value);
@@ -210,12 +211,13 @@ public class LoadStatisticsTest
         });
         
         Statistic ironPickaxe = topTen.get(0);
-        assertTrue( ironPickaxe.name.equals("iron_pickaxe") );        
+        assertTrue( ironPickaxe.name.equals("minecraft:iron_pickaxe") );     
+        
         int count = ironPickaxe.value;
         assertTrue( count > 20850);
         
         Statistic beetroot = topTen.get(9);
-        assertTrue( beetroot.name.equals("potato") );
+        assertTrue( beetroot.name.equals("minecraft:potato") );
         int beetrootCount = beetroot.value;
         assertTrue( beetrootCount > 9910);
     }
