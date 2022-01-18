@@ -89,6 +89,7 @@ public class StatisticsReportService
     private String interpolate(String html, StatisticsReport report) throws IOException 
     {
         Div top = new Div();        
+        top.setClasses("some-class");
         String welcome = "Statistics";
         top.add( new PlainText(welcome) );
         
@@ -96,31 +97,47 @@ public class StatisticsReportService
         PlainText statistics = new PlainText(statisticsContent);
                 
         Div bottom = new Div();
-        PlainText button = new PlainText("<button onclick=\"startEngraving()\" >Start</button>");
+        PlainText button = new PlainText("<button onclick=\"startEngraving()\" >Stop</button>");
         bottom.add(button);
 
         StringBuilder builder = new StringBuilder()
-                                    .append( top.toString() )
+                                    .append(top)
                                     .append(statistics)
                                     .append(bottom);
         
         return html.replace("#$%CONTENT%$#", builder.toString() );
     }
-
-    private void copyResources(File outputDirectory) throws URISyntaxException, IOException 
-    {        
-        URL resource = getClass().getResource("/reports/layout.css");
+    
+    private void copyOneResource(File outputDirectory, String resourcePath) throws IOException, URISyntaxException
+    {
+         URL resource = getClass().getResource("/reports/" + resourcePath);
         
         URI uri = resource.toURI();
         
         Path layoutPath = Paths.get(uri);
      
-        File layoutOutfile = new File(outputDirectory, "layout.css");
+        
+        File resourcePathFile = new File(resourcePath);
+        String filename = resourcePathFile.getName();
+        File layoutOutfile = new File(outputDirectory, filename);
         
         Path outputPath = layoutOutfile.toPath();
 
         Path copy = Files.copy(layoutPath, outputPath, REPLACE_EXISTING);
         
-        System.out.println("" + copy);
+        System.out.println("" + copy);       
+        
+    }
+
+    private void copyResources(File outputDirectory) throws URISyntaxException, IOException 
+    {        
+        String layoutResourcePath = "layout.css";                
+        copyOneResource(outputDirectory, layoutResourcePath);
+        
+        String resourcePath = "style.css";                
+        copyOneResource(outputDirectory, resourcePath);
+
+        String dirtPath = "images/NehemiahK/Minecraft-Game/dirt.png";
+        copyOneResource(outputDirectory, dirtPath);
     }
 }
