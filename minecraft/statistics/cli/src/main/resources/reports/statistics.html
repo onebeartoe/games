@@ -1,4 +1,14 @@
 
+<script type="text/javascript">
+    document.onreadystatechange = function () 
+    {
+        if (document.readyState == "complete") 
+        {
+            hideElement("ricky")
+        }
+    }
+</script>
+
     <div class="container" style="display: flex; height: 100px;">
         <div style="width: 25%; background: green;">
             Left Div
@@ -47,12 +57,11 @@
 <footer>
     <button onclick="startEngraving()" >General</button>
 
-    <button onclick="showRicky()" >Items</button>
+    <button onclick="hideElementAndShowRicky('NavMainContainer')" >Items</button>
 
     <button onclick="startEngraving()" >Mobs</button>
 
     <br>
     
     <button onclick="startEngraving()" >Done</button>
-
 </footer>
