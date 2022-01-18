@@ -11,6 +11,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
+import org.onebeartoe.html.Div;
+import org.onebeartoe.html.PlainText;
+import org.onebeartoe.io.TextFileReader;
+import org.onebeartoe.io.buffered.BufferedTextFileReader;
 
 /**
  * 
@@ -19,9 +23,13 @@ public class StatisticsReportService
 {
     private StatisticsService statisticsService;
     
+    private TextFileReader textFileReader;
+    
     public StatisticsReportService()
     {
         statisticsService = new StatisticsService();
+        
+        textFileReader = new BufferedTextFileReader();
     }
     
     public void generate(Path inpath) throws FileNotFoundException, IOException, URISyntaxException
@@ -65,24 +73,38 @@ public class StatisticsReportService
         
         String html = Files.readString(templatePath);
         
-        String interpolatedHtml = interpolate(html);
-        
-        File outfile = null;
-        
-        outfile = new File(outFile);
+        File outfile = new File(outFile);
 
         outfile.getParentFile().mkdirs();
 
         Path path = outfile.toPath();        
+        
+        String interpolatedHtml = interpolate(html, report);
         
         byte [] bytes = interpolatedHtml.getBytes();
         
         Files.write(path, bytes);
     }
 
-    private String interpolate(String html) 
+    private String interpolate(String html, StatisticsReport report) throws IOException 
     {
-        return html.replace("#$%CONTENT%$#", "Hello Minecraft World!");
+        Div top = new Div();        
+        String welcome = "Statistics";
+        top.add( new PlainText(welcome) );
+        
+        String statisticsContent = textFileReader.readTextFromClasspath("/reports/statistics.html");
+        PlainText statistics = new PlainText(statisticsContent);
+                
+        Div bottom = new Div();
+        PlainText button = new PlainText("<button onclick=\"startEngraving()\" >Start</button>");
+        bottom.add(button);
+
+        StringBuilder builder = new StringBuilder()
+                                    .append( top.toString() )
+                                    .append(statistics)
+                                    .append(bottom);
+        
+        return html.replace("#$%CONTENT%$#", builder.toString() );
     }
 
     private void copyResources(File outputDirectory) throws URISyntaxException, IOException 
