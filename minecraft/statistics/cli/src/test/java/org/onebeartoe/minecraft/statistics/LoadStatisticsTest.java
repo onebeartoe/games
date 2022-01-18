@@ -14,6 +14,7 @@ import org.testng.annotations.Test;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import static org.onebeartoe.minecraft.advancements.UserAdvancementsService.savesPath;
+import static org.onebeartoe.minecraft.statistics.StatisticsService.jsonToStatistics;
 import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
 
@@ -77,43 +78,6 @@ public class LoadStatisticsTest
                         .toLowerCase()
                         .replace(" ", "_") )
                 .collect( Collectors.toList() );    
-    }
-
-    private List<Statistic> jsonToStatistics(JSONObject killed) 
-    {
-        List<Statistic> stats = new ArrayList();
-
-        killed.forEach((t, u) -> 
-        {
-            String name = t.toString();
-//            String name = t.toString().replace("minecraft:", "");
-            Integer value = Integer.valueOf( u.toString() );
-            
-            Statistic stat = new Statistic(name, value);
-            
-            stats.add(stat);
-        });
-
-        return stats;
-    }
-    
-    private class Statistic
-    {
-        String name;
-        
-        int value;
-        
-        public Statistic(String name, int value)
-        {
-            this.name = name;
-            
-            this.value = value;
-        }
-        
-        public int getValue()
-        {
-            return value;
-        }
     }
 
     private void reportKilled(JSONObject killed) throws IOException 
