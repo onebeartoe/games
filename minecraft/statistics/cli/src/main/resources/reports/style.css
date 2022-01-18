@@ -1,3 +1,17 @@
 
+body
+{
+    background-image: url("dirt.png");
+}
 
 
+.SideBySideLeft
+{
+    background: forestgreen;
+}
+
+
+.SideBySideRight
+{
+    background: orange;
+}

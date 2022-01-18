@@ -1,5 +1,21 @@
 
 body
 {
-    background-color: brown;
+    
+}
+
+.SideBySideContainer
+{
+    display: flex; 
+    height: 100px;
+}
+
+.SideBySideLeft
+{
+    width: 25%; 
+}
+
+.SideBySideRight
+{
+    flex-grow: 1;
 }
