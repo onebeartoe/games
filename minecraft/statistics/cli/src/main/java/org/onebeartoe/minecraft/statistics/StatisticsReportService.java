@@ -96,14 +96,9 @@ public class StatisticsReportService
         String statisticsContent = textFileReader.readTextFromClasspath("/reports/statistics.html");
         PlainText statistics = new PlainText(statisticsContent);
                 
-        Div bottom = new Div();
-        PlainText button = new PlainText("<button onclick=\"startEngraving()\" >Stop</button>");
-        bottom.add(button);
-
         StringBuilder builder = new StringBuilder()
                                     .append(top)
-                                    .append(statistics)
-                                    .append(bottom);
+                                    .append(statistics);
         
         return html.replace("#$%CONTENT%$#", builder.toString() );
     }
@@ -139,5 +134,11 @@ public class StatisticsReportService
 
         String dirtPath = "images/NehemiahK/Minecraft-Game/dirt.png";
         copyOneResource(outputDirectory, dirtPath);
+        
+        String javascriptResource = "minecraft.js";
+        copyOneResource(outputDirectory, javascriptResource);
+        
+        String rickyResource = "y2meta.com-Rick-Rolled-Short-Version.mp4";
+        copyOneResource(outputDirectory, rickyResource);
     }
 }
