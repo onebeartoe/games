@@ -123,12 +123,7 @@ public class LoadStatisticsTest
 
         long minecraft_soul_fire = (long) minecraft_mined.get("minecraft:soul_fire");
 
-        assertEquals(38, minecraft_soul_fire);
-
-//TODO: do something with these next three        
-//        System.out.println(base);
-//        System.out.println(stats);
-//        System.out.println(minecraft_mined);                
+        assertEquals(38, minecraft_soul_fire);               
     }
 
     private void reportCustom(JSONObject custom) 
