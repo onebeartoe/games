@@ -1,7 +1,8 @@
 
 body
 {
-    
+  height: 100vh;
+  padding: 0;    
 }
 
 .rickyVideo
@@ -13,7 +14,7 @@ body
 .SideBySideContainer
 {
     display: flex; 
-    height: 100px;
+    height: 60%;
 }
 
 .SideBySideLeft
