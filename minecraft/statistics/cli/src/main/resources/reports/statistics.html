@@ -1,37 +1,19 @@
 
-<script type="text/javascript">
-    document.onreadystatechange = function () 
-    {
-        if (document.readyState == "complete") 
+    <script type="text/javascript">
+        document.onreadystatechange = function () 
         {
-            hideElement("ricky")
+            if (document.readyState == "complete") 
+            {
+                hideElement("ricky")
+            }
         }
-    }
-</script>
+    </script>
 
     <<header>
         Statistics
     </header>
 
-
-
-    <div class="container" style="display: flex; height: 100px;">
-        <div style="width: 25%; background: green;">
-            Left Div
-        </div>
-        <div style="flex-grow: 1; background: blue;">
-            Right Div
-            
-            <div>
-                Most killed mob by user
-
-                #$%MOST_KILLED_MOB_BY_USER_CONTENT%$#
-            </div>
-        </div>
-    </div>
-
-
-<br>
+    <br>
 
     <div id="NavMainContainer" class="SideBySideContainer" >
         <nav id="nav" class="SideBySideLeft" >
@@ -71,24 +53,18 @@
                     </div>
                 </div>
             </section>              
-        </main>
-                
-
-        
-        
+        </main>        
     </div>
 
-  
+    <footer>
+        <button onclick="startEngraving()" >General</button>
 
-<footer>
-    <button onclick="startEngraving()" >General</button>
+        <button onclick="hideElementAndShowRicky('nav'); 
+                         hideElement('mostKilledByUser');" >Items</button>
 
-    <button onclick="hideElementAndShowRicky('nav'); 
-                     hideElement('mostKilledByUser');" >Items</button>
+        <button onclick="startEngraving()" >Mobs</button>
 
-    <button onclick="startEngraving()" >Mobs</button>
+        <br>
 
-    <br>
-    
-    <button onclick="startEngraving()" >Done</button>
-</footer>
+        <button onclick="startEngraving()" >Done</button>
+    </footer>
