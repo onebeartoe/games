@@ -135,6 +135,10 @@ public class StatisticsReportService
         String dirtPath = "images/NehemiahK/Minecraft-Game/dirt.png";
         copyOneResource(outputDirectory, dirtPath);
         
+        String darkerDirtPath = "images/NehemiahK/Minecraft-Game/darker-dirt.png";
+        copyOneResource(outputDirectory, darkerDirtPath);
+        
+        
         String javascriptResource = "minecraft.js";
         copyOneResource(outputDirectory, javascriptResource);
         

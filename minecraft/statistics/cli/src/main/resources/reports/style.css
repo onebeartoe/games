@@ -5,13 +5,16 @@ body
 }
 
 
+.SideBySideContainer
+{
+    background-image: url("darker-dirt.png");
+}
+
 .SideBySideLeft
 {
-    background: forestgreen;
 }
 
 
 .SideBySideRight
 {
-    background: orange;
 }
