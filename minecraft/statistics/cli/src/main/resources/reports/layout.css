@@ -4,6 +4,12 @@ body
     
 }
 
+.rickyVideo
+{
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .SideBySideContainer
 {
     display: flex; 
