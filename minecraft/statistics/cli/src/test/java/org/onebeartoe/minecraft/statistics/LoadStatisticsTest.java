@@ -25,48 +25,22 @@ public class LoadStatisticsTest
 {    
 //TODO: Remove all code from this test class
     
+    UserStatisticsService implementation = new UserStatisticsService();
+    
     static final String statsPath = savesPath + "stats/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";
 //        final String statsPath = "/home/roberto/.minecraft/saves/Dragon Fart 2020 - 1_15_2/stats/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";    
     
     @Test
     public void loadStatisticsTest() throws IOException, ParseException
     {
-        JSONParser parser = new JSONParser();
-
-        File inile = new File(statsPath);
-
-        String s = Files.readString(inile.toPath() );
-        
-        Object obj = parser.parse(s);
-
-        JSONObject base = (JSONObject) obj;
-        JSONObject stats = (JSONObject) base.get("stats");
-        
-        JSONObject minecraft_mined = (JSONObject) stats.get("minecraft:mined");
-        reportMined(minecraft_mined);
-        
-        JSONObject broken = (JSONObject) stats.get("minecraft:broken");
-        JSONObject crafted = (JSONObject) stats.get("minecraft:crafted");
-        JSONObject dropped = (JSONObject) stats.get("minecraft:dropped");
-        
-        JSONObject killed = (JSONObject) stats.get("minecraft:killed");
-        
-        JSONObject killedBy = (JSONObject) stats.get("minecraft:killed_by");
-        
-        
-        JSONObject pickedUp = (JSONObject) stats.get("minecraft:picked_up");
-        
-        JSONObject used = (JSONObject) stats.get("minecraft:used");
-        
-        
-//TODO: !!!!do something with CUSTOM!!!!        
-        JSONObject custom = (JSONObject) stats.get("minecraft:custom");
-        
+        File infile = new File(statsPath);
+        StatisticsReport report = implementation.parse(infile);
         
 
-        reportKilled(killed);        
-        reportUsed(used);        
-        reportCustom(custom);        
+        reportMined(report.minecraft_mined);
+        reportKilled(report.killed);        
+        reportUsed(report.used);        
+        reportCustom(report.custom);        
     }
 
     private List<String> loadHostileMobs() throws IOException 
