@@ -11,8 +11,16 @@ body
     
     font-family: minecraftUiFont;
     font-size: xx-large;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    
 }
 
+header
+{
+    font-size: 5em;
+    text-align: center;
+}
 
 .SideBySideContainer
 {

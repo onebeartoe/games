@@ -91,12 +91,7 @@ public class StatisticsReportService
     }
 
     private String interpolate(String html, StatisticsReport report) throws IOException 
-    {
-        Div top = new Div();        
-        top.setClasses("some-class");
-        String welcome = "Statistics";
-        top.add( new PlainText(welcome) );
-        
+    {        
         String statisticsContent = textFileReader.readTextFromClasspath("/reports/statistics.html");
         
         StringBuilder killedBuilder = new StringBuilder();
@@ -110,7 +105,6 @@ public class StatisticsReportService
         PlainText statistics = new PlainText(statisticsContent);
                 
         StringBuilder builder = new StringBuilder()
-                                    .append(top)
                                     .append(statistics);
         
         return html.replace("#$%CONTENT%$#", builder.toString() );

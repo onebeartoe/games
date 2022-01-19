@@ -9,6 +9,12 @@
     }
 </script>
 
+    <<header>
+        Statistics
+    </header>
+
+
+
     <div class="container" style="display: flex; height: 100px;">
         <div style="width: 25%; background: green;">
             Left Div
@@ -28,41 +34,57 @@
 <br>
 
     <div id="NavMainContainer" class="SideBySideContainer" >
-        <div class="SideBySideLeft" >
+        <nav id="nav" class="SideBySideLeft" >
             Loopppp Div
-        </div>
+            
+            <br>
+            
+            link
+            
+            <br>
+            
+            link 2
+            
+        </nav>
 
-        <div class="SideBySideRight" >
+        <main class="SideBySideRight" >
             Ploop
             
-            <div>
+            <section id="mostKilledByUser">
                 Most Killed Mob by User
 
                 #$%MOST_KILLED_MOB_BY_USER_CONTENT%$#
-            </div>
-        </div>
+            </section>
+            
+            <section>
+                <div id="ricky" class="rickyVideo">
+                    <div class="rickyVideo">
+                        <video id="rickyVideo" 
+                               class ="rickyVideo"
+                               width="520" height="440" 
+                               controls>
+
+                            <source src="y2meta.com-Rick-Rolled-Short-Version.mp4" type="video/mp4">
+
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </section>              
+        </main>
+                
+
+        
+        
     </div>
 
-<div>
-    <div id="ricky" class="rickyVideo">
-        <div class="rickyVideo">
-            <video id="rickyVideo" 
-                   class ="rickyVideo"
-                   width="520" height="440" 
-                   controls>
-
-                <source src="y2meta.com-Rick-Rolled-Short-Version.mp4" type="video/mp4">
-
-                Your browser does not support the video tag.
-            </video>
-        </div>
-    </div>
-</div>    
+  
 
 <footer>
     <button onclick="startEngraving()" >General</button>
 
-    <button onclick="hideElementAndShowRicky('NavMainContainer')" >Items</button>
+    <button onclick="hideElementAndShowRicky('nav'); 
+                     hideElement('mostKilledByUser');" >Items</button>
 
     <button onclick="startEngraving()" >Mobs</button>
 
