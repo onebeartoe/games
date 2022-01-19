@@ -118,7 +118,7 @@ public class StatisticsReportService
     
     private void copyOneResource(File outputDirectory, String resourcePath) throws IOException, URISyntaxException
     {
-         URL resource = getClass().getResource("/reports/" + resourcePath);
+        URL resource = getClass().getResource("/reports/" + resourcePath);
         
         URI uri = resource.toURI();
         
@@ -133,8 +133,7 @@ public class StatisticsReportService
 
         Path copy = Files.copy(layoutPath, outputPath, REPLACE_EXISTING);
         
-        System.out.println("" + copy);       
-        
+        System.out.println("" + copy);
     }
 
     private void copyResources(File outputDirectory) throws URISyntaxException, IOException 
@@ -144,6 +143,9 @@ public class StatisticsReportService
         
         String resourcePath = "style.css";                
         copyOneResource(outputDirectory, resourcePath);
+        
+        String fontResourcePath = "fonts/minecraft.ttf";                
+        copyOneResource(outputDirectory, fontResourcePath);
 
         String dirtPath = "images/NehemiahK/Minecraft-Game/dirt.png";
         copyOneResource(outputDirectory, dirtPath);

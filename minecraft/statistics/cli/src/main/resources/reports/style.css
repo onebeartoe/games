@@ -1,7 +1,16 @@
 
+@font-face {
+  font-family: minecraftUiFont;
+  src: url(minecraft.ttf);
+}
+
+
 body
 {
     background-image: url("dirt.png");
+    
+    font-family: minecraftUiFont;
+    font-size: xx-large;
 }
 
 

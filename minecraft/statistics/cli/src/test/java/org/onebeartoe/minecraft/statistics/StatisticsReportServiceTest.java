@@ -12,7 +12,6 @@ import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import static org.onebeartoe.minecraft.advancements.UserAdvancementsService.advancementsPath;
 import static org.onebeartoe.minecraft.statistics.StatisticsServiceTest.statsPath;
 
 /**
