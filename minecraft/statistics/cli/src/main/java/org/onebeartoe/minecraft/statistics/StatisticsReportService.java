@@ -11,6 +11,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
+import org.json.simple.parser.ParseException;
 import org.onebeartoe.html.Div;
 import org.onebeartoe.html.PlainText;
 import org.onebeartoe.io.TextFileReader;
@@ -21,25 +22,27 @@ import org.onebeartoe.io.buffered.BufferedTextFileReader;
  */
 public class StatisticsReportService
 {
-    private StatisticsService statisticsService;
+//    private StatisticsService statisticsService;
+    private UserStatisticsService statisticsService;
     
     private TextFileReader textFileReader;
     
     public StatisticsReportService()
     {
-        statisticsService = new StatisticsService();
+//        statisticsService = new StatisticsService();
+        statisticsService = new UserStatisticsService();
         
         textFileReader = new BufferedTextFileReader();
     }
     
-    public void generate(Path inpath) throws FileNotFoundException, IOException, URISyntaxException
+    public void generate(Path inpath) throws FileNotFoundException, IOException, URISyntaxException, ParseException
     {
         String outpath = "target/reports/minecraft-statistics.html";
         
         generate(inpath, outpath);
     }
     
-    public void generate(Path inpath, String outFile) throws FileNotFoundException, IOException, URISyntaxException
+    public void generate(Path inpath, String outFile) throws FileNotFoundException, IOException, URISyntaxException, ParseException
     {
         File infile = inpath.toFile();
 
@@ -50,7 +53,8 @@ public class StatisticsReportService
         }
         else
         {
-            StatisticsReport report = statisticsService.prepare(infile.toPath());
+//            StatisticsReport report = statisticsService.parse(infile.toPath());
+            StatisticsReport report = statisticsService.parse(infile);
             
             generateHtml(report, outFile);
             
@@ -94,6 +98,15 @@ public class StatisticsReportService
         top.add( new PlainText(welcome) );
         
         String statisticsContent = textFileReader.readTextFromClasspath("/reports/statistics.html");
+        
+        StringBuilder killedBuilder = new StringBuilder();
+        for(String killed : report.missingHostileMobKills)
+        {
+            killedBuilder.append(killed);
+            killedBuilder.append("<br>");
+        }
+        statisticsContent = statisticsContent.replace("#$%MOST_KILLED_MOB_BY_USER_CONTENT%$#", killedBuilder.toString() );
+        
         PlainText statistics = new PlainText(statisticsContent);
                 
         StringBuilder builder = new StringBuilder()

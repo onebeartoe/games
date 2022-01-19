@@ -30,10 +30,8 @@ public class StatisticsService
         return stats;
     }
 
-    public StatisticsReport prepare(Path path) 
+    public StatisticsReport parse(Path path) 
     {
-        
-        
         StatisticsReport statisticsReport = new StatisticsReport();
         
         

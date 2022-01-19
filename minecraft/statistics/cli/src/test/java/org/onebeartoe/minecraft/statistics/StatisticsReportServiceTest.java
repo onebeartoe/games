@@ -7,11 +7,13 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import static org.onebeartoe.minecraft.advancements.UserAdvancementsService.statsPath;
+import org.json.simple.parser.ParseException;
 import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import static org.onebeartoe.minecraft.advancements.UserAdvancementsService.advancementsPath;
+import static org.onebeartoe.minecraft.statistics.StatisticsServiceTest.statsPath;
 
 /**
  *
@@ -31,7 +33,7 @@ public class StatisticsReportServiceTest
      * input file does not exist.
      */
     @Test(expectedExceptions = FileNotFoundException.class)
-    public void generate_fail_inputFileDoesNotExist() throws FileNotFoundException, IOException, URISyntaxException
+    public void generate_fail_inputFileDoesNotExist() throws FileNotFoundException, IOException, URISyntaxException, ParseException
     {
         String inpath = "some/fake/path.xml";
         
@@ -45,7 +47,7 @@ public class StatisticsReportServiceTest
      * none is specified by the caller.
      */
     @Test
-    public void generate_pass_defaultPathIsUsedWhenCallerDoesNotSpecifiy() throws FileNotFoundException, IOException, URISyntaxException
+    public void generate_pass_defaultPathIsUsedWhenCallerDoesNotSpecifiy() throws FileNotFoundException, IOException, URISyntaxException, ParseException
     {
         String inpath = statsPath;
         
@@ -65,7 +67,7 @@ public class StatisticsReportServiceTest
      * caller. 
      */
     @Test
-    public void generate_pass_callersOutputPathIsUsed() throws IOException, FileNotFoundException, URISyntaxException
+    public void generate_pass_callersOutputPathIsUsed() throws IOException, FileNotFoundException, URISyntaxException, ParseException
     {
         String inpath = statsPath;
         

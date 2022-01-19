@@ -22,71 +22,63 @@ import static org.testng.AssertJUnit.assertTrue;
  */
 public class StatisticsServiceTest 
 {    
-//TODO: Remove all code from this test class
+//TODO: Remove all implementation/production code from this test class
     
     UserStatisticsService implementation = new UserStatisticsService();
+    
     
     static final String statsPath = savesPath + "stats/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";
     
     @Test
-    public void loadStatisticsTest() throws IOException, ParseException
+    public void parse_pass_oneDotSeventeen() throws IOException, ParseException
     {
         File infile = new File(statsPath);
-        StatisticsReport report = implementation.parse(infile);
         
-
+        StatisticsReport report = implementation.parse(infile);
+   
         reportMined(report.minecraft_mined);
-        reportKilled(report.killed);        
+        parseMissingHostileMobKills(report);        
         reportUsed(report.used);        
         reportCustom(report.custom);        
     }
-
-    private List<String> loadHostileMobs() throws IOException 
-    {
-        String mobsPath = "src/test/resources/hostile-mobs.text";
+  
+    private void parseMissingHostileMobKills(StatisticsReport report) throws IOException 
+    {   
+        List<String> missingMobKills = report.missingHostileMobKills;
         
-        File mobsFile = new File(mobsPath);
-        
-        List<String> allLines = Files.readAllLines(mobsFile.toPath() );
-        
-        return allLines.stream()
-                .map(m -> m.trim()
-                        .toLowerCase()
-                        .replace(" ", "_") )
-                .collect( Collectors.toList() );    
-    }
-
-    private void reportKilled(JSONObject killed) throws IOException 
-    {               
-        List<String> hostileMobs = loadHostileMobs();
-        
-        List<Statistic> killedMobs = jsonToStatistics(killed);        
-        
-//TODO: move this to the implementation class
-        System.out.println();
-        System.out.println("Missing Hostile Mob Kills");
-        hostileMobs.forEach(m ->
-        {
-            boolean found = false;
-            for(Statistic stat : killedMobs)
-            {
-                if( stat.name.equals(m) )
-                {
-                    found = true;                    
-                    
-                    break;
-                }
-            }
-            
-            if(!found)
-            {
-                // print the missing item
-                System.out.println(m);
-            }
-        });
-
-//TODO: herhehrerheheheh        
-//        killedMobs.
+        assertTrue( missingMobKills.contains("blaze") );
+        assertTrue( missingMobKills.contains("chicken_jockey") );
+        assertTrue( missingMobKills.contains("creeper") );
+        assertTrue( missingMobKills.contains("drowned") );
+        assertTrue( missingMobKills.contains("elder_guardian") );
+        assertTrue( missingMobKills.contains("endermite") );
+        assertTrue( missingMobKills.contains("evoker") );
+        assertTrue( missingMobKills.contains("ghast") );
+        assertTrue( missingMobKills.contains("guardian") );
+        assertTrue( missingMobKills.contains("hoglin") );
+        assertTrue( missingMobKills.contains("husk") );
+        assertTrue( missingMobKills.contains("magma_cube") );
+        assertTrue( missingMobKills.contains("phantom") );
+        assertTrue( missingMobKills.contains("piglin_brute") );
+        assertTrue( missingMobKills.contains("pillager") );
+        assertTrue( missingMobKills.contains("ravager") );
+        assertTrue( missingMobKills.contains("ravager_jockey") );
+        assertTrue( missingMobKills.contains("shulker") );
+        assertTrue( missingMobKills.contains("silverfish") );
+        assertTrue( missingMobKills.contains("skeleton") );
+        assertTrue( missingMobKills.contains("skeleton_horseman") );
+        assertTrue( missingMobKills.contains("husk") );
+        assertTrue( missingMobKills.contains("zombie_villager") );
+        assertTrue( missingMobKills.contains("slime") );
+        assertTrue( missingMobKills.contains("spider_jockey") );
+        assertTrue( missingMobKills.contains("stray") );
+        assertTrue( missingMobKills.contains("vex") );
+        assertTrue( missingMobKills.contains("vindicator") );
+        assertTrue( missingMobKills.contains("witch") );
+        assertTrue( missingMobKills.contains("wither_skeleton") );
+        assertTrue( missingMobKills.contains("zoglin") );
+        assertTrue( missingMobKills.contains("zombie") );
+        assertTrue( missingMobKills.contains("zombie_villager") );
     }
 
     private void reportMined(JSONObject minecraft_mined) 

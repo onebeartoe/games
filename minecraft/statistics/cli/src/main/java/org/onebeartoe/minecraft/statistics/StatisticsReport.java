@@ -1,6 +1,7 @@
 
 package org.onebeartoe.minecraft.statistics;
 
+import java.util.List;
 import org.json.simple.JSONObject;
 
 /**
@@ -8,8 +9,23 @@ import org.json.simple.JSONObject;
  */
 public class StatisticsReport 
 {
+//TODO: convert these JSONObject members to data types    
+    @Deprecated
     JSONObject minecraft_mined;
-    JSONObject killed ;        
+
+//TODO: convert these JSONObject members to data types        
+//    @Deprecated
+//    JSONObject killed ;        
+    
+    public List<String> missingHostileMobKills;
+    
+
+//TODO: convert these JSONObject members to data types    
+    @Deprecated
     JSONObject used ;        
+    
+
+//TODO: convert these JSONObject members to data types    
+    @Deprecated
     JSONObject custom;
 }
