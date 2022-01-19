@@ -50,7 +50,6 @@ public class LoadStatisticsTest
         JSONObject dropped = (JSONObject) stats.get("minecraft:dropped");
         
         JSONObject killed = (JSONObject) stats.get("minecraft:killed");
-        reportKilled(killed);
         
         JSONObject killedBy = (JSONObject) stats.get("minecraft:killed_by");
         
@@ -58,10 +57,15 @@ public class LoadStatisticsTest
         JSONObject pickedUp = (JSONObject) stats.get("minecraft:picked_up");
         
         JSONObject used = (JSONObject) stats.get("minecraft:used");
-        reportUsed(used);
+        
         
 //TODO: !!!!do something with CUSTOM!!!!        
         JSONObject custom = (JSONObject) stats.get("minecraft:custom");
+        
+        
+
+        reportKilled(killed);        
+        reportUsed(used);        
         reportCustom(custom);        
     }
 
