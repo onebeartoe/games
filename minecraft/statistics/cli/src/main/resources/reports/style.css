@@ -16,6 +16,11 @@ body
     
 }
 
+footer button
+{
+        font-family: minecraftUiFont;
+}
+
 header
 {
     font-size: 5em;

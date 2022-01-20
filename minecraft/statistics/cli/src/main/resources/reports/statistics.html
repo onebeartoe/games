@@ -9,6 +9,16 @@
         }
     </script>
 
+    <!--
+    
+    The semantic tag usage was inspired by this tweet
+    
+        https://twitter.com/NanouuSymeon/status/1483392385598033921/photo/1
+    
+    -->    
+    
+    
+    
     <header>
         Statistics
     </header>
@@ -57,14 +67,16 @@
     </div>
 
     <footer>
-        <button onclick="startEngraving()" >General</button>
+        <div>        
+            <button onclick="startEngraving()" >General</button>
 
-        <button onclick="hideElementAndShowRicky('nav'); 
-                         hideElement('mostKilledByUser');" >Items</button>
+            <button onclick="hideElementAndShowRicky('nav'); 
+                             hideElement('mostKilledByUser');" >Items</button>
 
-        <button onclick="startEngraving()" >Mobs</button>
-
-        <br>
-
-        <button onclick="startEngraving()" >Done</button>
+            <button onclick="startEngraving()" >Mobs</button>
+        </div>        
+        
+        <div>
+            <button onclick="startEngraving()" >Done</button>
+        </div>
     </footer>
