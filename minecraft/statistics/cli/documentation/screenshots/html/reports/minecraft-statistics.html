@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= title %></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <link rel="stylesheet" href="layout.css" />
+    	<link rel="stylesheet" href="style.css" />
+        
+        <script type="text/javascript" src="minecraft.js"></script>
+
+    </head>
+
+    <body>
+
+
+    <script type="text/javascript">
+        document.onreadystatechange = function () 
+        {
+            if (document.readyState == "complete") 
+            {
+                hideElement("ricky")
+            }
+        }
+    </script>
+
+    <header>
+        Statistics
+    </header>
+
+    <br>
+
+    <div id="NavMainContainer" class="SideBySideContainer" >
+        <nav id="nav" class="SideBySideLeft" >
+            Loopppp Div
+            
+            <br>
+            
+            link
+            
+            <br>
+            
+            link 2
+            
+        </nav>
+
+        <main class="SideBySideRight" >
+            Ploop
+            
+            <section id="mostKilledByUser">
+                Most Killed Mob by User
+
+                blaze<br>chicken_jockey<br>creeper<br>drowned<br>elder_guardian<br>endermite<br>evoker<br>ghast<br>guardian<br>hoglin<br>husk<br>magma_cube<br>phantom<br>piglin_brute<br>pillager<br>ravager<br>ravager_jockey<br>shulker<br>silverfish<br>skeleton<br>skeleton_horseman<br>husk<br>zombie_villager<br>slime<br>spider_jockey<br>stray<br>vex<br>vindicator<br>witch<br>wither_skeleton<br>zoglin<br>zombie<br>zombie_villager<br>
+            </section>
+            
+            <section>
+                <div id="ricky" class="rickyVideo">
+                    <div class="rickyVideo">
+                        <video id="rickyVideo" 
+                               class ="rickyVideo"
+                               width="520" height="440" 
+                               controls>
+
+                            <source src="y2meta.com-Rick-Rolled-Short-Version.mp4" type="video/mp4">
+
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </section>              
+        </main>        
+    </div>
+
+    <footer>
+        <div>        
+            <button onclick="startEngraving()" >General</button>
+
+            <button onclick="hideElementAndShowRicky('nav'); 
+                             hideElement('mostKilledByUser');" >Items</button>
+
+            <button onclick="startEngraving()" >Mobs</button>
+        </div>        
+        
+        <div>
+            <button onclick="startEngraving()" >Done</button>
+        </div>
+    </footer>
+
+
+    </body>
+</html>
+        

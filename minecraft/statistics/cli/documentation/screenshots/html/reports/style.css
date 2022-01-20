@@ -1,0 +1,42 @@
+
+@font-face {
+  font-family: minecraftUiFont;
+  src: url(minecraft.ttf);
+}
+
+
+body
+{
+    background-image: url("dirt.png");
+    
+    font-family: minecraftUiFont;
+    font-size: xx-large;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    
+}
+
+footer button
+{
+        font-family: minecraftUiFont;
+}
+
+header
+{
+    font-size: 5em;
+    text-align: center;
+}
+
+.SideBySideContainer
+{
+    background-image: url("darker-dirt.png");
+}
+
+.SideBySideLeft
+{
+}
+
+
+.SideBySideRight
+{
+}

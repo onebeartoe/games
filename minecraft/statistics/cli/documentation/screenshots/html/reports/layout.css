@@ -1,0 +1,46 @@
+
+body
+{
+  height: 100vh;
+  padding: 0;    
+}
+
+footer
+{
+    display: flex;
+    
+    height: 20%;
+    
+    justify-content: center;
+}
+
+footer button
+{
+    margin-right: 20px;
+    font-size: larger;
+}
+
+.rickyVideo
+{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.SideBySideContainer
+{
+    display: flex; 
+    height: 60%;
+}
+
+.SideBySideLeft
+{
+    width: 25%; 
+}
+
+.SideBySideRight
+{
+    flex-grow: 1;
+    
+    overflow-x: hidden;
+    overflow-y: auto;    
+}
