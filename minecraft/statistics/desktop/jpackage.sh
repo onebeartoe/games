@@ -16,7 +16,13 @@ jpackage --input target/ \
 #         --name MinecraftCompanionApp \
 #
 #
-# This was inspired by 'Trick #4' in the following blog.
+# This was inspired by 'Trick #3' in the following blog.
 #
 #   https://blogs.oracle.com/javamagazine/post/java-11-tricks-generics-inheritance-jshell
+#
+#
+#
+# If errors occur about copy object, then make sure binutils in installed
+#
+#   sudo apt install binutils
 #
