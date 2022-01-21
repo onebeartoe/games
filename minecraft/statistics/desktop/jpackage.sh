@@ -14,3 +14,9 @@ jpackage --input target/ \
 # To specify the application name use the '--name' parameter:
 #
 #         --name MinecraftCompanionApp \
+#
+#
+# This was inspired by 'Trick #4' in the following blog.
+#
+#   https://blogs.oracle.com/javamagazine/post/java-11-tricks-generics-inheritance-jshell
+#
