@@ -1,8 +1,11 @@
+package edu.umbc.cs.sli2;
+
 //
 // Source code recreated from a .class file by IntelliJ IDEA
 // (powered by FernFlower decompiler)
 //
 
+import edu.umbc.cs.sli2.CubeAction;
 import java.applet.AudioClip;
 import java.awt.Button;
 import java.awt.Checkbox;
