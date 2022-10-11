@@ -3,12 +3,15 @@
     <modelVersion>4.0.0</modelVersion>
     
     <parent>
-        <groupId>org.onebeartoe</groupId>
+        <groupId>org.onebeartoe.games</groupId>
+        
         <artifactId>games</artifactId>
+        
         <version>1.0</version>
     </parent>
     
     <artifactId>minecraft</artifactId>
+    
     <packaging>pom</packaging>
     
     <name>onebeartoe-games-minecraft</name>

@@ -3,15 +3,16 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.onebeartoe.games</groupId>
-        <artifactId>games</artifactId>
+        <artifactId>rubiks-cube</artifactId>
         <version>1.0</version>
     </parent>
-    <artifactId>memory</artifactId>
-    <packaging>pom</packaging>
     
-    <name>onebeartoe-games-memory</name>
+    <artifactId>awt</artifactId>
     
-    <modules>
-        <module>cards</module>
-    </modules>
+    <name>onebeartoe-games-rubiks-cube-awt</name>
+    
+    <packaging>jar</packaging>
+    <properties>
+        <exec.mainClass>org.onebeartoe.games.awt.Awt</exec.mainClass>
+    </properties>
 </project>

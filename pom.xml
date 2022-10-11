@@ -4,8 +4,10 @@
     
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.onebeartoe</groupId>
+    <groupId>org.onebeartoe.games</groupId>
+    
     <artifactId>games</artifactId>
+    
     <version>1.0</version>
 
     <packaging>pom</packaging>
@@ -15,11 +17,12 @@
     <modules>
         <module>memory</module>
         <module>minecraft</module>
+        <module>rubiks-cube</module>
     </modules>
 
     <properties>
         <maven.compiler.source>1.12</maven.compiler.source>
-        <maven.compiler.target>1.12</maven.compiler.target>        
+        <maven.compiler.target>1.12</maven.compiler.target>   
 		
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>

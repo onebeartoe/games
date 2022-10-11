@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.onebeartoe</groupId>
+        <groupId>org.onebeartoe.games</groupId>
         <artifactId>statistics</artifactId>
         <version>1.0</version>
     </parent>
