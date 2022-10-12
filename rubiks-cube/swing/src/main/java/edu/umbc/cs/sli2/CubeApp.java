@@ -1,61 +1,71 @@
+
 package edu.umbc.cs.sli2;
 
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by FernFlower decompiler)
-//
-
-import java.applet.Applet;
-import java.awt.Button;
-import java.awt.Checkbox;
+import java.awt.Container;
 import java.awt.Event;
-import java.awt.Label;
 import java.awt.LayoutManager;
-import java.awt.Panel;
+import javax.swing.JApplet;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
-public class CubeApp extends Applet {
+/**
+ * Source code recreated from a .class file by IntelliJ IDEA
+ * (powered by FernFlower decompiler)
+ * and modified by Roberto Marquez
+ */
+public class CubeApp extends JApplet
+{
     private CubePanel CubeWin;
-    private Button NewButton;
-    private Button ScrambleButton;
-    private Button SolveButton;
-    private Button AboutButton;
-    private Button UndoButton;
-    private Button RedoButton;
-    private Checkbox SoundCheckbox;
-    private Checkbox LightCheckbox;
-    private Label StepLabel;
-    private Label StepText;
-
+    private JButton NewButton;
+    private JButton ScrambleButton;
+    private JButton SolveButton;
+    private JButton AboutButton;
+    private JButton UndoButton;
+    private JButton RedoButton;
+    private JCheckBox SoundCheckbox;
+    private JCheckBox LightCheckbox;
+    private JLabel StepLabel;
+    private JLabel StepText;
+    
+    final int width = 600;
+    
+    final int height = 600;
+    
+    @Override
     public void stop() {
         this.CubeWin.Stop();
     }
 
-    public CubeApp() {
-    }
-
+    @Override
     public void start() {
         this.CubeWin.Start();
     }
 
-    public void init() {
+    @Override
+    public void init() 
+//    public JPanel init() 
+    {
         this.resize(this.size().width <= 420 ? 420 : this.size().width, this.size().height <= 200 ? 200 : this.size().height);
         this.setLayout((LayoutManager)null);
-        Panel control = new Panel();
+        JPanel control = new JPanel();
         control.setLayout((LayoutManager)null);
         this.add(control);
         control.reshape(0, 0, 200, this.size().height);
-        this.NewButton = new Button("New Game");
-        this.ScrambleButton = new Button("Scramble");
-        this.SolveButton = new Button("Solve");
-        this.AboutButton = new Button("About");
-        this.UndoButton = new Button("Undo");
-        this.RedoButton = new Button("Redo");
-        this.SoundCheckbox = new Checkbox("Sound");
-        this.LightCheckbox = new Checkbox("Light");
-        this.StepLabel = new Label("Step");
-        this.StepText = new Label("0");
-        this.SoundCheckbox.setState(true);
-        this.LightCheckbox.setState(false);
+        this.NewButton = new JButton("New Game");
+        this.ScrambleButton = new JButton("Scramble");
+        this.SolveButton = new JButton("Solve");
+        this.AboutButton = new JButton("About");
+        this.UndoButton = new JButton("Undo");
+        this.RedoButton = new JButton("Redo");
+        this.SoundCheckbox = new JCheckBox("Sound");
+        this.LightCheckbox = new JCheckBox("Light");
+        this.StepLabel = new JLabel("Step");
+        this.StepText = new JLabel("0");
+        this.SoundCheckbox.setSelected(true);
+        this.LightCheckbox.setSelected(false);
         control.add(this.NewButton);
         control.add(this.ScrambleButton);
         control.add(this.SolveButton);
@@ -81,8 +91,12 @@ public class CubeApp extends Applet {
         this.add(this.CubeWin);
         this.CubeWin.reshape(220, 0, this.size().width - 220, this.size().height);
         this.CubeWin.DefineBound();
-        CubePanel.BadSound = this.getAudioClip(this.getCodeBase(), "illegal.au");
-        CubePanel.SpinSound = this.getAudioClip(this.getCodeBase(), "spin.au");
+        
+//TODO: re-enable these sounds        
+//        CubePanel.BadSound = this.getAudioClip(this.getCodeBase(), "illegal.au");
+//        CubePanel.SpinSound = this.getAudioClip(this.getCodeBase(), "spin.au");
+
+//        return control;
     }
 
     @Override
@@ -92,7 +106,7 @@ public class CubeApp extends Applet {
                 CubeAbout about = new CubeAbout();
                 about.show();
             } else if (event.target == this.LightCheckbox) {
-                Face.SetLight(this.LightCheckbox.getState());
+                Face.SetLight(this.LightCheckbox.isSelected() );
             } else {
                 this.CubeWin.CommandAction(event);
             }
@@ -100,7 +114,35 @@ public class CubeApp extends Applet {
 
         return true;
     }
+
+    public CubeApp()
+    {
+//        super( "HtmlUtility by onebeartoe.com" );
+                
+//        init();
+//        JPanel content = init();
+        
+//        start();
+        
+//        Container contentPane = getContentPane();
+        
+        setSize(width, height);
+
+//        contentPane.add(content);
+        
+//        addComponentListener(this);
+        
+        setVisible(true);
+    }
+    
+    public static void main(String [] args) 
+    {
+        final CubeApp app = new CubeApp();
+        
+//        app.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);		
+    }
 }
+
 
 /**
  *  Use the following command to run the applet, from the command line.
@@ -110,6 +152,6 @@ public class CubeApp extends Applet {
 
 
 /*
-<applet code="CubeApp.class" width=600 height=600>
+<applet code="edu.umbc.cs.sli2.CubeApp.class" width=600 height=600>
 </applet>
 */

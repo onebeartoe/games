@@ -5,26 +5,27 @@ package edu.umbc.cs.sli2;
 // (powered by FernFlower decompiler)
 //
 
-import java.awt.Button;
 import java.awt.Event;
 import java.awt.FlowLayout;
-import java.awt.Frame;
-import java.awt.Label;
 
-class CubeAbout extends Frame {
-    Button OK = new Button(" O K ");
-    Label Caption = new Label("Virtual Cube   V1.2", 1);
-    Label Space = new Label("                          ");
-    Label Author = new Label("(C) Song Li, 1996", 1);
-    Label Address = new Label("www.cs.umbc.edu/~sli2", 1);
-    Label Space2 = new Label("                          ");
-    Label Author2 = new Label("Portion of Code By David W. Liu", 1);
-    Label Address2 = new Label("reality.sgi.com/employees/davidliu_mti", 1);
-    Label Space3 = new Label("                          ");
-    Label Hotkey = new Label("To View: Drag your mouse.", 0);
-    Label Hotkey2 = new Label("To Spin: Use mouse's right button, or", 0);
-    Label Hotkey3 = new Label("Drag your mouse with CTRL down.", 0);
-    Label Space4 = new Label("                          ");
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+class CubeAbout extends JFrame {
+    JButton OK = new JButton(" O K ");
+    JLabel Caption = new JLabel("Virtual Cube   V1.2", 1);
+    JLabel Space = new JLabel("                          ");
+    JLabel Author = new JLabel("(C) Song Li, 1996", 1);
+    JLabel Address = new JLabel("www.cs.umbc.edu/~sli2", 1);
+    JLabel Space2 = new JLabel("                          ");
+    JLabel Author2 = new JLabel("Portion of Code By David W. Liu", 1);
+    JLabel Address2 = new JLabel("reality.sgi.com/employees/davidliu_mti", 1);
+    JLabel Space3 = new JLabel("                          ");
+    JLabel Hotkey = new JLabel("To View: Drag your mouse.", 0);
+    JLabel Hotkey2 = new JLabel("To Spin: Use mouse's right button, or", 0);
+    JLabel Hotkey3 = new JLabel("Drag your mouse with CTRL down.", 0);
+    JLabel Space4 = new JLabel("                          ");
 
     public CubeAbout() {
         super("Virtual Cube");

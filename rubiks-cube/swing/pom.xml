@@ -12,6 +12,6 @@
     
     <packaging>jar</packaging>
     <properties>
-        <exec.mainClass>org.onebeartoe.games.swing.Swing</exec.mainClass>
+        <exec.mainClass>edu.umbc.cs.sli2.CubeApp</exec.mainClass>
     </properties>
 </project>

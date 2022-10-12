@@ -4,28 +4,41 @@ package edu.umbc.cs.sli2;
 // Source code recreated from a .class file by IntelliJ IDEA
 // (powered by FernFlower decompiler)
 //
+//
+// and modified by Roberto Marquez
+//
+//
+
+
 
 import edu.umbc.cs.sli2.CubeAction;
+
 import java.applet.AudioClip;
-import java.awt.Button;
-import java.awt.Checkbox;
+
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Event;
 import java.awt.Graphics;
 import java.awt.Image;
-import java.awt.Label;
-import java.awt.Panel;
-import java.awt.image.ImageObserver;
 
-public class CubePanel extends Panel implements Runnable {
+import java.awt.image.ImageObserver;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class CubePanel extends JPanel implements Runnable {
     private Thread CubeThread;
     private CubeSystem CubeSys = new CubeSystem(new Vertex(60.0F, 60.0F, 60.0F));
     private CubeStack SpinStack;
-    private Button ButtonSolve;
+    private JButton ButtonSolve;
     private boolean Automatic;
+    
+//TODO: Add the sounds/audio clips back again!!!!!    
     public static AudioClip BadSound;
     public static AudioClip SpinSound;
+    
     private boolean SoundEnabled = true;
     Image OffScreen;
     Graphics OffGraphics;
@@ -145,14 +158,14 @@ public class CubePanel extends Panel implements Runnable {
         }
 
         if ("Solve".equals(event.arg)) {
-            this.ButtonSolve = (Button)event.target;
+            this.ButtonSolve = (JButton)event.target;
             this.Automatic = true;
             this.ButtonSolve.setLabel("Stop");
             this.CubeThread.resume();
         }
 
-        if (event.target instanceof Checkbox) {
-            this.SoundEnabled = ((Checkbox)event.target).getState();
+        if (event.target instanceof JCheckBox) {
+            this.SoundEnabled = ((JCheckBox)event.target).isSelected();
         }
 
         return true;
@@ -173,18 +186,16 @@ public class CubePanel extends Panel implements Runnable {
             this.CubeSys.Paint(this.OffGraphics, dim.width, dim.height);
             graph.drawImage(this.OffScreen, 0, 0, (ImageObserver)null);
         }
-
     }
 
-    CubePanel(Label steptext) {
+    CubePanel(JLabel steptext) {
         this.SpinStack = new CubeStack(steptext);
         this.OffScreen = this.createImage(200, 200);
         if (this.OffScreen == null) {
-            System.out.println("failed");
+            System.out.println("failedddd");
         } else {
             System.out.println("succeeded");
         }
-
     }
 
     public boolean mouseDown(Event event, int x, int y) {

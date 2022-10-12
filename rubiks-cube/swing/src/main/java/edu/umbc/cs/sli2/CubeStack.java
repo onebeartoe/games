@@ -1,3 +1,4 @@
+
 package edu.umbc.cs.sli2;
 
 //
@@ -6,16 +7,17 @@ package edu.umbc.cs.sli2;
 //
 
 import edu.umbc.cs.sli2.CubeAction;
-import java.awt.Label;
+
 import java.util.EmptyStackException;
 import java.util.Stack;
+import javax.swing.JLabel;
 
-class CubeStack {
+public class CubeStack {
     private int Watermark = 0;
     private int Count = 0;
     private Stack UndoStack = new Stack();
     private Stack RedoStack = new Stack();
-    private Label StepText;
+    private JLabel StepText;
     private boolean UpdateEnabled = true;
 
     public void EnableUpdate(boolean enabled) {
@@ -26,7 +28,7 @@ class CubeStack {
 
     }
 
-    CubeStack(Label steptext) {
+    CubeStack(JLabel steptext) {
         this.StepText = steptext;
     }
 
