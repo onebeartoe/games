@@ -7,9 +7,9 @@
         <version>1.0</version>
     </parent>
     
-    <artifactId>awt</artifactId>
+    <artifactId>swing2</artifactId>
     
-    <name>onebeartoe-games-rubiks-cube-awt</name>
+    <name>onebeartoe-games-rubiks-cube-swing2</name>
     
     <packaging>jar</packaging>
     <properties>

@@ -79,7 +79,11 @@ public class CubeApp extends Applet {
         this.add(this.CubeWin);
         this.CubeWin.reshape(220, 0, this.size().width - 220, this.size().height);
         this.CubeWin.DefineBound();
+        
+//        getClass().getResource()
+//        CubePanel.BadSound = this.getAudioClip(this.getCodeBase(), "illegal.au");
         CubePanel.BadSound = this.getAudioClip(this.getCodeBase(), "illegal.au");
+        
         CubePanel.SpinSound = this.getAudioClip(this.getCodeBase(), "spin.au");
     }
 
