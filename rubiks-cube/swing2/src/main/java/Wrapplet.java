@@ -4,6 +4,9 @@
  * 
  *      https://www.youtube.com/watch?v=CKzzk32UkJA&ab_channel=RollerCoasterManiac
  * 
+ * The notes at the bottom of this writeup helped remind me of (J)Applet's reliance 
+ * on browser features; getCodeBase(), getAudioClip(), ect...
+ * 
  * I did this with RandomJuke (Dr Brown's ((I think)) kaleidoscope did this a long time ago.
  */
 
