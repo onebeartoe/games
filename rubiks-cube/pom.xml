@@ -23,6 +23,5 @@
     <modules>
         <module>awt</module>
         <module>swing</module>
-        <module>swing2</module>
     </modules>
 </project>
