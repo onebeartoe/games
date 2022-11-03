@@ -10,6 +10,7 @@ import java.awt.Event;
 import java.awt.Label;
 import java.awt.LayoutManager;
 import java.awt.Panel;
+import java.net.URL;
 
 public class CubeApp extends Applet {
     private CubePanel CubeWin;
@@ -80,11 +81,13 @@ public class CubeApp extends Applet {
         this.CubeWin.reshape(220, 0, this.size().width - 220, this.size().height);
         this.CubeWin.DefineBound();
         
-//        getClass().getResource()
+        URL illegal = getClass().getResource("illegal.au");
+        CubePanel.BadSound = newAudioClip(illegal); // this.getAudioClip(illegal);
 //        CubePanel.BadSound = this.getAudioClip(this.getCodeBase(), "illegal.au");
-        CubePanel.BadSound = this.getAudioClip(this.getCodeBase(), "illegal.au");
         
-        CubePanel.SpinSound = this.getAudioClip(this.getCodeBase(), "spin.au");
+        URL spin = getClass().getResource("spin.au");
+        CubePanel.SpinSound = newAudioClip(spin);
+//        CubePanel.SpinSound = this.getAudioClip(this.getCodeBase(), "spin.au");
     }
 
     @Override
