@@ -1,0 +1,44 @@
+Video Script 
+
+00- Greeting
+
+	Hi, I am Roberto Marquez.   In this video I demonstrate a user story 
+            for converting a Java Applet to a Swing application that is run from the 
+            command line (instead of a Web Browser).
+
+01 - Tools used in this project include:
+
+        computer
+
+        web browser
+
+        Java IDE
+
+        BASH terminal
+
+02 - User Story Review
+
+    As a Java conservationist,
+    I need a way to convert AWT Applets to Swing applications,
+    so that I can revive older applications into (semi) modern ones.
+	
+03 - Demonstrate Acceptance Criteria in Software
+
+    show the AWT & Swing workspaces
+
+    show the Applet to JFrame wrapper
+
+    mention the 'gotcha' methods and remediation 
+
+04 - Demonstrate Acceptance Criteria in Real Life
+
+    run the appilcation from the command line
+
+05 - Outro
+    
+    I hope you enjoyed the demonstration of this user story and I encourage you 
+    to explore the ideas presented in this … video.
+
+    Thanks for watching; like and subscribe for more Java content.
+
+
