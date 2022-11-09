@@ -21,9 +21,9 @@ public class Wrapplet
 {
     public static void main(String[] args)
     {
-        System.out.println("Hello Rubic World!");
+        System.out.println("Hello Rubik World!");
         
-        JFrame frame = new JFrame("New Sand");
+        JFrame frame = new JFrame("Rubic's Cube - Shiffman Rules!");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
          CubeApp sand = new CubeApp();
