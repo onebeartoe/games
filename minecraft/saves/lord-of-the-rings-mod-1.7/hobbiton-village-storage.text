@@ -1,20 +1,20 @@
 
-Left                                             | Right
--------------------------------------------------------------------------
-                                                 |
-    valuables                                    |
-                                                 |
-    equipment                                    | mob drops
-                                                 |
-    armor                                        | plant items
-                                                 |
-    armor/equipment enhancements (Scrolls?)      | wood items
-                                                 |
-    crafted items                                | food equipment
-                                                 |
-    crafting resources                           | food stuffs
-                                                 |
-    placeable blocks                             |
-                                                 |
--------------------------------------------------------------------------
-                          Storage Entrance
+Left                          | Right
+----------------------------------------------------------
+                              |
+    valuables                 |
+                              |
+    equipme                   | mob drops
+                              |
+    armor                     | plant items
+                              |
+    Scrolls                   | wood items
+                              |
+    crafted items             | food equipment
+                              |
+    crafting resources        | food stuffs
+                              |
+    placeable blocks          |
+                              |
+----------------------------------------------------------
+                      Storage Entrance
