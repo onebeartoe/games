@@ -1,0 +1,150 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# initial portal - at original home base
+#	Spawned in a Crimsom Forest
+-34, -18, "P1"
+
+
+
+# Village 5 Nether Portal
+# The height location is
+#	y = 82
+# Bastion - Treasure Room
+#
+#	[x] -288, 304
+#		The bridge is at y = 82
+#
+#		There is a Magma Cube spawner here.
+#
+#			-269, 35, 272
+#
+#			for the frog light farm
+#
+#				9x9 around the spawner and one layer above and below
+#
+#		Exit is at -263, 83, 300
+#
+#	[x] Top Portal Base
+#		The outside base is at
+#			-255, 80, 284
+#
+#	[x] -752, -224* (double check)
+#		The outside mine base exit is at -756, 81, -223
+#
+163, 85, "V5NP"
+
+
+# Warped Forrest 1
+#	this is the one where I was trying to get to Warped Nylium, but found a
+#	Bastion Remnant along the way.
+#
+#		[x-] Bastion - holglin stables
+#			336, -352
+#
+#
+#		[x-x] Bastion - treasure room
+#
+#			-208, -1104
+#
+#		[x-x] Bastion - treasure room
+#
+#			The exit is around here:
+#
+#			-528, 67, -946
+#
+#			There is still a chest with minor loot here.
+#
+#
+#	Tehre is now a Nether Portal here at Y = 100.
+#		It transporst to the Overworld in the middle of an warm ocean, right next to a badlands biome.
+#
+#	I think there is a Respawn Anchor here.
+#
+300, -450, "WF1"
+
+
+# second portal - at the libraian village (fourth village)
+#	Spawned in a Crimsom Forrest
+-54, -123, "P2"
+
+
+# third portal - at 5th viallage (desert)
+#	spawned in a Crimson Forrest.
+#	Z level is 72
+152, 25, "P3"
+
+
+
+# chunckbase - 1st Nether Fortress (Crossing)
+#	Follow the sign to the Fortress.
+# 	This fortress has a Blaze spawner on the second floor, see BS1.
+#
+491, 187, "NF1"
+
+
+
+#Blaze Spawner
+518, 76, 185, "BS1"
+
+
+
+# 2nd Nether Fortress
+955, 123, "NF2"
+
+
+
+# Blaze Spawner 2
+# 	Y -> 61
+280, 187, "BS2"
+
+
+
+# Broken Portal 3 (kinda close to Strong Hold 1 'SH1') spawns here:
+-155, 36
+
+
+
+# Soul Sand Valley 1
+#
+-185, 105, "SSV1"
+
+
+
+# Soul Sand Valley 1 - Base
+#	There isa little mini-base here, y = 73.
+-155, 47
+
+
+
+# This is the Stronghold 1 Portal for the Nether Portal at 'SH1'.
+#		It is Y level 80
+-194, -36, "SH1P"

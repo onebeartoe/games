@@ -1,0 +1,71 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# End City Locations
+
+# First Portal
+-55, -78, "P1"
+
+# First Portal Outlet
+-740, -990, "P1-O"
+
+
+
+Second Portal
+!!!!!!!!!!!!!!!!!
+
+Second Portal Outlet
+623, -800, "P2-O"
+
+
+
+# First Ender Chest
+#	It is not there anymore, I picked it up with Silk Touch.
+-765, -986, EC1
+
+
+# Enderman/Endermite XP Farm
+86, -25, "EXPF"
+
+#end of third blob
+-1400, -1430, "EoTB"
+
+
+# First End Ship
+# looked up on Chunk Base
+#	https://www.chunkbase.com/apps/seed-map#-1861601998
+# I got my first Elytra here!
+-1224, -1224, "ES1"
+
+
+# End City 1 (No Ship)
+-1200, -1500, "EC1NS"
+
+
+# Second End Ship
+# Chunk base showed the  next closest End City/Ship is at this location:
+#!!!!!!Still need to get the dropped loot near the top of End City
+-1896, -2168, "ES2"
+
+
+#There may be another End Ship here (but I have not checked).
+#x= 1016, z=1080
+
+# Third End Ship
+# 	This one is pretty good.
+# 	The Elytra is recovered from this City/Ship, but the loot and most of the 
+#	Shulkers and loot are still there.
+#	There is an Ender Chest outside there too.
+-3180, -2880, "ES3"

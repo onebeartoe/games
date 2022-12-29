@@ -1,0 +1,103 @@
+
+
+# First Base with a Bed
+#	This is the location of the World Spawn by the livestock,
+#		on the side of the house where the original storate was located.
+#       This is the original main base for food and weapon/armor, crafting materials storage space.
+#	Still has some items in storage.
+#       This base also has the original Nether portal.
+#	This base also has the original Mine.
+#		On 2020-10-02, a pretty good loot was lost next to a spider spawner.   Anger.
+#		left off here:
+#			-546, -288
+#		another one here
+#			-173, 34, -281
+#	This base has a small aquarium.
+#	I inadvertantly made an axolotl farm here.
+#	The 'Balanced Diet' Achievment was made here with mushroom stew, dried kelp, and rabbit.
+-267, -183, "B1"
+
+
+
+
+
+# Fifth Village - Desert
+#	This village has the first (and only) iron farm, from Golumns.
+#		It is pretty much Wattles design, with the bottom base at 20 blocks off the ground.
+#
+#	This one has a structure to grow huge brown and red mushrooms on Podzol.
+#		It has a glowstone block to keep spawn away.
+#		The structure is 10x9x9 (x,y,z).
+#	The base has the thrid Nether Portal, it has Fortress remenants with a Blaze spawner!
+#	It has a skeleton spawner right by it!
+#	I put some turtles here.
+#	The music disc farm/setup is here.  There is a skeleton on lock down and a trap for the creeper.
+#	There is a simple flower farm here.  It uses note blocks.
+#	There is a mob head (charged Creeper) setup here too.
+#	Librarians
+#		Protection IV
+#		Looting III
+#	Broken portal!
+#		1304, 212
+#	Desert Temple!
+#		1320, -373
+#	This area has a horses.
+1313, 80, "V5"
+
+
+
+
+# Village 7 - Dessert
+#	This is right by a jungle and a Dessert Temple.
+#		This jungle has a panda in a boat waiting.  I found another panda near by and was able to bread them. :)
+#			1380, -920
+#	The Dessert Temple near here is a rip off, there was no loot.
+#	This is where the first parrots were found.
+#	The first rail and cart system for transport (villagers in this case) is here.
+#		It connects this village to the first iron farm village (V5).
+#	This is now pretty much a mini base; has a cured zombie armoror villager!
+1272, -296, "V7"
+
+
+
+
+# Stronghold 1 (found on https://www.chunkbase.com/apps/seed-map#-1861601998)
+# 	Library 1
+#		-1643, 33, -73
+#
+#	Silverfish door (last died here)
+#		-1640, 27, -105
+#
+#	End Portal
+#		-1620, 20, -117
+#
+#	spider spawner at
+#		-1628, 32, -219
+#   current entrance:
+#       -1623, 69, -216
+#
+#	Base with villagers
+#	This base has a 'Gunpowder farm' via Creepers.
+#	This base has good trades with Librarian Villagers.
+#	This base has a Strider with a real long lava lane, towards the back of the base.
+-1630, -76, "SH1"
+
+
+
+# Ancient City Base 1
+# 	There are 4 Ancient Cities near here
+#	The base is has lots of resources.
+-344, 2199, "ACB1"
+
+
+
+
+
+# Fourth Village - Savana People!
+#	Cleric -> rotten flesh for emerlds
+#	has a librarian that I made with a Lectern job site block.
+#	The first villager spawn was here.  they were willing after I gave them a bunch
+#	of potatos. <3
+#	This one now has a bunch of librarian villagers and a decent small farm.
+#	This has a medium mob spawner platform, that uses water dispensors.
+-341, -836, "V4"

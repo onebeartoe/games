@@ -1,0 +1,292 @@
+
+
+# world seed:
+#	-1861601998     (from DragonFart2020)
+
+
+
+
+
+
+
+
+
+# First village (got the bell from here)
+# The bell was returned but the village had already 'died'   :(
+62,  -292, "V1"
+
+
+
+# elbo 90 angle from B1 to V2
+#       This is needed to get around the mountian.
+-261, 98 "elbo-V2"
+
+
+# Second Village (has cats?)
+#       This one also has the second bed in a villager house.
+#       This one has a decent little mine in the back on the second bed house.
+#       Villagers trade potoatos, paper, and rotten meat for emerals
+#	All the villagers died in a raid :(
+281,  79, "V2"
+
+
+
+# Second Village - My stuff! (out in the open)
+#                  this is where I died and left my horse.  But I got him back on another visit.
+453, 95, "V2S"
+
+
+
+
+
+
+# Bridge over water betweeen Second village and Fifth village
+565, 104, "BRG"
+
+
+# Sixth Village - Savana
+#	This one has a donkey!
+#	There is a taiga biome to the south of this village; gonna look for foxes to breed.
+#	The village here has a cool mountain with a villager at the top.
+#	There is a skeleton spawner at the two 'leaf towers'.
+700, 200, "V6"
+
+
+
+
+
+
+
+
+# Village 8 - Desert
+# 	This village is nice and flat.
+#	It already has a bunch of villagers with jobs.
+#	I was flying home and though I was slick.  But I had Bad Omen and accidentally stared a raid here.  I died a couple times but
+#		but eventually won and got all my stuff.  It was wild!
+#
+1590, 280, "V8"
+
+
+
+
+# Jungle 1
+1134, -365, "J1"
+
+
+# Stronghold 2
+#	thank you chunkbase
+#	The portal is here:
+#		1036, 31, -1591
+1044, -1564, "SH2"
+
+
+
+
+#Jungle Temple 1
+1160, -1208, "JT1"
+
+
+#Jungle Temple 2
+1130, -1700, "JT2"
+# y = 121
+
+
+
+
+
+
+# Ocean with Kelp!
+2200, 27, "OCK"
+
+# Broken Portal
+2260, 83, "BP2"
+
+
+
+
+
+
+
+# Third Village - Desert People!
+#       This one had cat that were tamed as pets.
+#	There is a pretty cool ravine, that I fell in with a horse.
+#	In the ravine, there is mine shaft.
+#	Get villagers from here for 'B1'
+-300, -1234, "V3"
+
+
+# Broken Portal 3
+# This one is kinda close to SH1.
+-1200, 300, "BP3"
+
+
+# Check Point 1
+#	There is not much here, except a huge mountain.
+-1335,  169, "CP1"
+
+
+# Buried Treasure 1
+#	The location was provided by chunckbase
+#	Boofale!
+-1399, -567, "BT1"
+
+
+# Buried Treasure 2
+#	The location was provided by chunckbase
+#	Boofale!
+-1735, 441, "BT2"
+
+
+# Check Point 1 - Bridge 1
+# 	This is the 'top left' corner.
+#	SH1 -> here is okay
+-1690, 170, "CP1B1"
+
+# Sunflower Plains Village 1
+-1880, 730, "SPV1"
+
+
+# Woodland Mansion
+-1032, -2040, "WM1"
+
+#Buried Treasure ?
+-999, -1863, "BT1"
+
+
+#Buried Treasure ?
+-871, -1815, "BT2"
+
+
+
+
+
+
+
+# Ocean Monument 2
+# 	This second monument I want to loot with the aid of a Conduit.
+#		First attempt failed.
+#	There is a Conduit here
+-2525, 830, "OM2"
+
+# Ocean Explorer Map 1
+# 	The Ocean Monument is at these coordinates.
+#       This is the first Ocean Monument that was looted in this world.
+-3000, 900, "OEM1"
+
+
+#Shipwreck
+-920, -1784, "SW1"
+
+
+
+
+
+# This is the closest village by Stronghold 1
+#	It is swampy here.
+#	So I made water channel to SH1 (Stronghold 1) for
+#		transporting villagers.
+-1780, -450, "SH1V1"
+
+
+
+
+# This is Stronghold Village 2????
+#	Plains village, has two bells.
+# 	A very basic farm was made here.
+-1901, -685, "SH1V2"
+
+
+# A small ocean near a Plains biome is here.
+#   This is sorta near Stronghold 1.
+#   There are turtles here, first eggs.
+#		-1292, -1411
+-1400, -830, "SONP1"
+
+
+# Flower Forest 1
+-1600, -60, "FF1"
+
+
+# Subspace Bubble
+#   This is where the portal at SH1 sent me for the advancement.
+-8940, 245, "SB1"
+
+
+
+# Desert Hidey Hole (made of some cobblestone)
+430, -552, "DHH1"
+
+
+
+# Lava by water (far one)
+#       I think this one is near that desert booby trap temple where I died early on in the world.
+#	Somehow I managed to put out lava with a bucket of water, but it did not turn into obsidian.
+#	But there is more here: -66, -888
+#		And it currently still has obsidian next to the lava.
+42, -868, "LW"
+
+
+
+# Check Point 2 - forest
+# 	This is where I foun the first two wolves!
+#	It has a super small house, with a bed, chest, and crafting table.
+#	There is a real nice lake (water source) right by the house.
+-265, 500, "CP2"
+
+
+
+# Check Point 3 - forest
+-280, 815, "CP3"
+
+
+
+# Initial Nether Portal Exit Point by BS2
+2080, 1320, "NPE2"
+
+
+
+
+
+
+
+# Badlands 1
+#	This is near where the 'WF1' Nether Portal lets out in the Overworld, it is under the sea.
+#
+#	The actual protal is at about 2416,41, -3650
+#
+2680, 	-3650, "BL1"
+
+
+
+
+# Plains Vilalge - 'OB-WF1'
+#
+2280, -3000, "PV1"
+
+# Nice littl hill top 1
+249, -587, "HT1"
+
+
+# Witch's Hut
+-2808, -920, "WH1"
+
+
+# Plains Village with donkey and mules breeds
+-4100, -380, "PVD1"
+
+# Outpost - First one with Allay
+-2192, -3776, "OPA1"
+
+
+
+
+# Directions
+0, -1300, "N"
+0,  1300, "S"
+
+
+# utility markers
+#-900, -200, "next"
+
+# current location
+#-1333, 167, "(now)"
