@@ -1,19 +1,34 @@
 
-  Woodland Mansion (X:88 Z:120) with
-      Put the Alleys  back in the Mansion but with Freedom.
-          They are currently by 59, 59, on leads.
-  Ancient City (X:152 Z:72) underneath
-  and a Village near them (20, 120, -20)
+#  Woodland Mansion with
+88, 120, "WM1"
+#      Put the Alleys  back in the Mansion but with Freedom.
+#          They are currently by 59, 59, on leads.
+#  underneath is an Ancient City
+152, 72, "AC1"
+
+#  and a Village 1 near them 
+#     Y = 120
+20, -20, "V1"
 
 
-  Then you can also find a Stronghold (X:1316 Z:-720)
-                                      (Chunkbase says 1156, -604)
-                                      Didn't find it at Y level -64
-          It is in an an old growth pine tiaga.
-            Chunkbase - Village 1344, -160
-                It exists! use it to populate the stronghold (once you find it, sure ((don't be negative!)) ).
-  as well as another Mansion (X:728 Z:-568)
-  and Village (X:-320 Z:-480).
+# Original Stronghold
+#     Above ground it is an old growth pine tiaga.
+1316, -720, "SH1"
+# Chunkbase says it is at
+1156, -604, "SH1-CBS"
+#     Didn't find it at Y level -64
+          
+
+# Chunkbase Village 3
+#   It exists! use it to populate the stronghold (once you find it, sure ((don't be negative!)) ).
+1344, -160, "V3"
+
+
+# Another Mansion 2
+728,-568, "WM2"
+
+# Village 4
+-320, -480, "V4"
 
 
 
