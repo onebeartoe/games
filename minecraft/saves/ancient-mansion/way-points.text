@@ -1,23 +1,10 @@
 
-Awesome Seeds
-
-Woodland Mansion and Ancient City Seed
-Minecraft: The Best Bedrock 1.19 Seeds (October 2022)
-
-
-
-https://thenerdstash.com/minecraft-the-best-java-1-19-seeds-october-2022/
-
-Seed: 5705783928676095273
-
-Description (from site):
-Reddit user u/crackedmagnet brings us a pretty rare seed:
-
   Woodland Mansion (X:88 Z:120) with
       Put the Alleys  back in the Mansion but with Freedom.
           They are currently by 59, 59, on leads.
   Ancient City (X:152 Z:72) underneath
-  and a Village near them (20, 120, -20) tminehat works for both Bedrock and Java.
+  and a Village near them (20, 120, -20)
+
 
   Then you can also find a Stronghold (X:1316 Z:-720)
                                       (Chunkbase says 1156, -604)
@@ -28,32 +15,29 @@ Reddit user u/crackedmagnet brings us a pretty rare seed:
   as well as another Mansion (X:728 Z:-568)
   and Village (X:-320 Z:-480).
 
-  It is definitely a one-of-a-kind seed that’s worthy of being part
-  of your collection.
+
+
+#-------------------------------------------
+
+#The above is from the nerdstash.  Below are some that I found.
+
+#Ancient City (first one)
+#
+#  return waterfall
+#
+#   Y = -45
+#
+146, 80, "RW1"
+#
+#   There is an amethyst geode right ahead of the bottom of the waterfall .
 
 
 
--------------------------------------------
-
-The above is from the nerdstash.  Below are some that I found.
-
-Ancient City (first one)
-
-  return waterfall
-
-    146, -45, 80
-
-        There is an amethyst geode right ahead of the bottom of the waterfall .
-
-Iron Vein?
-
-    162,-8, 42
-
-Second Village
-
-    I had the inial horse here.
-
-        -315, -480
+#Second Village
+#
+#    I had the inial horse here.
+#
+-315, -480, "V2
 
 
 
