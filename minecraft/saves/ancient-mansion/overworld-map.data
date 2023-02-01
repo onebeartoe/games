@@ -6,7 +6,7 @@
 #  underneath is an Ancient City
 152, 72, "AC1"
 
-#  and a Village 1 near them 
+#  and a Village 1 near them
 #     Y = 120
 20, -20, "V1"
 
@@ -14,10 +14,18 @@
 # Original Stronghold
 #     Above ground it is an old growth pine tiaga.
 1316, -720, "SH1"
+#       There is a chest and crafting table to launch a search starting underground.
+#                   1420, -25, -720
+#       Centerpoint
+1236, -662, "OSC"
+#
+#       /locate structure stronghold:
+1152, -608, "OSL"
+#             I found it at Y level -15
 # Chunkbase says it is at
-1156, -604, "SH1-CBS"
+#1156, -604, "SH1-CBS"
 #     Didn't find it at Y level -64
-          
+
 
 # Chunkbase Village 3
 #   It exists! use it to populate the stronghold (once you find it, sure ((don't be negative!)) ).
@@ -54,6 +62,3 @@
 #    I had the inial horse here.
 #
 -315, -480, "V2
-
-
-
