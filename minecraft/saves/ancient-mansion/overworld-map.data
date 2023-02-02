@@ -1,7 +1,8 @@
 
+
 #  Woodland Mansion with
 88, 120, "WM1"
-#      Put the Alleys  back in the Mansion but with Freedom.
+#TODO:      Put the Alleys  back in the Mansion but with Freedom.
 #          They are currently by 59, 59, on leads.
 #  underneath is an Ancient City
 152, 72, "AC1"
@@ -11,9 +12,10 @@
 20, -20, "V1"
 
 
-# Original Stronghold
-#     Above ground it is an old growth pine tiaga.
-1316, -720, "SH1"
+# Original Stronghold Village
+#     Above ground, there is an old growth pine tiaga,
+#         where a full village was created.
+1316, -720, "OSV"
 #       There is a chest and crafting table to launch a search starting underground.
 #                   1420, -25, -720
 #       Centerpoint
@@ -21,15 +23,21 @@
 #
 #       /locate structure stronghold:
 1152, -608, "OSL"
-#             I found it at Y level -15
+#             I found it at Y level -15, yay!
+#             This is the Stronghold entrance from OSL.
+#
+#     The End Portal entrance is here:
+#         Y level -32
+1176, -589, "OSEP"
+#
 # Chunkbase says it is at
 #1156, -604, "SH1-CBS"
 #     Didn't find it at Y level -64
 
 
 # Chunkbase Village 3
-#   It exists! use it to populate the stronghold (once you find it, sure ((don't be negative!)) ).
-#       There is a decent little base here.  It has a fence peremiter, traders, and farm stuff.
+#   It exists! This village was use to populate the stronghold village created.
+#       There is a decent little base here.  It has a fence perimeter, traders, and farm stuff.
 1344, -160, "V3"
 
 
