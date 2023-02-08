@@ -1,9 +1,9 @@
 
 
-#  Woodland Mansion with
+#  Woodland Mansion 1
 88, 120, "WM1"
 #     It had a bunch of Alleys.
-#  underneath is an Ancient City
+#     Underneath is an Ancient City.
 152, 72, "AC1"
 
 #  and a Village 1 near them
@@ -48,7 +48,7 @@
 
 
 # Another Mansion 2
-728,-568, "WM2"
+728, -568, "WM2"
 
 # Village 4
 -320, -480, "V4"
