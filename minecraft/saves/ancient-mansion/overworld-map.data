@@ -35,6 +35,13 @@
 #     Didn't find it at Y level -64
 
 
+# Jungle Biome Mini-Base
+#     This is the closest one by the original Stronghold.
+#           at Y level 95.
+#     There is an ocean near here.
+954, -1534, "JBMB"
+
+
 # Chunkbase Village 3
 #   It exists! This village was use to populate the stronghold village created.
 #       There is a decent little base here.  It has a fence perimeter, traders, and farm stuff.
@@ -53,7 +60,7 @@
 
 #The above is from the nerdstash.  Below are some that I found.
 
-#Ancient City (first one)
+# Ancient City (first one)
 #
 #  return waterfall
 #
