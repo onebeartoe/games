@@ -2,8 +2,7 @@
 
 #  Woodland Mansion with
 88, 120, "WM1"
-#TODO:      Put the Alleys  back in the Mansion but with Freedom.
-#          They are currently by 59, 59, on leads.
+#     It had a bunch of Alleys.
 #  underneath is an Ancient City
 152, 72, "AC1"
 
