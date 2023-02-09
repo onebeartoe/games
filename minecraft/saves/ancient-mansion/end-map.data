@@ -5,3 +5,11 @@
 #     Dude, I beat the End Dragon on the first try with one life; albeit I used the VanillaTweaks
 #           Pumpkin head to keep the Endermen from seeing me.
 73, 0, "HH"
+
+# This is the location of the first return portal.
+#     The Y level is 64.
+-320, 990
+
+
+# The /locate command says the closest End City is here.
+384, 1392

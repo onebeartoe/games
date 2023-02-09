@@ -76,3 +76,10 @@
 #    I had the inial horse here.
 #
 -315, -480, "V2
+
+
+# There is a Meadow Village here.
+#
+#     I left a cat (and Alley?) here, and flew back to the original Stronghold Village.
+#
+1168, 384, "MV1"
