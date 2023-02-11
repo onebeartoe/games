@@ -3,6 +3,7 @@
 #  Woodland Mansion 1
 88, 120, "WM1"
 #     It had a bunch of Alleys.
+#     The Alleys are currently by 59, 59, on leads.
 #     Underneath is an Ancient City.
 152, 72, "AC1"
 
@@ -75,7 +76,7 @@
 #
 #    I had the inial horse here.
 #
--315, -480, "V2
+-315, -480, "V2"
 
 
 # There is a Meadow Village here.
