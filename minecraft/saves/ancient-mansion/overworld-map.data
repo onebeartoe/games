@@ -48,7 +48,9 @@
 1344, -160, "V3"
 
 
-# Another Mansion 2
+# Woodland Mansion 2
+#   This one burned down, twice.
+#   There are still Allays, storage, bed, food farm, lava farm, and Nether Chest there.
 728, -568, "WM2"
 
 # Village 4
@@ -94,8 +96,17 @@
 672, -3872, "OM"
 
 
-# Ocean Monument 1 Bed/Base
+# Ocean Monument 1 Base
+#     There is sweet little vacation base here.
+#     There Librarian villages here to with good under water trades for the Ocean Monument.
+#             (Resiration and Depth Strider)
+#     A lush cave is at these coordinates.
+#                   609, 0, -3688
+#                   Once you are down there the return location is at these stairs.
+#                         593, -5, -3812
+#TODO: Get Axolotls to whoop the Elder Guardians!
 586, -3808, "OMB"
+
 
 
 
