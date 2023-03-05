@@ -12,7 +12,7 @@ public class SecondaryController
     {
         System.out.println("playing sound");
         
-        AudioClip buzzer = new AudioClip(getClass().getResource("/org/onebeartoe/desktop/y2meta.com-Rick-Rolled-Short-Version.mp3").toExternalForm());
+        AudioClip buzzer = new AudioClip(getClass().getResource("/org/onebeartoe/desktop/y2meta.com-Rick-Rolled-Short-Version.mp4").toExternalForm());
         
         buzzer.play();
     }
