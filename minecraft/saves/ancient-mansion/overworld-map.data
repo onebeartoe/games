@@ -43,7 +43,7 @@
 
 
 # Chunkbase Village 3
-#   It exists! This village was use to populate the stronghold village created.
+#   It exists! This village was used to populate the stronghold village created.
 #       There is a decent little base here.  It has a fence perimeter, traders, and farm stuff.
 1344, -160, "V3"
 
@@ -105,6 +105,7 @@
 #                   Once you are down there the return location is at these stairs.
 #                         593, -5, -3812
 #TODO: Get Axolotls to whoop the Elder Guardians!
+#             The Axolotls did not help that much, but they are so cute!
 586, -3808, "OMB"
 
 
