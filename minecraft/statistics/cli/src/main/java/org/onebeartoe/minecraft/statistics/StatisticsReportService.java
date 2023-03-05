@@ -112,7 +112,13 @@ public class StatisticsReportService
     
     private void copyOneResource(File outputDirectory, String resourcePath) throws IOException, URISyntaxException
     {
-        URL resource = getClass().getResource("/reports/" + resourcePath);
+        String path = "/reports/" + resourcePath;
+        URL resource = getClass().getResource(path);
+
+        if(resource == null)
+        {
+            System.out.println("classpath resource not found: " + path);
+        }
         
         URI uri = resource.toURI();
         
@@ -151,7 +157,8 @@ public class StatisticsReportService
         String javascriptResource = "minecraft.js";
         copyOneResource(outputDirectory, javascriptResource);
         
-        String rickyResource = "y2meta.com-Rick-Rolled-Short-Version.mp4";
-        copyOneResource(outputDirectory, rickyResource);
+//TODO: lets do this in JavaFX.        
+//        String rickyResource = "y2meta.com-Rick-Rolled-Short-Version.mp4";
+//        copyOneResource(outputDirectory, rickyResource);
     }
 }
