@@ -24,6 +24,7 @@
 # Fifth Village - Desert
 #	This village has the first (and only) iron farm, from Golumns.
 #		It is pretty much Wattles design, with the bottom base at 20 blocks off the ground.
+#   The Villagers were release the week of March 7th 2023.
 #
 #	This one has a structure to grow huge brown and red mushrooms on Podzol.
 #		It has a glowstone block to keep spawn away.
@@ -84,10 +85,11 @@
 
 
 
-# Ancient City Base 1
+# Ancient City Topside Base 1
 # 	There are 4 Ancient Cities near here
-#	The base is has lots of resources.
--344, 2199, "ACB1"
+#	  The base is has lots of resources.
+#   There is a stone bridge in the direction of Ancient City 1.
+-344, 2199, "ACTB1"
 
 
 

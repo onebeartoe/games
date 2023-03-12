@@ -1,4 +1,65 @@
 
+[] Upgrade Ancient City Base 1 ("ACB1")
+			[] Reorgainize how the Shulker Boxes are used with the Ender Chest.
+						Main gaol is to not carry all the Shulker Boxes, and just what is
+						realistically needed.
+
+						Personal
+								basic food
+								bucket
+								bed
+								scaffolding
+								pilar blocks
+
+
+						Endchest
+
+								Blocks (brown)
+
+								Enchantments (yellow)
+
+								Gear (blue)
+										armor set/shield
+										tool/weapon set
+
+								Potions (magenta)
+
+								Village starter (light grey)
+
+								? Mission ?
+
+						Distribution
+
+								1 spare for each Village base
+
+
+
+
+			[x] Document the locations of the 4 cities near here.
+						There are documented further down in this document.
+
+			[] Make a min-Base out of an Ancient City.
+						? Use the one closest to the main base ?
+
+						[] Block Palette
+									[] Red Nether Brick (nethr bricks + nether Wart) variants on the build.
+
+									[] Use some of ice Frog Lights that are near here.
+
+						[] Up/Down Bouble Columns
+
+									[] Use a Daylight Detector for something.
+												Kelp farm (Eyecrafmc)
+															https://www.youtube.com/watch?v=YlJaqVM37hU&ab_channel=Eyecraftmc
+
+			* Don't forget to connect to B1 Nether Hub.
+
+
+
+
+
+
+
 
 [] Get some cool Tiera cota from "BL1"
 
@@ -8,13 +69,22 @@
   		warped forrest.
 
 
-[] Make a Base out of an Ancient City
-			There are 4 cities near "ACB1".
-
-
 [] Craft a Bunny Banner
       https://www.planetminecraft.com/banner/bunny-rabbit/
       If this one is too hard then try the beaker banner.
+
+[] Spectral (Glowstone) Arrows
+
+
+[] Connect your main bases with a Nether Portal Hub.
+			[] Setup the Hub center at Base 1 (spawn)
+
+			[] Ancient City Base 1
+
+			[] Village 5
+
+			[] Stronghold 1
+
 
 [] Piglin gold trader Farm
       See Eycraftmc 's compact one
@@ -23,6 +93,21 @@
 [] Stone Farm
       See Eycraftmc 's compact one
 					https://www.youtube.com/watch?v=2QvjEIZGko4&ab_channel=Eyecraftmc
+
+[] Flower Farm
+			See Eycraftmc 's compact one
+					https://www.youtube.com/watch?v=YlJaqVM37hU&ab_channel=Eyecraftmc
+
+
+[] Ice and/or Snow Farm
+			See Eycraftmc 's compact one
+					https://www.youtube.com/watch?v=YlJaqVM37hU&ab_channel=Eyecraftmc
+
+
+[] Ice and/or Snow Farm
+			See Eycraftmc 's compact one
+					https://www.youtube.com/watch?v=Xiy_DfAJWBE&ab_channel=Shulkercraft
+
 
 [] Create a giant Statue
       Blocko?
@@ -352,19 +437,21 @@
 
 		[x] Plains/Meadow Village in the middle of some huge mountain.
 
-			This now a base.
+			The Ancient City Topside Base (ACTB1) is here.
 
 			-344, 121,  2199
 
 			[x] Nearest Ancient City (thanks chunkbase!)
 
-				-360, -51, 2072
+					-360, -51, 2072
 
-				The water fall exit is at
+					The water fall exit is at
 
-							-368, -51, 2111
+								-368, -51, 2111
 
-				It is looted (except one chest thtat I cant  find)!  I lost two Swift Sneak books though :(
+					It is (mostly) looted (except one chest thtat I cant  find)!
+					***THE WARDEN CAN STILL SPAWN HERE***
+					I lost two Swift Sneak books though :(
 
 			[x] Second Ancient City
 
