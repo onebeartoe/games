@@ -31,7 +31,8 @@
 
 # initial portal - at original home base
 #	Spawned in a Crimsom Forest
--34, -18, "P1"
+#   It is at Y level 75.
+-37, -30, "P1"
 
 
 
@@ -146,10 +147,12 @@
 
 
 # This is the Stronghold 1 Portal for the Nether Portal at 'SH1'.
-#		It is Y level 80
+#		It is at Y level 80.
 -194, -36, "SH1P"
 
 
 
 # The ACTB1 portal outlets here:
-#   It is at Y level
+#   It spawns in a Crimson Forrest.
+#   It is at Y level 93.
+-20, 270, "ACTB1"
