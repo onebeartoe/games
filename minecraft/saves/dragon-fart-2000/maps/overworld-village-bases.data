@@ -103,3 +103,16 @@
 #	This one now has a bunch of librarian villagers and a decent small farm.
 #	This has a medium mob spawner platform, that uses water dispensors.
 -341, -836, "V4"
+
+
+
+
+# Ocean Base for WF1
+#	The Nether Pportal here goes to a warped forrest.
+#	It is so pretty here.
+#	It is a warm ocean, with lots of coral and fans.
+#	There is a nether portal at the bottom of the ocean (and top) here.
+#		2415, -3650
+#	There is an cool Bandlands biome very near here.
+#	This base has a Nether Portal to 2 Bastion treasure rooms (1.18).
+2460,	-3700, "OB-WF1"

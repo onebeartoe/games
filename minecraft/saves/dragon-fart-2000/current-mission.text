@@ -1,98 +1,34 @@
 
-[] Upgrade Ancient City Base 1 ("ACB1")
-			[] Reorgainize how the Shulker Boxes are used with the Ender Chest.
-						Main gaol is to not carry all the Shulker Boxes, and just what is
-						realistically needed.
-
-						Personal
-								basic food
-								bucket
-								bed
-								scaffolding
-								pilar blocks
-
-
-						Endchest
-
-								Blocks (brown)
-
-								Enchantments (yellow)
-
-								Gear (blue)
-										armor set/shield
-										tool/weapon set
-
-								Potions (magenta)
-
-								Village starter (light grey)
-
-								? Mission ?
-
-						Distribution
-
-								1 spare for each Village base
 
 
 
 
-			[x] Document the locations of the 4 cities near here.
-						There are documented further down in this document.
+[] New Ancient City
 
-			[] Make a min-Base out of an Ancient City.
-						? Use the one closest to the main base ?
-
-						[] Block Palette
-									[] Use a bunch of Frog Lights from the farm.
-
-									[] Red Nether Brick (nethr bricks + nether Wart) variants on the build.
-
-						[] Up/Down Bouble Columns
-
-									[] Use a Daylight Detector for something.
-												Kelp farm (Eyecrafmc)
-															https://www.youtube.com/watch?v=YlJaqVM37hU&ab_channel=Eyecraftmc
-
-			* Don't forget to connect to B1 Nether Hub.
+      The new/second set of Ancient City is here
+            -5920, 1632
 
 
+      The closest Village is here
+            -5645, 113, 1442
+
+            There is a Illager Outpost nearby, towards the sand/ocean!!!
+
+      The Nether Portal here spawns the user at these coordinates:
+
+            -733, 72, 199
+            The is a Warped Forest right next to spawn area.
 
 
-
-
-
-
-[] Get some cool Tiera cota from "BL1"
-
-
-[] Get some Warped Blocks
-			The Nether Portal at "OB-WF1" goes to a
-  		warped forrest.
-
-
-[] Craft a Bunny Banner
-      https://www.planetminecraft.com/banner/bunny-rabbit/
-      If this one is too hard then try the beaker banner.
 
 [] Spectral (Glowstone) Arrows
 
 
-[] Connect your main bases with a Nether Portal Hub.
-			[] Setup the Hub center at Base 1 (spawn)
-
-			[] Ancient City Base 1
-
-			[] Village 5
-
-			[] Stronghold 1
-
-
-[] Piglin gold trader Farm
-      See Eycraftmc 's compact one
-          https://www.youtube.com/watch?v=Hfj4JdHDyxo&ab_channel=Eyecraftmc
 
 [] Stone Farm
       See Eycraftmc 's compact one
 					https://www.youtube.com/watch?v=2QvjEIZGko4&ab_channel=Eyecraftmc
+
 
 [] Flower Farm
 			See Eycraftmc 's compact one
@@ -157,10 +93,6 @@
 
 
 
-
-
-
-
 [] Operation Red Stone Mob Flusher Farm (Fourth Village)
 
 	this is at the one that has a rail road entry
@@ -168,11 +100,6 @@
 	there is already that big structure there, where we learned hostil mobs don't spawn on water streams.
 
 	Get it working with water dispensers.
-
-
-
-
------------------------------------------------------
 
 
 
@@ -184,6 +111,64 @@
 
 
 ---------------------------------------------------------------------------
+
+
+[x] Piglin gold trader Farm
+      See Eyecraftmc 's compact one
+          https://www.youtube.com/watch?v=Hfj4JdHDyxo&ab_channel=Eyecraftmc
+			I ended up using a Nametag for the trading.  It is at the bottom of the Base 1
+			Nether Hub.
+
+
+
+[x] Craft a Bunny Banner
+      https://www.planetminecraft.com/banner/bunny-rabbit/
+      If this one is too hard then try the beaker banner.
+			It as at the Ancient City Base.
+
+
+[x] Connect the main bases with a Nether Portal Hub.
+			[x] Setup the Hub center at Base 1 (spawn)
+
+			[x] Ancient City Base 1
+
+			[x] Village 5
+
+			[x] Stronghold 1
+
+      [x] New Ancient City
+
+
+[x] Get some colorful Tiera cota from "BL1"
+
+
+[x] Get some Warped Blocks
+			The Nether Portal at "OB-WF1" goes to a
+  		warped forrest.
+
+
+[~] Upgrade Ancient City Base 1 ("ACB1")
+			[x] Reorgainize how the Shulker Boxes are used with the Ender Chest.
+
+			[x] Document the locations of the 4 cities near here.
+						There are documented further down in this document.
+
+			[x] Make a min-Base out of an Ancient City.
+						[x] Use the one closest to the main base
+
+						[x] Block Palette
+									[] Use a bunch of Frog Lights from the farm.
+
+						[~] Up/Down Bouble Columns
+
+									[~] Use a Daylight Detector for something.
+												Kelp farm (Eyecrafmc)
+															https://www.youtube.com/watch?v=YlJaqVM37hU&ab_channel=Eyecraftmc
+
+			[x] Connect to B1 Nether Hub.
+
+
+
 
 
 
@@ -441,6 +426,7 @@
 
 			-344, 121,  2199
 
+
 			[x] Nearest Ancient City (thanks chunkbase!)
 
 					-360, -51, 2072
@@ -449,9 +435,20 @@
 
 								-368, -51, 2111
 
-					It is (mostly) looted (except one chest thtat I cant  find)!
-					***THE WARDEN CAN STILL SPAWN HERE***
-					I lost two Swift Sneak books though :(
+								There is a tunnel to Third Ancient City right by this exit.
+
+								I think this one is looted and no Warden can spawn here
+								anymore (all the Skulk Shriekers have been removed)
+
+								I lost two Swift Sneak books though :(
+
+								Chunkbase says a Geode is here:
+													-333, -45, 2100
+															Nope, AC overwrote it.
+
+													-372, 34, 2126
+															Yup, it is a half-geode; but I still like it.
+
 
 			[x] Second Ancient City
 
@@ -459,21 +456,25 @@
 
 				It looks like only a Deep Dark biome is here, I cound not find the Ancient City.
 
+
 			[x] Third Ancient City
 
 				88, -51, 2104
 
-					Exit is at
+					Exit is a tunnel that leads to Ancient City 1
 
 						-19, -51, 2104
 
-			[~] Fourth Anchient City (have not checked it yet)
+
+					The tunnes that leads to 4th Ancient city is at
+								192, -51, 2096
+
+
+			[~] Fourth Ancient City (have not checked it yet)
 
 				248, -51, 1672
 
-
-
-
+				Same as 2nd Ancient city, It looks like only a Deep Dark biome is here, I cound not find the Ancient City.
 
 
 

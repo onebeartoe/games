@@ -1,13 +1,5 @@
 
-# Ocean Base for WF1
-#	The Nether Pportal here goes to a warped forrest.
-#	It is so pretty here.
-#	It is a warm ocean, with lots of coral and fans.
-#	There is a nether portal at the bottom of the ocean (and top) here.
-#		2415, -3650
-#	There is an cool Bandlands biome very near here.
-#	This base has a Nether Portal to 2 Bastion treasure rooms (1.18).
-2460,	-3700, "OB-WF1"
+
 
 
 # Frozen Ocean 1 Base 1
@@ -52,7 +44,10 @@
 
 
 # Magma Cube Spawner 1 - Portal Base - Ocean Outlet
-#	You have to take the waterfall by the Portal Base all the way up to the Ocian floor.
+#	    You have to take the waterfall by the Portal Base all the way up to the Ocian floor.
+#
+#     There is an awesome Frog and Allay enclosure by the Nether Portal.
+#
 #		y = 43
 #	Snowy Slopes
 #		-800, 2230
