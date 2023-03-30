@@ -1,23 +1,24 @@
 
 
+[] Ancient City Base 1
+
+      [] Spurce up the 3rd City a little
+
+            [] Use Slow Falling potion with the Elytra to tour the City!
+
+            [] place frog glow lights
+
+            [] introduce frogs
+
+            [] introduce Allay
+
+            [] itroduce Axylotl
 
 
 
-[] New Ancient City
-
-      The new/second set of Ancient City is here
-            -5920, 1632
 
 
-      The closest Village is here
-            -5645, 113, 1442
 
-            There is a Illager Outpost nearby, towards the sand/ocean!!!
-
-      The Nether Portal here spawns the user at these coordinates:
-
-            -733, 72, 199
-            The is a Warped Forest right next to spawn area.
 
 
 
@@ -111,6 +112,25 @@
 
 
 ---------------------------------------------------------------------------
+
+[x] New Ancient City
+
+      [x] The New Ancient City is here
+            -5920, 1632
+
+
+      [x] The closest Village is here
+            -5645, 113, 1442
+
+            There is a Illager Outpost nearby, towards the sand/ocean; got'em!
+            The ocean nearby seams kinda plain.
+
+      [x] The Nether Portal here spawns the user at these coordinates:
+
+            -733, 72, 199
+            The is a Warped Forest right next to spawn area.
+
+
 
 
 [x] Piglin gold trader Farm
@@ -461,16 +481,17 @@
 
 				88, -51, 2104
 
-					Exit is a tunnel that leads to Ancient City 1
+				Exit is a tunnel that leads to Ancient City 1
 
 						-19, -51, 2104
 
+        There is a cure Zombie Villager here.
 
-					The tunnes that leads to 4th Ancient city is at
+				The tunnes that leads to 4th Ancient city is at
 								192, -51, 2096
 
 
-			[~] Fourth Ancient City (have not checked it yet)
+			[x] Fourth Ancient City
 
 				248, -51, 1672
 
