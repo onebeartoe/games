@@ -65,7 +65,16 @@ Second Portal Outlet
 
 # Third End Ship
 # 	This one is pretty good.
-# 	The Elytra is recovered from this City/Ship, but the loot and most of the 
+# 	The Elytra is recovered from this City/Ship, but the loot and most of the
 #	Shulkers and loot are still there.
 #	There is an Ender Chest outside there too.
 -3180, -2880, "ES3"
+
+#Fourth End Ship
+#   An Ender Chest is at
+#         -4103, -3143
+#   A return portal is at
+#         -4290, -3010
+#   I got the Elytra but, there is still some loot here.
+#         This is first Elytra that I got wearing an Elytra; I flew in the End deminsion!
+-4120, -3176, "ES4"
