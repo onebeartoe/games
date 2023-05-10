@@ -162,3 +162,8 @@
 #   It spawns in a Crimson Forrest.
 #   It is at Y level 93.
 -20, 270, "ACTB1"
+
+
+# Camel Town Portal
+# Y level  70
+-393, -470
