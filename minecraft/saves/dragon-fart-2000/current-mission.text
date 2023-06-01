@@ -1,23 +1,84 @@
 
+
+
+
 1.20
 
 [] Redo the Original Ancient Cities
 
+    [] Cherry Blossom Blocks
+
     [x] Reset chunks via MCA Selector
 
-    [] trims
+    [] Smithing with Style Advancement
+        (TODO: fix the 'get some trix section' below)
+        Dune?
+        Eye?
+
+
+        Ancient City
+        2786 away
+            [] Silence
+            [] Ward
+
+        Woodland Mansion
+        3392
+            [] Silence - looks cool.
+
+        Ocean Monument
+        1617
+            [] Tide
+
+        Tail Ruins
+        843
+            [] Wayfinder
+Eeek, let's see!
+Yep, I found Wayfinder smithing template here!
+I also the Raiser smithing template and another Relic music disc.
+It is huge!
+It is probably still holding more suspicious sand that has not been excavated.
+            -4720, -816
+
+
+          [] PVD1 - see what is out there
+
+          [] Ocean Cold Ruin
+              I think itstill has some (this is the first one I think.)
+              112, 32
+
+          [x] Ocean Monument 2
+              720, -1280
+              I think the world seed is effecting the loot chest here.
+              I cleared 3 times with MCASelector, but didn't get
+              the Tide Trim from the Elder Guardians here..
+              Nearby mini base
+                  668, -1066
+
+          [x] Trail Ruin Other One
+              Nope
+              There is mini-base platform here.
+          2000, -528
+
+          [x] Ocean Monument 3
+          Nope
+          1760, -816
+
+          [x] Desert Temple
+            Nope
+            1584, -382
 
 [] Desert Temple
 
-      [] Armor Template
+[] Armor Template
 
-      [] Make a garden of alternating Torchflower & Pitcher plants.
+[] Make a garden of alternating Torchflower & Pitcher plants.
 
-      [] Get some armor trim; Silence looks cool.
+[x] Get some armor trims
 
-          Dune?
-          Eye?
-          Vex? (vert line)
+    [x] Netherite
+    [?x?] Coast
+
+
 
 
 [] Horse Stable
@@ -35,8 +96,6 @@
 [] Bee Sanctuary
 
 [] Dance Party room  (multi-color floor)
-
-[]
 
 
 [x] Bring a Camel to Base 1
@@ -562,10 +621,12 @@
 			[x] Nearest Ancient City (thanks chunkbase!)
 
 					-360, -51, 2072
+          This one has been cleared with MCASelect.
+          Let's see if it work to get the Silence Smithing Template.
 
 					The water fall exit is at
 
-								-368, -51, 2111
+								-368, -51, 2071
 
 								There is a tunnel to Third Ancient City right by this exit.
 

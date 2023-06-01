@@ -79,13 +79,14 @@
 #
 #
 #		[x-x] Bastion - treasure room II
-#
-#			-208, -1104
+#     This one has been reset with MCASelector, and still has loot.  I did find
+#     twi Netherite Smithing Templates here though.
+#			-226, -1085
 #
 #		[x-x] Bastion - treasure room
 #
 #			The exit is around here:
-#
+#     -208, 68, -1066 - WF1
 #			-528, 67, -946
 #
 #			There is still a chest with minor loot here.

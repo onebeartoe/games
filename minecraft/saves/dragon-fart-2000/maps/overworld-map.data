@@ -280,6 +280,12 @@
 
 
 
+# There is nice Cherry Grove
+#     There is a super mini base here (no Ender Chest).
+-4000, -348, "CH2"
+
+
+
 
 # Directions
 0, -1300, "N"
