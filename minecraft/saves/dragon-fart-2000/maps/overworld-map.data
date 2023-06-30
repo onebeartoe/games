@@ -147,7 +147,15 @@
 
 
 # Woodland Mansion
+# Crap this one got wiped out with the 1.20 reset.
+# It is not there anymore.
 -1032, -2040, "WM1"
+
+
+# Woodland Mansion ~2
+# Tying to get the Vex Smithing template for armor time
+7088, 2992, "WM~2"
+
 
 #Buried Treasure ?
 -999, -1863, "BT1"

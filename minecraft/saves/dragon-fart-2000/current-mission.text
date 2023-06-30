@@ -4,80 +4,148 @@
 
 1.20
 
-[] Redo the Original Ancient Cities
-
-    [] Cherry Blossom Blocks
-
-    [x] Reset chunks via MCA Selector
-
-    [] Smithing with Style Advancement
-        (TODO: fix the 'get some trix section' below)
-        Dune?
-        Eye?
+[x] New Stronghold
+      The portal is here: -14250, 26, -3630
+      [x] -14240, -3584
 
 
-        Ancient City
-        2786 away
-            [] Silence
-            [] Ward
+[x] Get back home from the ocean monument with the loot.
 
-        Woodland Mansion
-        3392
-            [] Silence - looks cool.
+      [x] use the Nether Hub
 
-        Ocean Monument
-        1617
-            [] Tide
+[] Make Base 1 have Cherry Blossoms fall all over the place.
 
-        Tail Ruins
-        843
-            [] Wayfinder
-Eeek, let's see!
-Yep, I found Wayfinder smithing template here!
-I also the Raiser smithing template and another Relic music disc.
-It is huge!
-It is probably still holding more suspicious sand that has not been excavated.
+[x] Current Nether Base
+          -1823, 75, -366
+
+          [x] bastion remanant
+              -1840, -368
+
+          [x] closest Fortress
+              We ain't found shit.
+              -1552, -144
+
+
+
+[] Smithing Templates
+      [x] spire
+      [x] snout
+      [] rib  (nether fortress)
+      [] ward (ancient city)
+      [] silence (ancient city)
+      [x] vex
+      [x] tide
+      [x] wayfinder
+
+
+      [] sentry
+      [x] eye
+      [x] netherite
+      [x] dune
+      [x] shaper
+      [x] raiser
+      [x] coast
+
+
+[] Smithing with Style Advancement
+
+    Ancient City
+        [] Silence - looks cool.
+            [x] This AC is by the far far Woodland Mansion.
+                This one was fun! I got some regular loot,
+                but no smithing templates.
+                -10960, -1008
+
+            [x] I cleared all the existing ones with
+               MCASelector, but they did not have it.
+        [] Ward
+
+    Woodland Mansion
+        Vex
+          [x] -11392, -816
+                There was a Vex Smithing template in the upper
+                'bedroom'.   But so far I did not find not one Alley.
+                [] get the stuff across the river
+                    and take stuff back home.
+
+          -846, 2144
+          ??I may have checked here already, but am not sure.??
+          [] Vex
+
+
+
+    Ocean Monument
+        [] Tide
+              [~?~] 1312, 4656
+              I think I did this one already, it was a nope.
+
+              [] -12656, -2944
+                    I got the Tide Smithing Template here, after tring like 6
+                    Ocean Monuments!
+                    Dude, I took off the 'Head o'Plenty' mod from Vanilla Tweeks,
+                    and I got it on the first try!
+                    The mini-base is here:
+                        -12623, -3088
+
+    Tail Ruins
+        [] 1200, 4144
+        This is another one....
+        The closest base is at 1317, 4412.
+
+
+        [x] Wayfinder
+            Eeek, let's see!
+            Yep, I found Wayfinder smithing template here!
+            I also the Raiser smithing template and another Relic music disc.
+            It is huge!
+            It is probably still holding more suspicious sand that has not been excavated.
+            There is already an Ender Chest here.
             -4720, -816
 
 
-          [] PVD1 - see what is out there
+      [] PVD1 - see what is out there
+            [x] Desert Temple
+                it was not there after the chunck reset.
+            [] Ocean Monument
+            [] Outpost
 
-          [] Ocean Cold Ruin
-              I think itstill has some (this is the first one I think.)
-              112, 32
+      [] Ocean Cold Ruin
+          I think itstill has some (this is the first one I think.)
+          112, 32
 
-          [x] Ocean Monument 2
-              720, -1280
-              I think the world seed is effecting the loot chest here.
-              I cleared 3 times with MCASelector, but didn't get
-              the Tide Trim from the Elder Guardians here..
-              Nearby mini base
-                  668, -1066
+      [x] Ocean Monument 2
+          720, -1280
+          I think the world seed is effecting the loot chest here.
+          I cleared 3 times with MCASelector, but didn't get
+          the Tide Trim from the Elder Guardians here..
+          Nearby mini base
+              668, -1066
 
-          [x] Trail Ruin Other One
-              Nope
-              There is mini-base platform here.
-          2000, -528
-
-          [x] Ocean Monument 3
+      [x] Trail Ruin Other One
           Nope
-          1760, -816
+          There is mini-base platform here.
+      2000, -528
 
-          [x] Desert Temple
-            Nope
-            1584, -382
+      [x] Ocean Monument 3
+      Nope
+      1760, -816
 
-[] Desert Temple
 
-[] Armor Template
 
-[] Make a garden of alternating Torchflower & Pitcher plants.
 
-[x] Get some armor trims
 
-    [x] Netherite
-    [?x?] Coast
 
+
+
+
+[x] Desert Temple
+
+      [x] I got the Dune template here!
+      2912, 6000
+
+
+      [x] Nope
+        1584, -382
 
 
 
@@ -151,6 +219,21 @@ It is probably still holding more suspicious sand that has not been excavated.
 
 
 ----------------------------------
+
+1.20 Trails and Tales Stuff
+
+[x] Make a garden of alternating Torchflower & Pitcher plants.
+
+[x] Get some armor trims
+
+    [x] Netherite
+    [x] Raiser
+    [x] Shaper
+
+
+
+----------------------------------
+
 
 
 [x] Banner patters
@@ -264,6 +347,18 @@ It is probably still holding more suspicious sand that has not been excavated.
 
 
 ---------------------------------------------------------------------------
+
+
+[x] Redo the Original Ancient Cities
+
+    [x] Cherry Blossom Blocks
+
+    [x] Reset chunks via MCA Selector
+          It didn't seem to work.
+
+
+
+
 
 
 [x] Ancient City Base 1

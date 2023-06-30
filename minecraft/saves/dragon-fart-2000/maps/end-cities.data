@@ -56,7 +56,6 @@ Second Portal Outlet
 
 # Second End Ship
 # Chunk base showed the  next closest End City/Ship is at this location:
-#!!!!!!Still need to get the dropped loot near the top of End City
 -1896, -2168, "ES2"
 
 
@@ -65,9 +64,9 @@ Second Portal Outlet
 
 # Third End Ship
 # 	This one is pretty good.
-# 	The Elytra is recovered from this City/Ship, but the loot and most of the
-#	Shulkers and loot are still there.
-#	There is an Ender Chest outside there too.
+# 	The Elytra and loot is recovered from this City/Ship,
+#   but there are still Shulkers there.
+#	  There is an Ender Chest outside there too.
 -3180, -2880, "ES3"
 
 #Fourth End Ship
@@ -75,6 +74,19 @@ Second Portal Outlet
 #         -4103, -3143
 #   A return portal is at
 #         -4290, -3010
-#   I got the Elytra but, there is still some loot here.
-#         This is first Elytra that I got wearing an Elytra; I flew in the End deminsion!
+#   I got the Elytra.
+#         This is first Elytra that I got wearing an Elytra;
+#         I flew in the End deminsion!
 -4120, -3176, "ES4"
+
+# 4.5 End City (no ship)
+# There was some good loot, but no Spire smithing template.
+-4427, -3817 "EC4.5"
+
+
+# Fifth End City
+# Yay, I stared with the End Ship here.  And it had
+# the Spire trim!
+# I didn't even go into any other room,
+# so all the other loot is still there.
+-4712, -4440, "ES5"
