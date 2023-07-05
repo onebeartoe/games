@@ -61,7 +61,7 @@
 #	[x] -752, -224* (double check)
 #		The outside mine base exit is at -756, 81, -223
 #
-163, 85, "V5NP"
+163, 82, 29, "V5NP" 
 
 
 # Warped Forrest 1

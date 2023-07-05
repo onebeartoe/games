@@ -1,44 +1,31 @@
 
-
-
-
 1.20
 
-[x] New Stronghold
-      The portal is here: -14250, 26, -3630
-      [x] -14240, -3584
+[] Do some vacationing at 'First Camel Desert Village'
 
-
-[x] Get back home from the ocean monument with the loot.
-
-      [x] use the Nether Hub
 
 [] Make Base 1 have Cherry Blossoms fall all over the place.
 
-[x] Current Nether Base
-          -1823, 75, -366
 
-          [x] bastion remanant
-              -1840, -368
-
-          [x] closest Fortress
-              We ain't found shit.
-              -1552, -144
-
+[] All Biomes Advancement
+      missingTimes = 
+      [] minecraft:ice_spikes
+      [] minecraft:stony_peaks
 
 
 [] Smithing Templates
       [x] spire
       [x] snout
-      [] rib  (nether fortress)
-      [] ward (ancient city)
-      [] silence (ancient city)
+      [x] rib  (nether fortress)
+      [x] ward (ancient city)
+      [x] silence (ancient city)
       [x] vex
       [x] tide
       [x] wayfinder
-
-
-      [] sentry
+      # non-advancement trims:
+      [] Host (trail ruins)
+      [] Wild (Jungle Temple)
+      [x] sentry (Pillager Outpost)
       [x] eye
       [x] netherite
       [x] dune
@@ -47,10 +34,77 @@
       [x] coast
 
 
-[] Smithing with Style Advancement
+[x] Smithing with Style Advancement
+
+
+
+
+
+
+[] Horse Stable
+
+[] giant tree house
+
+[] giant ocean bridge
+
+[]  small fishing town
+
+[] lighthouse
+
+[] Display for my rarest items (framed)
+
+[] Bee Sanctuary
+
+[] Dance Party room  (multi-color floor)
+
+
+
+
+
+
+----------------------------------
+
+1.20 Trails and Tales Stuff
+
+[x] Get Armor Trims from the Ancient Citys near this Village
+      The initial base is here at Y level 86 (in the cave).
+      -10,064, -3,216
+      #
+      # Ancient City A
+      [x] -10_600, -2888
+          Yay, it had the Silence and Ward Trims!
+          I am so grateful and lucky!
+
+      # Ancient City B
+      I did go since I go the Trims in City A.
+      [~] -10_360, -51, -3000
+
+
+      [x] Nether Fortress
+
+            [x] -3972, 67, 1706
+                I finally found the Rib Smithing Template here!
+
+            [x] -304, 1008
+
+            [x] -592, 240
+
+            [x] 176, 176
+                    The exit is here: 181, 66, 168
+                    Nope - no trim
+
+
+
+
+
+[x] New Stronghold
+      The portal is here: -14250, 26, -3630
+      [x] -14240, -3584
+
+
 
     Ancient City
-        [] Silence - looks cool.
+        [x] Silence - looks cool.
             [x] This AC is by the far far Woodland Mansion.
                 This one was fun! I got some regular loot,
                 but no smithing templates.
@@ -58,7 +112,7 @@
 
             [x] I cleared all the existing ones with
                MCASelector, but they did not have it.
-        [] Ward
+        [x] Ward
 
     Woodland Mansion
         Vex
@@ -68,18 +122,14 @@
                 [] get the stuff across the river
                     and take stuff back home.
 
-          -846, 2144
-          ??I may have checked here already, but am not sure.??
-          [] Vex
-
 
 
     Ocean Monument
-        [] Tide
+        [x] Tide
               [~?~] 1312, 4656
               I think I did this one already, it was a nope.
 
-              [] -12656, -2944
+              [x] -12656, -2944
                     I got the Tide Smithing Template here, after tring like 6
                     Ocean Monuments!
                     Dude, I took off the 'Head o'Plenty' mod from Vanilla Tweeks,
@@ -88,7 +138,7 @@
                         -12623, -3088
 
     Tail Ruins
-        [] 1200, 4144
+        [x] 1200, 4144
         This is another one....
         The closest base is at 1317, 4412.
 
@@ -103,13 +153,13 @@
             -4720, -816
 
 
-      [] PVD1 - see what is out there
+      [x] PVD1 - see what is out there
             [x] Desert Temple
                 it was not there after the chunck reset.
-            [] Ocean Monument
-            [] Outpost
+            [x] Ocean Monument
+            [x] Outpost
 
-      [] Ocean Cold Ruin
+      [x] Ocean Cold Ruin
           I think itstill has some (this is the first one I think.)
           112, 32
 
@@ -131,7 +181,13 @@
       1760, -816
 
 
+      [x] Illager Outpost
 
+          [x] 1808, -4592
+          I found the Sentry Smithing Template here, yay!
+
+          [x] -2784, -3888
+          Nope, no smithing template
 
 
 
@@ -148,79 +204,67 @@
         1584, -382
 
 
+[x] Current Nether Base
+          -1823, 75, -366
 
-[] Horse Stable
+          [x] bastion remanant
+              -1840, -368
 
-[] giant tree house
-
-[] giant ocean bridge
-
-[]  small fishing town
-
-[] lighthouse
-
-[] Display for my rarest items (framed)
-
-[] Bee Sanctuary
-
-[] Dance Party room  (multi-color floor)
+          [x] closest Fortress
+              We ain't found shit.
+              -1552, -144
 
 
-[x] Bring a Camel to Base 1
+              [x] Bring a Camel to Base 1
 
-    Sure robert, it may be too fart.
+                  Sure robert, it may be too fart.
 
-      Sure, sure Robert. I brought back two camels  to Base 1, today.
-
-
-[x] !!!!!Before
-
-      https://www.youtube.com/watch?v=1_EYaaEJAic&ab_channel=ibxtoycat
-
-      nope, I forgot to do the Netherite before I stared 1.20 betas
-
-[x] Do the Before stuff before upgreading to 1.20
-
-      Sure Robert
-
-[x] Another/Second Ruined Trail
-
-      [x] get the new 'Relic' music record.
-
-      [x] there is one at, yep and I found an Armor Smithing template too!!!    :)
-
-              -1904, -2048
-
-[x] Restore ruined points of interest with light blocks and labs.
+                    Sure, sure Robert. I brought back two camels  to Base 1, today.
 
 
-        First Camel Desert Village
+              [x] !!!!!Before
 
-            -3184, -3792
+                    https://www.youtube.com/watch?v=1_EYaaEJAic&ab_channel=ibxtoycat
 
-            closest Ruined Trail
+                    nope, I forgot to do the Netherite before I stared 1.20 betas
 
-                -2528, -4048
+              [x] Do the Before stuff before upgreading to 1.20
 
-        First ruined Trail
-            1408, 1248
+                    Sure Robert
 
-        First Warm Ocean Ruin
-            -784, 416
+              [x] Another/Second Ruined Trail
 
-            There are still a bunch of ruins(suspicious sand) here.
+                    [x] get the new 'Relic' music record.
 
-            I found two Sniffer Eggs here!
+                    [x] there is one at, yep and I found an Armor Smithing template too!!!    :)
 
-            This is a lovely and pretty venue.
+                            -1904, -2048
 
-            The base is at -788, 67, 352
+              [x] Restore ruined points of interest with light blocks and labs.
 
 
+                      First Camel Desert Village
 
-----------------------------------
+                          -3184, -3792
 
-1.20 Trails and Tales Stuff
+                          closest Ruined Trail
+
+                              -2528, -4048
+
+                      First ruined Trail
+                          1408, 1248
+
+                      First Warm Ocean Ruin
+                          -784, 416
+
+                          There are still a bunch of ruins(suspicious sand) here.
+
+                          I found two Sniffer Eggs here!
+
+                          This is a lovely and pretty venue.
+
+                          The base is at -788, 67, 352
+
 
 [x] Make a garden of alternating Torchflower & Pitcher plants.
 
