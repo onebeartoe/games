@@ -14,6 +14,8 @@ import org.json.simple.parser.ParseException;
 
 /**
  * This class provides service methods for user specific advancements.
+ * 
+ * This is specifically for Minecraft 1.17.
  */
 public class UserAdvancementsService
 {    
@@ -35,6 +37,7 @@ public class UserAdvancementsService
     
     public static final String savesPath = resourcesPath + "minecraft/saves/1.17/";
 
+//TODO: path this value in as a constructor argument    
     public static final String advancementsPath = savesPath +  "advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";    
         
     public UserAdvancementsService() throws IOException, ParseException
@@ -227,7 +230,8 @@ else
         return missingFromB(minecraftCats, userCats);
     }
     
-    private List<String> missingFromB(List<String> a, List<String> b)
+//TODO: move this to a better place    
+    public static List<String> missingFromB(List<String> a, List<String> b)
     {
         List<String> missingItems = new ArrayList();
         

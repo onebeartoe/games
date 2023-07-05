@@ -11,7 +11,9 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 /**
- * * This verifies the specification for AdvancementsService class.
+ * !!!This is specifically for Minecraft 1.17.!!!
+ * 
+ * * This verifies the specification for UserAdvancementsService class.
  * 
  *  These tests explore the advancements in a Minecraft world for a single player.
  *

@@ -14,6 +14,8 @@ import org.json.simple.parser.ParseException;
 /**
  * This class provides method to parse and query Minecraft Advancements data 
  * files.
+ * 
+ * This is specifically for Minecraft 1.17.
  */
 public class AdvancementsService
 {   
