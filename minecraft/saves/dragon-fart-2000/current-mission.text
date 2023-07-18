@@ -1,18 +1,15 @@
 
 
-[] Do some vacationing at 'First Camel Desert Village'
 
-      [] lighthouse
+[] Proper house for Base 1
+      See Farzy's Copper Shop for a good example an underneath stable.
 
       [] Horse Stable
 
       [] giant tree house
 
-      [] giant ocean bridge
-
       []  small fishing town
-
-
+                (ibxtoycat inspired)
 
 1.20
 
@@ -35,10 +32,7 @@
                       There is a mini-base here, there is also
                       a little grey parrot here.
 
-                []
 
-          [] desert pyramid
-                [x] 1584, 368
 
           [] Cold Ocean Ruins
                 [x] 1312 416
@@ -56,14 +50,14 @@
           [x] Sheaf
           [x] Shelter
 
-          [] Archer   - Desert temple
+          [x] Archer   - Desert temple
           [] Arms Up  - Desert well
           [] Blade    - Cold Ocean ruins
           [] Explorer - Cold Ocean ruins
-          [] Miner    - Desert temple
+          [x] Miner    - Desert temple
           [] Plenty   - Cold Ocean ruins
-          [] Prize    - Desert temple
-          [] Skull    - Desert temple
+          [x] Prize    - Desert temple
+          [x] Skull    - Desert temple
           [] Snort    - Warm Ocean ruins
 
 
@@ -96,9 +90,17 @@
 
 ----------------------------------
 
+
+[x] Do some vacationing at 'First Camel Desert Village'
+      [x] lighthouse
+            Farzy Style
+                https://www.youtube.com/watch?v=3A0PlyJxpGQ&ab_channel=Farzy
+            [~] Have a Beacon go thru the center
+                    I didn't have a Nether Star
+
+
+
 1.20 Trails and Tales Stuff
-
-
 
 [x] Make a display for all the mob heads using note blocks.
 
@@ -310,18 +312,33 @@
 
 
 
-
 [x] Desert Temple
 
-      [x] I got the Dune template here!
-      2912, 6000
+      [x] 2912, 6000
+          I got the Dune template here!
 
+      [x] 1584, 368
 
       [x] Nope
         1584, -382
 
+      [x] -4800, -1900
+          Got one!
 
-[x] Current Nether Base
+      [x] -5370, -1740
+          I got another two!
+
+      [x] -5980, -1480
+          Nothing there
+
+      [x] -6090, -1750
+          I got the last Desert Pyramid one here; Prize!
+
+
+[] Desert Well Shards
+      [] There are a bunch near the Desert Temple that had the Prize sherd.
+
+[x] Nether Locations
           -1823, 75, -366
 
           [x] bastion remanant
