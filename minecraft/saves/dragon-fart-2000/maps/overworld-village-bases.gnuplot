@@ -24,11 +24,6 @@ plot 'overworld-village-bases.data' using 1:2:3 \
      'overworld-village-bases.data' using 1:2 \
      with points pt 6 ps var lc rgb "black" lw 0.1
 
-#plot 'overworld-village-bases.data' using 1:2:3 with labels hypertext point pt 7 ps var lc rgb 'white',\
-#'' using 1:2:3 with points pt 7 ps var lc rgb variable
-
-#plot 'overworld-village-bases.data' using 1:2:3 with labels
-
 pause -1 "Hit return to resume"
 
 reset
