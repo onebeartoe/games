@@ -19,6 +19,8 @@ import java.util.stream.Collectors;
  * 
  * Any line starting with a hash (#) is ignored.
  * 
+ * Any blank line is also ignored.
+ * 
  * Any other line in any other format is considered an error and is output.
  */
 public class GnuplotDataVerification
