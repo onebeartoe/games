@@ -4,7 +4,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 /**
@@ -23,14 +25,12 @@ public class GnuplotDataVerification
 {
     public static void main(String[] args) throws IOException 
     {
-        System.out.println("hello Java world!");
-        
-        File f1 = new File(args[0]);
-        
-        List<File> dataFiles = new ArrayList();
-        
-        dataFiles.add(f1);
-        
+        System.out.println("hello Java world!\n\n\n");
+    
+        List<File> dataFiles = Arrays.stream(args)
+                        .map(s -> new File(s) )
+                        .collect( Collectors.toList() );
+                
         GnuplotDataVerification app = new GnuplotDataVerification();
         
         app.verify(dataFiles);
@@ -60,6 +60,8 @@ public class GnuplotDataVerification
                     default -> System.out.print("");
                 }
             }
+            
+            System.out.println("\n");
         }
     }
     
