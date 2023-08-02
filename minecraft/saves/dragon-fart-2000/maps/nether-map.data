@@ -29,10 +29,6 @@
 
 
 
-# initial portal - at original home base
-#	Spawned in a Crimsom Forest
-#   It is at Y level 75.
--37, -30, "P1"
 
 
 
@@ -61,7 +57,7 @@
 #	[x] -752, -224* (double check)
 #		The outside mine base exit is at -756, 81, -223
 #
-163, 82, 29, "V5NP" 
+163, 82, 29, "V5NP"
 
 
 # Warped Forrest 1

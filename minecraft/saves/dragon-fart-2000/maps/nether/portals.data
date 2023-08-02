@@ -1,0 +1,11 @@
+
+# This is the center of the Nether Hub.
+# initial portal - at original home base (B1)
+#	Spawned in a Crimsom Forest
+#   It is at Y level 75.
+-37, -30, "P1"
+
+
+
+# First Trail Ruin
+176, 156, "TRP1"
