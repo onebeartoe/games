@@ -1,7 +1,6 @@
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -93,20 +92,15 @@ public class GnuplotDataVerification
         Path inpath = infile.toPath();
         
         List<ValidationEntry> entries = new ArrayList();
-try
-{
-//        List<String> lines = Files.readAllLines(inpath);    
-        List<String> lines = Files.readAllLines(inpath, StandardCharsets.ISO_8859_1);
 
-
-        
+        List<String> lines = Files.readAllLines(inpath);           
 
         int lineNumber = 0;
-        
+
         for(String line : lines)
         {
             ValidationEntry entry = null;
-            
+
             if( line.startsWith("#") )
             {
                 entry = new CommentEntry(lineNumber, line);
@@ -123,19 +117,11 @@ try
             {
                 entry = new DataFormatError(lineNumber, line);
             }
-            
+
             entries.add(entry);
-                
+
             lineNumber++;
         }   
-}
-catch(Exception e)
-{
-    System.out.println("infile: " + infile.toString());
-    
-    e.printStackTrace();
-}
-
 
         FileValidation validation = new FileValidation(infile, entries);
                 
