@@ -1,6 +1,7 @@
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -29,9 +30,27 @@ public class GnuplotDataVerification
     {
         System.out.println("hello Java world!\n\n\n");
     
-        List<File> dataFiles = Arrays.stream(args)
-                        .map(s -> new File(s) )
-                        .collect( Collectors.toList() );
+        boolean hasArguments = args.length > 0;
+        
+        List<File> dataFiles;
+                
+        if(hasArguments)
+        {
+            dataFiles = Arrays.stream(args)
+                            .map(s -> new File(s) )
+                            .collect( Collectors.toList() );
+        }
+        else
+        {
+            Path startPath = Path.of(".");
+            
+            
+            dataFiles = Files.walk(startPath)
+                    .filter(Files::isRegularFile)
+                    .map(p -> {return p.toFile(); })
+                    .filter(p -> {return p.toString().endsWith(".data");})                    
+                    .collect(Collectors.toList());
+        }        
                 
         GnuplotDataVerification app = new GnuplotDataVerification();
         
@@ -57,7 +76,9 @@ public class GnuplotDataVerification
             {
                 switch(entry)
                 {
-                    case DataFormatError e -> System.out.println("line " + e.lineNumber() + "\n" + e.line());
+                    case DataFormatError e -> System.out.println("line " + e.lineNumber() + "\n" 
+                            + e.line()
+                    );
                     
                     default -> System.out.print("");
                 }
@@ -71,9 +92,14 @@ public class GnuplotDataVerification
     {
         Path inpath = infile.toPath();
         
-        List<String> lines = Files.readAllLines(inpath);
-        
         List<ValidationEntry> entries = new ArrayList();
+try
+{
+//        List<String> lines = Files.readAllLines(inpath);    
+        List<String> lines = Files.readAllLines(inpath, StandardCharsets.ISO_8859_1);
+
+
+        
 
         int lineNumber = 0;
         
@@ -101,7 +127,15 @@ public class GnuplotDataVerification
             entries.add(entry);
                 
             lineNumber++;
-        }
+        }   
+}
+catch(Exception e)
+{
+    System.out.println("infile: " + infile.toString());
+    
+    e.printStackTrace();
+}
+
 
         FileValidation validation = new FileValidation(infile, entries);
                 
