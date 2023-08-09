@@ -23,17 +23,17 @@
 
 
 
-Second Portal
-!!!!!!!!!!!!!!!!!
+# Second Portal
+#!!!!!!!!!!!!!!!!!
 
-Second Portal Outlet
+# Second Portal Outlet
 623, -800, "P2-O"
 
 
 
 # First Ender Chest
 #	It is not there anymore, I picked it up with Silk Touch.
--765, -986, EC1
+-765, -986, "EC1"
 
 
 # Enderman/Endermite XP Farm
@@ -81,7 +81,7 @@ Second Portal Outlet
 
 # 4.5 End City (no ship)
 # There was some good loot, but no Spire smithing template.
--4427, -3817 "EC4.5"
+-4427, -3817, "EC4.5"
 
 
 # Fifth End City

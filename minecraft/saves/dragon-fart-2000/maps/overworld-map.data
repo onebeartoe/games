@@ -19,7 +19,7 @@
 
 # elbo 90 angle from B1 to V2
 #       This is needed to get around the mountian.
--261, 98 "elbo-V2"
+-261, 98, "elbo-V2"
 
 
 # Second Village (has cats?)
