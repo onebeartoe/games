@@ -27,7 +27,7 @@ public class GnuplotDataVerification
 {
     public static void main(String[] args) throws IOException 
     {
-        System.out.println("hello Java world!\n\n\n");
+        System.out.println("Hello Gnuplot Data Verification world!\n");
     
         boolean hasArguments = args.length > 0;
         
@@ -42,8 +42,7 @@ public class GnuplotDataVerification
         else
         {
             Path startPath = Path.of(".");
-            
-            
+
             dataFiles = Files.walk(startPath)
                     .filter(Files::isRegularFile)
                     .map(p -> {return p.toFile(); })
@@ -58,7 +57,7 @@ public class GnuplotDataVerification
     
     private void verify(List<File> dataFiles) throws IOException
     {
-        List<FileValidation> validationLists = new ArrayList();
+        var validationLists = new ArrayList<FileValidation>();
         
         for(File infile : dataFiles)
         {
@@ -83,7 +82,7 @@ public class GnuplotDataVerification
                 }
             }
             
-            System.out.println("\n");
+            System.out.println();
         }
     }
     
@@ -91,7 +90,7 @@ public class GnuplotDataVerification
     {
         Path inpath = infile.toPath();
         
-        List<ValidationEntry> entries = new ArrayList();
+        var entries = new ArrayList<ValidationEntry>();
 
         List<String> lines = Files.readAllLines(inpath);           
 
