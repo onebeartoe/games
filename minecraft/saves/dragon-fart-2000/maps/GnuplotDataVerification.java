@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 
 /**
  * This application  verifies input files are in the correct format for a 
- * 2D with labels Gnuplot.
+ * 2D, with labels, Gnuplot.
  * 
  * The format is 
  * 
