@@ -1,13 +1,17 @@
 
+import java.awt.Toolkit;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.TimerTask;
 import java.util.stream.Collectors;
-
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 
 /**
  * This application  verifies input files are in the correct format for a 
@@ -74,10 +78,14 @@ public class GnuplotDataVerification
             {
                 switch(entry)
                 {
-                    case DataFormatError e -> System.out.println("line " + e.lineNumber() + "\n" 
-                            + e.line()
-                    );
-                    
+                    case DataFormatError e -> 
+                    {
+                        String message = "line " + e.lineNumber() + "\n" + e.line();
+                        
+                        System.out.println(message);
+                        
+                        playValidationFailureSound();
+                    }                    
                     default -> System.out.print("");
                 }
             }
@@ -125,6 +133,50 @@ public class GnuplotDataVerification
         FileValidation validation = new FileValidation(infile, entries);
                 
         return validation;
+    }
+    
+    private void playValidationFailureSound()
+    {
+        // start the sound clip on a separate thread to allow the program to continue
+        Runnable task = new Runnable()
+        {
+            @Override
+            public void run() 
+            {
+                try 
+                {
+                    File raid = new File("watcher/audio.1692864467107.wav");
+
+                    Clip clip = AudioSystem.getClip();
+
+                    clip.open(AudioSystem.getAudioInputStream(raid));
+
+                    // this call returns immediately 
+                    clip.start();
+
+                    // so pause a little to let the clip finish playing
+                    Thread.sleep( Duration.ofSeconds(1) );
+                } 
+                catch (Exception ex) 
+                {
+                    System.err.println("Couldn't open the stream");
+
+                    ex.printStackTrace();
+
+                    Toolkit.getDefaultToolkit().beep();
+                }
+            }
+        };
+      
+        // While this approach introduces multitreading to not block the main()
+        // application thread with a call to Thread#sleep() , it plays multiple 
+        // instances of the audio clip at the same time if there are multiple 
+        // validation failures.
+        //
+        // To get expected results, maybe the better thing IS to use a call to 
+        // Thread#sleep() to individually hear multiple audio clips.
+        Thread thread = new Thread(task);
+        thread.start();
     }
 
     private boolean isValid(String line) 
