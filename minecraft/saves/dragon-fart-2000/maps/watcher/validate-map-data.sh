@@ -1,2 +1,2 @@
 
-java --source 20 --enable-preview GnuplotDataVerification.java
+java --source 20 --enable-preview watcher/GnuplotDataVerification.java
