@@ -167,16 +167,7 @@ public class GnuplotDataVerification
                 }
             }
         };
-      
-        // While this approach introduces multitreading to not block the main()
-        // application thread with a call to Thread#sleep() , it plays multiple 
-        // instances of the audio clip at the same time if there are multiple 
-        // validation failures.
-        //
-        // To get expected results, maybe the better thing IS to use a call to 
-        // Thread#sleep() to individually hear multiple audio clips.
-        Thread thread = new Thread(task);
-        thread.start();
+        task.run();
     }
 
     private boolean isValid(String line) 
