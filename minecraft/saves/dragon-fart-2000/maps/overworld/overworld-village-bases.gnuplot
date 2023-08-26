@@ -19,6 +19,7 @@ print "2D plot ahead, one moment please ..."
 
 set label "0,0" at 0, 0
 
+# revert to use non-tool tip display
 plot 'overworld-village-bases.data' using 1:2:3 \
      with labels hypertext point pt 7 ps var lc rgb "#ffee99", \
      'overworld-village-bases.data' using 1:2 \

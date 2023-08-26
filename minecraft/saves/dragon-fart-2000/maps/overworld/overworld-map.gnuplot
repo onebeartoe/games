@@ -23,6 +23,12 @@ plot   'overworld-map.data'           using 1:2:3 with labels
 replot 'overworld-village-bases.data' using 1:2:3 with labels
 replot 'overworld-minimal-bases.data' using 1:2:3 with labels 
 
+# show the entries as a dot with tool tip labels
+replot 'points-of-interest.data' using 1:2:3 \
+     with labels hypertext point pt 7 ps var lc rgb "#ffee99", \
+     'points-of-interest.data' using 1:2 \
+     with points pt 6 ps var lc rgb "black" lw 0.1
+
 pause -1 "Hit return to resume"
 
 reset
