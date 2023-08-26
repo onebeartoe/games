@@ -1,6 +1,31 @@
 
 
-#Ancient City A
+# The New Ancient City
+-5920, 1632, "NAC"
+
+
+# Ancient City 1
+#   Y-level = -51
+-360, 2072, "AC1"
+
+
+# Third Ancient City - AC3
+#   Y-level = -51
+88, 2104, "AC3"
+
+
+# Ancient City A
 -10600, -2888, "ACA"
+
+
+# Ancient City B
+#   Y-level =  -51
+-10360, -3000, "ACB"
+
+
+# Ancient City C
+# This AC is by the far far Woodland Mansion.
+# This one was fun! I got some regular loot, but no smithing templates.
+-10960, -1008, "ACC"
 
 

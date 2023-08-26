@@ -294,17 +294,15 @@
 
 
 
-[x] Get Armor Trims from the Ancient Citys near this Village
-      The initial base is here at Y level 86 (in the cave).
-      -10,064, -3,216
-      #
+[x] Get Armor Trims from the Ancient Cities near this Village
+        ACVB2
+      
       # Ancient City A
         [x] Yay, it had the Silence and Ward Trims!
             I am so grateful and lucky!
 
       # Ancient City B
-      I did go since I go the Trims in City A.
-      [~] -10_360, -51, -3000
+      [~] I didn't go since I got the Trims in City A.
 
 
       [x] Nether Fortress
@@ -332,13 +330,10 @@
 
     Ancient City
         [x] Silence - looks cool.
-            [x] This AC is by the far far Woodland Mansion.
-                This one was fun! I got some regular loot,
-                but no smithing templates.
-                -10960, -1008
 
             [x] I cleared all the existing ones with
                MCASelector, but they did not have it.
+
         [x] Ward
 
     Woodland Mansion
@@ -674,11 +669,6 @@
 
 
 [x] New Ancient City
-
-      [x] The New Ancient City is here
-            -5920, 1632
-
-
       [x] The closest Village is here
             -5645, 113, 1442
 
@@ -958,7 +948,8 @@
 
 [x] Loot an Ancient City(ies)
 
-	On the run of the first 3 of 4, I got enough shards to make a few music disks and took home two Swift Sneek I and one Swift Sneak II.
+	On the run of the first 3 of 4, I got enough shards to make a few music disks 
+    and took home two Swift Sneek I and one Swift Sneak II.
 
 	tips:
 
@@ -1001,60 +992,52 @@
 
 			The Ancient City Topside Base (ACTB1) is here.
 
-			-344, 121,  2199
+			[x] Nearest Ancient City 1 - AC1
+                    (thanks chunkbase!)
 
-
-			[x] Nearest Ancient City (thanks chunkbase!)
-
-					-360, -51, 2072
-          This one has been cleared with MCASelect.
-          Let's see if it work to get the Silence Smithing Template.
+                    This one has been cleared with MCASelect.
+                    Let's see if it work to get the Silence Smithing Template.
 
 					The water fall exit is at
+                        -368, -51, 2071
 
-								-368, -51, 2071
+                    There is a tunnel to Third Ancient City right by this exit.
 
-								There is a tunnel to Third Ancient City right by this exit.
+                    I think this one is looted and no Warden can spawn here
+                    anymore (all the Skulk Shriekers have been removed)
 
-								I think this one is looted and no Warden can spawn here
-								anymore (all the Skulk Shriekers have been removed)
+                    I lost two Swift Sneak books though :(
 
-								I lost two Swift Sneak books though :(
+                    Chunkbase says a Geode is here:
+                        -333, -45, 2100
+                                Nope, AC overwrote it.
 
-								Chunkbase says a Geode is here:
-													-333, -45, 2100
-															Nope, AC overwrote it.
-
-													-372, 34, 2126
-															Yup, it is a half-geode; but I still like it.
+                        -372, 34, 2126
+                                Yup, it is a half-geode; but I still like it.
 
 
 			[x] Second Ancient City
-
 				-360,-51, 1784
+				It looks like only a Deep Dark biome is here, 
+                I cound not find the Ancient City.
 
-				It looks like only a Deep Dark biome is here, I cound not find the Ancient City.
 
-
-			[x] Third Ancient City
-
-				88, -51, 2104
+			[x] Third Ancient City - AC3
 
 				Exit is a tunnel that leads to Ancient City 1
-
 						-19, -51, 2104
 
-        There is a cure Zombie Villager here.
+                There is a cure Zombie Villager here.
 
 				The tunnes that leads to 4th Ancient city is at
 								192, -51, 2096
 
 
 			[x] Fourth Ancient City
-
 				248, -51, 1672
 
-				Same as 2nd Ancient city, It looks like only a Deep Dark biome is here, I cound not find the Ancient City.
+				Same as 2nd Ancient city, It looks like only a Deep Dark biome 
+                is here, and I cound not find the Ancient City.
 
 
 

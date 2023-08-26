@@ -89,8 +89,9 @@
 
 # Ancient City Topside Base 1
 # 	There are 4 Ancient Cities near here
-#	  The base is has lots of resources.
+#	The base is has lots of resources.
 #   There is a stone bridge in the direction of Ancient City 1.
+#   Y level = 121
 -344, 2199, "ACTB1"
 
 
@@ -133,3 +134,16 @@
 #   camels were found.
 #   There are Sniffers here too!
 -3172, -3736, "CT1"
+
+
+
+# Ancient Cities Village Base 2
+#   The initial base is here at Y level 86 (in the cave).
+-10064, -3216, "ACVB2"
+
+
+
+
+
+
+
