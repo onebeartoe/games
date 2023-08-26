@@ -3,3 +3,14 @@
 # Jungle 1
 1134, -365, "J1"
 
+
+# minecraft:ice_spikes
+#	There was an Ice Village here.
+#	Y-level = 142
+660, 2855, "IS1"
+
+
+# minecraft:stony_peaks
+# 	There is a bunch of surface ores here.
+#	Y-level =  70
+-598, 1443, "SP1"

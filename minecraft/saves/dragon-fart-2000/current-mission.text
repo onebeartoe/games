@@ -51,6 +51,8 @@
 
     Do this for the 1.21 release.
 
+[] Try the beaker banner to place by Brewing Stands
+
 ----------------------------------
 
 
@@ -285,15 +287,7 @@
 
 
 [x] All Biomes Advancement
-      missingTimes =
-      [x] minecraft:ice_spikes
-          There was an Ice Village here.
-          [x] 660, 142, 2855
 
-
-      [x] minecraft:stony_peaks
-          There is a bunch of surface ores here.
-          [x] -598, 70, 1443
 
 
 [x] Smithing with Style Advancement
@@ -305,9 +299,8 @@
       -10,064, -3,216
       #
       # Ancient City A
-      [x] -10_600, -2888
-          Yay, it had the Silence and Ward Trims!
-          I am so grateful and lucky!
+        [x] Yay, it had the Silence and Ward Trims!
+            I am so grateful and lucky!
 
       # Ancient City B
       I did go since I go the Trims in City A.
@@ -708,9 +701,8 @@
 
 
 [x] Craft a Bunny Banner
-      https://www.planetminecraft.com/banner/bunny-rabbit/
-      If this one is too hard then try the beaker banner.
-			It as at the Ancient City Base.
+        https://www.planetminecraft.com/banner/bunny-rabbit/
+        It as at the Ancient City Base.
 
 
 [x] Connect the main bases with a Nether Portal Hub.
