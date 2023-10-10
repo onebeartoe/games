@@ -5,7 +5,12 @@ Spawn Base Portal Outlet
 
 
 Nether Fortress
+# Yep, it is there.  It has at least two Blaze spawners.
+# No loot chest found so far.
 -256, ~, 240, "NF1"
 
 
+
+Stronghold 1 Portal Outlet
+185, 53, -20, "SH1"
 

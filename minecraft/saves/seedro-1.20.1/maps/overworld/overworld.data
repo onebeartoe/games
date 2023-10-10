@@ -1,3 +1,17 @@
 
 Spawn Base
 33, 65, 16, "SB"
+
+
+Stronghold 1 Mini Base
+1500, 75, -136, "SH1MB"
+
+
+Stronghold 1 End Portal
+# There is a Nether Portal here
+1502, 30, -108, "SH1EP"
+
+
+Stronghold 1 Library 1
+1517, 22, -171, "SH1L1"
+
