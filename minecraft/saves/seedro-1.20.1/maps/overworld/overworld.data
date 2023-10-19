@@ -15,3 +15,20 @@ Stronghold 1 End Portal
 Stronghold 1 Library 1
 1517, 22, -171, "SH1L1"
 
+
+
+Frozen Ocean 1
+1500, 76, 3350, "FO1"
+
+
+
+Woodland Mansion 1
+#	It is here!		
+#	But there were no Allay in the cages!
+#	But but there were 2 Allay at the Outpost near the mansion!
+#	Minibase at 4194, 118, 4040
+4272, 4032		-> 4982 blocks away from strong hold base
+
+outpost 1
+#	No Allay :(
+1536, -1008		-> 897 blocks away from strong hold base
