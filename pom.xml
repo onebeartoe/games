@@ -15,47 +15,21 @@
     <name>onebeartoe-games</name>
 
     <modules>
+        <module>big-wheel</module>
+        <module>centipedo</module>
         <module>memory</module>
         <module>minecraft</module>
         <module>rubiks-cube</module>
     </modules>
 
     <properties>
-        <maven.compiler.source>1.11</maven.compiler.source>
-        <maven.compiler.target>1.11</maven.compiler.target>   
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>   
 		
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <build>
-        <!-- To define the plugin version in your parent POM -->
-        <!--
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>findbugs-maven-plugin</artifactId>
-                    <version>3.0.3</version>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-                    
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>2.10</version>
-                <configuration>
-                    <enableRulesSummary>false</enableRulesSummary>           
-                </configuration>
-            </plugin>
-      
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>findbugs-maven-plugin</artifactId>
-                <version>3.0.3</version>
-            </plugin>      
-        </plugins>
-                -->
+
     </build>
 </project>
