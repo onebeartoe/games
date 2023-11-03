@@ -12,30 +12,31 @@
  * 
  * I did this with RandomJuke (Dr Brown's ((I think)) kaleidoscope did this a long time ago.
  */
-
-
 import javax.swing.JFrame;
 
 public class JWrapper 
 {
     public static void main(String[] args)
     {
-        System.out.println("Hello Rubik World!");
+        System.out.println("Hello Centipedo World!");
         
-        JFrame frame = new JFrame("Rubic's Cube - Shiffman Rules!");
+        JFrame frame = new JFrame("Centipedo - Shiffman Rules!");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
-         centipedo applet = new centipedo();
-  frame.getContentPane().add(applet);
-  //ADD TO THE CONTENT PANE!!!
-  //i made a mistake
-  applet.init();
-  applet.start();
-  frame.pack();
-  /* Some applets do not allow packing the frame.
-   * Others do, Its mostly trial and error.
-   */
-  frame.setResizable(false);
-  frame.setVisible(true);
+        centipedo applet = new centipedo();
+
+        frame.getContentPane().add(applet);
+
+        applet.init();
+
+        applet.start();
+
+        frame.pack();
+
+        frame.setSize(applet.w, applet.h);
+
+//        frame.setResizable(false);
+
+        frame.setVisible(true);
     }
 }
