@@ -26,12 +26,12 @@ public class Wrapplet
         JFrame frame = new JFrame("Rubic's Cube - Shiffman Rules!");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
-         CubeApp sand = new CubeApp();
-  frame.getContentPane().add(sand);
+         CubeApp applet = new CubeApp();
+  frame.getContentPane().add(applet);
   //ADD TO THE CONTENT PANE!!!
   //i made a mistake
-  sand.init();
-  sand.start();
+  applet.init();
+  applet.start();
   frame.pack();
   /* Some applets do not allow packing the frame.
    * Others do, Its mostly trial and error.
