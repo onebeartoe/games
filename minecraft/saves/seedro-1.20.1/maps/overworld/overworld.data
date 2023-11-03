@@ -29,6 +29,21 @@ Woodland Mansion 1
 #	Minibase at 4194, 118, 4040
 4272, 4032		-> 4982 blocks away from strong hold base
 
+
+# Wooldand Mansion 1 Villager Base 1
+# It is a decent little base here.
+4450, 118, 4000, "WM1VB1"
+
+
+# Amethyst Geode 1
+4487, -1, 3996, AG1
+
+
 outpost 1
 #	No Allay :(
 1536, -1008		-> 897 blocks away from strong hold base
+
+
+
+
+

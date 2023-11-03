@@ -1,16 +1,22 @@
 
-Spawn Base Portal Outlet
+# Spawn Base Portal Outlet
 -3, 60, 3, "SB" 
 
 
 
-Nether Fortress
+# Nether Fortress
 # Yep, it is there.  It has at least two Blaze spawners.
 # No loot chest found so far.
 -256, ~, 240, "NF1"
 
 
 
-Stronghold 1 Portal Outlet
+# Stronghold 1 Portal Outlet
 185, 53, -20, "SH1"
 
+
+
+
+# WM1 Portal outlet
+#	It is great, with a Warped Forrest!
+540, 97, 500, "WM1VB1"
