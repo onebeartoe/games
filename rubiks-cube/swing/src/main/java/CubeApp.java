@@ -110,7 +110,7 @@ public class CubeApp extends Applet {
 /**
  *  Use the following command to run the applet, from the command line.
  * 
- * $ bappletviewer CubeApp.java
+ * $ appletviewer CubeApp.java
  */
 
 
