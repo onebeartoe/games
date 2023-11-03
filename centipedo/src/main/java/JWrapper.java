@@ -1,3 +1,6 @@
+
+//package org.onebeartoe.games.centipedo;
+
 /**
  * The code snippet in this video description helped me remember how to convert a
  * Java (J)Applet to an 'static void main(args)' application.
@@ -13,11 +16,7 @@
 
 import javax.swing.JFrame;
 
-//import CubeApp;
-
-
-
-public class Wrapplet 
+public class JWrapper 
 {
     public static void main(String[] args)
     {
@@ -26,7 +25,7 @@ public class Wrapplet
         JFrame frame = new JFrame("Rubic's Cube - Shiffman Rules!");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
-         CubeApp applet = new CubeApp();
+         centipedo applet = new centipedo();
   frame.getContentPane().add(applet);
   //ADD TO THE CONTENT PANE!!!
   //i made a mistake
