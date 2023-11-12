@@ -2,3 +2,63 @@
 	Here is a link to the source code:
 
 		http://1archive.com/game/centipedo/centipedo.java 
+
+--------------------------------------------------------------------------
+
+	<div class="copyspace">
+		<h3>About Centipedo</h3>			
+
+		<p>
+			Welcome! &nbsp;Centipedo is a remake of the classic 1980's arcade game Centipede.&nbsp;
+
+			This game, created by <a href="#author">Mark Boyns</a>, has lots of cool sounds and 
+
+			imagery to show yet again how <a href="http://java.sun.com">Java</a> can be used for gaming.&nbsp; 
+
+			The author's instruction on how to play the game are below.
+		</p>
+
+		<p>
+			<br />
+
+			<b>about the author</b><a name="author"> </a>
+
+			<br /><br />
+
+			The original author of this Java Applet is Mark Boyns.  This code seems to be from his time at San Diego State 
+			University
+
+			<br /><br />
+
+		</p>					
+
+		<p>
+			<b>Instructions:</b>
+			<br/>
+			<ul>
+				<li>To start the game <b>click</b> somewhere <b>in the applet</b>.</li>
+				<br />
+				<li>Durring the a game or at game over, press <b>'g' to restart</b>.</li>
+				<br />
+				<li>Play the game by moving the <b>mouse</b> and <b>click</b> to fire.</li>
+				<br />
+				<li>Pause the game with the <b>'p' key</b> or move the mouse out of the applet.</li>
+				<br />
+			</ul>			
+		</p>
+		
+		<br />	
+
+	</div>
+			
+	<br />
+	<br />
+
+	<div class="copyspace">
+		<h3>Play Centipedo</h3>
+		<applet code="centipedo.class" width="600" height="448">
+		Java Applet
+		</applet>	
+		<br />
+	</div>
+	
