@@ -1,30 +1,38 @@
 
-Spawn Base
+# Spawn Base
 33, 65, 16, "SB"
 
 
-Trial Chamber 1
+
+# Trial Chamber 1
 # Yep, it is there!
 # It is fun!
 -240, ~, 816, "TC1"
 
 
-Stronghold 1 Mini Base
+
+# Stronghold 1 Mini Base
 1500, 75, -136, "SH1MB"
 
 
-Stronghold 1 End Portal
+# Stronghold 1 End Portal
 # There is a Nether Portal here
 1502, 30, -108, "SH1EP"
 
 
-Stronghold 1 Library 1
+
+# Stronghold 1 Library 1
 1517, 22, -171, "SH1L1"
 
 
 
-Frozen Ocean 1
+# Frozen Ocean 1
 1500, 76, 3350, "FO1"
+
+
+
+# Ancient City 1
+3600, ~, 4672, "AC1"
 
 
 
@@ -36,16 +44,19 @@ Woodland Mansion 1
 4272, 4032		-> 4982 blocks away from strong hold base
 
 
+
 # Wooldand Mansion 1 Villager Base 1
 # It is a decent little base here.
 4450, 118, 4000, "WM1VB1"
+
 
 
 # Amethyst Geode 1
 4487, -1, 3996, AG1
 
 
-outpost 1
+
+# Illager Outpost 1
 #	No Allay :(
 1536, -1008		-> 897 blocks away from strong hold base
 
