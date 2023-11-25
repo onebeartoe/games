@@ -4,6 +4,14 @@
 
 
 
+
+# Bastion Remnant 1
+#	I found the Nehterite Smithing Template here.
+#	There is still a bunch of loot here.
+100, 40, 100, "BR1"
+
+
+
 # Nether Fortress
 # Yep, it is there.  It has at least two Blaze spawners.
 # No loot chest found so far.
@@ -17,6 +25,6 @@
 
 
 
-# WM1 Portal outlet
+# Woodland Mansion 1 Portal outlet
 #	It is great, with a Warped Forrest!
 540, 97, 500, "WM1VB1"

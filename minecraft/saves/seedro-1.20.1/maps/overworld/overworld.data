@@ -3,11 +3,56 @@
 33, 65, 16, "SB"
 
 
+# Ancient City 2
+#	The return is at 
+#		-88, -48, -350	
+#	This one is pretty much cleared out of loot.
+#	I found two Ward Smithing Templates and a bunch of good armor, hoes, and enchanted books.
+-168, -51, -376
+
 
 # Trial Chamber 1
 # Yep, it is there!
 # It is fun!
 -240, ~, 816, "TC1"
+
+
+
+# Warm Ocean Biome 1
+# 	Trying for Sniffer eggs at ocean ruins
+605, 66, 304
+
+
+
+# Warm Ocean 1 Mini-Base
+#	I saw a Panda and Parrot near the Bamboo Jungles near here.
+650, 80, 470, WO1MB
+
+
+
+# Ruined Ocean Portal 1
+#	It is under water, and path connected to WO1MB. 
+#	This portal outlest to the Nether World with Bastion Remnant 1 right next to it.
+704, ~, 832, "ROP1"
+
+
+
+# Trail Ruins 
+#	It is here!
+800, ~, -1600, "TR1"
+
+
+
+# Warm Ocean Ruin 1
+#	The was only one here, but I got a Sniffer egg!
+752, ~, 672, "WOR1
+
+
+
+# Ocean Monument 1
+#	I got one Tide trim here!
+#	There is a Mooshroom Island (mushroom_fields). near here.
+832, ~, 1248, "OM1"
 
 
 
@@ -32,7 +77,10 @@
 
 
 # Ancient City 1
-3600, ~, 4672, "AC1"
+#	The return water fall is here:
+#		3662, -50, 4660
+#	This one is pretty much looted.  There is a mini base here.
+3600, -51, 4672, "AC1"
 
 
 
