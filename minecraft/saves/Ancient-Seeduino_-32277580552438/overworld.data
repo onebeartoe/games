@@ -1,7 +1,30 @@
-Overworld Map
+
+
+# World Spawn Point
+-73, 71, 53, "WS"
+ 
+
 
 # Village 1 
--304, ~, 384
+-304, ~, 384, "V1"
+
+
+
+# Village 2
+# 	So far, this is my main base.
+-1632, ~, 704, "V2"
+
+
+
+# Dripstone Cave 1
+-1642, 56, 662, "DC1"
+
+
+
+# Ancient City 1
+-1864, -51, 408, "AC1"
+
+
 
 
 
