@@ -7,9 +7,20 @@
 
 # Nether Fortress 1
 # There is still loot here.
+#	There is Blaze spawner at: 
 #	The return is here.
 340, 56, -251, "NF1"
 
 
 
 
+# Stronghold 1 Portal Outlet
+-64, 77, 179, "SH1PO"
+
+
+
+
+
+
+
+164 ,    ~     ,    91*

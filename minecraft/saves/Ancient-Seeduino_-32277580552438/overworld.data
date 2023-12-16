@@ -12,8 +12,23 @@
 
 # Village 2
 # 	So far, this is my main base.
+#	This base has good villager trades and
+#	 	a cool 'Cat gift' farm.
 -1632, ~, 704, "V2"
 
+
+
+# Stronghold 1
+# The End Portal is at -543, -38, 1301
+# I found 2 Eye Trims in the Library, -520, -38, 1343
+-524, ~, 1332, "SH1"
+
+
+
+# Shipwrek 1
+# I got two cost trims here.
+# I had to leave a horse here, to get back more quickly cuase of the water.
+-1128, ~, 1350, 
 
 
 # Dripstone Cave 1
@@ -22,9 +37,71 @@
 
 
 # Ancient City 1
+#	Dude, I found 2 Ward trims and a Silence Armor trim!
+#	I stopped looting when I found the Silence trim, but I think that was the last chest.
+#	So there may but 1/2 more chests, but it is pretty much looted.
+#	But most of the Loot and Base expansion materials and resources are at the top mini-base.
 -1864, -51, 408, "AC1"
 
+# Ancient City 1 Runined Nether Portal
+#	Nope, it was not at the surface.
+-1818, ~, 269, "AC1NP"
+
+
+
+# Trail Ruins 
+#	Nope it was not there.
+-1921, ~, -488, "TR1"
+
+
+
+# Trial Chambers
+#	It has a waterfall for entrance/exit.
+#	The scaffold exit is at 
+#		-1881, -20, -355
+#	It is so fun!
+-1864, ~, -360, "TC1"
+
+
+
+# Illager Outpost 1
+#	I did not find the Sentry Armor trim here,
+#	but I did find Allay here.
+#	There are still some there.
+-1344, ~, -224, "IO1"
 
 
 
 
+# Illager Outpost 2
+#	No Armor Trim/Smithing Template here.
+-160, ~, -368, "IO2"
+
+
+
+
+# Illager Outpost 3
+#	No Armor Trim/Smithing Template here.
+64, ~, 1200, "IO3"
+
+
+# Illager Outpoust 4
+
+784, ~, 2240, "IO4"
+
+
+
+
+# Large Cold Ocean Ruin 1
+#	I found the Blade Pottery Sherd here.
+#	There is a small base on an island here, with a bunch of gravel and other weak loot.
+-2760, ~, 776, "LCOR1"
+
+
+
+#??????? Trail Ruins 2 ???????
+-3640, ~, 1224, "TR2"
+
+
+
+ 
