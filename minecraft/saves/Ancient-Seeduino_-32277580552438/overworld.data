@@ -55,7 +55,7 @@
 
 
 
-# Trial Chambers
+# Trial Chambers 1
 #	It has a waterfall for entrance/exit.
 #	The scaffold exit is at 
 #		-1881, -20, -355
@@ -85,7 +85,7 @@
 64, ~, 1200, "IO3"
 
 
-# Illager Outpoust 4
+# Illager Outpost 4
 
 784, ~, 2240, "IO4"
 
@@ -98,10 +98,28 @@
 -2760, ~, 776, "LCOR1"
 
 
+# Village 3
+#	Trail Ruins 2 ???????
+#		-3640, ~, 1224, "TR2"
+#	Trial Chamber 2
+#		-3512, ~, 1176, "TC2"
+#		The exit is around Y = -20
+-3584, ~, 1200, "V3"
 
-#??????? Trail Ruins 2 ???????
--3640, ~, 1224, "TR2"
+
+
+# Illager Outpost 5
+#	Still, no Armor Trim/Smithing Template here.
+#	What the crap?!?  25% my ass (!?!)
+-4256, ~, 640, "IO5"
 
 
 
- 
+
+
+
+
+
+
+
+
