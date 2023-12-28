@@ -1,8 +1,34 @@
 
 
 # World Spawn Point
+#	There is a decent little mini-base here.
 -73, 71, 53, "WS"
+
+
+# Buried Treasure 1
+-39, ~, -151, "BT1"
  
+
+# (Small) Cold Ocean Ruin #2
+#	I found Blad pottery sherd here.
+184, ~, 136, "COR2"
+
+
+
+# (Large) Cold Ocean Ruin #3
+#	This cluster is under water by a frozen biome; there are Polar Bears near.
+#	I stopped archeology after I found Mourner and Plenty pottery sherds, so there should still be a lot left here.
+360, ~, 136, "COR3"
+
+
+
+
+# Ocean Monument 1
+#	Stony Shore mini-base: 320, 210
+#	Yep, it is there and I got a Tide trim on the first Elder Gaurdian!   :)
+#	I got the gold, but not the sponges yet.
+# 648, ~, 152, "OM1"
+
 
 
 # Village 1 
@@ -14,8 +40,42 @@
 # 	So far, this is my main base.
 #	This base has good villager trades and
 #	 	a cool 'Cat gift' farm.
+#	Armor Trims
+#		Coast
+#		Dune
+#		Eye
+#		Raiser
+#		Silence
+#		Tide
+#		Vex
+#		Ward
+#		Wayfinder
+#		Wild
+#		
+#	Pottery Sherds
+#		Angler
+#		Archer
+#		Blade
+#		Burn
+#		Danger
+#		Explorer
+#		Heart
+#		Heartbreak
+#		Howl
+#		Mourner
+#		Plenty
+#		Prize
+#		Shelter
+#		Skull
+#		Snort
+#
 -1632, ~, 704, "V2"
 
+
+# Medium Iron Ore Vein 
+#	Yes, it is there and should still have some iron.
+#	There is also a Spider Spawner right at the (top) entrance to the vein.
+-1920 -16 656, "MIOV1"
 
 
 # Stronghold 1
@@ -33,6 +93,11 @@
 
 # Dripstone Cave 1
 -1642, 56, 662, "DC1"
+
+
+
+
+
 
 
 
@@ -92,20 +157,22 @@
 
 
 
-# Large Cold Ocean Ruin 1
+# (Large) Cold Ocean Ruin 1
 #	I found the Blade Pottery Sherd here.
 #	There is a small base on an island here, with a bunch of gravel and other weak loot.
 -2760, ~, 776, "LCOR1"
 
 
 # Village 3
-#	Trail Ruins 2 ???????
+#	This is a decent villager base here.
+#	There is a Armorer with Diamond trades here.
+#	There are tamed dogs/wolf here.
+#	Trail Ruins 2 
 #		-3640, ~, 1224, "TR2"
 #	Trial Chamber 2
 #		-3512, ~, 1176, "TC2"
 #		The exit is around Y = -20
 -3584, ~, 1200, "V3"
-
 
 
 # Illager Outpost 5
@@ -115,8 +182,101 @@
 
 
 
+# Woodland Mansion 1
+# I found the Vex trim here.
+# There was a bunch of Allay here!
+-5800, ~, 1608, "WM1"
 
 
+
+# Village 4
+#	There are Villages here in the homes.
+# 2480, ~, 928, "V4"
+
+
+# Wierd Circle Cave
+1817, 92, 734, "WCC"
+
+
+
+# !!!!!!!!GET THIS WOLF AND PARROT
+1636, 62, 570, "GTWAP"
+
+
+# Illager Outpost 6
+#	Still, no Armor Trim/Smithing Template here.
+#	The is a super-mini base near, by the bamboo circle.
+# 3104, ~, 688, "IO6"
+
+
+
+# Witch Hut
+#	Yay, I got the Black Cat.
+#	There was also a bunch of Slimes here.
+2920, ~, 56, "WH1"
+
+
+# Jungle Temple
+#	There were 2 Wild Armor Trims in the Puzzle Chest.
+3928, ~, 1208, "JT1"
+
+
+
+
+# Village 5
+#	This is near a bunch of Warm Ocean Ruins
+#	
+1872, ~, 1632, "V5"
+
+
+
+# (Large) Warm Ocean Ruin 1
+#	I found one Sniffer egg here.
+1752, ~, 1768, "WOR1"
+
+
+
+# (Large) Warm Ocean Ruin 2
+#	I got a bunch of Pottery Sherds here.
+1784, ~, 2056, "WOR2"
+
+
+
+
+
+
+# (Large) Warm Ocean Ruin 3
+#	I got some 2 Sniffer Eggs here!
+2264, ~, 1976, "WOR3"
+
+
+
+
+# Village 6
+#	Desert Templs and Well and some Illager Outposts are near here.
+#	I got Dune at the closest Desert Temple.
+#	There are Allay in the nearest Desert Temple.
+#	There is a good Villager base here.
+-8048, ~, -4304, "V6"
+
+
+
+
+# Amethyst Geode 1
+-8022, -1, -4258, "AG1"
+
+
+
+
+# Desert Well
+# 	It was there but no good loot.
+-7414, ~, -4474, "DW1"
+
+
+
+# Illager Outpost 7
+#	Finally, Sentry Trim Baby!
+-7616, ~, -3056, "IO7"
 
 
 
