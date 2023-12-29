@@ -9,7 +9,7 @@
         <version>1.0</version>
     </parent>
   
-    <artifactId>desktop-real</artifactId>
+    <artifactId>desktop</artifactId>
       
     <name>onebeartoe-games-minecraft-statistics-desktop</name>
 
