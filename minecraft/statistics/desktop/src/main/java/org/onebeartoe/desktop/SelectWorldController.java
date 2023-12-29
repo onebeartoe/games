@@ -13,7 +13,7 @@ import javafx.scene.media.MediaView;
  * The background "splash" animation is actually setup/started in the 
  * JavaFX application's main() class in the @Override start() method.
  */
-public class PlayController 
+public class SelectWorldController 
 {
     @FXML
     public MediaView mediaView;
@@ -70,6 +70,6 @@ public class PlayController
     {
         
         System.out.println("mediaView again: " + mediaView);
-        App.setRoot("select-world");
+        App.setRoot("launcher");
     }
 }

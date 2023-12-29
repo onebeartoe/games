@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="vBox" alignment="CENTER" spacing="20.0" 
+      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="org.onebeartoe.desktop.SelectWorldController">
+    <children>
+<!--      <ImageView fitHeight="207.0" fitWidth="200.0" opacity="0.7" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@dirt.jpg" />
+            <Image url="@file:///home/roberto/Versioning/owner/beto-land-owner/Imaging/felix-the-cat/felix.gif" />
+            
+         </image>
+      </ImageView>        -->
+        <Label text="Select World" />
+        <Button fx:id="singlePlayerButton" onAction="#switchToPrimary" text="Worldo" />
+      <Button fx:id="splashButton1" onAction="#switchToPrimary" text="Seeduino" />
+      <Button fx:id="splashButton2" onAction="#switchToPrimary" text="Dragon Fart" />
+    </children>
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+</VBox>
