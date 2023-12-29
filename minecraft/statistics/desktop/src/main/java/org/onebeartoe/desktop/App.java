@@ -9,12 +9,10 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 /**
- * JavaFX App             
+ * This is a JavaFX Application to show Minecraft advancements.
  */
 public class App extends Application 
 {
-int i = 33;
-
     private static Scene scene;
 
     @Override
