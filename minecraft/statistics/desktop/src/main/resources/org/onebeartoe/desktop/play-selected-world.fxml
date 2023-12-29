@@ -21,7 +21,7 @@
       <Button fx:id="splashButton1" onAction="#switchToPrimary" text="Advancements" />
       <Button fx:id="splashButton2" onAction="#switchToPrimary" text="Super Secret Options" />
       <Button fx:id="splashButton177" onAction="#switchToPrimary" text="Options???" />
-      <Button fx:id="splashButton277" onAction="#switchToPrimary" text="Save and Quit to Title" />
+      <Button fx:id="splashButton277" onAction="#switchToPlay" text="Save and Quit to Title" />
       
       
             

@@ -72,4 +72,13 @@ public class PlaySelectedWorldController
         
         App.setRoot("advancements");
     }
+
+    
+    @FXML
+    private void switchToPlay() throws IOException 
+    {
+        System.out.println("play selected world -> advancements: " + mediaView);
+        
+        App.setRoot("play");
+    }    
 }
