@@ -1,9 +1,12 @@
 
 package org.onebeartoe.minecraft.statistics;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -11,10 +14,12 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
+import java.util.ArrayList;
+import java.util.List;
 import org.json.simple.parser.ParseException;
-import org.onebeartoe.html.PlainText;
-import org.onebeartoe.io.TextFileReader;
-import org.onebeartoe.io.buffered.BufferedTextFileReader;
+//import org.onebeartoe.html.PlainText;
+//import org.onebeartoe.io.TextFileReader;
+//import org.onebeartoe.io.buffered.BufferedTextFileReader;
 
 /**
  * 
@@ -24,14 +29,14 @@ public class StatisticsReportService
 //    private StatisticsService statisticsService;
     private UserStatisticsService statisticsService;
     
-    private TextFileReader textFileReader;
+//    private TextFileReader textFileReader;
     
     public StatisticsReportService()
     {
 //        statisticsService = new StatisticsService();
         statisticsService = new UserStatisticsService();
         
-        textFileReader = new BufferedTextFileReader();
+//        textFileReader = new BufferedTextFileReader();
     }
     
     public void generate(Path inpath) throws FileNotFoundException, IOException, URISyntaxException, ParseException
@@ -91,7 +96,7 @@ public class StatisticsReportService
 
     private String interpolate(String html, StatisticsReport report) throws IOException 
     {        
-        String statisticsContent = textFileReader.readTextFromClasspath("/reports/statistics.html");
+        String statisticsContent = readTextFromClasspath("/reports/statistics.html");
         
         StringBuilder killedBuilder = new StringBuilder();
         for(String killed : report.missingHostileMobKills)
@@ -101,13 +106,58 @@ public class StatisticsReportService
         }
         statisticsContent = statisticsContent.replace("#$%MOST_KILLED_MOB_BY_USER_CONTENT%$#", killedBuilder.toString() );
         
-        PlainText statistics = new PlainText(statisticsContent);
+//        PlainText statistics = new PlainText(statisticsContent);
                 
         StringBuilder builder = new StringBuilder()
-                                    .append(statistics);
+//                                    .append(statistics);
+                                    .append(statisticsContent);
         
         return html.replace("#$%CONTENT%$#", builder.toString() );
     }
+    
+    
+//TODO: reuse this method   
+    public String readTextFromClasspath(String infileClaspath) throws IOException
+    {
+        List<String> lines = readTextLinesFromClasspath(infileClaspath);
+        StringBuilder sb = new StringBuilder();
+        for(String line : lines)
+        {
+//TODO: Remove the new line hack below and replace with a call to java.nio.file.Files.readAllBytes(path);
+            sb.append(line);
+            String s = System.lineSeparator();
+            sb.append(s);
+        }
+        
+        return sb.toString();
+    }     
+    
+    public List<String> readTextLinesFromClasspath(String infileClaspath) throws IOException
+    {
+	InputStream instream = getClass().getResourceAsStream(infileClaspath);
+
+        List<String> lines = readLines(instream);
+        
+        return lines;
+    }    
+    
+
+    public List<String> readLines(InputStream instream) throws IOException
+    {
+        List<String> names = new ArrayList();	
+        
+        BufferedReader br = new BufferedReader(new InputStreamReader(instream));
+	String line = br.readLine();  	
+	while (line != null)   
+	{
+	    names.add(line);
+	    line = br.readLine();
+	}	
+	instream.close();
+        
+        return names;
+    }    
+    
     
     private void copyOneResource(File outputDirectory, String resourcePath) throws IOException, URISyntaxException
     {

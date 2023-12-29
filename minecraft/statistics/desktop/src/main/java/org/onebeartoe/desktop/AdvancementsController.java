@@ -6,9 +6,11 @@ import java.net.URL;
 import java.util.List;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaView;
+import org.json.simple.parser.ParseException;
 
 import org.onebeartoe.minecraft.advancements.v1_20.MinecraftWildAdvancementsService;
 
@@ -27,10 +29,13 @@ public class AdvancementsController
     @FXML
     Button singlePlayerButton;
     
+    @FXML
+    TextArea havesTextArea;
+    
     private MinecraftWildAdvancementsService implementation;
     
     @FXML
-    public void initialize() throws URISyntaxException, IOException
+    public void initialize() throws URISyntaxException, IOException, ParseException
     {
 //TODO: use parent node and child node width and height binding as seen here
 //          https://stackoverflow.com/questions/42774863/how-to-call-a-mediaview-from-another-fxml-file        

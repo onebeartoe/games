@@ -23,11 +23,11 @@
         </dependency>
         
         
-        <dependency>
+<!--        <dependency>
             <groupId>org.onebeartoe</groupId>
             <artifactId>onebeartoe-application</artifactId>
             <version>1.0</version>
-        </dependency>
+        </dependency>-->
         
         <dependency>
             <groupId>org.testng</groupId>
