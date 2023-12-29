@@ -4,8 +4,8 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import javafx.fxml.FXML;
+import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 
 public class SplashController 
@@ -14,7 +14,10 @@ public class SplashController
     public MediaView mediaView;
     
     @FXML
-    public void initialize() throws URISyntaxException
+    public VBox vBox;
+    
+    @FXML
+    public void initialize() throws URISyntaxException, IOException
     {
 //TODO: use parent node and child node width and height binding as seen here
 //          https://stackoverflow.com/questions/42774863/how-to-call-a-mediaview-from-another-fxml-file        
@@ -45,13 +48,13 @@ public class SplashController
  //       Media media = new Media(new File(path).toURI().toString());  
           
         //Instantiating MediaPlayer class   
-        MediaPlayer mediaPlayer = new MediaPlayer(media);  
+//        MediaPlayer mediaPlayer = new MediaPlayer(media);  
           
         //Instantiating MediaView class   
-        mediaView = new MediaView(mediaPlayer);  
+//        mediaView = new MediaView(mediaPlayer);  
           
         //by setting this property to true, the Video will be played   
-        mediaPlayer.setAutoPlay(true);             
+//        mediaPlayer.setAutoPlay(true);
     }
     
     @FXML

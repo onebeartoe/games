@@ -7,6 +7,16 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Timer;
+import java.util.TimerTask;
+import javafx.application.Platform;
+import javafx.scene.image.Image;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundPosition;
+import javafx.scene.layout.BackgroundRepeat;
+import javafx.scene.layout.BackgroundSize;
+import javafx.scene.layout.VBox;
 
 /**
  * This is a JavaFX Application to show Minecraft advancements.
@@ -18,20 +28,88 @@ public class App extends Application
     @Override
     public void start(Stage stage) throws IOException 
     {
-        scene = new Scene(loadFXML("launcher"), 640, 480);
+        Parent parent = (Parent) loadFXML("splash");
+        
+        // at this point we know the root is a VBox
+        VBox splash = (VBox) parent;
+        
+        var url = "file:///home/roberto/Versioning/owner/beto-land-owner/Imaging/felix-the-cat/felix.gif";
+
+        var myBI= new BackgroundImage(new Image(url,32,32,false,true),
+        BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
+          BackgroundSize.DEFAULT);
+        
+        var background = new Background(myBI);
+
+        splash.setBackground(background);
+        
+        scene = new Scene(parent, 640, 480);
+        
         stage.setScene(scene);
+        
         stage.show();
+        
+        spinyDelay();
+    }
+    
+    private void spinyDelay()
+    {
+        long millis = 1000 * 4;
+        
+        TimerTask task = new TimerTask() 
+        {
+            @Override
+            public void run() 
+            {
+                Platform.runLater(() -> 
+                {
+                    try
+                    {
+                        Thread.sleep(millis);
+                    } 
+                    catch (InterruptedException ex)
+                    {
+                        ex.printStackTrace();
+                    }
+
+                    var root = "launcher";
+
+                    System.out.println("switcho: " + root);
+
+                    try 
+                    {
+                        App.setRoot(root);
+                    }
+                    catch (IOException ex) 
+                    {
+                        ex.printStackTrace();
+                    }
+                });                
+            }
+        };
+        
+        Timer timer = new Timer();
+        
+        long delay = 0;
+        
+        timer.schedule(task, delay);
     }
 
-    static void setRoot(String fxml) throws IOException {
-        scene.setRoot(loadFXML(fxml));
+    static void setRoot(String fxml) throws IOException 
+    {
+        Parent parent = (Parent) loadFXML(fxml);
+        
+        scene.setRoot(parent);
     }
 
-    private static Parent loadFXML(String fxml) throws IOException 
+    private static Object loadFXML(String fxml) throws IOException 
     {
 //TODO: should this create a new Parent for every call?        
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
-        return fxmlLoader.load();
+        
+        Object root = fxmlLoader.load();
+        
+        return root;
     }
 
     public static void main(String[] args) 
