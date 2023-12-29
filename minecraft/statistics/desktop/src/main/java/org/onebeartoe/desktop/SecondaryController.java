@@ -24,9 +24,12 @@ public class SecondaryController
     {
         System.out.println("playing other sound - ");
         
-//String path = "https://ssl.gstatic.com/dictionary/static/sounds/20200429/hello--_gb_1.mp3";
-//String path = "hello--_gb_1.mp3";
-String path = "file:///home/roberto/Versioning/owner/github/games/minecraft/statistics/desktop/src/main/resources/org/onebeartoe/desktop/hello--_gb_1.wav";
+        // MP3 format doesn't seem to work with JavaFX,
+        // so I converted the file to WAV format.
+        //String path = "https://ssl.gstatic.com/dictionary/static/sounds/20200429/hello--_gb_1.mp3";
+        //String path = "hello--_gb_1.mp3";
+        String path = "file:///home/roberto/Versioning/owner/github/games/minecraft/statistics/desktop/src/main/resources/org/onebeartoe/desktop/hello--_gb_1.wav";
+        //String path = "file:///home/roberto/Versioning/owner/github/games/minecraft/statistics/desktop/src/main/resources/org/onebeartoe/desktop/hello--_gb_1.mp3";
         
         final Media sound = new Media(path);
 
