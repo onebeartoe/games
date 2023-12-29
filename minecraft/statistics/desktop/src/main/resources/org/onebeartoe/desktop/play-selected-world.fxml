@@ -7,7 +7,7 @@
 
 <VBox fx:id="vBox" alignment="CENTER" spacing="20.0" 
       xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" 
-      fx:controller="org.onebeartoe.desktop.SelectWorldController">
+      fx:controller="org.onebeartoe.desktop.PlaySelectedWorldController">
     <children>
 <!--      <ImageView fitHeight="207.0" fitWidth="200.0" opacity="0.7" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -17,9 +17,16 @@
          </image>
       </ImageView>        -->
         <Label text="Select World" />
-        <Button fx:id="worldButton1" onAction="#switchToPrimary" text="Worldo" />
-      <Button fx:id="splashButton1" onAction="#switchToPrimary" text="Seeduino" />
-      <Button fx:id="splashButton2" onAction="#switchToPrimary" text="Dragon Fart" />
+        <Button fx:id="worldButton1" onAction="#switchToPrimary" text="Back" />
+      <Button fx:id="splashButton1" onAction="#switchToPrimary" text="Advancements" />
+      <Button fx:id="splashButton2" onAction="#switchToPrimary" text="Super Secret Options" />
+      <Button fx:id="splashButton177" onAction="#switchToPrimary" text="Options???" />
+      <Button fx:id="splashButton277" onAction="#switchToPrimary" text="Save and Quit to Title" />
+      
+      
+            
+
+         
     </children>
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

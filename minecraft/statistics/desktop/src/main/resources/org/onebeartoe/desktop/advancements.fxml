@@ -16,10 +16,10 @@
             
          </image>
       </ImageView>        -->
-        <Label text="Select World" />
-        <Button fx:id="worldButton1" onAction="#switchToPrimary" text="Worldo" />
-      <Button fx:id="splashButton1" onAction="#switchToPrimary" text="Seeduino" />
-      <Button fx:id="splashButton2" onAction="#switchToPrimary" text="Dragon Fart" />
+        <Label text="Advancements" />
+        <Button fx:id="worldButton1" onAction="#switchToPrimary" text="Hubbandry" />
+      <Button fx:id="splashButton1" onAction="#switchToPrimary" text="Nether" />
+      <Button fx:id="splashButton2" onAction="#switchToPrimary" text="Minecraft" />
     </children>
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

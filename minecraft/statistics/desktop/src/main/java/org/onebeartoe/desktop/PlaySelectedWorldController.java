@@ -13,7 +13,7 @@ import javafx.scene.media.MediaView;
  * The background "splash" animation is actually setup/started in the 
  * JavaFX application's main() class in the @Override start() method.
  */
-public class SelectWorldController 
+public class PlaySelectedWorldController 
 {
     @FXML
     public MediaView mediaView;
@@ -46,7 +46,7 @@ public class SelectWorldController
 //        String path = "file:///home/roberto/Versioning/owner/github/games/minecraft/statistics/desktop/target/classes/org/onebeartoe/desktop/y2meta.com-Rick-Rolled-Short-Version-codecs.mp4";
 //        String path = "file:///home/roberto/Versioning/owner/github/games/minecraft/statistics/desktop/target/classes/org/onebeartoe/desktop/y2meta.com-Rick-Rolled-Short-Version.avi";
 //        String path = "file:////home/roberto/Workspace/owner/first-song/recording.2021.11.25.14.41.35.mp3";
-//        System.out.println("path = " + path);
+        System.out.println("path = " + path);
 
         //Instantiating Media class
         
@@ -68,8 +68,8 @@ public class SelectWorldController
     @FXML
     private void switchToPrimary() throws IOException 
     {
-        System.out.println("select world -> play selected world: " + mediaView);
+        System.out.println("play selected world -> advancements: " + mediaView);
         
-        App.setRoot("play-selected-world");
+        App.setRoot("advancements");
     }
 }
