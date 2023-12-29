@@ -9,7 +9,7 @@ module org.onebeartoe.desktop
     requires javafx.graphics;
     requires javafx.media;
 
-    // This is a onebeartoe dependency.
+    // This is a onebeartoe.games dependency.
     requires cli;
     
 
@@ -22,6 +22,6 @@ module org.onebeartoe.desktop
     requires json.simple;
     
     opens org.onebeartoe.desktop to javafx.fxml;
-//    opens org.onebeartoe.desktop to javafx.media;
+
     exports org.onebeartoe.desktop;
 }
