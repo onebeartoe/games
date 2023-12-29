@@ -8,6 +8,10 @@ import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaView;
 
+/**
+ * The background "splash" animation is actually setup/started in the 
+ * JavaFX application's main() class in the @Override start() method.
+ */
 public class SplashController 
 {
     @FXML
