@@ -35,11 +35,14 @@ public class App extends Application
         
         var url = "file:///home/roberto/Versioning/owner/beto-land-owner/Imaging/felix-the-cat/felix.gif";
 
-        var myBI= new BackgroundImage(new Image(url,32,32,false,true),
-        BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
-          BackgroundSize.DEFAULT);
+        var image = new Image(url,232,232,false,true);
         
-        var background = new Background(myBI);
+        var backgroundImage= new BackgroundImage(image,
+                BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, 
+                BackgroundPosition.CENTER,
+                BackgroundSize.DEFAULT);
+        
+        var background = new Background(backgroundImage);
 
         splash.setBackground(background);
         

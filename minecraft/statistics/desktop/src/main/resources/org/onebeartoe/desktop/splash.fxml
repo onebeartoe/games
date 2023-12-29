@@ -11,15 +11,10 @@
       xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" 
       fx:controller="org.onebeartoe.desktop.SplashController">
     <children>
-<!--      <ImageView fitHeight="207.0" fitWidth="200.0" opacity="0.7" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@dirt.jpg" />
-            <Image url="@file:///home/roberto/Versioning/owner/beto-land-owner/Imaging/felix-the-cat/felix.gif" />
-            
-         </image>
-      </ImageView>        -->
         <Label text="Splash View" />
-        <Button fx:id="splashButton" onAction="#switchToPrimary" text="Switch to Primary View" />
+        <Button fx:id="splashButton" 
+                onAction="#switchToPrimary" 
+                text="Switch to Primary View" />
     </children>
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
