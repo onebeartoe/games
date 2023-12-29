@@ -12,7 +12,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 import org.json.simple.parser.ParseException;
-import org.onebeartoe.html.Div;
 import org.onebeartoe.html.PlainText;
 import org.onebeartoe.io.TextFileReader;
 import org.onebeartoe.io.buffered.BufferedTextFileReader;
