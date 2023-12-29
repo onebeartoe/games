@@ -59,6 +59,6 @@ public class SplashController
     {
         
         System.out.println("mediaView again: " + mediaView);
-        App.setRoot("primary");
+        App.setRoot("launcher");
     }
 }
