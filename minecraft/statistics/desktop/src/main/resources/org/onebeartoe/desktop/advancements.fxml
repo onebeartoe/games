@@ -12,10 +12,8 @@
 <?import javafx.scene.layout.VBox?>
 
 <TabPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" 
-         fx:controller="org.onebeartoe.desktop.SelectWorldController"
-         
-            >
-   <tabs >
+         fx:controller="org.onebeartoe.desktop.AdvancementsController">
+   <tabs>
        
       <Tab text="Nether">
         <content>
@@ -31,18 +29,18 @@
         </content>
       </Tab>
 
-      <Tab text="Husbandry"  >
+      <Tab text="Husbandry">
           
          <content>
             <SplitPane dividerPositions="0.5" orientation="VERTICAL">
               <items>
-                  <ScrollPane  />
-                  <ScrollPane >
+                  <ScrollPane />
+                  <ScrollPane>
                      <content>
                         <SplitPane dividerPositions="0.5">
                           <items>
-                              <TextArea  />
-                              <TextArea  />
+                              <TextArea fx:id="havesTextArea" />
+                              <TextArea />
                           </items>
                         </SplitPane>
                      </content>

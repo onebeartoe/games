@@ -5,6 +5,8 @@ module org.onebeartoe.desktop {
     requires javafx.graphics;
     requires javafx.media;
 
+    requires cli;
+    
     opens org.onebeartoe.desktop to javafx.fxml;
 //    opens org.onebeartoe.desktop to javafx.media;
     exports org.onebeartoe.desktop;
