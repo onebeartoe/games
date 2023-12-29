@@ -12,8 +12,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-
-<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.onebeartoe.desktop.PrimaryController">
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.onebeartoe.desktop.LauncherController">
    <left>
       <VBox alignment="CENTER" spacing="20.0" BorderPane.alignment="CENTER">
          <children>
@@ -41,7 +40,7 @@
                                     
                                  </image>
                               </ImageView>
-                              <Button mnemonicParsing="false" text="Play" />
+                              <Button mnemonicParsing="false" onAction="#handlePlayButton" text="Play" />
                            </children>
                         </AnchorPane>
                      </center>
@@ -53,7 +52,7 @@
                                     <VBox alignment="CENTER" spacing="20.0">
                                        <children>
                                           <Label text="Primary Views" />
-                                          <Button fx:id="primaryButton1" onAction="#switchToSecondary" text="Switch to Secondary View" />
+                                          <Button fx:id="primaryButton1" onAction="#handlePlayButton" text="Switch to Secondary View" />
                                        </children>
                                        <padding>
                                           <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
