@@ -12,7 +12,6 @@ import org.testng.annotations.Test;
 
 /**
  *
- * @author roberto
  */
 public class MinecraftWildAdvancementsServiceTest 
 {
