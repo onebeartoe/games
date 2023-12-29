@@ -7,6 +7,7 @@
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
@@ -18,31 +19,34 @@
         </content>
       </Tab>
       <Tab text="Adventure">
-        <content>
+        <graphic>
+
+        </graphic>
+          <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
         </content>
       </Tab>
-      <Tab text="Husbandry">
-         <graphic>
 
-         </graphic>
+      <Tab text="Husbandry">
          <content>
             <SplitPane dividerPositions="0.5" orientation="VERTICAL">
               <items>
                   <ScrollPane prefHeight="200.0" prefWidth="200.0" />
                   <ScrollPane prefHeight="200.0" prefWidth="200.0">
-                    <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
-                           <children>
-                            <AnchorPane layoutX="-26.0" layoutY="-24.0" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
-                           </children>
-                        </AnchorPane>
-                    </content>
+                     <content>
+                        <SplitPane dividerPositions="0.5">
+                          <items>
+                              <TextArea prefHeight="200.0" prefWidth="200.0" />
+                              <TextArea prefHeight="200.0" prefWidth="200.0" />
+                          </items>
+                        </SplitPane>
+                     </content>
                   </ScrollPane>
               </items>
             </SplitPane>             
          </content>
       </Tab>
+
       <Tab text="Minecraft">
          <content>
             <VBox fx:id="vBox" alignment="CENTER" spacing="20.0">
