@@ -9,10 +9,11 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 /**
- * JavaFX App
+ * JavaFX App             
  */
 public class App extends Application 
 {
+int i = 33;
 
     private static Scene scene;
 
