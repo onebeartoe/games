@@ -1,7 +1,6 @@
 package org.onebeartoe.desktop;
 
 import java.io.IOException;
-import java.net.URISyntaxException;
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
@@ -18,18 +17,7 @@ public class SplashController
     
     @FXML
     public VBox vBox;
-    
-    @FXML
-    ImageView imageView;
-    
-    @FXML
-    public void initialize() throws URISyntaxException, IOException
-    {
-//        imageView.setFitWidth(680);
-        
-//        imageView.fitWidthProperty().bind(scene.widthProperty());
-    }
-    
+
     @FXML
     private void switchToPrimary() throws IOException 
     {
