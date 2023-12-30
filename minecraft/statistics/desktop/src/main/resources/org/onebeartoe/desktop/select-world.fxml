@@ -9,13 +9,6 @@
       xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" 
       fx:controller="org.onebeartoe.desktop.SelectWorldController">
     <children>
-<!--      <ImageView fitHeight="207.0" fitWidth="200.0" opacity="0.7" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@dirt.jpg" />
-            <Image url="@file:///home/roberto/Versioning/owner/beto-land-owner/Imaging/felix-the-cat/felix.gif" />
-            
-         </image>
-      </ImageView>        -->
         <Label text="Select World" />
         <Button fx:id="worldButton1" onAction="#switchToPrimary" text="Worldo" />
       <Button fx:id="splashButton1" onAction="#switchToPrimary" text="Seeduino" />

@@ -1,22 +1,11 @@
 package org.onebeartoe.desktop;
 
+import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-import java.io.IOException;
-import java.util.Timer;
-import java.util.TimerTask;
-import javafx.application.Platform;
-import javafx.scene.image.Image;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundImage;
-import javafx.scene.layout.BackgroundPosition;
-import javafx.scene.layout.BackgroundRepeat;
-import javafx.scene.layout.BackgroundSize;
-import javafx.scene.layout.VBox;
 
 /**
  * This is a JavaFX Application to show Minecraft advancements.
@@ -28,23 +17,26 @@ public class App extends Application
     @Override
     public void start(Stage stage) throws IOException 
     {
-        Parent parent = (Parent) loadFXML("splash");
+        var initialRoot = "launcher";
+//        initialRoot = "play";
+        initialRoot = "splash";
+        Parent parent = (Parent) loadFXML(initialRoot);
         
         // at this point we know the root is a VBox
-        VBox splash = (VBox) parent;
+//        VBox splash = (VBox) parent;
         
-        var url = "file:///home/roberto/Versioning/owner/beto-land-owner/Imaging/felix-the-cat/felix.gif";
+//        var url = "file:///home/roberto/Versioning/owner/beto-land-owner/Imaging/felix-the-cat/felix.gif";
 
-        var image = new Image(url,232,232,false,true);
+//        var image = new Image(url,232,232,false,true);
         
-        var backgroundImage= new BackgroundImage(image,
-                BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, 
-                BackgroundPosition.CENTER,
-                BackgroundSize.DEFAULT);
+//        var backgroundImage= new BackgroundImage(image,
+//                BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, 
+//                BackgroundPosition.CENTER,
+//                BackgroundSize.DEFAULT);
         
-        var background = new Background(backgroundImage);
+//        var background = new Background(backgroundImage);
 
-        splash.setBackground(background);
+//        splash.setBackground(background);
         
         scene = new Scene(parent, 640, 480);
         
@@ -52,50 +44,73 @@ public class App extends Application
         
         stage.show();
         
-        spinyDelay();
+//        TimerTask task = new TimerTask() {
+//            @Override
+//            public void run() 
+//            {
+////                Platform.runLater(() -> 
+////                {
+//                    spinyDelay();
+////                });
+//            }
+//        };
+                
+        
+
+//        Timer timer = new Timer();
+//        
+//        long delay = 0;
+//        
+//        timer.schedule(task, delay);        
+        
+        
     }
     
     private void spinyDelay()
     {
         long millis = 1000 * 4;
         
-        TimerTask task = new TimerTask() 
-        {
-            @Override
-            public void run() 
-            {
-                Platform.runLater(() -> 
-                {
-                    try
-                    {
-                        Thread.sleep(millis);
-                    } 
-                    catch (InterruptedException ex)
-                    {
-                        ex.printStackTrace();
-                    }
-
-                    var root = "launcher";
-
-                    System.out.println("switcho: " + root);
-
-                    try 
-                    {
-                        App.setRoot(root);
-                    }
-                    catch (IOException ex) 
-                    {
-                        ex.printStackTrace();
-                    }
-                });                
-            }
-        };
+//        TimerTask task = new TimerTask() 
+//        {
+//            @Override
+//            public void run() 
+//            {
+//                Platform.runLater(() -> 
+//                {
+//                    try
+//                    {
+//                        Thread.sleep(millis);
+//                    } 
+//                    catch (InterruptedException ex)
+//                    {
+//                        ex.printStackTrace();
+//                    }
+//
+//                    var root = "launcher";
+//
+//                    System.out.println("switcho: " + root);
+//
+//                    try 
+//                    {
+//                        App.setRoot(root);
+//                    }
+//                    catch (IOException ex) 
+//                    {
+//                        ex.printStackTrace();
+//                    }
+//                });                
+//            }
+//        };
         
-        Timer timer = new Timer();
+//        Timer timer = new Timer();
+//        
+//        long delay = 0;
+//        
+//        timer.schedule(task, delay);
         
-        long delay = 0;
         
-        timer.schedule(task, delay);
+        
+        
     }
 
     static void setRoot(String fxml) throws IOException 
@@ -117,6 +132,9 @@ public class App extends Application
 
     public static void main(String[] args) 
     {
+        // show a splash screen (sure)
+//        System.setProperty("javafx.preloader", SplashScreen.class.getName());
+   
         launch();
     }
 }
