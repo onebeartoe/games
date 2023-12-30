@@ -1,31 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<VBox fx:id="vBox" alignment="CENTER" spacing="20.0" 
-      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" 
-      fx:controller="org.onebeartoe.desktop.SplashController">
-    <children>
-        <ImageView  onMouseClicked="#switchToPrimary"  
-                    pickOnBounds="true" preserveRatio="true">
+
+<AnchorPane xmlns="http://javafx.com/javafx/21" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="org.onebeartoe.desktop.SplashController"
+            AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"
+>
+   <children>
+        <ImageView id="imageView" 
+                    onMouseClicked="#switchToPrimary" 
+                   pickOnBounds="true" 
+                   preserveRatio="true"
+                   fitWidth="680" 
+                   AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"
+        >
            <image>
               <Image url="@file:///home/roberto/Versioning/owner/beto-land-owner/Imaging/felix-the-cat/felix.gif" />
 
-           </image>
-        </ImageView>        
+                       </image>
+        </ImageView>
 
-        <Label text="Splash View" />
-
-        <Button fx:id="splashButton" 
-                onAction="#switchToPrimary" 
-                text="Splash" />
-    </children>
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-    </padding>
-</VBox>
+              <Button fx:id="splashButton" onAction="#switchToPrimary" text="Splash" />
+   </children>
+</AnchorPane>

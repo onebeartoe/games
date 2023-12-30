@@ -2,8 +2,8 @@ package org.onebeartoe.desktop;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.net.URL;
 import javafx.fxml.FXML;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.MediaView;
 
@@ -20,25 +20,23 @@ public class SplashController
     public VBox vBox;
     
     @FXML
+    ImageView imageView;
+    
+    @FXML
     public void initialize() throws URISyntaxException, IOException
     {
-//TODO: use parent node and child node width and height binding as seen here
-//          https://stackoverflow.com/questions/42774863/how-to-call-a-mediaview-from-another-fxml-file        
-
-        System.out.println("mediaView: " + mediaView);
+//        imageView.setFitWidth(680);
         
-        URL resource = App.class.getResource("y2meta.com-Rick-Rolled-Short-Version.mp4");
-
-        String path = resource.toURI().toString();
-        
-        System.out.println("path = " + path);        
+//        imageView.fitWidthProperty().bind(scene.widthProperty());
     }
     
     @FXML
     private void switchToPrimary() throws IOException 
     {
-        System.out.println("mediaView again: " + mediaView);
+        var root = "launcher";
+        
+        System.out.println("switching to: " + root);
 
-        App.setRoot("launcher");
+        App.setRoot(root);
     }
 }
