@@ -13,7 +13,7 @@
 >
    <children>
         <ImageView id="imageView" 
-                    onMouseClicked="#switchToPrimary" 
+                   onMouseClicked="#switchToPrimary" 
                    pickOnBounds="true" 
                    preserveRatio="true"
                    fitWidth="680" 
