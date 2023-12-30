@@ -3,6 +3,7 @@ package org.onebeartoe.minecraft.advancements.v1_20;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.nio.file.Path;
 import java.util.List;
 import org.json.simple.parser.ParseException;
@@ -20,7 +21,7 @@ public class WildUserAdvancementsServiceTest
     private WildUserAdvancementsService implementation;
     
     @BeforeTest
-    private void initializeImplementation() throws IOException, ParseException
+    private void initializeImplementation() throws IOException, ParseException, URISyntaxException
     {
      final String resourcesPath = "src/test/resources/";
     

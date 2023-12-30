@@ -2,6 +2,7 @@
 package org.onebeartoe.minecraft.advancements.v1_20;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -18,12 +19,14 @@ import static org.onebeartoe.minecraft.advancements.UserAdvancementsService.miss
  */
 public class WildUserAdvancementsService 
 {
-    private MinecraftWildAdvancementsService advancementsService = new MinecraftWildAdvancementsService();
+    private final MinecraftWildAdvancementsService advancementsService;
     
     private List<String> adventureTimeItems;
     
-    public WildUserAdvancementsService(Path inputFile) throws IOException, ParseException
+    public WildUserAdvancementsService(Path inputFile) throws IOException, ParseException, URISyntaxException
     {
+        advancementsService = new MinecraftWildAdvancementsService();
+        
         JSONParser parser = new JSONParser();
 
         String s = Files.readString(inputFile);

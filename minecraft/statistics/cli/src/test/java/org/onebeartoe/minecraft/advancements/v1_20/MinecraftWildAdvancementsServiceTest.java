@@ -4,6 +4,7 @@
 package org.onebeartoe.minecraft.advancements.v1_20;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.List;
 import org.json.simple.parser.ParseException;
 import static org.testng.AssertJUnit.assertEquals;
@@ -18,7 +19,7 @@ public class MinecraftWildAdvancementsServiceTest
     private MinecraftWildAdvancementsService implementation;
     
     @BeforeTest
-    private void initializeImplementation() throws IOException, ParseException
+    private void initializeImplementation() throws IOException, ParseException, URISyntaxException
     {
         implementation = new MinecraftWildAdvancementsService();
     }

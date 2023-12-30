@@ -1,6 +1,3 @@
-
-
-
 module org.onebeartoe.desktop 
 {
     requires javafx.base;
@@ -17,7 +14,7 @@ module org.onebeartoe.desktop
     //         $ jar \
     //                  --file=/home/roberto/.m2/repository/com/googlecode/json-simple/json-simple/1.1/json-simple-1.1.jar \
     //                  --describe-module
-    // Then you copy and paste whatever is before the '@' symbol.
+    // Then you copy and paste whatever is before the '@' symbol as a 'requires'.
 
     requires json.simple;
     
