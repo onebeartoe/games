@@ -107,7 +107,7 @@ public class App extends Application
 
     private static Object loadFXML(String fxml) throws IOException 
     {
-//TODO: should this create a new Parent for every call?        
+//TODO: maybe use a Map to hold handfull of FXML layotuts???
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
         
         Object root = fxmlLoader.load();
