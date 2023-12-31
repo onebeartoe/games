@@ -22,7 +22,7 @@ import org.testng.annotations.Test;
  *     ~/.minecraft/saves/Dragon Fart 2020 - 1_15_2/
  * 
  */
-public class UserAdvancementsServiceTest
+public class PlayerAdvancementsServiceTest
 {
     private PlayerAdvancementsService implementation;
     

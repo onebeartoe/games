@@ -84,7 +84,7 @@ public class AdvancementsController
         System.out.println("farto");
         
 //        List<AdvancementItem> advancementItems = playerAdvancements.nether.advancements.hotTouristDestinations;
-        List<AdvancementItem> advancementItems = null;
+List<AdvancementItem> advancementItems = null;
         
         StringBuilder text = new StringBuilder();
         
