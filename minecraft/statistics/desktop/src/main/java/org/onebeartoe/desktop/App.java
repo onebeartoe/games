@@ -2,9 +2,11 @@ package org.onebeartoe.desktop;
 
 import java.io.IOException;
 import javafx.application.Application;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 /**
@@ -13,104 +15,45 @@ import javafx.stage.Stage;
 public class App extends Application 
 {
     private static Scene scene;
+    
+    @FXML
+    public Button splashButton;    
 
+    @Override
+    public void init()
+    {
+//        splashButton.translateXProperty()
+//            .bind(scene.widthProperty().subtract(splashButton.widthProperty())
+//                    .divide(2));
+//
+//        splashButton.translateYProperty()
+//                .bind(scene.heightProperty().subtract(splashButton.heightProperty())
+//                        .divide(2));        
+    }
+    
     @Override
     public void start(Stage stage) throws IOException 
     {
-        var initialRoot = "launcher";
-//        initialRoot = "play";
-        initialRoot = "splash";
-        Parent parent = (Parent) loadFXML(initialRoot);
+        String [] screenNames = {"launcher", "play", "splash"};
         
-        // at this point we know the root is a VBox
-//        VBox splash = (VBox) parent;
-        
-//        var url = "file:///home/roberto/Versioning/owner/beto-land-owner/Imaging/felix-the-cat/felix.gif";
+        var initialRoot = screenNames[2];
 
-//        var image = new Image(url,232,232,false,true);
-        
-//        var backgroundImage= new BackgroundImage(image,
-//                BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, 
-//                BackgroundPosition.CENTER,
-//                BackgroundSize.DEFAULT);
-        
-//        var background = new Background(backgroundImage);
-
-//        splash.setBackground(background);
+        Parent parent = (Parent) loadFXML(initialRoot);        
         
         scene = new Scene(parent, 640, 480);
         
         stage.setScene(scene);
         
         stage.show();
-        
-//        TimerTask task = new TimerTask() {
-//            @Override
-//            public void run() 
-//            {
-////                Platform.runLater(() -> 
-////                {
-//                    spinyDelay();
-////                });
-//            }
-//        };
-                
-        
+                     
 
-//        Timer timer = new Timer();
-//        
-//        long delay = 0;
-//        
-//        timer.schedule(task, delay);        
-        
-        
-    }
-    
-    private void spinyDelay()
-    {
-        long millis = 1000 * 4;
-        
-//        TimerTask task = new TimerTask() 
-//        {
-//            @Override
-//            public void run() 
-//            {
-//                Platform.runLater(() -> 
-//                {
-//                    try
-//                    {
-//                        Thread.sleep(millis);
-//                    } 
-//                    catch (InterruptedException ex)
-//                    {
-//                        ex.printStackTrace();
-//                    }
+//        splashButton.translateXProperty()
+//            .bind(scene.widthProperty().subtract(splashButton.widthProperty())
+//                    .divide(2));
 //
-//                    var root = "launcher";
-//
-//                    System.out.println("switcho: " + root);
-//
-//                    try 
-//                    {
-//                        App.setRoot(root);
-//                    }
-//                    catch (IOException ex) 
-//                    {
-//                        ex.printStackTrace();
-//                    }
-//                });                
-//            }
-//        };
-        
-//        Timer timer = new Timer();
-//        
-//        long delay = 0;
-//        
-//        timer.schedule(task, delay);
-        
-        
-        
-        
+//        splashButton.translateYProperty()
+//                .bind(scene.heightProperty().subtract(splashButton.heightProperty())
+//                        .divide(2));           
     }
 
     static void setRoot(String fxml) throws IOException 
