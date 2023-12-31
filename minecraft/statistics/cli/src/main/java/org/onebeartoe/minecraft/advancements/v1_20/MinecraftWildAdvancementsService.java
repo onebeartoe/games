@@ -3,12 +3,8 @@ package org.onebeartoe.minecraft.advancements.v1_20;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.URL;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import org.json.simple.JSONArray;
@@ -33,8 +29,6 @@ public class MinecraftWildAdvancementsService
         
         String s = new String(systemResourceAsStream.readAllBytes(), 
                 StandardCharsets.UTF_8);
-        
-//        URI uri = systemResource.toURI();
                 
         JSONParser parser = new JSONParser();
         

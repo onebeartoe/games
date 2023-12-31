@@ -3,13 +3,10 @@ package org.onebeartoe.minecraft.advancements;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -34,10 +31,6 @@ public class PlayerAdvancementsService
     private List<String> unbredAnimals;
     
     private AdvancementsService advancementsService;
-    
-//    private static final String resourcesPath = "src/test/resources/";
-    
-//    public static final String savesPath = "minecraft/saves/1.17/";
 
 //TODO: path this value in as a constructor argument    
 //    public static final String advancementsPath = savesPath +  "advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";    
@@ -84,11 +77,6 @@ public class PlayerAdvancementsService
     public List<Advancement> incompleteUserAdvancements() throws IOException, ParseException 
     {
         return incompleteUserAdvancements;
-    }
-
-    public List<Advancement> loadUserAdvancements() throws IOException, ParseException 
-    {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public List<String> monstersHunted() 

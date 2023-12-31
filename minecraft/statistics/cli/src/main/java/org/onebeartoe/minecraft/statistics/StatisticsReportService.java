@@ -17,9 +17,6 @@ import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 import java.util.ArrayList;
 import java.util.List;
 import org.json.simple.parser.ParseException;
-//import org.onebeartoe.html.PlainText;
-//import org.onebeartoe.io.TextFileReader;
-//import org.onebeartoe.io.buffered.BufferedTextFileReader;
 
 /**
  * 
@@ -57,7 +54,6 @@ public class StatisticsReportService
         }
         else
         {
-//            StatisticsReport report = statisticsService.parse(infile.toPath());
             StatisticsReport report = statisticsService.parse(infile);
             
             generateHtml(report, outFile);

@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
  */
 public class AdvancementsServiceTest
 {
-    private AdvancementsService implementation;
+    private final AdvancementsService implementation;
 
     public AdvancementsServiceTest() throws IOException, ParseException 
     {

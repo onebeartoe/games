@@ -19,10 +19,9 @@ public class UserStatisticsService
 {
     public StatisticsReport parse(File infile) throws IOException, ParseException
     {
-//userStatisticsFile
         JSONParser parser = new JSONParser();
 
-//        File inile = new File(statsPath);
+
 
         String s = Files.readString(infile.toPath() );
         

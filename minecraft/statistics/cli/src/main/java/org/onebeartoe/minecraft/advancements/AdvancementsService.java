@@ -5,7 +5,6 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 import org.json.simple.JSONArray;
@@ -21,11 +20,11 @@ import org.json.simple.parser.ParseException;
  */
 public class AdvancementsService
 {   
-//TODO: move all these to a map of <File, AdvancementsDto>    
-private List<String> catCategories;
-private List<String> balancedDietItems;
-private List<String> monstersHunted;
-private List<String> breedableAnimals;
+    //TODO: move all these to a map of <File, AdvancementsDto>    
+    private List<String> catCategories;
+    private List<String> balancedDietItems;
+    private List<String> monstersHunted;
+    private List<String> breedableAnimals;
     
     public AdvancementsService() throws IOException, ParseException
     {
@@ -132,10 +131,7 @@ System.out.println(criteria);
         catCategories = new ArrayList<String>();
         
         criteria.forEach(c ->
-        {
-//            System.out.println("c = " + c);
-//            System.out.println("class = " + c.getClass() );
-            
+        {            
             String category = c.toString();
             
             catCategories.add(category);
