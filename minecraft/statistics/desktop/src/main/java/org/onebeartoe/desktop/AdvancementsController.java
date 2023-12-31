@@ -1,5 +1,6 @@
 package org.onebeartoe.desktop;
 
+import org.onebeartoe.minecraft.advancements.AdvancementItem;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.List;
@@ -42,6 +43,10 @@ public class AdvancementsController
     
     private MinecraftWildAdvancementsService implementation;
     
+    private PlayerAdvancementsService playerAdvancementsService;
+    
+    private PlayerAdvancements playerAdvancements;
+    
     @FXML
     public void initialize() throws URISyntaxException, IOException, ParseException
     {     
@@ -54,6 +59,12 @@ public class AdvancementsController
         netherHBox.setSpacing(10);
         
         husbandryHBox.setSpacing(10);
+        
+        var advancementsPath = "file:///home/roberto/.minecraft/saves/worldo/advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";
+        
+        playerAdvancementsService = new PlayerAdvancementsService();
+        
+        playerAdvancements = playerAdvancementsService.load(advancementsPath);
     }
     
     @FXML
@@ -68,5 +79,17 @@ public class AdvancementsController
     private void showHotTouristDestinationsData()
     {
         System.out.println("farto");
+        
+//        List<AdvancementItem> advancementItems = playerAdvancements.nether.advancements.hotTouristDestinations;
+        List<AdvancementItem> advancementItems = null;
+        
+        StringBuilder text = new StringBuilder();
+        
+        for(AdvancementItem item : advancementItems)
+        {
+            text.append( item.toString() );
+        }
+        
+        husbundryHavesTextArea.setText(text.toString() );
     }
 }

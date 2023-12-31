@@ -10,7 +10,7 @@ public class Advancement
 {
     String name;
 
-    List<String> criteria;
+    List<AdvancementItem> criteria;
 
-    boolean done;    
+//    boolean done;    
 }
