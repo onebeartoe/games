@@ -6,6 +6,7 @@ import java.util.List;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.MediaView;
@@ -28,13 +29,16 @@ public class AdvancementsController
     Button singlePlayerButton;
     
     @FXML
-    TextArea havesTextArea;
+    TextArea husbundryHavesTextArea;
     
     @FXML
     HBox netherHBox;
     
     @FXML
     HBox husbandryHBox;
+    
+    @FXML
+    ImageView hotTouristDestinationsImage;
     
     private MinecraftWildAdvancementsService implementation;
     
@@ -45,7 +49,7 @@ public class AdvancementsController
           
         List<String> allAdventureTimes = implementation.allAdventureTimes();
         
-        havesTextArea.setText(allAdventureTimes.toString());
+        husbundryHavesTextArea.setText(allAdventureTimes.toString());
         
         netherHBox.setSpacing(10);
         
@@ -58,5 +62,11 @@ public class AdvancementsController
         System.out.println("mediaView again: " + mediaView);
         
         App.setRoot("play-selected-world");
+    }
+    
+    @FXML
+    private void showHotTouristDestinationsData()
+    {
+        System.out.println("farto");
     }
 }

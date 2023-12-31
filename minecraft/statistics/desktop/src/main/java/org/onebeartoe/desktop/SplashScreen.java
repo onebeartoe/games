@@ -52,8 +52,8 @@ public class SplashScreen extends Preloader
         this.preloaderStage = stage;
         
         stage.setWidth(640);
+
         stage.setHeight(480);
-        
 
         // Create a scene with the StackPane as the root
         Scene scene = new Scene(parent, 640, 480);

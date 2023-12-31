@@ -18,41 +18,33 @@
          xmlns="http://javafx.com/javafx/21" 
          fx:controller="org.onebeartoe.desktop.AdvancementsController">
    <tabs>
-       
       <Tab text="Nether">
         <content>
             <SplitPane dividerPositions="0.5" orientation="VERTICAL" centerShape="true" >
-              <items>
-<!--                  <ScrollPane >
-                     <content >-->
-                        <HBox fx:id="netherHBox"
-                            alignment="CENTER"  >
-                           <children>
-                              <ImageView fitHeight="150.0" fitWidth="200.0" 
-                                        
-                                         pickOnBounds="true" 
-                                         preserveRatio="true" >
-                                <image>
-                                    <!--<Image url="@file:///home/roberto/Versioning/owner/beto-land-owner/Imaging/felix-the-cat/felix.gif" />-->
-                                    <Image url="@file:///home/roberto/Versioning/owner/github/games/minecraft/statistics/desktop/src/main/resources/org/onebeartoe/desktop/minecraft-spalsh.gif" />
-                                    <!--<Image url="@file:///home/roberto/Versioning/owner/github/games/minecraft/statistics/desktop/src/main/resources/org/onebeartoe/desktop/minecraft-spalsh.mp4" />-->
+                <items>
+                    <HBox fx:id="netherHBox"
+                        alignment="CENTER"  >
+                       <children>
+                            <ImageView 
+                                fx:id="hotTouristDestinationsImage"
+                                fitHeight="150.0" fitWidth="200.0" 
+onMouseClicked="#showHotTouristDestinationsData" 
+                                pickOnBounds="true" 
+                                preserveRatio="true" >
+    
+                                                           
+<!--onAction="#showHotTouristDestinationsData"-->
+                                <image>                                    
+                                    <Image 
+                                        url="@file:///home/roberto/Versioning/owner/github/games/minecraft/statistics/desktop/src/main/resources/org/onebeartoe/desktop/minecraft-spalsh.gif" 
+                                        />
+<!--onAction="#showHotTouristDestinationsData"-->                                    
                                 </image>                                  
-                              </ImageView>
-                              
-                              <ImageView fitHeight="150.0" fitWidth="200.0" 
-                                        
-                                         pickOnBounds="true" 
-                                         preserveRatio="true" >
-                                <image>
-                                    <!--<Image url="@file:///home/roberto/Versioning/owner/beto-land-owner/Imaging/felix-the-cat/felix.gif" />-->
-                                    <Image url="@file:///home/roberto/Versioning/owner/github/games/minecraft/statistics/desktop/src/main/resources/org/onebeartoe/desktop/minecraft-spalsh.gif" />
-                                    <!--<Image url="@file:///home/roberto/Versioning/owner/github/games/minecraft/statistics/desktop/src/main/resources/org/onebeartoe/desktop/minecraft-spalsh.mp4" />-->
-                                </image>                                  
-                              </ImageView>
-                           </children>
-                        </HBox>
-                     <!--</content></ScrollPane>-->
-                  <ScrollPane>
+                            </ImageView>
+                       </children>
+                    </HBox>
+
+                    <ScrollPane>
                      <content>
                         <SplitPane dividerPositions="0.5">
                           <items>
@@ -110,7 +102,7 @@
                      <content>
                         <SplitPane dividerPositions="0.5">
                           <items>
-                              <TextArea fx:id="havesTextArea" />
+                              <TextArea fx:id="husbundryHavesTextArea" />
                               <TextArea />
                           </items>
                         </SplitPane>
