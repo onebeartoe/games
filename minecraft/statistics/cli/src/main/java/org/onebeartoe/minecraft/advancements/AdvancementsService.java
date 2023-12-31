@@ -3,6 +3,8 @@ package org.onebeartoe.minecraft.advancements;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,13 +30,17 @@ private List<String> breedableAnimals;
     public AdvancementsService() throws IOException, ParseException
     {
 //        String statsPath = "src/main/resources/advancements/minecraft/16.json";
-        String statsPath = "src/main/resources/advancements/minecraft/17.json";
+//        String statsPath = "src/main/resources/advancements/minecraft/17.json";
+        String statsPath = "advancements/minecraft/17.json";
 
         File inile = new File(statsPath);
                 
         JSONParser parser = new JSONParser();
-
-        String s = Files.readString( inile.toPath() );
+        
+        InputStream systemResourceAsStream = ClassLoader.getSystemResourceAsStream(statsPath);
+        
+        String s = new String(systemResourceAsStream.readAllBytes(), 
+                StandardCharsets.UTF_8);
         
         Object obj = parser.parse(s);
 

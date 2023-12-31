@@ -3,6 +3,8 @@ package org.onebeartoe.minecraft.advancements;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +19,7 @@ import org.json.simple.parser.ParseException;
  * 
  * This is specifically for Minecraft 1.17.
  */
-public class UserAdvancementsService
+public class PlayerAdvancementsService
 {    
     private List<String> balancedDietItems;
     
@@ -33,14 +35,15 @@ public class UserAdvancementsService
     
     private AdvancementsService advancementsService;
     
-    private static final String resourcesPath = "src/test/resources/";
+//    private static final String resourcesPath = "src/test/resources/";
     
-    public static final String savesPath = resourcesPath + "minecraft/saves/1.17/";
+//    public static final String savesPath = "minecraft/saves/1.17/";
 
 //TODO: path this value in as a constructor argument    
-    public static final String advancementsPath = savesPath +  "advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";    
-        
-    public UserAdvancementsService() throws IOException, ParseException
+//    public static final String advancementsPath = savesPath +  "advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";    
+    public static final String advancementsPath = "/home/roberto/Versioning/owner/github/games/minecraft/statistics/cli/src/test/resources/minecraft/saves/1.17/advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json"    ;
+    
+    public PlayerAdvancementsService() throws IOException, ParseException
     {
         advancementsService = new AdvancementsService();
 
@@ -48,7 +51,12 @@ public class UserAdvancementsService
                 
         JSONParser parser = new JSONParser();
 
-        String s = Files.readString( inile.toPath() );
+//        InputStream systemResourceAsStream = ClassLoader.getSystemResourceAsStream(advancementsPath);
+//        
+//        String s = new String(systemResourceAsStream.readAllBytes(), 
+//                StandardCharsets.UTF_8);        
+        
+        String s = Files.readString(inile.toPath());
         
         Object obj = parser.parse(s);
 
@@ -255,5 +263,12 @@ else
     public List<String> tamedCats() 
     {
         return List.copyOf(userCats);
+    }
+    
+    public PlayerAdvancements load(String advancementsPath)    
+    {
+        return null;
+    
+    
     }
 }

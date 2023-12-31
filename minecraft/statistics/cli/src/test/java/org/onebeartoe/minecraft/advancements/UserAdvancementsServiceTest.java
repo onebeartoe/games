@@ -24,14 +24,14 @@ import org.testng.annotations.Test;
  */
 public class UserAdvancementsServiceTest
 {
-    private UserAdvancementsService implementation;
+    private PlayerAdvancementsService implementation;
     
     private AdvancementsService advancementsService;
     
     @BeforeTest
     private void initializeImplementation() throws IOException, ParseException
     {
-        implementation = new UserAdvancementsService();
+        implementation = new PlayerAdvancementsService();
         
         advancementsService = new AdvancementsService();
     }

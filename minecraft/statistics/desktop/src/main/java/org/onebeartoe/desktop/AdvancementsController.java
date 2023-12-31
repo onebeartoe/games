@@ -1,5 +1,6 @@
 package org.onebeartoe.desktop;
 
+import org.onebeartoe.minecraft.advancements.PlayerAdvancements;
 import org.onebeartoe.minecraft.advancements.AdvancementItem;
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -12,6 +13,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.MediaView;
 import org.json.simple.parser.ParseException;
+import org.onebeartoe.minecraft.advancements.PlayerAdvancementsService;
+
 import org.onebeartoe.minecraft.advancements.v1_20.MinecraftWildAdvancementsService;
 
 /**

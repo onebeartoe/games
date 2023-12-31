@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-import static org.onebeartoe.minecraft.advancements.UserAdvancementsService.missingFromB;
+import static org.onebeartoe.minecraft.advancements.PlayerAdvancementsService.missingFromB;
 
 /**
  *

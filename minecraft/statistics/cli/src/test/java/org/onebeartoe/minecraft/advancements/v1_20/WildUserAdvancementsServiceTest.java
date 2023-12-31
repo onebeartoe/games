@@ -7,7 +7,7 @@ import java.net.URISyntaxException;
 import java.nio.file.Path;
 import java.util.List;
 import org.json.simple.parser.ParseException;
-import static org.onebeartoe.minecraft.advancements.UserAdvancementsService.advancementsPath;
+import static org.onebeartoe.minecraft.advancements.PlayerAdvancementsService.advancementsPath;
 import static org.testng.AssertJUnit.assertEquals;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;

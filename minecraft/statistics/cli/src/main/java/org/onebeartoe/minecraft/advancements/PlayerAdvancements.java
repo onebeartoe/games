@@ -1,7 +1,5 @@
 
-package org.onebeartoe.desktop;
-
-import org.onebeartoe.minecraft.advancements.Advancement;
+package org.onebeartoe.minecraft.advancements;
 
 /**
  *

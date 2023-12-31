@@ -1,5 +1,5 @@
 
-package org.onebeartoe.desktop;
+package org.onebeartoe.minecraft.advancements;
 
 import java.util.List;
 import org.onebeartoe.minecraft.advancements.Advancement;
