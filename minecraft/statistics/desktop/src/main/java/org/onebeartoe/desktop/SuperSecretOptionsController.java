@@ -2,18 +2,16 @@ package org.onebeartoe.desktop;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.net.URL;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
-import javafx.scene.media.Media;
 import javafx.scene.media.MediaView;
 
 /**
  * The background "splash" animation is actually setup/started in the 
  * JavaFX application's main() class in the @Override start() method.
  */
-public class PlayController 
+public class SuperSecretOptionsController 
 {
     @FXML
     public MediaView mediaView;
@@ -32,7 +30,7 @@ public class PlayController
         
         
 //        System.out.println("mediaView: " + mediaView);
-//        
+        
 //        URL resource = App.class.getResource("y2meta.com-Rick-Rolled-Short-Version.mp4");
             
             
@@ -68,8 +66,17 @@ public class PlayController
     @FXML
     private void switchToPrimary() throws IOException 
     {
+        System.out.println("play selected world -> advancements: " + mediaView);
         
-        System.out.println("mediaView again: " + mediaView);
-        App.setRoot("select-world");
+        App.setRoot("advancements");
     }
+
+    
+    @FXML
+    private void switchToPlay() throws IOException 
+    {
+        System.out.println("play selected world -> advancements: " + mediaView);
+        
+        App.setRoot("play");
+    }    
 }

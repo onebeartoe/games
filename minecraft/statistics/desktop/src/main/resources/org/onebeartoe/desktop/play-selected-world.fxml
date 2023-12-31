@@ -9,18 +9,12 @@
       xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" 
       fx:controller="org.onebeartoe.desktop.PlaySelectedWorldController">
     <children>
-
         <Label text="Select World" />
         <Button fx:id="worldButton1" onAction="#switchToPrimary" text="Back" />
-      <Button fx:id="splashButton1" onAction="#switchToPrimary" text="Advancements" />
-      <Button fx:id="splashButton2" onAction="#switchToPrimary" text="Super Secret Options" />
-      <Button fx:id="splashButton177" onAction="#switchToPrimary" text="Options???" />
-      <Button fx:id="splashButton277" onAction="#switchToPlay" text="Save and Quit to Title" />
-      
-      
-            
-
-         
+        <Button fx:id="splashButton1" onAction="#switchToPrimary" text="Advancements" />
+        <Button fx:id="splashButton2" onAction="#switchToPrimary" text="Super Secret Options" />
+        <Button fx:id="splashButton177" onAction="#switchToPrimary" text="Options???" />
+        <Button fx:id="splashButton277" onAction="#switchToPlay" text="Save and Quit to Title" />                                 
     </children>
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

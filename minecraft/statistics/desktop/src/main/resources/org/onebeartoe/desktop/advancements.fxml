@@ -8,16 +8,62 @@
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<TabPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" 
+<TabPane xmlns:fx="http://javafx.com/fxml/1" 
+         xmlns="http://javafx.com/javafx/21" 
          fx:controller="org.onebeartoe.desktop.AdvancementsController">
    <tabs>
        
       <Tab text="Nether">
         <content>
-          <AnchorPane   />
+            <SplitPane dividerPositions="0.5" orientation="VERTICAL" centerShape="true" >
+              <items>
+<!--                  <ScrollPane >
+                     <content >-->
+                        <HBox fx:id="netherHBox"
+                            alignment="CENTER"  >
+                           <children>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" 
+                                        
+                                         pickOnBounds="true" 
+                                         preserveRatio="true" >
+                                <image>
+                                    <!--<Image url="@file:///home/roberto/Versioning/owner/beto-land-owner/Imaging/felix-the-cat/felix.gif" />-->
+                                    <Image url="@file:///home/roberto/Versioning/owner/github/games/minecraft/statistics/desktop/src/main/resources/org/onebeartoe/desktop/minecraft-spalsh.gif" />
+                                    <!--<Image url="@file:///home/roberto/Versioning/owner/github/games/minecraft/statistics/desktop/src/main/resources/org/onebeartoe/desktop/minecraft-spalsh.mp4" />-->
+                                </image>                                  
+                              </ImageView>
+                              
+                              <ImageView fitHeight="150.0" fitWidth="200.0" 
+                                        
+                                         pickOnBounds="true" 
+                                         preserveRatio="true" >
+                                <image>
+                                    <!--<Image url="@file:///home/roberto/Versioning/owner/beto-land-owner/Imaging/felix-the-cat/felix.gif" />-->
+                                    <Image url="@file:///home/roberto/Versioning/owner/github/games/minecraft/statistics/desktop/src/main/resources/org/onebeartoe/desktop/minecraft-spalsh.gif" />
+                                    <!--<Image url="@file:///home/roberto/Versioning/owner/github/games/minecraft/statistics/desktop/src/main/resources/org/onebeartoe/desktop/minecraft-spalsh.mp4" />-->
+                                </image>                                  
+                              </ImageView>
+                           </children>
+                        </HBox>
+                     <!--</content></ScrollPane>-->
+                  <ScrollPane>
+                     <content>
+                        <SplitPane dividerPositions="0.5">
+                          <items>
+                              <TextArea fx:id="netherHavesTextArea" />
+                              <TextArea />
+                          </items>
+                        </SplitPane>
+                     </content>
+                  </ScrollPane>
+              </items>
+            </SplitPane>
         </content>
       </Tab>
       <Tab text="Adventure">
@@ -25,7 +71,7 @@
 
         </graphic>
           <content>
-          <AnchorPane  />
+          <AnchorPane />
         </content>
       </Tab>
 
@@ -34,7 +80,32 @@
          <content>
             <SplitPane dividerPositions="0.5" orientation="VERTICAL">
               <items>
-                  <ScrollPane />
+                    <HBox fx:id="husbandryHBox"
+                        alignment="CENTER"  >
+                       <children>
+                          <ImageView fitHeight="150.0" fitWidth="200.0" 
+
+                                     pickOnBounds="true" 
+                                     preserveRatio="true" >
+                            <image>
+                                <!--<Image url="@file:///home/roberto/Versioning/owner/beto-land-owner/Imaging/felix-the-cat/felix.gif" />-->
+                                <Image url="@file:///home/roberto/Versioning/owner/github/games/minecraft/statistics/desktop/src/main/resources/org/onebeartoe/desktop/dirt.jpg" />
+                                <!--<Image url="@file:///home/roberto/Versioning/owner/github/games/minecraft/statistics/desktop/src/main/resources/org/onebeartoe/desktop/minecraft-spalsh.mp4" />-->
+                            </image>                                  
+                          </ImageView>
+
+                          <ImageView fitHeight="150.0" fitWidth="200.0" 
+
+                                     pickOnBounds="true" 
+                                     preserveRatio="true" >
+                            <image>
+                                <!--<Image url="@file:///home/roberto/Versioning/owner/beto-land-owner/Imaging/felix-the-cat/felix.gif" />-->
+                                <Image url="@file:///home/roberto/Versioning/owner/github/games/minecraft/statistics/desktop/src/main/resources/org/onebeartoe/desktop/dirt.jpg" />
+                                <!--<Image url="@file:///home/roberto/Versioning/owner/github/games/minecraft/statistics/desktop/src/main/resources/org/onebeartoe/desktop/minecraft-spalsh.mp4" />-->
+                            </image>                                  
+                          </ImageView>
+                       </children>
+                    </HBox>                  
                   <ScrollPane>
                      <content>
                         <SplitPane dividerPositions="0.5">
@@ -46,7 +117,7 @@
                      </content>
                   </ScrollPane>
               </items>
-            </SplitPane>             
+            </SplitPane>
          </content>
       </Tab>
 

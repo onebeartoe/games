@@ -31,15 +31,15 @@ public class SelectWorldController
 //          https://stackoverflow.com/questions/42774863/how-to-call-a-mediaview-from-another-fxml-file        
         
         
-        System.out.println("mediaView: " + mediaView);
+//        System.out.println("mediaView: " + mediaView);
         
-        URL resource = App.class.getResource("y2meta.com-Rick-Rolled-Short-Version.mp4");
+//        URL resource = App.class.getResource("y2meta.com-Rick-Rolled-Short-Version.mp4");
             
             
 // String path = "/home/javatpoint/Downloads/test.mp4";  
   
 
-        String path = resource.toURI().toString();
+//        String path = resource.toURI().toString();
         
 //        String path = "file:///home/roberto/Versioning/owner/github/games/minecraft/statistics/desktop/target/classes/org/onebeartoe/desktop/y2meta.com-Rick-Rolled-Short-Version.ogg";
 //        String path = "file:///home/roberto/Versioning/owner/github/games/minecraft/statistics/desktop/target/classes/org/onebeartoe/desktop/y2meta.com-Rick-Rolled-Short-Version.mp4";
@@ -50,7 +50,7 @@ public class SelectWorldController
 
         //Instantiating Media class
         
-        Media media = new Media(path);  
+//        Media media = new Media(path);  
           
         
  //       Media media = new Media(new File(path).toURI().toString());  
