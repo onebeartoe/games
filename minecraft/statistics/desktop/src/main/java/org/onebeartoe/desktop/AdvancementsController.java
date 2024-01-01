@@ -1,7 +1,7 @@
 package org.onebeartoe.desktop;
 
 import org.onebeartoe.minecraft.advancements.PlayerAdvancements;
-import org.onebeartoe.minecraft.advancements.AdvancementItem;
+//import org.onebeartoe.minecraft.advancements.AdvancementItem;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.List;
@@ -81,16 +81,16 @@ public class AdvancementsController
     @FXML
     private void showHotTouristDestinationsData()
     {
-        System.out.println("farto");
+        System.out.println("other text");
         
 //        List<AdvancementItem> advancementItems = playerAdvancements.nether.advancements.hotTouristDestinations;
-List<AdvancementItem> advancementItems = null;
+//List<AdvancementItem> advancementItems = null;
         
         StringBuilder text = new StringBuilder();
         
-        for(AdvancementItem item : advancementItems)
+//        for(AdvancementItem item : advancementItems)
         {
-            text.append( item.toString() );
+            text.append( "some text" );
         }
         
         husbundryHavesTextArea.setText(text.toString() );
