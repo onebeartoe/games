@@ -4,7 +4,7 @@ package org.onebeartoe.minecraft.statistics;
 /**
  *
  */
-public class UserStatisticsServiceTest
+public class PlayerStatisticsServiceTest
 {
     
 }

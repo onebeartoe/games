@@ -34,5 +34,24 @@ public class AdvancementsServiceTest
         List<String> allCategrories = implementation.allCatCategories();
         
         assertTrue(allCategrories.size() == 11);
-    }    
+    }
+
+    private void hotTouristDestinations(Advancement hotTouristDestinations)
+    {
+        var criteria = hotTouristDestinations.criteria;
+        
+        assertTrue( criteria.contains("minecraft:basalt_deltas") );
+        assertTrue( criteria.contains("minecraft:crimson_forest") );
+        assertTrue( criteria.contains("minecraft:nether_wastes") );
+        assertTrue( criteria.contains("minecraft:soul_sand_valley") );
+        assertTrue( criteria.contains("minecraft:warped_forest") );
+    }
+    
+    @Test
+    public void load()
+    {
+        Advancements advancements = implementation.load();
+        
+        hotTouristDestinations(advancements.nether.hotTouristDestinations);
+    }
 }

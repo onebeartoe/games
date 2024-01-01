@@ -1,6 +1,7 @@
 
 package org.onebeartoe.minecraft.advancements;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -9,8 +10,13 @@ import java.util.List;
 public class Advancement
 {
     String name;
+    
+    String description;
 
-    List<AdvancementItem> criteria;
+    List<String> criteria;
 
-//    boolean done;    
+    public Advancement()
+    {
+        criteria = new ArrayList();
+    }
 }

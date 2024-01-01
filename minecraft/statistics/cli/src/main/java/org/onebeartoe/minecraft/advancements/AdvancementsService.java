@@ -26,6 +26,9 @@ public class AdvancementsService
     private List<String> monstersHunted;
     private List<String> breedableAnimals;
     
+//TODO: move this    
+    NetherAdvancementsCategory nether;
+    
     public AdvancementsService() throws IOException, ParseException
     {
 //        String statsPath = "src/main/resources/advancements/minecraft/16.json";
@@ -54,6 +57,7 @@ public class AdvancementsService
         parseHusbandry(husbandry);
         
         JSONObject nether = (JSONObject) base.get("nether");
+        parseNether(nether);
     }
 
     public List<String> allCatCategories() 
@@ -148,5 +152,30 @@ System.out.println(criteria);
         
         JSONObject bredAllAnimals = (JSONObject) husbandry.get("minecraft:husbandry/bred_all_animals");
         parseBredAllAnimals(bredAllAnimals);
+    }
+
+    public Advancements load() 
+    {
+        Advancements advancements = new Advancements();
+        
+        advancements.nether = nether;
+        
+        return advancements;
+    }
+    
+    private void parseNether(JSONObject netherJson)
+    {
+        JSONObject hotTourist = (JSONObject) netherJson.get("minecraft:nether/explore_nether");
+        
+        JSONArray criteria = (JSONArray) hotTourist.get("criteria");
+        
+        nether = new NetherAdvancementsCategory();
+        
+        criteria.forEach(c -> 
+        {
+            var destination = c.toString();
+            
+            nether.hotTouristDestinations.criteria.add(destination);
+        });
     }
 }
