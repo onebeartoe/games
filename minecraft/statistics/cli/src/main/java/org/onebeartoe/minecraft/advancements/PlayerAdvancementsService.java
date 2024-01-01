@@ -132,13 +132,7 @@ public class PlayerAdvancementsService
             {
                 JSONObject payload = (JSONObject) u;
 
-// can this next line be moved to inside the if() statement?                
                 JSONObject criteria = (JSONObject) payload.get("criteria");
-
-//if(criteria == null)
-//{
-//    System.out.println("a, u = " + advanementName + " - "+  u);
-//}
                 
                 boolean done = (boolean) payload.get("done");
                 
@@ -150,8 +144,7 @@ public class PlayerAdvancementsService
                     {                        
                         Advancement adv = new Advancement();
                         adv.name = name.toString();
-  
-//System.out.println("not done: " + adv.name);                        
+                        
                         
                         incompleteUserAdvancements.add(adv);
                         
@@ -160,11 +153,7 @@ public class PlayerAdvancementsService
                             userCats.add(adv.name);
                         }
                     });                    
-                }
-else
-{
-//    System.out.println("done: " + advanementName);
-}                    
+                }                   
             }
         });
     }
@@ -198,27 +187,20 @@ else
             String name = n.toString();
             
             list.add(name);
-            
-//            System.out.println("n, w -> " + 
-//                name + " :-: " + w.toString()
-//                    );
         });        
         
         bredAnimals = list;
         
         List<String> missingItems = new ArrayList();
         
-//        System.out.println();
-//        System.out.println("Missing Edible Items:");
         List<String> breedableAnimals = advancementsService.breedableAnimals();
+
 //TODO: reuse a BiPredicate        
         breedableAnimals.forEach(i ->
         {
             if( !bredAnimals.contains(i) )
             {
                 missingItems.add(i);
-                
-//                System.out.println(i);
             }
         });
         
@@ -229,10 +211,6 @@ else
     {
         List<String> minecraftCats = advancementsService.allCatCategories();
         
-//        System.out.println("minecraftCats yo = " + minecraftCats);
-//        
-//        System.out.println("userCats = " + userCats);
-        
         return missingFromB(minecraftCats, userCats);
     }
     
@@ -241,8 +219,7 @@ else
     {
         List<String> missingItems = new ArrayList();
         
-//        System.out.println();
-//        System.out.println("Missing Items yo:");
+
         
 //TODO: reuse a BiPredicate        
         a.forEach(i ->
@@ -250,8 +227,6 @@ else
             if( !b.contains(i) )
             {
                 missingItems.add(i);
-                
-//                System.out.println(i);
             }
         });
         

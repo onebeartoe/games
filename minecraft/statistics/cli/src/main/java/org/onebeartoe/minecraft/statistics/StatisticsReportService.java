@@ -23,17 +23,12 @@ import org.json.simple.parser.ParseException;
  */
 public class StatisticsReportService
 {
-//    private StatisticsService statisticsService;
     private UserStatisticsService statisticsService;
-    
-//    private TextFileReader textFileReader;
+   
     
     public StatisticsReportService()
     {
-//        statisticsService = new StatisticsService();
         statisticsService = new UserStatisticsService();
-        
-//        textFileReader = new BufferedTextFileReader();
     }
     
     public void generate(Path inpath) throws FileNotFoundException, IOException, URISyntaxException, ParseException
@@ -102,11 +97,9 @@ public class StatisticsReportService
         }
         statisticsContent = statisticsContent.replace("#$%MOST_KILLED_MOB_BY_USER_CONTENT%$#", killedBuilder.toString() );
         
-//        PlainText statistics = new PlainText(statisticsContent);
                 
         StringBuilder builder = new StringBuilder()
-//                                    .append(statistics);
-                                    .append(statisticsContent);
+                                        .append(statisticsContent);
         
         return html.replace("#$%CONTENT%$#", builder.toString() );
     }

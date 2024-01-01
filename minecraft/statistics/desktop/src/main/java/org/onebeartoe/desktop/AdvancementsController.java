@@ -1,7 +1,7 @@
 package org.onebeartoe.desktop;
 
 import org.onebeartoe.minecraft.advancements.PlayerAdvancements;
-//import org.onebeartoe.minecraft.advancements.AdvancementItem;
+
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.List;
@@ -33,7 +33,16 @@ public class AdvancementsController
     Button singlePlayerButton;
     
     @FXML
+    TextArea netherHavesTextArea;
+    
+    @FXML
+    TextArea netherHaveNotsTextArea;
+    
+    @FXML
     TextArea husbundryHavesTextArea;
+    
+    @FXML
+    TextArea husbundryHaveNotsTextArea;
     
     @FXML
     HBox netherHBox;
@@ -68,6 +77,8 @@ public class AdvancementsController
         playerAdvancementsService = new PlayerAdvancementsService();
         
         playerAdvancements = playerAdvancementsService.load(advancementsPath);
+        
+        showHotTouristDestinationsData();
     }
     
     @FXML
@@ -81,18 +92,30 @@ public class AdvancementsController
     @FXML
     private void showHotTouristDestinationsData()
     {
-        System.out.println("other text");
+        System.out.println("jfalkjlsdj");    
         
-//        List<AdvancementItem> advancementItems = playerAdvancements.nether.advancements.hotTouristDestinations;
-//List<AdvancementItem> advancementItems = null;
-        
-        StringBuilder text = new StringBuilder();
-        
-//        for(AdvancementItem item : advancementItems)
+        StringBuilder haves = new StringBuilder();        
+                
+        playerAdvancements.nether.hotTouristDestinations.haves()
+        .forEach((have) -> 
         {
-            text.append( "some text" );
-        }
+            haves.append(have);
+            haves.append("\n");
+        });
+                
+        netherHavesTextArea.setText(haves.toString() );
         
-        husbundryHavesTextArea.setText(text.toString() );
+        StringBuilder haveNots = new StringBuilder();
+        
+        playerAdvancements.nether.hotTouristDestinations.haveNots()
+        .forEach((not) -> 
+        {
+            haveNots.append(not);
+            haveNots.append("\n");
+        });
+        
+        netherHaveNotsTextArea.setText(haveNots.toString() );
+        
+        
     }
 }

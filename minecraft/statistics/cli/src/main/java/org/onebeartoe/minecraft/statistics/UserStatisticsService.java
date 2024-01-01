@@ -53,15 +53,10 @@ public class UserStatisticsService
         
         
 //TODO: !!!!do something with CUSTOM!!!!        
-        JSONObject custom = (JSONObject) stats.get("minecraft:custom");        
-        
-        
-        
-  
-        
+        JSONObject custom = (JSONObject) stats.get("minecraft:custom");               
         
         report.minecraft_mined = minecraft_mined;
-//        report.killed = jsonKilled;        
+
         report.used = used;        
         report.custom = custom; 
         
@@ -83,19 +78,11 @@ public class UserStatisticsService
                 .collect( Collectors.toList() );    
     }
 
-//    public List<String> missingHostilModKills()
-//    {
-//        
-//        
-//        return List.copyOf(coll)
-//    }
-
     private List<String> parseMissingHostileMobKills(List<Statistic> killedMobs) throws IOException
     {            
         List<String> allHostileMobs = loadHostileMobs();
         
-//        System.out.println();
-//        System.out.println("Missing Hostile Mob Kills");
+
         
         List<String> missingMobKills = new ArrayList();
         

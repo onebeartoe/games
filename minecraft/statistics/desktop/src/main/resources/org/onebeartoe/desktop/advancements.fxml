@@ -49,7 +49,7 @@ onMouseClicked="#showHotTouristDestinationsData"
                         <SplitPane dividerPositions="0.5">
                           <items>
                               <TextArea fx:id="netherHavesTextArea" />
-                              <TextArea />
+                              <TextArea fx:id="netherHaveNotsTextArea"/>
                           </items>
                         </SplitPane>
                      </content>
@@ -103,7 +103,7 @@ onMouseClicked="#showHotTouristDestinationsData"
                         <SplitPane dividerPositions="0.5">
                           <items>
                               <TextArea fx:id="husbundryHavesTextArea" />
-                              <TextArea />
+                              <TextArea fx:id="husbundryHaveNotsTextArea"/>
                           </items>
                         </SplitPane>
                      </content>

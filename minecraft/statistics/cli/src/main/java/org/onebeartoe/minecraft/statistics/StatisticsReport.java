@@ -11,11 +11,7 @@ public class StatisticsReport
 {
 //TODO: convert these JSONObject members to data types    
     @Deprecated
-    JSONObject minecraft_mined;
-
-//TODO: convert these JSONObject members to data types        
-//    @Deprecated
-//    JSONObject killed ;        
+    JSONObject minecraft_mined;        
     
     public List<String> missingHostileMobKills;
     

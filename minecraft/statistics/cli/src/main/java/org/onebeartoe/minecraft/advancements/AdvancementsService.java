@@ -116,9 +116,7 @@ public class AdvancementsService
     {
         breedableAnimals = new ArrayList<String>();
         
-        JSONArray criteria = (JSONArray) bredAllAnimalsJson.get("criteria");
-        
-//System.out.println(criteria);        
+        JSONArray criteria = (JSONArray) bredAllAnimalsJson.get("criteria");   
        
         criteria.forEach(c -> 
         {

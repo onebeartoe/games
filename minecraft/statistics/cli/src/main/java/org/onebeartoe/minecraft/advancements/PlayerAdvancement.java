@@ -30,7 +30,7 @@ public class PlayerAdvancement
         {
             if(achieved)
             {
-                haves.add(achieved);
+                haves.add(desc);
             }
         });
         
@@ -45,7 +45,7 @@ public class PlayerAdvancement
         {
             if(!achieved)
             {
-                haveNots.add(achieved);
+                haveNots.add(desc);
             }
         });
         
