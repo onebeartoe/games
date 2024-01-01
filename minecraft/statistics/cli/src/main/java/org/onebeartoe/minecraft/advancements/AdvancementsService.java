@@ -118,7 +118,7 @@ public class AdvancementsService
         
         JSONArray criteria = (JSONArray) bredAllAnimalsJson.get("criteria");
         
-System.out.println(criteria);        
+//System.out.println(criteria);        
        
         criteria.forEach(c -> 
         {

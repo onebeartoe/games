@@ -94,8 +94,8 @@ public class UserStatisticsService
     {            
         List<String> allHostileMobs = loadHostileMobs();
         
-        System.out.println();
-        System.out.println("Missing Hostile Mob Kills");
+//        System.out.println();
+//        System.out.println("Missing Hostile Mob Kills");
         
         List<String> missingMobKills = new ArrayList();
         
@@ -115,7 +115,7 @@ public class UserStatisticsService
             if(!found)
             {
                 // print the missing item
-                System.out.println(m);
+//                System.out.println(m);
                 
                 missingMobKills.add(m);
             }

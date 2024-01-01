@@ -135,10 +135,10 @@ public class PlayerAdvancementsService
 // can this next line be moved to inside the if() statement?                
                 JSONObject criteria = (JSONObject) payload.get("criteria");
 
-if(criteria == null)
-{
-    System.out.println("a, u = " + advanementName + " - "+  u);
-}
+//if(criteria == null)
+//{
+//    System.out.println("a, u = " + advanementName + " - "+  u);
+//}
                 
                 boolean done = (boolean) payload.get("done");
                 
@@ -151,7 +151,7 @@ if(criteria == null)
                         Advancement adv = new Advancement();
                         adv.name = name.toString();
   
-System.out.println("not done: " + adv.name);                        
+//System.out.println("not done: " + adv.name);                        
                         
                         incompleteUserAdvancements.add(adv);
                         
@@ -208,8 +208,8 @@ else
         
         List<String> missingItems = new ArrayList();
         
-        System.out.println();
-        System.out.println("Missing Edible Items:");
+//        System.out.println();
+//        System.out.println("Missing Edible Items:");
         List<String> breedableAnimals = advancementsService.breedableAnimals();
 //TODO: reuse a BiPredicate        
         breedableAnimals.forEach(i ->
@@ -218,7 +218,7 @@ else
             {
                 missingItems.add(i);
                 
-                System.out.println(i);
+//                System.out.println(i);
             }
         });
         
@@ -229,9 +229,9 @@ else
     {
         List<String> minecraftCats = advancementsService.allCatCategories();
         
-        System.out.println("minecraftCats yo = " + minecraftCats);
-        
-        System.out.println("userCats = " + userCats);
+//        System.out.println("minecraftCats yo = " + minecraftCats);
+//        
+//        System.out.println("userCats = " + userCats);
         
         return missingFromB(minecraftCats, userCats);
     }
@@ -241,8 +241,8 @@ else
     {
         List<String> missingItems = new ArrayList();
         
-        System.out.println();
-        System.out.println("Missing Items yo:");
+//        System.out.println();
+//        System.out.println("Missing Items yo:");
         
 //TODO: reuse a BiPredicate        
         a.forEach(i ->
@@ -251,7 +251,7 @@ else
             {
                 missingItems.add(i);
                 
-                System.out.println(i);
+//                System.out.println(i);
             }
         });
         

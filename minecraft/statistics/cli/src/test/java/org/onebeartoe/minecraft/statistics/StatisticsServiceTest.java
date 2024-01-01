@@ -46,7 +46,7 @@ String statsPath = null;
         reportMined(report.minecraft_mined);
         parseMissingHostileMobKills(report);        
         reportUsed(report.used);        
-        reportCustom(report.custom);        
+//        reportCustom(report.custom);        
     }
   
     private void parseMissingHostileMobKills(StatisticsReport report) throws IOException 
@@ -97,15 +97,15 @@ String statsPath = null;
         assertEquals(38, minecraft_soul_fire);               
     }
 
-    private void reportCustom(JSONObject custom) 
-    {
-//TODO move to implementation        
-        System.out.println("custom:");
-        custom.forEach( (t, u) -> 
-        {
-            System.out.println(t + " - " + u);
-        });        
-    }
+//    private void reportCustom(JSONObject custom) 
+//    {
+////TODO move to implementation        
+//        System.out.println("custom:");
+//        custom.forEach( (t, u) -> 
+//        {
+//            System.out.println(t + " - " + u);
+//        });        
+//    }
 
     private void reportUsed(JSONObject used) throws IOException 
     {
@@ -115,15 +115,15 @@ String statsPath = null;
         
         List<String> missingItems = new ArrayList();
         
-        System.out.println();
-        System.out.println("Missing Edible Items:");
+//        System.out.println();
+//        System.out.println("Missing Edible Items:");
         edibleItems.forEach(i ->
         {
             if( !itemsEaten.contains(i) )
             {
                 missingItems.add(i);
                 
-                System.out.println(i);
+//                System.out.println(i);
             }
         });
         
@@ -138,11 +138,11 @@ String statsPath = null;
                 .collect( Collectors.toList() );
         
 //TODO: move this !@!@!@!@!@!2        
-        System.out.println();
-        System.out.println("Top Ten Items Used");
+//        System.out.println();
+//        System.out.println("Top Ten Items Used");
         topTen.forEach(stat ->
         {
-            System.out.println(stat.name + " - " + stat.value);
+//            System.out.println(stat.name + " - " + stat.value);
         });
         
         Statistic ironPickaxe = topTen.get(0);
