@@ -29,31 +29,21 @@ public class PlayerAdvancementsService
     private List<String> monstersHunted;
     
     private List<String> unbredAnimals;
-    
-    private AdvancementsService advancementsService;
 
 //TODO: path this value in as a constructor argument    
 //    public static final String advancementsPath = savesPath +  "advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";    
     public static final String advancementsPath = "/home/roberto/Versioning/owner/github/games/minecraft/statistics/cli/src/test/resources/minecraft/saves/1.17/advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json"    ;
     
+    private Advancements minecraftAdvancements;
+    
+    //TODO: move this to local assignment once all the parsing is moved
+    private AdvancementsService advancementsService = new AdvancementsService();
+    
     public PlayerAdvancementsService() throws IOException, ParseException
     {
-        advancementsService = new AdvancementsService();
+        minecraftAdvancements = advancementsService.load();
 
-        File inile = new File(advancementsPath);
-                
-        JSONParser parser = new JSONParser();
-
-//        InputStream systemResourceAsStream = ClassLoader.getSystemResourceAsStream(advancementsPath);
-//        
-//        String s = new String(systemResourceAsStream.readAllBytes(), 
-//                StandardCharsets.UTF_8);        
-        
-        String s = Files.readString(inile.toPath());
-        
-        Object obj = parser.parse(s);
-
-        JSONObject base = (JSONObject) obj;
+        JSONObject base = loadBase();
         
         parseIncompleteUserAdvancements(base);
         
@@ -77,6 +67,26 @@ public class PlayerAdvancementsService
     public List<Advancement> incompleteUserAdvancements() throws IOException, ParseException 
     {
         return incompleteUserAdvancements;
+    }
+    
+    public JSONObject loadBase() throws IOException, ParseException
+    {
+        File inile = new File(advancementsPath);
+                
+        JSONParser parser = new JSONParser();
+
+//        InputStream systemResourceAsStream = ClassLoader.getSystemResourceAsStream(advancementsPath);
+//        
+//        String s = new String(systemResourceAsStream.readAllBytes(), 
+//                StandardCharsets.UTF_8);        
+        
+        String s = Files.readString(inile.toPath());
+        
+        Object obj = parser.parse(s);
+
+        JSONObject base = (JSONObject) obj;
+        
+        return base;
     }
 
     public List<String> monstersHunted() 
@@ -189,9 +199,9 @@ else
             
             list.add(name);
             
-            System.out.println("n, w -> " + 
-                name + " :-: " + w.toString()
-                    );
+//            System.out.println("n, w -> " + 
+//                name + " :-: " + w.toString()
+//                    );
         });        
         
         bredAnimals = list;
@@ -253,10 +263,46 @@ else
         return List.copyOf(userCats);
     }
     
-    public PlayerAdvancements load(String advancementsPath)    
+    public PlayerAdvancements load(String advancementsPath) throws IOException, ParseException    
     {
-        return null;
-    
-    
+        var advancements = new PlayerAdvancements();
+        
+        JSONObject base = loadBase();        
+
+        JSONObject netherJson = (JSONObject) base.get("minecraft:nether/explore_nether");
+        
+        advancements.nether = parseNether(netherJson);
+        
+        return advancements;
+    }
+
+    private PlayerNetherAdvancementsCategory parseNether(JSONObject netherJson) 
+    {
+        var playerAdvancements = new <String> ArrayList();
+                
+        JSONObject criteriaJson = (JSONObject) netherJson.get("criteria");
+        
+        criteriaJson.forEach((name, date) -> 
+        {
+            playerAdvancements.add(name);
+        });
+                
+        PlayerNetherAdvancementsCategory advancements = new PlayerNetherAdvancementsCategory();
+        
+        List<String> minecraftCriteria = minecraftAdvancements.nether.hotTouristDestinations.criteria;
+        
+        minecraftCriteria.forEach((criteriaName) -> 
+        {
+            if(playerAdvancements.contains(criteriaName))
+            {
+                advancements.hotTouristDestinations.criteria.put(criteriaName, true);
+            }
+            else
+            {
+                advancements.hotTouristDestinations.criteria.put(criteriaName, false);
+            }
+        });
+        
+        return advancements;
     }
 }

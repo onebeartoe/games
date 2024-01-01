@@ -40,6 +40,8 @@ public class AdvancementsServiceTest
     {
         var criteria = hotTouristDestinations.criteria;
         
+        assertTrue(criteria.size() == 5);
+        
         assertTrue( criteria.contains("minecraft:basalt_deltas") );
         assertTrue( criteria.contains("minecraft:crimson_forest") );
         assertTrue( criteria.contains("minecraft:nether_wastes") );

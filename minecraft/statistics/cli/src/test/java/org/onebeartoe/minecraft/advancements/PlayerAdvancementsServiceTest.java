@@ -3,6 +3,7 @@ package org.onebeartoe.minecraft.advancements;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 import org.json.simple.parser.ParseException;
 import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertFalse;
@@ -41,8 +42,8 @@ public class PlayerAdvancementsServiceTest
     {
         List<String> userDietItems = implementation.balancedDietItems();
         
-        System.out.println("user diet items:");
-        userDietItems.forEach(System.out::println);
+//        System.out.println("user diet items:");
+//        userDietItems.forEach(System.out::println);
 
         int userItemCount = userDietItems.size();
         
@@ -104,10 +105,10 @@ public class PlayerAdvancementsServiceTest
         {
             boolean missingItem = !allBalancedDietItems1.contains(ubdi);
                                    
-            if(missingItem)
-            {
-                System.out.println("missingItem = " + ubdi);
-            }
+//            if(missingItem)
+//            {
+//                System.out.println("missingItem = " + ubdi);
+//            }
             
             assertFalse(missingItem);
         });
@@ -146,8 +147,8 @@ assertTrue( missingMobs.contains("minecraft:strider") );
     {
         List<String> userMonstersHunted = implementation.monstersHunted();
 
-        System.out.println("user monsters hunted:");        
-        userMonstersHunted.forEach(System.out::println);
+//        System.out.println("user monsters hunted:");        
+//        userMonstersHunted.forEach(System.out::println);
 
         int userItemCount = userMonstersHunted.size();        
         assertEquals(31, userItemCount);
@@ -156,11 +157,11 @@ assertTrue( missingMobs.contains("minecraft:strider") );
         
         assertEquals(34, minecraftMonstersHunted.size());
         
-        System.out.println("monsters hunted:");
-        minecraftMonstersHunted.forEach(System.out::println);
+//        System.out.println("monsters hunted:");
+//        minecraftMonstersHunted.forEach(System.out::println);
         
-        System.out.println("u: " + userMonstersHunted.size() );
-        System.out.println("m: " + minecraftMonstersHunted.size() );
+//        System.out.println("u: " + userMonstersHunted.size() );
+//        System.out.println("m: " + minecraftMonstersHunted.size() );
                                 
         
         assertFalse(userMonstersHunted.contains("minecraft:endermite") );
@@ -234,7 +235,7 @@ assertTrue( missingMobs.contains("minecraft:strider") );
     {
         List<String> missingCats = implementation.missingCats();
         
-        System.out.println("missingCats = " + missingCats);
+//        System.out.println("missingCats = " + missingCats);
                      
         int expected = 1;
         
@@ -270,5 +271,30 @@ assertTrue( missingMobs.contains("minecraft:strider") );
         assertTrue( cats.contains("textures/entity/cat/siamese.png" ));
         assertTrue( cats.contains("textures/entity/cat/tabby.png" ));
         assertTrue( cats.contains("textures/entity/cat/white.png") );
+    }
+
+    @Test
+    public void load() throws IOException, ParseException
+    {
+        String path = null;
+
+        PlayerAdvancements advancements = implementation.load(path);
+
+        verifyNether(advancements.nether);
+    }
+
+    private void verifyNether(PlayerNetherAdvancementsCategory nether) 
+    {
+        Map<String, Boolean> criteria = nether.hotTouristDestinations.criteria;
+        
+        assertTrue(criteria.size() == 5);
+
+        List<String> haves = nether.hotTouristDestinations.haves();
+        
+        assertEquals( haves.size() , 5);
+        
+        List<String> haveNots = nether.hotTouristDestinations.haveNots();
+        
+        assertTrue( haveNots.isEmpty() );
     }
 }
