@@ -67,7 +67,7 @@ public class AdvancementsService
         return List.copyOf(breedableAnimals);
     }
 
-    private void parseAdventure(JSONObject adventureJson) 
+    private AdventureAdvancements parseAdventure(JSONObject adventureJson) 
     {
         JSONObject monstersHuntedJson = (JSONObject) adventureJson.get("minecraft:adventure/kill_all_mobs");
         
@@ -75,12 +75,18 @@ public class AdvancementsService
         
         monstersHunted = new ArrayList<String>();
         
+        AdventureAdvancements adventure = new AdventureAdvancements();
+        
         criteria.forEach(m -> 
         {
             String monster = m.toString();
             
             monstersHunted.add(monster);
         });
+        
+        adventure.monstersHunted.criteria = monstersHunted;
+        
+        return adventure;
     }
 
     private void parseBalancedDiet(JSONObject diet) 
@@ -120,6 +126,10 @@ public class AdvancementsService
         criteria.forEach(c ->
         {            
             String category = c.toString();
+
+            int end = category.lastIndexOf(".");
+
+            category = category.substring(0, end);            
             
             catCategories.add(category);
         });
@@ -156,8 +166,11 @@ public class AdvancementsService
         JSONObject base = parseBase();
         
         JSONObject husbandry = (JSONObject) base.get("husbandry");
-
         advancements.husbandry = parseHusbandry(husbandry);
+        
+        JSONObject advanture = (JSONObject) base.get("adventure");
+        
+        advancements.adventure = parseAdventure(advanture);
         
         return advancements;
     }
@@ -180,9 +193,7 @@ public class AdvancementsService
 
     private JSONObject parseBase() throws IOException, ParseException 
     {
-//        String statsPath = "src/main/resources/advancements/minecraft/16.json";
-//        String statsPath = "src/main/resources/advancements/minecraft/17.json";
-        String statsPath = "advancements/minecraft/17.json";
+        String statsPath = "advancements/minecraft/21.json";
 
         File inile = new File(statsPath);
                 

@@ -31,10 +31,14 @@ public class PlayerAdvancementsServiceTest
     
     private PlayerAdvancements playerAdvancements;
     
+//    final String advancementsPath = "/home/roberto/Versioning/owner/github/games/minecraft/statistics/cli/src/test/resources/minecraft/saves/1.17/advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";
+    final String advancementsPath = "/home/roberto/Versioning/owner/github/games/minecraft/statistics/cli/src/test/resources/minecraft/saves/1.21/advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";
+    
     @BeforeTest
     private void initializeImplementation() throws IOException, ParseException
-    {
+    {        
         implementation = new PlayerAdvancementsService();
+implementation.load(advancementsPath);
         
         advancementsService = new AdvancementsService();
     }
@@ -43,13 +47,10 @@ public class PlayerAdvancementsServiceTest
     public void balancedDiet()
     {
         List<String> userDietItems = implementation.balancedDietItems();
-        
-//        System.out.println("user diet items:");
-//        userDietItems.forEach(System.out::println);
 
         int userItemCount = userDietItems.size();
         
-        assertTrue(userItemCount == 36);
+        assertTrue(userItemCount == 19);
         
         List<String> minecraftDietItems = advancementsService.balancedDietItems();
         
@@ -60,40 +61,40 @@ public class PlayerAdvancementsServiceTest
         // these are the itesm the player has already obtained:
         assertTrue( userDietItems.contains("apple") );
         assertTrue( userDietItems.contains("baked_potato") );
-        assertTrue( userDietItems.contains("beef") );
-        assertTrue( userDietItems.contains("beetroot") );
-        assertTrue( userDietItems.contains("beetroot_soup") );
+        assertTrue( !userDietItems.contains("beef") );
+        assertTrue( !userDietItems.contains("beetroot") );
+        assertTrue( !userDietItems.contains("beetroot_soup") );
         assertTrue( userDietItems.contains("bread") );
         assertTrue( userDietItems.contains("carrot") );
         assertTrue( userDietItems.contains("chicken") );
-        assertTrue( userDietItems.contains("chorus_fruit") );
-        assertTrue( userDietItems.contains("cod") );
-        assertTrue( userDietItems.contains("cooked_beef") );
+        assertTrue( !userDietItems.contains("chorus_fruit") );
+        assertTrue( !userDietItems.contains("cod") );
+        assertTrue( !userDietItems.contains("cooked_beef") );
         assertTrue( userDietItems.contains("cooked_chicken") );
-        assertTrue( userDietItems.contains("cooked_cod") );
-        assertTrue( userDietItems.contains("cooked_mutton") );
-        assertTrue( userDietItems.contains("cooked_porkchop") );
-        assertTrue( userDietItems.contains("cooked_rabbit") );
+        assertTrue( !userDietItems.contains("cooked_cod") );
+        assertTrue( !userDietItems.contains("cooked_mutton") );
+        assertTrue( !userDietItems.contains("cooked_porkchop") );
+        assertTrue( !userDietItems.contains("cooked_rabbit") );
         assertTrue( userDietItems.contains("cooked_salmon") );
         assertTrue( userDietItems.contains("cookie") );
-        assertTrue( userDietItems.contains("enchanted_golden_apple") );
+        assertTrue( !userDietItems.contains("enchanted_golden_apple") );
         assertTrue( userDietItems.contains("golden_apple") );
         assertTrue( userDietItems.contains("golden_carrot") );
-        assertTrue( userDietItems.contains("honey_bottle") );
+        assertTrue( !userDietItems.contains("honey_bottle") );
         assertTrue( userDietItems.contains("melon_slice") );
-        assertTrue( userDietItems.contains("mutton") );
+        assertTrue( !userDietItems.contains("mutton") );
         assertTrue( userDietItems.contains("poisonous_potato") );
-        assertTrue( userDietItems.contains("porkchop") );
+        assertTrue( !userDietItems.contains("porkchop") );
         assertTrue( userDietItems.contains("potato") );
-        assertTrue( userDietItems.contains("pufferfish") );
+        assertTrue( !userDietItems.contains("pufferfish") );
         assertTrue( userDietItems.contains("pumpkin_pie") );
         assertTrue( userDietItems.contains("rabbit_stew") );
         assertTrue( userDietItems.contains("rotten_flesh") );
-        assertTrue( userDietItems.contains("salmon") );
-        assertTrue( userDietItems.contains("spider_eye") );
+        assertTrue( !userDietItems.contains("salmon") );
+        assertTrue( !userDietItems.contains("spider_eye") );
         assertTrue( userDietItems.contains("suspicious_stew") );
         assertTrue( userDietItems.contains("sweet_berries") );
-        assertTrue( userDietItems.contains("tropical_fish") );        
+        assertTrue( !userDietItems.contains("tropical_fish") );        
     }
     
     @Test
@@ -140,8 +141,8 @@ public class PlayerAdvancementsServiceTest
 //!?!?!?!??!?!?!?!?!?!?S        
 assertTrue( missingMobs.contains("minecraft:strider") );
         assertTrue( missingMobs.contains("minecraft:strider") );
-        assertTrue( missingMobs.contains("minecraft:turtle") );
-        assertTrue( missingMobs.contains("minecraft:wolf") );               
+        assertTrue( !missingMobs.contains("minecraft:turtle") );
+        assertTrue( !missingMobs.contains("minecraft:wolf") );               
     }
 
     @Test
@@ -157,10 +158,10 @@ assertTrue( missingMobs.contains("minecraft:strider") );
         
         List<String> minecraftMonstersHunted = advancementsService.monstersHunted();
         
-        assertEquals(34, minecraftMonstersHunted.size());
+        assertEquals(35, minecraftMonstersHunted.size());
 
         assertFalse(userMonstersHunted.contains("minecraft:endermite") );
-        assertFalse(userMonstersHunted.contains("minecraft:stray") );
+        assertFalse(!userMonstersHunted.contains("minecraft:stray") );
         assertFalse(userMonstersHunted.contains("minecraft:wither") );
         
         
@@ -183,7 +184,7 @@ assertTrue( missingMobs.contains("minecraft:strider") );
         assertTrue(userMonstersHunted.contains("minecraft:piglin_brute") );
         assertTrue(userMonstersHunted.contains("minecraft:pillager") );
         assertTrue(userMonstersHunted.contains("minecraft:ravager") );
-        assertTrue(userMonstersHunted.contains("minecraft:shulker") );
+        assertTrue(!userMonstersHunted.contains("minecraft:shulker") );
         assertTrue(userMonstersHunted.contains("minecraft:silverfish") );
         assertTrue(userMonstersHunted.contains("minecraft:skeleton") );
         assertTrue(userMonstersHunted.contains("minecraft:slime") );
@@ -192,7 +193,7 @@ assertTrue( missingMobs.contains("minecraft:strider") );
         assertTrue(userMonstersHunted.contains("minecraft:vindicator") );
         assertTrue(userMonstersHunted.contains("minecraft:witch") );
         assertTrue(userMonstersHunted.contains("minecraft:wither_skeleton") );
-        assertTrue(userMonstersHunted.contains("minecraft:zoglin") );
+        assertTrue(!userMonstersHunted.contains("minecraft:zoglin") );
         assertTrue(userMonstersHunted.contains("minecraft:zombie") );
         assertTrue(userMonstersHunted.contains("minecraft:zombie_villager") );
         assertTrue(userMonstersHunted.contains("minecraft:zombified_piglin") );            
@@ -228,7 +229,8 @@ assertTrue( missingMobs.contains("minecraft:strider") );
     @Test
     public void tamedCats()
     {
-        List<String> cats = implementation.tamedCats();
+//        List<String> cats = implementation.tamedCats();
+        List<String> cats = playerAdvancements.husbandry.aCompleteCatelogue.haves();
         
         int expected = 10;
         
@@ -238,24 +240,25 @@ assertTrue( missingMobs.contains("minecraft:strider") );
         assertEquals(expected, actual);
         
         // check for all expected missing cats
-        assertTrue( cats.contains("textures/entity/cat/all_black.png") );
-        assertTrue( cats.contains("textures/entity/cat/black.png") );
-        assertTrue( cats.contains("textures/entity/cat/british_shorthair.png") );
-        assertTrue( cats.contains("textures/entity/cat/calico.png" ));
-        assertTrue( cats.contains("textures/entity/cat/jellie.png" ));
-        assertTrue( cats.contains("textures/entity/cat/persian.png" ));
-        assertTrue( cats.contains("textures/entity/cat/red.png" ));
-        assertTrue( cats.contains("textures/entity/cat/siamese.png" ));
-        assertTrue( cats.contains("textures/entity/cat/tabby.png" ));
-        assertTrue( cats.contains("textures/entity/cat/white.png") );
+        assertTrue( cats.contains("minecraft:all_black") );
+        assertTrue( cats.contains("minecraft:black") );
+        assertTrue( cats.contains("minecraft:british_shorthair") );
+        assertTrue( cats.contains("minecraft:calico" ));
+        assertTrue( cats.contains("minecraft:jellie" ));
+        assertTrue( cats.contains("minecraft:persian" ));
+        assertTrue( cats.contains("minecraft:red" ));
+        assertTrue( cats.contains("minecraft:siamese" ));
+        assertTrue( cats.contains("minecraft:tabby" ));
+        
+        // I manually looked in the .minecraft/saves/adavancements/file.json to see 
+        // which cat I was missing.
+        assertTrue( !cats.contains("minecraft:white") );
     }
 
     @Test
     public void load() throws IOException, ParseException
     {
-        String path = null;
-
-        playerAdvancements = implementation.load(path);
+        playerAdvancements = implementation.load(advancementsPath);
 
         verifyNether(playerAdvancements.nether);
         
@@ -293,7 +296,12 @@ assertTrue( missingMobs.contains("minecraft:strider") );
         // verify the size of the list
         assertEquals(expected, actual);
         
+//        String cat1 = missingCats.get(0);
+//        assertTrue(!cat1.contains("/"));
+//        
+//        assertTrue(!cat1.contains("."));
+        
         // check for all expected missing cats
-        assertTrue( missingCats.contains("textures/entity/cat/ragdoll.png") );        
+        assertTrue( missingCats.contains("minecraft:white") );        
     }
 }

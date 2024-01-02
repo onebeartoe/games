@@ -26,6 +26,19 @@ public class AdvancementsServiceTest
     }
 
     @Test
+    public void bredAllAnimals()
+    {
+        int size = implementation.breedableAnimals().size();
+        
+        // the 1.20 Advancements screen shows there are this may animals to breed;
+        int breedableCount = 25;
+
+        assertEquals( breedableCount, size);
+    }
+            
+            
+    
+    @Test
     public void balancedDietCountSanityCheck()
     {
         List<String> dietItems = implementation.balancedDietItems();
@@ -34,9 +47,29 @@ public class AdvancementsServiceTest
     }
     
     @Test
+    public void monstersHunted()
+    {
+        List<String> criteria = minecraftAdvancements.adventure.monstersHunted.criteria;
+           
+        int actualSize = criteria.size();
+        
+        int expected = 35;
+        
+        assertEquals(expected, actualSize );
+    }
+    
+    @Test
     public void completeCatagoryCountSanityCheck()
     {        
         List<String> allCategrories = minecraftAdvancements.husbandry.aCompleteCatalogue.criteria;
+        
+        String cat1 = allCategrories.get(1);
+        
+//        assertTrue(!cat1.contains(":"));
+//        
+//        assertTrue(!cat1.contains("/"));
+//        
+//        assertTrue(!cat1.contains("."));
         
         assertTrue(allCategrories.size() == 11);
     }

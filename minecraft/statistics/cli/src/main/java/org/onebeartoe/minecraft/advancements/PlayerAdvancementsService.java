@@ -29,34 +29,17 @@ public class PlayerAdvancementsService
     private List<String> monstersHunted;
     
     private List<String> unbredAnimals;
-
-//TODO: path this value in as a constructor argument    
-//    public static final String advancementsPath = savesPath +  "advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";    
-    public static final String advancementsPath = "/home/roberto/Versioning/owner/github/games/minecraft/statistics/cli/src/test/resources/minecraft/saves/1.17/advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json"    ;
     
     private final Advancements minecraftAdvancements;
     
-    //TODO: move this to local assignment once all the parsing is moved
+//TODO: move this to local assignment once all the parsing is moved
     private AdvancementsService advancementsService = new AdvancementsService();
     
     public PlayerAdvancementsService() throws IOException, ParseException
     {
         minecraftAdvancements = advancementsService.load();
 
-        JSONObject base = loadBase();
-        
-        parseIncompleteUserAdvancements(base);
-        
-        // husbandry
-        JSONObject dietItems = (JSONObject) base.get("minecraft:husbandry/balanced_diet");
-        parseBalancedDiet(dietItems);
-        
-        JSONObject bredAnimals = (JSONObject) base.get("minecraft:husbandry/bred_all_animals");
-        parseBredAnimals(bredAnimals);
-        
-        // adventure
-        JSONObject mobsKilled = (JSONObject) base.get("minecraft:adventure/kill_all_mobs");
-        parseMobsKilled(mobsKilled);
+//        JSONObject base = loadBase(advancementsPath);
     }
 
     public List<String> balancedDietItems()
@@ -69,7 +52,7 @@ public class PlayerAdvancementsService
         return incompleteUserAdvancements;
     }
     
-    public JSONObject loadBase() throws IOException, ParseException
+    public JSONObject loadBase(String advancementsPath) throws IOException, ParseException
     {
         File inile = new File(advancementsPath);
                 
@@ -81,6 +64,19 @@ public class PlayerAdvancementsService
         Object obj = parser.parse(s);
 
         JSONObject base = (JSONObject) obj;
+        
+        parseIncompleteUserAdvancements(base);
+        
+        // husbandry
+        JSONObject dietItems = (JSONObject) base.get("minecraft:husbandry/balanced_diet");
+        parseBalancedDiet(dietItems);
+        
+        JSONObject bredAnimals = (JSONObject) base.get("minecraft:husbandry/bred_all_animals");
+        parseBredAnimals(bredAnimals);
+        
+        // adventure
+        JSONObject mobsKilled = (JSONObject) base.get("minecraft:adventure/kill_all_mobs");
+        parseMobsKilled(mobsKilled);        
         
         return base;
     }
@@ -238,7 +234,7 @@ public class PlayerAdvancementsService
     {
         var advancements = new PlayerAdvancements();
         
-        JSONObject base = loadBase();        
+        JSONObject base = loadBase(advancementsPath);        
 
         JSONObject netherJson = (JSONObject) base.get("minecraft:nether/explore_nether");        
         advancements.nether = parseNether(netherJson);
@@ -294,7 +290,7 @@ public class PlayerAdvancementsService
         var playerAdvancements = new PlayerHusbandryAdvancements();
         
         List<String> minecraftCriteria = minecraftAdvancements.husbandry.aCompleteCatalogue.criteria;
-
+// ARE THE NAMES ARE MISMATCHED!!!!!!!!!they formages were different,deletes one tests pass
         minecraftCriteria.forEach((criteriaName) -> 
         {
             if(playerAdvancementsList.contains(criteriaName))
