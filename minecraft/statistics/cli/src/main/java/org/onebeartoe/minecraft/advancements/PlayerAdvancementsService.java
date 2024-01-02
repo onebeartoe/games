@@ -38,8 +38,6 @@ public class PlayerAdvancementsService
     public PlayerAdvancementsService() throws IOException, ParseException
     {
         minecraftAdvancements = advancementsService.load();
-
-//        JSONObject base = loadBase(advancementsPath);
     }
 
     public List<String> balancedDietItems()
@@ -71,8 +69,8 @@ public class PlayerAdvancementsService
         JSONObject dietItems = (JSONObject) base.get("minecraft:husbandry/balanced_diet");
         parseBalancedDiet(dietItems);
         
-        JSONObject bredAnimals = (JSONObject) base.get("minecraft:husbandry/bred_all_animals");
-        parseBredAnimals(bredAnimals);
+        JSONObject bredAnimalsJson = (JSONObject) base.get("minecraft:husbandry/bred_all_animals");
+        parseBredAnimals(bredAnimalsJson);
         
         // adventure
         JSONObject mobsKilled = (JSONObject) base.get("minecraft:adventure/kill_all_mobs");

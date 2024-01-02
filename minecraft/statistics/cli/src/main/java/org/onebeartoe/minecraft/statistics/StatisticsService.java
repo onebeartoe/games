@@ -28,15 +28,5 @@ public class StatisticsService
         });
 
         return stats;
-    }
-
-    public StatisticsReport parse(Path path) 
-    {
-        StatisticsReport statisticsReport = new StatisticsReport();
-        
-        
-        
-        return statisticsReport;
-    }
-    
+    }    
 }

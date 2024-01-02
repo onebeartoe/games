@@ -41,8 +41,8 @@ public class AdvancementsService
         JSONObject husbandry = (JSONObject) base.get("husbandry");
         parseHusbandry(husbandry);
         
-        JSONObject nether = (JSONObject) base.get("nether");
-        parseNether(nether);
+        JSONObject netherJson = (JSONObject) base.get("nether");
+        parseNether(netherJson);
     }
 
     public List<String> allCatCategories() 
@@ -194,8 +194,6 @@ public class AdvancementsService
     private JSONObject parseBase() throws IOException, ParseException 
     {
         String statsPath = "advancements/minecraft/21.json";
-
-        File inile = new File(statsPath);
                 
         JSONParser parser = new JSONParser();
         

@@ -72,7 +72,7 @@ public class AdvancementsController
         
         var advancementsPath = "/home/roberto/.minecraft/saves/worldo/advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";
         
-        playerAdvancementsService = new PlayerAdvancementsService(advancementsPath);
+        playerAdvancementsService = new PlayerAdvancementsService();
         
         playerAdvancements = playerAdvancementsService.load(advancementsPath);
         

@@ -21,8 +21,6 @@ public class MinecraftWildAdvancementsService
     
     public MinecraftWildAdvancementsService() throws IOException, ParseException, URISyntaxException
     {
-//        String statsPath = "src/main/resources/advancements/minecraft/20.json";
-//        String statsPath = "/advancements/minecraft/20.json";
         String statsPath = "advancements/minecraft/20.json";
 
         InputStream systemResourceAsStream = ClassLoader.getSystemResourceAsStream(statsPath);

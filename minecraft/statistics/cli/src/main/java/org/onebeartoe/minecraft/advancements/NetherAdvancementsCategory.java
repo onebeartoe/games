@@ -4,7 +4,7 @@ package org.onebeartoe.minecraft.advancements;
 /**
  *
  */
-public class NetherAdvancementsCategory extends AdvancementsCategory
+public class NetherAdvancementsCategory
 {
     public Advancement hotTouristDestinations;
     
