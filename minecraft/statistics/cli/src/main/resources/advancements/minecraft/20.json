@@ -60,5 +60,168 @@
 "minecraft:wooded_badlands"                
             ]
         }
-    }    
+        ,
+        "minecraft:adventure/kill_all_mobs": {
+            "name": "Monsters Hunted",
+            "description": "Kill one of every hostile mob",
+            "all": true,
+            "criteria": [
+                "minecraft:blaze",
+                "minecraft:breeze",
+                "minecraft:cave_spider",
+                "minecraft:creeper",
+                "minecraft:drowned",
+                "minecraft:elder_guardian",
+                "minecraft:ender_dragon",
+                "minecraft:enderman",
+                "minecraft:endermite",
+                "minecraft:evoker",
+                "minecraft:ghast",
+                "minecraft:guardian",
+                "minecraft:hoglin",
+                "minecraft:husk",
+                "minecraft:magma_cube",
+                "minecraft:phantom",
+                "minecraft:piglin",
+                "minecraft:piglin_brute",
+                "minecraft:pillager",
+                "minecraft:ravager",
+                "minecraft:shulker",
+                "minecraft:silverfish",
+                "minecraft:skeleton",
+                "minecraft:slime",
+                "minecraft:spider",
+                "minecraft:stray",
+                "minecraft:vex",
+                "minecraft:vindicator",
+                "minecraft:witch",
+                "minecraft:wither",
+                "minecraft:wither_skeleton",
+                "minecraft:zoglin",
+                "minecraft:zombie",
+                "minecraft:zombie_villager",
+                "minecraft:zombified_piglin"
+            ]
+        }        
+    }
+    ,
+    "husbandry": 
+    {
+        "minecraft:husbandry/balanced_diet": {
+            "name": "A Balanced Diet",
+            "description": "Eat everything that is edible",
+            "all": true,
+            "criteria": [
+                "apple",
+                "baked_potato",
+                "beef",
+                "beetroot",
+                "beetroot_soup",
+                "bread",
+                "carrot",
+                "chicken",
+                "chorus_fruit",
+                "cod",
+                "cooked_beef",
+                "cooked_chicken",
+                "cooked_cod",
+                "cooked_mutton",
+                "cooked_porkchop",
+                "cooked_rabbit",
+                "cooked_salmon",
+                "cookie",
+                "dried_kelp",
+                "enchanted_golden_apple",
+                "glow_berries",
+                "golden_apple",
+                "golden_carrot",
+                "honey_bottle",
+                "melon_slice",
+                "mushroom_stew",
+                "mutton",
+                "poisonous_potato",
+                "porkchop",
+                "potato",
+                "pufferfish",
+                "pumpkin_pie",
+                "rabbit",
+                "rabbit_stew",
+                "rotten_flesh",
+                "salmon",
+                "spider_eye",
+                "suspicious_stew",
+                "sweet_berries",
+                "tropical_fish"
+            ]
+        }
+        ,
+        "minecraft:husbandry/bred_all_animals": {
+            "name": "Two by Two",
+            "description": "Breed all animals",
+            "all": true,
+            "criteria": [
+                "minecraft:armadillo‌",
+                "minecraft:axolotl",
+                "minecraft:bee",
+                "minecraft:camel",
+                "minecraft:cat",
+                "minecraft:chicken",
+                "minecraft:cow",
+                "minecraft:donkey",
+                "minecraft:fox",
+                "minecraft:frog",
+                "minecraft:goat",
+                "minecraft:hoglin",
+                "minecraft:horse",
+                "minecraft:llama",
+                "minecraft:mooshroom",
+                "minecraft:mule",
+                "minecraft:ocelot",
+                "minecraft:panda",
+                "minecraft:pig",
+                "minecraft:rabbit",
+                "minecraft:sheep",
+                "minecraft:sniffer",
+                "minecraft:strider",
+                "minecraft:turtle",
+                "minecraft:wolf"
+            ]
+        }        
+        ,
+        "minecraft:husbandry/complete_catalogue": {
+            "name": "A Complete Catalogue",
+            "description": "Tame all cat variants",
+            "all": true,
+            "criteria": [
+                "minecraft:all_black.png",
+                "minecraft:black.png",
+                "minecraft:british_shorthair.png",
+                "minecraft:calico.png",
+                "minecraft:jellie.png",
+                "minecraft:persian.png",
+                "minecraft:ragdoll.png",
+                "minecraft:red.png",
+                "minecraft:siamese.png",
+                "minecraft:tabby.png",
+                "minecraft:white.png"
+            ]
+        }
+    }
+    ,
+    "nether": 
+    {
+        "minecraft:nether/explore_nether": 
+        {
+            "name": "Hot Tourist Destinations",
+            "description": "Visit every Nether biome",
+            "all": true,
+            "criteria": [
+                "minecraft:basalt_deltas",
+                "minecraft:crimson_forest",
+                "minecraft:nether_wastes",
+                "minecraft:soul_sand_valley",
+                "minecraft:warped_forest"
+            ]
+        }        
+    }
 }

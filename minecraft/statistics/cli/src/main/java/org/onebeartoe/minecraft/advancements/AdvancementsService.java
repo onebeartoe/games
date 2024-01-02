@@ -193,7 +193,7 @@ public class AdvancementsService
 
     private JSONObject parseBase() throws IOException, ParseException 
     {
-        String statsPath = "advancements/minecraft/21.json";
+        String statsPath = "advancements/minecraft/20.json";
                 
         JSONParser parser = new JSONParser();
         

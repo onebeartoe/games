@@ -46,7 +46,7 @@ public class WildUserAdvancementsServiceTest
         
 //        System.out.println("missingTimes = " + missingTimes);
         
-        int expected = 2;
+        int expected = 8;
         
         var actual = missingTimes.size();
         

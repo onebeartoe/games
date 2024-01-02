@@ -12,7 +12,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 /**
- * !!!This is specifically for Minecraft 1.17.!!!
+ * This is specifically for Minecraft 1.20.
  * 
  * * This verifies the specification for UserAdvancementsService class.
  * 
@@ -30,9 +30,8 @@ public class PlayerAdvancementsServiceTest
     private AdvancementsService advancementsService;
     
     private PlayerAdvancements playerAdvancements;
-    
-//    final String advancementsPath = "/home/roberto/Versioning/owner/github/games/minecraft/statistics/cli/src/test/resources/minecraft/saves/1.17/advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";
-    final String advancementsPath = "/home/roberto/Versioning/owner/github/games/minecraft/statistics/cli/src/test/resources/minecraft/saves/1.21/advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";
+     
+    final String advancementsPath = "/home/roberto/Versioning/owner/github/games/minecraft/statistics/cli/src/test/resources/minecraft/saves/1.20/advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";
     
     @BeforeTest
     private void initializeImplementation() throws IOException, ParseException
