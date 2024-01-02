@@ -102,8 +102,8 @@ onMouseClicked="#showHotTouristDestinationsData"
                      <content>
                         <SplitPane dividerPositions="0.5">
                           <items>
-                              <TextArea fx:id="husbundryHavesTextArea" />
-                              <TextArea fx:id="husbundryHaveNotsTextArea"/>
+                              <TextArea fx:id="husbundryCompleteCatelogueHavesTextArea" />
+                              <TextArea fx:id="husbundryCompleteCatelogueHaveNotsTextArea"/>
                           </items>
                         </SplitPane>
                      </content>
