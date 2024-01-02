@@ -34,7 +34,7 @@ public class PlayerAdvancementsService
 //    public static final String advancementsPath = savesPath +  "advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";    
     public static final String advancementsPath = "/home/roberto/Versioning/owner/github/games/minecraft/statistics/cli/src/test/resources/minecraft/saves/1.17/advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json"    ;
     
-    private Advancements minecraftAdvancements;
+    private final Advancements minecraftAdvancements;
     
     //TODO: move this to local assignment once all the parsing is moved
     private AdvancementsService advancementsService = new AdvancementsService();
@@ -244,9 +244,10 @@ public class PlayerAdvancementsService
         
         JSONObject base = loadBase();        
 
-        JSONObject netherJson = (JSONObject) base.get("minecraft:nether/explore_nether");
-        
+        JSONObject netherJson = (JSONObject) base.get("minecraft:nether/explore_nether");        
         advancements.nether = parseNether(netherJson);
+        
+        advancements.husbandry = parseHusbandry(base);
         
         return advancements;
     }
@@ -279,5 +280,37 @@ public class PlayerAdvancementsService
         });
         
         return advancements;
+    }
+
+    private PlayerHusbandryAdvancements parseHusbandry(JSONObject base) 
+    {
+        JSONObject completeCatalogueJson = (JSONObject) base.get("minecraft:husbandry/complete_catalogue");
+        
+        var playerAdvancementsList = new <String> ArrayList();
+        
+        JSONObject criteriaJson = (JSONObject) completeCatalogueJson.get("criteria");
+        
+        criteriaJson.forEach((name, date) -> 
+        {
+            playerAdvancementsList.add(name);
+        });
+        
+        var playerAdvancements = new PlayerHusbandryAdvancements();
+        
+        List<String> minecraftCriteria = minecraftAdvancements.husbandry.aCompleteCatalogue.criteria;
+
+        minecraftCriteria.forEach((criteriaName) -> 
+        {
+            if(playerAdvancementsList.contains(criteriaName))
+            {
+                playerAdvancements.aCompleteCatelogue.criteria.put(criteriaName, true);
+            }
+            else
+            {
+                playerAdvancements.aCompleteCatelogue.criteria.put(criteriaName, false);
+            }
+        });
+        
+        return playerAdvancements;
     }
 }

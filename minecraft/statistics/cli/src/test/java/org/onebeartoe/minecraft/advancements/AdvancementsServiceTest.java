@@ -13,11 +13,16 @@ import org.testng.annotations.Test;
  */
 public class AdvancementsServiceTest
 {
+//TODO: move this to the contrucutor once Advancement class replaces the List<String>    
     private final AdvancementsService implementation;
+    
+    private final Advancements minecraftAdvancements;
 
     public AdvancementsServiceTest() throws IOException, ParseException 
     {
         implementation = new AdvancementsService();
+        
+        minecraftAdvancements = implementation.load();
     }
 
     @Test
@@ -30,8 +35,8 @@ public class AdvancementsServiceTest
     
     @Test
     public void completeCatagoryCountSanityCheck()
-    {
-        List<String> allCategrories = implementation.allCatCategories();
+    {        
+        List<String> allCategrories = minecraftAdvancements.husbandry.aCompleteCatalogue.criteria;
         
         assertTrue(allCategrories.size() == 11);
     }

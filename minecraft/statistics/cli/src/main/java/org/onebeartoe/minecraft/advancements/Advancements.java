@@ -8,7 +8,7 @@ public class Advancements
 {
     public NetherAdvancementsCategory nether;
     public AdvancementsCategory adventure;
-    public AdvancementsCategory husbandry;
+    public HusbandryAdvancements husbandry;
     public AdvancementsCategory minecraft;
     public AdvancementsCategory theEnd;
 }

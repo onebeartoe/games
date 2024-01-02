@@ -27,26 +27,11 @@ public class AdvancementsService
     private List<String> breedableAnimals;
     
 //TODO: move this    
-    NetherAdvancementsCategory nether;
+    private NetherAdvancementsCategory nether;
     
     public AdvancementsService() throws IOException, ParseException
     {
-//        String statsPath = "src/main/resources/advancements/minecraft/16.json";
-//        String statsPath = "src/main/resources/advancements/minecraft/17.json";
-        String statsPath = "advancements/minecraft/17.json";
-
-        File inile = new File(statsPath);
-                
-        JSONParser parser = new JSONParser();
-        
-        InputStream systemResourceAsStream = ClassLoader.getSystemResourceAsStream(statsPath);
-        
-        String s = new String(systemResourceAsStream.readAllBytes(), 
-                StandardCharsets.UTF_8);
-        
-        Object obj = parser.parse(s);
-
-        JSONObject base = (JSONObject) obj;
+        JSONObject base = parseBase();
         
         JSONObject adventure = (JSONObject) base.get("adventure");
         parseAdventure(adventure);
@@ -126,7 +111,7 @@ public class AdvancementsService
         });
     }
   
-    private void parseCatCategories(JSONObject catelog) 
+    private List<String> parseCatCategories(JSONObject catelog) 
     {
         JSONArray criteria = (JSONArray) catelog.get("criteria");
         
@@ -138,25 +123,41 @@ public class AdvancementsService
             
             catCategories.add(category);
         });
+        
+        return catCategories;
     }
 
-    private void parseHusbandry(JSONObject husbandry) 
+    private HusbandryAdvancements parseHusbandry(JSONObject husbandry) 
     {
         JSONObject catalog = (JSONObject)husbandry.get("minecraft:husbandry/complete_catalogue");        
-        parseCatCategories(catalog);
+        List<String> completeCatalogue = parseCatCategories(catalog);
         
         JSONObject diet = (JSONObject)husbandry.get("minecraft:husbandry/balanced_diet");
         parseBalancedDiet(diet);
         
         JSONObject bredAllAnimals = (JSONObject) husbandry.get("minecraft:husbandry/bred_all_animals");
         parseBredAllAnimals(bredAllAnimals);
+        
+        HusbandryAdvancements advancements = new HusbandryAdvancements();
+        
+        advancements.aCompleteCatalogue.criteria = completeCatalogue;
+        
+        return advancements;
+        
+        
     }
 
-    public Advancements load() 
+    public Advancements load() throws IOException, ParseException 
     {
         Advancements advancements = new Advancements();
         
         advancements.nether = nether;
+        
+        JSONObject base = parseBase();
+        
+        JSONObject husbandry = (JSONObject) base.get("husbandry");
+
+        advancements.husbandry = parseHusbandry(husbandry);
         
         return advancements;
     }
@@ -175,5 +176,27 @@ public class AdvancementsService
             
             nether.hotTouristDestinations.criteria.add(destination);
         });
+    }
+
+    private JSONObject parseBase() throws IOException, ParseException 
+    {
+//        String statsPath = "src/main/resources/advancements/minecraft/16.json";
+//        String statsPath = "src/main/resources/advancements/minecraft/17.json";
+        String statsPath = "advancements/minecraft/17.json";
+
+        File inile = new File(statsPath);
+                
+        JSONParser parser = new JSONParser();
+        
+        InputStream systemResourceAsStream = ClassLoader.getSystemResourceAsStream(statsPath);
+        
+        String s = new String(systemResourceAsStream.readAllBytes(), 
+                StandardCharsets.UTF_8);
+        
+        Object obj = parser.parse(s);
+
+        JSONObject base = (JSONObject) obj;
+        
+        return base;
     }
 }

@@ -29,6 +29,8 @@ public class PlayerAdvancementsServiceTest
     
     private AdvancementsService advancementsService;
     
+    private PlayerAdvancements playerAdvancements;
+    
     @BeforeTest
     private void initializeImplementation() throws IOException, ParseException
     {
@@ -156,14 +158,7 @@ assertTrue( missingMobs.contains("minecraft:strider") );
         List<String> minecraftMonstersHunted = advancementsService.monstersHunted();
         
         assertEquals(34, minecraftMonstersHunted.size());
-        
-//        System.out.println("monsters hunted:");
-//        minecraftMonstersHunted.forEach(System.out::println);
-        
-//        System.out.println("u: " + userMonstersHunted.size() );
-//        System.out.println("m: " + minecraftMonstersHunted.size() );
-                                
-        
+
         assertFalse(userMonstersHunted.contains("minecraft:endermite") );
         assertFalse(userMonstersHunted.contains("minecraft:stray") );
         assertFalse(userMonstersHunted.contains("minecraft:wither") );
@@ -231,24 +226,6 @@ assertTrue( missingMobs.contains("minecraft:strider") );
     }
     
     @Test
-    public void missingCats()
-    {
-        List<String> missingCats = implementation.missingCats();
-        
-//        System.out.println("missingCats = " + missingCats);
-                     
-        int expected = 1;
-        
-        int actual = missingCats.size();
-        
-        // verify the size of the list
-        assertEquals(expected, actual);
-        
-        // check for all expected missing cats
-        assertTrue( missingCats.contains("textures/entity/cat/ragdoll.png") );
-    }
-    
-    @Test
     public void tamedCats()
     {
         List<String> cats = implementation.tamedCats();
@@ -278,9 +255,11 @@ assertTrue( missingMobs.contains("minecraft:strider") );
     {
         String path = null;
 
-        PlayerAdvancements advancements = implementation.load(path);
+        playerAdvancements = implementation.load(path);
 
-        verifyNether(advancements.nether);
+        verifyNether(playerAdvancements.nether);
+        
+        verifyHusbandry(playerAdvancements.husbandry);
     }
 
     private void verifyNether(PlayerNetherAdvancementsCategory nether) 
@@ -296,5 +275,25 @@ assertTrue( missingMobs.contains("minecraft:strider") );
         List<String> haveNots = nether.hotTouristDestinations.haveNots();
         
         assertTrue( haveNots.isEmpty() );
+    }
+
+    private void verifyHusbandry(PlayerHusbandryAdvancements husbandry) 
+    {
+        verifyCompleteCatelogue(husbandry.aCompleteCatelogue);
+    }
+
+    private void verifyCompleteCatelogue(PlayerAdvancement aCompleteCatelogue)
+    {
+        var missingCats = playerAdvancements.husbandry.aCompleteCatelogue.haveNots();
+                     
+        int expected = 1;
+        
+        int actual = missingCats.size();
+        
+        // verify the size of the list
+        assertEquals(expected, actual);
+        
+        // check for all expected missing cats
+        assertTrue( missingCats.contains("textures/entity/cat/ragdoll.png") );        
     }
 }
