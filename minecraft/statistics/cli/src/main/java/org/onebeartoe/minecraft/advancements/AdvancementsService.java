@@ -191,7 +191,7 @@ public class AdvancementsService
         InputStream systemResourceAsStream = ClassLoader.getSystemResourceAsStream(statsPath);
         
         String s = new String(systemResourceAsStream.readAllBytes(), 
-                StandardCharsets.UTF_8);
+                              StandardCharsets.UTF_8);
         
         Object obj = parser.parse(s);
 

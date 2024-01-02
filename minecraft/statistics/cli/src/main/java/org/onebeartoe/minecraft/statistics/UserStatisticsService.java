@@ -98,9 +98,6 @@ public class UserStatisticsService
             
             if(!found)
             {
-                // print the missing item
-//                System.out.println(m);
-                
                 missingMobKills.add(m);
             }
         });

@@ -74,11 +74,7 @@ public class PlayerAdvancementsService
         File inile = new File(advancementsPath);
                 
         JSONParser parser = new JSONParser();
-
-//        InputStream systemResourceAsStream = ClassLoader.getSystemResourceAsStream(advancementsPath);
-//        
-//        String s = new String(systemResourceAsStream.readAllBytes(), 
-//                StandardCharsets.UTF_8);        
+        
         
         String s = Files.readString(inile.toPath());
         

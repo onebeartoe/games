@@ -55,7 +55,7 @@ public class AdvancementsServiceTest
     }
     
     @Test
-    public void load()
+    public void load() throws IOException, ParseException
     {
         Advancements advancements = implementation.load();
         
