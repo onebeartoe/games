@@ -34,9 +34,12 @@ public class App extends Application
     @Override
     public void start(Stage stage) throws IOException 
     {
-        String [] screenNames = {"launcher", "play", "splash", "advancements"};
+        String [] screenNames = 
+        {
+            "splash", "launcher", "play", "select-world", "play-selected-world", "advancements"
+        };
         
-        var initialRoot = screenNames[3];
+        var initialRoot = screenNames[1];
 
         Parent parent = (Parent) loadFXML(initialRoot);        
         
