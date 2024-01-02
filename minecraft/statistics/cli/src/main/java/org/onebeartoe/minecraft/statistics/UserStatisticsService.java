@@ -21,8 +21,6 @@ public class UserStatisticsService
     {
         JSONParser parser = new JSONParser();
 
-
-
         String s = Files.readString(infile.toPath() );
         
         Object obj = parser.parse(s);
@@ -42,7 +40,6 @@ public class UserStatisticsService
         List<Statistic> killedMobs = jsonToStatistics(jsonKilled);
         report.missingHostileMobKills = parseMissingHostileMobKills(killedMobs);
         
-
 //TODO: get the top ten off of killed_by        
         JSONObject killedBy = (JSONObject) stats.get("minecraft:killed_by");
         

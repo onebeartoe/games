@@ -27,18 +27,18 @@ public class StatisticsServiceTest
     UserStatisticsService implementation = new UserStatisticsService();
     
     
-//    static final String statsPath = savesPath + "stats/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";
+//    public static final String statsPath = "stats/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";
+    public static final String statsPath = "src/test/resources/minecraft/saves/1.17/stats/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";
 
-//TODO: !!!!!!!!Re-enable THIS!!!!!!!!!!!    
     /**
      * This test ensures the implementation uses the output path specified by the 
      * caller. 
      */
-    @Test(enabled = false)    
-//    @Test
+  
+    @Test
     public void parse_pass_oneDotSeventeen() throws IOException, ParseException
     {
-String statsPath = null;        
+//String statsPath = null;        
         File infile = new File(statsPath);
         
         StatisticsReport report = implementation.parse(infile);
