@@ -12,18 +12,8 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
+
 <BorderPane minHeight="480.0" minWidth="640.0" prefHeight="526.0" prefWidth="694.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.onebeartoe.desktop.LauncherController">
-   <left>
-      <VBox alignment="CENTER" spacing="20.0" BorderPane.alignment="CENTER">
-         <children>
-            <Label text="Primary Views" />
-            <Button fx:id="primaryButton" onAction="#switchToSecondary" text="Switch to Secondary View" />
-         </children>
-         <padding>
-            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-         </padding>
-      </VBox>
-   </left>
    <center>
       <TabPane tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
         <tabs>
@@ -38,7 +28,7 @@
                                     <!--<Image url="@dirt.jpg" />-->
                                     <Image url="@file:///home/roberto/Versioning/owner/beto-land-owner/Imaging/felix-the-cat/felix.gif" />
                                     
-                                 </image>
+                                             </image>
                               </ImageView>
                               <Button mnemonicParsing="false" onAction="#handlePlayButton" text="Play" />
                            </children>
@@ -79,4 +69,15 @@
         </tabs>
       </TabPane>
    </center>
+   <left>
+      <VBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Primary Views" />
+            <Button fx:id="primaryButton" onAction="#switchToSecondary" text="Switch to Secondary View" />
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </VBox>
+   </left>
 </BorderPane>
