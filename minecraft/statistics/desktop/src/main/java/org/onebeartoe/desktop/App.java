@@ -45,8 +45,6 @@ public class App extends Application
         
         scene = new Scene(parent, 640, 480);
         
-//        scene.getRoot().setStyle("-fx-base:black");
-        
         stage.setScene(scene);
         
         scene.getRoot().setStyle("-fx-base:black");
