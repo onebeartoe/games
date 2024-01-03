@@ -45,7 +45,11 @@ public class App extends Application
         
         scene = new Scene(parent, 640, 480);
         
+//        scene.getRoot().setStyle("-fx-base:black");
+        
         stage.setScene(scene);
+        
+        scene.getRoot().setStyle("-fx-base:black");
         
         stage.show();
                      
@@ -64,6 +68,8 @@ public class App extends Application
         Parent parent = (Parent) loadFXML(fxml);
         
         scene.setRoot(parent);
+        
+        scene.getRoot().setStyle("-fx-base:black");
     }
 
     private static Object loadFXML(String fxml) throws IOException 
