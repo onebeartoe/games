@@ -49,6 +49,7 @@ public class PlayerDataService
         var uri = new URI(endPoint);
         
         HttpRequest request = HttpRequest.newBuilder(uri)
+                                .headers("User-Agent", "minecraft-user:betoblock twitter-user:onebeartoe")
                                 .build();
            
         HttpResponse<String> response = httpClient.send(request, BodyHandlers.ofString());
