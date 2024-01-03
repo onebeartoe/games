@@ -42,12 +42,17 @@
                      <center>
                         <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                            <center>
-                              <ImageView fitHeight="207.0" fitWidth="200.0" onMouseClicked="#switchToSecondary" opacity="0.7" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                              <ImageView 
+                                  AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"
+                                  onMouseClicked="#switchToSecondary" 
+                                  opacity="0.7" 
+                                  pickOnBounds="true" 
+                                  preserveRatio="false" 
+                                  BorderPane.alignment="CENTER">
                                  <image>
-                                    <!--<Image url="@dirt.jpg" />-->
-                                    <Image url="@file:///home/roberto/Versioning/owner/beto-land-owner/Imaging/felix-the-cat/felix.gif" />
-                                    
-                                                   </image>
+                                    <Image url="@Minecraft_Trails-and-Tales_.Net_800x450.png" />
+                                    <!--<Image url="@file:///home/roberto/Versioning/owner/beto-land-owner/Imaging/felix-the-cat/felix.gif" />6-->
+                                </image>
                               </ImageView>
                            </center>
                            <bottom>
