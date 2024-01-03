@@ -10,9 +10,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-
 
 <BorderPane minHeight="480.0" minWidth="640.0" prefHeight="526.0" prefWidth="694.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.onebeartoe.desktop.LauncherController">
    <center>
@@ -53,11 +51,17 @@
                               </ImageView>
                            </center>
                            <bottom>
-                              <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-                                 <children>
-                                    <Button mnemonicParsing="false" onAction="#handlePlayButton" text="Play" />
-                                 </children>
-                              </HBox>
+                              <BorderPane>
+                                 <left>
+                                    <Label alignment="BASELINE_LEFT" text="Version 1.20" BorderPane.alignment="CENTER" />
+                                 </left>
+                                 <right>
+                                    <Label alignment="BOTTOM_RIGHT" text="betoblock" BorderPane.alignment="CENTER" />
+                                 </right>
+                                 <center>
+                                    <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handlePlayButton" text="Play" BorderPane.alignment="CENTER" />
+                                 </center>
+                              </BorderPane>
                            </bottom>
                         </BorderPane>
                      </center>
