@@ -16,9 +16,13 @@
    <center>
       <TabPane tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
         <tabs>
-            <Tab text="Play">
+            <Tab text="Play"               
+            >
+ <!--AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"-->                
+                
               <content>
-                  <BorderPane>
+                <BorderPane >
+                  <!--                  <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">-->
                      <bottom>
                         <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                           <content>
@@ -27,8 +31,8 @@
                                     <VBox alignment="CENTER" spacing="20.0">
                                        <children>
                                         <AnchorPane minHeight="0.0" minWidth="0.0" />
-                                          <Label text="Primary Views" />
-                                          <Button fx:id="primaryButton1" onAction="#handlePlayButton" text="Switch to Secondary View" />
+                                          <Label text="Primary" />
+                                          <Button fx:id="primaryButton1" onAction="#handlePlayButton" text="Switch" />
                                        </children>
                                        <padding>
                                           <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
@@ -40,23 +44,38 @@
                         </ScrollPane>
                      </bottom>
                      <center>
-                        <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+<BorderPane >                         
+<!--<BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">-->
+<!--                        <BorderPane BorderPane.alignment="CENTER"
+                        AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"
+                        >-->
+                            
                            <center>
                               <ImageView 
-                                  AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"
+AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"                                  
                                   onMouseClicked="#switchToSecondary" 
                                   opacity="0.7" 
                                   pickOnBounds="true" 
-                                  preserveRatio="false" 
+                                  preserveRatio="false"
+scaleX="1.1"
+scaleY="1.1"
                                   BorderPane.alignment="CENTER">
+
+<!--
+        BorderPane.alignment="CENTER"
+        scaleX="0.7"
+        scaleY="0.7"
+        AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"
+-->                                  
                                  <image>
-                                    <Image url="@Minecraft_Trails-and-Tales_.Net_800x450.png" />
-                                    <!--<Image url="@file:///home/roberto/Versioning/owner/beto-land-owner/Imaging/felix-the-cat/felix.gif" />6-->
+                                    <Image url="@Minecraft_Trails-and-Tales_.Net_400x225.png"/>
+<!--                                    <Image url="@file:///home/roberto/Versioning/owner/beto-land-owner/Imaging/felix-the-cat/felix.gif" />-->
                                 </image>
                               </ImageView>
                            </center>
                            <bottom>
-                              <BorderPane>
+                              <BorderPane
+                                AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <left>
                                     <Label alignment="BASELINE_LEFT" text="Version 1.20" BorderPane.alignment="CENTER" />
                                  </left>
@@ -89,8 +108,8 @@
    <left>
       <VBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" spacing="20.0" BorderPane.alignment="CENTER">
          <children>
-            <Label text="Primary Views" />
-            <Button fx:id="primaryButton" onAction="#switchToSecondary" text="Switch to Secondary View" />
+            <Label text="Primary" />
+            <Button fx:id="primaryButton" onAction="#switchToSecondary" text="Switch" />
          </children>
          <padding>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
