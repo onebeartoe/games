@@ -16,13 +16,9 @@
    <center>
       <TabPane tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
         <tabs>
-            <Tab text="Play"               
-            >
- <!--AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"-->                
-                
+            <Tab text="Play">
               <content>
                 <BorderPane >
-                  <!--                  <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">-->
                      <bottom>
                         <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                           <content>
@@ -44,11 +40,8 @@
                         </ScrollPane>
                      </bottom>
                      <center>
-<BorderPane >                         
-<!--<BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">-->
-<!--                        <BorderPane BorderPane.alignment="CENTER"
-                        AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"
-                        >-->
+                        <BorderPane >                         
+
                             
                            <center>
                               <ImageView 
@@ -60,13 +53,7 @@ AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor
 scaleX="1.1"
 scaleY="1.1"
                                   BorderPane.alignment="CENTER">
-
-<!--
-        BorderPane.alignment="CENTER"
-        scaleX="0.7"
-        scaleY="0.7"
-        AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"
--->                                  
+             
                                  <image>
                                     <Image url="@Minecraft_Trails-and-Tales_.Net_400x225.png"/>
 <!--                                    <Image url="@file:///home/roberto/Versioning/owner/beto-land-owner/Imaging/felix-the-cat/felix.gif" />-->
