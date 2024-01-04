@@ -10,8 +10,9 @@
       fx:controller="org.onebeartoe.desktop.PlaySelectedWorldController">
     <children>
         <Label text="Select World" />
-        <Button fx:id="worldButton1" onAction="#switchToPrimary" text="Back" />
+        <Button fx:id="worldButton1" onAction="#switchToPrimary" text="Back to Game" />
         <Button fx:id="splashButton1" onAction="#switchToPrimary" text="Advancements" />
+        <Button fx:id="splashButton5" onAction="#switchToPrimary" text="Statistics" />
         <Button fx:id="splashButton2" onAction="#switchToPrimary" text="Super Secret Options" />
         <Button fx:id="splashButton177" onAction="#switchToPrimary" text="Options???" />
         <Button fx:id="splashButton277" onAction="#switchToPlay" text="Save and Quit to Title" />                                 
