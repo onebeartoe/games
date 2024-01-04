@@ -13,14 +13,11 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-//import net.minecraft.server.
-
 /**
  *
  */
 public class PlayerDataService
 {
-
     public PlayerData load(String inpath) throws IOException, URISyntaxException, InterruptedException, ParseException 
     {
         var infile = new File(inpath);

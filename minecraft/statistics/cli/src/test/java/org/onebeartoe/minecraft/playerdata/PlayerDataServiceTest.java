@@ -19,7 +19,6 @@ public class PlayerDataServiceTest
         PlayerDataService implementation = new PlayerDataService();
     
         String inpath = "src/test/resources/minecraft/saves/1.20/level.dat";
-//        String inpath = "src/test/resources/minecraft/saves/1.20/playerdata/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.dat";
         
         playerData = implementation.load(inpath);
     }
