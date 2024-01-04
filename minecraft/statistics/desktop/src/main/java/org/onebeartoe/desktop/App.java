@@ -1,6 +1,8 @@
 package org.onebeartoe.desktop;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,26 +20,37 @@ public class App extends Application
     
     @FXML
     public Button splashButton;    
+    
 
-    @Override
-    public void init()
+    private static final String [] screenNames = 
     {
-//        splashButton.translateXProperty()
-//            .bind(scene.widthProperty().subtract(splashButton.widthProperty())
-//                    .divide(2));
-//
+        "splash", "launcher", "play", "select-world", "play-selected-world", "advancements"
+    };
+
+    private static  Map<String, String> fmxlToStyleSheets;
+
+//TODO: can we use this in this app?    
 //        splashButton.translateYProperty()
 //                .bind(scene.heightProperty().subtract(splashButton.heightProperty())
 //                        .divide(2));        
+    
+
+    public App()
+    {
+        fmxlToStyleSheets = HashMap.newHashMap(6);
+        
+        fmxlToStyleSheets.put(screenNames[0], screenNames[0] + ".css");
+        fmxlToStyleSheets.put(screenNames[1], screenNames[1] + ".css");
+        fmxlToStyleSheets.put(screenNames[2], screenNames[2] + ".css");
+        fmxlToStyleSheets.put(screenNames[3], screenNames[3] + ".css");
+        fmxlToStyleSheets.put(screenNames[4], screenNames[4] + ".css");
+        fmxlToStyleSheets.put(screenNames[5], screenNames[5] + ".css");
     }
+
     
     @Override
     public void start(Stage stage) throws IOException 
     {
-        String [] screenNames = 
-        {
-            "splash", "launcher", "play", "select-world", "play-selected-world", "advancements"
-        };
         
         var initialRoot = screenNames[1];
 
@@ -46,8 +59,11 @@ public class App extends Application
         scene = new Scene(parent, 640, 480);
         
         stage.setScene(scene);
-        
+
+        // dark mode
         scene.getRoot().setStyle("-fx-base:black");
+        
+        scene.getStylesheets().add("/org/onebeartoe/desktop/play.css");
         
         stage.show();
                      
@@ -67,12 +83,16 @@ public class App extends Application
         
         scene.setRoot(parent);
         
+        // dark mode
         scene.getRoot().setStyle("-fx-base:black");
+        
+        var styleSheets = "/org/onebeartoe/desktop/" + fmxlToStyleSheets.get(fxml);
+
+        scene.getStylesheets().add(styleSheets);
     }
 
     private static Object loadFXML(String fxml) throws IOException 
     {
-//TODO: maybe use a Map to hold handfull of FXML layotuts???
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
         
         Object root = fxmlLoader.load();

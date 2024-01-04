@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.MediaView;
 
@@ -13,6 +14,9 @@ import javafx.scene.media.MediaView;
  */
 public class PlayController 
 {
+    @FXML
+    public AnchorPane rootAnchor;
+    
     @FXML
     public MediaView mediaView;
     
@@ -25,6 +29,10 @@ public class PlayController
     @FXML
     public void initialize() throws URISyntaxException, IOException
     {
+// thsi doesnt work because teh scene has not been set on the Node       
+//        rootAnchor.getScene().getStylesheets().add("/styles/Styles.css");
+        
+        
 //TODO: use parent node and child node width and height binding as seen here
 //          https://stackoverflow.com/questions/42774863/how-to-call-a-mediaview-from-another-fxml-file        
         

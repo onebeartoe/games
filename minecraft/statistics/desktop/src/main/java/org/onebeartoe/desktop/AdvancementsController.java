@@ -97,7 +97,7 @@ public class AdvancementsController
         StringBuilder haves = new StringBuilder();        
                 
         playerAdvancements.nether.hotTouristDestinations.haves()
-            .forEach((have) -> 
+            .forEach(have -> 
             {
                 haves.append(have);
                 haves.append("\n");
