@@ -5,14 +5,34 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 
-
-<StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.onebeartoe.desktop.PlayController">
+<StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" 
+           fx:controller="org.onebeartoe.desktop.PlayController">
    <children>
+        <ImageView 
+            AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"                                  
+                                  
+                                  opacity="0.7" 
+                                  pickOnBounds="true" 
+                                  preserveRatio="false"
+scaleX="1.1"
+scaleY="1.1"
+                                  BorderPane.alignment="CENTER">             
+                                 <image>
+                                    <!--<Image url="@dirt.jpg"/>-->
+                                    <Image url="@file:///home/roberto/Versioning/owner/beto-land-owner/Imaging/felix-the-cat/felix.gif" />
+                                </image>
+                              </ImageView>           
       <VBox fx:id="vBox" alignment="CENTER" spacing="20.0">
           <children>
-              <Label text="Splash View" />
-              <Button fx:id="singlePlayerButton" onAction="#switchToPrimary" text="Single Player" />
+                                        
+              <Label text="Minecraft|Companion App" />
+              <Button fx:id="singlePlayerButton" onAction="#switchToPrimary" 
+                      text="Single Player" />
             <Button fx:id="splashButton1" onAction="#switchToPrimary" text="Options" />
             <Button fx:id="splashButton2" onAction="#switchToPrimary" text="Quite Game" />
           </children>
