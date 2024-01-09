@@ -1,4 +1,22 @@
 
+Title Screen
+
+    Use https://textcraft.net/ to create an image for the title screen.
 
 
-Use https://textcraft.net/ to create an image for the title screen.
+
+MPEG/MP4 to Animated GIF
+
+    I used ffmpeg to create a palette from in input file,
+    then converted the GIF using the palette.
+
+    ffmpeg -y -i minecraft-title-screen.mp4 -vf palettegen palette.png
+    ffmpeg -y -i minecraft-title-screen.mp4 -i palette.png -filter_complex paletteuse -r 10 minecraft-title-screen-optimized.gif
+
+    The commands were from this stack overflow answer:
+
+        https://superuser.com/a/1049820/619858
+
+
+
+

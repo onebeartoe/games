@@ -23,7 +23,10 @@
             scaleY="1.1"
             BorderPane.alignment="CENTER">
             <image>
-                <Image url="@minecraft-title-screen.gif"/>
+                <!--<Image url="@minecraft-title-screen.gif"/>-->
+                <Image url="@minecraft-title-screen-optimized.gif"/>
+                <!--<Image url="@minecraft-title-screen-ezgif.com-crop.gif"/>-->
+                <!--<Image url="@minecraft-title-screen-ezgif.com-optimize.gif"/>-->
                 <!--<Image url="@file:///home/roberto/Versioning/owner/beto-land-owner/Imaging/felix-the-cat/felix.gif" />-->
             </image>
         </ImageView>           
