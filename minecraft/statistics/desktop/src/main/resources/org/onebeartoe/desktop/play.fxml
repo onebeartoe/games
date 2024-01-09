@@ -14,17 +14,16 @@
            fx:controller="org.onebeartoe.desktop.PlayController">
    <children>
         <ImageView 
-            AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"                                  
-                                  
-                                  opacity="0.7" 
-                                  pickOnBounds="true" 
-                                  preserveRatio="false"
-scaleX="1.1"
-scaleY="1.1"
-                                  BorderPane.alignment="CENTER">             
+            AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"  
+                                opacity="0.7" 
+                                pickOnBounds="true" 
+                                preserveRatio="false"
+                                scaleX="1.1"
+                                scaleY="1.1"
+                                BorderPane.alignment="CENTER">             
                                  <image>
-                                    <!--<Image url="@dirt.jpg"/>-->
-                                    <Image url="@file:///home/roberto/Versioning/owner/beto-land-owner/Imaging/felix-the-cat/felix.gif" />
+                                    <Image url="@minecraft-title-screen.gif"/>
+                                    <!--<Image url="@file:///home/roberto/Versioning/owner/beto-land-owner/Imaging/felix-the-cat/felix.gif" />-->
                                 </image>
                               </ImageView>           
       <VBox fx:id="vBox" alignment="CENTER" spacing="20.0">
