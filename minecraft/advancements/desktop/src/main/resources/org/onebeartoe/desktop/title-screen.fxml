@@ -29,7 +29,15 @@
         </ImageView>           
       <VBox fx:id="vBox" alignment="CENTER" spacing="20.0">
           <children>
-                <Label text="Minecraft|Companion App" />
+                <ImageView>
+                    <image>
+                        <Image url="@Minecraft-Title.png"/>
+                    </image>
+                </ImageView>
+                
+                <!--<Label text="  " />-->
+                <!--<Label text="   " />-->
+                <Label text=" " />
 
                 <Button fx:id="singlePlayerButton" onAction="#switchToPrimary" 
                         text="Single Player" />
