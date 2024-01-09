@@ -70,6 +70,6 @@ public class SelectWorldController
     {
         System.out.println("select world -> play selected world: " + mediaView);
         
-        App.setRoot("play-selected-world");
+        App.setRoot("game-menu");
     }
 }
