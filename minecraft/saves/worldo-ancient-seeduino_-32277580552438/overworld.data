@@ -84,6 +84,12 @@
 -524, ~, 1332, "SH1"
 
 
+# Village 7
+# I just started a base here...
+# The base is picking up.
+# There is Librian with a Mending Book trade here, as well as an Unbreaking trader.  I Enchanted the 1st Elytra here.
+-304, 64, 1943, "V7"
+
 
 # # Amethyst Geode 2
 -555, 34, 1273, "AG2"
@@ -91,7 +97,7 @@
 
 
 # Shipwrek 1
-# I got two cost trims here.
+# I got two coast trims here.
 # I had to leave a horse here, to get back more quickly cuase of the water.
 -1128, ~, 1350, 
 
@@ -113,6 +119,7 @@
 #	But most of the Loot and Base expansion materials and resources are at the top mini-base.
 -1864, -51, 408, "AC1"
 
+
 # Ancient City 1 Runined Nether Portal
 #	Nope, it was not at the surface.
 -1818, ~, 269, "AC1NP"
@@ -120,7 +127,7 @@
 
 
 # Trail Ruins 
-#	Nope it was not there.
+#	Nope, it was not there.
 -1921, ~, -488, "TR1"
 
 
