@@ -24,7 +24,7 @@ public class App extends Application
 
     private static final String [] screenNames = 
     {
-        "splash", "launcher", "play", "select-world", "play-selected-world", "advancements"
+        "splash", "launcher", "title-screen", "select-world", "play-selected-world", "advancements"
     };
 
     private static  Map<String, String> fmxlToStyleSheets;
@@ -63,7 +63,7 @@ public class App extends Application
         // dark mode
         scene.getRoot().setStyle("-fx-base:black");
         
-        scene.getStylesheets().add("/org/onebeartoe/desktop/play.css");
+        scene.getStylesheets().add("/org/onebeartoe/desktop/title-screen.css");
         
         stage.show();
                      

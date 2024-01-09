@@ -14,6 +14,6 @@ public class LauncherController
     @FXML
     private void handlePlayButton() throws IOException
     {
-        App.setRoot("play");
+        App.setRoot("title-screen");
     }
 }

@@ -15,8 +15,8 @@ TODO: remove this is it is not working
 }
 
 
-.button {
-    
-
+.button
+{
+    -fx-stroke: green;
     -fx-font-weight: bold;
 }
