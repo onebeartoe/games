@@ -44,18 +44,20 @@ public class GameMenuController
     @FXML
     public void initialize() throws URISyntaxException, IOException
     {
-//        String css = "-fx-border-color: red;\n" +
-//                   "-fx-border-insets: 5;\n" +
-//                   "-fx-border-width: 3;\n" +
-//                   "-fx-border-style: dashed;\n";
+        String css = "-fx-border-color: red;\n" +
+                   "-fx-border-insets: 5;\n" +
+                   "-fx-border-width: 3;\n" +
+                   "-fx-border-style: dashed;\n" +
+                "-fx-text-fill: green;";
 //        
-//        vBox.setStyle(css); 
+        vBox.setStyle(css); 
 
         
         float widthPercentage = 0.4f;
         
         backButton.prefWidthProperty().bind( vBox.widthProperty().multiply(widthPercentage) );
-
+backButton.setStyle(css);
+        
         advancementsButton.prefWidthProperty().bind( vBox.widthProperty().multiply(widthPercentage) );
 
         statisticsButton.prefWidthProperty().bind( vBox.widthProperty().multiply(widthPercentage) );
