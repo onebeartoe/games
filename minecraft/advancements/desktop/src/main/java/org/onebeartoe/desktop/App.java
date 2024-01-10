@@ -58,6 +58,8 @@ public class App extends Application
         scene = new Scene(parent, 640, 480);
         
         stage.setScene(scene);
+        
+        stage.setTitle("Minecraft Companion App");
 
         // dark mode
         scene.getRoot().setStyle("-fx-base:black");
