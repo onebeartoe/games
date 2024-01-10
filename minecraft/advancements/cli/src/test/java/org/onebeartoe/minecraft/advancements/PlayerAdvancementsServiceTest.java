@@ -31,7 +31,7 @@ public class PlayerAdvancementsServiceTest
     
     private PlayerAdvancements playerAdvancements;
      
-    final String advancementsPath = "/home/roberto/Versioning/owner/github/games/minecraft/statistics/cli/src/test/resources/minecraft/saves/1.20/advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";
+    final String advancementsPath = "/home/roberto/Versioning/owner/github/games/minecraft/advancements/cli/src/test/resources/minecraft/saves/1.20/advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";
     
     @BeforeTest
     private void initializeImplementation() throws IOException, ParseException
