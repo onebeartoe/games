@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 /**
  *
  */
-public class AdvancementsControllerTest extends ApplicationTest
+public class AdvancementsFxmlTest extends ApplicationTest
 {
     private AdvancementsController implementation = new AdvancementsController();
     
@@ -16,6 +16,4 @@ public class AdvancementsControllerTest extends ApplicationTest
     {
         System.out.println("this is a test - 12345431 - kjljl;kjlkjl;j");
     }
-
 }
-
