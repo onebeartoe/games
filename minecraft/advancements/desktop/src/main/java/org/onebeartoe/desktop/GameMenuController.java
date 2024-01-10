@@ -28,9 +28,6 @@ public class GameMenuController
     @FXML
     Button advancementsButton;
 
-//    @FXML
-//    Button statisticsButton;
-
     @FXML
     Button superSecretButton;
 
@@ -72,16 +69,16 @@ backButton.setStyle(css);
     @FXML
     private void switchToPrimary() throws IOException 
     {
-        System.out.println("play selected world -> advancements: " + mediaView);
+System.out.println("play selected world -> advancements: " + mediaView);
         
         App.setRoot("advancements");
     }
 
     @FXML
-    private void switchToPlay() throws IOException 
+    private void switchToSuperSecretOptions() throws IOException 
     {
-        System.out.println("play selected world -> advancements: " + mediaView);
+System.out.println("play selected world -> advancements: " + mediaView);
         
-        App.setRoot("play");
+        App.setRoot("super-secret");
     }    
 }

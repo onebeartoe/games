@@ -27,7 +27,9 @@ public class App extends Application
 
     private static final String [] screenNames = 
     {
-        "splash", "launcher", "title-screen", "select-world", "game-menu", "advancements"
+        "splash", "launcher", "title-screen", "select-world", "game-menu", "advancements",
+
+        "super-secret"
     };
 
     private static  Map<String, String> fmxlToStyleSheets;

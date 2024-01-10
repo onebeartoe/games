@@ -36,9 +36,9 @@
                 <Button fx:id="backButton"         onAction="#switchToPrimary" text="Back to Game" />
                 <Button fx:id="advancementsButton" onAction="#switchToPrimary" text="Advancements" />
                 <!--<Button fx:id="statisticsButton"   onAction="#switchToPrimary" text="Statistics" />-->
-                <Button fx:id="superSecretButton"  onAction="#switchToPrimary" text="Super Secret Options" />
+                <Button fx:id="superSecretButton"  onAction="#switchToSuperSecretOptions" text="Super Secret Options" />
                 <Button fx:id="optionsButton"      onAction="#switchToPrimary" text="Options???" />
-                <Button fx:id="saveAndQuitButton"  onAction="#switchToPlay"    text="Save and Quit to Title" />                                 
+                <Button fx:id="saveAndQuitButton"  onAction="#switchToPrimary"    text="Save and Quit to Title" />                                 
             </children>
             <padding>
                 <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

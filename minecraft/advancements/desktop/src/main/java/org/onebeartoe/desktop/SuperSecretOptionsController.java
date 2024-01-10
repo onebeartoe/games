@@ -20,7 +20,7 @@ public class SuperSecretOptionsController
     public VBox vBox;
     
     @FXML
-    Button singlePlayerButton;
+    Button backButton;
     
     @FXML
     public void initialize() throws URISyntaxException, IOException
@@ -64,11 +64,9 @@ public class SuperSecretOptionsController
     }
     
     @FXML
-    private void switchToPrimary() throws IOException 
-    {
-        System.out.println("play selected world -> advancements: " + mediaView);
-        
-        App.setRoot("advancements");
+    private void switchToGameMenu() throws IOException 
+    {        
+        App.setRoot("game-menu");
     }
 
     
