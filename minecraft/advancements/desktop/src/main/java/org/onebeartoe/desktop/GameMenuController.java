@@ -27,6 +27,21 @@ public class GameMenuController
     Button backButton;
     
     @FXML
+    Button advancementsButton;
+
+    @FXML
+    Button statisticsButton;
+
+    @FXML
+    Button superSecretButton;
+
+    @FXML
+    Button optionsButton;
+
+    @FXML
+    Button saveAndQuitButton;
+    
+    @FXML
     public void initialize() throws URISyntaxException, IOException
     {
 //        String css = "-fx-border-color: red;\n" +
@@ -35,13 +50,21 @@ public class GameMenuController
 //                   "-fx-border-style: dashed;\n";
 //        
 //        vBox.setStyle(css); 
-    
-//    backButton.prefWidthProperty().bind(Bindings.divide(vBox.widthProperty(), 0.01));
-    backButton.prefWidthProperty().bind( vBox.widthProperty().multiply(0.4) );
-//    backButton.prefWidthProperty().bind(Bindings.divide(primaryStage.widthProperty(), 10.0));
 
+        
+        float widthPercentage = 0.4f;
+        
+        backButton.prefWidthProperty().bind( vBox.widthProperty().multiply(widthPercentage) );
 
-System.out.println("game menu initialized");        
+        advancementsButton.prefWidthProperty().bind( vBox.widthProperty().multiply(widthPercentage) );
+
+        statisticsButton.prefWidthProperty().bind( vBox.widthProperty().multiply(widthPercentage) );
+
+        superSecretButton.prefWidthProperty().bind( vBox.widthProperty().multiply(widthPercentage) );
+
+        optionsButton.prefWidthProperty().bind( vBox.widthProperty().multiply(widthPercentage) );
+
+        saveAndQuitButton.prefWidthProperty().bind( vBox.widthProperty().multiply(widthPercentage) );
     }
     
     @FXML
