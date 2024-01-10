@@ -11,7 +11,7 @@
   
     <artifactId>desktop</artifactId>
       
-    <name>onebeartoe-games-minecraft-statistics-desktop</name>
+    <name>onebeartoe-games-minecraft-advancements-desktop</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
