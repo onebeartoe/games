@@ -36,7 +36,7 @@ onMouseClicked="#showHotTouristDestinationsData"
 <!--onAction="#showHotTouristDestinationsData"-->
                                 <image>                                    
                                     <Image 
-                                        url="@file:///home/roberto/Versioning/owner/github/games/minecraft/statistics/desktop/src/main/resources/org/onebeartoe/desktop/minecraft-spalsh.gif" 
+                                        url="@file:///home/roberto/Versioning/owner/github/games/minecraft/advancements/desktop/src/main/resources/org/onebeartoe/desktop/minecraft-spalsh.gif" 
                                         />
 <!--onAction="#showHotTouristDestinationsData"-->                                    
                                 </image>                                  
@@ -81,7 +81,7 @@ onMouseClicked="#showHotTouristDestinationsData"
                                      preserveRatio="true" >
                             <image>
                                 <!--<Image url="@file:///home/roberto/Versioning/owner/beto-land-owner/Imaging/felix-the-cat/felix.gif" />-->
-                                <Image url="@file:///home/roberto/Versioning/owner/github/games/minecraft/statistics/desktop/src/main/resources/org/onebeartoe/desktop/dirt.jpg" />
+                                <Image url="@file:///home/roberto/Versioning/owner/github/games/minecraft/advancements/desktop/src/main/resources/org/onebeartoe/desktop/dirt.jpg" />
                                 <!--<Image url="@file:///home/roberto/Versioning/owner/github/games/minecraft/statistics/desktop/src/main/resources/org/onebeartoe/desktop/minecraft-spalsh.mp4" />-->
                             </image>                                  
                           </ImageView>
@@ -92,7 +92,7 @@ onMouseClicked="#showHotTouristDestinationsData"
                                      preserveRatio="true" >
                             <image>
                                 <!--<Image url="@file:///home/roberto/Versioning/owner/beto-land-owner/Imaging/felix-the-cat/felix.gif" />-->
-                                <Image url="@file:///home/roberto/Versioning/owner/github/games/minecraft/statistics/desktop/src/main/resources/org/onebeartoe/desktop/dirt.jpg" />
+                                <Image url="@file:///home/roberto/Versioning/owner/github/games/minecraft/advancements/desktop/src/main/resources/org/onebeartoe/desktop/dirt.jpg" />
                                 <!--<Image url="@file:///home/roberto/Versioning/owner/github/games/minecraft/statistics/desktop/src/main/resources/org/onebeartoe/desktop/minecraft-spalsh.mp4" />-->
                             </image>                                  
                           </ImageView>
