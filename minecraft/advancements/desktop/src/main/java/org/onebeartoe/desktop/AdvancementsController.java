@@ -18,7 +18,8 @@ import org.onebeartoe.minecraft.advancements.v1_20.MinecraftWildAdvancementsServ
 
 
 //TODO: add a test to make sure advancement images are not null and present on the GUI
-        
+//TODO:     improve the FXML test to make sure the URI are acutaly available
+//TODO:         on the classpapth/modulepath
 
 /**
  * The background "splash" animation is actually setup/started in the 
