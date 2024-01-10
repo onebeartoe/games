@@ -33,7 +33,7 @@ public class SelectWorldController
     @FXML
     private void switchToPrimary() throws IOException 
     {
-        System.out.println("select world -> play selected world: " + mediaView);
+        System.out.println("select world -> sf452: " + mediaView);
         
         App.setRoot("game-menu");
     }

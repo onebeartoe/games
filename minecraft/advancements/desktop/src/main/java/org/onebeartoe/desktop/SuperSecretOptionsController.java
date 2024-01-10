@@ -58,7 +58,7 @@ public class SuperSecretOptionsController
     @FXML
     private void switchToPlay() throws IOException 
     {
-        System.out.println("play selected world -> advancements: " + mediaView);
+        System.out.println("super secret -> 0ijgu94jf: " + mediaView);
         
         App.setRoot("play");
     }    

@@ -13,8 +13,8 @@ import javafx.scene.media.MediaView;
  */
 public class GameMenuController 
 {
-    @FXML
-    public MediaView mediaView;
+//    @FXML
+//    public MediaView mediaView;
     
     @FXML
     public VBox vBox;
@@ -69,7 +69,7 @@ backButton.setStyle(css);
     @FXML
     private void switchToPrimary() throws IOException 
     {
-System.out.println("play selected world -> advancements: " + mediaView);
+//System.out.println("game menu -> 12321: " + mediaView);
         
         App.setRoot("advancements");
     }
@@ -77,7 +77,7 @@ System.out.println("play selected world -> advancements: " + mediaView);
     @FXML
     private void switchToSuperSecretOptions() throws IOException 
     {
-System.out.println("play selected world -> advancements: " + mediaView);
+//System.out.println("play selected world -> advancements: " + mediaView);
         
         App.setRoot("super-secret");
     }    

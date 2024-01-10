@@ -51,7 +51,7 @@ public class App extends Application
     public void start(Stage stage) throws IOException 
     {
         
-        var initialRoot = screenNames[1];
+        var initialRoot = screenNames[4];
 
         Parent parent = (Parent) loadFXML(initialRoot);        
         
