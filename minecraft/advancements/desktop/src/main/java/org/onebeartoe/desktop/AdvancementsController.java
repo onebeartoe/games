@@ -6,6 +6,7 @@ import java.util.List;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -53,6 +54,9 @@ public class AdvancementsController
     HBox husbandryHBox;
     
     @FXML
+    Image completeCatalogueImage;
+    
+    @FXML
     ImageView hotTouristDestinationsImage;
     
     private MinecraftWildAdvancementsService implementation;
@@ -64,9 +68,7 @@ public class AdvancementsController
     @FXML
     public void initialize() throws URISyntaxException, IOException, ParseException
     {     
-        implementation = new MinecraftWildAdvancementsService();                  
-          
-//        List<String> allAdventureTimes = implementation.allAdventureTimes();
+        implementation = new MinecraftWildAdvancementsService();
         
         netherHBox.setSpacing(10);
         
@@ -77,22 +79,6 @@ public class AdvancementsController
         playerAdvancementsService = new PlayerAdvancementsService();
         
         playerAdvancements = playerAdvancementsService.load(advancementsPath);
-
-//        vBox.getScene().addEventHandler(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>
-//  () {
-//
-//        @Override
-//        public void handle(KeyEvent t) {
-//          if(t.getCode()==KeyCode.ESCAPE)
-//          {
-//              System.out.println("click on escape");
-//              
-//              
-////           Stage sb = (Stage)label.getScene().getWindow();//use any one object
-////           sb.close();
-//          }
-//        }
-//    });
         
         showHotTouristDestinationsData();
         

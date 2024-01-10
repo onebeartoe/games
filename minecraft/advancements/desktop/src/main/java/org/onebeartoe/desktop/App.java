@@ -34,12 +34,6 @@ public class App extends Application
 
     private static  Map<String, String> fmxlToStyleSheets;
 
-//TODO: can we use this in this app?    
-//        splashButton.translateYProperty()
-//                .bind(scene.heightProperty().subtract(splashButton.heightProperty())
-//                        .divide(2));        
-    
-
     public App()
     {
         fmxlToStyleSheets = HashMap.newHashMap(6);
