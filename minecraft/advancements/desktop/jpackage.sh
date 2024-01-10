@@ -2,7 +2,7 @@
 jpackage --input target/ \
          --type app-image \
          --main-class org.onebeartoe.desktop.App \
-         --main-jar desktop-1.0.jar \
+         --main-jar desktop-1.0-jar-with-dependencies.jar \
          --dest target/
 
 
