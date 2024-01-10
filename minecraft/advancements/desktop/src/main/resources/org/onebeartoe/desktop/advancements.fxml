@@ -35,6 +35,7 @@ onMouseClicked="#showHotTouristDestinationsData"
                                                            
 <!--onAction="#showHotTouristDestinationsData"-->
                                 <image>                                    
+<!--TODO: add a test to make sure this image is not null and present on the GUI -->
                                     <Image 
                                         url="@file:///home/roberto/Versioning/owner/github/games/minecraft/advancements/desktop/src/main/resources/org/onebeartoe/desktop/minecraft-spalsh.gif" 
                                         />

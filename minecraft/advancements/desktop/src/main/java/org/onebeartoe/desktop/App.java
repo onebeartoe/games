@@ -4,11 +4,14 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 /**
@@ -52,7 +55,7 @@ public class App extends Application
     public void start(Stage stage) throws IOException 
     {
         
-        var initialRoot = screenNames[4];
+        var initialRoot = screenNames[1];
 
         Parent parent = (Parent) loadFXML(initialRoot);        
         
@@ -82,6 +85,30 @@ public class App extends Application
         Parent parent = (Parent) loadFXML(fxml);
         
         scene.setRoot(parent);
+        
+//TODO: use a switch statement        
+if(fxml.equals("advancements"))
+{
+        scene.addEventHandler(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>
+  () {
+
+        @Override
+        public void handle(KeyEvent t) {
+          if(t.getCode()==KeyCode.ESCAPE)
+          {
+              System.out.println("click on escape");
+              
+              try {
+                  setRoot("game-menu");
+//           Stage sb = (Stage)label.getScene().getWindow();//use any one object
+//           sb.close();
+              } catch (IOException ex) {
+                  ex.printStackTrace();
+              }
+          }
+        }
+    });    
+}
         
         // dark mode
         scene.getRoot().setStyle("-fx-base:black");

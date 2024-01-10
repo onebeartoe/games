@@ -5,17 +5,25 @@ import org.onebeartoe.minecraft.advancements.PlayerAdvancements;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.List;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.MediaView;
+import javafx.stage.Stage;
 import org.json.simple.parser.ParseException;
 import org.onebeartoe.minecraft.advancements.PlayerAdvancementsService;
 
 import org.onebeartoe.minecraft.advancements.v1_20.MinecraftWildAdvancementsService;
+
+
+//TODO: add a test to make sure advancement images are not null and present on the GUI
+        
 
 /**
  * The background "splash" animation is actually setup/started in the 
@@ -75,6 +83,22 @@ public class AdvancementsController
         playerAdvancementsService = new PlayerAdvancementsService();
         
         playerAdvancements = playerAdvancementsService.load(advancementsPath);
+
+//        vBox.getScene().addEventHandler(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>
+//  () {
+//
+//        @Override
+//        public void handle(KeyEvent t) {
+//          if(t.getCode()==KeyCode.ESCAPE)
+//          {
+//              System.out.println("click on escape");
+//              
+//              
+////           Stage sb = (Stage)label.getScene().getWindow();//use any one object
+////           sb.close();
+//          }
+//        }
+//    });
         
         showHotTouristDestinationsData();
         
