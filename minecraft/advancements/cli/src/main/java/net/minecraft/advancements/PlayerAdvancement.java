@@ -1,5 +1,5 @@
 
-package org.onebeartoe.minecraft.advancements;
+package net.minecraft.advancements;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -15,7 +15,7 @@ public class PlayerAdvancement
     
     String description;
     
-    Map<String, Boolean> criteria;
+    public Map<String, Boolean> criteria;
 
     public PlayerAdvancement()
     {

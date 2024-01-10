@@ -1,6 +1,9 @@
 
 package org.onebeartoe.minecraft.advancements;
 
+import net.minecraft.advancements.Advancements;
+import net.minecraft.advancements.Advancement;
+import net.minecraft.advancements.AdvancementsService;
 import java.io.IOException;
 import java.util.List;
 import org.json.simple.parser.ParseException;

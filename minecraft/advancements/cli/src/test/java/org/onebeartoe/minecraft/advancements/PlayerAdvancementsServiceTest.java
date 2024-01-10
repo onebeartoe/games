@@ -1,6 +1,13 @@
 
 package org.onebeartoe.minecraft.advancements;
 
+import net.minecraft.advancements.PlayerAdvancement;
+import net.minecraft.advancements.PlayerAdvancements;
+import net.minecraft.advancements.PlayerNetherAdvancementsCategory;
+import net.minecraft.advancements.PlayerHusbandryAdvancements;
+import net.minecraft.advancements.PlayerAdvancementsService;
+import net.minecraft.advancements.Advancement;
+import net.minecraft.advancements.AdvancementsService;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;

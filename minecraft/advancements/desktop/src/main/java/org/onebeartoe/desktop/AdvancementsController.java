@@ -12,8 +12,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.MediaView;
 import org.json.simple.parser.ParseException;
-import org.onebeartoe.minecraft.advancements.PlayerAdvancements;
-import org.onebeartoe.minecraft.advancements.PlayerAdvancementsService;
+import net.minecraft.advancements.PlayerAdvancements;
+import net.minecraft.advancements.PlayerAdvancementsService;
 import org.onebeartoe.minecraft.advancements.v1_20.MinecraftWildAdvancementsService;
 
 
@@ -59,7 +59,7 @@ public class AdvancementsController
     @FXML
     ImageView hotTouristDestinationsImage;
     
-    private MinecraftWildAdvancementsService implementation;
+//    private MinecraftWildAdvancementsService implementation;
     
     private PlayerAdvancementsService playerAdvancementsService;
     
@@ -68,7 +68,7 @@ public class AdvancementsController
     @FXML
     public void initialize() throws URISyntaxException, IOException, ParseException
     {     
-        implementation = new MinecraftWildAdvancementsService();
+//        implementation = new MinecraftWildAdvancementsService();
         
         netherHBox.setSpacing(10);
         

@@ -1,5 +1,5 @@
 
-package org.onebeartoe.minecraft.advancements;
+package net.minecraft.advancements;
 
 /**
  *

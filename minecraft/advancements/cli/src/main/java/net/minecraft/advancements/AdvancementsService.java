@@ -1,7 +1,6 @@
 
-package org.onebeartoe.minecraft.advancements;
+package net.minecraft.advancements;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
@@ -193,7 +192,7 @@ public class AdvancementsService
 
     private JSONObject parseBase() throws IOException, ParseException 
     {
-        String statsPath = "advancements/minecraft/20.json";
+        String statsPath = "net/minecraft/advancements/20.json";
                 
         JSONParser parser = new JSONParser();
         

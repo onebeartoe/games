@@ -1,5 +1,5 @@
 
-package org.onebeartoe.minecraft.advancements;
+package net.minecraft.advancements;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +13,7 @@ public class Advancement
     
     String description;
 
-    List<String> criteria;
+    public List<String> criteria;
 
     public Advancement()
     {

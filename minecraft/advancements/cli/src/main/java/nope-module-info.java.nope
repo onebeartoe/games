@@ -3,8 +3,10 @@ module org.onebeartoe.minecraft
     requires java.net.http;
     
     requires json.simple;
+
+//    exports advancements.minecraft;
     
-    exports org.onebeartoe.minecraft.advancements;
+    exports net.minecraft.advancements;
     
     exports org.onebeartoe.minecraft.advancements.v1_20;
 }

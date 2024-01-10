@@ -1,5 +1,5 @@
 
-package org.onebeartoe.minecraft.advancements;
+package net.minecraft.advancements;
 
 import java.io.File;
 import java.io.IOException;

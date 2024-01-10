@@ -10,9 +10,8 @@ module org.onebeartoe.desktop
 
     requires json.simple;
     
-    opens org.onebeartoe.desktop to javafx.fxml;
-    
-//    opens org.onebeartoe.desktop to org.onebeartoe.minecraft;
+//    opens org.onebeartoe.desktop to javafx.fxml;
+    opens org.onebeartoe.desktop to org.onebeartoe.minecraft, javafx.fxml;
 
     exports org.onebeartoe.desktop;
 }
