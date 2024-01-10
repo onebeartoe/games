@@ -2,7 +2,6 @@ package org.onebeartoe.desktop;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
-import javafx.beans.binding.Bindings;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
@@ -44,14 +43,15 @@ public class GameMenuController
     @FXML
     public void initialize() throws URISyntaxException, IOException
     {
-        String css = "-fx-border-color: red;\n" +
-                   "-fx-border-insets: 5;\n" +
-                   "-fx-border-width: 3;\n" +
-                   "-fx-border-style: dashed;\n" +
-                "-fx-text-fill: green;";
-//        
-        vBox.setStyle(css); 
+        String css = """
+                     -fx-border-color: red;
+                     -fx-border-insets: 5;
+                     -fx-border-width: 3;
+                     -fx-border-style: dashed;
+                     -fx-text-fill: green;
+                     """;
 
+        vBox.setStyle(css);
         
         float widthPercentage = 0.4f;
         
@@ -77,7 +77,6 @@ backButton.setStyle(css);
         App.setRoot("advancements");
     }
 
-    
     @FXML
     private void switchToPlay() throws IOException 
     {
