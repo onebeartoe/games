@@ -1,24 +1,18 @@
 package org.onebeartoe.desktop;
 
-import org.onebeartoe.minecraft.advancements.PlayerAdvancements;
-
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.List;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.MediaView;
-import javafx.stage.Stage;
 import org.json.simple.parser.ParseException;
+import org.onebeartoe.minecraft.advancements.PlayerAdvancements;
 import org.onebeartoe.minecraft.advancements.PlayerAdvancementsService;
-
 import org.onebeartoe.minecraft.advancements.v1_20.MinecraftWildAdvancementsService;
 
 
@@ -72,7 +66,7 @@ public class AdvancementsController
     {     
         implementation = new MinecraftWildAdvancementsService();                  
           
-        List<String> allAdventureTimes = implementation.allAdventureTimes();
+//        List<String> allAdventureTimes = implementation.allAdventureTimes();
         
         netherHBox.setSpacing(10);
         
@@ -132,7 +126,7 @@ public class AdvancementsController
         StringBuilder haveNots = new StringBuilder();
         
         playerAdvancements.nether.hotTouristDestinations.haveNots()
-            .forEach((not) -> 
+            .forEach(not -> 
             {
                 haveNots.append(not);
                 haveNots.append("\n");
@@ -145,7 +139,7 @@ public class AdvancementsController
     {
         StringBuilder haves = new StringBuilder();        
         playerAdvancements.husbandry.aCompleteCatelogue.haves()
-                .forEach((have) ->
+                .forEach(have ->
                 {
                     haves.append(have);
                     haves.append("\n");
@@ -153,7 +147,7 @@ public class AdvancementsController
         
         StringBuilder nots = new StringBuilder();
         playerAdvancements.husbandry.aCompleteCatelogue.haveNots()
-                .forEach((not) ->
+                .forEach(not ->
                 {
                     nots.append(not);
                     nots.append("\n");

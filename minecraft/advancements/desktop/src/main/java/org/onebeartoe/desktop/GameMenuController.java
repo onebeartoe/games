@@ -28,8 +28,8 @@ public class GameMenuController
     @FXML
     Button advancementsButton;
 
-    @FXML
-    Button statisticsButton;
+//    @FXML
+//    Button statisticsButton;
 
     @FXML
     Button superSecretButton;
@@ -60,7 +60,7 @@ backButton.setStyle(css);
         
         advancementsButton.prefWidthProperty().bind( vBox.widthProperty().multiply(widthPercentage) );
 
-        statisticsButton.prefWidthProperty().bind( vBox.widthProperty().multiply(widthPercentage) );
+//        statisticsButton.prefWidthProperty().bind( vBox.widthProperty().multiply(widthPercentage) );
 
         superSecretButton.prefWidthProperty().bind( vBox.widthProperty().multiply(widthPercentage) );
 

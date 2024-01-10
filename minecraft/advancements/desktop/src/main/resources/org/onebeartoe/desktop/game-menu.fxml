@@ -35,7 +35,7 @@
                 <Label text="Game Menu" />
                 <Button fx:id="backButton"         onAction="#switchToPrimary" text="Back to Game" />
                 <Button fx:id="advancementsButton" onAction="#switchToPrimary" text="Advancements" />
-                <Button fx:id="statisticsButton"   onAction="#switchToPrimary" text="Statistics" />
+                <!--<Button fx:id="statisticsButton"   onAction="#switchToPrimary" text="Statistics" />-->
                 <Button fx:id="superSecretButton"  onAction="#switchToPrimary" text="Super Secret Options" />
                 <Button fx:id="optionsButton"      onAction="#switchToPrimary" text="Options???" />
                 <Button fx:id="saveAndQuitButton"  onAction="#switchToPlay"    text="Save and Quit to Title" />                                 
