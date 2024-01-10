@@ -9,7 +9,6 @@
     -fx-stroke-line-cap: butt;
 }
 
-
 .button
 {
     -fx-stroke: green;
@@ -17,6 +16,3 @@
     -fx-fill: yellow;
     -fx-text-fill: green;
 }
-
-
-

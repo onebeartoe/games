@@ -10,7 +10,8 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" 
+<StackPane xmlns="http://javafx.com/javafx/21" 
+           xmlns:fx="http://javafx.com/fxml/1" 
            fx:controller="org.onebeartoe.desktop.GameMenuController">
    <children>
         <ImageView 
@@ -29,16 +30,15 @@
 
         <VBox fx:id="vBox" 
               alignment="CENTER" 
-              
               spacing="20.0" >
             <children>
                 <Label text="Game Menu" />
-                <Button fx:id="backButton" onAction="#switchToPrimary" text="Back to Game" />
+                <Button fx:id="backButton"         onAction="#switchToPrimary" text="Back to Game" />
                 <Button fx:id="advancementsButton" onAction="#switchToPrimary" text="Advancements" />
-                <Button fx:id="statisticsButton" onAction="#switchToPrimary" text="Statistics" />
-                <Button fx:id="superSecretButton" onAction="#switchToPrimary" text="Super Secret Options" />
-                <Button fx:id="optionsButton" onAction="#switchToPrimary" text="Options???" />
-                <Button fx:id="saveAndQuitButton" onAction="#switchToPlay" text="Save and Quit to Title" />                                 
+                <Button fx:id="statisticsButton"   onAction="#switchToPrimary" text="Statistics" />
+                <Button fx:id="superSecretButton"  onAction="#switchToPrimary" text="Super Secret Options" />
+                <Button fx:id="optionsButton"      onAction="#switchToPrimary" text="Options???" />
+                <Button fx:id="saveAndQuitButton"  onAction="#switchToPlay"    text="Save and Quit to Title" />                                 
             </children>
             <padding>
                 <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
