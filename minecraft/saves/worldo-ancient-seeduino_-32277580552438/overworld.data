@@ -72,10 +72,10 @@
 -1632, ~, 704, "V2"
 
 
-# Medium Iron Ore Vein 
+# Medium Iron Ore Vein 1
 #	Yes, it is there and should still have some iron.
 #	There is also a Spider Spawner right at the (top) entrance to the vein.
--1920 -16 656, "MIOV1"
+-1920, -16, 656, "MIOV1"
 
 
 # Stronghold 1
@@ -175,16 +175,33 @@
 -2760, ~, 776, "LCOR1"
 
 
+# Medium Iron Ore Vein 2
+#	Nope, it was not there.
+#	But there is an exposed Geode on the Scafolding used to get down there.
+#	There must have been a glich becuase the Geode diapeared. 
+#		My down tunnel and scaffolding also disapeared?!?!.  
+-3728, -48, 1000, "MIOV2"
+
+
+
 # Village 3
 #	This is a decent villager base here.
 #	There is a Armorer with Diamond trades here.
 #	There are tamed dogs/wolf here.
-#	Trail Ruins 2 
-#		-3640, ~, 1224, "TR2"
-#	Trial Chamber 2
-#		-3512, ~, 1176, "TC2"
-#		The exit is around Y = -20
+#	This is right between a Trial Chamber and a Trail Ruins!
 -3584, ~, 1200, "V3"
+
+
+# Trail Ruins 2 
+# This is near V3
+# -3640, ~, 1224, "TR2"
+
+
+# Trial Chamber 2
+#	This is near V3
+#	The Waterfall exit is around Y = -20
+#	I am pretty sure I got all the loot, but it is still fun to take the Trial!
+# -3512, ~, 1176, "TC2"
 
 
 # Illager Outpost 5
@@ -211,9 +228,18 @@
 
 
 
-# !!!!!!!!GET THIS WOLF AND PARROT
-1636, 62, 570, "GTWAP"
+# Floating Wolf and Parrot
+#	I went back for them!
+#	There is a (well stocked) mini base now, so they are not just floating there in the water.
+#	There is an Ender Chest here.
+#	I decided to keep the wolf here and only take back the Parrot, which I took to V2.
+#	I also took and kept an Allay here.
+1636, 62, 570, "FWP"
 
+
+# (Small) Cold Ruin #4
+#	I found an Explorer Pottery Sherd.
+1320, ~, 504, "COR4"
 
 # Illager Outpost 6
 #	Still, no Armor Trim/Smithing Template here.

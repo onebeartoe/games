@@ -1,15 +1,75 @@
 
 Greeting
 
+	Hi, I'm Roberto Marquez.
+	In this video, I review a beta-version of a Minecraft companion app.
+
+Intro
+
+	Sakana Ren Shoutout
+
+		Minecraft Youtuber
+
+		saw her inventory mod
+
+		prompted me to update and put a UI on the command line version
+
 Software Prerequisites
+
+	Java Minecraft Edition
+
+	JDK
 
 User Story Review
 
     As a Minecraft player,
-    I need an companion app,
-    so that I can easily what items are missings from partially complete Advancements.
+    I need a companion app,
+    so that I can easily see what items are missing from partially complete Advancements.
 
-Demonstrate Acceptance Criteria
+Demonstrate Use Case (without companion app)
+
+	show in-game Minecraft Advancements screen.
+		for exmaple
+			one time type - Adventure -> Sweet Dreams
+			sub-task type - Husbandry -> Complete Catalouge
+				show how complete cataloge is 10/11
+				but does not show which is missing
+
+	show how to find the advancemenst/uuid78415743tgnlke.json file
+		file:///home/roberto/.minecraft/
+			(worldo for this)
+
+		find the Complete Catalogue
+			show how cat count match the in-game Advancments screen
+
+	display the complete list of cats on the wiki
+
+		https://minecraft.wiki/w/Advancement#A_Complete_Catalogue
+
+	split screen the JSON and Wiki page to manually compare and find the missing cat
+	
+
+Demonstrate Companion App
+
+	walk through the screens up to hunsandry advancments
+
+	show Complete catalog
+
+	back to in-game Minecraft Advancements -> Adventure -> Monsters Hunted
+		same as complete cataloge; shows counts but not which are missing
+
+	show companion app -> Advancements -> Adventure -> Monsters Hunted
+
+State of the App
+
+	no Binary distribuion yet
+
+	still in developmente
+
+	feedback and contructive critizim are welcom
+
 
 Outro
+	Again, specail thanks goes to Sakana Ren for inspiring me to work on the GUI for this project.
 
+	And thank you for watching.  Like and subscribe for more Minecraft desktop application development with JavaFX.
