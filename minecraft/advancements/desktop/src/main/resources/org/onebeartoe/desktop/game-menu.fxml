@@ -35,7 +35,11 @@
                 <Label text="Game Menu" />
                 <Button fx:id="backButton"         onAction="#switchToPrimary" text="Back to Game" />
                 <Button fx:id="advancementsButton" onAction="#switchToPrimary" text="Advancements" />
-                <!--<Button fx:id="statisticsButton"   onAction="#switchToPrimary" text="Statistics" />-->
+<!--
+    Which Armor Trims am I missing/having?
+    Which Pottery Sherds am I missing/haging?
+                -->                
+                <Button fx:id="statisticsButton"   onAction="#switchToPrimary" text="Statistics" />
                 <Button fx:id="superSecretButton"  onAction="#switchToSuperSecretOptions" text="Super Secret Options" />
                 <Button fx:id="optionsButton"      onAction="#switchToPrimary" text="Options???" />
                 <Button fx:id="saveAndQuitButton"  onAction="#switchToPrimary"    text="Save and Quit to Title" />                                 
