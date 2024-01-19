@@ -13,9 +13,6 @@ import javafx.scene.media.MediaView;
  */
 public class GameMenuController 
 {
-//    @FXML
-//    public MediaView mediaView;
-    
     @FXML
     public VBox vBox;
     
@@ -38,6 +35,9 @@ public class GameMenuController
     Button saveAndQuitButton;
     
     @FXML
+    Button statisticsButton;
+    
+    @FXML
     public void initialize() throws URISyntaxException, IOException
     {
         String css = """
@@ -53,11 +53,11 @@ public class GameMenuController
         float widthPercentage = 0.4f;
         
         backButton.prefWidthProperty().bind( vBox.widthProperty().multiply(widthPercentage) );
-backButton.setStyle(css);
+        backButton.setStyle(css);
         
         advancementsButton.prefWidthProperty().bind( vBox.widthProperty().multiply(widthPercentage) );
 
-//        statisticsButton.prefWidthProperty().bind( vBox.widthProperty().multiply(widthPercentage) );
+        statisticsButton.prefWidthProperty().bind( vBox.widthProperty().multiply(widthPercentage) );
 
         superSecretButton.prefWidthProperty().bind( vBox.widthProperty().multiply(widthPercentage) );
 
