@@ -20,6 +20,33 @@ import javafx.stage.Stage;
 public class App extends Application 
 {
     private static Scene scene;
+
+    private static void handleEscapeKey(String fxml) 
+    {
+        //TODO: use a switch statement        
+        if(fxml.equals("advancements"))
+        {
+                scene.addEventHandler(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>
+          () {
+
+                @Override
+                public void handle(KeyEvent t) {
+                  if(t.getCode()==KeyCode.ESCAPE)
+                  {
+                      System.out.println("click on escape");
+
+                      try {
+                          setRoot("game-menu");
+        //           Stage sb = (Stage)label.getScene().getWindow();//use any one object
+        //           sb.close();
+                      } catch (IOException ex) {
+                          ex.printStackTrace();
+                      }
+                  }
+                }
+            });    
+        }
+    }
     
     @FXML
     public Button splashButton;    
@@ -84,30 +111,8 @@ public class App extends Application
         
         scene.setRoot(parent);
         
-//TODO: use a switch statement        
-if(fxml.equals("advancements"))
-{
-        scene.addEventHandler(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>
-  () {
-
-        @Override
-        public void handle(KeyEvent t) {
-          if(t.getCode()==KeyCode.ESCAPE)
-          {
-              System.out.println("click on escape");
-              
-              try {
-                  setRoot("game-menu");
-//           Stage sb = (Stage)label.getScene().getWindow();//use any one object
-//           sb.close();
-              } catch (IOException ex) {
-                  ex.printStackTrace();
-              }
-          }
-        }
-    });    
-}
-        
+        handleEscapeKey(fxml);
+                
         // dark mode
         scene.getRoot().setStyle("-fx-base:black");
         
