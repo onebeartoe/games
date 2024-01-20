@@ -63,9 +63,51 @@ onMouseClicked="#showHotTouristDestinationsData"
         <graphic>
 
         </graphic>
-          <content>
-          <AnchorPane />
-        </content>
+            <content>
+                <SplitPane dividerPositions="0.5" orientation="VERTICAL">
+                  <items>
+                        <HBox fx:id="husbandryHBox234"
+                            alignment="CENTER" 
+spacing="20.0"
+                        >
+                           <children>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" 
+
+                                         pickOnBounds="true" 
+                                         preserveRatio="true" >
+                                <image>
+                                    <!--<Image url="@file:///home/roberto/Versioning/owner/beto-land-owner/Imaging/felix-the-cat/felix.gif" />-->
+                                    <Image url="@icons8-minecraft-sword-48.png"
+                                            fx:id="completeCatalogueImage345678"/>
+                                    <!--<Image url="@file:///home/roberto/Versioning/owner/github/games/minecraft/statistics/desktop/src/main/resources/org/onebeartoe/desktop/minecraft-spalsh.mp4" />-->
+                                </image>                                  
+                              </ImageView>
+
+                              <ImageView fitHeight="150.0" fitWidth="200.0" 
+
+                                         pickOnBounds="true" 
+                                         preserveRatio="true" >
+                                <image>
+                                    <!--<Image url="@file:///home/roberto/Versioning/owner/beto-land-owner/Imaging/felix-the-cat/felix.gif" />-->
+                                    <Image url="@file:///home/roberto/Versioning/owner/github/games/minecraft/advancements/desktop/src/main/resources/org/onebeartoe/desktop/dirt.jpg" />
+                                    <!--<Image url="@file:///home/roberto/Versioning/owner/github/games/minecraft/statistics/desktop/src/main/resources/org/onebeartoe/desktop/minecraft-spalsh.mp4" />-->
+                                </image>                                  
+                              </ImageView>
+                           </children>
+                        </HBox>                  
+                      <ScrollPane>
+                         <content>
+                            <SplitPane dividerPositions="0.5">
+                              <items>
+                                  <TextArea fx:id="husbundryCompleteCatelogueHavesTextArea458888" />
+                                  <TextArea fx:id="husbundryCompleteCatelogueHaveNotsTextArea999rj7fyfhf"/>
+                              </items>
+                            </SplitPane>
+                         </content>
+                      </ScrollPane>
+                  </items>
+                </SplitPane>
+            </content>
       </Tab>
 
       <Tab text="Husbandry">

@@ -27,8 +27,8 @@ import org.onebeartoe.minecraft.advancements.v1_20.MinecraftWildAdvancementsServ
  */
 public class AdvancementsController 
 {
-    @FXML
-    public MediaView mediaView;
+//    @FXML
+//    public MediaView mediaView;
     
     @FXML
     public VBox vBox;
@@ -89,7 +89,7 @@ public class AdvancementsController
     @FXML
     private void switchToPrimary() throws IOException 
     {
-        System.out.println("mediaView again: " + mediaView);
+//        System.out.println("mediaView again: " + mediaView);
         
         App.setRoot("play-selected-world");
     }
