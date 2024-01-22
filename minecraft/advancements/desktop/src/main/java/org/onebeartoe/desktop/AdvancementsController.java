@@ -26,10 +26,7 @@ import org.onebeartoe.minecraft.advancements.v1_20.MinecraftWildAdvancementsServ
  * JavaFX application's main() class in the @Override start() method.
  */
 public class AdvancementsController 
-{
-//    @FXML
-//    public MediaView mediaView;
-    
+{    
     @FXML
     public VBox vBox;
     
@@ -49,6 +46,12 @@ public class AdvancementsController
     TextArea husbundryCompleteCatelogueHaveNotsTextArea;
     
     @FXML
+    TextArea advancementsHavesTextArea;
+    
+    @FXML
+    TextArea advancementsHaveNotsTextArea;    
+    
+    @FXML
     HBox netherHBox;
     
     @FXML
@@ -60,17 +63,13 @@ public class AdvancementsController
     @FXML
     ImageView hotTouristDestinationsImage;
     
-//    private MinecraftWildAdvancementsService implementation;
-    
     private PlayerAdvancementsService playerAdvancementsService;
     
     private PlayerAdvancements playerAdvancements;
     
     @FXML
     public void initialize() throws URISyntaxException, IOException, ParseException
-    {     
-//        implementation = new MinecraftWildAdvancementsService();
-        
+    {        
         netherHBox.setSpacing(10);
         
         husbandryHBox.setSpacing(10);
@@ -85,22 +84,18 @@ public class AdvancementsController
         
         showCompleteCatalogueData();
         
-        show
+        showMonstersHuntedData();
     }
     
     @FXML
     private void switchToPrimary() throws IOException 
     {
-//        System.out.println("mediaView again: " + mediaView);
-        
         App.setRoot("play-selected-world");
     }
     
     @FXML
     private void showHotTouristDestinationsData()
     {
-        System.out.println("jfalkjlsdj");    
-        
         StringBuilder haves = new StringBuilder();        
                 
         playerAdvancements.nether.hotTouristDestinations.haves()
@@ -126,7 +121,7 @@ public class AdvancementsController
 
     private void showCompleteCatalogueData() 
     {
-        StringBuilder haves = new StringBuilder();        
+        StringBuilder haves = new StringBuilder();
         playerAdvancements.husbandry.aCompleteCatelogue.haves()
                 .forEach(have ->
                 {
@@ -145,5 +140,28 @@ public class AdvancementsController
         husbundryCompleteCatelogueHavesTextArea.setText(haves.toString());
         
         husbundryCompleteCatelogueHaveNotsTextArea.setText(nots.toString());
+    }
+
+    private void showMonstersHuntedData() 
+    {
+        var haves = new StringBuilder();        
+        playerAdvancements.adventure.monstersHunted.haves()
+                .forEach(have ->
+                {
+                    haves.append(have);
+                    haves.append("\n");
+                });
+
+        var haveNots = new StringBuilder();
+        playerAdvancements.adventure.monstersHunted.haveNots()
+                        .forEach(not ->
+                {
+                    haveNots.append(not);
+                    haveNots.append("\n");
+                });
+        
+        advancementsHavesTextArea.setText(haves.toString());
+    
+        advancementsHaveNotsTextArea.setText(haveNots.toString());
     }
 }

@@ -9,4 +9,6 @@ public class PlayerAdvancements
     public PlayerNetherAdvancementsCategory nether;
     
     public PlayerHusbandryAdvancements husbandry;
+    
+    public PlayerAdventureAdvancements adventure;
 }

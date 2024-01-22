@@ -239,6 +239,8 @@ public class PlayerAdvancementsService
         
         advancements.husbandry = parseHusbandry(base);
         
+        advancements.adventure = parseAdventure();
+        
         return advancements;
     }
 
@@ -302,5 +304,27 @@ public class PlayerAdvancementsService
         });
         
         return playerAdvancements;
+    }
+
+    private PlayerAdventureAdvancements parseAdventure() 
+    {
+        var adventure = new PlayerAdventureAdvancements();
+
+//TODO: fix this!!!!
+        List<String> minecraftCriteria = minecraftAdvancements.adventure.monstersHunted.criteria;
+
+        minecraftCriteria.forEach((criteriaName) -> 
+        {
+            if(monstersHunted.contains(criteriaName))
+            {
+                adventure.monstersHunted.criteria.put(criteriaName, true);
+            }
+            else
+            {
+                adventure.monstersHunted.criteria.put(criteriaName, false);
+            }
+        });
+
+        return adventure;
     }
 }
