@@ -74,6 +74,16 @@
 -1632, ~, 704, "V2"
 
 
+
+# Lush Caves 1
+-1070, 63, 1344, "LC1"
+
+
+
+
+
+
+
 # Medium Iron Ore Vein 1
 #	Yes, it is there and should still have some iron.
 #	There is also a Spider Spawner right at the (top) entrance to the vein.
@@ -293,7 +303,7 @@
 
 
 # Village 6
-#	Desert Templs and Well and some Illager Outposts are near here.
+#	Desert Temples and Well and some Illager Outposts are near here.
 #	I got Dune at the closest Desert Temple.
 #	There are Allay in the nearest Desert Temple.
 #	There is a good Villager base here.
