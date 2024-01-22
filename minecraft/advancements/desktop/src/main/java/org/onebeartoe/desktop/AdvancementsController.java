@@ -84,6 +84,8 @@ public class AdvancementsController
         showHotTouristDestinationsData();
         
         showCompleteCatalogueData();
+        
+        show
     }
     
     @FXML
@@ -139,8 +141,7 @@ public class AdvancementsController
                     nots.append(not);
                     nots.append("\n");
                 });
-        
-        
+
         husbundryCompleteCatelogueHavesTextArea.setText(haves.toString());
         
         husbundryCompleteCatelogueHaveNotsTextArea.setText(nots.toString());

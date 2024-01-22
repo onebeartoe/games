@@ -99,8 +99,8 @@ spacing="20.0"
                          <content>
                             <SplitPane dividerPositions="0.5">
                               <items>
-                                  <TextArea fx:id="husbundryCompleteCatelogueHavesTextArea458888" />
-                                  <TextArea fx:id="husbundryCompleteCatelogueHaveNotsTextArea999rj7fyfhf"/>
+                                  <TextArea fx:id="advancementsHavesTextArea" />
+                                  <TextArea fx:id="advancementsHaveNotsTextArea"/>
                               </items>
                             </SplitPane>
                          </content>
@@ -110,8 +110,7 @@ spacing="20.0"
             </content>
       </Tab>
 
-      <Tab text="Husbandry">
-          
+      <Tab text="Husbandry">          
          <content>
             <SplitPane dividerPositions="0.5" orientation="VERTICAL">
               <items>
