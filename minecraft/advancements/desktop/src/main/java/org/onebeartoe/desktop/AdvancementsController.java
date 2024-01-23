@@ -2,7 +2,8 @@ package org.onebeartoe.desktop;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.util.List;
+//import java.text.ParseException;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
@@ -11,6 +12,11 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.MediaView;
+
+import javafx.scene.text.Font; 
+import javafx.scene.text.FontPosture; 
+import javafx.scene.text.FontWeight;
+
 import org.json.simple.parser.ParseException;
 import net.minecraft.advancements.PlayerAdvancements;
 import net.minecraft.advancements.PlayerAdvancementsService;
@@ -161,6 +167,7 @@ public class AdvancementsController
                 });
         
         advancementsHavesTextArea.setText(haves.toString());
+        advancementsHavesTextArea.getStyleClass().add("title");
     
         advancementsHaveNotsTextArea.setText(haveNots.toString());
     }

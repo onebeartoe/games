@@ -12,7 +12,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
+
 
 /**
  * This is a JavaFX Application to show Minecraft advancements.
@@ -77,6 +79,9 @@ public class App extends Application
     @Override
     public void start(Stage stage) throws IOException 
     {
+        String path = App.class.getResource("minecraft.ttf").toExternalForm();
+
+        Font.loadFont(path, 10);        
         
         var initialRoot = screenNames[4];
 
@@ -116,9 +121,12 @@ public class App extends Application
         // dark mode
         scene.getRoot().setStyle("-fx-base:black");
         
-        var styleSheets = "/org/onebeartoe/desktop/" + fmxlToStyleSheets.get(fxml);
-
+        var styleSheets = "/org/onebeartoe/desktop/" + fmxlToStyleSheets.get(fxml);                                                
         scene.getStylesheets().add(styleSheets);
+        
+//var fontSheet =         getClass().getResource("custom-font-styles.css").toExternalForm()
+        var fontSheet = "/org/onebeartoe/desktop/fonts.css";
+        scene.getStylesheets().add(fontSheet);
     }
 
     private static Object loadFXML(String fxml) throws IOException 

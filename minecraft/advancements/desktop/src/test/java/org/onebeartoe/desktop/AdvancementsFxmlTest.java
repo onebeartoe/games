@@ -10,17 +10,21 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.SplitPane;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
+import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import org.junit.Test;
 import org.testfx.framework.junit.ApplicationTest;
 import org.testng.AssertJUnit;
 import static org.testng.AssertJUnit.assertEquals;
-import org.testng.annotations.Test;
+//import org.testng.annotations.Test;
 
 /**
  *
@@ -32,9 +36,33 @@ public class AdvancementsFxmlTest extends ApplicationTest
     Scene scene;
     
     @Test
-    public void someTest()
+    public void adventure_monstersHunted_font()
     {
-        System.out.println("this is a test - 12345431 - kjljl;kjlkjl;j");
+System.out.println("this is a test - fonto");
+
+        TabPane rootNode = (TabPane) scene.getRoot();
+        
+        Tab adventureTab = rootNode.getTabs().get(1);
+        
+        String title = adventureTab.getText();
+        
+        assertEquals("Adventure", title);
+        
+        SplitPane splitPane = (SplitPane) adventureTab.getContent();
+
+        ScrollPane scrollPane = (ScrollPane) splitPane.getItems().get(1);
+        
+        SplitPane textAreaSplitPane = (SplitPane) scrollPane.getContent();
+        
+        TextArea haveNotsTextArea = (TextArea) textAreaSplitPane.getItems().get(1);
+        
+        Font font = haveNotsTextArea.getFont();
+        
+        var expected = "minecraft";
+        
+        var actual = font.getName();
+        
+        assertEquals(expected, actual);
     }
     
     @FXML
@@ -54,7 +82,7 @@ public class AdvancementsFxmlTest extends ApplicationTest
     }
   
     @org.junit.Test
-    public void hasHelloWorldButton() throws IOException 
+    public void husbandry_completeCatalogue_imageIsAvailable() throws IOException 
     {
         System.out.println("this = " + this);
 
