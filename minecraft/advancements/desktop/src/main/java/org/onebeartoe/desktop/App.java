@@ -79,9 +79,7 @@ public class App extends Application
     @Override
     public void start(Stage stage) throws IOException 
     {
-        String path = App.class.getResource("minecraft.ttf").toExternalForm();
-
-        Font.loadFont(path, 10);        
+        loadMinecraftFont();
         
         var initialRoot = screenNames[4];
 
@@ -144,5 +142,14 @@ public class App extends Application
 //        System.setProperty("javafx.preloader", SplashScreen.class.getName());
    
         launch();
+    }
+
+    public static Font loadMinecraftFont() 
+    {
+        String path = App.class.getResource("minecraft.ttf").toExternalForm();
+
+        var font = Font.loadFont(path, 10);
+
+        return font;
     }
 }
