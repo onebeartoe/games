@@ -80,5 +80,11 @@ public class GameMenuController
 //System.out.println("play selected world -> advancements: " + mediaView);
         
         App.setRoot("super-secret");
-    }    
+    }
+    
+    @FXML
+    private void switchToTitle() throws IOException
+    {
+        App.setRoot("title-screen");
+    }   
 }
