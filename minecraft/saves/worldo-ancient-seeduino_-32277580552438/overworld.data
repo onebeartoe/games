@@ -76,6 +76,8 @@
 
 
 # Lush Caves 1
+#	There is a mini-base here.
+#	It has Allay, Axolotl, horse, and a Sniffer.
 -1070, 63, 1344, "LC1"
 
 
@@ -97,9 +99,9 @@
 
 
 # Village 7
-# I just started a base here...
-# The base is picking up.
-# There is Librian with a Mending Book trade here, as well as an Unbreaking trader.  I Enchanted the 1st Elytra here.
+#	This is a Savana village.
+#	The base is picking up.
+#	There is Librian with a Mending Book trade here, as well as an Unbreaking trader.  I Enchanted the 1st Elytra here.
 -304, 64, 1943, "V7"
 
 
