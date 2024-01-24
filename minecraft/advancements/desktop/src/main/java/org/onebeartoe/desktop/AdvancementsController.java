@@ -80,7 +80,8 @@ public class AdvancementsController
         
         husbandryHBox.setSpacing(10);
         
-        var advancementsPath = "/home/roberto/.minecraft/saves/worldo/advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";
+        var advancementsPath = "/home/roberto/.minecraft/saves/seedro/advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";
+//        var advancementsPath = "/home/roberto/.minecraft/saves/worldo/advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";
         
         playerAdvancementsService = new PlayerAdvancementsService();
         
