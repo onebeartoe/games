@@ -98,6 +98,11 @@
 -524, ~, 1332, "SH1"
 
 
+
+# Mineshaft 
+-584, -20, 1384, "MS1"
+
+
 # Village 7
 #	This is a Savana village.
 #	The base is picking up.
@@ -262,9 +267,15 @@
 
 
 # Village 8
-#	Plains Village with a mini-base
-#
+#	Plains Village with a villager base.
+#	It is nice here near a large Savana.
 3065, 86, 1383, "V8"
+
+
+# Armadillo Sight 2
+#	There are some Armadillos here:
+#	(I did not record the location of the first sight of Armadillos.)
+2700, 71, 1275, "A2"
 
 
 # Witch Hut
