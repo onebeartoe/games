@@ -40,19 +40,17 @@
                         </ScrollPane>
                      </bottom>
                      <center>
-                        <BorderPane >                         
-
-                            
-                           <center>
-                              <ImageView 
-AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"                                  
-                                  onMouseClicked="#switchToSecondary" 
-                                  opacity="0.7" 
-                                  pickOnBounds="true" 
-                                  preserveRatio="false"
-scaleX="1.1"
-scaleY="1.1"
-                                  BorderPane.alignment="CENTER">
+                        <BorderPane >
+                            <center>
+                                <ImageView 
+                                    AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"                                  
+                                    onMouseClicked="#handlePlayButton" 
+                                    opacity="0.7" 
+                                    pickOnBounds="true" 
+                                    preserveRatio="false"
+                                    scaleX="1.1"
+                                    scaleY="1.1"
+                                    BorderPane.alignment="CENTER">
              
                                  <image>
                                     <Image url="@Minecraft_Trails-and-Tales_.Net_400x225.png"/>
@@ -96,7 +94,7 @@ scaleY="1.1"
       <VBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" spacing="20.0" BorderPane.alignment="CENTER">
          <children>
             <Label text="Primary" />
-            <Button fx:id="primaryButton" onAction="#switchToSecondary" text="Switch" />
+            <Button fx:id="primaryButton" onAction="#handlePlayButton" text="Switch" />
          </children>
          <padding>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
