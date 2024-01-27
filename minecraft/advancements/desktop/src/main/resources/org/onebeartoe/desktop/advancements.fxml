@@ -97,16 +97,16 @@ spacing="20.0"
                               </ImageView>
                            </children>
                         </HBox>                  
-                      <ScrollPane>
-                         <content>
+<!--                      <ScrollPane>
+                         <content>-->
                             <SplitPane dividerPositions="0.5">
                               <items>
                                   <TextArea fx:id="advancementsHavesTextArea" />
                                   <TextArea fx:id="advancementsHaveNotsTextArea"/>
                               </items>
                             </SplitPane>
-                         </content>
-                      </ScrollPane>
+<!--                         </content>
+                      </ScrollPane>-->
                   </items>
                 </SplitPane>
             </content>
