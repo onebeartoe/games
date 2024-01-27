@@ -23,16 +23,14 @@
             <SplitPane dividerPositions="0.5" orientation="VERTICAL" centerShape="true" >
                 <items>
                     <HBox fx:id="netherHBox"
-                        alignment="CENTER"  >
+                          alignment="CENTER"  >
                        <children>
                             <ImageView 
                                 fx:id="hotTouristDestinationsImage"
                                 fitHeight="150.0" fitWidth="200.0" 
-onMouseClicked="#showHotTouristDestinationsData" 
+                                onMouseClicked="#showHotTouristDestinationsData" 
                                 pickOnBounds="true" 
                                 preserveRatio="true" >
-    
-                                                           
 <!--onAction="#showHotTouristDestinationsData"-->
                                 <image>                                    
 <!--TODO: add a test to make sure this image is not null and present on the GUI -->
@@ -45,16 +43,20 @@ onMouseClicked="#showHotTouristDestinationsData"
                        </children>
                     </HBox>
 
-                    <ScrollPane>
-                     <content>
-                        <SplitPane dividerPositions="0.5">
+<!--                    <ScrollPane>
+                     <content>-->
+                        <SplitPane 
+                            
+                        >
+<!--dividerPositions="0.5"-->                            
+                            
                           <items>
                               <TextArea fx:id="netherHavesTextArea" />
                               <TextArea fx:id="netherHaveNotsTextArea"/>
                           </items>
                         </SplitPane>
-                     </content>
-                  </ScrollPane>
+<!--                     </content>
+                  </ScrollPane>-->
               </items>
             </SplitPane>
         </content>
