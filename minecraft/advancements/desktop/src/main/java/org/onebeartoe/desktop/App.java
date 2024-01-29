@@ -81,7 +81,7 @@ public class App extends Application
     {
         loadMinecraftFont();
         
-        var initialRoot = screenNames[1];
+        var initialRoot = screenNames[5];
 
         Parent parent = (Parent) loadFXML(initialRoot);        
         

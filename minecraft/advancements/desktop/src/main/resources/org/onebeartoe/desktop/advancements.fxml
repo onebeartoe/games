@@ -62,9 +62,16 @@
         </content>
       </Tab>
       <Tab text="Adventure">
-        <graphic>
-
-        </graphic>
+            <graphic>
+              <ImageView  
+                         pickOnBounds="true" 
+                         preserveRatio="true">
+                <image>
+                    
+                  <Image url="@paper.png" />
+                </image>
+              </ImageView>
+            </graphic>
             <content>
                 <SplitPane dividerPositions="0.5" orientation="VERTICAL">
                   <items>
