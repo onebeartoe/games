@@ -118,8 +118,8 @@ public class App extends Application
                 
         // dark mode
         scene.getRoot().setStyle("-fx-base:black");
-        
-        var styleSheets = "/org/onebeartoe/desktop/" + fmxlToStyleSheets.get(fxml);                                                
+         
+        var styleSheets = "/org/onebeartoe/desktop/" + fmxlToStyleSheets.get(fxml);
         scene.getStylesheets().add(styleSheets);
         
 //var fontSheet =         getClass().getResource("custom-font-styles.css").toExternalForm()
