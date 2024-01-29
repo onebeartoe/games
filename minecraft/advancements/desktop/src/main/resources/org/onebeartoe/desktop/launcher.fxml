@@ -93,8 +93,19 @@
    <left>
       <VBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" spacing="20.0" BorderPane.alignment="CENTER">
          <children>
-            <Label text="Primary" />
-            <Button fx:id="primaryButton" onAction="#handlePlayButton" text="Switch" />
+            <Label text="Current User" />
+            <Button fx:id="primaryButton" 
+                    onAction="#handlePlayButton" 
+                    text="Switch" />
+            <Label text="What's&#xD;New" >
+                <graphic>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                      <Image url="http://icons.iconarchive.com/icons/mirella-gabriele/fantasy-mediaeval/128/Poison-red-icon.png" />
+                    </image>
+                  </ImageView>
+                </graphic>
+            </Label>
          </children>
          <padding>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
