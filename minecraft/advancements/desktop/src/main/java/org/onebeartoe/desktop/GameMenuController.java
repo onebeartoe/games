@@ -41,12 +41,16 @@ public class GameMenuController
     public void initialize() throws URISyntaxException, IOException
     {
         String css = """
-                     -fx-border-color: red;
                      -fx-border-insets: 5;
-                     -fx-border-width: 3;
-                     -fx-border-style: dashed;
                      -fx-text-fill: green;
-                     """;
+                     """;        
+//        String css = """
+//                     -fx-border-color: red;
+//                     -fx-border-insets: 5;
+//                     -fx-border-width: 3;
+//                     -fx-border-style: dashed;
+//                     -fx-text-fill: green;
+//                     """;
 
         vBox.setStyle(css);
         
