@@ -4,6 +4,8 @@
 
 **/target/*
 
+**/.openjfx/*
+
 **/.idea/
 
 **/*.project
