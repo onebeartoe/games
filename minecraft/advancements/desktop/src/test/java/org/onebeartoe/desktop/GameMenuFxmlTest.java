@@ -18,7 +18,7 @@ import static org.testng.AssertJUnit.assertEquals;
  */
 public class GameMenuFxmlTest extends ApplicationTest
 {
-    private GameMenuController implementation;
+//    private GameMenuController implementation;
     
     Scene scene;
     
@@ -48,9 +48,8 @@ public class GameMenuFxmlTest extends ApplicationTest
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("game-menu" + ".fxml"));        
         Object root = fxmlLoader.load();        
         Parent parent = (Parent) root;                  
-        System.out.println("inititititit");              
+           
         scene = new Scene(parent, 640, 480);         
-
 
         stage.setScene(scene);
         stage.show();

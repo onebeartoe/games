@@ -33,13 +33,14 @@ import static org.testng.AssertJUnit.assertEquals;
  */
 public class AdvancementsFxmlTest extends ApplicationTest
 {
-    private AdvancementsController implementation = new AdvancementsController();
+//    private AdvancementsController implementation = new AdvancementsController();
     
     Scene scene;
     
 //TODO: find a way to verify the font
 //      or get rid of this test    
 //    @Test( )
+@Deprecated    
     public void adventure_monstersHunted_font()
     {
 System.out.println("this is a test - fonto");
