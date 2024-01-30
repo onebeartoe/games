@@ -35,12 +35,6 @@ public class GameMenuFxmlTest extends ApplicationTest
         System.out.println("never called????");
     }
     
-    @Test
-    public void someTest()
-    {
-        System.out.println("this is a test - 12345431 - kjljl;kjlkjl;j");
-    }
-    
     @FXML
     @Override
     public void start(Stage stage) throws Exception 

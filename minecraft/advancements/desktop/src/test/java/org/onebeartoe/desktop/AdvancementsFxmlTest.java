@@ -17,16 +17,13 @@ import javafx.scene.control.TabPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
-import org.junit.Test;
 import org.testfx.framework.junit.ApplicationTest;
 import org.testng.AssertJUnit;
 import static org.testng.AssertJUnit.assertEquals;
-//import org.testng.annotations.Test;
 
 /**
  *
