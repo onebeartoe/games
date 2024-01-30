@@ -93,13 +93,15 @@
 
 
 # Stronghold 1
-# The End Portal is at -543, -38, 1301
-# I found 2 Eye Trims in the Library, -520, -38, 1343
+# 	The End Portal is at -543, -38, 1301
+# 	I found 2 Eye Trims in the Library, -520, -38, 1343
+#	There is a Savana biome near by here.
 -524, ~, 1332, "SH1"
 
 
 
 # Mineshaft 
+#	At the surface, this is right next to a Lukewarm Ocean.
 -584, -20, 1384, "MS1"
 
 
