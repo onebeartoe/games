@@ -10,7 +10,7 @@ Intro
 
 		Minecraft Youtuber
 
-		saw her inventory mod
+		saw an inventory mod in her video
 
 		prompted me to update and put a UI on the command line version
 
@@ -35,7 +35,7 @@ Demonstrate Use Case (without companion app)
 				show how complete cataloge is 10/11
 				but does not show which is missing
 
-	show how to find the advancemenst/uuid78415743tgnlke.json file
+	show how to find the advancements/uuid78415743tgnlke.json file
 		file:///home/roberto/.minecraft/
 			(worldo for this)
 
@@ -62,14 +62,18 @@ Demonstrate Companion App
 
 State of the App
 
-	no Binary distribuion yet
+	no Binary distribution yet
 
-	still in developmente
+	still in development
 
-	feedback and contructive critizim are welcom
+	feedback and constructive criticism are welcome
 
 
 Outro
 	Again, specail thanks goes to Sakana Ren for inspiring me to work on the GUI for this project.
 
-	And thank you for watching.  Like and subscribe for more Minecraft desktop application development with JavaFX.
+	Thank you for watching.  Like and subscribe for more Minecraft desktop application development with JavaFX.
+
+
+
+
