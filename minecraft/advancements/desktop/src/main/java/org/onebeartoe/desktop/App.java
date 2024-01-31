@@ -74,14 +74,13 @@ public class App extends Application
         fmxlToStyleSheets.put(screenNames[4], screenNames[4] + ".css");
         fmxlToStyleSheets.put(screenNames[5], screenNames[5] + ".css");
     }
-
     
     @Override
     public void start(Stage stage) throws IOException 
     {
         loadMinecraftFont();
         
-        var initialRoot = screenNames[5];
+        var initialRoot = screenNames[3];
 
         Parent parent = (Parent) loadFXML(initialRoot);        
         
