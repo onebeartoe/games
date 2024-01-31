@@ -180,4 +180,18 @@
                         
         </plugins>
     </build>
+
+    <profiles>
+            <profile>
+                    <id>analyze-test-classes</id>
+                    <properties>
+                            <sonar.token>squ_fb76cf10f0e7d9ac6fc7df43b122a6c80401cc6a</sonar.token>
+                            <sonar.sources>src/test/java</sonar.sources>
+                            <sonar.tests></sonar.tests>
+                            <sonar.projectName>${project.name}-tests</sonar.projectName>
+                            <sonar.projectKey>${project.groupId}:${project.artifactId}-tests</sonar.projectKey>
+                            
+                    </properties>
+            </profile>
+    </profiles>
 </project>
