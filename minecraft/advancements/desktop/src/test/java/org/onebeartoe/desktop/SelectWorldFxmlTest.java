@@ -1,11 +1,18 @@
 
 package org.onebeartoe.desktop;
 
+import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.prefs.BackingStoreException;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Button;
+
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.Node;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
@@ -16,6 +23,7 @@ import org.junit.Test;
 import org.testfx.framework.junit.ApplicationTest;
 import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertNotNull;
+import static org.testng.AssertJUnit.assertTrue;
 
 /**
  *
@@ -29,19 +37,25 @@ public class SelectWorldFxmlTest extends ApplicationTest
     public void init() throws IOException
     {
 System.out.println("init() is called");
+        
+
     }
 
     @FXML
     public void initialize() throws IOException
     {
 System.out.println("initialize() is called");
+
+        System.setProperty("minecraft.home", "src/test/resources/minecraft");
     }
     
     @FXML
     @Override
-    public void start(Stage stage) throws Exception 
+    public void start(Stage stage) throws Exception, BackingStoreException
     {
-        System.setProperty("user.home", "src/test/resources/minecraft/saves");
+        CompanionAppPreferences.savesPath("src/test/resources/minecraft");
+String debug = System.getProperty("minecraft.home");
+System.out.println("debug = " + debug);
         
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("select-world" + ".fxml"));        
         Object root = fxmlLoader.load();        
@@ -55,7 +69,7 @@ System.out.println("initialize() is called");
     }
     
     @Test
-    public void userInterfaceComponents()
+    public void userInterfaceComponents() throws MalformedURLException
     {
         var root = (BorderPane) scene.getRoot();
         
@@ -84,7 +98,7 @@ System.out.println("initialize() is called");
         //TODO: verify botton pane
     }
 
-    private void dynamicComponents(BorderPane root) 
+    private void dynamicComponents(BorderPane root) throws MalformedURLException 
     {
         var savesContainer = (VBox) root.getCenter();
         
@@ -92,27 +106,30 @@ System.out.println("initialize() is called");
 
         // button text
 //TODO: remove the 3 hardcoded values in the FXML
-        var cringyGullButton = (Button) children.get(3);
+        var cringyGullLabel = (Label) children.get(3);
         
-        var actual = cringyGullButton.getText();
+        var actual = cringyGullLabel.getText();
         
+        // the first dynamic world is named after CringyGull
         var expected = "cringygull";
-        
+
         assertEquals(expected, actual);
         
         // button icon
-        var graphic = cringyGullButton.getGraphic();
-
-//TODO: pick up here        
-//        graphic.
+        ImageView imageView = (ImageView) cringyGullLabel.getGraphic();
         
-throw new UnsupportedOperationException("do the icon now!");         
+        var image = (Image) imageView.getImage();
         
-        // root (BorderPane) -> center -> VBoX -> children
-        //                          -> CringyGull
-//                                            -> Text
-//                                            -> Icon
+        assertNotNull(image);
         
+        String location = image.getUrl();
         
+        assertTrue(location.endsWith("icon.png") );
+        
+        URL url = new URL(location);
+        
+        File file = new File(url.getFile() );
+        
+        assertTrue(file.exists());
     }
 }

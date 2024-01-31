@@ -6,6 +6,9 @@ import java.net.URISyntaxException;
 import java.util.stream.Stream;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaView;
@@ -31,20 +34,28 @@ public class SelectWorldController
         // find the Minecraft saves directory
         // usually "~/.minecraft/saves", but will dynamically check
         // the user home directory as a 
-        var path = System.getProperty("user.home");
-        System.out.println("SelectWorldContorller user home = " + path);
+        var path = System.getProperty("minecraft.home");
+        System.out.println("SelectWorldContorller minecraft home rawdog: " + path);
         
-        var minecraftSavesPath = path + "";
+        path = System.getenv("minecraft.home");
+        System.out.println("env SelectWorldContorller minecraft home rawdog: " + path);
         
-        var savesDir = new File(path);
+        if(path == null)
+        {
+            path = System.getProperty("user.home") + "/.minecraft";
+        }
+        
+        path = CompanionAppPreferences.savesPath();
+        
+        var minecraftSavesPath = path + "/saves";
+        
+        var savesDir = new File(minecraftSavesPath);
+
         var exists = savesDir.exists();
+
         System.out.println("exists = " + exists);
         
         String[] list = savesDir.list();
-        
-//        System.out.println("world list unfiltered= ");
-//        Stream.of(list)
-//                .forEach(System.out::println);
         
         var children = vBox.getChildren();
 
@@ -53,11 +64,21 @@ public class SelectWorldController
                 .filter(item -> !item.startsWith("."))
                 .forEach(save -> 
                 {
-                    System.out.println("save:" + save);
+                    Label label = new Label(save);
 
-                    Button button = new Button(save);
+                    var child = "/" + save + "/icon.png";
+                    
+                    var iconFile = new File(savesDir, child);
 
-                    children.add(button);
+                    var imagePath = iconFile.toURI().toString();
+                    
+                    Image image = new Image(imagePath);
+                    
+                    ImageView imageView = new ImageView(image);
+                    
+                    label.setGraphic(imageView);
+
+                    children.add(label);
                 });
     }
     
