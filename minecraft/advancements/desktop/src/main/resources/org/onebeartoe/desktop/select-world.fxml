@@ -13,21 +13,19 @@
    <center>
       <VBox fx:id="vBox" 
             alignment="CENTER"
-            styleClass="worldButtons"
-      >
-          <children>
-              
-              <Button fx:id="worldButton1" onAction="#switchToPrimary" text="Worldo" />
-            <Button fx:id="splashButton1" onAction="#switchToPrimary" text="Seeduino" />
-            <Button fx:id="splashButton2" onAction="#switchToPrimary" text="Dragon Fart" />
-          </children>
-          <padding>
-              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-          </padding>
+            styleClass="worldButtons">
+            <children>
+                <Button fx:id="worldButton1" onAction="#switchToPrimary" text="Worldo" />
+                <Button fx:id="splashButton1" onAction="#switchToPrimary" text="Seeduino" />
+                <Button fx:id="splashButton2" onAction="#switchToPrimary" text="Dragon Fart" />
+            </children>
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
       </VBox>
    </center>
    <top>
-      <VBox fx:id="vBox1" alignment="CENTER" spacing="20.0" BorderPane.alignment="CENTER">
+      <VBox fx:id="vBox1234567" alignment="CENTER" spacing="20.0" BorderPane.alignment="CENTER">
          <children>
             <Label text="Select World" />
             <TextField />
