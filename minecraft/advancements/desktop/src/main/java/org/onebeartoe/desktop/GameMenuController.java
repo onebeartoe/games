@@ -26,9 +26,6 @@ public class GameMenuController
     Button advancementsButton;
 
     @FXML
-    Button superSecretButton;
-
-    @FXML
     Button optionsButton;
 
     @FXML
@@ -63,32 +60,20 @@ public class GameMenuController
 
         statisticsButton.prefWidthProperty().bind( vBox.widthProperty().multiply(widthPercentage) );
 
-        superSecretButton.prefWidthProperty().bind( vBox.widthProperty().multiply(widthPercentage) );
-
         optionsButton.prefWidthProperty().bind( vBox.widthProperty().multiply(widthPercentage) );
 
         saveAndQuitButton.prefWidthProperty().bind( vBox.widthProperty().multiply(widthPercentage) );
     }
     
     @FXML
-    private void switchToPrimary() throws IOException 
-    {
-//System.out.println("game menu -> 12321: " + mediaView);
-        
-        App.setRoot("advancements");
-    }
-
-    @FXML
-    private void switchToSuperSecretOptions() throws IOException 
-    {
-//System.out.println("play selected world -> advancements: " + mediaView);
-        
-        App.setRoot("super-secret");
+    private void switchToOptions() throws IOException 
+    {        
+        App.switchToOptions();
     }
     
     @FXML
     private void switchToTitle() throws IOException
     {
-        App.setRoot("title-screen");
+        App.switchToTitle();
     }   
 }

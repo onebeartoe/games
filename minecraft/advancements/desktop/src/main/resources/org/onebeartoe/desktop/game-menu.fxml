@@ -23,7 +23,6 @@
             scaleY="1.1"
             BorderPane.alignment="CENTER">
             <image>
-                <!--<Image url="@minecraft-title-screen.gif"/>-->
                 <Image url="@game-menu-background.png" />
             </image>
         </ImageView>
@@ -33,15 +32,14 @@
               spacing="20.0" >
             <children>
                 <Label text="Game Menu" />
-                <Button fx:id="backButton"         onAction="#switchToPrimary" text="Back to Game" />
-                <Button fx:id="advancementsButton" onAction="#switchToPrimary" text="Advancements" />
+                <Button fx:id="backButton"         onAction="#switchToOptions" text="Back to Game" />
+                <Button fx:id="advancementsButton" onAction="#switchToOptions" text="Advancements" />
 <!--
     Which Armor Trims am I missing/having?
     Which Pottery Sherds am I missing/haging?
                 -->                
-                <Button fx:id="statisticsButton"   onAction="#switchToPrimary" text="Statistics" />
-                <Button fx:id="superSecretButton"  onAction="#switchToSuperSecretOptions" text="Super Secret Options" />
-                <Button fx:id="optionsButton"      onAction="#switchToPrimary" text="Options???" />
+                <Button fx:id="statisticsButton"   onAction="#switchToOptions" text="Statistics" />
+                <Button fx:id="optionsButton"      onAction="#switchToOptions" text="Options" />
                 <Button fx:id="saveAndQuitButton"  onAction="#switchToTitle"    text="Save and Quit to Title" />                                 
             </children>
             <padding>

@@ -32,22 +32,34 @@ public class App extends Application
           () {
 
                 @Override
-                public void handle(KeyEvent t) {
-                  if(t.getCode()==KeyCode.ESCAPE)
-                  {
+                public void handle(KeyEvent t) 
+                {
+                    if(t.getCode()==KeyCode.ESCAPE)
+                    {
                       System.out.println("click on escape");
 
-                      try {
+                      try 
+                      {
                           setRoot("game-menu");
-        //           Stage sb = (Stage)label.getScene().getWindow();//use any one object
-        //           sb.close();
-                      } catch (IOException ex) {
+                      } 
+                      catch (IOException ex) 
+                      {
                           ex.printStackTrace();
                       }
                   }
                 }
             });    
         }
+    }
+
+    static void switchToTitle() throws IOException
+    {
+        App.setRoot("title-screen");
+    }
+
+    static void switchToGameMenu() throws IOException 
+    {
+        App.setRoot("game-menu");
     }
     
     @FXML
@@ -56,16 +68,15 @@ public class App extends Application
 
     private static final String [] screenNames = 
     {
-        "splash", "launcher", "title-screen", "select-world", "game-menu", "advancements",
-
-        "super-secret"
+        "splash", "launcher", "title-screen", "select-world", "game-menu", 
+        "advancements", "options", "super-secret"
     };
 
     private static  Map<String, String> fmxlToStyleSheets;
 
     public App()
     {
-        fmxlToStyleSheets = HashMap.newHashMap(6);
+        fmxlToStyleSheets = HashMap.newHashMap(1);
         
         fmxlToStyleSheets.put(screenNames[0], screenNames[0] + ".css");
         fmxlToStyleSheets.put(screenNames[1], screenNames[1] + ".css");
@@ -73,6 +84,7 @@ public class App extends Application
         fmxlToStyleSheets.put(screenNames[3], screenNames[3] + ".css");
         fmxlToStyleSheets.put(screenNames[4], screenNames[4] + ".css");
         fmxlToStyleSheets.put(screenNames[5], screenNames[5] + ".css");
+        fmxlToStyleSheets.put(screenNames[6], screenNames[6] + ".css");
     }
     
     @Override
@@ -80,7 +92,7 @@ public class App extends Application
     {
         loadMinecraftFont();
         
-        var initialRoot = screenNames[3];
+        var initialRoot = screenNames[6];
 
         Parent parent = (Parent) loadFXML(initialRoot);        
         
@@ -96,17 +108,9 @@ public class App extends Application
         scene.getStylesheets().add("/org/onebeartoe/desktop/title-screen.css");
         
         stage.show();
-                     
-
-//        splashButton.translateXProperty()
-//            .bind(scene.widthProperty().subtract(splashButton.widthProperty())
-//                    .divide(2));
-//
-//        splashButton.translateYProperty()
-//                .bind(scene.heightProperty().subtract(splashButton.heightProperty())
-//                        .divide(2));           
     }
 
+//TODO: make this method private and provide specific "switchToXXXX()" methods    
     static void setRoot(String fxml) throws IOException 
     {
         Parent parent = (Parent) loadFXML(fxml);
@@ -151,4 +155,14 @@ public class App extends Application
 
         return font;
     }
+    
+    static void switchToSuperSecret() throws IOException
+    {
+        setRoot("super-secret");
+    }
+            
+    static void switchToOptions() throws IOException
+    {
+        setRoot("options");
+    }            
 }

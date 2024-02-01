@@ -35,15 +35,20 @@ public class SelectWorldController
         // usually "~/.minecraft/saves", but will dynamically check
         // the user home directory as a
         
-        var path = CompanionAppPreferences.savesPath();
+//        var path = CompanionAppPreferences.savesPath();
         
-        var minecraftSavesPath = path + "/saves";
+        var minecraftSavesPath = CompanionAppPreferences.savesPath();
         
         var savesDir = new File(minecraftSavesPath);
 
         var exists = savesDir.exists();
 
         System.out.println("exists = " + exists);
+        
+        if(!exists)
+        {
+            System.out.println("savesDir: " + savesDir.getAbsolutePath());
+        }
         
         String[] list = savesDir.list();
         
