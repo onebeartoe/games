@@ -30,10 +30,10 @@ public class SelectWorldController
     
     @FXML
     public void initialize() throws URISyntaxException, IOException
-    {        
+    {
         // find the Minecraft saves directory
         // usually "~/.minecraft/saves", but will dynamically check
-        // the user home directory as a 
+        // the user home directory as a
         
         var path = CompanionAppPreferences.savesPath();
         
@@ -50,6 +50,7 @@ public class SelectWorldController
         var children = vBox.getChildren();
 
         System.out.println("world list = ");        
+
         Stream.of(list)
                 .filter(item -> !item.startsWith("."))
                 .forEach(save -> 
