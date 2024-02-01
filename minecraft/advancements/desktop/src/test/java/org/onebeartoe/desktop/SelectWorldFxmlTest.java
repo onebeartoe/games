@@ -54,8 +54,6 @@ System.out.println("initialize() is called");
     public void start(Stage stage) throws Exception, BackingStoreException
     {
         CompanionAppPreferences.savesPath("src/test/resources/minecraft");
-String debug = System.getProperty("minecraft.home");
-System.out.println("debug = " + debug);
         
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("select-world" + ".fxml"));        
         Object root = fxmlLoader.load();        
