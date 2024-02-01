@@ -16,7 +16,7 @@ public class CompanionAppPreferences
     
     private CompanionAppPreferences()
     {
-        // Single Ton
+        // Single is a Ton of fun!
     }
     
     public static String savesPath()

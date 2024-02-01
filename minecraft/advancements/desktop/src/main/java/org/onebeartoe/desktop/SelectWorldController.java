@@ -34,18 +34,8 @@ public class SelectWorldController
         // find the Minecraft saves directory
         // usually "~/.minecraft/saves", but will dynamically check
         // the user home directory as a 
-        var path = System.getProperty("minecraft.home");
-        System.out.println("SelectWorldContorller minecraft home rawdog: " + path);
         
-        path = System.getenv("minecraft.home");
-        System.out.println("env SelectWorldContorller minecraft home rawdog: " + path);
-        
-        if(path == null)
-        {
-            path = System.getProperty("user.home") + "/.minecraft";
-        }
-        
-        path = CompanionAppPreferences.savesPath();
+        var path = CompanionAppPreferences.savesPath();
         
         var minecraftSavesPath = path + "/saves";
         
