@@ -32,8 +32,13 @@
               spacing="20.0" >
             <children>
                 <Label text="Game Menu" />
-                <Button fx:id="backButton"         onAction="#switchToOptions" text="Back to Game" />
-                <Button fx:id="advancementsButton" onAction="#switchToOptions" text="Advancements" />
+                <Button fx:id="backButton"         
+                    onAction="#switchToOptions" 
+                    text="Back to Game" />
+                
+                <Button fx:id="advancementsButton" 
+                    onAction="#switchToAdvancements" 
+                    text="Advancements" />
 <!--
     Which Armor Trims am I missing/having?
     Which Pottery Sherds am I missing/haging?

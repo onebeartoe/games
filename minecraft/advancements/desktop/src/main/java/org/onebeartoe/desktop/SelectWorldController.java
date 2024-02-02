@@ -33,28 +33,17 @@ public class SelectWorldController
     {
         // find the Minecraft saves directory
         // usually "~/.minecraft/saves", but will dynamically check
-        // the user home directory as a
-        
-//        var path = CompanionAppPreferences.savesPath();
+        // the user home directory
         
         var minecraftSavesPath = CompanionAppPreferences.savesPath();
         
         var savesDir = new File(minecraftSavesPath);
 
         var exists = savesDir.exists();
-
-        System.out.println("exists = " + exists);
-        
-        if(!exists)
-        {
-            System.out.println("savesDir: " + savesDir.getAbsolutePath());
-        }
         
         String[] list = savesDir.list();
         
-        var children = vBox.getChildren();
-
-        System.out.println("world list = ");        
+        var children = vBox.getChildren();  
 
         Stream.of(list)
                 .filter(item -> !item.startsWith("."))
@@ -73,6 +62,20 @@ public class SelectWorldController
                     ImageView imageView = new ImageView(image);
                     
                     label.setGraphic(imageView);
+                    
+                    
+                    
+                    label.setOnMouseClicked(
+                    (clicked) ->
+                        {
+                        try {
+                            App.switchToAdvancements();
+                        } catch (IOException ex) {
+                            ex.printStackTrace();
+                        }
+                        }
+                    );
+
 
                     children.add(label);
                 });

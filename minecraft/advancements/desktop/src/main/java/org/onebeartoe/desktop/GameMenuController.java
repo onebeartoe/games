@@ -66,6 +66,12 @@ public class GameMenuController
     }
     
     @FXML
+    private void switchToAdvancements() throws IOException
+    {
+        App.switchToAdvancements();
+    }
+    
+    @FXML
     private void switchToOptions() throws IOException 
     {        
         App.switchToOptions();

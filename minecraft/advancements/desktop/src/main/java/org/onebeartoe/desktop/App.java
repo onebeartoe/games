@@ -36,11 +36,9 @@ public class App extends Application
                 {
                     if(t.getCode()==KeyCode.ESCAPE)
                     {
-                      System.out.println("click on escape");
-
                       try 
                       {
-                          setRoot("game-menu");
+                          switchToGameMenu();
                       } 
                       catch (IOException ex) 
                       {
@@ -60,6 +58,11 @@ public class App extends Application
     static void switchToGameMenu() throws IOException 
     {
         App.setRoot("game-menu");
+    }
+
+    static void switchToAdvancements() throws IOException 
+    {
+        App.setRoot("advancements");
     }
     
     @FXML

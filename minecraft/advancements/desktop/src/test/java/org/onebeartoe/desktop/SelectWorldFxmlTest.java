@@ -53,7 +53,7 @@ System.out.println("initialize() is called");
     @Override
     public void start(Stage stage) throws Exception, BackingStoreException
     {
-        CompanionAppPreferences.savesPath("src/test/resources/minecraft");
+        CompanionAppPreferences.savesPath("src/test/resources/minecraft/saves");
         
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("select-world" + ".fxml"));        
         Object root = fxmlLoader.load();        
@@ -104,7 +104,7 @@ System.out.println("initialize() is called");
 
         // button text
 //TODO: remove the 3 hardcoded values in the FXML
-        var cringyGullLabel = (Label) children.get(3);
+        var cringyGullLabel = (Label) children.get(0);
         
         var actual = cringyGullLabel.getText();
         
