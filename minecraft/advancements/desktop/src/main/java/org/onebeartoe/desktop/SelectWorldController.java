@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaView;
@@ -22,6 +23,12 @@ public class SelectWorldController
     @FXML
     public MediaView mediaView;
     
+    @FXML
+    public VBox topVBox;
+    
+    @FXML
+    public HBox bottomHBox;
+
     @FXML
     public VBox vBox;
     
@@ -38,8 +45,6 @@ public class SelectWorldController
         var minecraftSavesPath = CompanionAppPreferences.savesPath();
         
         var savesDir = new File(minecraftSavesPath);
-
-        var exists = savesDir.exists();
         
         String[] list = savesDir.list();
         
@@ -79,6 +84,13 @@ public class SelectWorldController
 
                     children.add(label);
                 });
+        
+        String styleSheet = "/org/onebeartoe/desktop/select-world.css";
+        topVBox.getStylesheets().add(styleSheet);
+        topVBox.getStyleClass().add("dirtBackgroundImage");
+        
+        bottomHBox.getStylesheets().add(styleSheet);
+        bottomHBox.getStyleClass().add("dirtBackgroundImage");
     }
     
     @FXML

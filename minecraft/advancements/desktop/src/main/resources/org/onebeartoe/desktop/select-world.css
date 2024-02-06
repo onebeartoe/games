@@ -3,3 +3,8 @@
 {
     -fx-spacing: 8;
 }
+
+.dirtBackgroundImage
+{
+    -fx-background-image: url(dirt.jpg);
+}

@@ -25,7 +25,11 @@
       </VBox>
    </center>
    <top>
-      <VBox fx:id="vBox1234567" alignment="CENTER" spacing="20.0" BorderPane.alignment="CENTER">
+      <VBox fx:id="topVBox"
+            alignment="CENTER" 
+            spacing="20.0" 
+            BorderPane.alignment="CENTER">
+          
          <children>
             <Label text="Select World" />
             <TextField />
@@ -37,7 +41,8 @@
       </VBox>
    </top>
    <bottom>
-      <HBox spacing = "8"
+      <HBox fx:id="bottomHBox"
+            spacing = "8"
             alignment="CENTER"
             BorderPane.alignment="CENTER">
          <children>

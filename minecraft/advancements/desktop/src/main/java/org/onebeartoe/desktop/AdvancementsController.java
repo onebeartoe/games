@@ -2,7 +2,6 @@ package org.onebeartoe.desktop;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
-//import java.text.ParseException;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
