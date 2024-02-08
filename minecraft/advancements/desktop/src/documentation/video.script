@@ -20,6 +20,8 @@ Software Prerequisites
 
 	JDK
 
+        Some IDE (I am using Netbeans)
+
 User Story Review
 
     As a Minecraft player,
@@ -37,7 +39,7 @@ Demonstrate Use Case (without companion app)
 
 	show how to find the advancements/uuid78415743tgnlke.json file
 		file:///home/roberto/.minecraft/
-			(worldo for this)
+			(seedro for this)
 
 		find the Complete Catalogue
 			show how cat count match the in-game Advancments screen
@@ -70,9 +72,12 @@ State of the App
 
 
 Outro
-	Again, specail thanks goes to Sakana Ren for inspiring me to work on the GUI for this project.
+	Again, special thanks goes to Sakana Ren for 
+        inspiring me to work on the GUI for this project.
 
-	Thank you for watching.  Like and subscribe for more Minecraft desktop application development with JavaFX.
+	Thank you for watching.  
+        Like and subscribe for more 
+        Minecraft desktop application development with JavaFX.
 
 
 
