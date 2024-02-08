@@ -26,7 +26,9 @@ User Story Review
 
     As a Minecraft player,
     I need a companion app,
-    so that I can easily see what items are missing from partially complete Advancements.
+    so that I can easily see what items are missing 
+        from partially complete Advancements.
+
 
 Demonstrate Use Case (without companion app)
 
@@ -65,6 +67,7 @@ Demonstrate Companion App
 State of the App
 
 	no Binary distribution yet
+            but show jpackage script
 
 	still in development
 
