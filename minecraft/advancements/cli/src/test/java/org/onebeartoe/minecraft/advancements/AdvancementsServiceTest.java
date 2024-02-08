@@ -68,11 +68,7 @@ public class AdvancementsServiceTest
         
         String cat1 = allCategrories.get(1);
         
-//        assertTrue(!cat1.contains(":"));
-//        
-//        assertTrue(!cat1.contains("/"));
-//        
-//        assertTrue(!cat1.contains("."));
+        assertTrue( cat1.equals("minecraft:black"));
         
         assertTrue(allCategrories.size() == 11);
     }
