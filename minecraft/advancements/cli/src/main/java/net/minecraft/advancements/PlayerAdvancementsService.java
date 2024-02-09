@@ -55,8 +55,7 @@ public class PlayerAdvancementsService
         File inile = new File(advancementsPath);
                 
         JSONParser parser = new JSONParser();
-        
-        
+
         String s = Files.readString(inile.toPath());
         
         Object obj = parser.parse(s);
@@ -75,7 +74,7 @@ public class PlayerAdvancementsService
         // adventure
         JSONObject mobsKilled = (JSONObject) base.get("minecraft:adventure/kill_all_mobs");
         parseMobsKilled(mobsKilled);        
-        
+                
         return base;
     }
 
@@ -235,6 +234,7 @@ public class PlayerAdvancementsService
         JSONObject base = loadBase(advancementsPath);        
 
         JSONObject netherJson = (JSONObject) base.get("minecraft:nether/explore_nether");        
+
         advancements.nether = parseNether(netherJson);
         
         advancements.husbandry = parseHusbandry(base);
