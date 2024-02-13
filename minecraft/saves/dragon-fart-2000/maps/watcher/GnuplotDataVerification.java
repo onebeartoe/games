@@ -143,9 +143,18 @@ public class GnuplotDataVerification
             @Override
             public void run() 
             {
+                String path = "watcher/audio.1692864467107.wav";
                 try 
                 {
-                    File raid = new File("watcher/audio.1692864467107.wav");
+                    File raid = new File(path);
+//TODO: fix this hack
+if( !raid.exists() )
+{
+    //TODO: fix this hack
+    path = "../dragon-fart-2000/maps/" + path;
+
+    raid = new File(path);
+}
 
                     Clip clip = AudioSystem.getClip();
 
