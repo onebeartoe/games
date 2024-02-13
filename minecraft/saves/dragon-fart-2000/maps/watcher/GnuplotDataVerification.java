@@ -2,6 +2,7 @@
 import java.awt.Toolkit;
 import java.io.File;
 import java.io.IOException;
+import java.lang.IllegalArgumentException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.Duration;
@@ -16,9 +17,16 @@ import javax.sound.sampled.Clip;
  * This application  verifies input files are in the correct format for a 
  * 2D, with labels, Gnuplot.
  * 
- * The format is 
+ * There are 2 valid formats
  * 
+ * A) 
  *   x, y, "label"
+ * 
+ * B)
+ *   x, y, z, "label"
+ * 
+ *      For B), the second value in the list is allowed to have the 
+ *      of '~' or an integer value
  * 
  * Any line starting with a hash (#) is ignored.
  * 
@@ -32,6 +40,9 @@ public class GnuplotDataVerification
     {
         System.out.println("Hello Gnuplot Data Verification world!\n");
     
+        File pwd = new File(".");
+        System.out.println("pwd = " + pwd.getAbsolutePath());
+        
         boolean hasArguments = args.length > 0;
         
         List<File> dataFiles;
@@ -49,7 +60,9 @@ public class GnuplotDataVerification
             dataFiles = Files.walk(startPath)
                     .filter(Files::isRegularFile)
                     .map(p -> {return p.toFile(); })
-                    .filter(p -> {return p.toString().endsWith(".data");})                    
+//TODO: !!!!PUT THE CORRECT FILTER!!!!!
+.filter(p -> {return p.toString().endsWith("the-end.data");})                                        
+//                    .filter(p -> {return p.toString().endsWith(".data");})                    
                     .collect(Collectors.toList());
         }        
                 
@@ -111,13 +124,13 @@ public class GnuplotDataVerification
             {
                 entry = new CommentEntry(lineNumber, line);
             }
-            else if( isValid(line) )
-            {
-                entry = new ValidEntry(lineNumber, line);
-            }
             else if( line.trim().isBlank() )
             {
                 entry = new BlankEntry();
+            }
+            else if( isValid(line) )
+            {
+                entry = new ValidEntry(lineNumber, line);
             }
             else
             {
@@ -184,18 +197,52 @@ if( !raid.exists() )
         
         String[] split = line.split(",");
         
+        if(split.length < 2)
+        {
+            throw new IllegalArgumentException("line does not have 3 or 4 times:\n" + line);
+        }
+        
         try
         {
             var s1 = split[0].trim();
             Integer x = Integer.valueOf(s1);
             
-            var s2 = split[1].trim();
-            Integer y = Integer.valueOf(s2);
+            boolean lengthIs4 = split.length == 4;
             
-            var s3 = split[2].trim();
-            if(s3.length() < 2
-                    || !s3.startsWith("\"")
-                    || !s3.endsWith("\"") )
+            var s2 = split[1].trim();
+            
+            // allow the tilde character for s2 if there are 4 items
+            if(s2.equals("~"))
+            {
+                if(!lengthIs4)
+                {
+                    var message = "~ tilde found, but not at position 2";
+
+                    throw new IllegalArgumentException(message);
+                }
+            }
+            else
+            {
+                // otherwise verify s2 is an integer
+                Integer y = Integer.valueOf(s2);
+            }
+            
+            int lastIndex = 2;
+            
+            if(lengthIs4)
+            {
+                lastIndex = 3;
+                
+                // validate the third item in the list
+                var s3 = split[lastIndex].trim();
+                Integer z = Integer.valueOf(s3);
+            }
+            
+            var lastStr = split[lastIndex].trim();
+            
+            if(lastStr.length() < 2
+                    || !lastStr.startsWith("\"")
+                    || !lastStr.endsWith("\"") )
             {
                 // the last item should be a string begining and ending in a double quote
                 
@@ -206,6 +253,11 @@ if( !raid.exists() )
         catch(Exception e)
         {
             valid = false;
+            
+            var mesage = "\nerror with: " + Arrays.toString(split) 
+                    + "\n" + e.getClass() + " - " + e.getMessage();
+            
+            System.out.println(mesage);
         }
         
         return valid;
