@@ -61,8 +61,8 @@ public class GnuplotDataVerification
                     .filter(Files::isRegularFile)
                     .map(p -> {return p.toFile(); })
 //TODO: !!!!PUT THE CORRECT FILTER!!!!!
-.filter(p -> {return p.toString().endsWith("the-end.data");})                                        
-//                    .filter(p -> {return p.toString().endsWith(".data");})                    
+//.filter(p -> {return p.toString().endsWith("the-end.data");})                                        
+                    .filter(p -> {return p.toString().endsWith(".data");})                    
                     .collect(Collectors.toList());
         }        
                 
@@ -199,65 +199,67 @@ if( !raid.exists() )
         
         if(split.length < 2)
         {
-            throw new IllegalArgumentException("line does not have 3 or 4 times:\n" + line);
-        }
-        
-        try
-        {
-            var s1 = split[0].trim();
-            Integer x = Integer.valueOf(s1);
-            
-            boolean lengthIs4 = split.length == 4;
-            
-            var s2 = split[1].trim();
-            
-            // allow the tilde character for s2 if there are 4 items
-            if(s2.equals("~"))
-            {
-                if(!lengthIs4)
-                {
-                    var message = "~ tilde found, but not at position 2";
-
-                    throw new IllegalArgumentException(message);
-                }
-            }
-            else
-            {
-                // otherwise verify s2 is an integer
-                Integer y = Integer.valueOf(s2);
-            }
-            
-            int lastIndex = 2;
-            
-            if(lengthIs4)
-            {
-                lastIndex = 3;
-                
-                // validate the third item in the list
-                var s3 = split[lastIndex].trim();
-                Integer z = Integer.valueOf(s3);
-            }
-            
-            var lastStr = split[lastIndex].trim();
-            
-            if(lastStr.length() < 2
-                    || !lastStr.startsWith("\"")
-                    || !lastStr.endsWith("\"") )
-            {
-                // the last item should be a string begining and ending in a double quote
-                
-                throw new Exception("the label has bad formatting: " + line);
-            }
-            
-        }
-        catch(Exception e)
-        {
             valid = false;
-            
-            var mesage = "\nerror with: " + Arrays.toString(split) 
-                    + "\n" + e.getClass() + " - " + e.getMessage();
-            
-            System.out.println(mesage);
+        }
+        else
+        {
+            try
+            {
+                var s1 = split[0].trim();
+                Integer x = Integer.valueOf(s1);
+
+                boolean lengthIs4 = split.length == 4;
+
+                var s2 = split[1].trim();
+
+                // allow the tilde character for s2 if there are 4 items
+                if(s2.equals("~"))
+                {
+                    if(!lengthIs4)
+                    {
+                        var message = "~ tilde found, but not at position 2";
+
+                        throw new IllegalArgumentException(message);
+                    }
+                }
+                else
+                {
+                    // otherwise verify s2 is an integer
+                    Integer y = Integer.valueOf(s2);
+                }
+
+                int lastIndex = 2;
+
+                if(lengthIs4)
+                {
+                    lastIndex = 3;
+
+                    // validate the third item in the list
+                    var s3 = split[2].trim();
+                    Integer z = Integer.valueOf(s3);
+                }
+
+                var lastStr = split[lastIndex].trim();
+
+                if(lastStr.length() < 2
+                        || !lastStr.startsWith("\"")
+                        || !lastStr.endsWith("\"") )
+                {
+                    // the last item should be a string begining and ending in a double quote
+
+                    throw new Exception("the label has bad formatting: " + line);
+                }
+
+            }
+            catch(Exception e)
+            {
+                valid = false;
+
+                var mesage = "\nerror with: " + Arrays.toString(split) 
+                        + "\n" + e.getClass() + " - " + e.getMessage();
+
+                System.out.println(mesage);
+            }            
         }
         
         return valid;
