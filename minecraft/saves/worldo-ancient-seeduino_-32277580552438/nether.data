@@ -6,8 +6,9 @@
 
 
 # Nether Fortress 1
-# There is still loot here.
-#	There is Blaze spawner at: 
+# 	I think I got all the loot here.
+#	There is Blaze spawner at: Right aournd the corner
+#	There are many Strider here too.
 #	The return is here.
 340, 56, -251, "NF1"
 
@@ -26,7 +27,7 @@
 
 
 Village 6 Portal Outlet
--1020, 66, -544
+-1020, 66, -544, "V6PO"
 
 
 
@@ -35,10 +36,21 @@ There was a Snout Armor Trim.  But no Netherite Trim?!?
 -1184, ~, -688, "BR1"
 
 
+# Nether Fortress 2
+#	It was here, but did not have a single loot chest.
+-1376, ~, -944, "NF2"
 
 # Village 8 Portal Outlet
 374, 84, 187, "V8PO"
 
+
+
+
+Bastion Remnant 2
+#	There is one near here, but the closest room is at -232,  94 (it is actually lower), -507
+#	I found the 2 Netherite Upgrade Smithing Templates here (so far)!
+#	I think there is still loot here.  
+-224, ~, -528, "BR2"
 
 
 
