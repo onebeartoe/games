@@ -36,14 +36,23 @@ import javax.sound.sampled.Clip;
  */
 public class GnuplotDataVerification
 {
+    static boolean requireFourItems = false;
+    
     public static void main(String[] args) throws IOException 
     {
         System.out.println("Hello Gnuplot Data Verification world!\n");
     
         File pwd = new File(".");
+
         System.out.println("pwd = " + pwd.getAbsolutePath());
         
         boolean hasArguments = args.length > 0;
+        
+        String property = System.getProperty("requireFourItems");
+
+        System.out.println("require 4 property = " + property);
+
+        requireFourItems = Boolean.parseBoolean(property);
         
         List<File> dataFiles;
                 
@@ -200,6 +209,13 @@ if( !raid.exists() )
         if(split.length < 2)
         {
             valid = false;
+        }
+        else if(requireFourItems)
+        {
+            if(split.length != 4)
+            {
+                valid = false;
+            }
         }
         else
         {
