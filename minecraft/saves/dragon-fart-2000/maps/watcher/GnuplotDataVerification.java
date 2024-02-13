@@ -2,7 +2,6 @@
 import java.awt.Toolkit;
 import java.io.File;
 import java.io.IOException;
-import java.lang.IllegalArgumentException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.Duration;
@@ -37,6 +36,14 @@ import javax.sound.sampled.Clip;
 public class GnuplotDataVerification
 {
     static boolean requireFourItems = false;
+
+    static long minX = Long.MAX_VALUE;
+    
+    static long maxX = Long.MIN_VALUE;
+    
+    static long minZ = Long.MAX_VALUE;
+    
+    static long maxZ = Long.MIN_VALUE;    
     
     public static void main(String[] args) throws IOException 
     {
@@ -54,6 +61,8 @@ public class GnuplotDataVerification
 
         requireFourItems = Boolean.parseBoolean(property);
         
+        System.out.println("requireFourItems = " + property);
+                
         List<File> dataFiles;
                 
         if(hasArguments)
@@ -168,6 +177,7 @@ public class GnuplotDataVerification
                 try 
                 {
                     File raid = new File(path);
+
 //TODO: fix this hack
 if( !raid.exists() )
 {
@@ -206,16 +216,13 @@ if( !raid.exists() )
         
         String[] split = line.split(",");
         
-        if(split.length < 2)
+        if(requireFourItems && split.length != 4)
         {
             valid = false;
         }
-        else if(requireFourItems)
+        else if(split.length < 2)
         {
-            if(split.length != 4)
-            {
-                valid = false;
-            }
+            valid = false;
         }
         else
         {
@@ -223,7 +230,17 @@ if( !raid.exists() )
             {
                 var s1 = split[0].trim();
                 Integer x = Integer.valueOf(s1);
-
+                
+                if(minX > x)
+                {
+                    minX = x;                    
+                }
+                
+                if(maxX < x)
+                {
+                    maxX = x;
+                }
+                
                 boolean lengthIs4 = split.length == 4;
 
                 var s2 = split[1].trim();
@@ -245,14 +262,24 @@ if( !raid.exists() )
                 }
 
                 int lastIndex = 2;
-
+                
                 if(lengthIs4)
-                {
-                    lastIndex = 3;
+                {            
+                    lastIndex = 3;                  
 
                     // validate the third item in the list
                     var s3 = split[2].trim();
                     Integer z = Integer.valueOf(s3);
+                    
+                    if(minZ > z)
+                    {
+                        minZ = z;
+                    }
+                    
+                    if(maxZ < z)
+                    {
+                        maxZ = z;     
+                    }                    
                 }
 
                 var lastStr = split[lastIndex].trim();
