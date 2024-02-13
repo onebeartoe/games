@@ -37,14 +37,16 @@
 
 
 # Village 2
-# 	So far, this is my main base.
+# 	This is my main base.
 #	This base has good villager trades and
-#	 	a cool 'Cat gift' farm.
+#	 	a cool 'Cat gift' farm
+#		and a Drip Ston Cave by the Lava Cauldrons.
 #	Armor Trims
 #		Coast
 #		Dune
 #		Eye
 #		Host
+#		Netherite Upgrade
 #		Raiser
 #		Shaper
 #		Silence
@@ -54,7 +56,7 @@
 #		Wayfinder
 #		Wild
 
-#               Missing Netherite Upgrade, Spire, Rib
+#               Missing Spire, Rib
 
 #		
 #	Pottery Sherds
@@ -333,6 +335,10 @@
 2264, ~, 1976, "WOR3"
 
 
+# Nether Portal to Bastion Remnant 2
+#	There is a Illager Outpost right by here!
+#	The mini-base here has an Ender Chest.
+-1762, 68, -4214
 
 
 # Village 6
