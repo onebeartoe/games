@@ -135,7 +135,7 @@
 # Shipwrek 1
 # I got two coast trims here.
 # I had to leave a horse here, to get back more quickly cuase of the water.
--1128, ~, 1350, 
+-1128, ~, 1350, "SW1"
 
 
 # Dripstone Cave 1
@@ -338,7 +338,7 @@
 # Nether Portal to Bastion Remnant 2
 #	There is a Illager Outpost right by here!
 #	The mini-base here has an Ender Chest.
--1762, 68, -4214
+-1762, 68, -4214, "NPtBR2"
 
 
 # Village 6
