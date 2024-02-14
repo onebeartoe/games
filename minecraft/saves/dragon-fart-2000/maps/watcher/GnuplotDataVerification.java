@@ -87,6 +87,14 @@ public class GnuplotDataVerification
         GnuplotDataVerification app = new GnuplotDataVerification();
         
         app.verify(dataFiles);
+        
+        
+        System.out.println("min x: " + minX);
+        System.out.println("max x: " + maxX);
+
+        // show the z min/max values
+        System.out.println("min z: " + minZ);
+        System.out.println("max z: " + maxZ);        
     }
     
     private void verify(List<File> dataFiles) throws IOException
