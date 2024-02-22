@@ -8,6 +8,15 @@
 
 
 # End City 1 (with End Ship)
-# There was a bunc at End Portal 1, but this is the first one with an End Ship.
-# There is and Ender Chest here and still some loot in the towers.
+#	There was a bunc at End Portal 1, but this is the first one with an End Ship.
+#	There is and Ender Chest here and still some loot in the towers.
 -1552, ~, 3280, "EC1"
+
+
+# End Portal 2 Return
+1006, 60, -325, "EP2R"
+
+# End City 2
+#	I found the Spire Smithing Template here and the second End Ship here!
+#	I think there is still loot here.
+1328, ~, -1200, "EC2"
