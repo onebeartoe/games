@@ -40,9 +40,18 @@
 #	It was here, but did not have a single loot chest.
 -1376, ~, -944, "NF2"
 
+
+
 # Village 8 Portal Outlet
+#	There is a Nether Fortress (6) right by here.
 374, 84, 187, "V8PO"
 
+
+
+# Nether Fortress 6
+#	I found a Rib Armor Trim here!
+#	I think there is still loot here.
+304, ~, 208, "NF6"
 
 
 
@@ -54,3 +63,7 @@
 
 
 
+# Nether Fortress 3 not a dang one had the Rib Trim.
+-1216, ~, 304, "NF3", yep it is here
+-1461, ~, 283, "NF4", yept i is here
+-1029, ~, 475, "NF5" it is there
