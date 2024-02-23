@@ -48,16 +48,24 @@
 #		Host
 #		Netherite Upgrade
 #		Raiser
+#		Rib
 #		Shaper
 #		Silence
+#      		Spire
 #		Tide
 #		Vex
 #		Ward
 #		Wayfinder
 #		Wild
-
-#               Missing Spire, Rib
-
+#
+#      Fully trimed armor set
+#		https://minecraft.wiki/w/Smithing_Template#Gallery
+#		Helmet     - Wayfinder
+#		Chestplate - Snout
+#		Pants      - Tide
+#		Boots      - Spire
+#		https://armortrims.com/?h=14:1:6&c=9:1:6&l=11:1:6&b=10:1:6
+#
 #		
 #	Pottery Sherds
 #		Angler
@@ -75,6 +83,11 @@
 #		Shelter
 #		Skull
 #		Snort
+#	Missing: Arms Up, Brewer (Desert well)
+#		 Friend, Sheaf (Trail Ruins)
+#		 Miner (Desert Pyramid)
+
+		 
 #
 -1632, ~, 704, "V2"
 
@@ -105,7 +118,7 @@
 
 
 
-# Mineshaft 
+# Mineshaft 1
 #	At the surface, this is right next to a Lukewarm Ocean.
 #	I am trying to get the rare blue Axolotl here.
 #
@@ -292,7 +305,7 @@
 # Armadillo Sight 2
 #	There are some Armadillos here:
 #	(I did not record the location of the first sight of Armadillos.)
-2700, 71, 1275, "A2"
+2700, 71, 1275, "AS2"
 
 
 # Witch Hut
