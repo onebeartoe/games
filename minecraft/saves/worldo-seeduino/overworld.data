@@ -40,7 +40,7 @@
 # 	This is my main base.
 #	This base has good villager trades and
 #	 	a cool 'Cat gift' farm
-#		and a Drip Ston Cave by the Lava Cauldrons.
+#		and a Drip Stone Cave by the Lava Cauldrons.
 #	Armor Trims
 #		Coast
 #		Dune
@@ -48,22 +48,26 @@
 #		Host
 #		Netherite Upgrade
 #		Raiser
-#		Rib
+#		Rib []
 #		Shaper
-#		Silence
-#      		Spire
-#		Tide
-#		Vex
-#		Ward
-#		Wayfinder
+#		Silence []
+#		Snout [x]
+#      		Spire [x]
+#		Tide [x]
+#		Vex []
+#		Ward []
+#		Wayfinder [x]
 #		Wild
+#
+#		* [] indicates a 'Smithing with Style' Advancement
+#
 #
 #      Fully trimed armor set
 #		https://minecraft.wiki/w/Smithing_Template#Gallery
-#		Helmet     - Wayfinder
-#		Chestplate - Snout
-#		Pants      - Tide
-#		Boots      - Spire
+#		Helmet     - Wayfinder [x]
+#		Chestplate - Snout [x]
+#		Pants      - Tide [x]
+#		Boots      - Spire [x]
 #		https://armortrims.com/?h=14:1:6&c=9:1:6&l=11:1:6&b=10:1:6
 #
 #		
@@ -85,9 +89,7 @@
 #		Snort
 #	Missing: Arms Up, Brewer (Desert well)
 #		 Friend, Sheaf (Trail Ruins)
-#		 Miner (Desert Pyramid)
-
-		 
+#		 Miner (Desert Pyramid)		 
 #
 -1632, ~, 704, "V2"
 
@@ -120,7 +122,8 @@
 
 # Mineshaft 1
 #	At the surface, this is right next to a Lukewarm Ocean.
-#	I am trying to get the rare blue Axolotl here.
+#	I am trying to get the rare blue Axolotl, there a decent setup here.
+#	At the mineshaft level, there is a Spider spawner!
 #
 -584, -20, 1384, "MS1"
 
