@@ -1,7 +1,7 @@
 
 
 # World Spawn Point
-#	There is a decent little mini-base here.
+#	There is a decent little mini-base here, but no Ender Chest yet.
 -73, 71, 53, "WS"
 
 
@@ -32,6 +32,7 @@
 
 
 # Village 1 
+#	It is by a cave, but still have the Villages in 'protect mode'.
 -304, ~, 384, "V1"
 
 
@@ -126,6 +127,15 @@
 #	So there may but 1/2 more chests, but it is pretty much looted.
 #	But most of the Loot and Base expansion materials and resources are at the top mini-base.
 -1864, -51, 408, "AC1"
+
+
+
+# Ancient City 2
+#	This one is near the first one.
+#	It is actually two Acient Cities connected to eachother.
+#	The second Ancient City still has some chests to loot.
+-2296, -51, 488, "AC2"
+
 
 
 # Ancient City 1 Runined Nether Portal
