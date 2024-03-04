@@ -25,6 +25,7 @@
 
 # Ocean Monument 1
 #	Stony Shore mini-base: 320, 210
+#	The mini-base has a Frozen Ocean near.	
 #	Yep, it is there and I got a Tide trim on the first Elder Gaurdian!   :)
 #	I got the gold, but not the sponges yet.
 # 648, ~, 152, "OM1"
@@ -45,6 +46,11 @@
 #		and I keep Armor Trimed items here.
 -1632, ~, 704, "V2"
 
+
+# Village 9
+#	It is a quiant little village.
+#	I put some Villagers safely behind a doors.
+-2016, ~, 1136, "V9"
 
 
 # Lush Caves 1
@@ -74,6 +80,7 @@
 # 	I found 2 Eye Trims in the Library, -520, -38, 1343
 #	There is a Savana biome near by here.
 #	The Axolotl farm is near here (at MS1).
+#	The base here has a Librarian with Unbreaking III.
 -524, ~, 1332, "SH1"
 
 
@@ -85,6 +92,18 @@
 #
 -584, -20, 1384, "MS1"
 
+
+
+# Large Iron Ore Vein 1
+#	Yep, it is there.
+#	I took a bunch out of it, but there is prolly still a bunch more left.
+-432, -24, 1168, "LIOV1"
+
+
+
+# Medium Iron Ore Vein 3
+#	Chunch base shows this near a cave, wink wink.
+-392, -48, 1104, "MIOV3"
 
 
 # Trial Chamber 3
