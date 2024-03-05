@@ -1,7 +1,8 @@
 
 
 # World Spawn Point
-#	There is a decent little mini-base here, but no Ender Chest yet.
+#	There is a decent little mini-base here.
+#	It is stocked pretty well, but is not fortified yet.
 -73, 71, 53, "WS"
 
 
@@ -24,7 +25,7 @@
 
 
 # Ocean Monument 1
-#	Stony Shore mini-base: 320, 210
+#	The Stony Shore has a mini-base at 320, 210.  It has an Ender Chest and an Allay on Lead.
 #	The mini-base has a Frozen Ocean near.	
 #	Yep, it is there and I got a Tide trim on the first Elder Gaurdian!   :)
 #	I got the gold, but not the sponges yet.
@@ -348,6 +349,7 @@
 #	I got Dune at the closest Desert Temple.
 #	There are Allay in the nearest Desert Temple.
 #	There is a good Villager base here.
+#	I got a Trident at the Large Ocean Ruin to the West of here!
 -8048, ~, -4304, "V6"
 
 
