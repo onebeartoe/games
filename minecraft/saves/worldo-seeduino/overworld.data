@@ -165,7 +165,7 @@
 
 
 
-# Trail Ruins 
+# Trail Ruins 1
 #	Nope, it was not there.
 -1921, ~, -488, "TR1"
 
@@ -353,12 +353,18 @@
 -8048, ~, -4304, "V6"
 
 
-
-
 # Amethyst Geode 1
 -8022, -1, -4258, "AG1"
 
 
+# Ocean Monument 2
+#	This one is near V6.
+-8632, ~, -4264, "OM2"
+
+
+# Large Iron Ore Vein 2 
+#	There is still prolly a lot more left here.
+# -8440, -24, -4440, "LIOV2"
 
 
 # Desert Well
