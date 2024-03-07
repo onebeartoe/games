@@ -292,6 +292,11 @@
 3065, 86, 1383, "V8"
 
 
+# Desert Well 2 
+#	It was there but no Pottery Sherds.
+3164, ~, 2941, "DW2"
+
+
 # Armadillo Sight 2
 #	There are some Armadillos here:
 #	(I did not record the location of the first sight of Armadillos.)
@@ -352,6 +357,8 @@
 #	I got a Trident at the Large Ocean Ruin to the West of here!
 -8048, ~, -4304, "V6"
 
+# Trial Chamber 4????
+-8048, ~, -4304, "TC4"
 
 # Amethyst Geode 1
 -8022, -1, -4258, "AG1"
@@ -359,6 +366,9 @@
 
 # Ocean Monument 2
 #	This one is near V6.
+#	I left a Conduit here.
+#	I got two Tide Armor Trims, there was two sponge rooms, and a small gold box.
+#	I may have missed some gold/sponge loot.
 -8632, ~, -4264, "OM2"
 
 
@@ -367,7 +377,7 @@
 # -8440, -24, -4440, "LIOV2"
 
 
-# Desert Well
+# Desert Well 1
 # 	It was there but no good loot.
 -7414, ~, -4474, "DW1"
 
