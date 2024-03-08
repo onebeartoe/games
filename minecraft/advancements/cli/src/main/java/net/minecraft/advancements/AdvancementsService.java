@@ -44,11 +44,13 @@ public class AdvancementsService
         parseNether(netherJson);
     }
 
+    @Deprecated
     public List<String> allCatCategories() 
     {
         return List.copyOf(catCategories);
     }
 
+    @Deprecated
     public List<String> balancedDietItems() 
     {
         List<String> items = List.copyOf(balancedDietItems);
@@ -56,11 +58,13 @@ public class AdvancementsService
         return items;
     }
 
-    public List<String> monstersHunted() 
-    {
-        return List.copyOf(monstersHunted);
-    }
+//    @Deprecated
+//    public List<String> monstersHunted() 
+//    {
+//        return List.copyOf(monstersHunted);
+//    }
 
+    @Deprecated
     public List<String> breedableAnimals() 
     {                
         return List.copyOf(breedableAnimals);
@@ -68,13 +72,24 @@ public class AdvancementsService
 
     private AdventureAdvancements parseAdventure(JSONObject adventureJson) 
     {
+        AdventureAdvancements adventure = new AdventureAdvancements();
+        
         JSONObject monstersHuntedJson = (JSONObject) adventureJson.get("minecraft:adventure/kill_all_mobs");
+        
+        adventure.monstersHunted = parseMonstersHunted(monstersHuntedJson);
+        
+//        adventure.monstersHunted.criteria = monstersHunted;
+        
+        return adventure;
+    }
+    
+    private Advancement parseMonstersHunted(JSONObject monstersHuntedJson)
+    {
+        Advancement advancement = new Advancement();
         
         JSONArray criteria = (JSONArray) monstersHuntedJson.get("criteria");
         
-        monstersHunted = new ArrayList<String>();
-        
-        AdventureAdvancements adventure = new AdventureAdvancements();
+        var monstersHunted = new ArrayList<String>();
         
         criteria.forEach(m -> 
         {
@@ -83,9 +98,9 @@ public class AdvancementsService
             monstersHunted.add(monster);
         });
         
-        adventure.monstersHunted.criteria = monstersHunted;
-        
-        return adventure;
+        advancement.criteria = monstersHunted;
+
+        return advancement;
     }
 
     private void parseBalancedDiet(JSONObject diet) 

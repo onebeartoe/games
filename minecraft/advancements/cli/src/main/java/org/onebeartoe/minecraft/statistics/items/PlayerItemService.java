@@ -3,7 +3,6 @@ package org.onebeartoe.minecraft.statistics.items;
 
 import java.io.File;
 import java.io.IOException;
-import static java.nio.file.StandardCopyOption.values;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -51,13 +50,9 @@ public class PlayerItemService
         
         System.out.println("values size = " + collection.size() );
         
-        System.out.println("values = " + collection);
-        
         var entrySet = json.entrySet();
         
         System.out.println("entrySet size = " + entrySet.size() );
-        
-        System.out.println("entrySet = " + entrySet);
         
         PlayerItems playerItems = new PlayerItems();
         

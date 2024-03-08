@@ -12,10 +12,30 @@ import static org.testng.AssertJUnit.assertTrue;
 import org.testng.annotations.Test;
 
 /**
- *
+ *  This class tests the Husbandry portion of the AdvancementsService class 
+ *  specification.
  */
+//TODO: Rename this class to HusbandryAdvancementsServiceTest
 public class AdvancementsServiceTest
 {
+//TODO: Split these tests into to different
+//          classes
+/*
+    Husbandry
+
+        Complete Catelogue
+
+	A Balanced Diet
+
+	Bread all the Animals
+
+    Adventure
+
+            Monsters Hunted
+    
+            Discover Every Biome
+    */    
+    
 //TODO: move this to the contrucutor once Advancement class replaces the List<String>    
     private final AdvancementsService implementation;
     
@@ -48,18 +68,7 @@ public class AdvancementsServiceTest
 
         assertEquals(40, dietItems.size());
     }
-    
-    @Test
-    public void monstersHunted()
-    {
-        List<String> criteria = minecraftAdvancements.adventure.monstersHunted.criteria;
-           
-        int actualSize = criteria.size();
-        
-        int expected = 35;
-        
-        assertEquals(expected, actualSize );
-    }
+
     
     @Test
     public void completeCatagoryCountSanityCheck()

@@ -11,6 +11,7 @@ import net.minecraft.advancements.AdvancementsService;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+import net.minecraft.advancements.Advancements;
 import org.json.simple.parser.ParseException;
 import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertFalse;
@@ -41,6 +42,8 @@ public class PlayerAdvancementsServiceTest
 //TODO: DO NOT USE A DEVELOPER ENVIRONMENT SPECIFIC PATH!!!!!!!!!!    
     public static final String advancementsPath = "/home/roberto/Versioning/owner/github/games/minecraft/advancements/cli/src/test/resources/minecraft/saves/1.20/advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";
     
+    private Advancements advancements;
+    
     @BeforeTest
     private void initializeImplementation() throws IOException, ParseException
     {        
@@ -49,6 +52,8 @@ public class PlayerAdvancementsServiceTest
         implementation.load(advancementsPath);
         
         advancementsService = new AdvancementsService();
+        
+        advancements = advancementsService.load();
     }
     
     @Test
@@ -158,13 +163,10 @@ assertTrue( missingMobs.contains("minecraft:strider") );
     {
         List<String> userMonstersHunted = implementation.monstersHunted();
 
-//        System.out.println("user monsters hunted:");        
-//        userMonstersHunted.forEach(System.out::println);
-
         int userItemCount = userMonstersHunted.size();        
         assertEquals(31, userItemCount);
         
-        List<String> minecraftMonstersHunted = advancementsService.monstersHunted();
+        List<String> minecraftMonstersHunted = advancements.adventure.monstersHunted.criteria;
         
         assertEquals(35, minecraftMonstersHunted.size());
 
