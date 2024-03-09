@@ -80,11 +80,11 @@ spacing="20.0"
                               </ImageView>
 
                               <ImageView fitHeight="150.0" fitWidth="200.0" 
-
+onMouseClicked="#displayDiscoverEveryBiome"
                                          pickOnBounds="true" 
                                          preserveRatio="true" >
                                 <image>
-                                    <Image url="@file:///home/roberto/Versioning/owner/github/games/minecraft/advancements/desktop/src/main/resources/org/onebeartoe/desktop/dirt.jpg" />
+                                    <Image url="@discover-every-biome.png" />
                                 </image>                                  
                               </ImageView>
                            </children>

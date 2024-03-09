@@ -28,6 +28,8 @@ public class PlayerAdvancementsService
 
     private List<String> monstersHunted;
     
+    private List<String> discoverEveryBiome;
+    
     private List<String> unbredAnimals;
     
     private final Advancements minecraftAdvancements;
@@ -73,8 +75,11 @@ public class PlayerAdvancementsService
         
         // adventure
         JSONObject mobsKilled = (JSONObject) base.get("minecraft:adventure/kill_all_mobs");
-        parseMobsKilled(mobsKilled);        
+        monstersHunted = parseMobsKilled(mobsKilled);        
                 
+        JSONObject discoverEveryBiomeJson = (JSONObject) base.get("minecraft:adventure/adventuring_time");
+        discoverEveryBiome = parseMobsKilled(discoverEveryBiomeJson);
+        
         return base;
     }
 
@@ -147,7 +152,8 @@ public class PlayerAdvancementsService
         });
     }
 
-    private void parseMobsKilled(JSONObject mobsKilledJson) 
+//TODO: rename to a more generic name    
+    private List<String> parseMobsKilled(JSONObject mobsKilledJson) 
     {
         List<String> list = new ArrayList<String>();
         
@@ -160,7 +166,7 @@ public class PlayerAdvancementsService
             list.add(name);
         });
         
-        monstersHunted = list.stream()
+        return list.stream()
                             .sorted()
                             .collect( Collectors.toList() );
     }
@@ -311,9 +317,8 @@ public class PlayerAdvancementsService
         var adventure = new PlayerAdventureAdvancements();
 
 //TODO: fix this!!!!
-        List<String> minecraftCriteria = minecraftAdvancements.adventure.monstersHunted.criteria;
-
-        minecraftCriteria.forEach((criteriaName) -> 
+        List<String> minecraftMonstersHuntedCriteria = minecraftAdvancements.adventure.monstersHunted.criteria;
+        minecraftMonstersHuntedCriteria.forEach((criteriaName) -> 
         {
             if(monstersHunted.contains(criteriaName))
             {
@@ -322,6 +327,20 @@ public class PlayerAdvancementsService
             else
             {
                 adventure.monstersHunted.criteria.put(criteriaName, false);
+            }
+        });
+
+//TODO: fix this!!!!        
+        List<String> minecraftDiscoverEveryBiomeCriteria = minecraftAdvancements.adventure.discoverEveryBiome.criteria;
+        minecraftDiscoverEveryBiomeCriteria.forEach(criteriaName ->
+        {
+            if(discoverEveryBiome.contains(criteriaName))
+            {
+                adventure.discoverEveryBiome.criteria.put(criteriaName, true);
+            }
+            else
+            {
+                adventure.discoverEveryBiome.criteria.put(criteriaName, false);
             }
         });
 

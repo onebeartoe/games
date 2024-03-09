@@ -92,6 +92,32 @@ public class AdvancementsController
     }
     
     @FXML
+    private void displayDiscoverEveryBiome()
+    {
+        var haves = new StringBuilder();        
+        playerAdvancements.adventure.discoverEveryBiome.haves()
+                .forEach(have ->
+                {
+                    haves.append(have);
+                    haves.append("\n");
+                });
+
+        var haveNots = new StringBuilder();
+        playerAdvancements.adventure.discoverEveryBiome.haveNots()
+                        .forEach(not ->
+                {
+                    haveNots.append(not);
+                    haveNots.append("\n");
+                });
+        
+        advancementsHavesTextArea.setText(haves.toString());
+        advancementsHavesTextArea.getStyleClass().add("title");
+    
+        advancementsHaveNotsTextArea.setText(haveNots.toString());
+        advancementsHaveNotsTextArea.getStyleClass().add("title");
+    }
+    
+    @FXML
     private void showHotTouristDestinationsData()
     {
         StringBuilder haves = new StringBuilder();        
@@ -162,5 +188,6 @@ public class AdvancementsController
         advancementsHavesTextArea.getStyleClass().add("title");
     
         advancementsHaveNotsTextArea.setText(haveNots.toString());
+        advancementsHaveNotsTextArea.getStyleClass().add("title");
     }
 }
