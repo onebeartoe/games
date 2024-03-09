@@ -31,32 +31,21 @@
                                 onMouseClicked="#showHotTouristDestinationsData" 
                                 pickOnBounds="true" 
                                 preserveRatio="true" >
-<!--onAction="#showHotTouristDestinationsData"-->
                                 <image>                                    
 <!--TODO: add a test to make sure this image is not null and present on the GUI -->
                                     <Image 
                                         url="@file:///home/roberto/Versioning/owner/github/games/minecraft/advancements/desktop/src/main/resources/org/onebeartoe/desktop/minecraft-spalsh.gif" 
                                         />
-<!--onAction="#showHotTouristDestinationsData"-->                                    
                                 </image>                                  
                             </ImageView>
                        </children>
                     </HBox>
-
-<!--                    <ScrollPane>
-                     <content>-->
-                        <SplitPane 
-                            
-                        >
-<!--dividerPositions="0.5"-->                            
-                            
+                        <SplitPane >
                           <items>
                               <TextArea fx:id="netherHavesTextArea" />
                               <TextArea fx:id="netherHaveNotsTextArea"/>
                           </items>
                         </SplitPane>
-<!--                     </content>
-                  </ScrollPane>-->
               </items>
             </SplitPane>
         </content>
@@ -85,10 +74,8 @@ spacing="20.0"
                                          pickOnBounds="true" 
                                          preserveRatio="true" >
                                 <image>
-                                    <!--<Image url="@file:///home/roberto/Versioning/owner/beto-land-owner/Imaging/felix-the-cat/felix.gif" />-->
                                     <Image url="@icons8-minecraft-sword-48.png"
                                             fx:id="completeCatalogueImage345678"/>
-                                    <!--<Image url="@file:///home/roberto/Versioning/owner/github/games/minecraft/statistics/desktop/src/main/resources/org/onebeartoe/desktop/minecraft-spalsh.mp4" />-->
                                 </image>                                  
                               </ImageView>
 
@@ -97,23 +84,17 @@ spacing="20.0"
                                          pickOnBounds="true" 
                                          preserveRatio="true" >
                                 <image>
-                                    <!--<Image url="@file:///home/roberto/Versioning/owner/beto-land-owner/Imaging/felix-the-cat/felix.gif" />-->
                                     <Image url="@file:///home/roberto/Versioning/owner/github/games/minecraft/advancements/desktop/src/main/resources/org/onebeartoe/desktop/dirt.jpg" />
-                                    <!--<Image url="@file:///home/roberto/Versioning/owner/github/games/minecraft/statistics/desktop/src/main/resources/org/onebeartoe/desktop/minecraft-spalsh.mp4" />-->
                                 </image>                                  
                               </ImageView>
                            </children>
                         </HBox>                  
-<!--                      <ScrollPane>
-                         <content>-->
                             <SplitPane dividerPositions="0.5">
                               <items>
                                   <TextArea fx:id="advancementsHavesTextArea" />
                                   <TextArea fx:id="advancementsHaveNotsTextArea"/>
                               </items>
                             </SplitPane>
-<!--                         </content>
-                      </ScrollPane>-->
                   </items>
                 </SplitPane>
             </content>
@@ -131,10 +112,8 @@ spacing="20.0"
                                      pickOnBounds="true" 
                                      preserveRatio="true" >
                             <image>
-                                <!--<Image url="@file:///home/roberto/Versioning/owner/beto-land-owner/Imaging/felix-the-cat/felix.gif" />-->
                                 <Image url="@file:///home/roberto/Versioning/owner/github/games/minecraft/advancements/desktop/src/main/resources/org/onebeartoe/desktop/dirt.jpg" 
                                         fx:id="completeCatalogueImage"/>
-                                <!--<Image url="@file:///home/roberto/Versioning/owner/github/games/minecraft/statistics/desktop/src/main/resources/org/onebeartoe/desktop/minecraft-spalsh.mp4" />-->
                             </image>                                  
                           </ImageView>
 
@@ -143,9 +122,7 @@ spacing="20.0"
                                      pickOnBounds="true" 
                                      preserveRatio="true" >
                             <image>
-                                <!--<Image url="@file:///home/roberto/Versioning/owner/beto-land-owner/Imaging/felix-the-cat/felix.gif" />-->
                                 <Image url="@file:///home/roberto/Versioning/owner/github/games/minecraft/advancements/desktop/src/main/resources/org/onebeartoe/desktop/dirt.jpg" />
-                                <!--<Image url="@file:///home/roberto/Versioning/owner/github/games/minecraft/statistics/desktop/src/main/resources/org/onebeartoe/desktop/minecraft-spalsh.mp4" />-->
                             </image>                                  
                           </ImageView>
                        </children>

@@ -2,7 +2,6 @@ package org.onebeartoe.desktop;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
-
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
@@ -10,16 +9,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.media.MediaView;
-
-import javafx.scene.text.Font; 
-import javafx.scene.text.FontPosture; 
-import javafx.scene.text.FontWeight;
-
-import org.json.simple.parser.ParseException;
 import net.minecraft.advancements.PlayerAdvancements;
 import net.minecraft.advancements.PlayerAdvancementsService;
-import org.onebeartoe.minecraft.advancements.v1_20.MinecraftWildAdvancementsService;
+import org.json.simple.parser.ParseException;
 
 
 //TODO: add a test to make sure advancement images are not null and present on the GUI
@@ -79,8 +71,8 @@ public class AdvancementsController
         
         husbandryHBox.setSpacing(10);
         
-        var advancementsPath = "/home/roberto/.minecraft/saves/seedro/advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";
-//        var advancementsPath = "/home/roberto/.minecraft/saves/worldo/advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";
+//        var advancementsPath = "/home/roberto/.minecraft/saves/seedro/advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";
+        var advancementsPath = "/home/roberto/.minecraft/saves/worldo/advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";
         
         playerAdvancementsService = new PlayerAdvancementsService();
         
