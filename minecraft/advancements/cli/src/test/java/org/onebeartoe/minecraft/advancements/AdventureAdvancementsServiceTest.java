@@ -43,9 +43,15 @@ public class AdventureAdvancementsServiceTest
         List<String> criteria = minecraftAdvancements.adventure.discoverEveryBiome.criteria;
            
         int actualSize = criteria.size();
+        int expectedSize = 53;
+        assertEquals(expectedSize, actualSize );
         
-        int expected = 53;
+        var expectedFirst = "minecraft:badlands";
+        var actualFirst = criteria.getFirst();
+        assertEquals(expectedFirst, actualFirst);
         
-//TODO:        assertEquals(expected, actualSize );                
+        var expectedLast = "minecraft:wooded_badlands";
+        var actualLast = criteria.getLast();
+        assertEquals(expectedLast, actualLast);
     }
 }

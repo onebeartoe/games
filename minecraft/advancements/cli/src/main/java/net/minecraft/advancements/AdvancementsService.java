@@ -75,14 +75,15 @@ public class AdvancementsService
         AdventureAdvancements adventure = new AdventureAdvancements();
         
         JSONObject monstersHuntedJson = (JSONObject) adventureJson.get("minecraft:adventure/kill_all_mobs");
-        
         adventure.monstersHunted = parseMonstersHunted(monstersHuntedJson);
-        
-//        adventure.monstersHunted.criteria = monstersHunted;
+
+        JSONObject discoverEveryBiomeJson = (JSONObject) adventureJson.get("minecraft:adventure/adventuring_time");
+        adventure.discoverEveryBiome = parseMonstersHunted(discoverEveryBiomeJson);
         
         return adventure;
     }
     
+//TODO: rename this to parseAdvancement()    
     private Advancement parseMonstersHunted(JSONObject monstersHuntedJson)
     {
         Advancement advancement = new Advancement();
@@ -221,5 +222,10 @@ public class AdvancementsService
         JSONObject base = (JSONObject) obj;
         
         return base;
+    }
+
+    private Advancement parseDiscoverEveryBiome(JSONObject discoverEveryBiomeJson)
+    {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
