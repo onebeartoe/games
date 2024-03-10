@@ -48,6 +48,11 @@
 -1632, ~, 704, "V2"
 
 
+# Frozen Peaks 1
+#	There be Goats here!
+-2000, 180, -600, "FP1"
+
+
 # Village 9
 #	It is a quiant little village.
 #	I put some Villagers safely behind a doors.
@@ -107,10 +112,24 @@
 -392, -48, 1104, "MIOV3"
 
 
+
 # Trial Chamber 3
-#	This is pretty big and still has lots of loot.
+#	This is pretty big. I have hit it up twice and think there is still some loot.
+#	I found this one before the snapshot that introduced the Vault, so it does not have any.
 -280,  -17, 1304, "TC3"
 
+
+
+Windswept Gravelly Hills 1
+-425, 70, -559, "WGH1"
+
+
+Windswept Forest????????????
+-3497, 70, -47, "WF1"
+
+
+Deep Frozen Ocean 1    
+440, 70, 115, "DFO1"
 
 
 
@@ -352,8 +371,10 @@
 #	I got a Trident at the Large Ocean Ruin to the West of here!
 -8048, ~, -4304, "V6"
 
+
 # Trial Chamber 4????
 -8048, ~, -4304, "TC4"
+
 
 # Amethyst Geode 1
 -8022, -1, -4258, "AG1"
