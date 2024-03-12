@@ -50,6 +50,7 @@
 
 # Frozen Peaks 1
 #	There be Goats here!
+#	The mini base is at -2015, 150, -650
 -2000, 180, -600, "FP1"
 
 
@@ -120,15 +121,15 @@
 
 
 
-Windswept Gravelly Hills 1
+# Windswept Gravelly Hills 1
 -425, 70, -559, "WGH1"
 
 
-Windswept Forest????????????
+# Windswept Forest????????????
 -3497, 70, -47, "WF1"
 
 
-Deep Frozen Ocean 1    
+# Deep Frozen Ocean 1    
 440, 70, 115, "DFO1"
 
 
