@@ -4,6 +4,10 @@
 -228, 102, 88, "V2PO"
 
 
+# Treasure Bastion Remnant 1
+#	The return exit is at -703, 90, 267
+-720, ~, 304, "TBR1"
+
 
 # Nether Fortress 1
 # 	I think I got all the loot here.
@@ -32,7 +36,9 @@
 
 
 # Bastion Remnant 1
-#       There was a Snout Armor Trim.  But no Netherite Trim?!?
+#       There was a Snout Armor Trim.  
+#		But no Netherite Trim?!?  
+#		it was not a Treasure one, dork.
 -1184, ~, -688, "BR1"
 
 
