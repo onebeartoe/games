@@ -2,7 +2,7 @@
 unset key
 
 
-set xrange [-8250: 4225]
+set xrange [-8850: 4225]
 set yrange [-4600: 3500]
 
 set title "Point Plotting"

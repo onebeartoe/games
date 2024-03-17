@@ -218,7 +218,6 @@
 
 
 # Illager Outpost 4
-
 784, ~, 2240, "IO4"
 
 
@@ -249,7 +248,7 @@
 
 # Trail Ruins 2 
 # This is near V3
-# -3640, ~, 1224, "TR2"
+-3640, ~, 1224, "TR2"
 
 
 # Trial Chamber 2
@@ -257,7 +256,7 @@
 #	The Waterfall exit is around Y = -20
 #	I am pretty sure I got all the loot, but it is still fun to take the Trial!
 #	I reset this with MCASelect to try the new Baze Rods, Armor Trims.  (and Heavy Core but didn't find it).
-# -3512, ~, 1176, "TC2"
+-3512, ~, 1176, "TC2"
 
 
 # Illager Outpost 5
@@ -279,7 +278,7 @@
 
 # Village 4
 #	There are Villages here in the homes.
-# 2480, ~, 928, "V4"
+2480, ~, 928, "V4"
 
 
 # Wierd Circle Cave
@@ -303,7 +302,7 @@
 # Illager Outpost 6
 #	Still, no Armor Trim/Smithing Template here.
 #	The is a super-mini base near, by the bamboo circle.
-# 3104, ~, 688, "IO6"
+3104, ~, 688, "IO6"
 
 
 # Village 8
@@ -353,10 +352,6 @@
 # (Large) Warm Ocean Ruin 2
 #	I got a bunch of Pottery Sherds here.
 1784, ~, 2056, "WOR2"
-
-
-
-
 
 
 # (Large) Warm Ocean Ruin 3
