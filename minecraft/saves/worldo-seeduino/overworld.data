@@ -1,5 +1,22 @@
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # World Spawn Point
 #	There is a decent little mini-base here.
 #	It is stocked pretty well, but is not fortified yet.
@@ -8,7 +25,10 @@
 
 # Buried Treasure 1
 -39, ~, -151, "BT1"
- 
+
+
+# Swamp 1
+-377, ~, -685, "S1"
 
 # (Small) Cold Ocean Ruin #2
 #	I found Blad pottery sherd here.
