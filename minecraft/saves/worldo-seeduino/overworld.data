@@ -17,6 +17,12 @@
 
 
 
+
+
+
+
+
+
 # World Spawn Point
 #	There is a decent little mini-base here.
 #	It is stocked pretty well, but is not fortified yet.
@@ -27,7 +33,11 @@
 -39, ~, -151, "BT1"
 
 
+# Burried Treasure 2
+-71, ~, -55, "BT2"
+
 # Swamp 1
+#	The mini-base is at -250, -730
 -377, ~, -685, "S1"
 
 # (Small) Cold Ocean Ruin #2
