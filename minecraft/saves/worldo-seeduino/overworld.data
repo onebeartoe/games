@@ -64,7 +64,7 @@
 
 
 # Village 1 
-#	It is by a cave, but still have the Villages in 'protect mode'.
+#	It is by a cave, but still has the Villagers in 'protect mode'.
 -304, ~, 384, "V1"
 
 
@@ -81,6 +81,7 @@
 # Frozen Peaks 1
 #	There be Goats here!
 #	The mini base is at -2015, 150, -650
+#	There is a Grove with some Powder Snow blocks near here.
 -2000, 180, -600, "FP1"
 
 
@@ -303,8 +304,22 @@
 -5800, ~, 1608, "WM1"
 
 
-# Nehter Portal to Treasure Room Bastion Remnant 1
+# Mineshaft 2
+-5790, 40, 2030, "MS2"
+
+
+# Nether Portal to Treasure Room Bastion Remnant 1
+#	There is a base here with one Villager so far.
+#	There is a cool Cave with a big Mineshaft in the Mountain 'hole' near here.
 -5670, 77, 2221, "NPtTRBR1"
+
+
+# Orange Frog Farm 1
+#	It is by a Cold Ocean 
+#		and near a Buried Treasure 
+#		and a Ocean Monument
+#		and I thought it was good for green frogs, but that is only in Bedrock.
+-6272, 67, 2454, "GFF1"
 
 
 # Village 4

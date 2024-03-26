@@ -21,6 +21,10 @@
 
 
 
+
+
+
+
 # Spawn Point Portal Outlet
 -9, 71, 7, "SPPO"
 
@@ -31,6 +35,9 @@
 
 # Treasure Bastion Remnant 1
 #	The return exit is at -703, 90, 267
+#	Magma Cube spawner
+#		-702, 45, 330
+#		Frog floor is 11 down
 -720, ~, 304, "TBR1"
 
 
@@ -47,6 +54,9 @@
 # Stronghold 1 Portal Outlet
 -64, 77, 179, "SH1PO"
 
+
+# Village 7 Portal Outlet
+-28, 78, 228, "V7PO"
 
 
 
