@@ -125,6 +125,7 @@
                     </execution>
                 </executions>
             </plugin>
+
             <plugin>
                 <!-- For usage in the Netbeans IDE see this link
                             https://blogs.oracle.com/geertjan/jacoco,-maven,-and-netbeans 
@@ -177,7 +178,6 @@
                     </execution>
                 </executions>
             </plugin>
-                        
         </plugins>
     </build>
 
