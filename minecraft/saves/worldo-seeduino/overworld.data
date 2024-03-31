@@ -122,8 +122,6 @@
 -524, ~, 1332, "SH1"
 
 
-
-
 # Mineshaft 1
 #	At the surface, this is right next to a Lukewarm Ocean.
 #	I am trying to get the rare blue Axolotl, there a decent setup here.
@@ -149,7 +147,7 @@
 # Trial Chamber 3
 #	This is pretty big. I have hit it up twice and think there is still some loot.
 #	I found this one before the snapshot that introduced the Vault, so it does not have any.
-#	I reset this with MCASelect and found one Heavy Core.
+#	I reset this with MCASelect (before the Ominus Vault) and found one Heavy Core.
 -280,  -17, 1304, "TC3"
 
 
@@ -300,8 +298,13 @@
 
 # Woodland Mansion 1
 # I found the Vex trim here.
-# There was a bunch of Allay here!
+# There was a bunch of Allay here!???
+# There is a Bed on the roof.
 -5800, ~, 1608, "WM1"
+
+
+# Green Frog Grove 1
+-6187, ~, 1326, "GFG1"
 
 
 # Mineshaft 2
@@ -312,6 +315,21 @@
 #	There is a base here with one Villager so far.
 #	There is a cool Cave with a big Mineshaft in the Mountain 'hole' near here.
 -5670, 77, 2221, "NPtTRBR1"
+
+
+# Trial Chamber 5 Mini Base
+-5762, ~, 1911, "TC5MB"
+
+
+Trail Ruins 3????
+-5832, ~, 1944, "TR3"
+
+
+# Trial Chamber 5
+#	There are Slime Spawners here.
+#	Looted but there is still one Ominus Vault left.
+-5696, ~, 1888, "TC5"
+
 
 
 # Orange Frog Farm 1
@@ -420,7 +438,7 @@
 -8048, ~, -4304, "V6"
 
 
-# Trial Chamber 4????
+# Trial Chamber 4
 -8048, ~, -4304, "TC4"
 
 
