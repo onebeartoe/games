@@ -145,10 +145,9 @@
 
 
 # Trial Chamber 3
-#	This is pretty big. I have hit it up twice and think there is still some loot.
-#	I found this one before the snapshot that introduced the Vault, so it does not have any.
-#	I reset this with MCASelect (before the Ominus Vault) and found one Heavy Core.
--280,  -17, 1304, "TC3"
+#	I found this one before the snapshot that introduced the Vault, but did find one Heavy Core.
+#	So, I reset this with MCASelect and it moved here.
+-814,  5, 1284, "TC3"
 
 
 
