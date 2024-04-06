@@ -1,5 +1,5 @@
 
-package org.onebeartoe.desktop;
+package org.onebeartoe.minecraft;
 
 import java.util.prefs.BackingStoreException;
 import java.util.prefs.Preferences;

@@ -16,7 +16,7 @@
 
 <TabPane xmlns:fx="http://javafx.com/fxml/1" 
          xmlns="http://javafx.com/javafx/21" 
-         fx:controller="org.onebeartoe.desktop.AdvancementsController">
+         fx:controller="org.onebeartoe.minecraft.AdvancementsController">
    <tabs>
       <Tab text="Nether">
         <content>
@@ -34,7 +34,7 @@
                                 <image>                                    
 <!--TODO: add a test to make sure this image is not null and present on the GUI -->
                                     <Image 
-                                        url="@file:///home/roberto/Versioning/owner/github/games/minecraft/advancements/desktop/src/main/resources/org/onebeartoe/desktop/minecraft-spalsh.gif" 
+                                        url="@file:///home/roberto/Versioning/owner/github/games/minecraft/advancements/desktop/src/main/resources/org/onebeartoe/minecraft/minecraft-spalsh.gif" 
                                         />
                                 </image>                                  
                             </ImageView>
@@ -112,7 +112,7 @@ onMouseClicked="#displayDiscoverEveryBiome"
                                      pickOnBounds="true" 
                                      preserveRatio="true" >
                             <image>
-                                <Image url="@file:///home/roberto/Versioning/owner/github/games/minecraft/advancements/desktop/src/main/resources/org/onebeartoe/desktop/dirt.jpg" 
+                                <Image url="@file:///home/roberto/Versioning/owner/github/games/minecraft/advancements/desktop/src/main/resources/org/onebeartoe/minecraft/dirt.jpg" 
                                         fx:id="completeCatalogueImage"/>
                             </image>                                  
                           </ImageView>
@@ -122,7 +122,7 @@ onMouseClicked="#displayDiscoverEveryBiome"
                                      pickOnBounds="true" 
                                      preserveRatio="true" >
                             <image>
-                                <Image url="@file:///home/roberto/Versioning/owner/github/games/minecraft/advancements/desktop/src/main/resources/org/onebeartoe/desktop/dirt.jpg" />
+                                <Image url="@file:///home/roberto/Versioning/owner/github/games/minecraft/advancements/desktop/src/main/resources/org/onebeartoe/minecraft/dirt.jpg" />
                             </image>                                  
                           </ImageView>
                        </children>

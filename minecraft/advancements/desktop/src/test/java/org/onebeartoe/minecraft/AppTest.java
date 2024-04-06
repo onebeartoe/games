@@ -1,5 +1,5 @@
 
-package org.onebeartoe.desktop;
+package org.onebeartoe.minecraft;
 
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertNotNull;

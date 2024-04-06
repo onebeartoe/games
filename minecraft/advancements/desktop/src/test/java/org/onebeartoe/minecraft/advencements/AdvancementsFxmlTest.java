@@ -1,5 +1,5 @@
 
-package org.onebeartoe.desktop;
+package org.onebeartoe.minecraft.advencements;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,6 +13,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import org.onebeartoe.minecraft.App;
 import static junit.framework.Assert.assertEquals;
 import org.testfx.framework.junit.ApplicationTest;
 

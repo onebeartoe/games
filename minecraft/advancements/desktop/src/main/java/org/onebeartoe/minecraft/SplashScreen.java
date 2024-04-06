@@ -1,4 +1,4 @@
-package org.onebeartoe.desktop;
+package org.onebeartoe.minecraft;
 
 import javafx.application.Preloader;
 import javafx.scene.Scene;

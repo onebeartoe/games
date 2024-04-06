@@ -1,5 +1,5 @@
 
-package org.onebeartoe.desktop;
+package org.onebeartoe.minecraft;
 
 import java.io.File;
 import java.io.IOException;

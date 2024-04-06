@@ -1,5 +1,5 @@
 
-package org.onebeartoe.desktop;
+package org.onebeartoe.minecraft;
 
 import javafx.stage.DirectoryChooser;
 import java.io.File;

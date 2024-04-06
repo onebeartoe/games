@@ -1,5 +1,5 @@
 
-package org.onebeartoe.desktop;
+package org.onebeartoe.minecraft;
 
 import java.io.IOException;
 import javafx.fxml.FXML;

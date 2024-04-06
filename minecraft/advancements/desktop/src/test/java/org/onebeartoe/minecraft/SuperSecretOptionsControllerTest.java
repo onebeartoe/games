@@ -1,5 +1,5 @@
 
-package org.onebeartoe.desktop;
+package org.onebeartoe.minecraft;
 
 import java.net.URISyntaxException;
 import static junit.framework.Assert.assertTrue;

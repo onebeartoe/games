@@ -1,4 +1,4 @@
-package org.onebeartoe.desktop;
+package org.onebeartoe.minecraft;
 
 import java.io.File;
 import java.io.IOException;
@@ -42,7 +42,7 @@ public class SuperSecretOptionsController
     
     String loadBackgroundSoundUri() throws URISyntaxException
     {
-        URL resource = ClassLoader.getSystemClassLoader().getResource("org/onebeartoe/desktop/y2meta.com-Rick-Rolled-Short-Version.wav");
+        URL resource = ClassLoader.getSystemClassLoader().getResource("org/onebeartoe/minecraft/y2meta.com-Rick-Rolled-Short-Version.wav");
         
         String uri = resource.toURI().toString();        
         

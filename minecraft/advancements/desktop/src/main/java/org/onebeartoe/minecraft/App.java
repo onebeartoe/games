@@ -1,4 +1,4 @@
-package org.onebeartoe.desktop;
+package org.onebeartoe.minecraft;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -108,7 +108,7 @@ public class App extends Application
         // dark mode
         scene.getRoot().setStyle("-fx-base:black");
         
-        scene.getStylesheets().add("/org/onebeartoe/desktop/title-screen.css");
+        scene.getStylesheets().add("/org/onebeartoe/minecraft/title-screen.css");
         
         stage.show();
     }
@@ -125,11 +125,11 @@ public class App extends Application
         // dark mode
         scene.getRoot().setStyle("-fx-base:black");
          
-        var styleSheets = "/org/onebeartoe/desktop/" + fmxlToStyleSheets.get(fxml);
+        var styleSheets = "/org/onebeartoe/minecraft/" + fmxlToStyleSheets.get(fxml);
         scene.getStylesheets().add(styleSheets);
         
 //var fontSheet =         getClass().getResource("custom-font-styles.css").toExternalForm()
-        var fontSheet = "/org/onebeartoe/desktop/fonts.css";
+        var fontSheet = "/org/onebeartoe/minecraft/fonts.css";
         scene.getStylesheets().add(fontSheet);
     }
 

@@ -1,4 +1,4 @@
-package org.onebeartoe.desktop;
+package org.onebeartoe.minecraft;
 
 import java.io.File;
 import java.io.IOException;
@@ -85,7 +85,7 @@ public class SelectWorldController
                     children.add(label);
                 });
         
-        String styleSheet = "/org/onebeartoe/desktop/select-world.css";
+        String styleSheet = "/org/onebeartoe/minecraft/select-world.css";
         topVBox.getStylesheets().add(styleSheet);
         topVBox.getStyleClass().add("dirtBackgroundImage");
         

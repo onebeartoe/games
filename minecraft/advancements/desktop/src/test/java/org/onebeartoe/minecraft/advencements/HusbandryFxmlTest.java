@@ -14,7 +14,6 @@ import javafx.scene.layout.HBox;
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertNotNull;
 import org.junit.Test;
-import org.onebeartoe.desktop.AdvancementsFxmlTest;
 
 /**
  *

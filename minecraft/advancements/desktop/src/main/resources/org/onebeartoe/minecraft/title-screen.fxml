@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.BorderPane?>
 
 <StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" 
-           fx:controller="org.onebeartoe.desktop.TitleScreenController">
+           fx:controller="org.onebeartoe.minecraft.TitleScreenController">
    <children>
         <ImageView 
             AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"  
