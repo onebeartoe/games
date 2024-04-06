@@ -21,9 +21,12 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertNotNull;
 import org.testfx.framework.junit.ApplicationTest;
-import org.testng.AssertJUnit;
-import static org.testng.AssertJUnit.assertEquals;
+//import org.testng.AssertJUnit;
+//import org.testng.AssertJUnit;
+//import static org.testng.AssertJUnit.assertEquals;
 
 /**
  *
@@ -134,6 +137,6 @@ System.out.println("this is a test - fonto");
         
         String url = image.getUrl();
         
-        AssertJUnit.assertNotNull(url);
+        assertNotNull(url);
     }    
 }

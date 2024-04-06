@@ -9,9 +9,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import static junit.framework.Assert.assertEquals;
 import org.junit.Test;
 import org.testfx.framework.junit.ApplicationTest;
-import static org.testng.AssertJUnit.assertEquals;
+//import static org.testng.AssertJUnit.assertEquals;
 
 /**
  *

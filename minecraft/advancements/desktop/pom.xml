@@ -51,12 +51,25 @@
             <version>21</version>
         </dependency>
 
+
+        <dependency>
+            <groupId>org.junit</groupId>
+            <artifactId>junit5-api</artifactId>
+            <version>5.0.0-ALPHA</version>
+            <scope>test</scope>
+        </dependency>
+
+
+<!--
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>7.7.0</version>
             <scope>test</scope>
         </dependency>
+-->
+
+
 
         <dependency>
             <groupId>org.testfx</groupId>
@@ -178,6 +191,25 @@
                     </execution>
                 </executions>
             </plugin>
+
+
+
+<!--
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.17</version>
+                <configuration>
+                    <skipTests>false</skipTests>
+
+                    <suiteXmlFiles>
+                        <suiteXmlFile>src/test/resources/unit-testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin>
+            -->
+            
+            
         </plugins>
     </build>
 

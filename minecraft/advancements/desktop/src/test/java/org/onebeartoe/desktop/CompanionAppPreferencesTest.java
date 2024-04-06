@@ -2,8 +2,10 @@
 package org.onebeartoe.desktop;
 
 import java.util.prefs.BackingStoreException;
-import static org.testng.AssertJUnit.assertEquals;
-import org.testng.annotations.Test;
+import static junit.framework.Assert.assertEquals;
+import org.junit.Test;
+//import static org.testng.AssertJUnit.assertEquals;
+//import org.testng.annotations.Test;
 
 /**
  *

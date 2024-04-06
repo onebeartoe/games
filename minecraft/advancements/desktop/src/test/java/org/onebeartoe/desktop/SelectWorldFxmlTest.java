@@ -19,11 +19,15 @@ import javafx.scene.layout.VBox;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertNotNull;
+import static junit.framework.Assert.assertTrue;
 import org.junit.Test;
 import org.testfx.framework.junit.ApplicationTest;
-import static org.testng.AssertJUnit.assertEquals;
-import static org.testng.AssertJUnit.assertNotNull;
-import static org.testng.AssertJUnit.assertTrue;
+//import static org.testng.AssertJUnit.assertEquals;
+//import static org.testng.AssertJUnit.assertNotNull;
+//import static org.testng.AssertJUnit.assertTrue;
+//import org.testng.annotations.Test;
 
 /**
  *

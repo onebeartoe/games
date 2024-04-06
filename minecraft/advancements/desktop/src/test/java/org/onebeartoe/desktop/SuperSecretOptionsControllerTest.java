@@ -2,9 +2,11 @@
 package org.onebeartoe.desktop;
 
 import java.net.URISyntaxException;
-import org.testng.annotations.Test;
+import static junit.framework.Assert.assertTrue;
+import org.junit.Test;
+//import org.testng.annotations.Test;
 
-import static org.testng.AssertJUnit.assertTrue;
+//import static org.testng.AssertJUnit.assertTrue;
 
 /**
  *
