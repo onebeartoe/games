@@ -1,33 +1,20 @@
 
 package org.onebeartoe.desktop;
 
-
-import java.io.IOException;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.SplitPane;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TextArea;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertNotNull;
-import org.junit.Test;
 import org.testfx.framework.junit.ApplicationTest;
-//import org.testng.AssertJUnit;
-//import org.testng.AssertJUnit;
-//import static org.testng.AssertJUnit.assertEquals;
 
 /**
  *
@@ -36,7 +23,9 @@ public class AdvancementsFxmlTest extends ApplicationTest
 {
 //    private AdvancementsController implementation = new AdvancementsController();
     
-    Scene scene;
+    protected Scene scene;
+    
+    protected TabPane rootNode;
     
 //TODO: find a way to verify the font
 //      or get rid of this test    
@@ -103,35 +92,5 @@ System.out.println("this is a test - fonto");
         stage.setScene(scene);
         stage.show();
         stage.toFront();
-    }
-  
-    @Test
-    public void husbandry_completeCatalogue_imageIsAvailable() throws IOException 
-    {
-        System.out.println("this = " + this);
-
-        System.out.println("scene = " + scene);      
-
-        TabPane rootNode = (TabPane) scene.getRoot();
-
-        Button button = from(rootNode).lookup(".button").query();
-
-        assertEquals("Husbandry", button.getText());
-        
-        Tab netherTab = rootNode.getTabs().get(0);
-        
-        SplitPane splitPane = (SplitPane) netherTab.getContent();
-        
-        HBox hBox = (HBox) splitPane.getItems().get(0);
-        
-        ObservableList<Node> children = hBox.getChildren();
-
-        ImageView imageView = (ImageView) children.get(0);
-        
-        Image image = imageView.getImage();
-        
-        String url = image.getUrl();
-        
-        assertNotNull(url);
-    }    
+    }   
 }
