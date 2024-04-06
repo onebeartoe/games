@@ -27,13 +27,13 @@ public class HusbandryFxmlTest extends AdvancementsFxmlTest
 
         System.out.println("scene = " + scene);      
 
-        rootNode = (TabPane) scene.getRoot();
+        tabs = (TabPane) scene.getRoot();
 
-        Button button = from(rootNode).lookup(".button").query();
+        Button button = from(tabs).lookup(".button").query();
 
         assertEquals("Husbandry", button.getText());
         
-        Tab netherTab = rootNode.getTabs().get(0);
+        Tab netherTab = tabs.getTabs().get(0);
         
         SplitPane splitPane = (SplitPane) netherTab.getContent();
         

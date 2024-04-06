@@ -26,7 +26,7 @@ public class AdvancementsFxmlTest extends ApplicationTest
     
     protected Scene scene;
     
-    protected TabPane rootNode;
+    protected TabPane tabs;
     
 //TODO: find a way to verify the font
 //      or get rid of this test    
