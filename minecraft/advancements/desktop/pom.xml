@@ -96,7 +96,7 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.4</version>
                 <configuration>
-                    <mainClass>org.onebeartoe.desktop.App</mainClass>
+                    <mainClass>org.onebeartoe.minecraft.App</mainClass>
                 </configuration>
                 <executions>
                     <execution>

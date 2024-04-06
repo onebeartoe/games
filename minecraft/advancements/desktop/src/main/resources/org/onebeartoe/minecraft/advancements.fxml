@@ -11,6 +11,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
@@ -65,37 +66,53 @@
                 <SplitPane dividerPositions="0.5" orientation="VERTICAL">
                   <items>
                         <HBox fx:id="husbandryHBox234"
-                            alignment="CENTER" 
-spacing="20.0"
-                        >
-                           <children>
-                              <ImageView fitHeight="150.0" fitWidth="200.0" 
-
+                                alignment="CENTER" 
+                                spacing="20.0">
+                            <children>
+                                <ImageView fitHeight="150.0" fitWidth="200.0" 
                                          pickOnBounds="true" 
                                          preserveRatio="true" >
-                                <image>
-                                    <Image url="@icons8-minecraft-sword-48.png"
-                                            fx:id="completeCatalogueImage345678"/>
-                                </image>                                  
-                              </ImageView>
+                                    <image>
+                                        <Image url="@icons8-minecraft-sword-48.png"
+                                               fx:id="completeCatalogueImage345678"/>
+                                    </image>
+                                </ImageView>
 
-                              <ImageView fitHeight="150.0" fitWidth="200.0" 
-onMouseClicked="#displayDiscoverEveryBiome"
-                                         pickOnBounds="true" 
-                                         preserveRatio="true" >
-                                <image>
-                                    <Image url="@discover-every-biome.png" />
-                                </image>                                  
-                              </ImageView>
+                                <ImageView fitHeight="150.0" fitWidth="200.0" 
+                                           onMouseClicked="#displayDiscoverEveryBiome"
+                                           pickOnBounds="true" 
+                                           preserveRatio="true" >
+                                    <image>
+                                        <Image url="@discover-every-biome.png" />
+                                    </image>                                  
+                                </ImageView>
                            </children>
                         </HBox>                  
-                            <SplitPane dividerPositions="0.5">
-                              <items>
-                                  <TextArea fx:id="advancementsHavesTextArea" />
-                                  <TextArea fx:id="advancementsHaveNotsTextArea"/>
-                              </items>
-                            </SplitPane>
-                  </items>
+
+                        <SplitPane dividerPositions="0.5">
+                            <items>
+                                <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" 
+                                            AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <top>
+                                       <Label alignment="BASELINE_LEFT" text="Acquired" BorderPane.alignment="CENTER" />
+                                    </top>
+                                    <center>
+                                        <TextArea fx:id="advancementsHavesTextArea" />
+                                    </center>
+                                </BorderPane>
+
+<!--                                <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" 
+                                            AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <top>
+                                        <Label alignment="BASELINE_LEFT" text="Missing" BorderPane.alignment="CENTER" />
+                                    </top>
+                                    <center>-->
+                                        <TextArea fx:id="advancementsHaveNotsTextArea"/>
+<!--                                    </center>
+                                </BorderPane>-->
+                            </items>
+                        </SplitPane>
+                    </items>
                 </SplitPane>
             </content>
       </Tab>

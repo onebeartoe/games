@@ -23,12 +23,12 @@ public class GameMenuFxmlTest extends ApplicationTest
     
     Scene scene;
     
-    @FXML
-    @Override        
-    public void init() throws IOException
-    {
-        System.out.println("is called????");
-    }
+//    @FXML
+//    @Override        
+//    public void init() throws IOException
+//    {
+//        System.out.println("is called????");
+//    }
     
     @FXML
     public void initialize() throws IOException

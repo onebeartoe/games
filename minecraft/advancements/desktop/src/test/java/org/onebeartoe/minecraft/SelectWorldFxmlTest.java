@@ -36,20 +36,18 @@ public class SelectWorldFxmlTest extends ApplicationTest
 {
     Scene scene;
     
-    @FXML
-    @Override        
-    public void init() throws IOException
-    {
-System.out.println("init() is called");
-        
-
-    }
+//    @FXML
+//    @Override        
+//    public void init() throws IOException
+//    {
+//System.out.println("init() is called");
+//        
+//
+//    }
 
     @FXML
     public void initialize() throws IOException
     {
-System.out.println("initialize() is called");
-
         System.setProperty("minecraft.home", "src/test/resources/minecraft");
     }
     

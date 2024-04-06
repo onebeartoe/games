@@ -28,14 +28,16 @@ public class AdvancementsFxmlTest extends ApplicationTest
     
     protected TabPane tabs;
     
+    protected Tab netherTab;
+    
+    protected Tab adventureTab;
+    
 //TODO: find a way to verify the font
 //      or get rid of this test    
 //    @Test( )
 @Deprecated    
     public void adventure_monstersHunted_font()
     {
-System.out.println("this is a test - fonto");
-
         BorderPane borderPane = (BorderPane) scene.getRoot();
 
         TabPane rootNode = (TabPane) borderPane.getCenter();
@@ -77,8 +79,14 @@ System.out.println("this is a test - fonto");
 
         Parent parent = (Parent) root;
                  
-        scene = new Scene(parent, 640, 480);         
+        scene = new Scene(parent, 640, 480);
 
+        tabs = (TabPane) scene.getRoot();
+        
+        netherTab = tabs.getTabs().get(0);
+
+        adventureTab = tabs.getTabs().get(1);
+        
         var fontSheet = "/org/onebeartoe/desktop/fonts.css";
 
         scene.getStylesheets().add(fontSheet);

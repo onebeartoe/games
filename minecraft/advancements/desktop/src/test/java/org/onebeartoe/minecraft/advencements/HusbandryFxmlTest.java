@@ -23,17 +23,9 @@ public class HusbandryFxmlTest extends AdvancementsFxmlTest
     @Test
     public void husbandry_completeCatalogue_imageIsAvailable() throws IOException 
     {
-        System.out.println("this = " + this);
-
-        System.out.println("scene = " + scene);      
-
-        tabs = (TabPane) scene.getRoot();
-
         Button button = from(tabs).lookup(".button").query();
 
         assertEquals("Husbandry", button.getText());
-        
-        Tab netherTab = tabs.getTabs().get(0);
         
         SplitPane splitPane = (SplitPane) netherTab.getContent();
         
