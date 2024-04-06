@@ -1,14 +1,10 @@
 package org.onebeartoe.minecraft.advencements;
 
-
 import javafx.scene.control.Label;
 import javafx.scene.control.SplitPane;
 import javafx.scene.layout.BorderPane;
 import static junit.framework.Assert.assertEquals;
 import org.junit.Test;
-import org.onebeartoe.minecraft.advencements.AdvancementsFxmlTest;
-import org.testfx.framework.junit.ApplicationTest;
-
 
 public class AdventureFxmlTest extends AdvancementsFxmlTest
 {
