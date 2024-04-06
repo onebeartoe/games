@@ -23,6 +23,7 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertNotNull;
+import org.junit.Test;
 import org.testfx.framework.junit.ApplicationTest;
 //import org.testng.AssertJUnit;
 //import org.testng.AssertJUnit;
@@ -77,23 +78,20 @@ System.out.println("this is a test - fonto");
     public void start(Stage stage) throws Exception 
     {
         String path = App.class.getResource("minecraft.ttf").toExternalForm();
+        
         Font loadFont = Font.loadFont(path, 10);
         
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("advancements" + ".fxml"));        
 
-        System.out.println("inititititit");  
-        
-        BorderPane p = new BorderPane();
-        
-        scene = new Scene(p, 640, 480);         
-//        scene = new Scene(parent, 640, 480);         
+        Object root = fxmlLoader.load();        
+
+        Parent parent = (Parent) root;
+                 
+        scene = new Scene(parent, 640, 480);         
 
         var fontSheet = "/org/onebeartoe/desktop/fonts.css";
-        scene.getStylesheets().add(fontSheet);        
 
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("advancements" + ".fxml"));        
-        Object root = fxmlLoader.load();        
-        Parent parent = (Parent) root;    
-
+        scene.getStylesheets().add(fontSheet);
         
         parent.setStyle("""
                             .title {
@@ -101,23 +99,20 @@ System.out.println("this is a test - fonto");
                                 -fx-font-size: 20;
                             }                        
                         """);
-        p.setCenter(parent);
         
         stage.setScene(scene);
         stage.show();
         stage.toFront();
     }
   
-    @org.junit.Test
+    @Test
     public void husbandry_completeCatalogue_imageIsAvailable() throws IOException 
     {
         System.out.println("this = " + this);
 
         System.out.println("scene = " + scene);      
 
-        BorderPane borderPane = (BorderPane) scene.getRoot();
-
-        TabPane rootNode = (TabPane) borderPane.getCenter();
+        TabPane rootNode = (TabPane) scene.getRoot();
 
         Button button = from(rootNode).lookup(".button").query();
 
