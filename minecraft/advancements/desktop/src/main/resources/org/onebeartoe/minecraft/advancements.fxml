@@ -101,15 +101,15 @@
                                     </center>
                                 </BorderPane>
 
-<!--                                <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" 
+                                <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" 
                                             AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                     <top>
                                         <Label alignment="BASELINE_LEFT" text="Missing" BorderPane.alignment="CENTER" />
                                     </top>
-                                    <center>-->
+                                    <center>
                                         <TextArea fx:id="advancementsHaveNotsTextArea"/>
-<!--                                    </center>
-                                </BorderPane>-->
+                                    </center>
+                                </BorderPane>
                             </items>
                         </SplitPane>
                     </items>

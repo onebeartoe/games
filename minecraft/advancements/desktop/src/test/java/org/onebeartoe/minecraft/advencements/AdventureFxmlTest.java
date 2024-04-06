@@ -13,13 +13,11 @@ import org.testfx.framework.junit.ApplicationTest;
 public class AdventureFxmlTest extends AdvancementsFxmlTest
 {
     /**
-     * This verifies the labels mentioned in the specification are present.
+     * This specification verifies that the 'haves' (or Acquired) label is present.
      */
     @Test
-    public void haveAndHaveNotLabels()
+    public void haveLabels()
     {
-        
-        
         SplitPane atSplitPane = (SplitPane) adventureTab.getContent();
         
         var textAreasSplitPane = (SplitPane) atSplitPane.getItems().get(1);
@@ -33,7 +31,26 @@ public class AdventureFxmlTest extends AdvancementsFxmlTest
         var havesExpected = "Acquired";
         
         assertEquals(havesExpected, havesActual);
+    }
+    
+    /**
+     * This specification verifies that the 'have nots' (or Missing) label is present.
+     */
+    @Test
+    public void haveAndHaveNotLabels()
+    {
+        SplitPane atSplitPane = (SplitPane) adventureTab.getContent();
         
-//TODO: do the 'have nots' text area too        
+        var textAreasSplitPane = (SplitPane) atSplitPane.getItems().get(1);
+        
+        var havesBorderPane = (BorderPane) textAreasSplitPane.getItems().get(1);
+        
+        var havesLabel = (Label) havesBorderPane.getTop();
+        
+        var havesActual = havesLabel.getText();
+        
+        var havesExpected = "Missing";
+        
+        assertEquals(havesExpected, havesActual);
     }
 }
