@@ -295,6 +295,17 @@
 
 
 
+# Village 10
+#	There is a decent little base here.
+-6400, ~, 1800, "V10"
+
+
+# Trial Chamber 5
+#	The entrance is topside, at -6451, 1734
+-6448, ~, 1680, "TC5"
+
+
+
 # Woodland Mansion 1
 # I found the Vex trim here.
 # There was a bunch of Allay here!???
