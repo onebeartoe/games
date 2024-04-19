@@ -5,10 +5,13 @@ import java.net.URISyntaxException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
+import javafx.util.Duration;
 import net.minecraft.advancements.PlayerAdvancements;
 import net.minecraft.advancements.PlayerAdvancementsService;
 import org.json.simple.parser.ParseException;
@@ -60,6 +63,9 @@ public class AdvancementsController
     @FXML
     ImageView hotTouristDestinationsImage;
     
+    @FXML
+    ImageView monstersHuntedImageView;
+    
     private PlayerAdvancementsService playerAdvancementsService;
     
     private PlayerAdvancements playerAdvancements;
@@ -78,11 +84,21 @@ public class AdvancementsController
         
         playerAdvancements = playerAdvancementsService.load(advancementsPath);
         
-        showHotTouristDestinationsData();
+        displayHotTouristDestinationsData();
         
-        showCompleteCatalogueData();
+        displayCompleteCatalogueData();
         
-        showMonstersHuntedData();
+        var monstersHuntedTooltip = new Tooltip("Monsters Hunted");
+        
+        monstersHuntedTooltip.setShowDelay(Duration.ZERO);
+        
+        var font = new Font(16);
+                
+        monstersHuntedTooltip.setFont(font);
+
+        Tooltip.install(monstersHuntedImageView,  monstersHuntedTooltip);
+
+        displayMonstersHuntedData();
     }
     
     @FXML
@@ -101,6 +117,7 @@ public class AdvancementsController
                     haves.append(have);
                     haves.append("\n");
                 });
+//completeCatalogueImage.setTooltip(null);
 
         var haveNots = new StringBuilder();
         playerAdvancements.adventure.discoverEveryBiome.haveNots()
@@ -118,7 +135,7 @@ public class AdvancementsController
     }
     
     @FXML
-    private void showHotTouristDestinationsData()
+    private void displayHotTouristDestinationsData()
     {
         StringBuilder haves = new StringBuilder();        
                 
@@ -143,7 +160,7 @@ public class AdvancementsController
         netherHaveNotsTextArea.setText(haveNots.toString() );
     }
 
-    private void showCompleteCatalogueData() 
+    private void displayCompleteCatalogueData() 
     {
         StringBuilder haves = new StringBuilder();
         playerAdvancements.husbandry.aCompleteCatelogue.haves()
@@ -166,7 +183,8 @@ public class AdvancementsController
         husbundryCompleteCatelogueHaveNotsTextArea.setText(nots.toString());
     }
 
-    private void showMonstersHuntedData() 
+    @FXML
+    private void displayMonstersHuntedData() 
     {
         var haves = new StringBuilder();        
         playerAdvancements.adventure.monstersHunted.haves()

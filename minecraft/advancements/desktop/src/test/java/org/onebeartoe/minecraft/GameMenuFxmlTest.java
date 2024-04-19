@@ -59,7 +59,9 @@ public class GameMenuFxmlTest extends ApplicationTest
         System.out.println("scene = " + scene);      
 
         StackPane rootNode = (StackPane) scene.getRoot();
+
         Button button = from(rootNode).lookup(".button").query();
+
         assertEquals("Back to Game", button.getText());
     }
 }

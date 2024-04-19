@@ -1,16 +1,20 @@
 
-adventure - labels
+[x] Adventure - labels
 		
-		haves
+		[x] haves
 
-		have nots
+		[x] have nots
 
-		advancement name (by icon)
-
-
-adventure - monsters hunted - icon click
+                [x] See AdventureFxmlTest#haveLabels() and haveNotLabels() methods.
 
 
-husbandry - a balance diet
+[] Adventure Icon - show Tooltip with Advancement name
 
-	   - two by two
+
+[] Adventure - monsters hunted - icon click
+
+
+[] Husbandry - a balance diet
+
+
+[] Husbandry - two by two

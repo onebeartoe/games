@@ -8,6 +8,7 @@
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -29,9 +30,12 @@
                             <ImageView 
                                 fx:id="hotTouristDestinationsImage"
                                 fitHeight="150.0" fitWidth="200.0" 
-                                onMouseClicked="#showHotTouristDestinationsData" 
+                                onMouseClicked="#displayHotTouristDestinationsData" 
                                 pickOnBounds="true" 
                                 preserveRatio="true" >
+<!--            <tooltip>
+                <Tooltip text="hi there, Tooltip text" />
+            </tooltip>-->
                                 <image>                                    
 <!--TODO: add a test to make sure this image is not null and present on the GUI -->
                                     <Image 
@@ -51,13 +55,13 @@
             </SplitPane>
         </content>
         </Tab>
+
         <Tab text="Adventure">
             <graphic>
               <ImageView  
                          pickOnBounds="true" 
                          preserveRatio="true">
                 <image>
-                    
                   <Image url="@paper.png" />
                 </image>
               </ImageView>
@@ -69,9 +73,11 @@
                                 alignment="CENTER" 
                                 spacing="20.0">
                             <children>
-                                <ImageView fitHeight="150.0" fitWidth="200.0" 
-                                         pickOnBounds="true" 
-                                         preserveRatio="true" >
+                                <ImageView fx:id="monstersHuntedImageView"
+                                            fitHeight="150.0" fitWidth="200.0" 
+                                            onMouseClicked="#displayMonstersHuntedData"
+                                            pickOnBounds="true" 
+                                            preserveRatio="true" >
                                     <image>
                                         <Image url="@icons8-minecraft-sword-48.png"
                                                fx:id="completeCatalogueImage345678"/>

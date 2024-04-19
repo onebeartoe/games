@@ -21,7 +21,7 @@ public class AdventureFxmlTest extends AdvancementsFxmlTest
         var havesBorderPane = (BorderPane) textAreasSplitPane.getItems().get(0);
         
         var havesLabel = (Label) havesBorderPane.getTop();
-        
+//havesLabel.setTooltip(tltp);
         var havesActual = havesLabel.getText();
         
         var havesExpected = "Acquired";
@@ -33,7 +33,7 @@ public class AdventureFxmlTest extends AdvancementsFxmlTest
      * This specification verifies that the 'have nots' (or Missing) label is present.
      */
     @Test
-    public void haveAndHaveNotLabels()
+    public void haveNotLabels()
     {
         SplitPane atSplitPane = (SplitPane) adventureTab.getContent();
         
