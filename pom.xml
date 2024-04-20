@@ -1,35 +1,51 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+      
     
-    <modelVersion>4.0.0</modelVersion>
-
-    <groupId>org.onebeartoe.games</groupId>
+  <modelVersion>4.0.0</modelVersion>
+      
+  <groupId>org.onebeartoe.games</groupId>
+      
     
-    <artifactId>games</artifactId>
+  <artifactId>games</artifactId>
+      
     
-    <version>1.0</version>
-
-    <packaging>pom</packaging>
-
-    <name>onebeartoe-games</name>
-
-    <modules>
-        <module>big-wheel</module>
-        <module>centipedo</module>
-        <module>memory</module>
-        <module>minecraft</module>
-        <module>rubiks-cube</module>
-    </modules>
-
-    <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>   
+  <version>1.0</version>
+      
+  <packaging>pom</packaging>
+      
+  <name>onebeartoe-games</name>
+      
+  <modules>
+            
+    <module>big-wheel</module>
+            
+    <module>centipedo</module>
+            
+    <module>memory</module>
+            
+    <module>minecraft</module>
+            
+    <module>rubiks-cube</module>
+          
+    <module>type-o-rama</module>
+      
+  </modules>
+      
+  <properties>
+            
+    <maven.compiler.source>11</maven.compiler.source>
+            
+    <maven.compiler.target>11</maven.compiler.target>
+       
 		
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
-
-    <build>
+        
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        
+  </properties>
+      
+  <build>
 
     </build>
+  
 </project>
