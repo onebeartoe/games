@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jnlp spec="1.0+" codebase="file:/Users/lando/owner/Projects/games/TypeAreli/JavaFX/dist/" href="Type_-_O_-_Rama_browser.jnlp">
+    <information>
+        <title>Type_-_O_-_Rama</title>
+        <vendor>onebeartoe.net</vendor>
+        <homepage href=""/>
+        <description>Type_-_O_-_Rama</description>
+        <offline-allowed/>
+    </information>
+    <security>
+        <all-permissions/>
+    </security>
+    <resources>
+        <j2se version="1.5+"/>
+        <extension name="JavaFX Runtime" href="http://dl.javafx.com/1.2/javafx-rt.jnlp"/>
+        <jar href="Type_-_O_-_Rama.jar" main="true"/>
+    </resources>
+    <applet-desc name="Type_-_O_-_Rama" main-class="com.sun.javafx.runtime.adapter.Applet" width="200" height="200">
+        <param name="MainJavaFXScript" value="net.onebeartoe.type.areli.Main"/>
+    </applet-desc>
+    <update check="background"/>
+</jnlp>
