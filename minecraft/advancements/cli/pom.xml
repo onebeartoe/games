@@ -4,7 +4,7 @@
 
     <parent>
         <groupId>org.onebeartoe.games</groupId>
-        <artifactId>statistics</artifactId>
+        <artifactId>advancements</artifactId>
         <version>1.0</version>
     </parent>
 
