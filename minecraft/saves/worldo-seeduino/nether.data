@@ -46,7 +46,7 @@
 
 
 # Village 10 Portal Outlet
--790, 95, 240, "V10PO"
+-790, 95, 240, "V10PO"	
 
 
 # Nether Fortress 1
@@ -118,3 +118,11 @@
 -1216, ~, 304, "NF3"
 -1461, ~, 283, "NF4"
 -1029, ~, 475, "NF5"
+
+
+
+
+
+
+# Far Far Desert Wells Nether Portal Outlet
+174, ~, -1046, "FFDWNPO"

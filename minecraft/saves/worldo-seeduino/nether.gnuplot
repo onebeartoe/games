@@ -2,15 +2,8 @@
 
 unset key
 
-#min x: -1376
-#max x: 374
-#min z: -944
-#max z: 187
-
-
-
 set xrange [-1800: 550]
-set yrange [-1100: 600]
+set yrange [-1200: 600]
 
 set title "Point Plotting"
 
