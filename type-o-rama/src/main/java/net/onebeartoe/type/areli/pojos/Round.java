@@ -12,11 +12,11 @@ package net.onebeartoe.type.areli.pojos;
 
 public class Round
 {
-    public var misses: Integer;
+    public Integer misses;
 
-    public var words: Integer;
+    public Integer words ;
 
-    public var start: Long = -1;
+    public Long start  = -1L;
 
-    public var end: Long = -1;
+    public Long end = -1L;
 }

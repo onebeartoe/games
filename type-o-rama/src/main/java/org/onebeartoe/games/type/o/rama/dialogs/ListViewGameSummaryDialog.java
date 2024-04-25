@@ -1,5 +1,6 @@
 
 package net.onebeartoe.type.areli.dialogs;
+
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.paint.Color;

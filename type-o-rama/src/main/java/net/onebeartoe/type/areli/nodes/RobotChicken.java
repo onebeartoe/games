@@ -14,18 +14,21 @@ import javafx.scene.paint.Color;
 
 public class RobotChicken extends Cannon
 {
-    override public var cannonTipX = 20;
+    public RobotChicken()
+    {
+        cannonTipX = 20;
 
-    override public var cannonTipY = 30;
+        cannonTipY = 30;
+    }
+    
+    public Number halfLength  = 200;
 
-    public var halfLength: Number = 200;
+    public int startX = 0;
+    public int startY = 0;
 
-    public var startX = 0;
-    public var startY = 0;
+    public int endX = 50;
 
-    public var endX = 50;
-
-    public var image: ImageView;
+    public ImageView image;
 
     override public var animation = Timeline
     {
@@ -57,8 +60,6 @@ public class RobotChicken extends Cannon
 
     override public function create () : Node
     {
-//        animation.play();
-
         Group
         {
             layoutX: bind layoutX;
@@ -76,12 +77,8 @@ public class RobotChicken extends Cannon
                 ,
                 Ellipse
                 {
-//                    centerX: cannonTipX
-//                    centerY: cannonTipY
-
                     centerX: bind translateX + (image.image.width * image.scaleX + 30)
                     centerY: cannonTipY + 0.11 * image.image.height
-  //                  centerY: bind translateY //+ (image.image.height * image.scaleY + 15)
 
                     radiusX: 4
                     radiusY: 8
@@ -98,6 +95,4 @@ public class RobotChicken extends Cannon
     {
         throw new UnsupportedOperationException('Not implemented yet');
     }
-
 }
-
