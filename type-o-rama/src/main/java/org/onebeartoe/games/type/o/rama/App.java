@@ -144,8 +144,8 @@ public class App extends Application
         //var gameSums : String [];
 
         var nextRoundButtonText = "Next Round";
-        GameSummaryDialog nextRoundDialog  = ListViewGameSummaryDialog();
-        nextRoundDialog.message: "Do you want to play the next round?";
+        GameSummaryDialog nextRoundDialog  = new ListViewGameSummaryDialog();
+        nextRoundDialog.message = "Do you want to play the next round?";
         
         nextRoundDialog.translateX = width / 2 - (nextRoundDialog.width / 2);
         nextRoundDialog.translateY = height / 2 - (nextRoundDialog.height /2);
