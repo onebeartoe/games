@@ -11,6 +11,11 @@ import org.json.simple.JSONObject;
  */
 public class StatisticsService
 {
+    private StatisticsService()
+    {
+        
+    }
+
 //TODO: remove the static modifier once the implementation code is removed from LoadStatisticsTest.java    
     public static List<Statistic> jsonToStatistics(JSONObject killed) 
     {

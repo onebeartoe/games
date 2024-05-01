@@ -19,13 +19,25 @@ import org.json.simple.parser.ParseException;
  */
 public class AdvancementsService
 {   
-    //TODO: move all these to a map of <File, AdvancementsDto>    
+    //TODO: move all these to a map of <File, AdvancementsDto>, or stop using 
+    //      a local variable for all calls
     private List<String> catCategories;
+    
+    //TODO: move all these to a map of <File, AdvancementsDto>, or stop using 
+    //      a local variable for all calls
     private List<String> balancedDietItems;
+    
+    //TODO: move all these to a map of <File, AdvancementsDto>, or stop using 
+    //      a local variable for all calls
     private List<String> monstersHunted;
+    
+    //TODO: move all these to a map of <File, AdvancementsDto>, or stop using 
+    //      a local variable for all calls
     private List<String> breedableAnimals;
     
-//TODO: move this    
+
+    //TODO: move all these to a map of <File, AdvancementsDto>, or stop using 
+    //      a local variable for all calls
     private NetherAdvancementsCategory nether;
     
     public AdvancementsService() throws IOException, ParseException
@@ -52,17 +64,9 @@ public class AdvancementsService
 
     @Deprecated
     public List<String> balancedDietItems() 
-    {
-        List<String> items = List.copyOf(balancedDietItems);
-        
-        return items;
+    {        
+        return List.copyOf(balancedDietItems);
     }
-
-//    @Deprecated
-//    public List<String> monstersHunted() 
-//    {
-//        return List.copyOf(monstersHunted);
-//    }
 
     @Deprecated
     public List<String> breedableAnimals() 
@@ -228,10 +232,5 @@ public class AdvancementsService
         JSONObject base = (JSONObject) obj;
         
         return base;
-    }
-
-    private Advancement parseDiscoverEveryBiome(JSONObject discoverEveryBiomeJson)
-    {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

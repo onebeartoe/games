@@ -12,7 +12,7 @@ public class PlayerItems
 {
     List<String> armorTrims;
 
-    public List<String> aquiredArmorTrims() throws IOException, ParseException
+    public List<String> aquiredArmorTrims() throws ParseException
     {
         return armorTrims;
     }

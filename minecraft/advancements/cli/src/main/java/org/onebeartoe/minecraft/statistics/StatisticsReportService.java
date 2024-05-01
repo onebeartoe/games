@@ -31,14 +31,14 @@ public class StatisticsReportService
         statisticsService = new UserStatisticsService();
     }
     
-    public void generate(Path inpath) throws FileNotFoundException, IOException, URISyntaxException, ParseException
+    public void generate(Path inpath) throws IOException, URISyntaxException, ParseException
     {
         String outpath = "target/reports/minecraft-statistics.html";
         
         generate(inpath, outpath);
     }
     
-    public void generate(Path inpath, String outFile) throws FileNotFoundException, IOException, URISyntaxException, ParseException
+    public void generate(Path inpath, String outFile) throws IOException, URISyntaxException, ParseException
     {
         File infile = inpath.toFile();
 
@@ -124,10 +124,8 @@ public class StatisticsReportService
     public List<String> readTextLinesFromClasspath(String infileClaspath) throws IOException
     {
 	InputStream instream = getClass().getResourceAsStream(infileClaspath);
-
-        List<String> lines = readLines(instream);
         
-        return lines;
+        return readLines(instream);
     }    
     
 

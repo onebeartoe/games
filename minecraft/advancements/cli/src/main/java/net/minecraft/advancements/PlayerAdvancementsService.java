@@ -47,7 +47,7 @@ public class PlayerAdvancementsService
         return List.copyOf(balancedDietItems);                
     }
 
-    public List<Advancement> incompleteUserAdvancements() throws IOException, ParseException 
+    public List<Advancement> incompleteUserAdvancements() throws ParseException 
     {
         return incompleteUserAdvancements;
     }
