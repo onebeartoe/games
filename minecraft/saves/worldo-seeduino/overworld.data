@@ -483,10 +483,10 @@ Trail Ruins 3????
 
 
 
-# Far Far Desert Wells
-***take Axolotls	
+# Far Far Desert Wells (Village 11)
+#	The
 There is a bunch of points of interest near here!
-1200, ~, -8448, "FFDW"
+1200, ~, -8448, "V11"
 
 
 # Far Far Desert Wells Nether Portal
@@ -511,6 +511,13 @@ There is a bunch of points of interest near here!
 2678 66 -7921, "DW6"
 
 
+# Mushroom Fields 1
+3500, ~, -9130, "MF1"
+
 # Illager Outpost 8
 3888, ~, -7904, "IO8"
 
+# Woodland Mansion 2
+#	It is there, and still has Allay there.
+#	I tried to find a Music Disc here but so have not.
+6728, ~, -8184, "WM2"
