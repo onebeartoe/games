@@ -44,8 +44,6 @@ public class WildUserAdvancementsServiceTest
     {
         List<String> missingTimes = implementation.missingAdventureTimes();
         
-//        System.out.println("missingTimes = " + missingTimes);
-        
         int expected = 8;
         
         var actual = missingTimes.size();

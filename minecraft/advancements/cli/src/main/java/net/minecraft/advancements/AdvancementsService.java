@@ -12,7 +12,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 /**
- * This class provides method to parse and query Minecraft Advancements data 
+ * This class provides methods to parse and query Minecraft Advancements data 
  * files.
  * 
  * This is specifically for Minecraft 1.17.
@@ -104,6 +104,7 @@ public class AdvancementsService
         return advancement;
     }
 
+//TODO: return a List<String> and remove balancedDietItems    
     private void parseBalancedDiet(JSONObject diet) 
     {
          balancedDietItems = new ArrayList<String>();
@@ -118,6 +119,7 @@ public class AdvancementsService
         });
     }
 
+//TODO: return a List<String> and remove breedableAnials    
     private void parseBredAllAnimals(JSONObject bredAllAnimalsJson)
     {
         breedableAnimals = new ArrayList<String>();
@@ -166,6 +168,10 @@ public class AdvancementsService
         HusbandryAdvancements advancements = new HusbandryAdvancements();
         
         advancements.aCompleteCatalogue.criteria = completeCatalogue;
+        
+        advancements.balancedDiet.criteria = balancedDietItems;
+        
+        advancements.twoByTwo.criteria = breedableAnimals;
         
         return advancements;
         

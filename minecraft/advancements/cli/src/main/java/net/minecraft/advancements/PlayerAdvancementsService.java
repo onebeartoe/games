@@ -346,4 +346,9 @@ public class PlayerAdvancementsService
 
         return adventure;
     }
+
+    public List<String> bredAnimals()
+    {
+        return List.copyOf(bredAnimals);
+    }
 }

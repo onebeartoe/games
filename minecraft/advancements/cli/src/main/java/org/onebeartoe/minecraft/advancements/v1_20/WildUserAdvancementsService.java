@@ -15,8 +15,8 @@ import static net.minecraft.advancements.PlayerAdvancementsService.missingFromB;
 
 /**
  *
- * @author roberto
  */
+//TODO: Refactor this entire class, probably putting the contents into the PlayerAdvancementsService.java
 public class WildUserAdvancementsService 
 {
     private final MinecraftWildAdvancementsService advancementsService;

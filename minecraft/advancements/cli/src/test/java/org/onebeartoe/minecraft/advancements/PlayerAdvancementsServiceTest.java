@@ -55,7 +55,7 @@ public class PlayerAdvancementsServiceTest
         
         advancements = advancementsService.load();
     }
-    
+
     @Test
     public void balancedDiet()
     {
@@ -138,6 +138,13 @@ public class PlayerAdvancementsServiceTest
     public void breedAllAnimals()
     {
         List<String> missingMobs = implementation.unbredAnimals();
+        
+        List<String> breadAnimals = implementation.bredAnimals();
+
+        int actualHaves = breadAnimals.size();
+        
+        int expectedHaves = 8;
+        assertEquals(expectedHaves, actualHaves);        
                 
         // These values are the expected missing values 
         // in the advancements JSON file for this given user.
