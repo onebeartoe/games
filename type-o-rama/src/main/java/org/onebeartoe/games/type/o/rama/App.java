@@ -1,6 +1,8 @@
 
 package org.onebeartoe.games.type.o.rama;
 
+import java.lang.Number;
+
 import net.onebeartoe.type.areli.Main;
 
 import javafx.application.Application;
@@ -21,6 +23,8 @@ import javafx.scene.text.Font;
 import java.lang.Void;
 
 import java.lang.Boolean;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.StringBinding;
@@ -45,7 +49,6 @@ import net.onebeartoe.type.areli.dialogs.GameSummaryDialog;
 import net.onebeartoe.type.areli.dialogs.ListViewGameSummaryDialog;
 import net.onebeartoe.type.areli.factories.WordTargetFactory;
 import net.onebeartoe.type.areli.factories.implementation.DiagnalWordTargetFactory;
-import net.onebeartoe.type.areli.factories.implementation.VerticalWordTargetFactory;
 import net.onebeartoe.type.areli.factories.implementation.StaticWordTargetFactory;
 import net.onebeartoe.type.areli.factories.implementation.VerticalWordTargetFactory;
 import net.onebeartoe.type.areli.nodes.RobotChicken;
@@ -72,7 +75,7 @@ public class App extends Application
     
     Text elTexto;
 
-    Number elTextoX = new Number(200);   
+    Number elTextoX = new Integer(200);   
 
     public App()
     {
@@ -121,23 +124,17 @@ public class App extends Application
             
             encouragmentText.textProperty().bind(textBinding);
         };
-
-        
-        
-        
-        
-        
         
         Node dialog = encouragmentText;
-
-        
 
         var totalRounds = 5;
 
         var misses = 0;
         var roundMisses = 0;
 
-        Round[] gameSummaries  ;
+// in JavaFX Script gameSummaries was Round[]        
+        List<Round> gameSummaries = new ArrayList();
+//        Round[] gameSummaries;
 
         var wordsPerRoundFactor = 3;
         //var wordsInARound: Integer;
@@ -147,28 +144,41 @@ public class App extends Application
         //var gameSums : String [];
 
         var nextRoundButtonText = "Next Round";
+
         GameSummaryDialog nextRoundDialog  = new ListViewGameSummaryDialog();
+
         nextRoundDialog.message = "Do you want to play the next round?";
         
-        nextRoundDialog.translateX = width / 2 - (nextRoundDialog.width / 2);
-        nextRoundDialog.translateY = height / 2 - (nextRoundDialog.height /2);
+        nextRoundDialog.setTranslateX(width / 2 - (nextRoundDialog.width / 2) );
         
-        nextRoundDialog.dismissButton.action = function()
+        nextRoundDialog.setTranslateY(height / 2 - (nextRoundDialog.height /2) );
+        
+        nextRoundDialog.dismissButton.setOnAction((t) -> 
         {
             if(currentRound > totalRounds)
             {
                 currentRound = 1;
-                delete gameSummaries;
-                nextRoundDialog.buttonText = nextRoundButtonText
+
+//Does 'delete' clear the whole list or just the 1st element?
+                gameSummaries.clear();
+//                delete gameSummaries;
+
+                nextRoundDialog.buttonText.setValue(nextRoundButtonText);
             }
 
-            println("New round.");
+            System.out.println("New round.");
+
             dialog = encouragmentText;
+
             loadTargets();
+
             elTexto.requestFocus();
 
             playIntro()
-        };
+        });
+
+
+
         nextRoundDialog.buttonText = nextRoundButtonText;
 
         var wordTargetFactoryA: WordTargetFactory = StaticWordTargetFactory
@@ -210,26 +220,18 @@ public class App extends Application
     public void playIntro()
     {
         MediaPlayer introSoundPlayer = new MediaPlayer(levelIntroSound);
-introSoundPlayer.setAutoPlay(false);
-introSoundPlayer.setRepeatCount(0);
+
+        introSoundPlayer.setAutoPlay(false);
+
+        introSoundPlayer.setRepeatCount(0);
         
         introSoundPlayer.play();
     }    
 
-
-
-
-
-
-
-
 //var wordsService: WordsService = net.onebeartoe.type.areli.services.implementation.TestingWordService{}
-WordsService wordsService = new 
-net.onebeartoe.type.areli.services.implementation.SimpleWordService();
+WordsService wordsService = new net.onebeartoe.type.areli.services.implementation.SimpleWordService();
 
 String input = "";
-
-
 
 Number rx  ;
 
@@ -242,6 +244,7 @@ Attack[] attacks;
 WordTarget[] wordTargets;
 
 Integer cannonTipX = 141;
+
 Integer cannonTipY = 421;
 
 

@@ -1,59 +1,82 @@
 
 package net.onebeartoe.type.areli.dialogs;
 
-import javafx.scene.CustomNode;
+// The next (temporarily) commented import was from JavaFX Script
+//TODO: delete once the application runs properly
+//import javafx.scene.CustomNode;
+
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+import javafx.scene.Group;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Screen;
-import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 
 /**
- * @author lando
  */
-public abstract class GameSummaryDialog extends CustomNode
+public abstract class GameSummaryDialog extends Group
 {
-    public var width: Integer = 400;
+    public Integer width = 400;
 
-    public var height: Integer;
+    public Integer height;
 
-    public var title: String = "Game Summary";
+    public String title = "Game Summary";
 
-    public var message: String = "Some yes or no question?";
+    public String message = "Some yes or no question?";
 
-    public var messageX: Integer = 30;
+    public Integer messageX = 30;
 
-    def screenWidth = Screen.primary.visualBounds.width;
+    double screenWidth;
+    
+    double screenHeight;
+    
+    double sceneWidth;
 
-    def screenHeight = Screen.primary.visualBounds.height;
-
-    var rect: Rectangle[];
-
-    var sceneWidth = screenWidth - (screenWidth * 0.3);
-
-    var sceneHeight = screenHeight - (screenHeight * 0.5);
-
-    var listViewWidth = width * 0.8;
-
-    var listViewHeight = height * 0.5;
-
-    var listViewY = sceneHeight - (sceneHeight * 0.75);
-
-    var listViewX = width * 0.1;
-
-    public var buttonText = "Next Round";
-
-    public var listView : ListView = ListView
+    double sceneHeight;
+    
+    double listViewWidth;
+    
+    double listViewHeight;
+    
+    double listViewY;
+    
+    double listViewX;
+    
+    public GameSummaryDialog()
     {
-        width: listViewWidth
-        height: listViewHeight
+        screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
 
-        layoutX: listViewX
-        layoutY: listViewY
+        screenHeight = Screen.getPrimary().getVisualBounds().getHeight();
+
+        sceneWidth = screenWidth - (screenWidth * 0.3);
+
+        sceneHeight = screenHeight - (screenHeight * 0.5);
+
+        listViewWidth = width * 0.8;
+        
+        listViewHeight = height * 0.5;
+        
+        listViewY = sceneHeight - (sceneHeight * 0.75);
+        
+        listViewX = width * 0.1;
+        
+        listView = new ListView();
+        listView.setPrefWidth(listViewWidth);
+        listView.setPrefHeight(listViewHeight);
+        listView.setLayoutX(listViewX);
+        listView.setLayoutY(listViewY);
+    
+        dismissButton.textProperty()
+                        .bind(buttonText);
     }
 
-    public var dismissButton: Button = Button
-    {
-        text: bind buttonText;
-    }
+    Rectangle[] rect;
 
+    public StringProperty buttonText = new SimpleStringProperty("Next Round");
+    
+    public ListView listView;
+
+    public Button dismissButton = new Button();
 }
