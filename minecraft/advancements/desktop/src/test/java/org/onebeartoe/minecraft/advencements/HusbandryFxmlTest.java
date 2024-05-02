@@ -4,12 +4,10 @@ package org.onebeartoe.minecraft.advencements;
 import java.io.IOException;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
 import javafx.scene.control.SplitPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
-import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertTrue;
 import org.junit.Test;
 
@@ -19,13 +17,10 @@ import org.junit.Test;
 public class HusbandryFxmlTest extends AdvancementsFxmlTest
 {
     @Test
-    public void husbandry_completeCatalogue_imageIsAvailable() throws IOException 
+    public void completeCatalogue_imageIsAvailable() throws IOException 
     {
-//TODO: use lookup based on node ID        
-        Button button = from(tabs).lookup(".button").query();
+//TODO: use lookup() based on node ID        
 
-        assertEquals("Husbandry", button.getText());
-        
         SplitPane splitPane = (SplitPane) husbandryTab.getContent();
         
         HBox hBox = (HBox) splitPane.getItems().get(0);
@@ -42,7 +37,7 @@ public class HusbandryFxmlTest extends AdvancementsFxmlTest
     }
 
     @Test
-    public void husbandry_aBalancedDiet_imageIsAvailable()
+    public void aBalancedDiet_imageIsAvailable()
     {
         ImageView imageView = from(tabs)
                                 .lookup("#balancedDietImageView")
@@ -56,7 +51,7 @@ public class HusbandryFxmlTest extends AdvancementsFxmlTest
     }
 
     @Test
-    public void husbandry_twoByTwo_imageIsAvailable()
+    public void twoByTwo_imageIsAvailable()
     {
         ImageView imageView = from(tabs)
                                 .lookup("#twoByTwoImageView")

@@ -5,7 +5,9 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -279,8 +281,41 @@ public class PlayerAdvancementsService
         
         return advancements;
     }
+    
+    private Map<String, Boolean> parseAdvancement(JSONObject base, String criteriaNameNbt, Advancement advancement)
+    {        
+        JSONObject completeCatalogueJson = (JSONObject) base.get(criteriaNameNbt);
 
-    private PlayerHusbandryAdvancements parseHusbandry(JSONObject base) 
+        var playerAdvancementsList = new <String> ArrayList();
+        
+        JSONObject criteriaJson = (JSONObject) completeCatalogueJson.get("criteria");
+        
+        criteriaJson.forEach((name, date) -> 
+        {
+            playerAdvancementsList.add(name);
+        });
+
+        List<String> minecraftCriteria = advancement.criteria;
+        
+        Map<String, Boolean> criteria = new HashMap();
+        
+        minecraftCriteria.forEach((criteriaName) -> 
+        {
+            if(playerAdvancementsList.contains(criteriaName))
+            {
+                criteria.put(criteriaName, true);
+            }
+            else
+            {
+                criteria.put(criteriaName, false);
+            }
+        });        
+        
+        return criteria;
+    }
+    
+//TODO: refactor this to use parseAdvancement()!!!!!    
+    private void parseCompleteCatalogue(JSONObject base, PlayerHusbandryAdvancements playerAdvancements)
     {
         JSONObject completeCatalogueJson = (JSONObject) base.get("minecraft:husbandry/complete_catalogue");
         
@@ -291,12 +326,10 @@ public class PlayerAdvancementsService
         criteriaJson.forEach((name, date) -> 
         {
             playerAdvancementsList.add(name);
-        });
-        
-        var playerAdvancements = new PlayerHusbandryAdvancements();
-        
+        });   
+
         List<String> minecraftCriteria = minecraftAdvancements.husbandry.aCompleteCatalogue.criteria;
-// ARE THE NAMES ARE MISMATCHED!!!!!!!!!they formages were different,deletes one tests pass
+
         minecraftCriteria.forEach((criteriaName) -> 
         {
             if(playerAdvancementsList.contains(criteriaName))
@@ -308,6 +341,18 @@ public class PlayerAdvancementsService
                 playerAdvancements.aCompleteCatelogue.criteria.put(criteriaName, false);
             }
         });
+    }
+
+    private PlayerHusbandryAdvancements parseHusbandry(JSONObject base) 
+    {        
+        var playerAdvancements = new PlayerHusbandryAdvancements();
+        
+//TODO: refactor this to use parseAdvencement();        
+        parseCompleteCatalogue(base, playerAdvancements);
+        
+        var twoByTwoCriteriaName = "minecraft:husbandry/bred_all_animals";
+        var advancement = minecraftAdvancements.husbandry.twoByTwo;
+        playerAdvancements.twoByTwo.criteria = parseAdvancement(base, twoByTwoCriteriaName, advancement);
         
         return playerAdvancements;
     }

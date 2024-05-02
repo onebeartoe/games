@@ -123,20 +123,21 @@
             </content>
     </Tab>
 
-    <Tab text="Husbandry">          
+    <Tab text="Husbandry"
+         id="husbandryTab">
          <content>
             <SplitPane dividerPositions="0.5" orientation="VERTICAL">
               <items>
                     <HBox fx:id="husbandryHBox"
                         alignment="CENTER"  >
                        <children>
-                          <ImageView fitHeight="150.0" fitWidth="200.0" 
-
+                          <ImageView fitHeight="150.0" 
+                                     fitWidth="200.0" 
                                      pickOnBounds="true" 
                                      preserveRatio="true" >
                             <image>
                                 <Image url="@file:///home/roberto/Versioning/owner/github/games/minecraft/advancements/desktop/src/main/resources/org/onebeartoe/minecraft/dirt.jpg" 
-                                        fx:id="completeCatalogueImage"/>
+                                       fx:id="completeCatalogueImage"/>
                             </image>                                  
                           </ImageView>
 
@@ -151,6 +152,7 @@
                           </ImageView>
 
                           <ImageView id="twoByTwoImageView"
+                                     onMouseClicked="#displayTwoByTwoData"
                                      fitHeight="150.0" 
                                      fitWidth="200.0"
                                      pickOnBounds="true" 
@@ -165,8 +167,10 @@
                      <content>
                         <SplitPane dividerPositions="0.5">
                           <items>
-                              <TextArea fx:id="husbundryCompleteCatelogueHavesTextArea" />
-                              <TextArea fx:id="husbundryCompleteCatelogueHaveNotsTextArea"/>
+                              <TextArea id="husbandryHavesTextArea"
+                                        fx:id="husbundryHavesTextArea" />
+
+                              <TextArea fx:id="husbundryHaveNotsTextArea"/>
                           </items>
                         </SplitPane>
                      </content>

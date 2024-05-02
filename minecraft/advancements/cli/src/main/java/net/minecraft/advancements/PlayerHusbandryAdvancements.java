@@ -13,5 +13,7 @@ public class PlayerHusbandryAdvancements
     public PlayerHusbandryAdvancements()
     {
         aCompleteCatelogue = new PlayerAdvancement();
+        
+        twoByTwo = new PlayerAdvancement();
     }
 }

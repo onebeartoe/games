@@ -12,6 +12,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.util.Duration;
+import net.minecraft.advancements.PlayerAdvancement;
 import net.minecraft.advancements.PlayerAdvancements;
 import net.minecraft.advancements.PlayerAdvancementsService;
 import org.json.simple.parser.ParseException;
@@ -40,10 +41,10 @@ public class AdvancementsController
     TextArea netherHaveNotsTextArea;
     
     @FXML
-    TextArea husbundryCompleteCatelogueHavesTextArea;
+    TextArea husbundryHavesTextArea;
     
     @FXML
-    TextArea husbundryCompleteCatelogueHaveNotsTextArea;
+    TextArea husbundryHaveNotsTextArea;
     
     @FXML
     TextArea advancementsHavesTextArea;
@@ -76,9 +77,13 @@ public class AdvancementsController
         netherHBox.setSpacing(10);
         
         husbandryHBox.setSpacing(10);
-        
+
+//TODO: find a way to inject this path value, for testing        
+//      this next one is for testing
+        var advancementsPath = "/home/roberto/Versioning/owner/github/games/minecraft/advancements/cli/src/test/resources/minecraft/saves/1.20/advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";
+//      These next two are temporary, until we dynamically load the player advancement JSON file
 //        var advancementsPath = "/home/roberto/.minecraft/saves/seedro/advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";
-        var advancementsPath = "/home/roberto/.minecraft/saves/worldo/advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";
+//        var advancementsPath = "/home/roberto/.minecraft/saves/worldo/advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";
         
         playerAdvancementsService = new PlayerAdvancementsService();
         
@@ -178,11 +183,12 @@ public class AdvancementsController
                     nots.append("\n");
                 });
 
-        husbundryCompleteCatelogueHavesTextArea.setText(haves.toString());
+        husbundryHavesTextArea.setText(haves.toString());
         
-        husbundryCompleteCatelogueHaveNotsTextArea.setText(nots.toString());
+        husbundryHaveNotsTextArea.setText(nots.toString());
     }
 
+//TODO: reuse distplayData() once we know it is working    
     @FXML
     private void displayMonstersHuntedData() 
     {
@@ -191,7 +197,7 @@ public class AdvancementsController
                 .forEach(have ->
                 {
                     haves.append(have);
-                    haves.append("\n");
+                    haves.append(System.lineSeparator() );
                 });
 
         var haveNots = new StringBuilder();
@@ -207,5 +213,38 @@ public class AdvancementsController
     
         advancementsHaveNotsTextArea.setText(haveNots.toString());
         advancementsHaveNotsTextArea.getStyleClass().add("title");
+    }
+    
+    @FXML
+    private void displayTwoByTwoData()
+    {
+        PlayerAdvancement advancement = playerAdvancements.husbandry.twoByTwo;
+                
+        displayData(advancement, husbundryHavesTextArea, husbundryHaveNotsTextArea);
+    }
+    
+    private void displayData(PlayerAdvancement advancement, TextArea havesTextArea, TextArea haveNotsTextArea)
+    {
+        var haves = new StringBuilder();        
+        advancement.haves()
+                .forEach(have ->
+                {
+                    haves.append(have);
+                    haves.append(System.lineSeparator() );
+                });
+
+        var haveNots = new StringBuilder();
+        advancement.haveNots()
+                        .forEach(not ->
+                {
+                    haveNots.append(not);
+                    haveNots.append("\n");
+                });
+        
+        havesTextArea.setText(haves.toString());
+        havesTextArea.getStyleClass().add("title");
+    
+        haveNotsTextArea.setText(haveNots.toString());
+        haveNotsTextArea.getStyleClass().add("title");        
     }
 }
