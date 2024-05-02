@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 import javafx.stage.Stage;
-
+  
 import javafx.scene.Scene;
 import javafx.scene.text.Text;
 import javafx.scene.input.KeyCode;
@@ -28,6 +28,7 @@ import javafx.beans.binding.StringBinding;
 
 import javafx.scene.Node;
 import javafx.scene.Group;
+import javafx.scene.effect.Glow;
 import net.onebeartoe.type.areli.targets.VerticalWordTarget;
 //import javafx.util.Math;
 
@@ -35,18 +36,20 @@ import net.onebeartoe.type.areli.services.WordsService;
 import net.onebeartoe.type.areli.attacks.LineBeam;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javafx.scene.effect.Glow;
 import javafx.scene.text.Text;
 import net.onebeartoe.type.areli.attacks.Attack;
+import net.onebeartoe.type.areli.attacks.LineBeam;
 import net.onebeartoe.type.areli.targets.WordTarget;
 import net.onebeartoe.type.areli.pojos.Round;
 import net.onebeartoe.type.areli.dialogs.GameSummaryDialog;
 import net.onebeartoe.type.areli.dialogs.ListViewGameSummaryDialog;
 import net.onebeartoe.type.areli.factories.WordTargetFactory;
-import net.onebeartoe.type.areli.factories.implementation.VerticalWordTargetFactory;
 import net.onebeartoe.type.areli.factories.implementation.DiagnalWordTargetFactory;
+import net.onebeartoe.type.areli.factories.implementation.VerticalWordTargetFactory;
 import net.onebeartoe.type.areli.factories.implementation.StaticWordTargetFactory;
+import net.onebeartoe.type.areli.factories.implementation.VerticalWordTargetFactory;
 import net.onebeartoe.type.areli.nodes.RobotChicken;
+import net.onebeartoe.type.areli.pojos.Round;
 import net.onebeartoe.type.areli.targets.VerticalWordTarget;
 
 /**
