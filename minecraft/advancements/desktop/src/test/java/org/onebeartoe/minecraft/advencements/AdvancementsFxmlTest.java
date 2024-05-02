@@ -31,6 +31,8 @@ public class AdvancementsFxmlTest extends ApplicationTest
     protected Tab netherTab;
     
     protected Tab adventureTab;
+
+    protected Tab husbandryTab;
     
 //TODO: find a way to verify the font
 //      or get rid of this test    
@@ -86,6 +88,8 @@ public class AdvancementsFxmlTest extends ApplicationTest
         netherTab = tabs.getTabs().get(0);
 
         adventureTab = tabs.getTabs().get(1);
+        
+        husbandryTab = tabs.getTabs().get(2);
         
         var fontSheet = "/org/onebeartoe/desktop/fonts.css";
 

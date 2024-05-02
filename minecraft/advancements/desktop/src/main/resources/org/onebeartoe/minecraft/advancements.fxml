@@ -140,12 +140,23 @@
                             </image>                                  
                           </ImageView>
 
-                          <ImageView fitHeight="150.0" fitWidth="200.0" 
-
+                          <ImageView id="balancedDietImageView"
+                                     fitHeight="150.0" 
+                                     fitWidth="200.0"
                                      pickOnBounds="true" 
                                      preserveRatio="true" >
                             <image>
-                                <Image url="@file:///home/roberto/Versioning/owner/github/games/minecraft/advancements/desktop/src/main/resources/org/onebeartoe/minecraft/dirt.jpg" />
+                                <Image url="@balanced-diet.png" />
+                            </image>                                  
+                          </ImageView>
+
+                          <ImageView id="twoByTwoImageView"
+                                     fitHeight="150.0" 
+                                     fitWidth="200.0"
+                                     pickOnBounds="true" 
+                                     preserveRatio="true" >
+                            <image>
+                                <Image url="@two-by-two.png" />
                             </image>                                  
                           </ImageView>
                        </children>
