@@ -9,7 +9,7 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 
 /**
- * @author lando
+ * @author lando (ha! I did this one the MacBook I won from Cameron Purdy!)
  */
 
 public class RealVerticalWordTarget extends StaticWordTarget
