@@ -1,35 +1,44 @@
 
 package net.onebeartoe.type.areli.factories.implementation;
 
+import java.util.ArrayList;
+import java.util.List;
 import net.onebeartoe.type.areli.factories.WordTargetFactory;
 import net.onebeartoe.type.areli.targets.WordTarget;
 import java.util.Random;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import net.onebeartoe.type.areli.targets.StaticWordTarget;
 
 public class StaticWordTargetFactory extends WordTargetFactory
 {
-    var random : Random = Random{};
+    Random random = new Random();
 
-    override public function createTargets (words : String[]) : WordTarget[]
+    @Override 
+    public List<WordTarget> createTargets (String[] words) 
     {
-        var targets: WordTarget [];
+        List<WordTarget> targets = new ArrayList();
 
-        for(word in words)
+        for(String word : words)
         {
-            var t: WordTarget = StaticWordTarget
-            {
-                labelText: word
+            WordTarget t = new StaticWordTarget();
+            
+            t.labelText = new SimpleStringProperty(word);
+            
+            int xMax = (int) (xRange*0.8);
+            var x = random.nextInt(xMax);
+            t.translateXProperty().setValue(x);
 
-                var x = random.nextInt(xRange*0.8);
-                translateX: x
-                translateY: random.nextInt(targetMaxY) - targetMinY;
-                xMax: targetMaxX
-                yMax: targetMaxY
-            }
-            insert t into targets
+            t.translateYProperty().setValue(random.nextInt(targetMaxY) - targetMinY);
+            
+            t.xMax = targetMaxX;
+            
+            t.yMax = targetMaxY;
+            
+            targets.add(t);
         }
 
-        targets
+        return targets;
     }
 
 

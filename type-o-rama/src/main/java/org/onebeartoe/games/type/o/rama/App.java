@@ -75,7 +75,9 @@ public class App extends Application
     
     Text elTexto;
 
-    Number elTextoX = new Integer(200);   
+    Number elTextoX = new Integer(200);
+    
+    Text dialog;
 
     public App()
     {
@@ -125,7 +127,7 @@ public class App extends Application
             encouragmentText.textProperty().bind(textBinding);
         };
         
-        Node dialog = encouragmentText;
+        dialog = encouragmentText;
 
         var totalRounds = 5;
 
@@ -153,7 +155,7 @@ public class App extends Application
         
         nextRoundDialog.setTranslateY(height / 2 - (nextRoundDialog.height /2) );
         
-        nextRoundDialog.dismissButton.setOnAction((t) -> 
+        nextRoundDialog.dismissButton.setOnAction(t -> 
         {
             if(currentRound > totalRounds)
             {
@@ -174,14 +176,12 @@ public class App extends Application
 
             elTexto.requestFocus();
 
-            playIntro()
+            playIntro();
         });
 
+        nextRoundDialog.buttonText.setValue( nextRoundButtonText);
 
-
-        nextRoundDialog.buttonText = nextRoundButtonText;
-
-        var wordTargetFactoryA: WordTargetFactory = StaticWordTargetFactory
+        WordTargetFactory wordTargetFactoryA = new StaticWordTargetFactory();
         {
             xRange: width
 
@@ -191,6 +191,9 @@ public class App extends Application
             targetMinY: targetMinY
         };
 
+        
+        
+        
         var wordTargetFactoryB: WordTargetFactory = VerticalWordTargetFactory
         {
             xRange: width

@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <parent>
-    <artifactId>games</artifactId>
-    <groupId>org.onebeartoe.games</groupId>
-    <version>1.0</version>
-  </parent>
+        <artifactId>games</artifactId>
+        <groupId>org.onebeartoe.games</groupId>
+        <version>1.0</version>
+    </parent>
+
     <groupId>org.onebeartoe.games</groupId>
     <artifactId>type-o-rama</artifactId>
     <version>1.0</version>
+
+    <name>onebeartoe-games-type-o-rama</name>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.openjfx</groupId>
@@ -114,5 +120,4 @@
             </plugin>
         </plugins>
     </build>
-    <name>onebeartoe-games-type-o-rama</name>
 </project>

@@ -4,14 +4,17 @@ package net.onebeartoe.type.areli.targets;
 import javafx.scene.Node;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.StringProperty;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 
 public abstract class WordTarget extends Node
 {
-    public Number labelX  = 20;
+    public IntegerProperty labelX = new SimpleIntegerProperty(20);
     
-    public Number labelY  = -20;
+    public IntegerProperty labelY  = new SimpleIntegerProperty(-20);
 
     public Label label;
 
@@ -23,7 +26,7 @@ public abstract class WordTarget extends Node
 
     public Number yMax;
 
-    public String labelText;
+    public StringProperty labelText;
 
     public Node background;
 
