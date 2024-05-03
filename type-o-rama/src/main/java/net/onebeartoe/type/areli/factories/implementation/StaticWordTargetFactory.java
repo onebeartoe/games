@@ -7,7 +7,6 @@ import net.onebeartoe.type.areli.factories.WordTargetFactory;
 import net.onebeartoe.type.areli.targets.WordTarget;
 import java.util.Random;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
 import net.onebeartoe.type.areli.targets.StaticWordTarget;
 
 public class StaticWordTargetFactory extends WordTargetFactory
@@ -40,6 +39,4 @@ public class StaticWordTargetFactory extends WordTargetFactory
 
         return targets;
     }
-
-
 }

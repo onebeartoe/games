@@ -11,6 +11,7 @@ public abstract class  WordTargetFactory
     public Number targetMaxX;
 
     public Integer targetMaxY;
+
     public Integer targetMinY;
 
     public abstract List<WordTarget> createTargets(String [] words) ;

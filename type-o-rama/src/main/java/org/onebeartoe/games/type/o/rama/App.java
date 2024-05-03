@@ -161,7 +161,7 @@ public class App extends Application
             {
                 currentRound = 1;
 
-//Does 'delete' clear the whole list or just the 1st element?
+//TODO:  Does 'delete' clear the whole list or just the 1st element?
                 gameSummaries.clear();
 //                delete gameSummaries;
 
@@ -181,28 +181,29 @@ public class App extends Application
 
         nextRoundDialog.buttonText.setValue( nextRoundButtonText);
 
+        
         WordTargetFactory wordTargetFactoryA = new StaticWordTargetFactory();
-        {
-            xRange: width
 
-            targetMaxX: targetMaxX
-
-            targetMaxY: targetMaxY
-            targetMinY: targetMinY
-        };
+        wordTargetFactoryA.xRange = (double) width;
+        
+        wordTargetFactoryA.targetMaxX = targetMaxX;
+        
+        wordTargetFactoryA.targetMaxY = (int) targetMaxY;
+                
+        wordTargetFactoryA.targetMinY = (int) targetMinY;
 
         
         
         
-        var wordTargetFactoryB: WordTargetFactory = VerticalWordTargetFactory
-        {
-            xRange: width
+        WordTargetFactory wordTargetFactoryB = VerticalWordTargetFactory();
+        wordTargetFactoryB.xRange = (double) width;
+        wordTargetFactoryB.targetMaxX = targetMaxX;
+        wordTargetFactoryB.targetMaxY = (int) targetMaxY;
+        wordTargetFactoryB.targetMinY = (int) targetMinY;
 
-            targetMaxX: targetMaxX
-
-            targetMaxY: targetMaxY
-            targetMinY: targetMinY
-        };
+        
+        
+        
 
         var wordTargetFactoryC: WordTargetFactory = DiagnalWordTargetFactory
         {
