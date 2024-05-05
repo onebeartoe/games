@@ -10,7 +10,7 @@ import net.onebeartoe.type.areli.targets.WordTarget;
 
 public class VerticalWordTargetFactory extends WordTargetFactory
 {
-    Random random = new Random();
+    
 
     @Override
     public List<WordTarget> createTargets (String[] words)
@@ -19,7 +19,7 @@ public class VerticalWordTargetFactory extends WordTargetFactory
 
         for(String word : words)
         {
-            WordTarget t = RealVerticalWordTarget();
+            WordTarget t = new RealVerticalWordTarget();
             
             t.labelText.setValue(word);
             

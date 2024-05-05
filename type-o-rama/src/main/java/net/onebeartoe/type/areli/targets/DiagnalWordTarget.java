@@ -5,6 +5,7 @@ import javafx.scene.Node;
 import javafx.scene.Group;
 import java.lang.UnsupportedOperationException;
 import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
@@ -16,105 +17,110 @@ import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
 import javafx.util.Duration;
 
-public class StaticWordTarget extends WordTarget
+public class DiagnalWordTarget extends WordTarget
 {
     public Integer halfLength = 200;
 
-    public Integer startX = 0;//50;
-
-    public Integer startY = 0;//250;    
+    public Integer startX = 0;
+    public Integer startY = 0;
 
     public Integer endX = 50;
-//    public var endY = 50;
+    public Integer endY = 50;
 
-    public StaticWordTarget()
+    public DiagnalWordTarget()
     {
         int width = 140;
-        
+
         int height = 90;
-        
+
         background = new Rectangle(width, height);
-        
-        background.setFill(Color.GREEN);
+
+        background.setFill(Color.LIGHTGREEN);
                 
         background.setArcWidth(5);
 
         background.setArcHeight(5);
         
-    
+        background.setStroke(Color.GREEN);
         
+        background.setStrokeWidth(5);
+                
+        
+                
+                
+        initLabel();
+        
+        initiAnimation();
+        
+        
+        
+        getChildren().
+            addAll( create() );
+    }
+
+    private void initLabel()
+    {
         label = new Label();
-        
+
         label.layoutXProperty().bind(labelX);
 
         label.layoutYProperty().bind(labelY);
 
         var font = Font.font("Trebuchet MS",20);
-
+        
         label.setFont(font);
         
         label.textProperty().bind(labelText);
-                
-        label.setWrapText(true);
-                
-        label.setTextAlignment(TextAlignment.JUSTIFY);
         
-//TODO: bind this to the Scene's width        
+        label.setWrapText(true);
+
+        label.setTextAlignment(TextAlignment.JUSTIFY);
+
+        
+
+//TODO: bind this to the Scene's width!!!!!!!!!!!!!!!!        
         DoubleProperty widthProperty = new SimpleDoubleProperty(600 * 0.2);
         label.widthProperty().bind(widthProperty);
-//TODO: bind this to the Scene's width
-//        width: bind scene.width * 0.2
-        
+//TODO: bind this to the Scene's width!!!!!!!!!!1
+        //        width: bind scene.width * 0.2
+
         label.setHeight(200);
-        
-        
-        
-        
+    }
 
 
-
+    private void initiAnimation()
+    {
         animation = new Timeline();
-        
+                
         animation.setAutoReverse(true);
-    
+
         animation.setCycleCount(Timeline.INDEFINITE);
 // I guess repeatCount became cycleCount                
 //        repeatCount: Timeline.INDEFINITE
 
 
-
-KeyFrame keyFrame1 = new KeyFrame(Duration.millis(2500) );
-
-KeyFrame keyFrame2 = new KeyFrame( Duration.seconds(5) );
-
-KeyFrame keyFrame3 = new KeyFrame(Duration.millis(850) );
-
-        animation.getKeyFrames()
-                    .addAll(keyFrame1, 
-                            keyFrame2,
-                            keyFrame3);
-    
-
+        Duration duration1 = Duration.seconds(5);
+        KeyValue xKeyValue = new KeyValue(translateXProperty(), xMax);
+        KeyValue yKeyValue = new KeyValue(translateYProperty(), yMax);
+        KeyFrame keyFrame1 = new KeyFrame(duration1, xKeyValue, yKeyValue);
         
+        
+        Duration duration2 = Duration.millis(850);
+        KeyFrame removeKeyFrame = new KeyFrame(duration2);
+                
+                
+                
 //        keyFrames:
 //        [
 //            KeyFrame
 //            {
-//                time: 2500ms,
+//                time: 5s,
 //                values:
 //                [
-//                   
+//                   translateX => xMax,
+//                   translateY => yMax
 //                ]
 //            }
-//            ,
-//            KeyFrame
-//            {
-//                time: 5s,
-//                values: 
-//                [
-//                    
-//                ]
-//            },
 //            removeFrame = KeyFrame
 //            {
 //                time: 850ms,
@@ -126,57 +132,41 @@ KeyFrame keyFrame3 = new KeyFrame(Duration.millis(850) );
 //            }
 //        ]
 
-
-getChildren().
-        addAll( create() );
+        animation.getKeyFrames()
+                    .addAll(keyFrame1, 
+                            removeKeyFrame);
 
     }
-        
+
+    
     
 //TODO: is this really overriden like in the .fx code?????
-//    @Override 
-    public Node create()
+//    @Override     
+    public Node create ()
     {
         animation.play();
 
-        Group group = new Group();
+        var group = new Group();
         
-
-// Origianal .fx code        
-//        Group
-//        {
-
+        
+        
+        
 //!!!!!!!!TODO: what about these bind() calls?  where is the layoutX and layoutY on the right side?????
 //            layoutX: bind layoutX;
 //
 //            layoutY: bind layoutY;
 
-
-
         group.getChildren()
                 .addAll(background,
                         label);
-//
-//            content:
-//            [
-//                background,
-//                label
-//            ]
-//        }
-
+        
         return group;
     }
 
     
-    
-    
-    
-    
-    
-
-//TODO: get rid of this silly method once the app runs
+//TODO: get rid of this silly method once the app runs    
     @Override
-    public String []  getWordssssss()
+    public String [] getWordssssss()
     {
         String [] words =
         {
@@ -193,3 +183,4 @@ getChildren().
         throw new UnsupportedOperationException("Not implemented yet");
     }
 }
+
