@@ -20,7 +20,7 @@ public abstract class GameSummaryDialog extends Group
 {
     public Integer width = 400;
 
-    public Integer height;
+    public Integer height = 300;
 
     public String title = "Game Summary";
 

@@ -1,6 +1,8 @@
 
 package net.onebeartoe.type.areli.nodes;
 
+import java.io.IOException;
+import java.io.InputStream;
 import javafx.scene.Node;
 import javafx.scene.Group;
 import java.lang.UnsupportedOperationException;
@@ -9,6 +11,7 @@ import javafx.animation.Timeline;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import java.lang.Integer;
+import java.net.URL;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.scene.shape.Ellipse;
@@ -32,7 +35,7 @@ public class RobotChicken extends Cannon
 
 
 
-    public RobotChicken()
+    public RobotChicken() throws IOException
 //    override public function create () : Node
     {
         cannonTipX = 20;
@@ -82,11 +85,12 @@ public class RobotChicken extends Cannon
         
         
         
-        
-        
-
+                String imagePath = "net/onebeartoe/type/areli/nodes/robot-chicken-b.png";
+                URL resource = ClassLoader.getSystemClassLoader().getResource(imagePath);
+                InputStream instream = resource.openStream();
+                
                 image = new ImageView();
-                image.setImage( new Image("{__DIR__}robot-chicken-b.png" ));
+                image.setImage( new Image(instream ));
                 image.setScaleX(0.7);
                 image.setScaleY(0.7);
                 

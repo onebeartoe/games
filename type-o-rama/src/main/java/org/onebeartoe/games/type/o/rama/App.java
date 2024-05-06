@@ -23,6 +23,8 @@ import javafx.scene.text.Font;
 import java.lang.Void;
 
 import java.lang.Boolean;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -71,15 +73,13 @@ public class App extends Application
     
     int currentRound = 1;
 
-    Media lineBeamSound = new Media("/net/onebeartoe/type/areli/sounds/line-beam-b.au");
+    Media lineBeamSound;// = new Media("/net/onebeartoe/type/areli/sounds/line-beam-b.au");
 
 
-    Media removeTargetSound = new Media
-(
-         "{__DIR__}sounds/line-beam-remove.au"
-);
+    Media removeTargetSound;
 
-    Media levelIntroSound = new Media( "{__DIR__}sounds/audio.1280453989123.au");
+    Media levelIntroSound;
+
     
     Text elTexto;
 
@@ -107,7 +107,7 @@ public class App extends Application
     
     Text encouragmentText;
 
-    public App()
+    public App() throws IOException
     {
 
         robotChicken = new RobotChicken();
@@ -147,6 +147,8 @@ public class App extends Application
 
         encouragmentText.setX( width * 0.5 - (encouragmentTextWidth / 2) );
         encouragmentText.setY( 30 );
+        
+        loadTargets();
 
         StringBinding textBinding = Bindings.createStringBinding(
                 () -> "Only " + wordTargets.size() + " more to go, in Round " + currentRound + "}!"
@@ -250,6 +252,18 @@ public class App extends Application
     
     WordTargetFactory wordTargetFactory;
     
+    private Media loadMedia(String classpath) throws URISyntaxException
+    {
+        URL resource = ClassLoader.getSystemClassLoader().getResource(classpath);
+        
+        String uri = resource.toURI().toString();
+        
+        var media = new Media(uri);
+
+        return media;
+    }
+    
+    
     public void playIntro()
     {
         MediaPlayer introSoundPlayer = new MediaPlayer(levelIntroSound);
@@ -307,8 +321,21 @@ private void updateGameSummaries()
 }
 
     @Override
-    public void start(Stage stage) throws IOException
-    {        
+    public void start(Stage stage) throws IOException, URISyntaxException
+    {
+        lineBeamSound = loadMedia("net/onebeartoe/type/areli/sounds/line-beam-b.au");
+//        lineBeamSound = new Media("/net/onebeartoe/type/areli/sounds/line-beam-b.au");
+
+        
+//"org/onebeartoe/minecraft/y2meta.com-Rick-Rolled-Short-Version.wav"
+removeTargetSound = new Media
+(
+         "{__DIR__}sounds/line-beam-remove.au"
+);
+
+levelIntroSound = new Media( "{__DIR__}sounds/audio.1280453989123.au");
+
+        
         loadTargets();
 
         Main main = new Main();

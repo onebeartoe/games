@@ -70,10 +70,11 @@ public class HorizontalWordTarget extends Group
     label.setPrefHeight(200);
 
     
-    
+x = new SimpleIntegerProperty(1);
     
     Duration duration = Duration.seconds(5);
     KeyValue keyValue = new KeyValue(x, xMax);
+keyValue.getEndValue();
     KeyFrame keyFrame = new 
                         KeyFrame(duration, keyValue);
             {
@@ -84,7 +85,7 @@ public class HorizontalWordTarget extends Group
 //                ]
             }
     
-    var animation = new Timeline(keyFrame);
+    var animation = new Timeline(keyFrame );
     animation.setAutoReverse(true);
     animation.setCycleCount(Timeline.INDEFINITE);
    
@@ -92,8 +93,8 @@ public class HorizontalWordTarget extends Group
     
     
         
-        
-        animation.play();
+//TODO!!!!!!!!!!call this again!!!!!!!!        
+//        animation.play();
 
         var group = new Group();
         
@@ -117,6 +118,8 @@ public class HorizontalWordTarget extends Group
         
         getChildren()
                 .add(group);
+        
+//        animation.play();        
     }
 
 }
