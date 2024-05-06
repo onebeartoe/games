@@ -16,7 +16,7 @@ public class VerticalWordTarget extends HorizontalWordTarget
         KeyValue keyValue = new KeyValue(y, yMax);
         KeyFrame keyFrame = new KeyFrame(duration, keyValue);
                 
-        var animation = new TimeLine(keyFrame);
+        var animation = new Timeline(keyFrame);
         
         animation.setAutoReverse(true);
         animation.setCycleCount(Timeline.INDEFINITE);

@@ -80,11 +80,11 @@ public class DiagnalWordTarget extends WordTarget
 
 //TODO: bind this to the Scene's width!!!!!!!!!!!!!!!!        
         DoubleProperty widthProperty = new SimpleDoubleProperty(600 * 0.2);
-        label.widthProperty().bind(widthProperty);
+        label.setPrefWidth(widthProperty.getValue() );
 //TODO: bind this to the Scene's width!!!!!!!!!!1
         //        width: bind scene.width * 0.2
 
-        label.setHeight(200);
+        label.setPrefHeight(200);
     }
 
 

@@ -20,7 +20,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
-public class HorizontalWordTarget extends Node
+public class HorizontalWordTarget extends Group
 //public class HorizontalWordTarget extends CustomNode
 {
     public String labelText ;

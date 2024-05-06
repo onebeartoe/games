@@ -7,10 +7,12 @@ import javafx.animation.Timeline;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.StringProperty;
+import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
+import javafx.scene.shape.Rectangle;
 
-public abstract class WordTarget extends Node
+public abstract class WordTarget extends Group
 {
     public IntegerProperty labelX = new SimpleIntegerProperty(20);
     
@@ -28,7 +30,8 @@ public abstract class WordTarget extends Node
 
     public StringProperty labelText;
 
-    public Node background;
+    public Rectangle background;
+//    public Node background;
 
     public abstract String [] getWordssssss();
 
