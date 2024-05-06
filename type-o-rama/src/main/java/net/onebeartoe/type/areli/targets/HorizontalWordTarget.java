@@ -30,7 +30,7 @@ public class HorizontalWordTarget extends Node
 
     public Integer yMax;
     
-    public Integer y;
+    public IntegerProperty y;
 
     int labelX = 20;
     int labelY = -20;

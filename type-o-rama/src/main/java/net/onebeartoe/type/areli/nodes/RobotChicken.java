@@ -90,9 +90,4 @@ public class RobotChicken extends Cannon
             ]
         }
     }
-
-    override public function onWackaWacka () : Void
-    {
-        throw new UnsupportedOperationException('Not implemented yet');
-    }
 }

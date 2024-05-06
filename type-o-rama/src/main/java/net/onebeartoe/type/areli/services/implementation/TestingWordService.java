@@ -6,15 +6,29 @@ public class TestingWordService extends net.onebeartoe.type.areli.services.Words
 
 //    function getWords(): String []
 //  override function getWords(): String []
-    public override function getWords(count : Integer) : String []
+//    public override function getWords(count : Integer) : String []
+//    {
+//        var words : String [] =
+//        [
+//            "ANT", "CAR", "BAT"
+//        ];
+//
+//        return words;
+//    }
+
+    
+    
+//TODO: get rid of this silly method once the app runs    
+    @Override
+    public String [] getWords(Integer i)
     {
-        var words : String [] =
-        [
+        String [] words =
+        {
             "ANT", "CAR", "BAT"
-        ];
+        };
 
         return words;
-    }
-
+    }    
+    
 }
 

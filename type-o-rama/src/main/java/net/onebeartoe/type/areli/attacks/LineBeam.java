@@ -21,10 +21,12 @@ public class LineBeam extends Attack
     public int endX = 50;
     public int endY = 50;
  
+    Line line;
+    
     public LineBeam()
     {
-    var line = new Line();
-    {
+        line = new Line();
+    
 //	startX: bind startX
 //        startY: bind startY
 //
@@ -46,7 +48,7 @@ public class LineBeam extends Attack
     var keyFrame2 = new             KeyFrame(Duration.seconds(5) );
     
     
-    var    keyFrame3 = new KeyFrame( Duration.milis(850) );
+    var    keyFrame3 = new KeyFrame( Duration.millis(850) );
         
     
 animation = new Timeline(keyFrame1, keyFrame2, keyFrame3);
@@ -71,7 +73,7 @@ animation.setAutoReverse(true);
 
     
 
-    @Override 
+//    @Override 
     public Node create ()
 //    override public function create () : Node
     {
