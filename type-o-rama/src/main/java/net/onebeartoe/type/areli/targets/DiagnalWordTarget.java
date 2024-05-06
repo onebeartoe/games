@@ -10,9 +10,9 @@ import javafx.animation.Timeline;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 
 import javafx.scene.control.Label;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
 import javafx.util.Duration;

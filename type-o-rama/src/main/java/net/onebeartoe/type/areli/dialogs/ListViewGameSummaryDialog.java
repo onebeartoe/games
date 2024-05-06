@@ -1,6 +1,7 @@
 
 package net.onebeartoe.type.areli.dialogs;
 
+import javafx.beans.property.SimpleStringProperty;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.paint.Color;
@@ -10,37 +11,68 @@ import javafx.scene.text.Text;
 
 public class ListViewGameSummaryDialog extends GameSummaryDialog
 {
-   override public var width = 440;
 
-   override public var height = 400;
-
-   override public function create () : Node
+   public ListViewGameSummaryDialog()
+//   override public function create () : Node
    {
-        dismissButton.translateX = width * 0.48;
-        dismissButton.translateY = height * 0.8;
+        width = 440;
 
-        Group
-        {
-            content:
-            [
-                Rectangle
-                {
+        height = 400;
+       
+       
+        dismissButton.setTranslateX( width * 0.48);
+        dismissButton.setTranslateY(height * 0.8);
 
-                    width: width,
-                    height: height
-                    fill: Color.GREEN
-                }
+        
+        var rectangle = new Rectangle(width, height);
+        rectangle.setFill(Color.GREEN);
+                
+        var text = new Text();
+        var font = new Font(24);
+        text.setFont(font);
+        text.setTranslateX(10);
+        text.setTranslateY(height * 0.1);
+        text.textProperty().bind( new SimpleStringProperty(title));
+                
+                
+                
+            
+                
+               
+
+
+                
+                 
+        
+        getChildren().addAll(rectangle,
+                text,
+                listView
                 ,
-                Text
-                {
-                   font : Font
-                   {
-                      size: 24
-                   }
-                   x: 10
-                   y: height * 0.1
-                   content: bind title
-                }
+                dismissButton
+        );
+
+//        Group
+//        {
+//            content:
+//            [
+//                Rectangle
+//                {
+//
+//                    width: width,
+//                    height: height
+//                    fill: Color.GREEN
+//                }
+//                ,
+//                Text
+//                {
+//                   font : Font
+//                   {
+//                      size: 24
+//                   }
+//                   x: 10
+//                   y: height * 0.1
+//                   content: bind title
+//                }
 /*
                 ,
                 Text
@@ -55,10 +87,10 @@ public class ListViewGameSummaryDialog extends GameSummaryDialog
                 }
                 ,
 */
-                listView
-                ,
-                dismissButton
-            ]
-        }
+//                listView
+//                ,
+//                dismissButton
+//            ]
+//        }
     }
 }

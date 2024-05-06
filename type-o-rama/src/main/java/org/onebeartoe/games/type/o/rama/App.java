@@ -149,7 +149,7 @@ public class App extends Application
         encouragmentText.setY( 30 );
 
         StringBinding textBinding = Bindings.createStringBinding(
-                () -> "Only " + wordTargets.length + " more to go, in Round " + currentRound + "}!"
+                () -> "Only " + wordTargets.size() + " more to go, in Round " + currentRound + "}!"
         );
 
         encouragmentText.textProperty().bind(textBinding);
@@ -256,7 +256,7 @@ public class App extends Application
 
         introSoundPlayer.setAutoPlay(false);
 
-        introSoundPlayer.setRepeatCount(0);
+        introSoundPlayer.setCycleCount(0);
         
         introSoundPlayer.play();
     }    
@@ -406,8 +406,8 @@ parent = loadGroup();
         {
             list.add(target);
         }
-        WordTarget [] type = {};        
-        wordTargets = list.toArray(type);
+
+        wordTargets = list;
     };
 
     private static Parent loadFXML(String fxml) throws IOException
