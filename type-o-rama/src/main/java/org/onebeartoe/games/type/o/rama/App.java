@@ -71,7 +71,7 @@ public class App extends Application
     
     int currentRound = 1;
 
-    Media lineBeamSound = new Media("{__DIR__}sounds/line-beam-b.au");
+    Media lineBeamSound = new Media("/net/onebeartoe/type/areli/sounds/line-beam-b.au");
 
 
     Media removeTargetSound = new Media
