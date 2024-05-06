@@ -1,95 +1,122 @@
 
 package net.onebeartoe.type.areli.targets;
 
-import javafx.scene.CustomNode;
+//import javafx.scene.CustomNode;
+
 import javafx.scene.Node;
 import javafx.scene.Group;
 import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.scene.control.Label;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.util.Duration;
 
-public class HorizontalWordTarget extends CustomNode
+public class HorizontalWordTarget extends Node
+//public class HorizontalWordTarget extends CustomNode
 {
-    public var labelText: String;
+    public String labelText ;
 
-    public var x: Integer;
-    public var xMax: Integer;
+    public IntegerProperty x;
+    public Integer xMax ;
 
-    public var yMax: Integer;
+    public Integer yMax;
     
-    public var y: Integer;
+    public Integer y;
 
-    var labelX: Number = 20;
-    var labelY: Number = -20;
+    int labelX = 20;
+    int labelY = -20;
 
-    var background = Rectangle
+
+
+
+
+
+
+
+    public HorizontalWordTarget()
+//    override public function create () : Node
     {
-        width: 140
-        height: 90
-        fill: Color.GREEN
-        arcHeight: 5
-        arcWidth: 5
-        stroke: Color.ALICEBLUE
-        strokeWidth: 5
-    }
-
-    var label = Label
-    {
-        layoutX: bind labelX
-        layoutY: bind labelY
-
-        font: Font.font("Trebuchet MS",20);
+        Rectangle background = new Rectangle(140, 90);
+        background.setFill(Color.GREEN);
+        background.setArcHeight(5);
+        background.setArcWidth(5);
+        background.setStroke(Color.ALICEBLUE);
+        background.setStrokeWidth(5);
+            
         
-        text: bind labelText
-        textWrap: true
-        textAlignment: TextAlignment.JUSTIFY
+        
+    var label = new Label();
+    label.layoutXProperty().bind( new SimpleIntegerProperty(labelX) );
+    label.layoutYProperty().bind( new SimpleIntegerProperty(labelY) );
+    label.setFont( Font.font("Trebuchet MS",20) );
+    label.textProperty().bind( new SimpleStringProperty(labelText) );
+    label.setWrapText(true);
+    label.setTextAlignment(TextAlignment.JUSTIFY);
 
-        width: bind scene.width * 0.2
-        height: 200
-    }
+//TODO: use teh scene.width in the binding    
+    var widthProperty = new SimpleDoubleProperty(900 * 0.2);
+    label.setPrefWidth(900 * 0.2);
+//      width: bind scene.width * 0.2    
+    
+    label.setPrefHeight(200);
 
-
-    public var animation = Timeline
-    {
-        autoReverse: true
-
-        repeatCount: Timeline.INDEFINITE
-
-        keyFrames:
-        [
-            KeyFrame
+    
+    
+    
+    Duration duration = Duration.seconds(5);
+    KeyValue keyValue = new KeyValue(x, xMax);
+    KeyFrame keyFrame = new 
+                        KeyFrame(duration, keyValue);
             {
-                time: 5s,
-                values:
-                [
-                    x => xMax
-                ]
+                
+//                values:
+//                [
+//                    x => xMax
+//                ]
             }
-            ,
-
-        ]
-    }
-
-    override public function create () : Node
-    {
+    
+    var animation = new Timeline(keyFrame);
+    animation.setAutoReverse(true);
+    animation.setCycleCount(Timeline.INDEFINITE);
+   
+    
+    
+    
+        
+        
         animation.play();
 
-        Group
-        {
-            layoutX: bind x;
+        var group = new Group();
+        
+        group.layoutXProperty().bind( x);
+        
+        group.layoutYProperty().bind( new SimpleObjectProperty(y));
 
-            layoutY: bind y;
-
-            content:
-            [
-                background,
-                label
-            ]
-        }
+        group.getChildren().addAll(background, label);
+//TODO: is the 'bind' needed for the layoutXY?        
+//        {
+//            layoutX: bind x;
+//
+//            layoutY: bind y;
+//
+//            content:
+//            [
+//                background,
+//                label
+//            ]
+//        }
+        
+        getChildren()
+                .add(group);
     }
 
 }
