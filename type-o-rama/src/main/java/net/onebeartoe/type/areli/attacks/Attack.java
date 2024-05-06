@@ -1,19 +1,19 @@
 
 package net.onebeartoe.type.areli.attacks;
 
-import javafx.scene.CustomNode;
+//import javafx.scene.CustomNode;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.scene.Node;
 
-public abstract class Attack extends CustomNode
+public abstract class Attack extends Node
+//public abstract class Attack extends CustomNode
 {
+    public KeyFrame removeFrame;
 
-    public var removeFrame: KeyFrame;
+    public Timeline animation;
 
-    public var animation: Timeline;
+    public abstract String [] getWords();
 
-    public abstract function getWords(): String [];
-
-    public abstract function onWackaWacka(): Void;
-
+    public abstract void onWackaWacka();
 }

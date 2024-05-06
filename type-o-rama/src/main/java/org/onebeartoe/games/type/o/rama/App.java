@@ -26,8 +26,15 @@ import java.lang.Boolean;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import javafx.animation.KeyFrame;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.StringBinding;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 //import javafx.scene.layout.Container;
 
 import javafx.scene.Node;
@@ -41,6 +48,7 @@ import net.onebeartoe.type.areli.attacks.LineBeam;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.text.Text;
+import javafx.util.Duration;
 import net.onebeartoe.type.areli.attacks.Attack;
 import net.onebeartoe.type.areli.attacks.LineBeam;
 import net.onebeartoe.type.areli.targets.WordTarget;
@@ -77,12 +85,32 @@ public class App extends Application
 
     Number elTextoX = new Integer(200);
     
-    Text dialog;
+    Node dialog;
+//    Text dialog;
+
+    GameSummaryDialog nextRoundDialog;
+    
+    List<Round> gameSummaries;
+    
+    RobotChicken robotChicken;
+
+    int wordsPerRoundFactor = 3;
+    //var wordsInARound: Integer;
+
+    String [] words ;
+    
+    int roundMisses = 0;
+    
+    int misses = 0;
+    
+    int totalRounds = 5;
+    
+    Text encouragmentText;
 
     public App()
     {
 
-        var robotChicken = new RobotChicken();
+        robotChicken = new RobotChicken();
 
         robotChicken.translateXProperty().set(-35);
 
@@ -111,43 +139,40 @@ public class App extends Application
 
         var encouragmentTextWidth = 380;
 
-        var encouragmentText = new Text();
-        {
-            encouragmentText.setWrappingWidth(encouragmentTextWidth);
-                    
-            encouragmentText.setFont( new Font(24) );
-            
-            encouragmentText.setX( width * 0.5 - (encouragmentTextWidth / 2) );
-            encouragmentText.setY( 30 );
-            
-            StringBinding textBinding = Bindings.createStringBinding(
-                    () -> "Only " + wordTargets.length + " more to go, in Round " + currentRound + "}!"
-            );
-            
-            encouragmentText.textProperty().bind(textBinding);
-        };
+        encouragmentText = new Text();
+        
+        encouragmentText.setWrappingWidth(encouragmentTextWidth);
+
+        encouragmentText.setFont( new Font(24) );
+
+        encouragmentText.setX( width * 0.5 - (encouragmentTextWidth / 2) );
+        encouragmentText.setY( 30 );
+
+        StringBinding textBinding = Bindings.createStringBinding(
+                () -> "Only " + wordTargets.length + " more to go, in Round " + currentRound + "}!"
+        );
+
+        encouragmentText.textProperty().bind(textBinding);
+        
         
         dialog = encouragmentText;
 
-        var totalRounds = 5;
+        
 
-        var misses = 0;
-        var roundMisses = 0;
+        
+        
 
 // in JavaFX Script gameSummaries was Round[]        
-        List<Round> gameSummaries = new ArrayList();
+        gameSummaries = new ArrayList();
 //        Round[] gameSummaries;
 
-        var wordsPerRoundFactor = 3;
-        //var wordsInARound: Integer;
 
-        String [] words ;
 
         //var gameSums : String [];
 
         var nextRoundButtonText = "Next Round";
 
-        GameSummaryDialog nextRoundDialog  = new ListViewGameSummaryDialog();
+        nextRoundDialog  = new ListViewGameSummaryDialog();
 
         nextRoundDialog.message = "Do you want to play the next round?";
         
@@ -182,7 +207,7 @@ public class App extends Application
         nextRoundDialog.buttonText.setValue( nextRoundButtonText);
 
         
-        WordTargetFactory wordTargetFactoryA = new StaticWordTargetFactory();
+         wordTargetFactoryA = new StaticWordTargetFactory();
 
         wordTargetFactoryA.xRange = (double) width;
         
@@ -195,7 +220,7 @@ public class App extends Application
         
         
         
-        WordTargetFactory wordTargetFactoryB = VerticalWordTargetFactory();
+         wordTargetFactoryB = new VerticalWordTargetFactory();
         wordTargetFactoryB.xRange = (double) width;
         wordTargetFactoryB.targetMaxX = targetMaxX;
         wordTargetFactoryB.targetMaxY = (int) targetMaxY;
@@ -205,22 +230,26 @@ public class App extends Application
         
         
 
-        var wordTargetFactoryC: WordTargetFactory = DiagnalWordTargetFactory
-        {
-            xRange: width
-
-            targetMaxX: targetMaxX
-
-            targetMaxY: targetMaxY
-            targetMinY: targetMinY
-        };
+         wordTargetFactoryC  = new DiagnalWordTargetFactory();
+        wordTargetFactoryC.xRange = (double) width;
+        wordTargetFactoryC.targetMaxX = targetMaxX;
+        wordTargetFactoryC.targetMaxY = (int) targetMaxY;
+        wordTargetFactoryC.targetMinY = (int) targetMinY;
 
 
-        WordTargetFactory [] wordTargetServicePool = {wordTargetFactoryA, wordTargetFactoryB, wordTargetFactoryC};
+        
 
-        var wordTargetFactory: WordTargetFactory;// = wordTargetServicePool[0];  
+//TODO: is this needed still?
+//        var wordTargetFactory: WordTargetFactory;// = wordTargetServicePool[0];  
     }
-
+    WordTargetFactory wordTargetFactoryA;
+    WordTargetFactory wordTargetFactoryB;
+    WordTargetFactory wordTargetFactoryC;
+    
+    WordTargetFactory [] wordTargetServicePool = {wordTargetFactoryA, wordTargetFactoryB, wordTargetFactoryC};
+    
+    WordTargetFactory wordTargetFactory;
+    
     public void playIntro()
     {
         MediaPlayer introSoundPlayer = new MediaPlayer(levelIntroSound);
@@ -235,7 +264,9 @@ public class App extends Application
 //var wordsService: WordsService = net.onebeartoe.type.areli.services.implementation.TestingWordService{}
 WordsService wordsService = new net.onebeartoe.type.areli.services.implementation.SimpleWordService();
 
-String input = "";
+StringProperty input = new SimpleStringProperty("");
+// The type of input used to be String
+//String input = "";
 
 Number rx  ;
 
@@ -243,27 +274,36 @@ int width = 900;
 
 int height = 600;
 
-Attack[] attacks;
+List<Attack> attacks;
 
-WordTarget[] wordTargets;
+List<WordTarget> wordTargets;
 
 Integer cannonTipX = 141;
 
 Integer cannonTipY = 421;
 
 
-function updateGameSummaries()
+private void updateGameSummaries()
 {
-    delete nextRoundDialog.listView.items;
+    nextRoundDialog.listView.getItems().clear();
 
-    var indexRange = [0 .. sizeof gameSummaries-1];
-
-    for(i in indexRange)
-    {
+    for(int i=0; i<gameSummaries.size(); i++)
+    {       
         var summary = "Words: {gameSummaries[i].words} \t   Misses: {gameSummaries[i].misses}\t\t    Hit Ratio {(gameSummaries[i].words-gameSummaries[i].misses)/(gameSummaries[i].words*1.0)*100}";
         
-        insert "{summary} " into nextRoundDialog.listView.items
+        nextRoundDialog.listView.getItems().add("{summary} ");
     }
+
+//    delete nextRoundDialog.listView.items;
+//
+//    var indexRange = [0 .. sizeof gameSummaries-1];
+//
+//    for(i in indexRange)
+//    {
+//        var summary = "Words: {gameSummaries[i].words} \t   Misses: {gameSummaries[i].misses}\t\t    Hit Ratio {(gameSummaries[i].words-gameSummaries[i].misses)/(gameSummaries[i].words*1.0)*100}";
+//        
+//        insert "{summary} " into nextRoundDialog.listView.items
+//    }    
 }
 
     @Override
@@ -272,6 +312,8 @@ function updateGameSummaries()
         loadTargets();
 
         Main main = new Main();
+        
+        setupElTexto();
 
         elTexto.requestFocus();
 
@@ -297,149 +339,40 @@ parent = loadGroup();
     {
         Group group = new Group();
         
-        group.getChildren()
-                .add(robotChicken);
+        ObservableList<Node> children = group.getChildren();
+        children.addAll(robotChicken,
+                        elTexto
+                );
 
-Stage
-{
-    scene: Scene
-    {
-        width: width
-        height: height
-        content:
-        [
-            robotChicken
-            ,
-            elTexto = Text
-            {
-                font : Font
-                {
-                    size : 36
-                }
-                x: bind (width * 0.3)
-                y: bind (height * 0.9)
-                content: bind input
+//TODO: Is a alternative to a 'binded' Container needed?
+        for( WordTarget target : wordTargets)
+        {
+            children.add(target);
+        }
+        
+        for(Attack attack : attacks)
+        {
+            children.add(attack);
+        }
 
-                override var onKeyPressed = function (ke:KeyEvent):Void
-                {
-                    print( ke.code);
-                    input += ke.text;
-                    print(input);
-
-                    if(ke.code == KeyCode.VK_SPACE)
-                    {
-                        input = "";
-                        roundMisses++;
-                        misses++;
-                    }
-
-                    var targetAchieved: Boolean = false;
-                    var matchingTarget: WordTarget;
-                    for(target in wordTargets)
-                    {
-                        if( target.labelText.equals(input) )
-                        {
-                            input = "";
-                            
-                            target.animation.stop();
-                            
-                            var lineBeamSoundPlayer = MediaPlayer
-                            {
-                                autoPlay:false
-                                media:lineBeamSound
-                            }
-                            lineBeamSoundPlayer.play();
-                            
-                            targetAchieved = true;
-                            matchingTarget = target;
-                        
-                            var beam : Attack = LineBeam
-                            {
-                                startX: cannonTipX
-                                startY: cannonTipY
-
-                                endX : target.translateX
-                                endY : target.translateY
-                            }
-                            beam.removeFrame.action = function()
-                            {
-                                var removeTargetSoundPlayer = MediaPlayer
-                                {
-                                    autoPlay:  false
-                                    media: removeTargetSound
-                                    repeatCount: 0
-                                }
-                                removeTargetSoundPlayer.play();
-
-                                beam.animation.stop();
-
-                                delete target from wordTargets;
-                                delete beam from attacks;
-
-                                if(sizeof wordTargets == 0)
-                                {
-                                    var r = Round
-                                    {
-                                        misses: misses;
-                                        words: currentRound * wordsPerRoundFactor
-                                    }
-                                    insert r into gameSummaries;
-
-                                    roundMisses = 0;
-                                    misses = 0;
-
-                                    currentRound++;
-                                    
-                                    println("\nEnd of Round.");
-
-                                    updateGameSummaries();
-
-                                    if(currentRound > totalRounds)
-                                    {
-//                                        currentRound = 1;
-                                        nextRoundDialog.buttonText = "Play Again!";
-                                        nextRoundDialog.dismissButton.width = 100;
-                                    }
-
-                                    dialog = nextRoundDialog;
-                                }
-                                else
-                                {
-                                    dialog = encouragmentText
-                                }
-                            }
-
-                            insert beam into attacks;
-
-                            target.effect = Glow
-                            {
-                                    level: 1
-                            }
-
-                            break;
-                        }
-                    }
-                }
-            },
-            Container
-            {
-                content: bind wordTargets
-            },
-            Container
-            {
-                content: bind attacks
-            },
-            Container
-            {
-                content: bind dialog
-            }
-        ]
-    }
-
-
-}
-
-        return null;
+        children.add(dialog);
+//TODO: Is a alternative to a 'binded' Container needed?
+//        [
+//            Container
+//            {
+//                content: bind wordTargets
+//            },
+//            Container
+//            {
+//                content: bind attacks
+//            },
+//            Container
+//            {
+//                content: bind dialog
+//            }
+//        ]
+    
+        return group;
     }
 
 
@@ -449,21 +382,32 @@ Stage
         scene.setRoot(loadFXML(fxml));
     }
     
+    int poolIndex = 0;
+    
     private void loadTargets()
     {
         words = wordsService.getWords(currentRound * wordsPerRoundFactor);
 
         // switch out the word target factory
-        wordTargetFactory = wordTargetServicePool[0];
-        delete wordTargetServicePool[0];
-        insert wordTargetFactory into wordTargetServicePool;
+        wordTargetFactory = wordTargetServicePool[poolIndex];
+
+        poolIndex++;
+        if(poolIndex == wordTargetServicePool.length)
+        {
+            poolIndex = 0;
+        }
+                
+                
 
         var targets = wordTargetFactory.createTargets(words);
 
-        for(target in targets)
+        List<WordTarget> list = new ArrayList();
+        for(WordTarget target : targets)
         {
-            insert target into wordTargets;
-        }   
+            list.add(target);
+        }
+        WordTarget [] type = {};        
+        wordTargets = list.toArray(type);
     };
 
     private static Parent loadFXML(String fxml) throws IOException
@@ -476,5 +420,159 @@ Stage
     public static void main(String[] args)
     {
         launch();
+    }
+
+    private void setupElTexto() 
+    {
+        elTexto = new Text();
+        
+        var font = new Font(36);
+        
+//TODO: Is the bind still needed on the line below?
+//x: bind (width * 0.3)
+        elTexto.setX(width * 0.3);
+
+//TODO: Is the bind still needed on the line below?
+//y: bind (height * 0.9)        
+        elTexto.setY(height * 0.9);
+        
+        elTexto.textProperty().bind(input);
+        
+        elTexto.setOnKeyPressed(ke -> 
+        {
+            
+        
+
+
+//        override var onKeyPressed = function (ke:KeyEvent):Void
+//        {
+            System.out.println(ke.getCode() );
+            
+            String updatedValue = input.getValue() + ke.getText();
+            
+            input.setValue(updatedValue);
+            
+            System.out.println(input);
+
+            if(ke.getCode() == KeyCode.SPACE)
+            {
+                input.setValue("");
+                
+                roundMisses++;
+                misses++;
+            }
+
+            Boolean targetAchieved = false;
+            
+            WordTarget matchingTarget;
+            
+            for(WordTarget target : wordTargets)
+            {
+                if( target.labelText.equals(input) )
+                {
+                    input.setValue("");
+
+                    target.animation.stop();
+
+                    var lineBeamSoundPlayer = new MediaPlayer(lineBeamSound);
+                    lineBeamSoundPlayer.setAutoPlay(false);
+                    lineBeamSoundPlayer.play();
+
+                    targetAchieved = true;
+                    matchingTarget = target;
+
+                    LineBeam beam = new LineBeam();
+                    beam.startX = cannonTipX;
+                    beam.startY = cannonTipY;
+                    
+                    beam.endX = (int) target.getTranslateX();
+                    beam.endY = (int) target.getTranslateY();
+                    
+
+
+
+                    
+               
+//TODO: Does beam.removeFrame need initialization
+                    var duration = Duration.millis(5);
+                    var str = "some-ploop";
+                    EventHandler<ActionEvent> handler = (event) -> 
+                    {
+//TODO: this next line is hte original JavaFX Script code                    
+//                        beam.removeFrame.action = function()
+                    
+                        var removeTargetSoundPlayer = new MediaPlayer(removeTargetSound);
+                        removeTargetSoundPlayer.setAutoPlay(false);
+                        removeTargetSoundPlayer.setCycleCount(1);
+                        removeTargetSoundPlayer.play();
+
+                        beam.animation.stop();
+
+                        wordTargets.remove(target);
+//                        delete target from wordTargets;
+
+
+                        attacks.remove(beam);
+//                        delete beam from attacks;
+
+                        
+                        if( wordTargets.size() == 0)
+                        {
+                            var r = new Round();
+                            r.misses = misses;
+                            r.words = currentRound * wordsPerRoundFactor;
+                            
+                            gameSummaries.add(r);
+
+                            roundMisses = 0;
+                            misses = 0;
+
+                            currentRound++;
+
+                            System.out.println("\nEnd of Round.");
+
+                            updateGameSummaries();
+
+                            if(currentRound > totalRounds)
+                            {
+//                                        currentRound = 1;
+                                nextRoundDialog.buttonText.setValue( "Play Again!");
+                                
+//TODO: is this the correct way to set the width like int the JavaFX Script version????                                
+                                nextRoundDialog.dismissButton.setPrefWidth(100);
+//                                nextRoundDialog.dismissButton.width = 100;
+                            }
+
+                            dialog = nextRoundDialog;
+                        }
+                        else
+                        {
+                            dialog = encouragmentText;
+                        }
+                    
+                    };
+
+KeyFrame keyFrame = new KeyFrame(duration, str, handler);
+
+beam.removeFrame = keyFrame;
+
+
+
+                    attacks.add(beam);
+//                    insert beam into attacks;
+                    
+                    
+
+                    target.setEffect( new Glow(1));
+//                    target.effect = Glow
+//                    {
+//                            level: 1
+//                    }
+
+                    break;
+                }
+            }
+            
+        });
     }
 }
