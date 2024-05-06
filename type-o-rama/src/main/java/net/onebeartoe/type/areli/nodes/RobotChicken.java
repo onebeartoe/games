@@ -9,17 +9,15 @@ import javafx.animation.Timeline;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import java.lang.Integer;
+import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.scene.shape.Ellipse;
 import javafx.scene.paint.Color;
+import javafx.util.Duration;
 
 public class RobotChicken extends Cannon
 {
-    public RobotChicken()
-    {
-        cannonTipX = 20;
 
-        cannonTipY = 30;
-    }
     
     public Number halfLength  = 200;
 
@@ -30,64 +28,118 @@ public class RobotChicken extends Cannon
 
     public ImageView image;
 
-    override public var animation = Timeline
+
+
+
+
+    public RobotChicken()
+//    override public function create () : Node
     {
-        autoReverse: true
+        cannonTipX = 20;
 
-        repeatCount: Timeline.INDEFINITE
+        cannonTipY = 30;
+        
+        
 
-        keyFrames:
-        [
-            KeyFrame
-            {
-                time: 2500ms,
-                values:
-                [
+//TODO: Who is the layoutX property bount the these layoutXY values????????        
+//            layoutX: bind layoutX;
+//
+//            layoutY: bind layoutY;        
 
-                ]
-            }
-            ,
-            KeyFrame
-            {
-                time: 5s,
-                values:
-                [
 
-                ]
-            }
-        ]
+
+        var keyFrame1 = new KeyFrame(Duration.millis(2500));
+        var keyFrame2 = new KeyFrame(Duration.seconds(5) );
+        animation = new Timeline(keyFrame1, keyFrame2);
+//    override public var animation = Timeline            
+        animation.setAutoReverse(true);
+        animation.setCycleCount(Timeline.INDEFINITE);
+
+//        keyFrames:
+//        [
+//            KeyFrame
+//            {
+//                time: 2500ms,
+//                values:
+//                [
+//
+//                ]
+//            }
+//            ,
+//            KeyFrame
+//            {
+//                time: 5s,
+//                values:
+//                [
+//
+//                ]
+//            }
+//        ]
+    
+
+        
+        
+        
+        
+        
+        
+        
+
+                image = new ImageView();
+                image.setImage( new Image("{__DIR__}robot-chicken-b.png" ));
+                image.setScaleX(0.7);
+                image.setScaleY(0.7);
+                
+                
+                
+                
+                
+                
+                
+                
+                
+//                SimpleIntegerProperty xProperty = centerX: bind translateX + (image.image.width * image.scaleX + 30)
+                
+                int radiusX = 4;
+                int radiusY = 8;
+                var ellipse = new Ellipse(radiusX, radiusY);
+                ellipse.setRotate(-40);
+                ellipse.setFill(Color.GREEN);
+                ellipse.centerXProperty().bind(
+                        ellipse.translateXProperty().add(
+                                (image.getImage().widthProperty().multiply( image.scaleXProperty().add( 
+                                        new SimpleIntegerProperty(30)  )
+                        )
+                                        )
+                ));  //yikes!!!!  but  I think that is correct and it looks like centerY is a little less complex
+//                Ellipse
+//                {
+//                    centerX: bind translateX + (image.image.width * image.scaleX + 30)
+//                    centerY: cannonTipY + 0.11 * image.image.height
+//                }
+                ellipse.centerYProperty().bind(
+                        new SimpleIntegerProperty(cannonTipY)
+                                .add(
+                                        image.getImage().heightProperty().multiply(
+                                                            new SimpleDoubleProperty(0.11)
+                                        )
+                                
+                                )
+                );
+                        
+                        
+                        
+                        
+                        
+                        
+        getChildren()
+                .addAll(image, ellipse);
+
     }
 
-    override public function create () : Node
-    {
-        Group
-        {
-            layoutX: bind layoutX;
-
-            layoutY: bind layoutY;
-
-            content:
-            [
-                image = ImageView
-                {
-                    image:Image { url: "{__DIR__}robot-chicken-b.png"  }
-                    scaleX: 0.7
-                    scaleY: 0.7
-                }
-                ,
-                Ellipse
-                {
-                    centerX: bind translateX + (image.image.width * image.scaleX + 30)
-                    centerY: cannonTipY + 0.11 * image.image.height
-
-                    radiusX: 4
-                    radiusY: 8
-
-                    rotate: -40;
-
-                    fill: Color.GREEN
-                }
-            ]
-        }
+//TODO: remove this silly method once the application runs    
+    @Override
+    public void onWackaWacka() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
