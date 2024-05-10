@@ -331,8 +331,7 @@
 -5762, ~, 1911, "TC5MB"
 
 
-Trail Ruins 3????
--5832, ~, 1944, "TR3"
+
 
 
 # Trial Chamber 5
@@ -403,7 +402,7 @@ Trail Ruins 3????
 2920, ~, 56, "WH1"
 
 
-# Jungle Temple
+# Jungle Temple 1
 #	There were 2 Wild Armor Trims in the Puzzle Chest.
 3928, ~, 1208, "JT1"
 
@@ -486,6 +485,7 @@ Trail Ruins 3????
 # Far Far Desert Wells (Village 11)
 #	There is a bunch of points of interest near here!
 #	There is a nice base here, with a Mending Librarian.
+#	A bunch of Rails and Powered Rails are here
 1200, ~, -8448, "V11"
 
 
@@ -493,9 +493,25 @@ Trail Ruins 3????
 1340, ~, -8340, "FFDWNP"
 
 
+# Jungle Temple 2
+296, ~, -9432, "JT2"
+
+
+# Trail Ruins 3
+#	There is a decent mini-base here.
+#	I got a bunch of Parrots around here.`
+#	There is an Allay room here.
+#	A lot of the excavation is still needed here.
+317, 105, -9571, "TR3"
+
+
+# Trial Chamber 7
+199, ~~~~-12, -9655, "TC7"
+
+
 
 # Desert Well 3
-	Brewer was there!
+#	Brewer was there!
 1435, 63, -8197, "DW3"
 
 
@@ -513,6 +529,15 @@ Trail Ruins 3????
 
 # Mushroom Fields 1
 3500, ~, -9130, "MF1"
+
+# Village 12
+#	This Desert Village has a cool layout!
+#	It is surrounded by a Mangrove Swamp.
+3424, ~, -8336, "V12"
+
+# Trial Chamber 6
+#	Still looking for the new Music Discs here.
+3575, -16, -8439, "TC6"
 
 # Illager Outpost 8
 3888, ~, -7904, "IO8"
