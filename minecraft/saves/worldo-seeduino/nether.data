@@ -126,3 +126,15 @@
 
 # Far Far Desert Wells Nether Portal Outlet
 174, ~, -1046, "FFDWNPO"
+
+
+
+# Village 12 Portal Outlet
+433, 71, -1062, "V12PO"
+
+
+
+# Treasure Bastion Remnant 2
+#	This is pretty much plundered.
+#	The exit is at 148, 66, -1238
+112, ~, -1216, "BTR2"

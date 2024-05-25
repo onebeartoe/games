@@ -485,7 +485,8 @@
 # Far Far Desert Wells (Village 11)
 #	There is a bunch of points of interest near here!
 #	There is a nice base here, with a Mending Librarian.
-#	A bunch of Rails and Powered Rails are here
+#	A bunch of Rails and Powered Rails are here.
+#	Pets o'plenty - Wolf, Cat, Parrot
 1200, ~, -8448, "V11"
 
 
@@ -532,14 +533,22 @@
 # Mushroom Fields 1
 3500, ~, -9130, "MF1"
 
+
+# Trial Chamber 8
+3513, -13, -9049, "TC8"
+
+
 # Village 12
 #	This Desert Village has a cool layout!
 #	It is surrounded by a Mangrove Swamp.
 3424, ~, -8336, "V12"
 
+
 # Trial Chamber 6
-#	Still looking for the new Music Discs here.
+#	Music Discs here, boofale.
+#	This one is pretty much looted.
 3575, -16, -8439, "TC6"
+
 
 # Illager Outpost 8
 3888, ~, -7904, "IO8"
