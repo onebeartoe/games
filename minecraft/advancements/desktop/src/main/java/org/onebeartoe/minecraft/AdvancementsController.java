@@ -111,6 +111,14 @@ public class AdvancementsController
     {
         App.setRoot("play-selected-world");
     }
+
+    @FXML
+    private void displayBalancedDietData() throws Exception
+    {
+        PlayerAdvancement advancement = playerAdvancements.husbandry.balancedDiet;
+                
+        displayData(advancement, husbundryHavesTextArea, husbundryHaveNotsTextArea);
+    }
     
     @FXML
     private void displayDiscoverEveryBiome()

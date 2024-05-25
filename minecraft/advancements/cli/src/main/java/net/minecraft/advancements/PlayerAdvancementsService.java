@@ -354,6 +354,10 @@ public class PlayerAdvancementsService
         var advancement = minecraftAdvancements.husbandry.twoByTwo;
         playerAdvancements.twoByTwo.criteria = parseAdvancement(base, twoByTwoCriteriaName, advancement);
         
+        var balancedDietName = "minecraft:husbandry/balanced_diet";
+        var dietAdvancement = minecraftAdvancements.husbandry.balancedDiet;
+        playerAdvancements.balancedDiet.criteria = parseAdvancement(base, balancedDietName, dietAdvancement);
+        
         return playerAdvancements;
     }
 

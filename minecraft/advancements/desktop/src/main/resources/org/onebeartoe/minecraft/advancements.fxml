@@ -142,6 +142,7 @@
                           </ImageView>
 
                           <ImageView id="balancedDietImageView"
+                                     onMouseClicked="#displayBalancedDietData"
                                      fitHeight="150.0" 
                                      fitWidth="200.0"
                                      pickOnBounds="true" 

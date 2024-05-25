@@ -10,10 +10,14 @@ public class PlayerHusbandryAdvancements
     
     public PlayerAdvancement twoByTwo;
     
+    public PlayerAdvancement balancedDiet;
+    
     public PlayerHusbandryAdvancements()
     {
         aCompleteCatelogue = new PlayerAdvancement();
         
         twoByTwo = new PlayerAdvancement();
+        
+        balancedDiet = new PlayerAdvancement();
     }
 }
