@@ -138,3 +138,8 @@
 #	This is pretty much plundered.
 #	The exit is at 148, 66, -1238
 112, ~, -1216, "BTR2"
+
+
+# Treasure Bastion Remnant 3
+#	This is pretty much plundered.
+272, ~, -1456, "TBR3"
