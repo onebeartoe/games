@@ -216,7 +216,7 @@
 
 
 
-# Trial Chambers 1
+# Trial Chamber 1
 #	It has a waterfall for entrance/exit.
 #	The scaffold exit is at 
 #		-1881, -20, -355
@@ -473,7 +473,6 @@
 -7414, ~, -4474, "DW1"
 
 
-
 # Illager Outpost 7
 #	Finally, Sentry Trim Baby!
 -7616, ~, -3056, "IO7"
@@ -557,12 +556,36 @@
 # Woodland Mansion 2
 #	It is there, and still has Allay there.
 #	I tried to find a Music Disc here but so have not.
+#		Music disc was there, after further searching; super secret area.
 6728, ~, -8184, "WM2"
+
+
+# Trial Chamber 9
+6583, -18, -8137, "TC9"
+
+
+
+# Trial Chamber 10
+#	I found a Heavy Core here!
+6855, -25, -8633, "TC9"
 
 
 
 # Ancient City 3
 #	I found a Silence Armor Trim here, I think it was in the last Chest again!
 6936, -51, -8200, "AC3"
+
+
+# Village 13
+6592, ~, -9040, "V13"
+
+
+
+
+# Stronghold 2
+8292, ~, -7788, "SH2"
+
+
+
 
 

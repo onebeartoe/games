@@ -1,4 +1,15 @@
 
+
+
+
+
+
+
+
+
+
+
+
 # End Portal 1
 77, 58, 58, "EP1"
 
@@ -20,3 +31,9 @@
 #	I found the Spire Smithing Template here and the second End Ship here!
 #	I think there is still loot here.
 1328, ~, -1200, "EC2"
+
+
+# End City 3 (with Ship)
+#	There is an end chest here and still some Shulkers.
+1992 ~ -1832, "EC3"
+

@@ -124,7 +124,7 @@
 
 
 
-# Far Far Desert Wells Nether Portal Outlet
+# Far Far Desert Wells Nether Portal Outlet (Village 11)
 174, ~, -1046, "FFDWNPO"
 
 
@@ -132,6 +132,14 @@
 # Village 12 Portal Outlet
 433, 71, -1062, "V12PO"
 
+
+
+# Woodland Mansion 2 Portal Outlet
+844, 94, -1020, "WM2PO"
+
+
+# Stronghold 2 Portal Outlet
+1018, 102, -969, "SH2PO"
 
 
 # Treasure Bastion Remnant 2
@@ -143,3 +151,6 @@
 # Treasure Bastion Remnant 3
 #	This is pretty much plundered.
 272, ~, -1456, "TBR3"
+
+
+
