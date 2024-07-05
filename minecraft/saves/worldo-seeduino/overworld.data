@@ -486,6 +486,7 @@
 #	There is a nice base here, with a Mending Librarian.
 #	A bunch of Rails and Powered Rails are here.
 #	Pets o'plenty - Wolf, Cat, Parrot
+#	This base has the Nether Portal back to the spawn point.
 1200, ~, -8448, "V11"
 
 
@@ -515,6 +516,10 @@
 # Desert Well 3
 #	Brewer was there!
 1435, 63, -8197, "DW3"
+
+
+# Village 14
+768, ~, -11360, "V14"
 
 
 # Desert Well 4
@@ -555,8 +560,8 @@
 
 # Woodland Mansion 2
 #	It is there, and still has Allay there.
-#	I tried to find a Music Disc here but so have not.
-#		Music disc was there, after further searching; super secret area.
+#	I tried to find a Music Disc here but so far have not.
+#		Music disc was there, after further searching; super secret area near the roof.
 6728, ~, -8184, "WM2"
 
 
@@ -567,8 +572,12 @@
 
 # Trial Chamber 10
 #	I found a Heavy Core here!
-6855, -25, -8633, "TC9"
+6855, -25, -8633, "TC10"
 
+
+# Trial Chamber 11
+#	There is an End Chest here.
+7063, -12, -8695, "TC11"
 
 
 # Ancient City 3
