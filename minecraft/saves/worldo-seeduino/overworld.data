@@ -171,7 +171,7 @@
 -304, 64, 1943, "V7"
 
 
-# # Amethyst Geode 2
+# Amethyst Geode 2
 -555, 34, 1273, "AG2"
 
 
@@ -327,17 +327,18 @@
 -5670, 77, 2221, "NPtTRBR1"
 
 
-# Trial Chamber 5 Mini Base
--5762, ~, 1911, "TC5MB"
-
-
-
 
 
 # Trial Chamber 5
 #	There are Slime Spawners here.
 #	Looted but there is still one Ominus Vault left.
 -5696, ~, 1888, "TC5"
+
+
+# Trial Chamber 5 Mini Base
+-5762, ~, 1911, "TC5MB"
+
+
 
 
 
@@ -512,6 +513,11 @@
 199, ~~~~-12, -9655, "TC7"
 
 
+# Ancient City 4
+#	It is there (unexplored), in the middle of a big Badlands biome.
+#	But there are several Wolf and Armadillo tammed here.
+520 -51 -9128, "AC4"
+
 
 # Desert Well 3
 #	Brewer was there!
@@ -519,8 +525,16 @@
 
 
 # Village 14
+#	This has a Ice Spike blocks near!
+#	I found a super fast horse around here; it has offspring here.
 768, ~, -11360, "V14"
 
+# Trial Chamber 12
+857 -19 -11271
+
+
+# Trail Ruins 4
+739 63 -11075, "TR4"
 
 # Desert Well 4
 #	Arms was here!

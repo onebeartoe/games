@@ -133,9 +133,12 @@
 433, 71, -1062, "V12PO"
 
 
-# Nether Fortress 7
+# Nether Fortress 7 Porta
 272, ~, -816, "NF7"
 
+
+# Village 14 Portal Outlet
+105, 72, -1415, "V14PO"
 
 # Woodland Mansion 2 Portal Outlet
 844, 94, -1020, "WM2PO"
