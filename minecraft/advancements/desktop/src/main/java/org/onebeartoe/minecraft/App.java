@@ -93,6 +93,10 @@ public class App extends Application
     @Override
     public void start(Stage stage) throws IOException 
     {
+//        var fontPath = "/org/onebeartoe/minecraft/minecraft.ttf";
+//        
+//        Font.loadFont(getClass().getResourceAsStream(fontPath), 18);
+        
         loadMinecraftFont();
         
         var initialRoot = screenNames[1];
@@ -129,6 +133,9 @@ public class App extends Application
         var styleSheets = "/org/onebeartoe/minecraft/" + fmxlToStyleSheets.get(fxml);
         scene.getStylesheets().add(styleSheets);
         
+
+
+        
 //var fontSheet =         getClass().getResource("custom-font-styles.css").toExternalForm()
         var fontSheet = "/org/onebeartoe/minecraft/fonts.css";
         scene.getStylesheets().add(fontSheet);
@@ -152,7 +159,7 @@ public class App extends Application
     }
 
     public static Font loadMinecraftFont() 
-    {
+    {       
         String path = App.class.getResource("minecraft.ttf").toExternalForm();
 
         var font = Font.loadFont(path, 10);

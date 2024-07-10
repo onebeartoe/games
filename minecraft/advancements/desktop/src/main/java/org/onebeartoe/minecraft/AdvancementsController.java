@@ -216,6 +216,8 @@ public class AdvancementsController
                     haveNots.append("\n");
                 });
         
+//TODO: Get fonts working again:
+//TODO:    font adevnetrue monters killed font used towork!
         advancementsHavesTextArea.setText(haves.toString());
         advancementsHavesTextArea.getStyleClass().add("title");
     

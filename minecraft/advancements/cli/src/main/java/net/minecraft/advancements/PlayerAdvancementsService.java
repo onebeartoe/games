@@ -361,6 +361,8 @@ public class PlayerAdvancementsService
         return playerAdvancements;
     }
 
+//TODO: Get fonts working again:
+//TODO:    font adevnetrue monters killed font used towork!
     private PlayerAdventureAdvancements parseAdventure() 
     {
         var adventure = new PlayerAdventureAdvancements();
