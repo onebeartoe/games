@@ -28,25 +28,24 @@ public class App extends Application
         //TODO: use a switch statement        
         if(fxml.equals("advancements"))
         {
-                scene.addEventHandler(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>
-          () {
-
-                @Override
-                public void handle(KeyEvent t) 
+                scene.addEventHandler(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() 
                 {
-                    if(t.getCode()==KeyCode.ESCAPE)
+                    @Override
+                    public void handle(KeyEvent t) 
                     {
-                      try 
-                      {
-                          switchToGameMenu();
-                      } 
-                      catch (IOException ex) 
-                      {
-                          ex.printStackTrace();
+                        if(t.getCode()==KeyCode.ESCAPE)
+                        {
+                          try 
+                          {
+                              switchToGameMenu();
+                          } 
+                          catch (IOException ex) 
+                          {
+                              ex.printStackTrace();
+                          }
                       }
-                  }
-                }
-            });    
+                    }
+                });  
         }
     }
 
