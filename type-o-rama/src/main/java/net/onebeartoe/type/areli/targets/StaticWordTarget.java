@@ -8,6 +8,7 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
@@ -53,6 +54,8 @@ public class StaticWordTarget extends WordTarget
 
         label.setFont(font);
         
+        
+labelText = new SimpleStringProperty("not-set");
         label.textProperty().bind(labelText);
                 
         label.setWrapText(true);

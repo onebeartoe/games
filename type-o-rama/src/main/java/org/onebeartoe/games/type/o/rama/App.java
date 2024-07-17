@@ -107,6 +107,10 @@ public class App extends Application
     
     Text encouragmentText;
 
+    static WordTargetFactory [] wordTargetServicePool ;
+//    static WordTargetFactory [] wordTargetServicePool = {wordTargetFactoryA, wordTargetFactoryB, wordTargetFactoryC};
+        
+    
     public App() throws IOException
     {
 
@@ -148,67 +152,9 @@ public class App extends Application
         encouragmentText.setX( width * 0.5 - (encouragmentTextWidth / 2) );
         encouragmentText.setY( 30 );
         
-        loadTargets();
-
-        StringBinding textBinding = Bindings.createStringBinding(
-                () -> "Only " + wordTargets.size() + " more to go, in Round " + currentRound + "}!"
-        );
-
-        encouragmentText.textProperty().bind(textBinding);
-        
-        
-        dialog = encouragmentText;
-
         
 
-        
-        
 
-// in JavaFX Script gameSummaries was Round[]        
-        gameSummaries = new ArrayList();
-//        Round[] gameSummaries;
-
-
-
-        //var gameSums : String [];
-
-        var nextRoundButtonText = "Next Round";
-
-        nextRoundDialog  = new ListViewGameSummaryDialog();
-
-        nextRoundDialog.message = "Do you want to play the next round?";
-        
-        nextRoundDialog.setTranslateX(width / 2 - (nextRoundDialog.width / 2) );
-        
-        nextRoundDialog.setTranslateY(height / 2 - (nextRoundDialog.height /2) );
-        
-        nextRoundDialog.dismissButton.setOnAction(t -> 
-        {
-            if(currentRound > totalRounds)
-            {
-                currentRound = 1;
-
-//TODO:  Does 'delete' clear the whole list or just the 1st element?
-                gameSummaries.clear();
-//                delete gameSummaries;
-
-                nextRoundDialog.buttonText.setValue(nextRoundButtonText);
-            }
-
-            System.out.println("New round.");
-
-            dialog = encouragmentText;
-
-            loadTargets();
-
-            elTexto.requestFocus();
-
-            playIntro();
-        });
-
-        nextRoundDialog.buttonText.setValue( nextRoundButtonText);
-
-        
          wordTargetFactoryA = new StaticWordTargetFactory();
 
         wordTargetFactoryA.xRange = (double) width;
@@ -239,16 +185,74 @@ public class App extends Application
         wordTargetFactoryC.targetMinY = (int) targetMinY;
 
 
-        
+        wordTargetServicePool = new WordTargetFactory [3];
+        wordTargetServicePool[0] = wordTargetFactoryA;
+        wordTargetServicePool[1] = wordTargetFactoryB;
+        wordTargetServicePool[2] = wordTargetFactoryC;
+//        wordTargetServicePool = {wordTargetFactoryA, wordTargetFactoryB, wordTargetFactoryC};
 
 //TODO: is this needed still?
-//        var wordTargetFactory: WordTargetFactory;// = wordTargetServicePool[0];  
+//        var wordTargetFactory: WordTargetFactory;// = wordTargetServicePool[0];    
+
+        loadTargets();
+
+        StringBinding textBinding = Bindings.createStringBinding(
+                () -> "Only " + wordTargets.size() + " more to go, in Round " + currentRound + "}!"
+        );
+
+        encouragmentText.textProperty().bind(textBinding);
+        
+        dialog = encouragmentText;
+     
+// in JavaFX Script gameSummaries was Round[]        
+        gameSummaries = new ArrayList();
+//        Round[] gameSummaries;
+
+        //var gameSums : String [];
+
+        var nextRoundButtonText = "Next Round";
+
+        nextRoundDialog  = new ListViewGameSummaryDialog();
+
+        nextRoundDialog.message = "Do you want to play the next round?";
+        
+        nextRoundDialog.setTranslateX(width / 2 - (nextRoundDialog.width / 2) );
+        
+        nextRoundDialog.setTranslateY(height / 2 - (nextRoundDialog.height /2) );
+        
+        nextRoundDialog.dismissButton.setOnAction(t -> 
+        {
+            if(currentRound > totalRounds)
+            {
+                currentRound = 1;
+
+//TODO:  Does 'delete' clear the whole list or just the 1st element?
+                gameSummaries.clear();
+//                delete gameSummaries;
+
+                nextRoundDialog.buttonText.setValue(nextRoundButtonText);
+            }
+
+            System.out.println("New round.");
+
+            dialog = encouragmentText;
+
+
+
+            
+ //           loadTargets();
+
+            elTexto.requestFocus();
+
+            playIntro();
+        });
+
+        nextRoundDialog.buttonText.setValue( nextRoundButtonText);
     }
-    WordTargetFactory wordTargetFactoryA;
-    WordTargetFactory wordTargetFactoryB;
-    WordTargetFactory wordTargetFactoryC;
-    
-    WordTargetFactory [] wordTargetServicePool = {wordTargetFactoryA, wordTargetFactoryB, wordTargetFactoryC};
+
+    static WordTargetFactory wordTargetFactoryA;
+    static WordTargetFactory wordTargetFactoryB;
+    static WordTargetFactory wordTargetFactoryC;
     
     WordTargetFactory wordTargetFactory;
     
@@ -318,27 +322,34 @@ private void updateGameSummaries()
 //        
 //        insert "{summary} " into nextRoundDialog.listView.items
 //    }    
-}
+    }
 
     @Override
     public void start(Stage stage) throws IOException, URISyntaxException
     {
-        lineBeamSound = loadMedia("net/onebeartoe/type/areli/sounds/line-beam-b.au");
+        lineBeamSound = loadMedia("net/onebeartoe/type/areli/sounds/line-beam-b.wav");
+//        lineBeamSound = loadMedia("net/onebeartoe/type/areli/sounds/line-beam-b.au");
 //        lineBeamSound = new Media("/net/onebeartoe/type/areli/sounds/line-beam-b.au");
-
         
 //"org/onebeartoe/minecraft/y2meta.com-Rick-Rolled-Short-Version.wav"
-removeTargetSound = new Media
+removeTargetSound = //new Media
+        loadMedia
 (
-         "{__DIR__}sounds/line-beam-remove.au"
+         "net/onebeartoe/type/areli/sounds/line-beam-remove.wav"
+//         "net/onebeartoe/type/areli/sounds/line-beam-remove.au"
 );
 
-levelIntroSound = new Media( "{__DIR__}sounds/audio.1280453989123.au");
+levelIntroSound = //new Media(
+        loadMedia(
+        "net/onebeartoe/type/areli/sounds/audio.1280453989123.wav");
+//        "net/onebeartoe/type/areli/sounds/audio.1280453989123.au");
 
         
         loadTargets();
 
         Main main = new Main();
+        
+        attacks = new ArrayList();
         
         setupElTexto();
 
@@ -415,16 +426,19 @@ parent = loadGroup();
     {
         words = wordsService.getWords(currentRound * wordsPerRoundFactor);
 
+System.out.println("wordTargetServicePool = " + wordTargetServicePool);      
+System.out.println("wordTargetServicePool size = " + wordTargetServicePool.length);        
+//System.out.println("wordTargetServicePool[0] = " + wordTargetServicePool[0].toString());      
+        
         // switch out the word target factory
         wordTargetFactory = wordTargetServicePool[poolIndex];
+System.out.println("wtf = " + wordTargetFactory);
 
         poolIndex++;
         if(poolIndex == wordTargetServicePool.length)
         {
             poolIndex = 0;
         }
-                
-                
 
         var targets = wordTargetFactory.createTargets(words);
 
