@@ -375,11 +375,15 @@ elTexto.requestFocus();
     }
 
 
+
+    private Group group = new Group();
+    private ObservableList<Node> children = group.getChildren();
+    
     public Group loadGroup()
     {
-        Group group = new Group();
         
-        ObservableList<Node> children = group.getChildren();
+        
+        
         children.addAll(robotChicken,
                         elTexto
                 );
@@ -398,6 +402,7 @@ elTexto.requestFocus();
 System.out.println("adding dialog:" + dialog);        
         children.add(dialog);
 //TODO: Is a alternative to a 'binded' Container needed?
+// see the children observable above this method
 //        [
 //            Container
 //            {
@@ -483,13 +488,9 @@ System.out.println("wtf = " + wordTargetFactory);
         elTexto.textProperty().bind(input);
         
         elTexto.setOnKeyPressed(ke -> 
-        {
-            
-        
-
-
 //        override var onKeyPressed = function (ke:KeyEvent):Void
-//        {
+        {
+
             System.out.println(ke.getCode() );
             
             String updatedValue = input.getValue() + ke.getText();
@@ -526,13 +527,7 @@ System.out.println("WORD MATCH");
                     targetAchieved = true;
                     matchingTarget = target;
 
-                    LineBeam beam = new LineBeam();
-                    beam.startX = cannonTipX;
-                    beam.startY = cannonTipY;
-                    
-                    beam.endX = (int) target.getTranslateX();
-                    beam.endY = (int) target.getTranslateY();
-                    
+
 
 
 
@@ -551,13 +546,15 @@ System.out.println("WORD MATCH");
                         removeTargetSoundPlayer.setCycleCount(1);
                         removeTargetSoundPlayer.play();
 
-                        beam.animation.stop();
+//this used to be enabled -_0                        
+//                        beam.animation.stop();
 
                         wordTargets.remove(target);
 //                        delete target from wordTargets;
 
 
-                        attacks.remove(beam);
+//this used to be enabled -_0                        
+//                        attacks.remove(beam);
 //                        delete beam from attacks;
 
                         
@@ -587,19 +584,40 @@ System.out.println("WORD MATCH");
                                 nextRoundDialog.dismissButton.setPrefWidth(100);
 //                                nextRoundDialog.dismissButton.width = 100;
                             }
+else                            
+{
+    System.out.println("aint got tno new round");
+}
 
-                            dialog = nextRoundDialog;
+                            
+children.remove(dialog);
+dialog = nextRoundDialog;
+children.add(dialog);
+//                            dialog = nextRoundDialog;
                         }
                         else
-                        {
-                            dialog = encouragmentText;
+                        {  
+children.remove(dialog);
+dialog = encouragmentText;
+children.add(dialog);
+//                            dialog = encouragmentText;
                         }
                     
                     };
 
 KeyFrame keyFrame = new KeyFrame(duration, str, handler);
 
-beam.removeFrame = keyFrame;
+
+                    LineBeam beam = new LineBeam(keyFrame);
+                    beam.startX = cannonTipX;
+                    beam.startY = cannonTipY;
+                    
+                    beam.endX = (int) target.getTranslateX();
+                    beam.endY = (int) target.getTranslateY();
+                    
+
+//this used to be enabled -_0    
+//beam.removeFrame = keyFrame;
 
 
 
@@ -613,6 +631,11 @@ beam.removeFrame = keyFrame;
 //                    {
 //                            level: 1
 //                    }
+
+
+beam.animation.play();
+
+attacks.remove(beam);
 
                     break;
                 }

@@ -55,7 +55,7 @@ public class StaticWordTarget extends WordTarget
         label.setFont(font);
         
         
-labelText = new SimpleStringProperty("not-set");
+labelText = new SimpleStringProperty("not-set-swt");
         label.textProperty().bind(labelText);
                 
         label.setWrapText(true);

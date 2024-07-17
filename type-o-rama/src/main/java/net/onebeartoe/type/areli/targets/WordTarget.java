@@ -33,7 +33,9 @@ public abstract class WordTarget extends Group
     public Rectangle background;
 //    public Node background;
 
+//TODO: remove this    
     public abstract String [] getWordssssss();
 
+//TODO: remove this
     public abstract void onWackaWacka();
 }

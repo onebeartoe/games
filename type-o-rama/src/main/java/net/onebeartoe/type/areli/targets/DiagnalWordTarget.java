@@ -9,6 +9,7 @@ import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.scene.paint.Color;
 
 import javafx.scene.control.Label;
@@ -69,7 +70,8 @@ public class DiagnalWordTarget extends WordTarget
         var font = Font.font("Trebuchet MS",20);
         
         label.setFont(font);
-        
+
+labelText = new SimpleStringProperty("not-set-dwt");
         label.textProperty().bind(labelText);
         
         label.setWrapText(true);
@@ -132,9 +134,12 @@ public class DiagnalWordTarget extends WordTarget
 //            }
 //        ]
 
+//ADD ThiS BAck!!!!!!!!!
         animation.getKeyFrames()
-                    .addAll(keyFrame1, 
-                            removeKeyFrame);
+                    .addAll(keyFrame1
+                            , 
+                            removeKeyFrame
+                    );
 
     }
 

@@ -23,7 +23,7 @@ public class LineBeam extends Attack
  
     Line line;
     
-    public LineBeam()
+    public LineBeam(KeyFrame removeFrame)
     {
         line = new Line();
     
@@ -40,6 +40,7 @@ public class LineBeam extends Attack
     line.setEffect(glow);
     
     
+        this.removeFrame = removeFrame;
 
     
     
@@ -51,7 +52,9 @@ public class LineBeam extends Attack
     var    keyFrame3 = new KeyFrame( Duration.millis(850) );
         
     
-animation = new Timeline(keyFrame1, keyFrame2, keyFrame3);
+//animation = new Timeline(keyFrame1, keyFrame2, keyFrame3);
+animation = new Timeline(keyFrame1, keyFrame2, keyFrame3, removeFrame);
+
     
 animation.setAutoReverse(true);
         animation.setCycleCount(Timeline.INDEFINITE);
@@ -77,7 +80,7 @@ animation.setAutoReverse(true);
     public Node create ()
 //    override public function create () : Node
     {
-        animation.play();
+//        animation.play();
 
         var group = new Group();        
         
