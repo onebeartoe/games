@@ -240,9 +240,9 @@ public class App extends Application
 
 
             
- //           loadTargets();
+            loadTargets();
 
-            elTexto.requestFocus();
+//            elTexto.requestFocus();
 
             playIntro();
         });
@@ -353,7 +353,7 @@ levelIntroSound = //new Media(
         
         setupElTexto();
 
-        elTexto.requestFocus();
+//        elTexto.requestFocus();
 
         playIntro();
 
@@ -370,6 +370,8 @@ parent = loadGroup();
         stage.setScene(scene);
 
         stage.show();
+        
+elTexto.requestFocus();        
     }
 
 
@@ -393,6 +395,7 @@ parent = loadGroup();
             children.add(attack);
         }
 
+System.out.println("adding dialog:" + dialog);        
         children.add(dialog);
 //TODO: Is a alternative to a 'binded' Container needed?
 //        [
@@ -509,8 +512,9 @@ System.out.println("wtf = " + wordTargetFactory);
             
             for(WordTarget target : wordTargets)
             {
-                if( target.labelText.equals(input) )
+                if( target.labelText.get().equals(input.get() ) )
                 {
+System.out.println("WORD MATCH");                    
                     input.setValue("");
 
                     target.animation.stop();
@@ -612,6 +616,10 @@ beam.removeFrame = keyFrame;
 
                     break;
                 }
+else
+{
+    System.out.println("-NO- WORD MATCH: " + input + " != " + target.labelText);
+}
             }
             
         });
