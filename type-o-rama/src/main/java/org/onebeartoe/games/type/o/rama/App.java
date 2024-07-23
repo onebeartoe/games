@@ -234,15 +234,17 @@ public class App extends Application
             }
 
             System.out.println("New round.");
-
+            
+            
+children.remove(dialog);
             dialog = encouragmentText;
-
+children.add(dialog);
 
 
             
             loadTargets();
 
-//            elTexto.requestFocus();
+            elTexto.requestFocus();
 
             playIntro();
         });
@@ -590,7 +592,7 @@ else
 }
 
                             
-children.remove(dialog);
+boolean remove = children.remove(dialog);
 dialog = nextRoundDialog;
 children.add(dialog);
 //                            dialog = nextRoundDialog;

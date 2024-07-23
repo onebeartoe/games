@@ -137,8 +137,8 @@ labelText = new SimpleStringProperty("not-set-dwt");
 //ADD ThiS BAck!!!!!!!!!
         animation.getKeyFrames()
                     .addAll(keyFrame1
-                            , 
-                            removeKeyFrame
+//                            , 
+//                            removeKeyFrame
                     );
 
     }
@@ -149,7 +149,8 @@ labelText = new SimpleStringProperty("not-set-dwt");
 //    @Override     
     public Node create ()
     {
-        animation.play();
+//todo: ADD THIS BADK
+//        animation.play();
 
         var group = new Group();
         
