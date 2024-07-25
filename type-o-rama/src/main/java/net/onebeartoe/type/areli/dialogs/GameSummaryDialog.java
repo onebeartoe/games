@@ -44,7 +44,7 @@ public abstract class GameSummaryDialog extends Group
     
     double listViewX;
     
-    public GameSummaryDialog()
+    protected GameSummaryDialog()
     {
         screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
 

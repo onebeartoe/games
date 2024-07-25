@@ -57,6 +57,7 @@ import net.onebeartoe.type.areli.targets.WordTarget;
 import net.onebeartoe.type.areli.pojos.Round;
 import net.onebeartoe.type.areli.dialogs.GameSummaryDialog;
 import net.onebeartoe.type.areli.dialogs.ListViewGameSummaryDialog;
+import net.onebeartoe.type.areli.dialogs.StartGameDialog;
 import net.onebeartoe.type.areli.factories.WordTargetFactory;
 import net.onebeartoe.type.areli.factories.implementation.DiagnalWordTargetFactory;
 import net.onebeartoe.type.areli.factories.implementation.StaticWordTargetFactory;
@@ -88,7 +89,10 @@ public class App extends Application
     Node dialog;
 //    Text dialog;
 
+    StartGameDialog startGameDialog;
+    
     GameSummaryDialog nextRoundDialog;
+    
     
     List<Round> gameSummaries;
     
@@ -210,7 +214,16 @@ public class App extends Application
 
         //var gameSums : String [];
 
-        var nextRoundButtonText = "Next Round";
+        startGameDialog = new StartGameDialog();
+        
+        startGameDialog.playButton.setOnAction( (a) -> 
+        {
+            playIntro();
+            
+            children.remove(startGameDialog);
+        });
+        
+//        var nextRoundButtonText = "Next Round";
 
         nextRoundDialog  = new ListViewGameSummaryDialog();
 
@@ -220,8 +233,12 @@ public class App extends Application
         
         nextRoundDialog.setTranslateY(height / 2 - (nextRoundDialog.height /2) );
         
+        var nextRoundButtonText = "Next Round";
+        
         nextRoundDialog.dismissButton.setOnAction(t -> 
         {
+//            var nextRoundButtonText = "Next Round";
+
             if(currentRound > totalRounds)
             {
                 currentRound = 1;
@@ -235,16 +252,13 @@ public class App extends Application
 
             System.out.println("New round.");
             
-            
 children.remove(dialog);
             dialog = encouragmentText;
 children.add(dialog);
-
-
             
             loadTargets();
-
-            elTexto.requestFocus();
+ 
+           elTexto.requestFocus();
 
             playIntro();
         });
@@ -279,6 +293,17 @@ children.add(dialog);
         introSoundPlayer.setCycleCount(0);
         
         introSoundPlayer.play();
+        
+        introSoundPlayer.setOnEndOfMedia( () -> 
+        {
+            System.out.println("end of intro");
+            
+            clearAnyRemainingTargets();
+            
+            createAndShowNewTargets();
+            
+            newRound();
+        });
     }    
 
 //var wordsService: WordsService = net.onebeartoe.type.areli.services.implementation.TestingWordService{}
@@ -358,10 +383,10 @@ levelIntroSound = //new Media(
 
 //        elTexto.requestFocus();
 
-        playIntro();
+//        playIntro();
 
 //        Parent parent = loadFXML("primary");
-Parent parent = loadGroup();
+Parent parent = loadParent();
         
         scene = new Scene(parent, 640, 480);
 
@@ -378,13 +403,15 @@ elTexto.requestFocus();
 
 
 
-    private Group group = new Group();
-    private ObservableList<Node> children = group.getChildren();
     
-    public Group loadGroup()
+
+    private ObservableList<Node> children;
+    
+    public Group loadParent()
     {
+        Group group = new Group();
         
-        
+        children = group.getChildren();
         
         children.addAll(robotChicken,
                         elTexto
@@ -419,6 +446,8 @@ System.out.println("adding dialog:" + dialog);
 //                content: bind dialog
 //            }
 //        ]
+
+        children.add(startGameDialog);
     
         return group;
     }
@@ -635,6 +664,7 @@ KeyFrame keyFrame = new KeyFrame(duration, str, handler);
 //                    }
 
 
+//TODO: re-enable this, somewhere???
 beam.animation.play();
 
 attacks.remove(beam);
@@ -648,5 +678,21 @@ else
             }
             
         });
+    }
+
+    private void clearAnyRemainingTargets() 
+    {
+//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private void createAndShowNewTargets() {
+//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private void newRound() 
+    {
+        elTexto.requestFocus();
+        
+//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
