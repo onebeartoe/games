@@ -349,6 +349,7 @@ levelIntroSound = //new Media(
         
         loadTargets();
 
+//TODO: removo this        
         Main main = new Main();
         
         attacks = new ArrayList();
@@ -359,9 +360,8 @@ levelIntroSound = //new Media(
 
         playIntro();
 
-        Parent parent = loadFXML("primary");
-
-parent = loadGroup();
+//        Parent parent = loadFXML("primary");
+Parent parent = loadGroup();
         
         scene = new Scene(parent, 640, 480);
 
