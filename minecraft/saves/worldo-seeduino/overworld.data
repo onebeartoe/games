@@ -487,6 +487,7 @@
 #	There is a nice base here, with a Mending Librarian.
 #	A bunch of Rails and Powered Rails are here.
 #	Pets o'plenty - Wolf, Cat, Parrot
+#	This is currently where the fast fast horse is.
 #	This base has the Nether Portal back to the spawn point.
 1200, ~, -8448, "V11"
 
@@ -563,7 +564,9 @@
 
 # Village 12
 #	This Desert Village has a cool layout!
-#	It is surrounded by a Mangrove Swamp.
+#	It is surrounded by a Mangrove Swamp with some Sniffers.
+#	There is an automated farm is here.
+#           https://www.youtube.com/watch?v=GwIbWSzAecY&ab_channel=NaMiature
 3424, ~, -8336, "V12"
 
 
