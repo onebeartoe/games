@@ -21,6 +21,11 @@
 
 
 
+# Trial Chambers 1
+#	Some it got cut off my existing blocks.
+#	I got the 3 Ominous Vaults that did generate. It is till fun!
+-528, -432, "TC1"
+
 
 # Fifth Village - Desert
 #	This village has the first (and only) iron farm, from Golumns.
@@ -85,6 +90,11 @@
 #	This base has a Strider with a real long lava lane, towards the back of the base.
 -1630, -76, "SH1"
 
+
+
+# Trial Chambers 2
+#	Yay, I found a Heavy Core here!
+-1296, -528, "TC2"
 
 
 # Ancient City Topside Base 1

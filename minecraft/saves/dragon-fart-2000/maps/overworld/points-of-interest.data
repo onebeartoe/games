@@ -14,3 +14,9 @@
 # 	There is a bunch of surface ores here.
 #	Y-level =  70
 -598, 1443, "SP1"
+
+
+# old growth pine tiaga - Black Wolf
+#	it is there but I did not find any wolf here.
+-947, ~, -1693, "OGPT"
+
