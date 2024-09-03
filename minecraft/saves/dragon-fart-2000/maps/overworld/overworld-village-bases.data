@@ -153,6 +153,33 @@
 
 
 
+# Magma Cube Spawner 1 - Portal Base
+#	Magma Cube Spawner (Overworld) Portal
+#		y = -41
+#
+#	It has an Alley Cave.
+#	This is (overworld-side) Nether Portal closest to the Magma Cube/Froglight farm.
+-2055, 2225, "MCS1-P"
+
+
+# Magma Cube Spawner 1 - Portal Base - Ocean Outlet
+#	    You have to take the waterfall by the Portal Base all the way up to the Ocian floor.
+#
+#     There is an awesome Frog and Allay enclosure by the Nether Portal.
+#
+#		y = 43
+#	Snowy Slopes
+#		-800, 2230
+#
+#		powder snow
+#			-653, 141, 2190
+#
+#			There are Goat( horn)s here.
+#
+#			Illager Outpost is at the bottom of the mountain (no Alley though)
+-2043, 2230, "MCS1-P-OO"
+
+
 
 
 
