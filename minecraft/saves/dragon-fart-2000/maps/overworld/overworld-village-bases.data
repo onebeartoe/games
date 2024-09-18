@@ -139,6 +139,32 @@
 
 
 
+# Trial Chambers 3
+2320, -3808, "TC3"
+
+
+# Wooded Badlands
+#	It was there but no Wolf.
+2649, 71, -3611, "WB1"
+
+
+
+
+# Ocean Monument 3
+#	near Warped Forest Overworld Base
+#	little village near by 295, -4288
+#		There is a Guardian in a boat here.
+#		There is also a Cat, Wolf, and Allay here; in case I come back here.
+-224, -4288, "OM3"
+
+
+
+# Sparse Jungle
+#	There were Rusty Wolf here.
+-2801, 72, -3451, "SJ1"
+
+
+
 # Camel Town 1
 #   It is is smaller villagebut is the spot where the first
 #   camels were found.
