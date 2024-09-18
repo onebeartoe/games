@@ -14,4 +14,38 @@
     
     <name>onebeartoe-games-centipedo</name>
     
+    
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.4</version>
+                <executions>
+                    <execution>
+                        <id>build-cli-watch</id>
+                        <configuration>
+<!--                            
+                            <appendAssemblyId>false</appendAssemblyId>
+                            <classifier>file-watcher</classifier>
+-->                                                        
+                            <archive>
+                                <manifest>
+                                    <mainClass>org.JWrapper</mainClass>
+                                </manifest>
+                            </archive>
+                            <descriptorRefs>
+                                <descriptorRef>jar-with-dependencies</descriptorRef>
+                            </descriptorRefs>
+                            <finalName>centipideo-jar-with-dependencies</finalName>
+                        </configuration>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>            
+        </plugins>
+    </build>    
 </project>

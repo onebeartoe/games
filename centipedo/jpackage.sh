@@ -1,5 +1,9 @@
 #!/usr/bin/bash
-jpackage --input target/ --type app-image --main-class Wrapplet --main-jar edu-rubiks-cube-jar-with-dependencies-jar-with-dependencies.jar          --dest target
+jpackage --input target/ \
+         --type app-image \
+         --main-class org.JWrapper \
+         --main-jar centipideo-jar-with-dependencies-jar-with-dependencies.jar \
+         --dest target
 # once it is done (on windows), execute the application with 
 #
 #   target/Wrapplet/Wrapplet.exe
