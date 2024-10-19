@@ -128,6 +128,7 @@
 #	The Nether Portal here goes to a warped forrest.
 #	It is so pretty here.
 #	It is a warm ocean, with lots of coral and fans.
+#	There is a Conduit here.
 #	There is a nether portal at the bottom of the ocean (and top) here.
 #		2415, -3650
 #	There is an cool Bandlands biome very near here.
@@ -143,11 +144,18 @@
 2320, -3808, "TC3"
 
 
+# Ancient City WF1
+3168, -4368, 'ACWF1'
+
+
 # Wooded Badlands
 #	It was there but no Wolf.
 2649, 71, -3611, "WB1"
 
-
+# Stronghold
+#	The End Portal is here
+#		3506, -6, -4226
+3472, -4224, "SH
 
 
 # Ocean Monument 3
