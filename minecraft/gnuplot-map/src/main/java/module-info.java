@@ -1,5 +1,6 @@
 module org.onebeartoe.games.gnuplot.map {
     requires java.desktop;
+    requires java.prefs;
     requires javafx.controls;
     requires javafx.fxml;
 
