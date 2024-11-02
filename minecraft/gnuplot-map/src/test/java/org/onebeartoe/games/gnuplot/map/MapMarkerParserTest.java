@@ -27,5 +27,11 @@ public class MapMarkerParserTest
         List<MapMarker> markers = implementation.parse(infile);
         
         assertThat(markers.size()).isEqualTo(3);
+        
+        MapMarker first = markers.get(0);
+        
+        assertThat(first.location().getX()).isEqualTo(2);
+        
+        assertThat(first.location().getY()).isEqualTo(2);
     }
 }
