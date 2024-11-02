@@ -1,26 +1,24 @@
 
-
 package org.onebeartoe.games.gnuplot.map;
 
-import java.awt.Point;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.awt.geom.Point2D;
+import javafx.geometry.Point3D;
 
 /**
  *
- * @author roberto
  */
 public class MapMarkers 
 {
     public static 
-    List<MapMarker> closestPoints(Point source, List<MapMarker> points)
+    List<MapMarker> closestPoints(Point3D source, List<MapMarker> points)
     {
         List<DistancedMapMarker> distancedMarkers = points.stream().map((m) -> 
         {
-            var distance = Point2D.distance(source.x, source.y, m.location().x, m.location().y);
+            var distance = Point2D.distance(source.getX(), source.getZ(), m.location().getX(), m.location().getZ());
 
-            var dm = new DistancedMapMarker(m.location(), m.label(), distance);
+            var dm = new DistancedMapMarker(m.location(), m.description(), distance);
 
             return dm;
         })
@@ -28,7 +26,7 @@ public class MapMarkers
 
         distancedMarkers.sort((m1, m2) -> m1.distance().compareTo(m2.distance()));
         
-        return distancedMarkers.stream().map(dm -> new MapMarker(dm.location(), dm.label()))
+        return distancedMarkers.stream().map(dm -> new MapMarker(dm.location(), dm.label(), true))
                 .collect(Collectors
                 .toList());
     }

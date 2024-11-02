@@ -79,7 +79,11 @@ public class PrimaryController
 
             System.out.println(selectedDirectory.getAbsolutePath());
             
-            loadInputFiles(selectedDirectory);
+            try {
+                loadInputFiles(selectedDirectory);
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
         });
         
         directoryChooser.setInitialDirectory(new File("/"));        

@@ -5,8 +5,9 @@ import java.awt.Point;
 
 import java.io.File;
 import java.util.List;
+import javafx.geometry.Point3D;
 
-record DistancedMapMarker(Point location, String label, Double distance)
+record DistancedMapMarker(Point3D location, String label, Double distance)
 {
 }
 

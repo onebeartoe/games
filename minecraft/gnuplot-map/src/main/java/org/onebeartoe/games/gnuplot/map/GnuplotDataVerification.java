@@ -1,3 +1,11 @@
+
+
+
+
+//TODO: move back/??????!!!???
+
+
+package org.onebeartoe.games.gnuplot.map;
   
 import java.awt.Toolkit;
 import java.io.File;
@@ -9,6 +17,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import javafx.geometry.Point3D;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 
@@ -124,7 +133,7 @@ public class GnuplotDataVerification
                         
                         playValidationFailureSound();
                     }                    
-                    default -> System.out.print("");
+                    default -> System.err.print("error: no type found");
                 }
             }
             
@@ -154,7 +163,7 @@ public class GnuplotDataVerification
             {
                 entry = new BlankEntry();
             }
-            else if( isValid(line) )
+            else if( isValid(line).valid() )
             {
                 entry = new ValidEntry(lineNumber, line);
             }
@@ -218,11 +227,17 @@ if( !raid.exists() )
         task.run();
     }
 
-    private boolean isValid(String line) 
+    public MapMarker isValid(String line) 
     {
         var valid = true;
         
         String[] split = line.split(",");
+        
+        Integer x = null;
+        
+        Integer y = null;
+                
+        Integer z = 0;
         
         if(requireFourItems && split.length != 4)
         {
@@ -237,7 +252,7 @@ if( !raid.exists() )
             try
             {
                 var s1 = split[0].trim();
-                Integer x = Integer.valueOf(s1);
+                x = Integer.valueOf(s1);
                 
                 if(minX > x)
                 {
@@ -266,7 +281,7 @@ if( !raid.exists() )
                 else
                 {
                     // otherwise verify s2 is an integer
-                    Integer y = Integer.valueOf(s2);
+                    y = Integer.valueOf(s2);
                 }
 
                 int lastIndex = 2;
@@ -277,7 +292,7 @@ if( !raid.exists() )
 
                     // validate the third item in the list
                     var s3 = split[2].trim();
-                    Integer z = Integer.valueOf(s3);
+                    z = Integer.valueOf(s3);
                     
                     if(minZ > z)
                     {
@@ -312,8 +327,14 @@ if( !raid.exists() )
                 System.out.println(mesage);
             }            
         }
+     
+        Point3D point = new Point3D(x, y, z);
         
-        return valid;
+        String description = null;
+        
+        MapMarker mapMarker = new MapMarker(point,description, valid);
+        
+        return mapMarker;
     }
     
     record FileValidation(File file, List<ValidationEntry> entries) {}

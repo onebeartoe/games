@@ -2,7 +2,6 @@
 
 package org.onebeartoe.games.gnuplot.map;
 
-import java.awt.Point;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -21,11 +20,27 @@ public class MapMarkerParser
         
         List<MapMarker> markers = List.of(split)
                 .stream()
-                .filter(line -> !line.trim().isEmpty() )
-                .map(l ->
-                {
-                    Point p = null;
-                   return new MapMarker(p, l); 
+                .filter(chunk -> !chunk.trim().isEmpty() )
+                .map(chunk ->
+                {         
+                    var lines = chunk.split("(\\r?\\n)");
+                    
+                    var count = lines.length;
+                    
+                    var description = new StringBuffer();
+                    
+                    for(int i = 0; i < count-1; i++)
+                    {
+                        description.append(lines[i]);
+                    }
+                    
+                    var verification = new GnuplotDataVerification();
+                    
+                    var lastLine = lines[count-1];
+                    
+                    MapMarker descriptionLessMarker = verification.isValid(lastLine);
+                    
+                    return new MapMarker(descriptionLessMarker.location(), description.toString(), descriptionLessMarker.valid() ); 
                 })
                 .toList();
         

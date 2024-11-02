@@ -4,13 +4,9 @@ package org.onebeartoe.games.gnuplot.map;
 import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.Test;
 
-import java.awt.geom.Point2D;
 import java.util.List;
 
-import java.awt.Point;
-
-import org.onebeartoe.games.gnuplot.map.MapMarker;
-import org.onebeartoe.games.gnuplot.map.MapMarkers;
+import javafx.geometry.Point3D;
 
 /**
  *
@@ -19,12 +15,12 @@ public class MapMarkersTest
 {
     private List<MapMarker> points;
     
-    private MapMarker a = new MapMarker( new Point(2,0), "A");
-    private MapMarker b = new MapMarker( new Point(4,0), "B");
-    private MapMarker c = new MapMarker( new Point(0, 6), "C");
-    private MapMarker d = new MapMarker( new Point(0, 8), "D");
-    private MapMarker e = new MapMarker( new Point(10, 0), "E");
-    private MapMarker f = new MapMarker( new Point(0, 14), "F");
+    private MapMarker a = new MapMarker( new Point3D(2, 0, 0), "A", true);
+    private MapMarker b = new MapMarker( new Point3D(4, 0, 0), "B", true);
+    private MapMarker c = new MapMarker( new Point3D(0, 0, 6), "C", true);
+    private MapMarker d = new MapMarker( new Point3D(0, 0, 8), "D", true);
+    private MapMarker e = new MapMarker( new Point3D(10, 0, 0), "E", true);
+    private MapMarker f = new MapMarker( new Point3D(0, 0, 14), "F", true);
     
     public MapMarkersTest() 
     {
@@ -34,7 +30,7 @@ public class MapMarkersTest
     @Test
     public void closestPoints_origin()
     {
-        var origin = new Point(0, 0);
+        var origin = new Point3D(0, 0, 0);
         
         List closestPoints = MapMarkers.closestPoints(origin, points);
         
