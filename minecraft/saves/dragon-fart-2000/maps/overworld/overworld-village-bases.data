@@ -145,17 +145,19 @@
 
 
 # Ancient City WF1
-3168, -4368, 'ACWF1'
+3168, -4368, "ACWF1"
 
 
 # Wooded Badlands
 #	It was there but no Wolf.
 2649, 71, -3611, "WB1"
 
-# Stronghold
+
+
+# Stronghold 2
 #	The End Portal is here
 #		3506, -6, -4226
-3472, -4224, "SH
+3472, -4224, "SH2"
 
 
 # Ocean Monument 3
