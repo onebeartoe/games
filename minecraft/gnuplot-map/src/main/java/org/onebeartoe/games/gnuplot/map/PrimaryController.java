@@ -99,6 +99,8 @@ public class PrimaryController
         yField.setOnKeyReleased((t) -> 
         {
             updateMarkers();
+            
+            
         });
         
         var x = App.preferences.getInt(TARGET_X_KEY, 0);
@@ -197,17 +199,8 @@ public class PrimaryController
                 }
                 else
                 {
-                    mapMarkers.forEach(marker -> 
-                    {
-                        var text = toString(marker);
-                            
-                        var textArea = new TextArea(text);
-                        
-                        textArea.setPrefHeight(650);
+                    updateMapMarkersDispaly(mapMarkers);
 
-                        mapMarkersVbox.getChildren()
-                                        .add(textArea);
-                    });
                 }
             }
             catch (IOException ex) 
@@ -304,12 +297,28 @@ public class PrimaryController
         
         var z = Integer.valueOf( yField.getText() );
         
-        
-        
         var origin = new Point3D(x, y, z);
         
         List closestPoints = MapMarkers.closestPoints(origin, mapMarkers);
+
+        updateMapMarkersDispaly(closestPoints);
+    }
+
+    private void updateMapMarkersDispaly(List<MapMarker> updatedMapMarkers) 
+    {
+        mapMarkersVbox.getChildren()
+                        .clear();
         
-//        loadInputFiles
+        updatedMapMarkers.forEach(marker -> 
+        {
+            var text = toString(marker);
+
+            var textArea = new TextArea(text);
+
+            textArea.setPrefHeight(650);
+
+            mapMarkersVbox.getChildren()
+                            .add(textArea);
+        });        
     }
 }
