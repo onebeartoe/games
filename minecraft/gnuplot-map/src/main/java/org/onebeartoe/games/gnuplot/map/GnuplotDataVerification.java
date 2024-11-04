@@ -133,7 +133,7 @@ public class GnuplotDataVerification
                         
                         playValidationFailureSound();
                     }                    
-                    default -> System.err.print("error: no type found");
+                    default -> System.err.println("error: no type found");
                 }
             }
             
@@ -279,6 +279,8 @@ if( !raid.exists() )
 
                         throw new IllegalArgumentException(message);
                     }
+                    
+                    y = 0;
                 }
                 else
                 {
@@ -331,7 +333,21 @@ if( !raid.exists() )
                 System.out.println(mesage);
             }            
         }
-     
+        
+        if(x == null)
+        {
+            var message = "x is null in line:\n" + line;
+            
+            throw new IllegalArgumentException(message);
+        }
+
+        if(y == null)
+        {
+            var message = "y is null in line:\n" + line;
+            
+            throw new IllegalArgumentException(message);
+        }        
+        
         Point3D point = new Point3D(x, y, z);
         
         String description = null;

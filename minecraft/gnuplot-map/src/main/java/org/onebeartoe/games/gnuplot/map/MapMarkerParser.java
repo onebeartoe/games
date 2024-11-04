@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.List;
+import javafx.geometry.Point3D;
 
 /**
  * 
@@ -38,12 +39,25 @@ public class MapMarkerParser
                     
                     var lastLine = lines[count-1];
                     
-                    MapMarker descriptionLessMarker = verification.isValid(lastLine);
                     
-                    return new MapMarker(descriptionLessMarker.id(), 
-                                            descriptionLessMarker.location(), 
-                                            description.toString(), 
-                                            descriptionLessMarker.valid() ); 
+                    MapMarker mapMarker = null;
+                    try {
+                        MapMarker descriptionLessMarker = verification.isValid(lastLine);
+
+                        mapMarker = new MapMarker(descriptionLessMarker.id(), 
+                                                descriptionLessMarker.location(), 
+                                                description.toString(), 
+                                                descriptionLessMarker.valid() ); 
+                    }
+                    catch(IllegalArgumentException iae)
+                    {
+                        mapMarker = new MapMarker(infile.getAbsolutePath(), 
+                                                new Point3D(0,0,0) , 
+                                                iae.getMessage(), 
+                                                false );                        
+                    }
+                    
+                    return mapMarker;
                 })
                 .toList();
         

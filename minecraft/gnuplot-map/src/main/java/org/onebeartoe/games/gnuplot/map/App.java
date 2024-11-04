@@ -26,6 +26,8 @@ public class App extends Application
     
     static String HEIGHT_KEY = PREFERENCES_KEY + ".HEIGHT";
     
+    static String INPUT_DIRECORTY_KEY = PREFERENCES_KEY + ".INPUT_DIRECTORY";
+    
     public static final  Preferences preferences = Preferences.userRoot().node(PREFERENCES_KEY);
 
         

@@ -21,6 +21,7 @@ import javafx.scene.control.TextFormatter;
 import javafx.scene.layout.VBox;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
+import static org.onebeartoe.games.gnuplot.map.App.INPUT_DIRECORTY_KEY;
 
 public class PrimaryController 
 {
@@ -44,6 +45,8 @@ public class PrimaryController
     
     @FXML
     public TextArea outputTextArea;
+    
+    private File selectedDirectory;
     
     private DirectoryChooser directoryChooser = new DirectoryChooser();
     
@@ -97,7 +100,47 @@ public class PrimaryController
             Stage primaryStage = App.stage;
             
             File selectedDirectory = directoryChooser.showDialog(primaryStage);
+            
+            App.preferences.put(INPUT_DIRECORTY_KEY, selectedDirectory.getAbsolutePath());
 
+            loadInputFiles();
+        });
+        
+        
+        String inputPath = App.preferences.get(INPUT_DIRECORTY_KEY, "bad-direcotry-path");
+        
+        var initialDirectory = new File(inputPath);
+        
+        if(initialDirectory.exists() && initialDirectory.isDirectory())
+        {
+            directoryChooser.setInitialDirectory(initialDirectory);
+            
+            selectedDirectory = initialDirectory;
+        }
+        else
+        {
+            selectedDirectory = new File("/home/roberto/Versioning/owner/github/games/minecraft/saves/dragon-fart-2000/maps/");
+            
+            directoryChooser.setInitialDirectory(selectedDirectory);        
+            
+            outputTextArea.appendText("\n--------------------\ninitialization error\n");
+            outputTextArea.appendText("saved prefered input directory is set but does not exists");
+            outputTextArea.appendText("\n\t" + inputPath + "\n\n");
+        }
+        
+        loadInputFiles();
+        
+    }
+    
+    @FXML
+    private void switchToSecondary() throws IOException 
+    {
+        App.setRoot("secondary");
+    }
+    
+    private void loadInputFiles()
+    {
+        
             System.out.println(selectedDirectory.getAbsolutePath());
             
             try 
@@ -114,8 +157,6 @@ public class PrimaryController
                 
                 ObservableList<String> items = FXCollections.observableArrayList(filesToText);
                 
-//                Label l;
-                
                 inputFilesListView.getItems().addAll(items);
                 
                 mapMarkers = parseMapMarkers(inputFiles);
@@ -130,20 +171,11 @@ public class PrimaryController
                                     .add(textArea);
                 });
                             
-            } 
+            }
             catch (IOException ex) 
             {
                 ex.printStackTrace();
-            }
-        });
-        
-        directoryChooser.setInitialDirectory(new File("/"));        
-    }
-    
-    @FXML
-    private void switchToSecondary() throws IOException 
-    {
-        App.setRoot("secondary");
+            }        
     }
 
     private List<Path> loadInputFiles(File selectedDirectory) throws IOException 
@@ -175,7 +207,24 @@ public class PrimaryController
             {
                 var markers = parseOneMapMarkerFile(infile);
                 
-                allMarkers.addAll(markers);
+                markers.forEach(marker -> {
+                    if(marker.valid())
+                    {
+                                        allMarkers.addAll(markers);
+                    }
+                    else
+                    {
+                        var message = "errors here: " + marker.id() +
+                                      "\n" + marker.description() + 
+                                      "\n-----------------\n";
+                        
+                        outputTextArea.appendText(message);
+                    }
+                });
+                       
+                        
+                
+//                allMarkers.addAll(markers);
             } 
             catch (IOException ex) 
             {
@@ -197,11 +246,39 @@ public class PrimaryController
 
     private List<MapMarker> parseOneMapMarkerFile(Path infile) throws IOException 
     {
-        List<String> allLines = Files.readAllLines(infile);
+        MapMarkerParser parser = new MapMarkerParser();
         
-        List<MapMarker> markers = allLines.stream()
-                .map(line -> dataVerification.isValid(line) )
-                .toList();
+        List<MapMarker> markers = parser.parse(infile.toFile());
+        
+        
+//        List<String> allLines = Files.readAllLines(infile);
+//        
+//        var errors = new StringBuffer();       
+//        
+//        List<MapMarker> markers = allLines.stream()
+//                .map(line -> 
+//                {
+//                    MapMarker marker =null;
+//                    try
+//                    {
+//                        marker = dataVerification.isValid(line) ;
+//                    }
+//                    catch(NullPointerException npe)
+//                    {
+//                        var error = npe.getMessage() + "\n__________________\n";
+//                        
+//                        errors.append(error);
+//                    }
+//                    
+//                    return marker;
+//                })
+//                .toList();
+        
+//        if(errors.length() > 0)
+//        {
+//            throw new IllegalArgumentException(errors.toString() + "\n\n");
+//        }
+        
         
         return markers;
     }
