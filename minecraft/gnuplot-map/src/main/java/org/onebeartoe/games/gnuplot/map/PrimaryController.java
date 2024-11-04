@@ -11,6 +11,7 @@ import java.util.stream.Stream;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.geometry.Point3D;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.ScrollPane;
@@ -21,14 +22,20 @@ import javafx.scene.layout.VBox;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 import static org.onebeartoe.games.gnuplot.map.App.INPUT_DIRECORTY_KEY;
+import static org.onebeartoe.games.gnuplot.map.App.TARGET_X_KEY;
+import static org.onebeartoe.games.gnuplot.map.App.TARGET_Y_KEY;
 
 public class PrimaryController 
 {
     @FXML
-    public TextField xField;
+    public 
+//            static 
+            TextField xField;
 
     @FXML
-    public TextField yField;
+    public 
+  //          static 
+            TextField yField;
     
     @FXML
     public ListView inputFilesListView;
@@ -72,7 +79,7 @@ public class PrimaryController
    
         xField.setOnKeyReleased((t) -> 
         {
-            System.out.println("ploop");
+            updateMarkers();
         });
 
         var yNumericFormater = new TextFormatter<>(c -> 
@@ -91,8 +98,15 @@ public class PrimaryController
 
         yField.setOnKeyReleased((t) -> 
         {
-            System.out.println("yloop");
+            updateMarkers();
         });
+        
+        var x = App.preferences.getInt(TARGET_X_KEY, 0);
+        xField.setText(String.valueOf(x));
+        
+        
+        var y = App.preferences.getInt(TARGET_Y_KEY, 0);
+        yField.setText(String.valueOf(y));
         
         inputDirectoryButton.setOnAction((t) -> 
         {
@@ -189,8 +203,6 @@ public class PrimaryController
                             
                         var textArea = new TextArea(text);
                         
-//                        textArea.setp
-                        
                         textArea.setPrefHeight(650);
 
                         mapMarkersVbox.getChildren()
@@ -280,5 +292,24 @@ public class PrimaryController
         return marker.id() + "\n" +
                 marker.location() + "\n" +
                 marker.description();   
+    }
+
+    private void updateMarkers() 
+    {
+        System.out.println("ploop");
+        
+        var x = Integer.valueOf( xField.getText() );
+        
+        var y = 0;
+        
+        var z = Integer.valueOf( yField.getText() );
+        
+        
+        
+        var origin = new Point3D(x, y, z);
+        
+        List closestPoints = MapMarkers.closestPoints(origin, mapMarkers);
+        
+//        loadInputFiles
     }
 }

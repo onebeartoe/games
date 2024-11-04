@@ -10,6 +10,8 @@ import java.io.IOException;
 
 
 import java.util.prefs.Preferences;
+//import static org.onebeartoe.games.gnuplot.map.PrimaryController.xField;
+//import static org.onebeartoe.games.gnuplot.map.PrimaryController.yField;
 
 /**
  * This is the entry point for the Minecraft Companion Gnuplot Map application.
@@ -27,6 +29,10 @@ public class App extends Application
     static String HEIGHT_KEY = PREFERENCES_KEY + ".HEIGHT";
     
     static String INPUT_DIRECORTY_KEY = PREFERENCES_KEY + ".INPUT_DIRECTORY";
+    
+    static String TARGET_X_KEY = PREFERENCES_KEY + ".TAGET_X";
+    
+    static String TARGET_Y_KEY = PREFERENCES_KEY + ".TAGET_Y";
     
     public static final  Preferences preferences = Preferences.userRoot().node(PREFERENCES_KEY);
 
@@ -54,6 +60,12 @@ public class App extends Application
         preferences.putDouble(WIDTH_KEY, scene.getWidth());
         
         preferences.putDouble(HEIGHT_KEY, scene.getHeight());
+        
+//        var x = Integer.valueOf(xField.getText() );
+//        preferences.putInt(TARGET_X_KEY, x);
+//        
+//        var y = Integer.valueOf(yField.getText() );
+//        preferences.putInt(TARGET_Y_KEY, y);
     }
 
     static void setRoot(String fxml) throws IOException {
