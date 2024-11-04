@@ -35,11 +35,13 @@ public class App extends Application
     @Override
     public void start(Stage stage) throws IOException 
     {
-        double width = preferences.getDouble(WIDTH_KEY, 640.0);
+        var width = preferences.getDouble(WIDTH_KEY, 640.0);
         
-        double height = preferences.getDouble(HEIGHT_KEY, 480.0);
+        var height = preferences.getDouble(HEIGHT_KEY, 480.0);
         
-        scene = new Scene(loadFXML("primary"), width, height);
+        var parent = loadFXML("primary"); 
+        
+        scene = new Scene(parent, width, height);
     
         this.stage = stage;
 
