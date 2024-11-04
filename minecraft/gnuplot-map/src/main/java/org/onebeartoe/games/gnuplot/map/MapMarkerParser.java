@@ -40,7 +40,10 @@ public class MapMarkerParser
                     
                     MapMarker descriptionLessMarker = verification.isValid(lastLine);
                     
-                    return new MapMarker(descriptionLessMarker.location(), description.toString(), descriptionLessMarker.valid() ); 
+                    return new MapMarker(descriptionLessMarker.id(), 
+                                            descriptionLessMarker.location(), 
+                                            description.toString(), 
+                                            descriptionLessMarker.valid() ); 
                 })
                 .toList();
         

@@ -15,12 +15,12 @@ public class MapMarkersTest
 {
     private List<MapMarker> points;
     
-    private MapMarker a = new MapMarker( new Point3D(2, 0, 0), "A", true);
-    private MapMarker b = new MapMarker( new Point3D(4, 0, 0), "B", true);
-    private MapMarker c = new MapMarker( new Point3D(0, 0, 6), "C", true);
-    private MapMarker d = new MapMarker( new Point3D(0, 0, 8), "D", true);
-    private MapMarker e = new MapMarker( new Point3D(10, 0, 0), "E", true);
-    private MapMarker f = new MapMarker( new Point3D(0, 0, 14), "F", true);
+    private MapMarker a = new MapMarker("A", new Point3D(2, 0, 0), "description", true);
+    private MapMarker b = new MapMarker("B", new Point3D(4, 0, 0), "description", true);
+    private MapMarker c = new MapMarker("C", new Point3D(0, 0, 6), "description", true);
+    private MapMarker d = new MapMarker("D", new Point3D(0, 0, 8),  "description", true);
+    private MapMarker e = new MapMarker("E", new Point3D(10, 0, 0), "description", true);
+    private MapMarker f = new MapMarker("F", new Point3D(0, 0, 14), "description", true);
     
     public MapMarkersTest() 
     {

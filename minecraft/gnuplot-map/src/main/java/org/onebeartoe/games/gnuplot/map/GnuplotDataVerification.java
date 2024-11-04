@@ -239,6 +239,8 @@ if( !raid.exists() )
                 
         Integer z = 0;
         
+        String id = null;
+        
         if(requireFourItems && split.length != 4)
         {
             valid = false;
@@ -315,6 +317,8 @@ if( !raid.exists() )
 
                     throw new Exception("the label has bad formatting: " + line);
                 }
+                
+                id = lastStr;
 
             }
             catch(Exception e)
@@ -332,7 +336,7 @@ if( !raid.exists() )
         
         String description = null;
         
-        MapMarker mapMarker = new MapMarker(point,description, valid);
+        MapMarker mapMarker = new MapMarker(id, point, description, valid);
         
         return mapMarker;
     }

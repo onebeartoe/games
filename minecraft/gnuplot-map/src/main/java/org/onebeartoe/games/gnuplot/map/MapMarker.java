@@ -7,7 +7,6 @@ import java.io.File;
 import java.util.List;
 import javafx.geometry.Point3D;
 
-record MapMarker(Point3D location, String description, Boolean valid)
+record MapMarker(String id, Point3D location, String description, Boolean valid)
 {
 }
-

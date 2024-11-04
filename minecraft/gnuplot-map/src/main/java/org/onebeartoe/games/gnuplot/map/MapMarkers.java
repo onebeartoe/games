@@ -18,7 +18,7 @@ public class MapMarkers
         {
             var distance = Point2D.distance(source.getX(), source.getZ(), m.location().getX(), m.location().getZ());
 
-            var dm = new DistancedMapMarker(m.location(), m.description(), distance);
+            var dm = new DistancedMapMarker(m.id(), m.location(), m.description(), distance);
 
             return dm;
         })
@@ -26,7 +26,7 @@ public class MapMarkers
 
         distancedMarkers.sort((m1, m2) -> m1.distance().compareTo(m2.distance()));
         
-        return distancedMarkers.stream().map(dm -> new MapMarker(dm.location(), dm.label(), true))
+        return distancedMarkers.stream().map(dm -> new MapMarker(dm.id(), dm.location(), dm.description(), true))
                 .collect(Collectors
                 .toList());
     }
