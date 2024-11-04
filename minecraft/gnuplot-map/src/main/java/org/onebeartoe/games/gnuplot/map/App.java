@@ -39,14 +39,21 @@ public class App extends Application
         
         double height = preferences.getDouble(HEIGHT_KEY, 480.0);
         
-//        scene = new Scene(loadFXML("primary"));
         scene = new Scene(loadFXML("primary"), width, height);
     
-this.stage = stage;
+        this.stage = stage;
 
         stage.setScene(scene);
         
         stage.show();
+    }
+    
+    @Override
+    public void stop()
+    {
+        preferences.putDouble(WIDTH_KEY, scene.getWidth());
+        
+        preferences.putDouble(HEIGHT_KEY, scene.getHeight());
     }
 
     static void setRoot(String fxml) throws IOException {
