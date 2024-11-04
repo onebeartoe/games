@@ -15,27 +15,31 @@
 
 <BorderPane prefHeight="627.0" prefWidth="1063.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.onebeartoe.games.gnuplot.map.PrimaryController">
    <bottom>
-      <HBox alignment="CENTER" BorderPane.alignment="CENTER">
-         <children>
-            <Button fx:id="inputDirectoryButton" mnemonicParsing="false" text="Input Directory" />
-            <Button fx:id="primaryButton" onAction="#switchToSecondary" text="Switch to Secondary View" />
-         </children>
-      </HBox>
+      <BorderPane BorderPane.alignment="CENTER">
+         <top>
+            <HBox alignment="CENTER" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="inputDirectoryButton" mnemonicParsing="false" text="Input Directory" />
+                  <Button fx:id="primaryButton" onAction="#switchToSecondary" text="Switch to Secondary View" />
+               </children>
+            </HBox>
+         </top>
+         <bottom>
+            <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <content>
+                  <TextArea fx:id="outputTextArea" prefHeight="251.0" prefWidth="564.0" />
+               </content>
+            </ScrollPane>
+         </bottom>
+      </BorderPane>
    </bottom>
    <center>
       <ScrollPane prefHeight="487.0" prefWidth="407.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" BorderPane.alignment="CENTER">
          <content>
-            <ListView prefHeight="484.0" prefWidth="364.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <ListView fx:id="inputFilesListView" prefHeight="484.0" prefWidth="364.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
          </content>
       </ScrollPane>
    </center>
-   <right>
-      <ScrollPane prefHeight="402.0" prefWidth="368.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" BorderPane.alignment="CENTER">
-         <content>
-            <TextArea prefHeight="389.0" prefWidth="419.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-         </content>
-      </ScrollPane>
-   </right>
    <top>
       <VBox alignment="CENTER" BorderPane.alignment="CENTER">
          <children>
@@ -62,4 +66,11 @@
          </children>
       </VBox>
    </top>
+   <right>
+      <ScrollPane BorderPane.alignment="CENTER">
+         <content>
+            <VBox fx:id="mapMarkersVbox" prefHeight="200.0" prefWidth="100.0" />
+         </content>
+      </ScrollPane>
+   </right>
 </BorderPane>

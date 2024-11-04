@@ -8,10 +8,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
+import javafx.scene.layout.VBox;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 
@@ -24,12 +31,26 @@ public class PrimaryController
     public TextField yField;
     
     @FXML
+    public ListView inputFilesListView;
+    
+    @FXML
     public Button inputDirectoryButton;
+    
+    @FXML
+    public VBox mapMarkersVbox;
+    
+    @FXML
+    public ScrollPane mapMarkersScrollPane;
+    
+    @FXML
+    public TextArea outputTextArea;
     
     private DirectoryChooser directoryChooser = new DirectoryChooser();
     
     private List<MapMarker> mapMarkers;
 
+    private GnuplotDataVerification dataVerification = new GnuplotDataVerification();
+    
     @FXML
     public void initialize()
     {
@@ -79,9 +100,39 @@ public class PrimaryController
 
             System.out.println(selectedDirectory.getAbsolutePath());
             
-            try {
-                loadInputFiles(selectedDirectory);
-            } catch (IOException ex) {
+            try 
+            {
+                List<Path> inputFiles = loadInputFiles(selectedDirectory);
+                
+                List<String> filesToText = 
+                        inputFiles.stream()
+                                                .map(path -> 
+                                                
+                                                    path.toFile().getPath()
+                                                )
+                                                .toList();
+                
+                ObservableList<String> items = FXCollections.observableArrayList(filesToText);
+                
+//                Label l;
+                
+                inputFilesListView.getItems().addAll(items);
+                
+                mapMarkers = parseMapMarkers(inputFiles);
+                
+                mapMarkers.forEach(marker -> 
+                {
+                    var text = new StringBuffer(marker.toString());
+                    
+                    var textArea = new TextArea(text.toString());
+                    
+                    mapMarkersVbox.getChildren()
+                                    .add(textArea);
+                });
+                            
+            } 
+            catch (IOException ex) 
+            {
                 ex.printStackTrace();
             }
         });
@@ -95,7 +146,7 @@ public class PrimaryController
         App.setRoot("secondary");
     }
 
-    private void loadInputFiles(File selectedDirectory) throws IOException 
+    private List<Path> loadInputFiles(File selectedDirectory) throws IOException 
     {
         var start = selectedDirectory.toPath();
         
@@ -108,27 +159,50 @@ public class PrimaryController
             dataFiles = walk.filter(Files::isRegularFile)   
                             .filter(p -> p.getFileName().toString().endsWith(fileExtension))
                             .collect(Collectors.toList());
-        }        
-        
-        mapMarkers = parseMapMarkers(dataFiles);
+        }
+
+        return dataFiles;
     }
 
-    private List<MapMarker> parseMapMarkers(List<Path> dataFiles) 
+    private List<MapMarker> parseMapMarkers(List<Path> dataFiles)// throws IOException 
     {
         var allMarkers = new ArrayList<MapMarker>();
         
         for(Path infile : dataFiles)
         {
-            var markers = parseOneMapMarkerFile(infile);
             
-            allMarkers.addAll(markers);
+            try 
+            {
+                var markers = parseOneMapMarkerFile(infile);
+                
+                allMarkers.addAll(markers);
+            } 
+            catch (IOException ex) 
+            {
+                var message = "Error in infile: " + infile.toString() + "\n" + 
+
+//                               " with line: " + 
+                        ex.getMessage();
+                
+                outputTextArea.appendText(message);
+                
+                outputTextArea.appendText("\n\n------------------------\n\n");
+                
+                ex.printStackTrace();
+            }
         }
         
         return allMarkers;
     }
 
-    private List<MapMarker> parseOneMapMarkerFile(Path infile) 
+    private List<MapMarker> parseOneMapMarkerFile(Path infile) throws IOException 
     {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        List<String> allLines = Files.readAllLines(infile);
+        
+        List<MapMarker> markers = allLines.stream()
+                .map(line -> dataVerification.isValid(line) )
+                .toList();
+        
+        return markers;
     }
 }
