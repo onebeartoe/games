@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.prefs.Preferences;
 
 /**
- * JavaFX App
+ * This is the entry point for the Minecraft Companion Gnuplot Map application.
  */
 public class App extends Application 
 {
@@ -29,8 +29,6 @@ public class App extends Application
     static String INPUT_DIRECORTY_KEY = PREFERENCES_KEY + ".INPUT_DIRECTORY";
     
     public static final  Preferences preferences = Preferences.userRoot().node(PREFERENCES_KEY);
-
-        
 
     @Override
     public void start(Stage stage) throws IOException 

@@ -33,6 +33,7 @@ public class MapMarkerParser
                     for(int i = 0; i < count-1; i++)
                     {
                         description.append(lines[i]);
+                        description.append("\n");
                     }
                     
                     var verification = new GnuplotDataVerification();

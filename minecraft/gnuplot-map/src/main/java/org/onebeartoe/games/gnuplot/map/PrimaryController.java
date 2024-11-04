@@ -12,7 +12,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
@@ -147,13 +146,9 @@ public class PrimaryController
             {
                 List<Path> inputFiles = loadInputFiles(selectedDirectory);
                 
-                List<String> filesToText = 
-                        inputFiles.stream()
-                                                .map(path -> 
-                                                
-                                                    path.toFile().getPath()
-                                                )
-                                                .toList();
+                List<String> filesToText = inputFiles.stream()
+                                                     .map(path -> path.toFile().getPath() )
+                                                     .toList();
                 
                 ObservableList<String> items = FXCollections.observableArrayList(filesToText);
                 
@@ -161,16 +156,47 @@ public class PrimaryController
                 
                 mapMarkers = parseMapMarkers(inputFiles);
                 
-                mapMarkers.forEach(marker -> 
+                boolean containsInvalid = false;
+                
+                for(var marker : mapMarkers)
                 {
-                    var text = new StringBuffer(marker.toString());
+                    if( !marker.valid() )
+                    {
+                        containsInvalid = true;
+                        
+                        break;
+                    }
+                };
+                        
+                if(containsInvalid)
+                {
+                    outputTextArea.appendText("-------------------------\ncheck input files for errors\n---------------------\n");
                     
-                    var textArea = new TextArea(text.toString());
-                    
-                    mapMarkersVbox.getChildren()
-                                    .add(textArea);
-                });
+                    mapMarkers.forEach(marker ->
+                    {
+                        var message = marker.id() + "\n" + 
+                                        marker.description() + "\n" +
+                                        "-----------------\n";
+                        
+                        outputTextArea.appendText(message);
+                    });
+                }
+                else
+                {
+                    mapMarkers.forEach(marker -> 
+                    {
+                        var text = toString(marker);
                             
+                        var textArea = new TextArea(text);
+                        
+//                        textArea.setp
+                        
+                        textArea.setPrefHeight(650);
+
+                        mapMarkersVbox.getChildren()
+                                        .add(textArea);
+                    });
+                }
             }
             catch (IOException ex) 
             {
@@ -210,7 +236,7 @@ public class PrimaryController
                 markers.forEach(marker -> {
                     if(marker.valid())
                     {
-                                        allMarkers.addAll(markers);
+                        allMarkers.addAll(markers);
                     }
                     else
                     {
@@ -221,16 +247,12 @@ public class PrimaryController
                         outputTextArea.appendText(message);
                     }
                 });
-                       
-                        
-                
-//                allMarkers.addAll(markers);
+
             } 
             catch (IOException ex) 
             {
                 var message = "Error in infile: " + infile.toString() + "\n" + 
 
-//                               " with line: " + 
                         ex.getMessage();
                 
                 outputTextArea.appendText(message);
@@ -248,38 +270,15 @@ public class PrimaryController
     {
         MapMarkerParser parser = new MapMarkerParser();
         
-        List<MapMarker> markers = parser.parse(infile.toFile());
-        
-        
-//        List<String> allLines = Files.readAllLines(infile);
-//        
-//        var errors = new StringBuffer();       
-//        
-//        List<MapMarker> markers = allLines.stream()
-//                .map(line -> 
-//                {
-//                    MapMarker marker =null;
-//                    try
-//                    {
-//                        marker = dataVerification.isValid(line) ;
-//                    }
-//                    catch(NullPointerException npe)
-//                    {
-//                        var error = npe.getMessage() + "\n__________________\n";
-//                        
-//                        errors.append(error);
-//                    }
-//                    
-//                    return marker;
-//                })
-//                .toList();
-        
-//        if(errors.length() > 0)
-//        {
-//            throw new IllegalArgumentException(errors.toString() + "\n\n");
-//        }
-        
+        List<MapMarker> markers = parser.parse(infile.toFile());  
         
         return markers;
+    }
+
+    private String toString(MapMarker marker) 
+    {
+        return marker.id() + "\n" +
+                marker.location() + "\n" +
+                marker.description();   
     }
 }
