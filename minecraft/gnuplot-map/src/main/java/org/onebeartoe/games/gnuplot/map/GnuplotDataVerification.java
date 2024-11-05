@@ -281,6 +281,8 @@ if( !raid.exists() )
                     }
                     
                     y = 0;
+                    
+//jkljlkjkjl                    z = Integer.valueOf(s2);
                 }
                 else
                 {
