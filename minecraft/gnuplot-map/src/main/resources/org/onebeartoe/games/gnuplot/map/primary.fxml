@@ -36,7 +36,7 @@
    <center>
       <ScrollPane prefHeight="487.0" prefWidth="407.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" BorderPane.alignment="CENTER">
          <content>
-            <VBox fx:id="mapMarkersVbox" prefHeight="282.0" prefWidth="694.0" />
+            <TextArea fx:id="mapMarkersTextArea" prefHeight="291.0" prefWidth="619.0" />
          </content>
       </ScrollPane>
    </center>

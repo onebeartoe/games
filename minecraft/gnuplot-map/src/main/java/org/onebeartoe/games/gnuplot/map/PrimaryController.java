@@ -44,7 +44,8 @@ public class PrimaryController
     public Button inputDirectoryButton;
     
     @FXML
-    public VBox mapMarkersVbox;
+//    public VBox mapMarkersVbox;
+    public TextArea mapMarkersTextArea;
     
     @FXML
     public ScrollPane mapMarkersScrollPane;
@@ -168,6 +169,8 @@ public class PrimaryController
                 
                 ObservableList<String> items = FXCollections.observableArrayList(filesToText);
                 
+                inputFilesListView.getItems().clear();
+                
                 inputFilesListView.getItems().addAll(items);
                 
                 mapMarkers = parseMapMarkers(inputFiles);
@@ -190,11 +193,14 @@ public class PrimaryController
                     
                     mapMarkers.forEach(marker ->
                     {
-                        var message = marker.id() + "\n" + 
-                                        marker.description() + "\n" +
-                                        "-----------------\n";
-                        
-                        outputTextArea.appendText(message);
+                        if(!marker.valid())
+                        {
+                            var message = marker.id() + "\n" + 
+                                            marker.description() + "\n" +
+                                            "-----------------\n";
+
+                            outputTextArea.appendText(message);
+                        }
                     });
                 }
                 else
@@ -230,6 +236,10 @@ public class PrimaryController
     private List<MapMarker> parseMapMarkers(List<Path> dataFiles)// throws IOException 
     {
         var allMarkers = new ArrayList<MapMarker>();
+        
+dataFiles.clear();
+var inpath = (new File("../saves/dragon-fart-2000/maps/overworld/overworld-village-bases.data"));
+dataFiles.add(inpath.toPath());
         
         for(Path infile : dataFiles)
         {
@@ -284,7 +294,7 @@ public class PrimaryController
     {
         return marker.id() + "\n" +
                 marker.location() + "\n" +
-                marker.description();   
+                marker.description() + "\n\n";   
     }
 
     private void updateMarkers() 
@@ -306,19 +316,13 @@ public class PrimaryController
 
     private void updateMapMarkersDispaly(List<MapMarker> updatedMapMarkers) 
     {
-        mapMarkersVbox.getChildren()
-                        .clear();
+        mapMarkersTextArea.setText("");
         
         updatedMapMarkers.forEach(marker -> 
         {
             var text = toString(marker);
 
-            var textArea = new TextArea(text);
-
-            textArea.setPrefHeight(650);
-
-            mapMarkersVbox.getChildren()
-                            .add(textArea);
+            mapMarkersTextArea.appendText(text);
         });        
     }
 }
