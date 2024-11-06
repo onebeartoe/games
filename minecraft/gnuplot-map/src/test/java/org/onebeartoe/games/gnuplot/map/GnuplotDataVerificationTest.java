@@ -6,7 +6,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;
 
-
 /**
  *
  */
@@ -31,7 +30,11 @@ public class GnuplotDataVerificationTest
         
         assertThat(marker.location().getZ()).isEqualTo(3.0);
         
-        assertThat(marker.id()).isEqualTo("\"id\"");
+        var id = marker.id();
+        
+        String expectedId = "\"id\"";
+        
+        assertThat(id).isEqualTo(expectedId);
     }
     
     @Test

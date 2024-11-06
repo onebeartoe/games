@@ -32,7 +32,9 @@ public class MapMarkerParserTest
         
         assertThat(first.location().getX()).isEqualTo(2);
         
-        assertThat(first.location().getY()).isEqualTo(2); 
+        assertThat(first.location().getY()).isEqualTo(0);
+        
+        assertThat(first.location().getZ()).isEqualTo(2); 
         
         MapMarker second = markers.get(1);
         

@@ -227,7 +227,59 @@ if( !raid.exists() )
         task.run();
     }
 
-    public MapMarker isValid(String line) 
+    public MapMarker isValid(String line)
+    {
+        String [] split = line.split(",");
+        
+        String s1;
+        String s2;
+        String s3;
+        String s4;
+        
+        
+        
+        if(split.length == 3)
+        {
+            s1 = split[0];
+            s2 = "0";
+            s3 = split[1];
+            s4 = split[2];
+        }
+        else if(split.length == 4)
+        {
+
+            s1 = split[0];
+            s2 = split[1].trim();
+            s3 = split[2];
+            s4 = split[3];
+
+            if(s2.equals("~"))
+            {
+                s2 = "0";
+            }
+        }
+        else
+        {
+            var message = "only 3 or 4 arguemnts are valid";
+            
+            throw new IllegalArgumentException(message);
+        }
+        
+        var x = Double.valueOf(s1);
+        var y = Double.valueOf(s2);
+        var z = Double.valueOf(s3);
+        
+        String id = s4.trim();
+        Point3D location = new Point3D(x,y,z);
+        String description = "----"; 
+        Boolean valid = true;
+        
+        var marker = new MapMarker(id, location, description, valid);
+        
+        return marker;
+    }
+
+    public MapMarker isValid_oldDDDDDDDDD(String line)
     {
         var valid = true;
         
@@ -270,30 +322,31 @@ if( !raid.exists() )
 
                 var s2 = split[1].trim();
 
-                // allow the tilde character for s2 if there are 4 items
-                if(s2.equals("~"))
-                {
-                    if(!lengthIs4)
-                    {
-                        var message = "~ tilde found, but not at position 2";
-
-                        throw new IllegalArgumentException(message);
-                    }
-                    
-                    y = 0;
-                    
-//jkljlkjkjl                    z = Integer.valueOf(s2);
-                }
-                else
-                {
-                    // otherwise verify s2 is an integer
-                    y = Integer.valueOf(s2);
-                }
-
                 int lastIndex = 2;
                 
                 if(lengthIs4)
-                {            
+                {
+// allow the tilde character for s2 if there are 4 items
+if(s2.equals("~"))
+{
+    if(!lengthIs4)
+    {
+        var message = "~ tilde found, but not at position 2";
+
+        throw new IllegalArgumentException(message);
+    }
+
+    y = 0;                    
+}
+else
+{
+    // otherwise verify s2 is an integer
+    y = Integer.valueOf(s2);
+}                    
+                    
+                    
+                    
+                    
                     lastIndex = 3;                  
 
                     // validate the third item in the list
@@ -309,6 +362,13 @@ if( !raid.exists() )
                     {
                         maxZ = z;     
                     }                    
+                }
+                else
+                {
+                    y = 0;
+                    
+                    var s3 = split[2].trim();
+                    z = Integer.valueOf(s3);
                 }
 
                 var lastStr = split[lastIndex].trim();
