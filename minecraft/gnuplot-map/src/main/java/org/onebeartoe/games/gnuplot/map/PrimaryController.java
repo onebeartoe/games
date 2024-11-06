@@ -237,9 +237,9 @@ public class PrimaryController
     {
         var allMarkers = new ArrayList<MapMarker>();
         
-dataFiles.clear();
-var inpath = (new File("../saves/dragon-fart-2000/maps/overworld/overworld-village-bases.data"));
-dataFiles.add(inpath.toPath());
+//dataFiles.clear();
+//var inpath = (new File("../saves/dragon-fart-2000/maps/overworld/overworld-village-bases.data"));
+//dataFiles.add(inpath.toPath());
         
         for(Path infile : dataFiles)
         {

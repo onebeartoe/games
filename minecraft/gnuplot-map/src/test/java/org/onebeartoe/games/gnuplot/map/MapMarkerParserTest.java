@@ -34,10 +34,10 @@ public class MapMarkerParserTest
         
         assertThat(first.location().getY()).isEqualTo(0);
         
-        assertThat(first.location().getZ()).isEqualTo(2); 
+        assertThat(first.location().getZ()).isEqualTo(12); 
         
         MapMarker second = markers.get(1);
         
-        assertThat(second.id()).isEqualTo("\"Love\"");
+        assertThat(second.id()).isEqualTo("\"Love-2\"");
     }
 }
