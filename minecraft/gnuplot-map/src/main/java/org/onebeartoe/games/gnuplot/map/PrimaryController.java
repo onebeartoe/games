@@ -18,7 +18,6 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
-import javafx.scene.layout.VBox;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 import static org.onebeartoe.games.gnuplot.map.App.INPUT_DIRECORTY_KEY;
@@ -76,7 +75,7 @@ public class PrimaryController
             }            
         });
         
-        xField.setTextFormatter(numericFormater);
+//        xField.setTextFormatter(numericFormater);
    
         xField.setOnKeyReleased((t) -> 
         {
@@ -95,7 +94,7 @@ public class PrimaryController
             }            
         });
 
-        yField.setTextFormatter(yNumericFormater);
+//        yField.setTextFormatter(yNumericFormater);
 
         yField.setOnKeyReleased((t) -> 
         {
@@ -251,7 +250,7 @@ public class PrimaryController
                 markers.forEach(marker -> {
                     if(marker.valid())
                     {
-                        allMarkers.addAll(markers);
+                        allMarkers.add(marker);
                     }
                     else
                     {
