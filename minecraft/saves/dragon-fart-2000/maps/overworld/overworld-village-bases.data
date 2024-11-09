@@ -168,8 +168,12 @@
 -224, -4288, "OM3"
 
 
-# Pale Garden 1????
+# Pale Garden 1
+#	It is there, Creaking are creepy!
 701, -3931, "PG1"
+
+# Trial Chambers 4 
+656, -4096, "TC4" 
 
 
 # Sparse Jungle
