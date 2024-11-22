@@ -2,7 +2,7 @@
 
 # world seed:
 #	-1861601998     (from DragonFart2020)
-
+0, 0, 0, "WS"
 
 
 
@@ -82,8 +82,8 @@
 
 
 #Jungle Temple 2
-1130, -1700, "JT2"
 # y = 121
+1130, -1700, "JT2"
 
 
 
@@ -296,7 +296,7 @@
 
 
 # utility markers
-#-900, -200, "next"
+-900, -200, "next"
 
 # current location
-#-1333, 167, "(now)"
+-1333, 167, "(now)"

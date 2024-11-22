@@ -97,6 +97,14 @@
 300, -450, "WF1"
 
 
+
+# Nether Fortress 3
+# 	This Fortess is near "OB-WF1".
+#	I am trying to get Wither Skeleton Heads here.
+16, -800, "NF3"
+
+
+
 # second portal - at the libraian village (fourth village)
 #	Spawned in a Crimsom Forrest
 -54, -123, "P2"

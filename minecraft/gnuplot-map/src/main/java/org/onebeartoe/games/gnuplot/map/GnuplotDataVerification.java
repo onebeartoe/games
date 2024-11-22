@@ -1,3 +1,11 @@
+
+
+
+
+//TODO: move back/??????!!!???
+
+
+package org.onebeartoe.games.gnuplot.map;
   
 import java.awt.Toolkit;
 import java.io.File;
@@ -9,6 +17,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import javafx.geometry.Point3D;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 
@@ -124,7 +133,7 @@ public class GnuplotDataVerification
                         
                         playValidationFailureSound();
                     }                    
-                    default -> System.out.print("");
+                    default -> System.err.println("error: no type found");
                 }
             }
             
@@ -154,7 +163,7 @@ public class GnuplotDataVerification
             {
                 entry = new BlankEntry();
             }
-            else if( isValid(line) )
+            else if( isValid(line).valid() )
             {
                 entry = new ValidEntry(lineNumber, line);
             }
@@ -218,102 +227,56 @@ if( !raid.exists() )
         task.run();
     }
 
-    private boolean isValid(String line) 
+    public MapMarker isValid(String line)
     {
-        var valid = true;
+        String [] split = line.split(",");
         
-        String[] split = line.split(",");
+        String s1;
+        String s2;
+        String s3;
+        String s4;
         
-        if(requireFourItems && split.length != 4)
+        
+        
+        if(split.length == 3)
         {
-            valid = false;
+            s1 = split[0];
+            s2 = "0";
+            s3 = split[1];
+            s4 = split[2];
         }
-        else if(split.length < 2)
+        else if(split.length == 4)
         {
-            valid = false;
+
+            s1 = split[0];
+            s2 = split[1].trim();
+            s3 = split[2];
+            s4 = split[3];
+
+            if(s2.equals("~"))
+            {
+                s2 = "0";
+            }
         }
         else
         {
-            try
-            {
-                var s1 = split[0].trim();
-                Integer x = Integer.valueOf(s1);
-                
-                if(minX > x)
-                {
-                    minX = x;                    
-                }
-                
-                if(maxX < x)
-                {
-                    maxX = x;
-                }
-                
-                boolean lengthIs4 = split.length == 4;
-
-                var s2 = split[1].trim();
-
-                // allow the tilde character for s2 if there are 4 items
-                if(s2.equals("~"))
-                {
-                    if(!lengthIs4)
-                    {
-                        var message = "~ tilde found, but not at position 2";
-
-                        throw new IllegalArgumentException(message);
-                    }
-                }
-                else
-                {
-                    // otherwise verify s2 is an integer
-                    Integer y = Integer.valueOf(s2);
-                }
-
-                int lastIndex = 2;
-                
-                if(lengthIs4)
-                {            
-                    lastIndex = 3;                  
-
-                    // validate the third item in the list
-                    var s3 = split[2].trim();
-                    Integer z = Integer.valueOf(s3);
-                    
-                    if(minZ > z)
-                    {
-                        minZ = z;
-                    }
-                    
-                    if(maxZ < z)
-                    {
-                        maxZ = z;     
-                    }                    
-                }
-
-                var lastStr = split[lastIndex].trim();
-
-                if(lastStr.length() < 2
-                        || !lastStr.startsWith("\"")
-                        || !lastStr.endsWith("\"") )
-                {
-                    // the last item should be a string begining and ending in a double quote
-
-                    throw new Exception("the label has bad formatting: " + line);
-                }
-
-            }
-            catch(Exception e)
-            {
-                valid = false;
-
-                var mesage = "\nerror with: " + Arrays.toString(split) 
-                        + "\n" + e.getClass() + " - " + e.getMessage();
-
-                System.out.println(mesage);
-            }            
+            var message = "only 3 or 4 arguemnts are valid";
+            
+            throw new IllegalArgumentException(message);
         }
         
-        return valid;
+        var x = Double.valueOf(s1);
+        var y = Double.valueOf(s2);
+        var z = Double.valueOf(s3);
+        
+        String id = s4.trim();
+        Point3D location = new Point3D(x,y,z);
+        String description = "----"; 
+        Boolean valid = true;
+        
+        var marker = new MapMarker(id, location, description, valid);
+        
+        return marker;
     }
     
     record FileValidation(File file, List<ValidationEntry> entries) {}

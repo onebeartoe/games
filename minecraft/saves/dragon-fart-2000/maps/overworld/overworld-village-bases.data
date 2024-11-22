@@ -21,6 +21,11 @@
 
 
 
+# Trial Chambers 1
+#	Some it got cut off my existing blocks.
+#	I got the 3 Ominous Vaults that did generate. It is till fun!
+-528, -432, "TC1"
+
 
 # Fifth Village - Desert
 #	This village has the first (and only) iron farm, from Golumns.
@@ -87,6 +92,11 @@
 
 
 
+# Trial Chambers 2
+#	Yay, I found a Heavy Core here!
+-1296, -528, "TC2"
+
+
 # Ancient City Topside Base 1
 # 	There are 4 Ancient Cities near here
 #	The base is has lots of resources.
@@ -118,6 +128,7 @@
 #	The Nether Portal here goes to a warped forrest.
 #	It is so pretty here.
 #	It is a warm ocean, with lots of coral and fans.
+#	There is a Conduit here.
 #	There is a nether portal at the bottom of the ocean (and top) here.
 #		2415, -3650
 #	There is an cool Bandlands biome very near here.
@@ -126,6 +137,48 @@
 #         The entrance is on the South Side of the village, it had Amethyst blocks at the enctrance.
 #         2514, 25, -3727
 2460,	-3700, "OB-WF1"
+
+
+
+# Trial Chambers 3
+2320, -3808, "TC3"
+
+
+# Ancient City WF1
+3168, -4368, "ACWF1"
+
+
+# Wooded Badlands
+#	It was there but no Wolf.
+2649, 71, -3611, "WB1"
+
+
+
+# Stronghold 2
+#	The End Portal is here
+#		3506, -6, -4226
+3472, -4224, "SH2"
+
+
+# Ocean Monument 3
+#	near Warped Forest Overworld Base
+#	little village near by 295, -4288
+#		There is a Guardian in a boat here.
+#		There is also a Cat, Wolf, and Allay here; in case I come back here.
+-224, -4288, "OM3"
+
+
+# Pale Garden 1
+#	It is there, Creaking are creepy!
+701, -3931, "PG1"
+
+# Trial Chambers 4 
+656, -4096, "TC4" 
+
+
+# Sparse Jungle
+#	There were Rusty Wolf here.
+-2801, 72, -3451, "SJ1"
 
 
 
@@ -141,6 +194,33 @@
 #   The initial base is here at Y level 86 (in the cave).
 -10064, -3216, "ACVB2"
 
+
+
+# Magma Cube Spawner 1 - Portal Base
+#	Magma Cube Spawner (Overworld) Portal
+#		y = -41
+#
+#	It has an Alley Cave.
+#	This is (overworld-side) Nether Portal closest to the Magma Cube/Froglight farm.
+-2055, 2225, "MCS1-P"
+
+
+# Magma Cube Spawner 1 - Portal Base - Ocean Outlet
+#	    You have to take the waterfall by the Portal Base all the way up to the Ocian floor.
+#
+#     There is an awesome Frog and Allay enclosure by the Nether Portal.
+#
+#		y = 43
+#	Snowy Slopes
+#		-800, 2230
+#
+#		powder snow
+#			-653, 141, 2190
+#
+#			There are Goat( horn)s here.
+#
+#			Illager Outpost is at the bottom of the mountain (no Alley though)
+-2043, 2230, "MCS1-P-OO"
 
 
 

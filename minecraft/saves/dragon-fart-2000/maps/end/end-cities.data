@@ -5,6 +5,8 @@
 
 
 # End City Locations
+0, 0, "ECL"
+
 
 # First Portal
 -55, -78, "P1"
@@ -16,6 +18,8 @@
 
 # Second Portal
 #!!!!!!!!!!!!!!!!!
+0,0, "ME NOT KNOW"
+
 
 # Second Portal Outlet
 623, -800, "P2-O"
@@ -52,6 +56,7 @@
 
 #There may be another End Ship here (but I have not checked).
 #x= 1016, z=1080
+0,0, "ME NOT KNOW"
 
 # Third End Ship
 # 	This one is pretty good.
