@@ -80,11 +80,11 @@ public class AdvancementsController
 
 //TODO: find a way to inject this path value, for testing        
 //      this next one is for testing
-//        var advancementsPath = "/home/roberto/Versioning/owner/github/games/minecraft/advancements/cli/src/test/resources/minecraft/saves/1.20/advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";
+        var advancementsPath = "/home/roberto/Versioning/owner/github/games/minecraft/advancements/cli/src/test/resources/minecraft/saves/1.20/advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";
 //      These next two are temporary, until we dynamically load the player advancement JSON file
 //        var advancementsPath = "/home/roberto/.minecraft/saves/seedro/advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";
 //        var advancementsPath = "/home/roberto/.minecraft/saves/worldo/advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";
-        var advancementsPath = "/home/roberto/.minecraft/saves/dragon-fart-2021/advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";
+//        var advancementsPath = "/home/roberto/.minecraft/saves/dragon-fart-2021/advancements/b8da6a01-2a0d-4df1-a86a-94a3e3da6389.json";
 
         playerAdvancementsService = new PlayerAdvancementsService();
         
