@@ -1,0 +1,109 @@
+
+package org.onebeartoe.games.gnuplot.map.ui;
+
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
+import javafx.stage.Stage;
+
+//import org.junit.jupiter.api.Test;
+import org.junit.Test;
+
+import org.testfx.framework.junit.ApplicationTest;
+
+
+import org.onebeartoe.games.gnuplot.map.App;
+
+
+/**
+ *
+ */
+public class InputFilesPanelTest extends ApplicationTest
+{
+    protected Scene scene;
+    
+    protected TabPane tabs;
+    
+    protected Tab netherTab;
+    
+    protected Tab adventureTab;
+
+    protected Tab husbandryTab;    
+    
+    public InputFilesPanelTest() 
+    {
+        
+    }
+
+    @FXML
+    @Override
+    public void start(Stage stage) throws Exception 
+    {
+System.out.println("dklfjalsjflkdjf;lasjflkasjdf;lj");
+        
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("primary" + ".fxml"));        
+
+        Object root = fxmlLoader.load();        
+
+        Parent parent = (Parent) root;
+                 
+        scene = new Scene(parent, 640, 480);
+
+//        tabs = (TabPane) scene.getRoot();
+//        
+//        netherTab = tabs.getTabs().get(0);
+
+        
+        stage.setScene(scene);
+        stage.show();
+        stage.toFront();
+    }
+
+    @Test( )
+    public void adventure_monstersHunted_font()
+    {
+        var s = "Input Directory";
+        
+        clickOn(s);
+        
+//        BorderPane borderPane = (BorderPane) scene.getRoot();
+//
+//        TabPane rootNode = (TabPane) borderPane.getCenter();
+//        
+//        Tab adventureTab = rootNode.getTabs().get(1);
+//        
+//        String title = adventureTab.getText();
+//        
+//        assertEquals("Adventure", title);
+//        
+//        SplitPane splitPane = (SplitPane) adventureTab.getContent();
+//
+//        ScrollPane scrollPane = (ScrollPane) splitPane.getItems().get(1);
+//        
+//        SplitPane textAreaSplitPane = (SplitPane) scrollPane.getContent();
+//        
+//        TextArea haveNotsTextArea = (TextArea) textAreaSplitPane.getItems().get(1);
+//        
+//        Font font = haveNotsTextArea.getFont();
+//        
+//        var expected = "minecraft";
+//        
+//        var actual = font.getName();
+//        
+//        assertEquals(expected, actual);
+    }      
+
+
+    @Test
+    public void testTheCLearButton()
+    {
+        // this shows how to mock the file chooser
+        //      https://github.com/TestFX/TestFX/issues/497
+        
+//        assertTrue(3 == 7);
+
+    }
+}
