@@ -114,14 +114,13 @@ public class PrimaryController
         {
             Stage primaryStage = App.stage;
             
-            File selectedDirectory = directoryChooser.showDialog(primaryStage);
+            selectedDirectory = directoryChooser.showDialog(primaryStage);
             
             App.preferences.put(INPUT_DIRECORTY_KEY, selectedDirectory.getAbsolutePath());
 
             loadInputFiles();
         });
-        
-        
+                
         String inputPath = App.preferences.get(INPUT_DIRECORTY_KEY, "bad-direcotry-path");
         
         var initialDirectory = new File(inputPath);
@@ -212,6 +211,19 @@ public class PrimaryController
             {
                 ex.printStackTrace();
             }        
+    }
+    
+    public void setDirectoryC(DirectoryChooser chooser, File file)
+    {
+        
+        
+//        directoryChooser = chooser;
+  selectedDirectory = file;
+
+            loadInputFiles();
+        
+        
+        System.out.println("chooser is re-set");
     }
 
     private List<Path> loadInputFiles(File selectedDirectory) throws IOException 
