@@ -1,13 +1,18 @@
 
 package org.onebeartoe.games.gnuplot.map.ui;
 
+import java.io.File;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.DirectoryChooser;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 
 //import org.junit.jupiter.api.Test;
 import org.junit.Test;
@@ -16,13 +21,17 @@ import org.testfx.framework.junit.ApplicationTest;
 
 
 import org.onebeartoe.games.gnuplot.map.App;
+import org.testfx.api.FxRobotInterface;
 
+import org.mockito.Mockito;
+import org.mockito.ArgumentMatchers;
 
 /**
  *
  */
 public class InputFilesPanelTest extends ApplicationTest
 {
+    protected Stage stage;
     protected Scene scene;
     
     protected TabPane tabs;
@@ -42,7 +51,7 @@ public class InputFilesPanelTest extends ApplicationTest
     @Override
     public void start(Stage stage) throws Exception 
     {
-System.out.println("dklfjalsjflkdjf;lasjflkasjdf;lj");
+        this.stage = stage;
         
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("primary" + ".fxml"));        
 
@@ -65,10 +74,38 @@ System.out.println("dklfjalsjflkdjf;lasjflkasjdf;lj");
     @Test( )
     public void adventure_monstersHunted_font()
     {
+        File someFile = new File("~/myfile.txt");
+
+        Platform.runLater(() -> {
+
+DirectoryChooser directoryChooser = Mockito.mock(DirectoryChooser.class);
+Mockito.when( 
+    directoryChooser.showDialog(
+//            stage
+                            ArgumentMatchers.any(Stage.class)
+                                        ))
+        .thenReturn(someFile);
+
+        });
+        
+
+
+//FileChooser fileChooser = Mockito.mock(FileChooser.class);
+//Mockito.when(
+//    fileChooser.showDialog(
+//                ArgumentMatchers.any(Window.class)
+//                
+//            )
+//            .thenReturn(someFile));
+        
+        
+        
         var s = "Input Directory";
         
-        clickOn(s);
+        FxRobotInterface clickOn = clickOn(s);
         
+        
+        System.out.println("0 - ploopo");
 //        BorderPane borderPane = (BorderPane) scene.getRoot();
 //
 //        TabPane rootNode = (TabPane) borderPane.getCenter();
