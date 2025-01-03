@@ -59,7 +59,7 @@
 #	The mini-base has a Frozen Ocean near.	
 #	Yep, it is there and I got a Tide trim on the first Elder Gaurdian!   :)
 #	I got the gold, but not the sponges yet.
-# 648, ~, 152, "OM1"
+648, ~, 152, "OM1"
 
 
 
@@ -466,7 +466,7 @@
 
 # Large Iron Ore Vein 2 
 #	There is still prolly a lot more left here.
-# -8440, -24, -4440, "LIOV2"
+-8440, -24, -4440, "LIOV2"
 
 
 # Desert Well 1
@@ -501,6 +501,27 @@
 932, -8800, "BtoV11P"
 
 
+
+
+# Aventure Time
+-8000, -9000, "AT"
+
+
+# Woodland Mansion 3
+-5778, -11192, "WM3"
+
+
+# Nearest Plains Village ???
+-5824, -11968, Nearest Village?
+
+
+"Pale Garden 2"
+-5943, -11239 "PG2 
+
+
+
+
+
 # Jungle Temple 2
 296, ~, -9432, "JT2"
 
@@ -516,7 +537,8 @@
 # Trial Chamber 7
 #	I found the a Music Disc (Lena Raine - Creator) here.
 #	There is still some loot here.
-199, ~~~~-12, -9655, "TC7"
+#       The Y level is about -12
+199, ~, -9655, "TC7"
 
 
 # Ancient City 4
