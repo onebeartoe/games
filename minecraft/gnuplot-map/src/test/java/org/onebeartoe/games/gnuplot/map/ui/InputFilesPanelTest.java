@@ -109,9 +109,9 @@ Mockito.when(
     {
 
         
-        var buttonLabel = "Input Directory";
-        
-        FxRobotInterface clickOn = clickOn(buttonLabel);
+//        var buttonLabel = "Input Directory";
+//        
+//        FxRobotInterface clickOn = clickOn(buttonLabel);
         
         
         System.out.println("0 - ploopo");
@@ -131,7 +131,7 @@ Mockito.when(
         
         var actualPath = listView.getItems().get(0);
         var expectedPath = "src/test/resources/three-map-markers.data";        
-        assertThat(actualPath).isEqualTo(actualPath);
+        assertThat(actualPath).isEqualTo(expectedPath);
     }      
 
 
