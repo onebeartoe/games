@@ -503,16 +503,24 @@
 
 
 
-# Aventure Time
+# Adventure Time
 -8000, -9000, "AT"
 
 
 # Woodland Mansion 3
+#	The entrance is at y = 95
 -5778, -11192, "WM3"
 
 
-# Nearest Plains Village ???
--5824, -11968, Nearest Village?
+# Mineshaft B
+#	"start"
+#		-5639, 40, -11249
+#     above ground entrance
+-5648, -11248, "MB"
+
+
+# Nearest Plains Village 7
+-5824, -11968, Nearest Village
 
 
 "Pale Garden 2"
