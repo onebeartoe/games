@@ -512,6 +512,10 @@
 -5778, -11192, "WM3"
 
 
+# Trail Ruins
+-5680, -11280, "TR"
+
+
 # Mineshaft B
 #	"start"
 #		-5639, 40, -11249
@@ -520,6 +524,7 @@
 
 
 # Nearest Plains Village 7
+#	x = -5778 for the minecart rails
 -5824, -11968, Nearest Village
 
 
