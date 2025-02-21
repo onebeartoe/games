@@ -37,6 +37,8 @@ public class InputFilesPanelTest extends ApplicationTest
     protected Scene scene;
     
     BorderPane rootBorderPane;
+    
+    ListView inputFilesListView;
         
     public InputFilesPanelTest() 
     {
@@ -68,7 +70,7 @@ public class InputFilesPanelTest extends ApplicationTest
             System.out.println("chooser sure: " + inputDirectory.getAbsoluteFile() );
         
             controller.setDirectoryC(directoryChooser, resourcesDir);
-        });                
+        });
         
         Parent parent = (Parent) root;
                  
@@ -82,6 +84,13 @@ public class InputFilesPanelTest extends ApplicationTest
 
         rootBorderPane = (BorderPane) scene.getRoot();
 
+        
+        var listViewId = "#inputFilesListView";
+        
+        inputFilesListView = from(rootBorderPane)
+                                        .lookup(listViewId)                
+                                        .query();        
+                
 //rootBorderPane.getv        
         
         stage.setScene(scene);
@@ -97,18 +106,12 @@ public class InputFilesPanelTest extends ApplicationTest
 //        FxRobotInterface clickOn = clickOn(buttonLabel);
         
         
-        System.out.println("0 - ploopo");
-        
-        var listViewId = "#inputFilesListView";
-        
-        ListView inputFilesListView = from(rootBorderPane)
-                                        .lookup(listViewId)                
-                                        .query();
+        System.out.println("0 - ploopo");        
         
         inputFilesListView.getItems().forEach(System.out::println);
         
         var actualSize = inputFilesListView.getItems().size();        
-        var expectedSize = 1;        
+        var expectedSize = 1;
         assertThat(actualSize).isEqualTo(expectedSize);
         
         var actualPath = inputFilesListView.getItems().get(0);
@@ -117,7 +120,7 @@ public class InputFilesPanelTest extends ApplicationTest
     }      
 
 
-//    @Test()
+    @Test()
     public void clearButton()
     {
         // this shows how to mock the file chooser
@@ -134,8 +137,8 @@ public class InputFilesPanelTest extends ApplicationTest
         clickOn(clearInputFilesListButton);      
         
         // assert the input files ListView is cleared/empty
-
-        
-        assert(3 == 7);
+        var actualSize = inputFilesListView.getItems().size();        
+        var expectedSize = 0;        
+        assertThat(actualSize).isEqualTo(expectedSize);
     }
 }
