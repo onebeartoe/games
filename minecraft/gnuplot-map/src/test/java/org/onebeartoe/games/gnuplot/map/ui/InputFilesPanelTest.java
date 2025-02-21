@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.stage.DirectoryChooser;
 import javafx.scene.layout.BorderPane;
@@ -36,15 +37,7 @@ public class InputFilesPanelTest extends ApplicationTest
     protected Scene scene;
     
     BorderPane rootBorderPane;
-    
-//    protected TabPane tabs;
-//    
-//    protected Tab netherTab;
-//    
-//    protected Tab adventureTab;
-//
-//    protected Tab husbandryTab;    
-    
+        
     public InputFilesPanelTest() 
     {
         
@@ -64,26 +57,18 @@ public class InputFilesPanelTest extends ApplicationTest
                 
         File resourcesDir = new File("src/test/resources");
 
-        Platform.runLater(() -> {
-
-var directoryChooser = Mockito.mock(DirectoryChooser.class);
-Mockito.when( 
-    directoryChooser.showDialog(
-//            stage
-                            ArgumentMatchers.any(Stage.class)
-                    ))
-        .thenReturn(resourcesDir);
+        Platform.runLater(() -> 
+        {
+            var directoryChooser = Mockito.mock(DirectoryChooser.class);
+            Mockito.when( directoryChooser.showDialog(
+                            ArgumentMatchers.any(Stage.class)))
+                    .thenReturn(resourcesDir);
         
             File inputDirectory = directoryChooser.showDialog(stage);
             System.out.println("chooser sure: " + inputDirectory.getAbsoluteFile() );
         
             controller.setDirectoryC(directoryChooser, resourcesDir);
-                    
-            
         });                
-        
-        
-        
         
         Parent parent = (Parent) root;
                  
@@ -106,9 +91,7 @@ Mockito.when(
 
     @Test( )
     public void directotryChooser()
-    {
-
-        
+    {        
 //        var buttonLabel = "Input Directory";
 //        
 //        FxRobotInterface clickOn = clickOn(buttonLabel);
@@ -118,30 +101,41 @@ Mockito.when(
         
         var listViewId = "#inputFilesListView";
         
-        ListView listView = from(rootBorderPane)
-                                .lookup(listViewId)
-                
-                                .query();
+        ListView inputFilesListView = from(rootBorderPane)
+                                        .lookup(listViewId)                
+                                        .query();
         
-        listView.getItems().forEach(System.out::println);
+        inputFilesListView.getItems().forEach(System.out::println);
         
-        var actualSize = listView.getItems().size();        
+        var actualSize = inputFilesListView.getItems().size();        
         var expectedSize = 1;        
         assertThat(actualSize).isEqualTo(expectedSize);
         
-        var actualPath = listView.getItems().get(0);
+        var actualPath = inputFilesListView.getItems().get(0);
         var expectedPath = "src/test/resources/three-map-markers.data";        
         assertThat(actualPath).isEqualTo(expectedPath);
     }      
 
 
 //    @Test()
-//    public void testTheCLearButton()
-//    {
-//        // this shows how to mock the file chooser
-//        //      https://github.com/TestFX/TestFX/issues/497
-//        
-//        assert(3 == 7);
-//
-//    }
+    public void clearButton()
+    {
+        // this shows how to mock the file chooser
+        //      https://github.com/TestFX/TestFX/issues/497
+        
+        directotryChooser();
+
+        // find and click the Clear button
+        var buttonId = "#clearInputFilesListButton";
+        Button clearInputFilesListButton = from(rootBorderPane)
+                                .lookup(buttonId)                
+                                .query();        
+        
+        clickOn(clearInputFilesListButton);      
+        
+        // assert the input files ListView is cleared/empty
+
+        
+        assert(3 == 7);
+    }
 }
