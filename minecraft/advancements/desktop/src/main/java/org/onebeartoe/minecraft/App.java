@@ -70,8 +70,14 @@ public class App extends Application
 
     private static final String [] screenNames = 
     {
-        "splash", "launcher", "title-screen", "select-world", "game-menu", 
-        "advancements", "options", "super-secret"
+        "splash",        // 0
+        "launcher", 
+        "title-screen",  // 2
+        "select-world", 
+        "game-menu",     // 4
+        "advancements", 
+        "options",       // 6
+        "super-secret"
     };
 
     private static  Map<String, String> fmxlToStyleSheets;
@@ -129,6 +135,7 @@ public class App extends Application
         // dark mode
         scene.getRoot().setStyle("-fx-base:black");
          
+//TODO: why not just use the 'fxml' variable and just concat '.css' to the end?        
         var styleSheets = "/org/onebeartoe/minecraft/" + fmxlToStyleSheets.get(fxml);
         scene.getStylesheets().add(styleSheets);
         
