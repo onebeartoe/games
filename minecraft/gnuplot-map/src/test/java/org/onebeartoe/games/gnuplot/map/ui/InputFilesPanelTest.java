@@ -62,7 +62,7 @@ public class InputFilesPanelTest extends ApplicationTest
 
         PrimaryController controller = (PrimaryController) fxmlLoader.getController();
                 
-        File someFile = new File("src/test/resources");
+        File resourcesDir = new File("src/test/resources");
 
         Platform.runLater(() -> {
 
@@ -72,12 +72,12 @@ Mockito.when(
 //            stage
                             ArgumentMatchers.any(Stage.class)
                     ))
-        .thenReturn(someFile);
+        .thenReturn(resourcesDir);
         
             File inputDirectory = directoryChooser.showDialog(stage);
             System.out.println("chooser sure: " + inputDirectory.getAbsoluteFile() );
         
-            controller.setDirectoryC(directoryChooser, someFile);
+            controller.setDirectoryC(directoryChooser, resourcesDir);
                     
             
         });                
