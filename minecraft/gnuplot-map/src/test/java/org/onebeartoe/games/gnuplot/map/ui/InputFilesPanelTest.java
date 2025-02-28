@@ -40,6 +40,10 @@ public class InputFilesPanelTest extends ApplicationTest
     BorderPane rootBorderPane;
     
     ListView inputFilesListView;
+    
+    PrimaryController controller;
+    
+    final File resourcesDir = new File("src/test/resources");
 
     @FXML
     @Override
@@ -51,9 +55,7 @@ public class InputFilesPanelTest extends ApplicationTest
 
         Object root = fxmlLoader.load();                
 
-        PrimaryController controller = (PrimaryController) fxmlLoader.getController();
-                
-        File resourcesDir = new File("src/test/resources");
+        controller = (PrimaryController) fxmlLoader.getController();                
 
         Platform.runLater(() -> 
         {
@@ -95,6 +97,10 @@ public class InputFilesPanelTest extends ApplicationTest
         var actualPath = inputFilesListView.getItems().get(0);
         var expectedPath = "src/test/resources/one-map-marker.data";        
         assertThat(actualPath).isEqualTo(expectedPath);
+                
+        var secondActualPath = inputFilesListView.getItems().get(1);
+        var secondExpectedPath = "src/test/resources/three-map-markers.data";        
+        assertThat(secondActualPath).isEqualTo(secondExpectedPath);
     }
 
     @Test()
@@ -119,22 +125,44 @@ public class InputFilesPanelTest extends ApplicationTest
         assertThat(actualSize).isEqualTo(expectedSize);
     }
     
-//    @Test()
+    @Test()
     public void addFile()
     {
         clearButton();
         
-        // find and clicl on the 'Add File' button
-        var buttonId = "#addFileButton";
-        Button addFileButton = from(rootBorderPane)
-                                    .lookup(buttonId)
-                                    .query();
+        // mock the button click behavior
+        Platform.runLater(() -> 
+        {
+            var fileChooser = Mockito.mock(FileChooser.class);
+            
+            var fileName = "one-map-marker.data";
+            
+            var file = new File(resourcesDir, fileName);
+
+            Mockito.when( fileChooser.showOpenDialog(
+                            ArgumentMatchers.any(Stage.class)))
+                    .thenReturn(file);
         
-        clickOn(addFileButton);
+            File inputFile = fileChooser.showOpenDialog(stage);
+        
+            controller.addFile(file);
+        });        
+        
+        // find and clicl on the 'Add File' button
+//        var buttonId = "#addFileButton";
+//        Button addFileButton = from(rootBorderPane)
+//                                    .lookup(buttonId)
+//                                    .query();
+//        
+//        clickOn(addFileButton);
         
         // assert the input files List view has one item
         var actualSize = inputFilesListView.getItems().size();        
         var expectedSize = 1;
-        assertThat(actualSize).isEqualTo(expectedSize);        
+        assertThat(actualSize).isEqualTo(expectedSize);    
+        
+        var actualPath = inputFilesListView.getItems().get(0);
+        var expectedPath = "src/test/resources/one-map-marker.data";        
+        assertThat(actualPath).isEqualTo(expectedPath);        
     }
 }

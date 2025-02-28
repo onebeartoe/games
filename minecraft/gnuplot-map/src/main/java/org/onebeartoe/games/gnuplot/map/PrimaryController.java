@@ -27,14 +27,10 @@ import static org.onebeartoe.games.gnuplot.map.App.TARGET_Y_KEY;
 public class PrimaryController 
 {
     @FXML
-    public 
-//            static 
-            TextField xField;
+    public TextField xField;
 
     @FXML
-    public 
-  //          static 
-            TextField yField;
+    public TextField yField;
     
     @FXML
     public ListView inputFilesListView;
@@ -43,7 +39,6 @@ public class PrimaryController
     public Button inputDirectoryButton;
     
     @FXML
-//    public VBox mapMarkersVbox;
     public TextArea mapMarkersTextArea;
     
     @FXML
@@ -143,6 +138,11 @@ public class PrimaryController
         }
         
         loadInputFiles();
+    }
+    
+    @FXML
+    public void addFile(File file)
+    {
         
     }
     
@@ -165,7 +165,7 @@ public class PrimaryController
             
             try 
             {
-                List<Path> inputFiles = loadInputFiles(selectedDirectory);
+                List<Path> inputFiles = findInputFilesUnder(selectedDirectory);
                 
                 List<String> filesToText = inputFiles.stream()
                                                      .map(path -> path.toFile().getPath() )
@@ -228,7 +228,7 @@ public class PrimaryController
         System.out.println("chooser is re-set");
     }
 
-    private List<Path> loadInputFiles(File selectedDirectory) throws IOException 
+    private List<Path> findInputFilesUnder(File selectedDirectory) throws IOException 
     {
         var start = selectedDirectory.toPath();
         
@@ -249,10 +249,6 @@ public class PrimaryController
     private List<MapMarker> parseMapMarkers(List<Path> dataFiles)// throws IOException 
     {
         var allMarkers = new ArrayList<MapMarker>();
-        
-//dataFiles.clear();
-//var inpath = (new File("../saves/dragon-fart-2000/maps/overworld/overworld-village-bases.data"));
-//dataFiles.add(inpath.toPath());
         
         for(Path infile : dataFiles)
         {
@@ -336,6 +332,6 @@ public class PrimaryController
             var text = toString(marker);
 
             mapMarkersTextArea.appendText(text);
-        });        
+        });
     }
 }
