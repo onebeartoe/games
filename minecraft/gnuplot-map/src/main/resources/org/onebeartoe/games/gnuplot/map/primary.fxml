@@ -46,7 +46,7 @@
          <bottom>
             <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="addFileButton" mnemonicParsing="false" text="Add File" />
+                  <Button fx:id="addFileButton" mnemonicParsing="false" onAction="#addFile" text="Add File" />
                   <Button fx:id="primaryButton" onAction="#switchToSecondary" text="Switch to Secondary View" />
                   <Button fx:id="inputDirectoryButton" mnemonicParsing="false" text="Add Folder" />
                   <Button fx:id="clearInputFilesListButton" mnemonicParsing="false" onAction="#clearInputFilesList" text="Clear" />

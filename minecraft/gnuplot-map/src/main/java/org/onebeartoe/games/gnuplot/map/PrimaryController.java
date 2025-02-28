@@ -8,8 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.geometry.Point3D;
 import javafx.scene.control.Button;
@@ -19,6 +17,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
 import javafx.stage.DirectoryChooser;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import static org.onebeartoe.games.gnuplot.map.App.INPUT_DIRECORTY_KEY;
 import static org.onebeartoe.games.gnuplot.map.App.TARGET_X_KEY;
@@ -151,7 +150,18 @@ public class PrimaryController
         loadInputFiles();
     }
     
+    
+    
     @FXML
+    private void addFile()
+    {
+        var chooser = new FileChooser();
+        
+        File file = chooser.showOpenDialog(App.stage);
+        
+        addFile(file);
+    }
+    
     public void addFile(File file)
     {
 //        inputFileItems.add(file.getAbsolutePath());
