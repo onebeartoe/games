@@ -2,6 +2,7 @@
 package org.onebeartoe.games.gnuplot.map.ui;
 
 import java.io.File;
+import java.io.IOException;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -67,7 +68,11 @@ public class InputFilesPanelTest extends ApplicationTest
         
             File inputDirectory = directoryChooser.showDialog(stage);
         
-            controller.setDirectoryC(directoryChooser, resourcesDir);
+            try {
+                controller.addFolder(directoryChooser, resourcesDir);
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
         });
         
         Parent parent = (Parent) root;
@@ -149,12 +154,12 @@ public class InputFilesPanelTest extends ApplicationTest
         });        
         
         // find and clicl on the 'Add File' button
-//        var buttonId = "#addFileButton";
-//        Button addFileButton = from(rootBorderPane)
-//                                    .lookup(buttonId)
-//                                    .query();
-//        
-//        clickOn(addFileButton);
+        var buttonId = "#addFileButton";
+        Button addFileButton = from(rootBorderPane)
+                                    .lookup(buttonId)
+                                    .query();
+        
+        clickOn(addFileButton);
         
         // assert the input files List view has one item
         var actualSize = inputFilesListView.getItems().size();        

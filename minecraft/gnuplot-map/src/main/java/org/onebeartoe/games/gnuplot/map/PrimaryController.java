@@ -47,17 +47,21 @@ public class PrimaryController
     @FXML
     public TextArea outputTextArea;
     
-    private File selectedDirectory;
+//    private File selectedDirectory;
     
-    private DirectoryChooser directoryChooser = new DirectoryChooser();
+//    private ObservableList<String> inputFileItems;
+    
+    private final DirectoryChooser directoryChooser = new DirectoryChooser();
     
     private List<MapMarker> mapMarkers;
 
     private GnuplotDataVerification dataVerification = new GnuplotDataVerification();
     
     @FXML
-    public void initialize()
+    public void initialize() 
     {
+//        inputFileItems = FXCollections.observableArrayList();
+        
         var numericFormater = new TextFormatter<>(c -> 
         {
             if (!c.getControlNewText().matches("\\d*")) 
@@ -109,8 +113,15 @@ public class PrimaryController
         {
             Stage primaryStage = App.stage;
             
-            selectedDirectory = directoryChooser.showDialog(primaryStage);
+            File selectedDirectory = directoryChooser.showDialog(primaryStage);
+
+            try {
+                addFolder(directoryChooser, selectedDirectory);
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
             
+//TODO: rename the key            
             App.preferences.put(INPUT_DIRECORTY_KEY, selectedDirectory.getAbsolutePath());
 
             loadInputFiles();
@@ -124,11 +135,11 @@ public class PrimaryController
         {
             directoryChooser.setInitialDirectory(initialDirectory);
             
-            selectedDirectory = initialDirectory;
+//            selectedDirectory = initialDirectory;
         }
         else
         {
-            selectedDirectory = new File("/home/roberto/Versioning/owner/github/games/minecraft/saves/dragon-fart-2000/maps/");
+            var selectedDirectory = new File("/home/roberto/Versioning/owner/github/games/minecraft/saves/dragon-fart-2000/maps/");
             
             directoryChooser.setInitialDirectory(selectedDirectory);        
             
@@ -143,12 +154,20 @@ public class PrimaryController
     @FXML
     public void addFile(File file)
     {
-        throw new UnsupportedOperationException("oh darn, this method is not implemented yet");
+//        inputFileItems.add(file.getAbsolutePath());
+        
+        inputFilesListView.getItems().addAll(file.getPath());
+//        inputFilesListView.getItems().addAll(file.getAbsolutePath());
+        
+//        selectedDirectory = file;
+
+        loadInputFiles();
     }
     
     @FXML
     private void clearInputFilesList()
     {
+System.out.println("jkjfajdfkj;fjsfkja;fjasdjfa;sjflaskdjf;asdjfakls;j");        
         inputFilesListView.getItems().clear();
     }
     
@@ -158,25 +177,31 @@ public class PrimaryController
         App.setRoot("secondary");
     }
     
+//TODO: rename to updateMarkers()    
     private void loadInputFiles()
     {
-        System.out.println(selectedDirectory.getAbsolutePath());
+//        System.out.println(selectedDirectory.getAbsolutePath());
 
-        try 
-        {
-            List<Path> inputFiles = findInputFilesUnder(selectedDirectory);
+//        try 
+//        {
 
-            List<String> filesToText = inputFiles.stream()
-                                                 .map(path -> path.toFile().getPath() )
-                                                 .toList();
 
-            ObservableList<String> items = FXCollections.observableArrayList(filesToText);
+//!!!!!!!!!!            
+//            inputFileItems.addAll(filesToText);//!!!!!!!!!!!
+//            ObservableList<String> inputFileItems = FXCollections.observableArrayList(filesToText);
 
-            inputFilesListView.getItems().clear();
+//inputFilesListView.seti
+//            inputFilesListView.getItems().clear();
 
-            inputFilesListView.getItems().addAll(items);
+List<String> inputFileItems = inputFilesListView.getItems();
 
-            mapMarkers = parseMapMarkers(inputFiles);
+//            inputFilesListView.getItems().addAll(inputFileItems);
+
+            mapMarkers = parseMapMarkers( new ArrayList<Path>(inputFileItems.stream()
+                                                        .map(i -> Path.of(i) )
+                                                        .collect(Collectors.toList() ) ));
+                                                            
+//            mapMarkers = parseMapMarkers(inputFiles);
 
             boolean containsInvalid = false;
 
@@ -211,16 +236,26 @@ public class PrimaryController
                 updateMapMarkersDispaly(mapMarkers);
 
             }
-        }
-        catch (IOException ex) 
-        {
-            ex.printStackTrace();
-        }        
+//        }
+//        catch (IOException ex) 
+//        {
+//            ex.printStackTrace();
+//        }        
     }
     
-    public void setDirectoryC(DirectoryChooser chooser, File file)
+    public void addFolder(DirectoryChooser chooser, File file) throws IOException
     {
-        selectedDirectory = file;
+            List<Path> inputFiles = findInputFilesUnder(file);
+//            List<Path> inputFiles = findInputFilesUnder(selectedDirectory);
+
+            List<String> filesToText = inputFiles.stream()
+                                                 .map(path -> path.toFile().getPath() )
+                                                 .toList();        
+        
+            inputFilesListView.getItems().addAll(filesToText);
+//            inputFileItems.addAll(filesToText);
+        
+//        selectedDirectory = file;
 
         loadInputFiles();
                 
@@ -251,12 +286,12 @@ public class PrimaryController
         
         for(Path infile : dataFiles)
         {
-            
             try 
             {
                 var markers = parseOneMapMarkerFile(infile);
                 
-                markers.forEach(marker -> {
+                markers.forEach(marker -> 
+                {
                     if(marker.valid())
                     {
                         allMarkers.add(marker);
