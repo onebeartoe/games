@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.stage.DirectoryChooser;
+import javafx.stage.FileChooser;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -39,11 +40,6 @@ public class InputFilesPanelTest extends ApplicationTest
     BorderPane rootBorderPane;
     
     ListView inputFilesListView;
-        
-    public InputFilesPanelTest() 
-    {
-        
-    }
 
     @FXML
     @Override
@@ -62,12 +58,12 @@ public class InputFilesPanelTest extends ApplicationTest
         Platform.runLater(() -> 
         {
             var directoryChooser = Mockito.mock(DirectoryChooser.class);
+
             Mockito.when( directoryChooser.showDialog(
                             ArgumentMatchers.any(Stage.class)))
                     .thenReturn(resourcesDir);
         
             File inputDirectory = directoryChooser.showDialog(stage);
-            System.out.println("chooser sure: " + inputDirectory.getAbsoluteFile() );
         
             controller.setDirectoryC(directoryChooser, resourcesDir);
         });
@@ -75,23 +71,14 @@ public class InputFilesPanelTest extends ApplicationTest
         Parent parent = (Parent) root;
                  
         scene = new Scene(parent, 640, 480);
-
-//scene.getco        
-        
-//        tabs = (TabPane) scene.getRoot();
-//        
-//        netherTab = tabs.getTabs().get(0);
-
+       
         rootBorderPane = (BorderPane) scene.getRoot();
-
         
         var listViewId = "#inputFilesListView";
         
         inputFilesListView = from(rootBorderPane)
                                         .lookup(listViewId)                
                                         .query();        
-                
-//rootBorderPane.getv        
         
         stage.setScene(scene);
         stage.show();
@@ -100,25 +87,15 @@ public class InputFilesPanelTest extends ApplicationTest
 
     @Test( )
     public void directotryChooser()
-    {        
-//        var buttonLabel = "Input Directory";
-//        
-//        FxRobotInterface clickOn = clickOn(buttonLabel);
-        
-        
-        System.out.println("0 - ploopo");        
-        
-        inputFilesListView.getItems().forEach(System.out::println);
-        
+    {                
         var actualSize = inputFilesListView.getItems().size();        
-        var expectedSize = 1;
+        var expectedSize = 2;
         assertThat(actualSize).isEqualTo(expectedSize);
         
         var actualPath = inputFilesListView.getItems().get(0);
-        var expectedPath = "src/test/resources/three-map-markers.data";        
+        var expectedPath = "src/test/resources/one-map-marker.data";        
         assertThat(actualPath).isEqualTo(expectedPath);
-    }      
-
+    }
 
     @Test()
     public void clearButton()
@@ -140,5 +117,24 @@ public class InputFilesPanelTest extends ApplicationTest
         var actualSize = inputFilesListView.getItems().size();        
         var expectedSize = 0;        
         assertThat(actualSize).isEqualTo(expectedSize);
+    }
+    
+//    @Test()
+    public void addFile()
+    {
+        clearButton();
+        
+        // find and clicl on the 'Add File' button
+        var buttonId = "#addFileButton";
+        Button addFileButton = from(rootBorderPane)
+                                    .lookup(buttonId)
+                                    .query();
+        
+        clickOn(addFileButton);
+        
+        // assert the input files List view has one item
+        var actualSize = inputFilesListView.getItems().size();        
+        var expectedSize = 1;
+        assertThat(actualSize).isEqualTo(expectedSize);        
     }
 }

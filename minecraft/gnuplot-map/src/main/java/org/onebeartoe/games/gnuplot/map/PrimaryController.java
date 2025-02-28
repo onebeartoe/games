@@ -221,14 +221,10 @@ public class PrimaryController
     
     public void setDirectoryC(DirectoryChooser chooser, File file)
     {
-        
-        
-//        directoryChooser = chooser;
-  selectedDirectory = file;
+        selectedDirectory = file;
 
-            loadInputFiles();
-        
-        
+        loadInputFiles();
+                
         System.out.println("chooser is re-set");
     }
 
