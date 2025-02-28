@@ -23,7 +23,6 @@ import org.testfx.framework.junit.ApplicationTest;
 
 
 import org.onebeartoe.games.gnuplot.map.App;
-import org.testfx.api.FxRobotInterface;
 
 import org.mockito.Mockito;
 import org.mockito.ArgumentMatchers;

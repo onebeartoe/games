@@ -1,3 +1,4 @@
+
 package org.onebeartoe.games.gnuplot.map;
 
 import java.io.File;
@@ -45,10 +46,6 @@ public class PrimaryController
     
     @FXML
     public TextArea outputTextArea;
-    
-//    private File selectedDirectory;
-    
-//    private ObservableList<String> inputFileItems;
     
     private final DirectoryChooser directoryChooser = new DirectoryChooser();
     
@@ -133,8 +130,6 @@ public class PrimaryController
         if(initialDirectory.exists() && initialDirectory.isDirectory())
         {
             directoryChooser.setInitialDirectory(initialDirectory);
-            
-//            selectedDirectory = initialDirectory;
         }
         else
         {
@@ -163,13 +158,8 @@ public class PrimaryController
     }
     
     public void addFile(File file)
-    {
-//        inputFileItems.add(file.getAbsolutePath());
-        
-        inputFilesListView.getItems().addAll(file.getPath());
-//        inputFilesListView.getItems().addAll(file.getAbsolutePath());
-        
-//        selectedDirectory = file;
+    {        
+        inputFilesListView.getItems().addAll(file.getPath());    
 
         loadInputFiles();
     }
@@ -177,7 +167,6 @@ public class PrimaryController
     @FXML
     private void clearInputFilesList()
     {
-System.out.println("jkjfajdfkj;fjsfkja;fjasdjfa;sjflaskdjf;asdjfakls;j");        
         inputFilesListView.getItems().clear();
     }
     
@@ -190,29 +179,12 @@ System.out.println("jkjfajdfkj;fjsfkja;fjasdjfa;sjflaskdjf;asdjfakls;j");
 //TODO: rename to updateMarkers()    
     private void loadInputFiles()
     {
-//        System.out.println(selectedDirectory.getAbsolutePath());
-
-//        try 
-//        {
-
-
-//!!!!!!!!!!            
-//            inputFileItems.addAll(filesToText);//!!!!!!!!!!!
-//            ObservableList<String> inputFileItems = FXCollections.observableArrayList(filesToText);
-
-//inputFilesListView.seti
-//            inputFilesListView.getItems().clear();
-
-List<String> inputFileItems = inputFilesListView.getItems();
-
-//            inputFilesListView.getItems().addAll(inputFileItems);
+        List<String> inputFileItems = inputFilesListView.getItems();
 
             mapMarkers = parseMapMarkers( new ArrayList<Path>(inputFileItems.stream()
                                                         .map(i -> Path.of(i) )
                                                         .collect(Collectors.toList() ) ));
                                                             
-//            mapMarkers = parseMapMarkers(inputFiles);
-
             boolean containsInvalid = false;
 
             for(var marker : mapMarkers)
@@ -246,26 +218,17 @@ List<String> inputFileItems = inputFilesListView.getItems();
                 updateMapMarkersDispaly(mapMarkers);
 
             }
-//        }
-//        catch (IOException ex) 
-//        {
-//            ex.printStackTrace();
-//        }        
     }
     
     public void addFolder(DirectoryChooser chooser, File file) throws IOException
     {
-            List<Path> inputFiles = findInputFilesUnder(file);
-//            List<Path> inputFiles = findInputFilesUnder(selectedDirectory);
+        List<Path> inputFiles = findInputFilesUnder(file);
 
             List<String> filesToText = inputFiles.stream()
                                                  .map(path -> path.toFile().getPath() )
                                                  .toList();        
         
             inputFilesListView.getItems().addAll(filesToText);
-//            inputFileItems.addAll(filesToText);
-        
-//        selectedDirectory = file;
 
         loadInputFiles();
                 
