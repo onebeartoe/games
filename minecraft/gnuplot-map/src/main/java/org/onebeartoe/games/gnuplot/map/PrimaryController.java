@@ -143,7 +143,7 @@ public class PrimaryController
     @FXML
     public void addFile(File file)
     {
-        
+        throw new UnsupportedOperationException("oh darn, this method is not implemented yet");
     }
     
     @FXML
@@ -160,63 +160,62 @@ public class PrimaryController
     
     private void loadInputFiles()
     {
-        
-            System.out.println(selectedDirectory.getAbsolutePath());
-            
-            try 
+        System.out.println(selectedDirectory.getAbsolutePath());
+
+        try 
+        {
+            List<Path> inputFiles = findInputFilesUnder(selectedDirectory);
+
+            List<String> filesToText = inputFiles.stream()
+                                                 .map(path -> path.toFile().getPath() )
+                                                 .toList();
+
+            ObservableList<String> items = FXCollections.observableArrayList(filesToText);
+
+            inputFilesListView.getItems().clear();
+
+            inputFilesListView.getItems().addAll(items);
+
+            mapMarkers = parseMapMarkers(inputFiles);
+
+            boolean containsInvalid = false;
+
+            for(var marker : mapMarkers)
             {
-                List<Path> inputFiles = findInputFilesUnder(selectedDirectory);
-                
-                List<String> filesToText = inputFiles.stream()
-                                                     .map(path -> path.toFile().getPath() )
-                                                     .toList();
-                
-                ObservableList<String> items = FXCollections.observableArrayList(filesToText);
-                
-                inputFilesListView.getItems().clear();
-                
-                inputFilesListView.getItems().addAll(items);
-                
-                mapMarkers = parseMapMarkers(inputFiles);
-                
-                boolean containsInvalid = false;
-                
-                for(var marker : mapMarkers)
+                if( !marker.valid() )
                 {
-                    if( !marker.valid() )
+                    containsInvalid = true;
+
+                    break;
+                }
+            };
+
+            if(containsInvalid)
+            {
+                outputTextArea.appendText("-------------------------\ncheck input files for errors\n---------------------\n");
+
+                mapMarkers.forEach(marker ->
+                {
+                    if(!marker.valid())
                     {
-                        containsInvalid = true;
-                        
-                        break;
+                        var message = marker.id() + "\n" + 
+                                        marker.description() + "\n" +
+                                        "-----------------\n";
+
+                        outputTextArea.appendText(message);
                     }
-                };
-                        
-                if(containsInvalid)
-                {
-                    outputTextArea.appendText("-------------------------\ncheck input files for errors\n---------------------\n");
-                    
-                    mapMarkers.forEach(marker ->
-                    {
-                        if(!marker.valid())
-                        {
-                            var message = marker.id() + "\n" + 
-                                            marker.description() + "\n" +
-                                            "-----------------\n";
-
-                            outputTextArea.appendText(message);
-                        }
-                    });
-                }
-                else
-                {
-                    updateMapMarkersDispaly(mapMarkers);
-
-                }
+                });
             }
-            catch (IOException ex) 
+            else
             {
-                ex.printStackTrace();
-            }        
+                updateMapMarkersDispaly(mapMarkers);
+
+            }
+        }
+        catch (IOException ex) 
+        {
+            ex.printStackTrace();
+        }        
     }
     
     public void setDirectoryC(DirectoryChooser chooser, File file)
