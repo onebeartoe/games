@@ -274,7 +274,7 @@ if( !raid.exists() )
         String description = "----"; 
         Boolean valid = true;
         
-        var marker = new MapMarker(id, location, description, valid);
+        var marker = new MapMarker(id, location, description, valid, line);
         
         return marker;
     }

@@ -273,6 +273,7 @@ public class PrimaryController
                     {
                         var message = "errors here: " + marker.id() +
                                       "\n" + marker.description() + 
+                                      "\n" + marker.line() + 
                                       "\n-----------------\n";
                         
                         outputTextArea.appendText(message);

@@ -26,7 +26,11 @@ public class MapMarkers
 
         distancedMarkers.sort((m1, m2) -> m1.distance().compareTo(m2.distance()));
         
-        return distancedMarkers.stream().map(dm -> new MapMarker(dm.id(), dm.location(), dm.description(), true))
+        return distancedMarkers.stream().map(dm -> new MapMarker(dm.id(), 
+                dm.location(), 
+                dm.description(), 
+                true,
+                "not-set"))
                 .collect(Collectors
                 .toList());
     }

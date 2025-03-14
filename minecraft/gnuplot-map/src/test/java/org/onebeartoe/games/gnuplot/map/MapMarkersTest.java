@@ -17,12 +17,14 @@ public class MapMarkersTest
 {
     private List<MapMarker> points;
     
-    private MapMarker a = new MapMarker("A", new Point3D(2, 0, 0), "description", true);
-    private MapMarker b = new MapMarker("B", new Point3D(4, 0, 0), "description", true);
-    private MapMarker c = new MapMarker("C", new Point3D(0, 0, 6), "description", true);
-    private MapMarker d = new MapMarker("D", new Point3D(0, 0, 8),  "description", true);
-    private MapMarker e = new MapMarker("E", new Point3D(10, 0, 0), "description", true);
-    private MapMarker f = new MapMarker("F", new Point3D(0, 0, 14), "description", true);
+    private final String line = "not-set";
+    
+    private MapMarker a = new MapMarker("A", new Point3D(2, 0, 0), "description", true, line);
+    private MapMarker b = new MapMarker("B", new Point3D(4, 0, 0), "description", true, line);
+    private MapMarker c = new MapMarker("C", new Point3D(0, 0, 6), "description", true, line);
+    private MapMarker d = new MapMarker("D", new Point3D(0, 0, 8),  "description", true, line);
+    private MapMarker e = new MapMarker("E", new Point3D(10, 0, 0), "description", true, line);
+    private MapMarker f = new MapMarker("F", new Point3D(0, 0, 14), "description", true, line);
     
     public MapMarkersTest() 
     {

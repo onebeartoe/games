@@ -19,7 +19,7 @@ public class MapMarkerParser
         
         String[] split = text.split("(\\r?\\n)(\\r?\\n)");
         
-        List<MapMarker> markers = List.of(split)
+        return List.of(split)
                 .stream()
                 .filter(chunk -> !chunk.trim().isEmpty() )
                 .map(chunk ->
@@ -48,20 +48,20 @@ public class MapMarkerParser
                         mapMarker = new MapMarker(descriptionLessMarker.id(), 
                                                 descriptionLessMarker.location(), 
                                                 description.toString(), 
-                                                descriptionLessMarker.valid() ); 
+                                                descriptionLessMarker.valid(),
+                                                lastLine); 
                     }
                     catch(IllegalArgumentException iae)
                     {
                         mapMarker = new MapMarker(infile.getAbsolutePath(), 
                                                 new Point3D(0,0,0) , 
                                                 iae.getMessage(), 
-                                                false );                        
+                                                false,
+                                                lastLine);                        
                     }
                     
                     return mapMarker;
                 })
                 .toList();
-        
-        return markers;
     }   
 }
