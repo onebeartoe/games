@@ -533,13 +533,14 @@
 Ancient City 5
 -6448, -11504, "AC5"
 
+
 # Nearest Plains Village 7
 #	x = -5778 for the minecart rails
--5824, -11968, Nearest Village
+-5824, -11968, "V7"
 
 
 "Pale Garden 2"
--5943, -11239 "PG2 
+-5943, -11239, "PG2"
 
 
 
@@ -582,22 +583,22 @@ Ancient City 5
 768, ~, -11360, "V14"
 
 # Trial Chamber 12
-857 -19 -11271
+857, -19, -11271
 
 
 # Trail Ruins 4
-739 63 -11075, "TR4"
+739, 63, -11075, "TR4"
 
 # Desert Well 4
 #	Arms was here!
-1775 62 -8262, "DW4"
+1775, 62, -8262, "DW4"
 
 # Desert Well 5
-2527 64 -8197, "DW5"
+2527, 64, -8197, "DW5"
 
 # Desert Well 6
 #	Palabra 1 and 1!
-2678 66 -7921, "DW6"
+2678, 66, -7921, "DW6"
 
 
 # Mushroom Fields 1
