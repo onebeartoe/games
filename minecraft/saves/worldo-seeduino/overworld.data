@@ -564,11 +564,12 @@ Ancient City 5
 199, ~, -9655, "TC7"
 
 
-# Ancient City 4
-#	It is there (unexplored), in the middle of a big Badlands biome.
-#	But there are several Wolf and Armadillo tammed here.
-520 -51 -9128, "AC4"
-
+# Village 15
+# 	Badland Base
+# 	Ancient City 4 (AC4) - is here
+#	It is there, in the middle of a big Badlands biome.
+#	There are several Wolf and Armadillo tammed here.
+520, -51, -9128, "V15"
 
 # Desert Well 3
 #	Brewer was there!
