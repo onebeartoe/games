@@ -258,10 +258,7 @@ public class PlayerAdvancementsService
                 
         JSONObject criteriaJson = (JSONObject) netherJson.get("criteria");
         
-        criteriaJson.forEach((name, date) -> 
-        {
-            playerAdvancements.add(name);
-        });
+        criteriaJson.forEach((name, date) -> playerAdvancements.add(name));
                 
         PlayerNetherAdvancementsCategory advancements = new PlayerNetherAdvancementsCategory();
         
