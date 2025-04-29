@@ -55,9 +55,7 @@ public class PrimaryController
     
     @FXML
     public void initialize() 
-    {
-//        inputFileItems = FXCollections.observableArrayList();
-        
+    {        
         var numericFormater = new TextFormatter<>(c -> 
         {
             if (!c.getControlNewText().matches("\\d*")) 
