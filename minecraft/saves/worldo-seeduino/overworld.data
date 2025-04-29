@@ -482,7 +482,7 @@
 
 
 
-# Far Far Desert Wells (Village 11)
+# Far Far Desert Wells Island (Village 11)
 #	There is a bunch of points of interest near here!
 #	There is a nice base here, with a Mending Librarian.
 #	A bunch of Rails and Powered Rails are here.
@@ -500,6 +500,10 @@
 #	There is a bed here but that is about it.
 932, -8800, "BtoV11P"
 
+
+# Temporate Town 1
+#	This location has some warm cows, pig, and chicken.
+1352, -7632, "TT1"
 
 
 
@@ -570,7 +574,23 @@ Ancient City 5
 # 	Ancient City 4 (AC4) - is here
 #	It is there, in the middle of a big Badlands biome.
 #	There are several Wolf and Armadillo tammed here.
+#	The river exit (and climb up) is at 400, -9000 
+#	Badlands edge towards ocean exit -> 670, -9420 
+#	Ocean Exit (village) -> 700, -10700 
 520, -51, -9128, "V15"
+
+
+
+
+
+
+
+
+# Illager Outpost 9
+1248, -7152, "IO9"
+
+
+
 
 # Desert Well 3
 #	Brewer was there!

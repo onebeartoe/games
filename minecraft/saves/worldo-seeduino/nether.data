@@ -137,8 +137,27 @@
 272, ~, -816, "NF7"
 
 
-# Village 14 Portal Outlet
+
+# Woodlan Mansion 3 Portal Outlet
+-734, 116, -1414, "WM3PO"
+
+
+# Soul Sand Valley 1
+#	The return scaffolding ladder is here:
+#		-963, 109, -1429
+-961, 116, -1382, "SSV1"
+
+
+# Village 14 Portal Outlet (Ice Spikes!)
+#	
 105, 72, -1415, "V14PO"
+
+
+# Soul Sand Valley 2
+#	Plenty of fossils no Dry Ghast
+295, 71, -1557, "SSV2"
+
+
 
 # Woodland Mansion 2 Portal Outlet
 844, 94, -1020, "WM2PO"
