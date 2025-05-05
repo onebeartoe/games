@@ -84,7 +84,7 @@ public class App extends Application
     
     Text elTexto;
 
-    Number elTextoX = new Integer(200);
+    Number elTextoX = Integer.valueOf(200);
     
     Node dialog;
 //    Text dialog;
