@@ -1,0 +1,29 @@
+
+# Spawn Location
+42, 8, "SPN"
+
+
+# Jungle 1
+-280, 66, 488, "J1"
+
+
+# Lush Caves 1
+-236, 7, -352, "LC1"
+
+
+# Dripstone Cave 1
+107, -1, 80, "DC1"
+
+
+# Mineshaft 1
+# Did not spectate to see if was there, but that location is under water (in the middle of an ocean)
+-288, ~, -176, "MS1"
+
+
+# Amethyst Geode 1	
+-51, -1, 68, "AG1"
+
+
+
+
+		
