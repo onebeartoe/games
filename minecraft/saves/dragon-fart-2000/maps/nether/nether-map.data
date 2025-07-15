@@ -147,11 +147,16 @@
 
 
 
+# Camel Town Portal
+# Y level  70
+-393, -470, "CTP"
+
+# Command Soul Sand Valley 2
+-549, 70, -277, "SSV2"
+
 # Soul Sand Valley 1
 #
 -185, 105, "SSV1"
-
-
 
 # Soul Sand Valley 1 - Base
 #	There isa little mini-base here, y = 73.
@@ -170,7 +175,3 @@
 #   It is at Y level 93.
 -20, 270, "ACTB1"
 
-
-# Camel Town Portal
-# Y level  70
--393, -470, "CTP"
