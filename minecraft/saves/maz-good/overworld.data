@@ -31,11 +31,40 @@
 
 # Woodland Mansion 1
 691, 76, 581, "WM1"
-
 		
 
 # Stronghold 1
+#	Portal location: -164, 3, -1802
 -160, ~, -1808, "SH1"
+
+
+# Trail Ruins 1 - ?
+-768, ~, -1904
+
+
+
+# Warm Ocean 1
+#	by Stronghold 
+-1792, 72, -3028, "WO1"
+#			1939 blocks away/
+
+
+# Small Warm Ruins 1
+-2144, ~, -3088, "SWR1"
+
+
+# Large Warm Ruins 1
+-1912 ~ -2744, "LWR1"
+
+
+warm ocean ???
+
+	by spawn
+
+		-2451, 64, -2523
+
+			3507 blocks away
+
 
 
 

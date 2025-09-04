@@ -1,6 +1,16 @@
 
 
+# Spawn Portal Outlet
+-3, 82, -8, "SPO"
+
 
 # Nether Fortress 1
 #	return: -80, 74, -377
 -80, ~, -384, "NF1"
+
+
+
+# Stronghold 1 Portal Outlet
+-38, 102, -229, "S1PO"
+
+
