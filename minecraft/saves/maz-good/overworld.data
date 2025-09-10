@@ -42,9 +42,9 @@
 -768, ~, -1904
 
 
-
 # Warm Ocean 1
 #	by Stronghold 
+#	There is a mini-base here.
 -1792, 72, -3028, "WO1"
 #			1939 blocks away/
 
@@ -54,11 +54,12 @@
 
 
 # Large Warm Ruins 1
+#	I found 4 Sniffer Eggs here!
+#	There is a mini-platform here.
 -1912 ~ -2744, "LWR1"
 
 
-warm ocean ???
-
+warm ocean 2 ???
 	by spawn
 
 		-2451, 64, -2523

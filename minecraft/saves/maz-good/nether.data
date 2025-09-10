@@ -9,8 +9,13 @@
 -80, ~, -384, "NF1"
 
 
-
 # Stronghold 1 Portal Outlet
 -38, 102, -229, "S1PO"
+
+
+# Large Warm Ruins 1 Portal Outlet
+#   I got two (so far) dried Ghasts by Fossil structurs
+#   it is right in the middle of a Soul Sand Vally!  Get the disc!
+-212, 65, -385, "LWR1PO"
 
 
