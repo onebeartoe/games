@@ -42,11 +42,11 @@
 -768, ~, -1904
 
 
-# Warm Ocean 1
+# Warm Ocean 1 Base
 #	by Stronghold 
-#	There is a mini-base here.
--1792, 72, -3028, "WO1"
-#			1939 blocks away/
+#	There is base here.
+-1732, 72, -3028, "WO1"
+
 
 
 # Small Warm Ruins 1
