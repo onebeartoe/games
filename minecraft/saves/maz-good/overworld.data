@@ -1,5 +1,11 @@
 
 # Spawn Location
+#   Librarian Traders
+#		Mending
+#		Silk Touch
+#		Looting III
+#		Depth Stider II
+#		Fortune II
 42, 8, "SPN"
 
 
@@ -35,6 +41,8 @@
 
 # Stronghold 1
 #	Portal location: -164, 3, -1802
+#   Librarian Traders
+#		Sharpness V  (End Dragon)
 -160, ~, -1808, "SH1"
 
 
@@ -44,7 +52,9 @@
 
 # Warm Ocean 1 Base
 #	by Stronghold 
-#	There is base here.
+#	There is full base here.
+#   Librarian Traders
+#		Unbreaking III
 -1732, 72, -3028, "WO1"
 
 
