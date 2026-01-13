@@ -47,7 +47,7 @@
 
 
 # Trail Ruins 1 - ?
--768, ~, -1904
+-768, ~, -1904, "TR1???"
 
 
 # Ancient City 1
@@ -75,7 +75,7 @@
 # Large Warm Ruins 1
 #	I found 4 Sniffer Eggs here!
 #	There is a mini-platform here.
--1912 ~ -2744, "LWR1"
+-1912, ~, -2744, "LWR1"
 
 
 # Ocean Monument 1
@@ -85,12 +85,11 @@
 -3795, 62, -3444	
 
 
-warm ocean 2 ???
-	by spawn
+# warm ocean 2 ???
+#	by spawn
+-2451, 64, -2523, "WO2???"
 
-		-2451, 64, -2523
-
-			3507 blocks away
+			
 
 
 
