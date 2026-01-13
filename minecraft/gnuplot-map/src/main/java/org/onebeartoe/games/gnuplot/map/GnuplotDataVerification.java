@@ -235,9 +235,7 @@ if( !raid.exists() )
         String s2;
         String s3;
         String s4;
-        
-        
-        
+                
         if(split.length == 3)
         {
             s1 = split[0];

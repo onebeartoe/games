@@ -77,4 +77,24 @@ public class GnuplotDataVerificationTest
         
         assertThat(marker.id()).isEqualTo("\"id\"");
     }
+    
+    
+//TODO: catch a meaningfull exception    
+    @Test
+//    @Test(expected = Exception.class)
+    public void isValid_false_no_ID()
+    {
+        // from Ancient City 1 - Maz Good
+        // this  line has no ID as the fouth argument, give XYZ values
+        var line = """  
+                   -1008, -30, -4544
+                   """;
+        
+//TODO: the above seems to slip by with an incorrect message        
+//              "only 3 or 4 arguemnts are valid"
+        
+        var marker = implementation.isValid(line);
+        
+        assertThat(marker.valid()).isFalse();
+    }
 }
