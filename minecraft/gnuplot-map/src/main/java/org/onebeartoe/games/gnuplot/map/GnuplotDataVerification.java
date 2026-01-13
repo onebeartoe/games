@@ -1,10 +1,4 @@
 
-
-
-
-//TODO: move back/??????!!!???
-
-
 package org.onebeartoe.games.gnuplot.map;
   
 import java.awt.Toolkit;
@@ -227,6 +221,7 @@ if( !raid.exists() )
         task.run();
     }
 
+//TODO: rename this to 'parseLine' or something better    
     public MapMarker isValid(String line)
     {
         String [] split = line.split(",");
@@ -235,9 +230,7 @@ if( !raid.exists() )
         String s2;
         String s3;
         String s4;
-        
-        
-        
+                
         if(split.length == 3)
         {
             s1 = split[0];
@@ -260,23 +253,41 @@ if( !raid.exists() )
         }
         else
         {
-            var message = "only 3 or 4 arguemnts are valid";
+            var message = String.format("only 3 or 4 arguemnts are valid: >%s<", line);
             
             throw new IllegalArgumentException(message);
         }
         
+        
+        
         var x = Double.valueOf(s1);
         var y = Double.valueOf(s2);
-        var z = Double.valueOf(s3);
-        
-        String id = s4.trim();
+        var z = Double.valueOf(s3);        
         Point3D location = new Point3D(x,y,z);
-        String description = "----"; 
-        Boolean valid = true;
+        
+        String description = "----";         
+                
+        String id = s4.trim();
+        
+        boolean valid = isValidId(id);
         
         var marker = new MapMarker(id, location, description, valid, line);
         
         return marker;
+    }
+
+    private boolean isValidId(String id) 
+    {
+        var valid = false;
+        
+        var doubleQuotes = "\"";
+        
+        if(id.startsWith(doubleQuotes) && id.endsWith(doubleQuotes) )
+        {
+            valid = true;
+        }
+        
+        return valid;
     }
     
     record FileValidation(File file, List<ValidationEntry> entries) {}

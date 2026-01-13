@@ -1,11 +1,9 @@
 
-
 package org.onebeartoe.games.gnuplot.map;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.Test;
-//import org.junit.jupiter.api.Test;
 
 /**
  *
@@ -76,5 +74,19 @@ public class GnuplotDataVerificationTest
         assertThat(marker.location().getZ()).isEqualTo(-33.0);
         
         assertThat(marker.id()).isEqualTo("\"id\"");
+    }    
+    
+    @Test
+    public void isValid_false_no_ID()
+    {
+        // from Ancient City 1 - Maz Good
+        // this line gives XYZ values, but has no ID as the fouth argument
+        var line = """  
+                   -1008, -30, -4544
+                   """;       
+        
+        var marker = implementation.isValid(line);
+        
+        assertThat(marker.valid()).isFalse();
     }
 }

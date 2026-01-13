@@ -37,7 +37,7 @@
 
 # Woodland Mansion 1
 691, 76, 581, "WM1"
-		
+
 
 # Stronghold 1
 #	Portal location: -164, 3, -1802
@@ -47,12 +47,12 @@
 
 
 # Trail Ruins 1 - ?
--768, ~, -1904
+-768, ~, -1904, "TR1???"
 
 
 # Ancient City 1
 #
--1008, -30, -4544
+-1008, -30, -4544, "AC1"
 
 
 # Warm Ocean 1 Base
@@ -65,7 +65,7 @@
 
 # Trial Chamber 2
 #
--2152, 14, -3272
+-2152, 14, -3272, "TC2"
 
 
 # Small Warm Ruins 1
@@ -75,22 +75,21 @@
 # Large Warm Ruins 1
 #	I found 4 Sniffer Eggs here!
 #	There is a mini-platform here.
--1912 ~ -2744, "LWR1"
+-1912, ~, -2744, "LWR1"
 
 
 # Ocean Monument 1
-#	There is a mini-base near at this location:
+#   There is a mini-base near at this location:
 #						-3433, ~, -3309
-						There is a Ender Chest and single Allay here
--3795, 62, -3444	
+#   There is a Ender Chest and single Allay here
+-3795, 62, -3444, "OM1"	
 
 
-warm ocean 2 ???
-	by spawn
+# warm ocean 2 ???
+#	by spawn
+-2451, 64, -2523, "WO2???"
 
-		-2451, 64, -2523
 
-			3507 blocks away
 
 
 
