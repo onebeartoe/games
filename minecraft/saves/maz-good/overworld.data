@@ -1,5 +1,6 @@
 
 # Spawn Location
+#   Village 1
 #   Librarian Traders
 #		Mending
 #		Silk Touch
@@ -41,6 +42,7 @@
 
 # Stronghold 1
 #	Portal location: -164, 3, -1802
+#   Village 2
 #   Librarian Traders
 #		Sharpness V  (End Dragon)
 -160, ~, -1808, "SH1"
@@ -56,6 +58,7 @@
 
 
 # Warm Ocean 1 Base
+#   Village 3
 #	by Stronghold 
 #	There is full base here.
 #   Librarian Traders
