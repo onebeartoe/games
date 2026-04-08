@@ -57,6 +57,9 @@
 -1008, -30, -4544, "AC1"
 
 
+# Sulfur Caves 1
+-1048, 23, -3359, "SC1"
+
 # Warm Ocean 1 Base
 #   Village 3
 #	by Stronghold 
@@ -64,6 +67,10 @@
 #   Librarian Traders
 #		Unbreaking III
 -1732, 72, -3028, "WO1"
+
+
+# Sulfur Caves NOPE
+-1920, -1, -2899, "SC1-NOPE"
 
 
 # Trial Chamber 2
