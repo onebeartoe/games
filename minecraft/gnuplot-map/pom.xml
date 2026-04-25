@@ -1,22 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
+
     <parent>
-    <artifactId>minecraft</artifactId>
-    <groupId>org.onebeartoe.games</groupId>
-    <version>1.0</version>
-  </parent>
+        <artifactId>minecraft</artifactId>
+        <groupId>org.onebeartoe.games</groupId>
+        <version>1.0</version>
+    </parent>
+
     <groupId>org.onebeartoe.games</groupId>
     <artifactId>gnuplot-map</artifactId>
     
     <name>onebeartoe-games-minecraft-gnuplot-map</name>
     
     <version>1.0</version>
+    
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>25</maven.compiler.source>
         <maven.compiler.target>25</maven.compiler.target>
     </properties>
+    
     <dependencies>
         <dependency>
             <groupId>org.assertj</groupId>
@@ -120,18 +126,15 @@
                 </executions>
             </plugin>
             
-            
-            
-            
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.5.1</version>
-  <configuration>
-    <argLine>
-      --add-exports javafx.graphics/com.sun.javafx.application=ALL-UNNAMED
-    </argLine>
-  </configuration>                
+                    <configuration>
+                      <argLine>
+                        --add-exports javafx.graphics/com.sun.javafx.application=ALL-UNNAMED
+                      </argLine>
+                    </configuration>                
             </plugin>                   
             
             <plugin>
@@ -157,26 +160,26 @@
                 </executions>
             </plugin>
             
-<plugin>
-    <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-shade-plugin</artifactId>
-    <version>3.6.0</version>
-    <executions>
-      <execution>
-        <phase>package</phase>
-        <goals>
-          <goal>shade</goal>
-        </goals>
-        <configuration>
-          <transformers>
-            <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-              <mainClass>org.onebeartoe.games.gnuplot.map.App</mainClass>
-            </transformer>
-          </transformers>
-        </configuration>
-      </execution>
-    </executions>
-</plugin>                                                        
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.6.0</version>
+                <executions>
+                  <execution>
+                    <phase>package</phase>
+                    <goals>
+                      <goal>shade</goal>
+                    </goals>
+                    <configuration>
+                      <transformers>
+                        <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                          <mainClass>org.onebeartoe.games.gnuplot.map.App</mainClass>
+                        </transformer>
+                      </transformers>
+                    </configuration>
+                  </execution>
+                </executions>
+            </plugin>                                                        
         </plugins>
     </build>
 </project>
