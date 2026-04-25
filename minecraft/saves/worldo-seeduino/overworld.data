@@ -71,10 +71,12 @@
 
 # Village 2
 # 	This is my main base.
-#	This base has good villager trades (Infinity and Silk Touch) 
+#	This base has good villager trades (Infinity and Silk Touch)
+#		and lots of farming for Villager trades 
 #	 	and cool 'Cat gift' farm
 #		and a Drip Stone Cave by the Lava Cauldrons
 #		and I keep Armor Trimed items here.
+#	The Nether Portal is in the direction of the Nether Block 'portal' outline.
 -1632, ~, 704, "V2"
 
 
@@ -350,6 +352,12 @@
 -6272, 67, 2454, "GFF1"
 
 
+# Central Town
+#	This space is in the middle of the map.
+#!!!!!currently here
+-1800, ~, -4300, "CT"
+
+
 # Village 4
 #	There are Villages here in the homes.
 2480, ~, 928, "V4"
@@ -416,7 +424,7 @@
 # Village 5
 #	This is near a bunch of Warm Ocean Ruins
 #	It is a decent village that is mostly built out.
-#!!!!!currently here
+#	This is the village that was 'currently here' before Central Town started building.
 1872, ~, 1632, "V5"
 
 
