@@ -70,6 +70,7 @@
 
 
 # Village 2
+#!!!TODO: give the Allays a better structure that the current dungeon 
 # 	This is my main base.
 #	This base has good villager trades (Infinity and Silk Touch)
 #		and lots and lots of farming for Villager trades 
@@ -78,7 +79,7 @@
 #		and I keep Armor Trimed items here.
 #		and there are lots of Pottery Sherd Patterns
 #	The Nether Portal is in the direction of the Nether Block 'portal' outline.
--1632, ~, 704, "2V"
+-1632, ~, 704, "V2"
 
 
 # Frozen Peaks 1
