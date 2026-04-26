@@ -16,11 +16,13 @@ worldo
 
 		it is Village 2!
 
-	[] from village 2 use the Elytra to get to Central Town
+	[x] from village 2 use the Elytra to get to Central Town
 
-	[] make a nether path from V2 to CT
+	[x] make a nether path from CT to V2
 
 	[] GNUPlot Map - generate the Hub Map for the Nether Portals between Villages/POI
+
+			 also generate the Hub Map for the Overworld
 
 	
 	
