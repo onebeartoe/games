@@ -71,16 +71,22 @@
 
 # Village 2
 #!!!TODO: give the Allays a better structure that the current dungeon 
+#!TODO: this base needs Copper blocks
+#!TODO:			Warm and Cold Chicken Eggs
 # 	This is my main base.
 #	This base has good villager trades (Infinity and Silk Touch)
 #		and lots and lots of farming for Villager trades 
 #	 	and cool 'Cat gift' farm
 #		and a Drip Stone Cave by the Lava Cauldrons
-#		and I keep Armor Trimed items here.
+#		and I keep Armor Trims items here, by the Axolotl pond
 #		and there are lots of Pottery Sherd Patterns
+#		and the End Dragon Egg is up top
 #	The Nether Portal is in the direction of the Nether Block 'portal' outline.
 -1632, ~, 704, "V2"
 
+
+# Flower Forest 1
+-1754, 129, 721, "FF1"
 
 # Frozen Peaks 1
 #	There be Goats here!
