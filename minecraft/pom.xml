@@ -48,9 +48,9 @@
                         
         <configuration>
                               
-          <source>21</source>
+          <source>26</source>
                               
-          <target>21</target>
+          <target>26</target>
                               
           <compilerArgs>
                                     
