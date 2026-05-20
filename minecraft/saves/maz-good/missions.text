@@ -1,14 +1,4 @@
 
-[] Trident
-
-       	[] Get Mob heads using a trident with the Channeling enchantment.
-
-
-	[] Emersion
-		[] glow bush under path
-		[] spore blossom in a tree
-
-
 [] Spawn - Village 1
 
 	[] Fisherman pier for fishing and trading
@@ -22,7 +12,6 @@
 		[] tropical/trout fish
 
 			[] Axolotl help!
-
 
 	[] Flower Forest
 
@@ -74,6 +63,12 @@
 		[] Shipwreck Sails - #14
 
 		[] Closet with 	Clothes #19
+
+	[] Emersion
+
+		[] glow bush under path
+
+		[] spore blossom in a tree
 
 
     [] Display for my rarest items
@@ -188,8 +183,14 @@
 
 -------------------------------------------------------------
 
-[x] Warm Ocean 1 Base - Village 3
+[x] Spawn Base
 
+	[x] Trident
+
+	       	[x] Get Mob heads using a trident with the Channeling enchantment.
+
+
+[x] Warm Ocean 1 Base - Village 3
 
 	[x] Trident
 		[x] There is one here but a Mending book is needed.
