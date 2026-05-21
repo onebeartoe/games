@@ -3,11 +3,13 @@
 
 	[] Fisherman pier for fishing and trading
 
-		[] boats
+		[~] boats
 
-		       [] crafter
+		       [x] crafter
+				I tried to get a Fisherman to trade for Bamboo boats, but they don't.
+				The boat trade is based on biome (but there is no bamboo option).
 
-		[] kelp
+		[x] kelp
 
 		[] tropical/trout fish
 
