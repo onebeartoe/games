@@ -431,9 +431,14 @@
 
 # Village 5
 #	This is near a bunch of Warm Ocean Ruins
-#	It is a decent village that is mostly built out.
+#	It is a decent village that is built out.
+#	There are tamed Llamas here!
 #	This is the village that was 'currently here' before Central Town started building.
 1872, ~, 1632, "V5"
+
+
+# Trial Chambers 2 near Village 5
+1808, ~, 1104, "TC2"
 
 
 
