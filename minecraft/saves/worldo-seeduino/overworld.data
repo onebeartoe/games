@@ -311,11 +311,6 @@
 -6400, ~, 1800, "V10"
 
 
-# Trial Chamber 5
-#	The entrance is topside, at -6451, 1734
--6448, ~, 1680, "TC5"
-
-
 
 # Woodland Mansion 1
 # I found the Vex trim here.
@@ -340,10 +335,15 @@
 
 
 
-# Trial Chamber 5
+# Trial Chamber 5 ???
 #	There are Slime Spawners here.
 #	Looted but there is still one Ominus Vault left.
 -5696, ~, 1888, "TC5"
+
+# Trial Chamber 5 ???
+#	The entrance is topside, at -6451, 1734
+-6448, ~, 1680, "TC5"
+
 
 
 # Trial Chamber 5 Mini Base
@@ -363,7 +363,15 @@
 
 # Central Town
 #	This space is in the middle of the map.
+#	There are horse and 
 -1800, ~, -4300, "CT"
+
+
+
+# Closest Village to CT
+-2560, ~, -4304, "CV2CT"
+
+
 
 
 # Village 4
