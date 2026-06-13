@@ -363,7 +363,9 @@
 
 # Central Town
 #	This space is in the middle of the map.
-#	There are horse and 
+#	The Full Netherite Armor is here.
+#	There are horse and donkeys here.
+
 -1800, ~, -4300, "CT"
 
 
