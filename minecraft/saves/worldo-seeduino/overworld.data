@@ -2,27 +2,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # World Spawn Point
 #	There is a decent little mini-base here.
 #	It is stocked pretty well, but is not fortified yet.
@@ -81,6 +60,7 @@
 #		and I keep Armor Trims items here, by the Axolotl pond
 #		and there are lots of Pottery Sherd Patterns
 #		and the End Dragon Egg is up top
+#		and there are Goat horns here
 #	The Nether Portal is in the direction of the Nether Block 'portal' outline.
 -1632, ~, 704, "V2"
 
@@ -178,7 +158,8 @@
 # Village 7
 #	This is a Savanna village.
 #	The base is picking up.
-#	There is Librian with a Mending Book trade here, as well as an Unbreaking trader.  I Enchanted the 1st Elytra here.
+#	There is Librian with a Mending Book trade here, as well as an Unbreaking trader.  
+#   I Enchanted the 1st Elytra here.
 -304, 64, 1943, "V7"
 
 
@@ -365,7 +346,6 @@
 #	This space is in the middle of the map.
 #	The Full Netherite Armor is here.
 #	There are horse and donkeys here.
-
 -1800, ~, -4300, "CT"
 
 
@@ -648,7 +628,7 @@ Ancient City 5
 768, ~, -11360, "V14"
 
 # Trial Chamber 12
-857, -19, -11271
+857, -19, -11271, "TC12"
 
 
 # Trail Ruins 4
@@ -729,9 +709,9 @@ Ancient City 5
 
 
 
-# Stronghold 2
+# Stronghold 2?????
 8292, ~, -7788, "SH2"
-#?????
+
 
 
 
