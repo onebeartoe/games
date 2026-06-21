@@ -3,6 +3,11 @@ Worldo - Missions
 
 [] Central Town
 
+	[] Allay Castle form Pillager Outpost
+		Spawn Radius:
+			Center: The top level of the watchtower (same height as the chest).
+			Horizontal: 36 blocks outward from the 	center in all directions 
+	
 	[] All Music Records
 
 
@@ -21,9 +26,6 @@ Worldo - Missions
 
 		
 	[] Goat Horn Display	
-
-
-	[] Smithing with Style Advancement
 
 
 	[] Make Base 1 have Cherry Blossoms fall all over the place.
