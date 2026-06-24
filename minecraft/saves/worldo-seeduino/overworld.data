@@ -504,13 +504,15 @@
 
 
 
-# Far Far Desert Wells Island (Village 11)
+# Village 11 - Far Far Desert Wells Island 
 #	There is a bunch of points of interest near here!
 #	There is a nice base here, with a Mending Librarian.
 #	A bunch of Rails and Powered Rails are here.
 #	Pets o'plenty - Wolf, Cat, Parrot
 #	This is currently where the fast fast horse is.
 #	This base has the Nether Portal back to the spawn point.
+#		The Portals are kinda messed up; the 'good' one is here:
+#					1440,  -8550
 #	This is in the middle of a Warm Ocean and had an Axolotl farm.
 1200, ~, -8448, "V11"
 
