@@ -2,39 +2,56 @@
 Worldo - Missions
 
 [] Central Town
-
-	[x] Allay Castle form Pillager Outpost
-		Spawn Radius:
-			Center: The top level of the watchtower (same height as the chest).
-			Horizontal: 36 blocks outward from the 	center in all directions 
-
-		Block Palette
-			Amethyst Block
-			Prismarine
-			Prismarine Bricks			
-			Sea Lantern
-			Warped Wart Blocks
-		
-		[x] Pillager Jail
-			Purpur Blocks
-		
-		[x] Banner replacement
-		
-			- remove 3 layers of the Ominous Banner
-			- add the Paly pattern with Cyan dye
-		
-		[~] Allay Pagota
-		
 				
 	[] Decorate the Nether Portal
 	
 		https://x.com/goodguylolypop/status/2072440114995957920
 	
+	[] Do some vacationing somewhere nice
+
+	[] Completely excavate Trail Ruin
+	
 	[] All Music Records
 
+		[x] 13
+		
+		[x] cat
+		
+		[x] Creator
+		
+		[x] Lava Chicken
+		
+		[x] otherside
+		
+		[x] Precipice
+		
+		[x] strad
+		
+		[x] Tears
 
 	[] All Banner Patterns
 
+		[x] Flow
+		
+		[x] Globe
+		
+		[x] Guster
+		
+		[x] Snort
+
+		Snort
+
+		Wild(?)
+
+		beaker banner to place by Brewing Stands
+
+		Bunny
+
+		Old Mojang Logo (enchanted golden apple)
+
+		Skull and Crossbones
+
+		creeper Face
 
 	[] Friendly Illager (no crossbow)
 
@@ -45,18 +62,9 @@ Worldo - Missions
 		
 	[] Get some custom pixel art in using a photo/image
 		see Dragon Fart for details        
-
+		
 		
 	[] Goat Horn Display	
-
-
-	[] Make Base 1 have Cherry Blossoms fall all over the place.
-
-
-	[] Do some vacationing somewhere nice
-
-
-	[] Completely excavate Trail Ruin
 
 
 	[] Build Villager Statues
@@ -98,10 +106,11 @@ Worldo - Missions
 
 		sniffer plants
 
-		pot -> flower pot -> sea pickle ->    flowering azalea 						      or cherry leaves
+		pot -> flower pot -> sea pickle -> flowering azalea  					
+						      or cherry leaves
 
 
-[] Use a poition of Infestation to make an XP farm
+[] Use a potion of Infestation to make an XP farm
 
     https://www.youtube.com/shorts/J1bBJ8b4YRY
 
@@ -147,17 +156,8 @@ Katana
 
 Village 10
 
-		
-	villlage 10
-
-		Axolotls
-			if not then just get some Axolotl from the Ocean near the Mineshaft
-
-
-	[x] Trial Chamber 5
-
-
-
+	Axolotls
+		if not then just get some Axolotl from the Ocean near the Mineshaft
 
 ---
 
@@ -181,33 +181,6 @@ make a dancing armor stand
 
 ---
 
-Make Some Banners
-
-	Snort
-
-	Wild(?)
-
-	beaker banner to place by Brewing Stands
-
-	Bunny
-
-	[x] Battle Banner for Shield! (ibxtoycat)
-		https://youtu.be/JSKsV9KU76M?t=1674
-		  orange banner
-		  green pale
-		  ...
-		  I could not finish it because 'bordure indented' is not available on Java Minecraft.
-		  I did make a cross though
-
-	Old Mojang Logo (enchanted golden apple)
-
-	Skull and Crossbones
-
-	creeper Face
-
-
-
-
 
 
 -----------------------------------------------------------------
@@ -226,6 +199,10 @@ Make Some Banners
 
 		[x] black -> nice
 
+
+	[x] Make Base 1 have Cherry Blossoms fall all over the place.
+
+		It has some near the .tree display'.
 
 	[x] Trial Chambers
 	
@@ -266,6 +243,28 @@ Make Some Banners
 
 [x] 'Central Town'
 
+	[x] Allay Castle form Pillager Outpost
+		Spawn Radius:
+			Center: The top level of the watchtower (same height as the chest).
+			Horizontal: 36 blocks outward from the 	center in all directions 
+
+		Block Palette
+			Amethyst Block
+			Prismarine
+			Prismarine Bricks			
+			Sea Lantern
+			Warped Wart Blocks
+		
+		[x] Pillager Jail
+			Purpur Blocks
+		
+		[x] Banner replacement
+		
+			- remove 3 layers of the Ominous Banner
+			- add the Paly pattern with Cyan dye
+		
+		[~] Allay Pagota
+
 	[x] Get some Villagers form the nearest Village
 
 	[x] There is a small spot right in the center of the map in MCA Selector.
@@ -281,6 +280,26 @@ Make Some Banners
 	[x] from village 2 use the Elytra to get to Central Town
 
 	[x] make a nether path from CT to V2
+
+
+---
+
+Village 10
+
+
+	[x] Trial Chamber 5
+
+---
+
+Make Some Banners
+
+	[x] Battle Banner for Shield! (ibxtoycat)
+		https://youtu.be/JSKsV9KU76M?t=1674
+		  orange banner
+		  green pale
+		  ...
+		  I could not finish it because 'bordure indented' is not available on Java Minecraft.
+		  I did make a cross though
 
 
 ---
