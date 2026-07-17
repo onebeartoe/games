@@ -3,27 +3,28 @@ Worldo - Missions
 
 [] Central Town
 
-	[] Allay Castle form Pillager Outpost
+	[x] Allay Castle form Pillager Outpost
 		Spawn Radius:
 			Center: The top level of the watchtower (same height as the chest).
 			Horizontal: 36 blocks outward from the 	center in all directions 
 
 		Block Palette
 			Amethyst Block
-			Brown Glazed Terracotta
-			Cyan Concrete
-			Cyan Concrete Powder
-			Cyan Glazed Terracotta
-			Cyan Wool
-			Pink Glazed Terracotta
 			Prismarine
 			Prismarine Bricks			
 			Sea Lantern
-			Smooth Quartz Block
-			Stripped Birch Block
-			Strip Warped Stem
 			Warped Wart Blocks
-			Oxidized Copper
+		
+		[x] Pillager Jail
+			Purpur Blocks
+		
+		[x] Banner replacement
+		
+			- remove 3 layers of the Ominous Banner
+			- add the Paly pattern with Cyan dye
+		
+		[~] Allay Pagota
+		
 				
 	[] Decorate the Nether Portal
 	
