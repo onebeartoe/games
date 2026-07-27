@@ -17,7 +17,6 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.control.TextFormatter;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -65,53 +64,27 @@ public class PrimaryController
             if (newValue != null && newValue.location() != null) 
             {
                 System.out.println("x: " + newValue.location().getX() + ", z: " + newValue.location().getZ());
-            }
-        });
 
-        var numericFormater = new TextFormatter<>(c -> 
-        {
-            if (!c.getControlNewText().matches("\\d*")) 
-            {
-                return null;
+                xField.setText(String.valueOf((int) newValue.location().getX()));
+                yField.setText(String.valueOf((int) newValue.location().getZ()));
+                
+                updateMarkers();
             }
-            else
-            {
-                return c;
-            }            
         });
-        
-//        xField.setTextFormatter(numericFormater);
-   
+           
         xField.setOnKeyReleased((t) -> 
         {
             updateMarkers();
         });
 
-        var yNumericFormater = new TextFormatter<>(c -> 
-        {
-            if (!c.getControlNewText().matches("\\d*")) 
-            {
-                return null;
-            }
-            else
-            {
-                return c;
-            }            
-        });
-
-//        yField.setTextFormatter(yNumericFormater);
-
         yField.setOnKeyReleased((t) -> 
         {
             updateMarkers();
-            
-            
         });
         
         var x = App.preferences.getInt(TARGET_X_KEY, 0);
         xField.setText(String.valueOf(x));
-        
-        
+                
         var y = App.preferences.getInt(TARGET_Y_KEY, 0);
         yField.setText(String.valueOf(y));
         
@@ -154,9 +127,7 @@ public class PrimaryController
         
         loadInputFiles();
     }
-    
-    
-    
+
     @FXML
     private void addFile()
     {
