@@ -8,10 +8,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-
 import java.util.prefs.Preferences;
-//import static org.onebeartoe.games.gnuplot.map.PrimaryController.xField;
-//import static org.onebeartoe.games.gnuplot.map.PrimaryController.yField;
 
 /**
  * This is the entry point for the Minecraft Companion Gnuplot Map application.
