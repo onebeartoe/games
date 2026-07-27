@@ -11,7 +11,9 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane prefHeight="627.0" prefWidth="1063.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.onebeartoe.games.gnuplot.map.PrimaryController">
+<BorderPane prefHeight="627.0" prefWidth="1063.0" 
+            xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="org.onebeartoe.games.gnuplot.map.PrimaryController">
    <top>
       <VBox alignment="CENTER" BorderPane.alignment="CENTER">
          <children>
@@ -44,11 +46,21 @@
             <ListView fx:id="inputFilesListView" prefHeight="209.0" prefWidth="308.0" BorderPane.alignment="CENTER" />
          </center>
          <bottom>
-            <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <HBox fx:id="buttonBox" 
+                  prefHeight="100.0" prefWidth="200.0" 
+                  BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="addFileButton" mnemonicParsing="false" onAction="#addFile" text="Add File" />
+                  <Button fx:id="addFileButton" 
+                          mnemonicParsing="false" 
+                          onAction="#addFile" 
+                          text="Add File" />
+                  
                   <Button fx:id="inputDirectoryButton" mnemonicParsing="false" text="Add Folder" />
-                  <Button fx:id="clearInputFilesListButton" mnemonicParsing="false" onAction="#clearInputFilesList" text="Clear" />
+                  
+                  <Button fx:id="clearInputFilesListButton" 
+                          mnemonicParsing="false" 
+                          onAction="#clearInputFilesList" 
+                          text="Clear" />
                </children>
             </HBox>
          </bottom>

@@ -179,54 +179,53 @@ public class PrimaryController
     {
         List<String> inputFileItems = inputFilesListView.getItems();
 
-            mapMarkers = parseMapMarkers( new ArrayList<Path>(inputFileItems.stream()
-                                                        .map(i -> Path.of(i) )
-                                                        .collect(Collectors.toList() ) ));
-                                                            
-            boolean containsInvalid = false;
+        mapMarkers = parseMapMarkers( new ArrayList<Path>(inputFileItems.stream()
+                                                    .map(i -> Path.of(i) )
+                                                    .collect(Collectors.toList() ) ));
 
-            for(var marker : mapMarkers)
+        boolean containsInvalid = false;
+
+        for(var marker : mapMarkers)
+        {
+            if( !marker.valid() )
             {
-                if( !marker.valid() )
-                {
-                    containsInvalid = true;
+                containsInvalid = true;
 
-                    break;
+                break;
+            }
+        };
+
+        if(containsInvalid)
+        {
+            outputTextArea.appendText("-------------------------\ncheck input files for errors\n---------------------\n");
+
+            mapMarkers.forEach(marker ->
+            {
+                if(!marker.valid())
+                {
+                    var message = marker.id() + "\n" + 
+                                    marker.description() + "\n" +
+                                    "-----------------\n";
+
+                    outputTextArea.appendText(message);
                 }
-            };
-
-            if(containsInvalid)
-            {
-                outputTextArea.appendText("-------------------------\ncheck input files for errors\n---------------------\n");
-
-                mapMarkers.forEach(marker ->
-                {
-                    if(!marker.valid())
-                    {
-                        var message = marker.id() + "\n" + 
-                                        marker.description() + "\n" +
-                                        "-----------------\n";
-
-                        outputTextArea.appendText(message);
-                    }
-                });
-            }
-            else
-            {
-                updateMapMarkersDispaly(mapMarkers);
-
-            }
+            });
+        }
+        else
+        {
+            updateMapMarkersDispaly(mapMarkers);
+        }
     }
     
     public void addFolder(DirectoryChooser chooser, File file) throws IOException
     {
         List<Path> inputFiles = findInputFilesUnder(file);
 
-            List<String> filesToText = inputFiles.stream()
-                                                 .map(path -> path.toFile().getPath() )
-                                                 .toList();        
-        
-            inputFilesListView.getItems().addAll(filesToText);
+        List<String> filesToText = inputFiles.stream()
+                                    .map(path -> path.toFile().getPath() )
+                                    .toList();        
+
+        inputFilesListView.getItems().addAll(filesToText);
 
         loadInputFiles();
                 
