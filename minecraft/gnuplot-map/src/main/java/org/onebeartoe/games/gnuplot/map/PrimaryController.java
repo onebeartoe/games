@@ -12,6 +12,7 @@ import java.util.stream.Stream;
 import javafx.fxml.FXML;
 import javafx.geometry.Point3D;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
@@ -46,6 +47,9 @@ public class PrimaryController
     
     @FXML
     public TextArea outputTextArea;
+    
+    @FXML
+    public ComboBox dropdownBox;
     
     private final DirectoryChooser directoryChooser = new DirectoryChooser();
     
@@ -338,5 +342,9 @@ public class PrimaryController
 
             mapMarkersTextArea.appendText(text);
         });
+
+        dropdownBox.getItems().clear();
+
+        dropdownBox.getItems().addAll(updatedMapMarkers);
     }
 }
