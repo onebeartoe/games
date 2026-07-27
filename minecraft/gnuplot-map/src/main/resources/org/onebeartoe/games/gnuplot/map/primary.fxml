@@ -38,8 +38,6 @@
                         <Slider />
                      </children>
                   </VBox>
-                  
-                  
 
                   <ComboBox fx:id="dropdownBox" />
                </children>

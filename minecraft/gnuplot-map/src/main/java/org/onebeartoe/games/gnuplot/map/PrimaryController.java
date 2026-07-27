@@ -49,7 +49,7 @@ public class PrimaryController
     public TextArea outputTextArea;
     
     @FXML
-    public ComboBox dropdownBox;
+    public ComboBox<MapMarker> dropdownBox;
     
     private final DirectoryChooser directoryChooser = new DirectoryChooser();
     
@@ -60,6 +60,14 @@ public class PrimaryController
     @FXML
     public void initialize() 
     {        
+        dropdownBox.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> 
+        {
+            if (newValue != null && newValue.location() != null) 
+            {
+                System.out.println("x: " + newValue.location().getX() + ", z: " + newValue.location().getZ());
+            }
+        });
+
         var numericFormater = new TextFormatter<>(c -> 
         {
             if (!c.getControlNewText().matches("\\d*")) 
