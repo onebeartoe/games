@@ -33,7 +33,7 @@
 
                   <VBox prefHeight="200.0" prefWidth="100.0">
                      <children>
-                        <Label text="Y" />
+                        <Label text="Z" />
                         <TextField fx:id="yField" />
                         <Slider />
                      </children>

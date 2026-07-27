@@ -20,6 +20,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.util.StringConverter;
 import static org.onebeartoe.games.gnuplot.map.App.INPUT_DIRECORTY_KEY;
 import static org.onebeartoe.games.gnuplot.map.App.TARGET_X_KEY;
 import static org.onebeartoe.games.gnuplot.map.App.TARGET_Y_KEY;
@@ -59,6 +60,21 @@ public class PrimaryController
     @FXML
     public void initialize() 
     {        
+        dropdownBox.setConverter(new StringConverter<MapMarker>() 
+        {
+            @Override
+            public String toString(MapMarker marker) 
+            {
+                return marker == null ? "" : marker.id();
+            }
+
+            @Override
+            public MapMarker fromString(String string) 
+            {
+                return null;
+            }
+        });
+
         dropdownBox.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> 
         {
             if (newValue != null && newValue.location() != null) 
