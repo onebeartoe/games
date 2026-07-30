@@ -1,5 +1,7 @@
 package org.onebeartoe.games.gnuplot.map;
 
+import atlantafx.base.theme.PrimerDark;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -36,6 +38,9 @@ public class App extends Application
     @Override
     public void start(Stage stage) throws IOException 
     {
+        // Set the global dark theme
+        Application.setUserAgentStylesheet(new PrimerDark().getUserAgentStylesheet());
+        
         var width = preferences.getDouble(WIDTH_KEY, 640.0);
         
         var height = preferences.getDouble(HEIGHT_KEY, 480.0);
