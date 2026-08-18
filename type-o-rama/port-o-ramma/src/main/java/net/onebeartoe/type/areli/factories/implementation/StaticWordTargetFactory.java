@@ -16,12 +16,17 @@ public class StaticWordTargetFactory extends WordTargetFactory {
             StaticWordTarget t = new StaticWordTarget();
             t.setLabelText(words[i]);
 
-            double x = random.nextInt((int)(xRange * 0.8));
+            double xSpan = Math.max(10, targetMaxX - targetMinX);
+            double ySpan = Math.max(10, targetMaxY - targetMinY);
+
+            double x = targetMinX + random.nextDouble() * xSpan;
+            double y = targetMinY + random.nextDouble() * ySpan;
+
             t.setTranslateX(x);
-            t.setTranslateY(random.nextInt((int)targetMaxY) - targetMinY);
+            t.setTranslateY(y);
             t.setXMax(targetMaxX);
             t.setYMax(targetMaxY);
-            
+
             targets[i] = t;
         }
 

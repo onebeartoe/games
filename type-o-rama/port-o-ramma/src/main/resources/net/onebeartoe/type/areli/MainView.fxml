@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane fx:id="rootPane" prefHeight="600.0" prefWidth="900.0" 
+           stylesheets="@styles.css" styleClass="main-root" 
+           onKeyPressed="#handleKeyPressed" focusTraversable="true"
+           xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" 
+           fx:controller="net.onebeartoe.type.areli.MainController">
+    <children>
+        <!-- Dynamic Game Arena Layer -->
+        <Pane fx:id="gamePane" prefHeight="600.0" prefWidth="900.0" styleClass="game-pane" />
+
+        <!-- Heads-Up Display Layer -->
+        <AnchorPane fx:id="hudPane" mouseTransparent="true" prefHeight="600.0" prefWidth="900.0">
+            <children>
+                <!-- Round status / Encouragement text at the top -->
+                <Label fx:id="encouragementLabel" alignment="CENTER" layoutY="25.0" 
+                       prefWidth="900.0" styleClass="encouragement-label" 
+                       text="Only 3 more to go, in Round 1!" 
+                       AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0" />
+
+                <!-- Current typed input buffer at the bottom -->
+                <HBox alignment="CENTER" layoutY="520.0" prefHeight="60.0" prefWidth="900.0" 
+                      AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                    <children>
+                        <HBox alignment="CENTER" styleClass="typed-box">
+                            <children>
+                                <Label text="TYPE: " styleClass="typed-prefix" />
+                                <Label fx:id="typedInputLabel" styleClass="typed-input-label" text="" />
+                            </children>
+                        </HBox>
+                    </children>
+                </HBox>
+            </children>
+        </AnchorPane>
+
+        <!-- Game Summary / Next Round Modal Dialog Overlay -->
+        <StackPane fx:id="summaryOverlay" styleClass="modal-backdrop" visible="false">
+            <children>
+                <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" 
+                      prefHeight="430.0" prefWidth="500.0" spacing="15.0" styleClass="summary-dialog">
+                    <padding>
+                        <Insets bottom="20.0" left="25.0" right="25.0" top="20.0" />
+                    </padding>
+                    <children>
+                        <Label fx:id="summaryTitleLabel" styleClass="dialog-title" text="Round 1 Complete" />
+                        <Label styleClass="dialog-subtitle" text="Round Summary Statistics:" />
+                        <ListView fx:id="summaryListView" prefHeight="210.0" prefWidth="450.0" styleClass="summary-list-view" />
+                        <Button fx:id="nextRoundButton" onAction="#onNextRoundClicked" 
+                                styleClass="dialog-button" text="Next Round" />
+                    </children>
+                </VBox>
+            </children>
+        </StackPane>
+
+        <!-- Start Game Overlay -->
+        <StackPane fx:id="startOverlay" styleClass="modal-backdrop" visible="true">
+            <children>
+                <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" 
+                      prefHeight="380.0" prefWidth="500.0" spacing="20.0" styleClass="summary-dialog">
+                    <padding>
+                        <Insets bottom="25.0" left="30.0" right="30.0" top="25.0" />
+                    </padding>
+                    <children>
+                        <Label styleClass="game-title" text="TYPE-O-RAMA" />
+                        <Label styleClass="game-description" 
+                               text="Defend the arena against incoming word targets!&#10;&#10;Type the letters of each word to blast it with your laser cannon.&#10;Press SPACEBAR to reset typed text if you make a mistake." 
+                               textAlignment="CENTER" />
+                        <Button fx:id="startButton" onAction="#onStartGameClicked" 
+                                styleClass="dialog-button" text="Start Game" />
+                    </children>
+                </VBox>
+            </children>
+        </StackPane>
+    </children>
+</StackPane>

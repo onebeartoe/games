@@ -13,11 +13,11 @@ public class RealVerticalWordTarget extends StaticWordTarget {
         updateAnimation();
     }
 
-    private void updateAnimation() {
+    public void updateAnimation() {
         if (animation != null) {
             animation.stop();
         }
-        
+
         animation = new Timeline(
             new KeyFrame(Duration.millis(5000), 
                 new KeyValue(this.translateYProperty(), yMax))

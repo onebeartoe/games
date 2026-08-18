@@ -6,6 +6,14 @@ public class Round {
     private long start = -1;
     private long end = -1;
 
+    public Round() {
+    }
+
+    public Round(int words, int misses) {
+        this.words = words;
+        this.misses = misses;
+    }
+
     public int getMisses() {
         return misses;
     }
@@ -36,5 +44,22 @@ public class Round {
 
     public void setEnd(long end) {
         this.end = end;
+    }
+
+    public double getHitRatio() {
+        if (words <= 0) {
+            return 0.0;
+        }
+        int hits = Math.max(0, words - misses);
+        return (hits / (double) words) * 100.0;
+    }
+
+    public String getSummaryText() {
+        return String.format("Words: %d \t   Misses: %d \t   Hit Ratio: %.1f%%", words, misses, getHitRatio());
+    }
+
+    @Override
+    public String toString() {
+        return getSummaryText();
     }
 }

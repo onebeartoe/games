@@ -16,12 +16,16 @@ public class VerticalWordTargetFactory extends WordTargetFactory {
             RealVerticalWordTarget t = new RealVerticalWordTarget();
             t.setLabelText(words[i]);
 
-            double x = random.nextInt((int)(xRange * 0.8));
+            double xSpan = Math.max(10, targetMaxX - targetMinX);
+            double x = targetMinX + random.nextDouble() * xSpan;
+            double startY = targetMinY + random.nextDouble() * 50;
+            double endY = Math.min(targetMaxY, startY + 100 + random.nextDouble() * 100);
+
             t.setTranslateX(x);
-            t.setTranslateY(random.nextInt((int)targetMaxY) - (int)targetMinY);
+            t.setTranslateY(startY);
             t.setXMax(targetMaxX);
-            t.setYMax(targetMaxY);
-            
+            t.setYMax(endY);
+
             targets[i] = t;
         }
 

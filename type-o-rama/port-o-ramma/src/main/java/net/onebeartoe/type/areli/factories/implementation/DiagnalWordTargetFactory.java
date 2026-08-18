@@ -16,12 +16,18 @@ public class DiagnalWordTargetFactory extends WordTargetFactory {
             DiagnalWordTarget t = new DiagnalWordTarget();
             t.setLabelText(words[i]);
 
-            double x = random.nextInt((int)(xRange * 0.8));
-            t.setTranslateX(x);
-            t.setTranslateY(random.nextInt((int)targetMaxY) - targetMinY);
-            t.setXMax(targetMaxX);
-            t.setYMax(targetMaxY);
-            
+            double startX = targetMinX + random.nextDouble() * ((targetMaxX - targetMinX) * 0.4);
+            double endX = startX + 150 + random.nextDouble() * 200;
+            endX = Math.min(targetMaxX, endX);
+
+            double startY = targetMinY + random.nextDouble() * 50;
+            double endY = Math.min(targetMaxY, startY + 100 + random.nextDouble() * 100);
+
+            t.setTranslateX(startX);
+            t.setTranslateY(startY);
+            t.setXMax(endX);
+            t.setYMax(endY);
+
             targets[i] = t;
         }
 

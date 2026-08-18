@@ -8,30 +8,34 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Ellipse;
 import javafx.util.Duration;
 
+import java.io.InputStream;
+
 public class RobotChicken extends Cannon {
     private ImageView imageView;
     private Ellipse muzzleFlash;
 
     public RobotChicken() {
-        this.cannonTipX = 20;
-        this.cannonTipY = 30;
+        this.cannonTipX = 141;
+        this.cannonTipY = 421;
 
-        Image image = new Image(getClass().getResourceAsStream("/net/onebeartoe/type/areli/nodes/robot-chicken-b.png"));
-        imageView = new ImageView(image);
-        imageView.setScaleX(0.7);
-        imageView.setScaleY(0.7);
+        InputStream is = getClass().getResourceAsStream("/net/onebeartoe/type/areli/nodes/robot-chicken-b.png");
+        if (is != null) {
+            Image image = new Image(is);
+            imageView = new ImageView(image);
+            imageView.setScaleX(0.7);
+            imageView.setScaleY(0.7);
 
-        muzzleFlash = new Ellipse();
-        muzzleFlash.setRadiusX(4);
-        muzzleFlash.setRadiusY(8);
-        muzzleFlash.setRotate(-40);
-        muzzleFlash.setFill(Color.GREEN);
+            muzzleFlash = new Ellipse();
+            muzzleFlash.setRadiusX(4);
+            muzzleFlash.setRadiusY(8);
+            muzzleFlash.setRotate(-40);
+            muzzleFlash.setFill(Color.GREEN);
 
-        // Binding equivalents in Java
-        muzzleFlash.centerXProperty().bind(this.translateXProperty().add(image.getWidth() * imageView.getScaleX() + 30));
-        muzzleFlash.setCenterY(cannonTipY + 0.11 * image.getHeight());
+            muzzleFlash.setCenterX(176);
+            muzzleFlash.setCenterY(55);
 
-        getChildren().addAll(imageView, muzzleFlash);
+            getChildren().addAll(imageView, muzzleFlash);
+        }
 
         animation = new Timeline(
             new KeyFrame(Duration.millis(2500)),

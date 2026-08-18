@@ -2,11 +2,12 @@ package net.onebeartoe.type.areli.targets;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.scene.Group;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
+import javafx.scene.layout.StackPane;
 
-public abstract class WordTarget extends Group {
+public abstract class WordTarget extends StackPane {
     protected double labelX = 20;
     protected double labelY = -20;
     protected Label label;
@@ -14,13 +15,23 @@ public abstract class WordTarget extends Group {
     protected Timeline animation;
     protected double xMax;
     protected double yMax;
-    protected String labelText;
+    protected String labelText = "";
     protected Node background;
+
+    public WordTarget() {
+        setAlignment(Pos.CENTER);
+    }
 
     public abstract String[] getWordssssss();
     public abstract void onWackaWacka();
 
-    // Getters and setters for properties that were public vars
+    public void stopAnimation() {
+        if (animation != null) {
+            animation.stop();
+        }
+    }
+
+    // Getters and Setters
     public double getLabelX() { return labelX; }
     public void setLabelX(double labelX) { this.labelX = labelX; }
 
@@ -41,12 +52,12 @@ public abstract class WordTarget extends Group {
 
     public String getLabelText() { return labelText; }
     public void setLabelText(String labelText) {
-        this.labelText = labelText;
+        this.labelText = labelText != null ? labelText : "";
         if (label != null) {
-            label.setText(labelText);
+            label.setText(this.labelText);
         }
     }
 
-    public Node getBackground() { return background; }
-    public void setBackground(Node background) { this.background = background; }
+    public Node getBackgroundNode() { return background; }
+    public void setBackgroundNode(Node background) { this.background = background; }
 }
