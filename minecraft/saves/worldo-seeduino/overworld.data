@@ -342,6 +342,11 @@
 -6272, 67, 2454, "GFF1"
 
 
+# Savana Town 1
+#	Kinda near Central Town.
+#	There are armadillos here.
+-558, 79, -4000, "ST1"
+
 # Central Town
 #	This space is in the middle of the map.
 #	The Full Netherite Armor is here.
@@ -356,6 +361,8 @@
 # Dappled Forrest 1
 #	It is tiny, but it is there.
 -2778, -4499, "DF1"
+
+
 
 
 # Village 4
