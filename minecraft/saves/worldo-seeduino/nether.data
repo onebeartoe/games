@@ -149,6 +149,11 @@
 105, 72, -1415, "V14PO"
 
 
+# Village 15 Portal Outlet
+#
+68, 111, -1124, "V15PO"
+
+
 # Soul Sand Valley 2
 #	Plenty of fossils no Dry Ghast
 295, 71, -1557, "SSV2"
@@ -159,7 +164,7 @@
 844, 94, -1020, "WM2PO"
 
 
-# Stronghold 2 Portal Outlet
+# Stronghold 2 Portal Outlet11
 1018, 102, -969, "SH2PO"
 
 
