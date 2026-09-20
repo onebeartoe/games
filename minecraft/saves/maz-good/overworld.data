@@ -52,6 +52,11 @@
 -160, ~, -1808, "SH1"
 
 
+# Dappled Forrest 1
+#TODO: search for an abandoned camp.
+-9, 65, -1836, "DF1"
+
+
 # Trail Ruins 1 - ?
 -768, ~, -1904, "TR1???"
 
