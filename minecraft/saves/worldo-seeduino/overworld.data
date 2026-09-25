@@ -353,7 +353,9 @@
 #	There are horse and donkeys here.
 -1800, ~, -4300, "CT"
 
-
+# Sulfer Caves 1
+#	Squee!
+-1751, 7, -4577, "SC1"
 
 # Closest Village to CT
 -2560, ~, -4304, "CV2CT"
@@ -433,7 +435,7 @@
 #	It is a decent village that is built out.
 #	There are tamed Llamas here!
 #	This is the village that was 'currently here' before Central Town started building.
-#	There is a Librarian with Looting III here.
+#	There is a Librarian with Looting III here.	
 #	This village has a small cactus farm.
 1872, ~, 1632, "V5"
 
