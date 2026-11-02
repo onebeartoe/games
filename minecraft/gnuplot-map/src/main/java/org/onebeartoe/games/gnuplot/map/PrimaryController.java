@@ -217,6 +217,8 @@ public class PrimaryController
             dropdownBox.getItems().clear();
 
             dropdownBox.getItems().addAll(mapMarkers);
+            
+            dropdownBox.getSelectionModel().selectFirst();
         }
     }
     
