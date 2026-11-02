@@ -213,6 +213,10 @@ public class PrimaryController
         else
         {
             updateMapMarkersDispaly(mapMarkers);
+
+            dropdownBox.getItems().clear();
+
+            dropdownBox.getItems().addAll(mapMarkers);
         }
     }
     
@@ -337,9 +341,5 @@ public class PrimaryController
 
             mapMarkersTextArea.appendText(text);
         });
-
-        dropdownBox.getItems().clear();
-
-        dropdownBox.getItems().addAll(updatedMapMarkers);
     }
 }
