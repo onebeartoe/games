@@ -79,8 +79,8 @@
                 <version>3.13.0</version>
                 <configuration>
                     <compilerArgs>--enable-preview</compilerArgs>
-                    <release>25</release>
-                    <target>25</target>
+                    <release>26</release>
+                    <target>26</target>
                 </configuration>
             </plugin>
 
