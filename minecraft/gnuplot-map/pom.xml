@@ -19,8 +19,7 @@
     
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>25</maven.compiler.source>
-        <maven.compiler.target>25</maven.compiler.target>
+        <maven.compiler.release>26</maven.compiler.release>
     </properties>
     
     <dependencies>
@@ -79,8 +78,6 @@
                 <version>3.13.0</version>
                 <configuration>
                     <compilerArgs>--enable-preview</compilerArgs>
-                    <release>26</release>
-                    <target>26</target>
                 </configuration>
             </plugin>
 
@@ -149,7 +146,7 @@
                 -->
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.12</version>
+                <version>0.8.15</version>
                 <executions>
                     <execution>
                         <goals>
