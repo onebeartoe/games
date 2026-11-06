@@ -1,3 +1,4 @@
+
 package org.onebeartoe.games.gnuplot.map;
 
 import atlantafx.base.theme.PrimerDark;
@@ -62,12 +63,6 @@ public class App extends Application
         preferences.putDouble(WIDTH_KEY, scene.getWidth());
         
         preferences.putDouble(HEIGHT_KEY, scene.getHeight());
-        
-//        var x = Integer.valueOf(xField.getText() );
-//        preferences.putInt(TARGET_X_KEY, x);
-//        
-//        var y = Integer.valueOf(yField.getText() );
-//        preferences.putInt(TARGET_Y_KEY, y);
     }
 
     static void setRoot(String fxml) throws IOException {
