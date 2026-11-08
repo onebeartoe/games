@@ -34,6 +34,8 @@ public class App extends Application
     
     static String TARGET_Y_KEY = PREFERENCES_KEY + ".TAGET_Y";
     
+    public static String INPUT_FILES_KEY = PREFERENCES_KEY + ".INPUT_FILES";
+    
     public static final  Preferences preferences = Preferences.userRoot().node(PREFERENCES_KEY);
 
     @Override

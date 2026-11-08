@@ -134,8 +134,12 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.5.1</version>
                     <configuration>
+                        <!--
+                        the experimental bytebuddy flag instructs Byte Buddy to
+  allow experimental / unreleased JVM versions (such as Java 26)
+                        -->
                       <argLine>
-                        --add-exports javafx.graphics/com.sun.javafx.application=ALL-UNNAMED
+                        -Dnet.bytebuddy.experimental=true --add-exports javafx.graphics/com.sun.javafx.application=ALL-UNNAMED
                       </argLine>
                     </configuration>                
             </plugin>                   

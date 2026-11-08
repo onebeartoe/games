@@ -1,0 +1,19 @@
+
+[x] Save Input Files between Application Runs
+
+Add code to PrimaryController#addFile(File) that uses App.preferences to save the 
+File path as a String.  Add a new static String INPUT_FILES_KEY to App.java for this.
+If an input file or files are already set as a preference, then concatenate the new 
+File path to them, separated by a ',' character.
+
+Conversely, update PrimaryController#initialize() so that it looks for saved input files 
+under the newly added INPUT_FILES_KEY preferences key.  If any paths are saved under that key, 
+then separate them by the ',' character and pass each path as a File to a call 
+to Primarycontroller#addFile(File).
+
+
+-----------------------------------------------------------------------
+
+[] Ignore this new feature.
+
+

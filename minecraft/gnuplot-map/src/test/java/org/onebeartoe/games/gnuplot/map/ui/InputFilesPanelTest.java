@@ -18,6 +18,7 @@ import javafx.stage.Stage;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.Test;
+import org.junit.After;
 
 import org.testfx.framework.junit.ApplicationTest;
 
@@ -51,6 +52,8 @@ public class InputFilesPanelTest extends ApplicationTest
     {
         this.stage = stage;            
         
+        App.preferences.remove(App.INPUT_FILES_KEY);
+
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("primary" + ".fxml"));        
 
         Object root = fxmlLoader.load();                
@@ -89,6 +92,12 @@ public class InputFilesPanelTest extends ApplicationTest
         stage.setScene(scene);
         stage.show();
         stage.toFront();
+    }
+
+    @After
+    public void tearDown()
+    {
+        App.preferences.remove(App.INPUT_FILES_KEY);
     }
 
     @Test( )

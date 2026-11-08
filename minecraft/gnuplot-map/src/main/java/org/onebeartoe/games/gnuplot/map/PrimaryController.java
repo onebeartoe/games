@@ -24,6 +24,7 @@ import javafx.util.StringConverter;
 import static org.onebeartoe.games.gnuplot.map.App.TARGET_X_KEY;
 import static org.onebeartoe.games.gnuplot.map.App.TARGET_Y_KEY;
 import static org.onebeartoe.games.gnuplot.map.App.INITIAL_CHOOSER_DIRECTORY_KEY;
+import static org.onebeartoe.games.gnuplot.map.App.INPUT_FILES_KEY;
 
 public class PrimaryController 
 {
@@ -141,6 +142,20 @@ public class PrimaryController
             outputTextArea.appendText("\n\t" + inputPath + "\n\n");
         }
         
+        String savedInputFiles = App.preferences.get(INPUT_FILES_KEY, "");
+        if (!savedInputFiles.trim().isEmpty())
+        {
+            String[] paths = savedInputFiles.split(",");
+            for (String path : paths)
+            {
+                if (!path.trim().isEmpty())
+                {
+                    File file = new File(path.trim());
+                    addFile(file);
+                }
+            }
+        }
+
         loadInputFiles();
     }
 
@@ -151,14 +166,37 @@ public class PrimaryController
         
         File file = chooser.showOpenDialog(App.stage);
         
-        addFile(file);
+        if (file != null)
+        {
+            addFile(file);
+        }
     }
     
     public void addFile(File file)
-    {        
+    {                
+        if (file == null)
+        {
+            return;
+        }
+
         inputFilesListView.getItems().addAll(file.getPath());    
 
         loadInputFiles();
+
+        String inputFiles = App.preferences.get(INPUT_FILES_KEY, "");
+        if (inputFiles.trim().isEmpty())
+        {
+            App.preferences.put(INPUT_FILES_KEY, file.getPath());
+        }
+        else
+        {
+            List<String> files = List.of(inputFiles.split(","));
+            if (!files.contains(file.getPath()))
+            {
+                String updated = inputFiles + "," + file.getPath();
+                App.preferences.put(INPUT_FILES_KEY, updated);
+            }
+        }
     }
     
     @FXML
@@ -249,6 +287,7 @@ public class PrimaryController
             
             dataFiles = walk.filter(Files::isRegularFile)   
                             .filter(p -> p.getFileName().toString().endsWith(fileExtension))
+                            .sorted()
                             .collect(Collectors.toList());
         }
 
