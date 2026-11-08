@@ -21,9 +21,9 @@ import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.StringConverter;
-import static org.onebeartoe.games.gnuplot.map.App.INPUT_DIRECORTY_KEY;
 import static org.onebeartoe.games.gnuplot.map.App.TARGET_X_KEY;
 import static org.onebeartoe.games.gnuplot.map.App.TARGET_Y_KEY;
+import static org.onebeartoe.games.gnuplot.map.App.INITIAL_CHOOSER_DIRECTORY_KEY;
 
 public class PrimaryController 
 {
@@ -117,12 +117,12 @@ public class PrimaryController
             }
             
 //TODO: rename the key            
-            App.preferences.put(INPUT_DIRECORTY_KEY, selectedDirectory.getAbsolutePath());
+            App.preferences.put(INITIAL_CHOOSER_DIRECTORY_KEY, selectedDirectory.getAbsolutePath());
 
             loadInputFiles();
         });
                 
-        String inputPath = App.preferences.get(INPUT_DIRECORTY_KEY, "bad-direcotry-path");
+        String inputPath = App.preferences.get(INITIAL_CHOOSER_DIRECTORY_KEY, "bad-direcotry-path");
         
         var initialDirectory = new File(inputPath);
         
